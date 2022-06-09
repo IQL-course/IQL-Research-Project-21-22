@@ -1,14 +1,37 @@
 
+source('R_functions.R')
 
 # PLAN
-
 # - 1 - Optimality of word length
+    # + compute Omega, eta, L 
 
 # - 2 - The significance of word lengths
+    # + pearson/tau (?) correlation test
 
 # - 3 - Sorting languages by their degree of optimality
+    # + plot language ranks?
 
 # - 4 - Stability under the null hypothesis
+    # + compute Omega with random matching of lengths and frequencies
+
+
+
+# IMPLEMENTATION
+collection <- 'pud'
+
+# - 1 - Compute Omega
+opt_df <- compute_optimality_scores(collection)
+
+
+# - 2 - Significance of word lengths
+tau_df <- compute_tau_corr(collection)
+
+# - 3 - Sorting languages by their degree of optimality
+rank_omega <- get_ranked_langs(opt_df,'omega')$language
+rank_eta   <- get_ranked_langs(opt_df,'eta')$language
+plotRanks(rank_eta, rank_omega, labels.offset=0.35, title="Eta  -  Omega")
+
+
 
 
 
@@ -19,7 +42,7 @@
 # bind all dfs and add language
 res <- lapply(langs, function(lang) read_df(lang,'pud')[-1])
 all_df <- do.call(rbind,res) %>% 
-  mutate(index=1:nrow(.),language = rep(langs,sapply(res, nrow))) %>%
+  mutate(index = 1:nrow(.), language = rep(langs,sapply(res, nrow))) %>%
   filter(length != 0)
 
 # identify obs to mark (sample top 90% percentile of freq and length)
@@ -39,10 +62,5 @@ plot <- ggplot(lang_to_use,aes(x=frequency,y=length,label = lab)) +
   scale_y_log10() + scale_x_log10()
 
 
-
-
-# - 1 - Compute Omega
-
-opt_df <- compute_optimality_scores('pud')
 
 
