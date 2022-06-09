@@ -1,0 +1,52 @@
+language,iso_code,dialect,#types,#tokens
+Abkhazian,ab,,151,257
+Arabic,ar,,7498,75885
+Assamese,as,,1117,5039
+Breton,br,,4324,56318
+Catalan,ca,,79215,4339527
+Hakha Chin,cnh,,2516,24117
+Czech,cs,,16034,208330
+Chuvash,cv,,5567,22450
+Welsh,cy,,11490,726539
+German,de,,150364,5569590
+Dhivehi,dv,,157,65725
+Modern Greek (1453-),el,,5836,52685
+English,en,,173524,13165106
+Esperanto,eo,,27934,580778
+Spanish,es,,75619,2484983
+Estonian,et,,30136,157136
+Basque,eu,,24999,647545
+Persian,fa,,13242,2278604
+French,fr,,162742,5014779
+Western Frisian,fy,NL,8420,83230
+Irish,ga,IE,2313,30904
+Interlingua (International Auxiliary Language Association),ia,,5554,44097
+Indonesian,id,,3819,62555
+Italian,it,,55482,1052514
+Japanese,ja,,56,18156
+Georgian,ka,,7947,20253
+Kirghiz,ky,,10499,87004
+Latvian,lv,,7794,45502
+Mongolian,mn,,14846,92335
+Maltese,mt,,8150,57768
+Dutch,nl,,10668,414208
+Oriya (macrolanguage),or,,923,6868
+Panjabi,pa,IN,97,483
+Polish,pl,,25367,826468
+Portuguese,pt,,13051,397445
+Romansh,rm,sursilv,7199,43147
+Romansh,rm,vallader,3390,14728
+Romanian,ro,,6451,43680
+Russian,ru,,31923,830059
+Kinyarwanda,rw,,135330,2673259
+Yakut,sah,,8043,31765
+Slovenian,sl,,5995,37368
+Swedish,sv,SE,4455,88684
+Tamil,ta,,1527,90285
+Turkish,tr,,8959,152798
+Tatar,tt,,22315,208723
+Ukrainian,uk,,14401,166884
+Vietnamese,vi,,575,1744
+Chinese,zh,CN,2537,97572
+Chinese,zh,HK,8631,82843
+Chinese,zh,TW,8041,179749
