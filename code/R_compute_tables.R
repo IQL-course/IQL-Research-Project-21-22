@@ -1,14 +1,18 @@
 source('R_functions.R')
 
+# WARNING! Running takes a long time!
+
 
 # checks on data - coefficient of variation in cv
 rows <- lapply(1:length(ISO_cv), function(i) {
   iso_code <- ISO_cv[i]
   dialect  <- dialects_cv[i]
-  read_language(iso_code,'cv',dialect) %>% summarise(coeff_var = stDevDuration/meanDuration)
+  read_language(iso_code,'cv',dialect) %>% 
+    summarise(meanDuration,stDevDuration,coeff_var = stDevDuration/meanDuration)
 })
 df <- do.call(rbind,rows)
 write.csv(df, here('results','coefficient_variation.csv'))
+
 
 
 # optimality scores and significance of relation

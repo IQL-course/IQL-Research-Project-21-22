@@ -5,6 +5,8 @@ library('ISOcodes')
 library('ggplot2')
 require("ggrepel")
 library('reshape2')
+library('xtable')
+library(data.table)
 
 # TO DO 
 # - get ISO codes of cvfa languages
@@ -19,13 +21,14 @@ length_defs <- c('meanDuration','medianDuration','n_chars')
 langs_df_pud <- read.csv(here("explanatory_tables/pud.csv"))
 langs_pud    <- langs_df_pud$language
 ISO_pud      <- langs_df_pud$iso_code
+labs_pud <- langs_pud; names(labs_pud) <- ISO_pud
 
 ## cv
 langs_df_cv <- read.csv(here("explanatory_tables/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh'))
 langs_cv    <- langs_df_cv$language
 ISO_cv      <- langs_df_cv$iso_code
 dialects_cv <- langs_df_cv$dialect
-
+labs_cv <- langs_cv; names(labs_cv) <- ISO_cv
 
 
 # functions
