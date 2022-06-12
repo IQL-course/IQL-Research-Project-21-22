@@ -94,6 +94,17 @@ compute_tau_corr <- function(collection, length = 'meanDuration') {
   return(df)
 }
 
+
+assign_stars <- function(df) {
+  df %>% mutate(stars = case_when(hb_pvalue<=0.01                  ~ '***',
+                                  hb_pvalue>0.01 & hb_pvalue<=0.05 ~ '**',
+                                  hb_pvalue>0.05 & hb_pvalue<=0.1  ~ '*',
+                                  hb_pvalue>0.1                    ~ 'x'))
+}
+
+
+
+
 get_ranked_langs <- function(opt_df, metric) {
   if (metric == 'omega') {
     opt_df %>% arrange(desc(omega)) %>% dplyr::select(language) %>% mutate(ranking_omega = 1:nrow(opt_df))

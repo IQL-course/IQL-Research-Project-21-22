@@ -1,5 +1,5 @@
 
-source('code/R_functions.R')
+source('R_functions.R')
 
 # PLAN
 # - 0 - Check data
@@ -112,7 +112,29 @@ print(xtable(summ, caption = "Summary statistics of $\\Omega$ for each collectio
 
 
 # - 2 - tau correlation TO DO
+## cv
+collection <- 'cv'
+rows_cv <- lapply(length_defs, function(length_def) {
+  suffix <- paste0("_",length_def)
+  read.csv(here('results',paste0('tau_correlation_',collection,suffix,'.csv')))[-1] %>% 
+    mutate(length_def = length_def, language = paste0(language,ifelse(dialect=='','','-'),dialect))
+})
+df <- do.call(rbind,rows_cv) %>% assign_stars()
+ggplot(df,aes(y=language, x=length_def, fill=tau)) + 
+  labs(x="length definition", y="language", title=paste0('Tau correlation - ',collection)) +
+  geom_tile() + scale_y_discrete(labels=labs) + geom_text(aes(label=stars)) +
+  scale_fill_gradient2(midpoint=0, low="blue",high = "red", mid = "white", na.value = "#b9d0ed")
+ggsave(here('figures',paste0('tau_significance_',collection,'.pdf')))
 
+## pud
+collection <- 'pud'
+df <- read.csv(here('results',paste0('tau_correlation_',collection,'.csv')))[-1] %>% 
+  mutate(length_def = 'n_chars') %>% assign_stars()
+ggplot(df,aes(y=language, x=length_def, fill=tau)) + 
+  labs(x="length definition", y="language", title=paste0('Tau correlation - ',collection)) +
+  geom_tile() + scale_y_discrete(labels=labs) + geom_text(aes(label=stars)) +
+  scale_fill_gradient2(midpoint=0, low="blue",high = "red", mid = "white", na.value = "#b9d0ed")
+ggsave(here('figures',paste0('tau_significance_',collection,'.pdf')))
 
 
 
@@ -139,7 +161,7 @@ all_df <- do.call(rbind,res) %>%
 ggplot(all_df,aes(x=frequency, y=value, color=length_type)) + labs(y='length') +
   geom_point() + facet_wrap(~language,labeller = labeller(language=labs_cv)) + 
   scale_x_log10() + scale_y_log10()
-ggsave('figures/lengthVSfrequency_cv.pdf')
+ggsave(here('figures','lengthVSfrequency_cv.pdf'))
 
 ## PUD
 res <- lapply(ISO_pud[1:6], function(iso) read_language(iso,'pud') %>% mutate(language = iso))
@@ -147,7 +169,7 @@ all_df <- do.call(rbind,res)
 ggplot(all_df,aes(x=frequency, y=length)) +
   geom_point(color='blue') + facet_wrap(~language,labeller = labeller(language=labs_pud)) + 
   scale_x_log10() + scale_y_log10()
-ggsave('figures/lengthVSfrequency_pud.pdf')
+ggsave(here('figures','lengthVSfrequency_pud.pdf'))
 
 
 
@@ -167,5 +189,5 @@ df <- do.call(rbind.data.frame,rows) %>%
 means <- df %>% group_by(collection,length_def,variable) %>% summarise(meanvalue = mean(value))
 ggplot(df) + geom_density(aes(x=value,color = length_def)) + facet_grid(rows = vars(collection), cols = vars(variable)) +
   geom_vline(data=means, aes(xintercept=meanvalue, color = length_def),linetype='dashed')
-ggsave('figures/opt_scores_density.pdf')
+ggsave(here('figures','opt_scores_density.pdf'))
 
