@@ -7,9 +7,12 @@ source('R_functions.R')
 
 # - 1 - Optimality of word length
     # + compute Omega, eta, L 
+    # + correlation between the scores (can we replace them with omega?)
 
 # - 2 - The significance of word lengths
-    # + pearson/tau (?) correlation test
+    # + tau correlation test: law of abbreviation
+    # + pearson correlation test: if ro is significantly low Omega is significantly large
+
 
 # - 3 - Sorting languages by their degree of optimality
     # + plot language ranks?
@@ -29,16 +32,24 @@ source('R_functions.R')
 # - X tables of optimality scores for every collection and length definition (prepare tables for Latex)
 # - X density plot of omega 
 # - X distribution of omega values
-# - O tables of tau correlation with pvalues for every collection and length definition (prepare tables for Latex)
-    # --> maybe summarise in other way?
+# - X tables of tau correlation with pvalues for every collection and length definition (plots)
 # - O density plot of null hypothesis (Mengxue)
 # - O how to show rankings by degree of optimality? (Mengxue)
+# - O omega bar plots (left value of omega, right composition in bars) (Sonia)
+# - O correlogram of opt scores (Sonia)
+# - O plot of Omega_time vs Omega_chars with 45 diagonal (Sonia)
 
+
+# NOTES FOR ANALYSIS
+# - For Japanese and Chinese have both length in strokes and in characters
+# - for Romansh mixe both dialects
 
 
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
-
+# - use median, it's more robust
+# - in opt scores tables: sort by family, writing system, language name (retreive family info from Glottolog)
+# - for Romansh we mixed both dialects, specify each dialect in materials, remove trom latex tables
 
 
 
@@ -57,6 +68,8 @@ ggplot(aes(share_retained_data,cutoffs)) + geom_point() + geom_line()
 ggsave('figures/coefficient_variation.pdf')
 
 
+# collections summary
+langs_df_cv
 
 
 
@@ -67,8 +80,8 @@ lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
-      label_length <- switch(length_def,
-                        "meanDuration" = 'mean duration', "medianDuration" = 'median duration', 'n_chars' = 'number of characters')
+      label_length <- switch(length_def,"meanDuration" = 'mean duration', 
+                             "medianDuration" = 'median duration', 'n_chars' = 'number of characters')
       opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1]
       
       print(xtable(opt_df, caption = paste0("CV: Optimality scores. Length is defined as ",label_length),
@@ -86,29 +99,19 @@ lapply(COLLS, function(collection) {
   }
 })
 
-# summary table
-rows <- lapply(COLLS, function(collection) {
-  if (collection == 'cv') {
-    rows_cv <- lapply(length_defs, function(length_def) {
-      suffix       <- paste0("_",length_def)
-      label_length <- switch(length_def,
-                             "meanDuration" = 'mean duration', "medianDuration" = 'median duration', 'n_chars' = 'number of characters')
-      read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1] %>% 
-        select(omega) %>% mutate(collection = paste(collection,length_def,sep='-'))
-    })
-    do.call(rbind,rows_cv)
-  } else {
-    read.csv(here('results',paste0('optimality_scores_',collection,'.csv')))[-1] %>% 
-      select(omega) %>% mutate(collection = paste(collection,'n_chars',sep='-'))
-  }
+# summary opt scores
+lapply(c('omega','eta'), function(score) {
+  summ <- opt_score_summary(score)
+  latex_score <- ifelse(score == 'omega','$\\Omega$','$\\eta$')
+  print(xtable(summ, caption = paste0("Summary statistics of ",latex_score," for each collection and definition of length"),
+               label = paste0("tab:opt_scores_summary_",score), type = "latex"), 
+        file = here('latex_tables',paste0("opt_scores_summary_",score,".tex")),
+        caption.placement = "top",include.rownames=FALSE,
+        table.placement = getOption("xtable.table.placement", "H"), sanitize.text.function = function(x) {x})
 })
-df <- do.call(rbind,rows); setDT(df)
-summ <- df[, as.list(summary(omega)), by = collection]
-print(xtable(summ, caption = "Summary statistics of $\\Omega$ for each collection and definition of length",
-             label = "tab:opt_scores_summary", type = "latex"), 
-      file = here('latex_tables',"opt_scores_summary.tex"),
-      caption.placement = "top",include.rownames=FALSE,
-      table.placement = getOption("xtable.table.placement", "H"), sanitize.text.function = function(x) {x})
+
+
+
 
 
 # - 2 - tau correlation TO DO
@@ -138,6 +141,8 @@ ggsave(here('figures',paste0('tau_significance_',collection,'.pdf')))
 
 
 
+df %>% filter(language %in% c('vi','dv'))
+
 # - 3 ?? - Sorting languages by their degree of optimality
 #rank_omega <- get_ranked_langs(opt_df,'omega')$language
 #rank_eta   <- get_ranked_langs(opt_df,'eta')$language
@@ -154,12 +159,14 @@ ggsave(here('figures',paste0('tau_significance_',collection,'.pdf')))
 # - DISTRIBUTION OF FREQUENCY VS LENGTH
 
 ## CV
-res <- lapply(ISO_cv[1:6], function(iso) read_language(iso,'cv') %>% select(-stDevDuration))
+# ISO_cv[1:6]
+res <- lapply(c('vi','dv'), function(iso) read_language(iso,'cv') %>% select(-stDevDuration))
 all_df <- do.call(rbind,res) %>% 
   melt(id.vars = c('frequency','word','language')) %>% 
   rename(length_type = variable)  
 ggplot(all_df,aes(x=frequency, y=value, color=length_type)) + labs(y='length') +
-  geom_point() + facet_wrap(~language,labeller = labeller(language=labs_cv)) + 
+  geom_point() + #facet_wrap(~language,labeller = labeller(language=labs_cv)) + 
+  facet_grid(rows=vars(length_type), cols=vars(language),labeller = labeller(language=labs_cv)) +
   scale_x_log10() + scale_y_log10()
 ggsave(here('figures','lengthVSfrequency_cv.pdf'))
 

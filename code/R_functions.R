@@ -95,6 +95,27 @@ compute_tau_corr <- function(collection, length = 'meanDuration') {
 }
 
 
+opt_score_summary <- function(score) {
+  rows <- lapply(COLLS, function(collection) {
+    if (collection == 'cv') {
+      rows_cv <- lapply(length_defs, function(length_def) {
+        suffix       <- paste0("_",length_def)
+        df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1]
+        df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta
+        df %>% mutate(collection = paste(collection,length_def,sep='-'))
+      })
+      do.call(rbind,rows_cv)
+    } else {
+      df <- read.csv(here('results',paste0('optimality_scores_',collection,'.csv')))[-1]
+      df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta
+      df %>% mutate(collection = paste(collection,'n_chars',sep='-'))
+    }
+  })
+  df <- do.call(rbind,rows); setDT(df)
+  df[, as.list(summary(score)), by = collection]
+}
+
+
 assign_stars <- function(df) {
   df %>% mutate(stars = case_when(hb_pvalue<=0.01                  ~ '***',
                                   hb_pvalue>0.01 & hb_pvalue<=0.05 ~ '**',
