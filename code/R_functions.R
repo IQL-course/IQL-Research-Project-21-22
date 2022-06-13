@@ -4,60 +4,106 @@ library('dplyr')
 library('ISOcodes')
 library('ggplot2')
 require("ggrepel")
+library('reshape2')
+library('xtable')
+library(data.table)
 
 # TO DO 
 # - get ISO codes of cvfa languages
 # - compute Omega for cvfa
 
-
+'%!in%' <- function(x,y)!('%in%'(x,y))
+COLLS       <- c('pud','cv')
+length_defs <- c('meanDuration','medianDuration','n_chars')
 
 # globals
-langs_df   <- read.csv(here("pud_data/utils/PUD_languages.csv")) %>% `colnames<-` (c("language","iso"))
-langs_pud  <- langs_df$language
-ISO_pud    <- sapply(langs_pud,function(l) ISO_639_3 %>% filter(Name==l) %>% dplyr::select(1)) %>% unlist() %>% unname()
+## pud
+langs_df_pud <- read.csv(here("explanatory_tables/pud.csv"))
+langs_pud    <- langs_df_pud$language
+ISO_pud      <- langs_df_pud$iso_code
+labs_pud <- langs_pud; names(labs_pud) <- ISO_pud
+
+## cv
+langs_df_cv <- read.csv(here("explanatory_tables/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh'))
+langs_cv    <- langs_df_cv$language
+ISO_cv      <- langs_df_cv$iso_code
+dialects_cv <- langs_df_cv$dialect
+labs_cv <- langs_cv; names(labs_cv) <- ISO_cv
 
 
 # functions
-read_df <- function(language, collection, strokes=T) {
-  iso_language <- if (language %in% langs_pud) ISO_pud[langs_pud == language] else ISO_cvfa
-  if (collection == 'pud') {
-    str_suffix <- ifelse(strokes == T & iso_language %in% c('zho','jpn'),'_strokes','')
-    read.csv(here("pud_data",paste0(iso_language,"_pud",str_suffix,".csv")))
-  } else if (collection == 'cvfa') {
-    #str_suffix <- ifelse(strokes == T & iso_language %in% c('zho','jpn'),'_strokes','')
-    #read.csv(here("code/common-voice-forced-alignments",paste0(iso_language,"_pud",str_suffix,".csv")))
-  }
+read_language <- function(iso_code, collection, dialect = NULL, pud_strokes = T) {
+  # if no dialect is specified and it's unique for the language, it will be inferred
+  # specify the desired dialect if this is not unique
+  if (collection == 'cv') {
+    if (is.null(dialect)) dialect <- dialects_cv[ISO_cv==iso_code]
+    dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
+    read.csv(here("code/common-voice-forced-alignment",paste0(iso_code,dialect,"-word.csv"))) %>% 
+      arrange(desc(repetitions)) %>% filter(orthographic_form %!in% c('','<unk>')) %>% 
+      rename(frequency = repetitions, word = orthographic_form) %>% 
+      mutate(n_chars = nchar(word), language = paste0(iso_code,dialect))
+  } else if (collection == 'pud') {
+    str_suffix <- ifelse(pud_strokes == T & iso_code %in% c('zho','jpn'),'_strokes','')
+    read.csv(here("data/pud/",paste0(iso_code,"_pud",str_suffix,".csv")))[-1]
+  } else print('specify an available collection')
 }
 
-compute_optimality_scores <- function(collection) {
-  langs <- if (collection == 'pud') langs_pud 
-  res <- lapply(langs, function(lang) {
-    df         <- read_df(lang,collection)[-1] %>% mutate(rank=1:nrow(.))
+
+
+compute_optimality_scores <- function(collection, length = 'meanDuration') {
+  iso_codes <- if (collection == 'pud') ISO_pud else if (collection == 'cv') ISO_cv
+  res <- lapply(1:length(iso_codes), function(i) {
+    iso_code <- iso_codes[i]
+    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
+    df <- read_language(iso_code,collection,dialect) %>% mutate(rank=1:nrow(.))
+    # choose definition of 'length' in cv
+    if (collection == 'cv') {
+      df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$n_chars
+    }
     N_types    <- nrow(df)
-    p <- df$frequency/sum(df$frequency)
+    p     <- df$frequency/sum(df$frequency)
     Lmin  <- sum(sort(df$length)*p)                                                # min baseline
     L     <- sum(df$length*p)                                                      # real value (weight by freq)
     Lrand <- sum(df$length)/N_types                                                # random baseline (unweighted)
     eta   <- Lmin/L
     omega <- (Lrand-L)/(Lrand-Lmin)
-    list("language"=lang, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta,"omega"=omega)
+    list("language"=iso_code, "dialect"=dialect, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta,"omega"=omega)
   }) 
   return(do.call(rbind.data.frame,res))
 }
 
 
-compute_tau_corr <- function(collection) {
-  langs <- if (collection == 'pud') langs_pud
-  cors <- lapply(langs, function(lang) {
-    df   <- read_df(lang, collection)
-    res  <- cor.test(df$frequency,df$length, method="kendall",alternative = "less")                          # test statistics
-    list("language"=lang,"tau"=res$estimate,"pvalue"=res$p.value)
+
+compute_tau_corr <- function(collection, length = 'meanDuration') {
+  iso_codes <- if (collection == 'pud') ISO_pud else if (collection == 'cv') ISO_cv
+  cors <- lapply(1:length(iso_codes), function(i) {
+    iso_code <- iso_codes[i]
+    print(iso_code)
+    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
+    df <- read_language(iso_code,collection,dialect) %>% mutate(rank=1:nrow(.))
+    # choose definition of 'length' in cv
+    if (collection == 'cv') {
+      df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$n_chars
+    }
+    res  <- cor.test(df$frequency,df$length, method="kendall",alternative = "less")                     # test statistics
+    list("language"=iso_code, "dialect"=dialect, "tau"=res$estimate, "pvalue"=res$p.value)
   }) 
   df <- do.call(rbind.data.frame,cors) %>% 
-    arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%  # Holm-Bonferroni correction
+    arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%                                                     # Holm-Bonferroni correction
     mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
   return(df)
 }
+
+
+assign_stars <- function(df) {
+  df %>% mutate(stars = case_when(hb_pvalue<=0.01                  ~ '***',
+                                  hb_pvalue>0.01 & hb_pvalue<=0.05 ~ '**',
+                                  hb_pvalue>0.05 & hb_pvalue<=0.1  ~ '*',
+                                  hb_pvalue>0.1                    ~ 'x'))
+}
+
+
+
 
 get_ranked_langs <- function(opt_df, metric) {
   if (metric == 'omega') {
