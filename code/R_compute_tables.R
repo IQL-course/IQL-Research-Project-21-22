@@ -8,7 +8,7 @@ rows <- lapply(1:length(ISO_cv), function(i) {
   iso_code <- ISO_cv[i]
   dialect  <- dialects_cv[i]
   read_language(iso_code,'cv',dialect) %>% 
-    summarise(meanDuration,stDevDuration,coeff_var = stDevDuration/meanDuration)
+    summarise(language,meanDuration,stDevDuration,coeff_var = stDevDuration/meanDuration)
 })
 df <- do.call(rbind,rows)
 write.csv(df, here('results','coefficient_variation.csv'))

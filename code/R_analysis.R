@@ -36,46 +36,51 @@ source('R_functions.R')
 # - O density plot of null hypothesis (Mengxue)
 # - O how to show rankings by degree of optimality? (Mengxue)
 # - O omega bar plots (left value of omega, right composition in bars) (Sonia)
-# - O correlogram of opt scores (Sonia)
-# - O plot of Omega_time vs Omega_chars with 45 diagonal (Sonia)
+# - X correlogram of opt scores (Sonia)
+# - X plot of Omega_time vs Omega_chars with 45 diagonal (Sonia)
 
 
 # NOTES FOR ANALYSIS
-# - For Japanese and Chinese have both length in strokes and in characters
-# - for Romansh mixe both dialects
+# - For Japanese and Chinese use both length in strokes and in characters
+# - for Romansh mix both dialects (Pre-processing people)
 
 
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
 # - use median, it's more robust
 # - in opt scores tables: sort by family, writing system, language name (retreive family info from Glottolog)
-# - for Romansh we mixed both dialects, specify each dialect in materials, remove trom latex tables
+# - for Romansh we mixed both dialects, specify each dialect in materials, remove dialect from latex tables
 
 
 
 # IMPLEMENTATION
 
 # - 0 - Checks on data
-# SD AND MEAN
+# + SD AND MEAN
+   # global
 df <- read.csv(here('results','coefficient_variation.csv'))
-  # is relation between sd and mean linear?
-#ggplot(sample_n(df, 10000)) + geom_point(aes(reorder(meanDuration,stDevDuration),stDevDuration))
-  # coefficient of variation
 cutoffs <- seq(0,0.3,0.03)
-share_retained_data <- sapply(cutoffs, function(cutoff) round(nrow(filter(df,coeff_var<=cutoff))/nrow(df),3) )
+share_retained_data <- sapply(cutoffs, function(cutoff) round( nrow(filter(df,coeff_var<=cutoff))/nrow(df), 3 ) )
 data.frame(cutoffs,share_retained_data) %>%
 ggplot(aes(share_retained_data,cutoffs)) + geom_point() + geom_line()
-ggsave('figures/coefficient_variation.pdf')
+ggsave(here('figures', 'coefficient_variation.pdf'))
+
+    # language level
+cutoffs <- seq(0.15,0.3,0.05)
+lapply(cutoffs, function(cutoff) {
+  remove_at_cutoff(cutoff)
+  ggsave(here('figures', paste0('CV_retained_at_',cutoff,'.pdf')))
+})
 
 
-# collections summary
-langs_df_cv
+# + collections summary TO DO once writing system is added
 
 
 
-# - 1 - optimality scores 
 
-# scores for each language, collection, length_def
+# - 1 - optimality scores ------------------------------------------------------
+
+# + scores for each language, collection, length_def
 lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
@@ -99,7 +104,7 @@ lapply(COLLS, function(collection) {
   }
 })
 
-# summary opt scores
+# + summary opt scores
 lapply(c('omega','eta'), function(score) {
   summ <- opt_score_summary(score)
   latex_score <- ifelse(score == 'omega','$\\Omega$','$\\eta$')
@@ -111,10 +116,51 @@ lapply(c('omega','eta'), function(score) {
 })
 
 
+# + correlogram of opt scores
+rows <- lapply(COLLS, function(collection) {
+  if (collection == 'cv') {
+    rows_cv <- lapply(length_defs, function(length_def) {
+      suffix       <- paste0("_",length_def)
+      df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1]
+      df <- df %>% dplyr::select(L,eta,omega)
+      cors <- round(cor(df), 2)
+      p.mat <- cor_pmat(df)
+      ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 10, tl.cex = 20, pch.cex = 20) + 
+        labs(title=paste(collection,length_def,sep='-')) + theme(plot.title = element_text(size=22))
+      ggsave(here('figures',paste0('corrplot_',collection,suffix,'.pdf')))
+    })
+    do.call(rbind,rows_cv)
+  } else {
+    length_def <- 'n_chars'
+    suffix       <- paste0("_",length_def)
+    df <- read.csv(here('results',paste0('optimality_scores_',collection,'.csv')))[-1]
+    df <- df %>% dplyr::select(L,eta,omega)
+    cors <- round(cor(df), 2)
+    p.mat <- cor_pmat(df)
+    ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 10, tl.cex = 20, pch.cex = 20) + 
+      labs(title=paste(collection,length_def,sep='-')) + theme(plot.title = element_text(size=22))
+    ggsave(here('figures',paste0('corrplot_',collection,suffix,'.pdf')))
+  }
+})
+
+
+# + Omega in time vs Omega in chars
+df_chars <- read.csv(here('results',paste0('optimality_scores_',collection,'_n_chars.csv')))[-1] %>%
+  rename(omega_space = omega) %>% dplyr::select(-Lmin,-L,-Lrand,-eta)
+rows_cv <- lapply(length_defs[1:2], function(length_def) {
+  suffix       <- paste0("_",length_def)
+  df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1]
+  df %>% rename(omega_time = omega) %>% mutate(time_def = length_def)  %>% dplyr::select(-Lmin,-L,-Lrand,-eta)
+})
+merged_dfs <- lapply(rows_cv, function(df_time) merge(df_time,df_chars, by = c('language','dialect')))
+do.call(rbind.data.frame,merged_dfs) %>% 
+  ggplot(aes(omega_space,omega_time,label = language)) + geom_point() + facet_wrap(~time_def) + 
+    geom_abline(intercept = 0, slope=0.5) + geom_text(nudge_x = 0.03,nudge_y = 0.02,size = 3)
+ggsave(here('figures',paste0('omega_timeVSspace.pdf')))
 
 
 
-# - 2 - tau correlation TO DO
+# - 2 - tau correlation --------------------------------------------------------
 ## cv
 collection <- 'cv'
 rows_cv <- lapply(length_defs, function(length_def) {
@@ -141,8 +187,6 @@ ggsave(here('figures',paste0('tau_significance_',collection,'.pdf')))
 
 
 
-df %>% filter(language %in% c('vi','dv'))
-
 # - 3 ?? - Sorting languages by their degree of optimality
 #rank_omega <- get_ranked_langs(opt_df,'omega')$language
 #rank_eta   <- get_ranked_langs(opt_df,'eta')$language
@@ -159,8 +203,7 @@ df %>% filter(language %in% c('vi','dv'))
 # - DISTRIBUTION OF FREQUENCY VS LENGTH
 
 ## CV
-# ISO_cv[1:6]
-res <- lapply(c('vi','dv'), function(iso) read_language(iso,'cv') %>% select(-stDevDuration))
+res <- lapply(ISO_cv[1:6], function(iso) read_language(iso,'cv') %>% select(-stDevDuration))
 all_df <- do.call(rbind,res) %>% 
   melt(id.vars = c('frequency','word','language')) %>% 
   rename(length_type = variable)  
@@ -197,4 +240,38 @@ means <- df %>% group_by(collection,length_def,variable) %>% summarise(meanvalue
 ggplot(df) + geom_density(aes(x=value,color = length_def)) + facet_grid(rows = vars(collection), cols = vars(variable)) +
   geom_vline(data=means, aes(xintercept=meanvalue, color = length_def),linetype='dashed')
 ggsave(here('figures','opt_scores_density.pdf'))
+
+
+# OMEGA BARS
+rows <- lapply(COLLS, function(collection) {
+  if (collection == 'cv') {
+    rows_cv <- lapply(length_defs, function(length_def) {
+      suffix       <- paste0("_",length_def)
+      plot_title <- paste0(collection,' - ',length_def)
+      opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'.csv')))[-1]
+      # plot 1
+      plot_omega(opt_df,plot_title)
+      ggsave(here('figures',paste0('omega_',collection,suffix,'.pdf')))
+      # plot 2
+      plot_omega_composition(opt_df,plot_title)
+      ggsave(here('figures',paste0('omega_composition_',collection,suffix,'.pdf')))
+    })
+    do.call(rbind,rows_cv)
+  } else if (collection == 'pud') {
+    length_def <- 'n_chars'
+    suffix       <- paste0("_",length_def)
+    plot_title <- paste0(collection,' - ',length_def)
+    df <- read.csv(here('results',paste0('optimality_scores_',collection,'.csv')))[-1]
+    # plot 1
+    plot_omega(opt_df,plot_title)
+    ggsave(here('figures',paste0('omega_',collection,suffix,'.pdf')))
+    # plot 2
+    plot_omega_composition(opt_df,plot_title)
+    ggsave(here('figures',paste0('omega_composition_',collection,suffix,'.pdf')))
+  }
+})
+
+
+
+
 
