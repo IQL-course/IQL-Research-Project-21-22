@@ -23,13 +23,20 @@ COLLS       <- c('pud','cv')
 length_defs <- c('meanDuration','medianDuration','n_chars')
 
 ## pud
-langs_df_pud <- read.csv(here("explanatory_tables/pud.csv"))
+langs_df_pud <- read.csv(here("explanatory_tables_with_script/pud.csv")) %>% 
+  mutate(family = case_when(language == "Turkish" ~ "Turkic",
+                           language == "Japanese" ~ "Japonic",
+                           language == "Korean" ~ "Koreanic",
+                           language == "Chinese" ~ "Sino-Tibetan",
+                           language == "Thai" ~ "Tai-Kadai",
+                           language == "Finnish" ~ "Uralic",
+                           TRUE ~ "Indo-European"))
 langs_pud    <- langs_df_pud$language
 ISO_pud      <- langs_df_pud$iso_code
 labs_pud <- langs_pud; names(labs_pud) <- ISO_pud
 
 ## cv
-langs_df_cv <- read.csv(here("explanatory_tables/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh')) %>%
+langs_df_cv <- read.csv(here("explanatory_tables_with_script/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh')) %>%
   rows_update(tibble(language = "Interlingua", iso_code = 'ia'), by = "iso_code") %>%
   rows_update(tibble(language = "Oriya", iso_code = 'or'), by = "iso_code") %>% 
   rows_update(tibble(language = "Modern Greek", iso_code = 'el'), by = "iso_code") %>% 
@@ -56,7 +63,7 @@ read_language <- function(iso_code, collection, dialect = NULL, pud_strokes = T)
       arrange(desc(repetitions)) %>% filter(orthographic_form %!in% c('','<unk>')) %>% 
       rename(frequency = repetitions, word = orthographic_form) %>% 
       mutate(n_chars = nchar(word), language = language) %>%
-      mutate(coeff_var = meanDuration/stDevDuration)
+      filter(stDevDuration/meanDuration<=cutoff)
   } else if (collection == 'pud') {
     str_suffix <- ifelse(pud_strokes == T & iso_code %in% c('zho','jpn'),'_strokes','')
     read.csv(here("data/pud/",paste0(iso_code,"_pud",str_suffix,".csv")))[-1]
@@ -66,10 +73,12 @@ read_language <- function(iso_code, collection, dialect = NULL, pud_strokes = T)
 
 
 compute_optimality_scores <- function(collection, length = 'meanDuration') {
-  iso_codes <- if (collection == 'pud') ISO_pud else if (collection == 'cv') ISO_cv
-  res <- lapply(1:length(iso_codes), function(i) {
-    iso_code <- iso_codes[i]
-    language <- langs_cv[i]
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  res <- lapply(1:nrow(langs_df), function(i) {
+    iso_code <- langs_df$iso_code[i]
+    language <- langs_df$language[i]
+    family   <- langs_df$family[i]
+    script   <- langs_df$script[i]
     dialect  <- ifelse(collection=='pud','',dialects_cv[i])
     df <- read_language(iso_code,collection,dialect) %>% mutate(rank=1:nrow(.))
     # choose definition of 'length' in cv
@@ -83,17 +92,21 @@ compute_optimality_scores <- function(collection, length = 'meanDuration') {
     Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
     eta        <- Lmin/L
     omega      <- (Lrand-L)/(Lrand-Lmin)
-    list("language"=language, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta,"omega"=omega)
+    list("language"=language, "family"=family, "script"=script, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta,"omega"=omega)
   }) 
-  return(do.call(rbind.data.frame,res))
+  df <- do.call(rbind.data.frame,res) %>% arrange(family,script,language)
+  return(df)
 }
 
 
 
 compute_tau_corr <- function(collection, length = 'meanDuration') {
-  iso_codes <- if (collection == 'pud') ISO_pud else if (collection == 'cv') ISO_cv
-  cors <- lapply(1:length(iso_codes), function(i) {
-    iso_code <- iso_codes[i]
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  cors <- lapply(1:nrow(langs_df), function(i) {
+    iso_code <- langs_df$iso_code[i]
+    language <- langs_df$language[i]
+    family   <- langs_df$family[i]
+    script   <- langs_df$script[i]
     print(iso_code)
     dialect  <- ifelse(collection=='pud','',dialects_cv[i])
     df <- read_language(iso_code,collection,dialect) %>% mutate(rank=1:nrow(.))
@@ -102,7 +115,7 @@ compute_tau_corr <- function(collection, length = 'meanDuration') {
       df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$n_chars
     }
     res  <- cor.test(df$frequency,df$length, method="kendall",alternative = "less")                     # test statistics
-    list("language"=language, "tau"=res$estimate, "pvalue"=res$p.value)
+    list("language"=language, "family"=family, "script"=script, "tau"=res$estimate, "pvalue"=res$p.value)
   }) 
   df <- do.call(rbind.data.frame,cors) %>% 
     arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%                                                     # Holm-Bonferroni correction

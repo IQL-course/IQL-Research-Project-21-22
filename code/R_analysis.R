@@ -43,7 +43,7 @@ source('R_functions.R')
 # NOTES FOR ANALYSIS
 # - For Japanese and Chinese use both length in strokes and in characters
 # - for Romansh mix both dialects (Pre-processing people)
-
+# - current cutoff 0.25, not considered in collection summaries
 
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
@@ -74,8 +74,17 @@ lapply(cutoffs, function(cutoff) {
 
 
 # + collections summary TO DO once writing system is added
-
-
+lapply(COLLS, function(collection) {
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(tokens = X.tokens, types = X.types)
+  sum_coll <- sum_coll[,c(1,5,4,2,3)] %>% arrange(family,script,language)
+  print(xtable(sum_coll, caption = paste0('Summary of ',collection,' collection'),
+               label = paste0("tab:coll_summary_",collection),type = "latex"), 
+        file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
+        caption.placement = "top",include.rownames=FALSE,
+        table.placement = getOption("xtable.table.placement", "H"))
+  
+})
 
 
 # - 1 - optimality scores ------------------------------------------------------
