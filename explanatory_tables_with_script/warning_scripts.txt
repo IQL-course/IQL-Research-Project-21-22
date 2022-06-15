@@ -1,0 +1,6 @@
+Chinese (all dialects): Chinese
+Japanese: Kanji-Kana-Hiragana-Katakana
+Kirghiz: Cyrillic-Arabic
+Tatar: Cyrillic-Arabic
+Persian: Cyrillic-Arabic-Persian
+Korean: Hangul-Hanja

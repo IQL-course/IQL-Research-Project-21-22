@@ -1,0 +1,52 @@
+language,iso_code,dialect,#types,#tokens,family,script
+Kinyarwanda,rw,,135330,2673259,Niger-Congo,Latin
+Abkhazian,ab,,151,257,Northwest Caucasian,Cyrillic
+Mongolian,mn,,14846,92335,Mongolic,Mongolian
+Oriya (macrolanguage),or,,923,6868,Indo-European,Odia
+Latvian,lv,,7794,45502,Indo-European,Latin
+Estonian,et,,30136,157136,Uralic,Latin
+Basque,eu,,24999,647545,Language isolate,Latin
+Catalan,ca,,79215,4339527,Indo-European,Latin
+Portuguese,pt,,13051,397445,Indo-European,Latin
+Breton,br,,4324,56318,Indo-European,Latin
+Panjabi,pa,IN,97,483,Indo-European,Arabic
+Interlingua (International Auxiliary Language Association),ia,,5554,44097,,Latin
+Romansh,rm,vallader,3390,14728,Indo-European,Latin
+Spanish,es,,75619,2484983,Indo-European,Latin
+Dutch,nl,,10668,414208,Indo-European,Latin
+Chinese,zh,CN,2537,97572,Sino-Tibetan,Chinese
+Romanian,ro,,6451,43680,Indo-European,Latin
+Polish,pl,,25367,826468,Indo-European,Latin
+Italian,it,,55482,1052514,Indo-European,Latin
+Modern Greek (1453-),el,,5836,52685,Indo-European,Greek
+Welsh,cy,,11490,726539,Indo-European,Latin
+Czech,cs,,16034,208330,Indo-European,Latin
+Japanese,ja,,56,18156,Japonic,Kanji-Kana-Hiragana-Katakana
+Chinese,zh,TW,8041,179749,Sino-Tibetan,Chinese
+German,de,,150364,5569590,Indo-European,Latin
+Vietnamese,vi,,575,1744,Austroasiatic,Latin
+Indonesian,id,,3819,62555,Austronesian,Latin
+Kirghiz,ky,,10499,87004,Turkic,Cyrillic-Arabic
+Tatar,tt,,22315,208723,Turkic,Cyrillic-Arabic
+French,fr,,162742,5014779,Indo-European,Latin
+Hakha Chin,cnh,,2516,24117,Sino-Tibetan,Latin
+Chuvash,cv,,5567,22450,Turkic,Cyrillic
+Swedish,sv,SE,4455,88684,Indo-European,Latin
+Slovenian,sl,,5995,37368,Indo-European,Latin
+Russian,ru,,31923,830059,Indo-European,Cyrillic
+Tamil,ta,,1527,90285,Dravidian,Tamil
+Chinese,zh,HK,8631,82843,Sino-Tibetan,Chinese
+Georgian,ka,,7947,20253,Kartvelian,Georgian
+Western Frisian,fy,NL,8420,83230,Indo-European,Latin
+Maltese,mt,,8150,57768,Afro-Asiatic,Latin
+Romansh,rm,sursilv,7199,43147,Indo-European,Latin
+Dhivehi,dv,,157,65725,Indo-European,Thaana
+Yakut,sah,,8043,31765,Turkic,Cyrillic
+Persian,fa,,13242,2278604,Indo-European,Cyrillic-Arabic-Persian
+Irish,ga,IE,2313,30904,Indo-European,Latin
+English,en,,173524,13165106,Indo-European,Latin
+Esperanto,eo,,27934,580778,,Latin
+Ukrainian,uk,,14401,166884,Indo-European,Cyrillic
+Assamese,as,,1117,5039,Indo-European,Assamese
+Arabic,ar,,7498,75885,Afro-Asiatic,Arabic
+Turkish,tr,,8959,152798,Turkic,Latin
