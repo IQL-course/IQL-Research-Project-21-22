@@ -18,7 +18,7 @@ COLLS       <- c('pud','cv')
 length_defs <- c('characters','medianDuration')   # 'meanDuration'
 
 ## pud
-langs_df_pud <- read.csv(here("explanatory_tables_with_script/pud.csv")) %>% 
+langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
   mutate(family = case_when(language == "Turkish" ~ "Turkic",
                            language == "Japanese" ~ "Japonic",
                            language == "Korean" ~ "Koreanic",
@@ -36,7 +36,7 @@ ISO_pud      <- langs_df_pud$iso_code
 labs_pud     <- langs_pud; names(labs_pud) <- ISO_pud
 
 ## cv
-langs_df_cv <- read.csv(here("explanatory_tables_with_script/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh')) %>%
+langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh')) %>%
   rows_update(tibble(language = "Interlingua", iso_code = 'ia'), by = "iso_code") %>%
   rows_update(tibble(language = "Oriya", iso_code = 'or'), by = "iso_code") %>% 
   rows_update(tibble(language = "Modern Greek", iso_code = 'el'), by = "iso_code") %>% 
@@ -62,7 +62,7 @@ read_language <- function(iso_code, collection, dialect = NULL, pud_strokes = T)
     if (is.null(dialect)) dialect <- dialects_cv[ISO_cv==iso_code]
     dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
     language <- langs_cv[ISO_cv==iso_code]
-    read.csv(here("code/common-voice-forced-alignment/",paste0(iso_code,dialect,"-word.csv"))) %>% 
+    read.csv(here("data/common-voice-forced-alignment/",paste0(iso_code,dialect,"-word.csv"))) %>% 
       arrange(desc(repetitions)) %>% filter(orthographic_form %!in% c('','<unk>')) %>% 
       rename(frequency = repetitions, word = orthographic_form) %>% 
       mutate(characters = nchar(word), language = language) 
@@ -71,7 +71,6 @@ read_language <- function(iso_code, collection, dialect = NULL, pud_strokes = T)
     read.csv(here("data/pud/",paste0(iso_code,"_pud",str_suffix,".csv")))[-1]
   } else print('specify an available collection')
 }
-
 
 
 
@@ -90,7 +89,7 @@ compute_corr <- function(collection, corr_type, length = 'characters') {
     if (collection == 'cv') {
       df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$characters
     }
-    res  <- cor.test(df$frequency,df$length, method = corr_type, alternative = "less")                     # test statistics
+    res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
     list("language"=language, "family"=family, "script"=script, "corr"=res$estimate, "pvalue"=res$p.value)
   }) 
   df <- do.call(rbind.data.frame,cors) %>% 
@@ -100,35 +99,67 @@ compute_corr <- function(collection, corr_type, length = 'characters') {
 }
 
 
-compute_optimality_scores <- function(collection, corr_type, length_def = 'characters') {
+
+compute_optimality_scores_lang <- function(languagee, collection, length_def='characters', corr_type='kendall', sample_tokens=NULL) {
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  iso_code  <- langs_df$iso_code[langs_df$language==languagee]
+  dialect   <- langs_df$dialect[langs_df$language==languagee]
+  family    <- langs_df$family[langs_df$language==languagee]
+  script    <- langs_df$script[langs_df$language==languagee]
+  strokes <- ifelse(stringr::str_detect(languagee,'-strokes'), T, F)
+  df <- read_language(iso_code,collection,dialect,strokes)
+  # sample
+  if (!is.null(sample_tokens)) {
+    df <- df[rep(seq_len(nrow(df)), df$frequency),]
+    df <- if (sample_tokens<=nrow(df)) {
+        set.seed(300)
+        sample_n(df,sample_tokens) %>% group_by(word) %>% summarise(frequency = n(),length=length) %>% 
+        unique() %>% arrange(desc(frequency))
+        } else df %>% mutate(length = NA, frequency=NA)
+  }
+  # choose definition of 'length' in cv
+  if (collection == 'cv') {
+    df$length <- if (length_def == 'meanDuration') df$meanDuration else if (length_def == 'medianDuration') df$medianDuration else df$characters
+  }
+  N_types    <- nrow(df)
+  p          <- df$frequency/sum(df$frequency)
+  Lmin       <- sum(sort(df$length)*p)                                                # min baseline
+  L          <- sum(df$length*p)                                                      # real value (weight by freq)
+  Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
+  corr <- if (!is.null(sample_tokens)) {
+    if (!is.na(df$frequency[1])) {
+      cor.test(df$frequency,df$length, method=corr_type, alternative = "less")$estimate %>% unname()
+    } else NA
+  } else {
+    read.csv(here('results',paste0('correlation_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
+      filter(language == languagee) %>% select(corr) %>% as.numeric()
+  }
+  corr_min  <- if (!is.na(df$frequency[1])) { 
+    cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()
+  } else NA
+  # scores:
+  eta   <- Lmin/L
+  psi   <- (Lrand-L)/(Lrand-Lmin)
+  omega <- corr/corr_min 
+  data.frame("language"=languagee, "family"=family, "script"=script, 
+       "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi, "omega"=omega)
+}
+
+
+compute_optimality_scores_coll <- function(collection, corr_type='kendall', length_def = 'characters',sample_tokens = NULL) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   res <- lapply(1:nrow(langs_df), function(i) {
-    iso_code <- langs_df$iso_code[i]
-    print(iso_code)
+    language <- langs_df$language[i]
+    print(language)
     dialect  <- ifelse(collection=='pud','',dialects_cv[i])
-    df <- read_language(iso_code,collection,dialect)
-    # choose definition of 'length' in cv
-    if (collection == 'cv') {
-      df$length <- if (length_def == 'meanDuration') df$meanDuration else if (length_def == 'medianDuration') df$medianDuration else df$characters
-    }
-    N_types    <- nrow(df)
-    p          <- df$frequency/sum(df$frequency)
-    Lmin       <- sum(sort(df$length)*p)                                                # min baseline
-    L          <- sum(df$length*p)                                                      # real value (weight by freq)
-    Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
-    corr    <- read.csv(here('results',paste0('correlation_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
-      filter(language == langs_df$language[i]) %>% select(corr) %>% as.numeric()
-    corr_min    <- cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()
-    # scores:
-    eta   <- Lmin/L
-    psi   <- (Lrand-L)/(Lrand-Lmin)
-    omega <- corr/corr_min 
-    list("language"=langs_df$language[i], "family"=langs_df$family[i], "script"=langs_df$script[i], 
-         "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi, "omega"=omega)
-  }) 
+    compute_optimality_scores_lang(language,collection,length_def,corr_type,sample_tokens)
+  })
   df <- do.call(rbind.data.frame,res) %>% arrange(family,script,language)
   return(df)
 }
+
+
+
 
 
 opt_score_summary <- function(score, corr_type='kendall') {
@@ -182,7 +213,8 @@ plot_score_composition <- function(score,opt_df,plot_title, corr_type) {
       mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
     melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
     melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
-    ggplot(melted,aes(x=language,y=value,fill=variable)) + theme(legend.position = 'bottom') + coord_flip() + 
+    ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
+      theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
       labs(y="Length", title=plot_title,subtitle='score composition') +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') +
       scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
@@ -230,7 +262,7 @@ plot_timeVSspace <- function(score,corr_type) {
 }
 
 
-plot_corrplot_params <- function(collection, length_def,corr_type='kendall') {
+plot_corrplot_params <- function(collection, length_def, corr_type='kendall') {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(1:nrow(langs_df), function(i) {
     iso_code <- langs_df$iso_code[i]
@@ -244,7 +276,7 @@ plot_corrplot_params <- function(collection, length_def,corr_type='kendall') {
     list("language"=language, "types"=types, "tokens"=tokens, 'ab_size'=alphabet_size)
   })
   params_df <- do.call(rbind.data.frame,parameters) %>% filter(language %!in% c('Japanese-strokes','Chinese-strokes'))
-  opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,corr_suffix,'.csv'))) %>% 
+  opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
     select(language,L,eta,psi,omega)
   all_df <- merge(params_df,opt_df, by='language') %>% select(-language)
   cors <- round(cor(all_df,method='kendall'), 2)
@@ -256,28 +288,3 @@ plot_corrplot_params <- function(collection, length_def,corr_type='kendall') {
 
 
 
-
-
-
-plotRanks <- function(a, b, labels.offset=0.1, arrow.len=0.1,title) {
-  old.par <- par(mar=c(1,1,1,1))
-  a <- rev(a)
-  b <- rev(b)
-  # Find the length of the vectors
-  len.1 <- length(a)
-  len.2 <- length(b)
-  # Plot two columns of equidistant points
-  plot(rep(1, len.1), 1:len.1, pch=20, cex=0.8, 
-       xlim=c(0, 3), ylim=c(0, max(len.1, len.2)),
-       axes=F, xlab="", ylab="",main=title) # Remove axes and labels
-  points(rep(2, len.2), 1:len.2, pch=20, cex=0.8)
-  # Put labels next to each observation
-  text(rep(1-labels.offset, len.1), 1:len.1, a)
-  text(rep(2+labels.offset, len.2), 1:len.2, b)
-  # Map where the elements of a are in b
-  a.to.b <- match(a, b)
-  # Now we can draw arrows from the first column to the second
-  arrows(rep(1.02, len.1), 1:len.1, rep(1.98, len.2), a.to.b, 
-         length=arrow.len, angle=20)
-  par(old.par)
-}

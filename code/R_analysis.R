@@ -51,14 +51,14 @@ source('R_functions.R')
 # - X For Japanese and Chinese use both length in strokes and in characters
 # - X Change order of script and family in table 5
 # - X figure 4 should be pud not cv
-# - O remove strokes from density plot and summary tables of opt scores
+# - X remove strokes from density plot and summary tables of opt scores
 # - O add pinyin?? (Mengxue)
 
 
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
 # - use median, it's more robust (move mean to appendix)
-# - add pearson correlation significance plots
+# - cv summary table, add 'conlang' and comment in caption
 
 
 
@@ -79,7 +79,7 @@ lapply(COLLS, function(collection) {
 
 
 # - 1 - optimality scores ------------------------------------------------------
-corr_type <- 'pearson'
+corr_type <- 'kendall'
 corr_suffix <- paste0('_',corr_type)
 
 # + scores for each language, collection, length_def
@@ -234,7 +234,7 @@ df <- do.call(rbind.data.frame,rows) %>%
 means <- df %>% group_by(collection,`length definition`,variable) %>% summarise(meanvalue = mean(value))
 ggplot(df) + geom_density(aes(x=value,color = `length definition`, fill = `length definition`),alpha = 0.2) + facet_grid(rows = vars(collection), cols = vars(variable)) +
   geom_vline(data=means, aes(xintercept=meanvalue, color = `length definition`),linetype='dashed') +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') + theme(axis.text.x = element_text(angle = 60, vjust = 0, hjust=0))
 ggsave(here('figures',paste0('opt_scores_density',corr_suffix,'.pdf')))
 
 
@@ -311,13 +311,36 @@ lapply(COLLS, function(collection) {
 lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
-      plot_corrplot_params(collection,length_def)
-      ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,'.pdf')))
+      plot_corrplot_params(collection,length_def,corr_type)
+      ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
     })
   } else {
     length_def <- 'characters'
-    plot_corrplot_params(collection,length_def)
-    ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,'.pdf')))
+    plot_corrplot_params(collection,length_def,corr_type)
+    ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
   }
 })
+
+
+
+# CONVERGENCE of scores!
+sample_sizes <- c(2^seq(3,14),14000, 17000, 20000)
+languages <- langs_df_pud$language
+
+scores <- lapply(languages, function(iso_code) {
+  lang_scores <- lapply(sample_sizes, function(n_sample) {
+    compute_optimality_scores_lang(iso_code,'pud','characters','kendall',n_sample) %>%
+      select(language,eta,psi,omega) %>% mutate(`number of tokens`=n_sample)
+  })
+  do.call(rbind.data.frame,lang_scores)
+})
+scores_df <- do.call(rbind.data.frame,scores)
+melt(scores_df, id.vars=c('language','number of tokens')) %>%
+  ggplot() + geom_line(aes(`number of tokens`,value,color=variable)) + 
+  facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+ggsave(here('figures',paste0('convergence_pud.pdf')))
+
+
+
 
