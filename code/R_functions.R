@@ -159,7 +159,52 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
 }
 
 
+compute_expectation_scores_lang_no_corr <- function(languagee, collection, length_def='characters', corr_type='kendall', sample_tokens=NULL) {
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  iso_code  <- langs_df$iso_code[langs_df$language==languagee]
+  dialect   <- langs_df$dialect[langs_df$language==languagee]
+  family    <- langs_df$family[langs_df$language==languagee]
+  script    <- langs_df$script[langs_df$language==languagee]
+  strokes <- ifelse(stringr::str_detect(languagee,'-strokes'), T, F)
+  df <- read_language(iso_code,collection,dialect,strokes)
+  # sample
+  if (!is.null(sample_tokens)) {
+    df <- df[rep(seq_len(nrow(df)), df$frequency),]
+    df <- if (sample_tokens<=nrow(df)) {
+      set.seed(300)
+      sample_n(df,sample_tokens) %>% group_by(word) %>% summarise(frequency = n(),length=length) %>% 
+        unique() %>% arrange(desc(frequency))
+    } else df %>% mutate(length = NA, frequency=NA)
+  }
+  # choose definition of 'length' in cv
+  if (collection == 'cv') {
+    df$length <- if (length_def == 'meanDuration') df$meanDuration else if (length_def == 'medianDuration') df$medianDuration else df$characters
+  }
+  df         <- transform(df,length=sample(length))                                   # shuffle length
+  N_types    <- nrow(df)
+  p          <- df$frequency/sum(df$frequency)
+  Lmin       <- sum(sort(df$length)*p)                                                # min baseline
+  L          <- sum(df$length*p)                                                      # real value (weight by freq)
+  Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
+  # scores:
+  eta   <- Lmin/L
+  psi   <- (Lrand-L)/(Lrand-Lmin)
+  data.frame("language"=languagee, "family"=family, "script"=script, 
+             "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi)
+}
 
+
+compute_expectation_scores_coll_no_corr <- function(collection, length_def = 'characters',sample_tokens = NULL) {
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  res <- lapply(1:nrow(langs_df), function(i) {
+    language <- langs_df$language[i]
+    print(language)
+    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
+    compute_expectation_scores_lang(language,collection,length_def,sample_tokens)
+  })
+  df <- do.call(rbind.data.frame,res) %>% arrange(family,script,language)
+  return(df)
+}
 
 
 opt_score_summary <- function(score, corr_type='kendall') {
