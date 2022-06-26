@@ -27,15 +27,17 @@ langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>%
                            language == "Thai" ~ "Tai-Kadai",
                            language == "Finnish" ~ "Uralic",
                            TRUE ~ "Indo-European")) %>% 
-  rbind(list('language' ='Chinese-strokes', 'iso_code' = 'zho', 'dialect' = NA, 
-             'X.types' = as.integer(4971), 'X.tokens' = as.integer(17850), 'script'= 'Chinese', 'family' = 'Sino-Tibetan')) %>% 
-  rbind(list('language' ='Japanese-strokes', 'iso_code' = 'jpn', 'dialect' = NA, 
-             'X.types' = as.integer(4852), 'X.tokens' = as.integer(24737), 'script'= 'Kanji-Kana', 'family' = 'Japonic')) %>% 
-  rbind(list('language' ='Chinese-pinyin', 'iso_code' = 'zho', 'dialect' = NA, 
-             'X.types' = as.integer(4971), 'X.tokens' = as.integer(17850), 'script'= 'Latin', 'family' = 'Sino-Tibetan')) %>% 
-  rbind(list('language' ='Japanese-romaji', 'iso_code' = 'jpn', 'dialect' = NA, 
-             'X.types' = as.integer(4852), 'X.tokens' = as.integer(24737), 'script'= 'Latin', 'family' = 'Japonic')) %>% 
-  arrange(iso_code)
+  mutate(script = case_when(language == "Arabic" ~ "Arabic",
+                            language == "Hindi" ~ "Devanagari",
+                            language == "Japanese" ~ "Kanji-Kana",
+                            language == "Japanese-strokes" ~ "Kanji-Kana",
+                            language == "Korean" ~ "Hangul",
+                            language == "Russian" ~ "Cyrillic",
+                            language == "Thai" ~ "Thai",
+                            language == "Chinese" ~ "Chinese",
+                            language == "Chinese-strokes" ~ "Chinese",
+                            TRUE ~ "Latin")) %>% 
+  arrange(iso_code) 
 langs_pud    <- langs_df_pud$language
 ISO_pud      <- langs_df_pud$iso_code
 labs_pud     <- langs_pud; names(labs_pud) <- ISO_pud
@@ -164,58 +166,48 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
   return(df)
 }
 
-  
-compute_expectation_scores_lang <- function(languagee, collection, length_def='characters') {
+
+
+compute_expectation_scores_lang <- function(lang, collection, length_def='characters', n_experiments = 10^2) {
+  print(lang)
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  iso_code  <- langs_df$iso_code[langs_df$language==languagee]
-  dialect   <- langs_df$dialect[langs_df$language==languagee]
-  family    <- langs_df$family[langs_df$language==languagee]
-  script    <- langs_df$script[langs_df$language==languagee]
-  strokes <- ifelse(stringr::str_detect(languagee,'-strokes'), T, F)
-  df <- read_language(iso_code,collection,dialect,strokes)
-  df %>% group_by(word) %>% summarise(frequency = n(),length=length) %>% 
-        unique() %>% arrange(desc(frequency))
+  iso_code  <- langs_df$iso_code[langs_df$language==lang]
+  dialect   <- langs_df$dialect[langs_df$language==lang]
+  alternative <- if (stringr::str_detect(lang,'-')) sub(".*-","",lang) else NULL
+  df <- read_language(iso_code,collection,dialect,alternative)
   # choose definition of 'length' in cv
   if (collection == 'cv') {
     df$length <- if (length_def == 'meanDuration') df$meanDuration 
     else if (length_def == 'medianDuration') df$medianDuration 
     else df$characters
   }
-  sum_eta <- 0
-  sum_psi <- 0
-  sum_omega <- 0
-  sum_L <- 0
-  for (i in 1:10^2) {
+  N_types    <- nrow(df)
+  p          <- df$frequency/sum(df$frequency)
+  Lmin       <- sum(sort(df$length)*p)                                                # min baseline
+  Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
+  scores <- lapply(1:n_experiments, function(i) {
     df         <- transform(df,length=sample(length))                                   # shuffle length, each time different
-    N_types    <- nrow(df)
-    p          <- df$frequency/sum(df$frequency)
-    Lmin       <- sum(sort(df$length)*p)                                                # min baseline
     L          <- sum(df$length*p)                                                      # real value (weight by freq)
-    Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
+    corr       <- cor.fk(df$frequency, df$length)
+    corr_min   <- cor.fk(df$frequency, sort(df$length))
     # scores:
-    sum_L <- sum_L + L
     eta   <- Lmin/L
     psi   <- (Lrand-L)/(Lrand-Lmin)
-    sum_psi <- sum_psi + psi
-    sum_eta <- sum_eta + eta
-    
-    corr <- cor.fk(df$frequency, df$length)
-    corr_min  <- cor.fk(df$frequency, sort(df$length))
-    cat("corr",corr,"corr_min",corr_min,'\n')
-
-    #dat[is.na(dat)] <- 0
     omega <- corr/corr_min 
-    sum_omega <- sum_omega + omega
-    
-  }
-  cat("computing...",languagee,'\n')
-  eta <- sum_eta/10^2
-  psi <- sum_psi/10^2
-  L   <- sum_L/10^2
-  omega <- sum_omega/10^2
-  data.frame("language"=languagee, "family"=family, "script"=script, 
-             "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi, "omega"=omega)
+    list('L'=L,'eta'=eta,'psi'=psi,'omega'=omega)
+  })
+  sums <- sapply(1:length(scores[[1]]), function(score_index) {
+    score <- names(scores[[1]])[score_index]
+    value <- do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
+    names(value) <- score
+    value
+  })
+  averages <- sums/n_experiments
+  data.frame("language"=lang,
+             "Lmin"=Lmin, "L"=averages[1], "Lrand"=Lrand, "eta"=averages[2], "psi"=averages[3], "omega"=averages[4])
 }
+
+
 
   
 
@@ -327,9 +319,10 @@ plot_corrplot_params <- function(collection, length_def, corr_type='kendall') {
     types   <- langs_df$X.types[i]
     tokens   <- langs_df$X.tokens[i]
     dialect  <- ifelse(collection=='pud','',dialects_cv[i])
-    alternative <- if (stringr::str_detect(languagee,'-')) sub(".*-","",languagee) else NULL
+    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
     df <- read_language(iso_code,collection,dialect,alternative) 
-    alphabet_size <- unique(unlist(strsplit(df$word, ''))) %>% length()
+    words <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
+    alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
     list("language"=language, "types"=types, "tokens"=tokens, 'ab_size'=alphabet_size)
   })
   params_df <- do.call(rbind.data.frame,parameters) %>% filter(language %!in% c('Japanese-strokes','Chinese-strokes'))
