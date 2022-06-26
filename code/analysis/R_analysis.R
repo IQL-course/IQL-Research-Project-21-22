@@ -350,8 +350,7 @@ ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
 
-
-# shuffle len col, fre col: desc
+# SCORES under NULL HYPOTHESIS -> shuffle len col, fre col: desc
 iterations <- 10^6
 lapply(COLLS, function(collection) {
   print(collection)
@@ -375,3 +374,25 @@ lapply(COLLS, function(collection) {
   }
 })
 
+                
+# DENSITY PLOT OF OMEGA PSI and ETA under NULL HYPOTHESIS
+rows <- lapply(COLLS, function(collection) {
+  rows <- lapply(length_defs, function(length) {
+    length <- ifelse(collection == 'pud','characters',length)
+    suffix <- paste0("_",length)
+    read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_kendall.csv')))[-1] %>% 
+      select(language,eta,psi,omega) %>% mutate(collection = collection, `length definition` = length) #%>%
+      #filter(language %!in% c('Chinese-strokes','Japanese-strokes'))
+  })
+  do.call(rbind.data.frame,rows)
+})
+
+df <- do.call(rbind.data.frame,rows) %>%
+  melt(id.vars = c('language','collection','length definition'))
+means <- df %>% group_by(collection,`length definition`,variable) %>% summarise(meanvalue = mean(value))
+ggplot(df) + geom_density(aes(x=value,color = `length definition`, fill = `length definition`),alpha = 0.2) + 
+  facet_grid(rows = vars(collection), cols = vars(variable)) +
+  geom_vline(data=means, aes(xintercept=meanvalue, color = `length definition`),linetype='dashed') +
+  theme(legend.position = 'bottom') + theme(axis.text.x = element_text(angle = 60, vjust = 0, hjust=0))
+ggsave(here('figures/null_hypothesis_kendall.pdf'))
+                
