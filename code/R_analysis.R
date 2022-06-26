@@ -352,11 +352,26 @@ ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
 # shuffle len col, fre col: desc
-
-languages <- langs_df_pud$language
-scores_null <- lapply(languages, function(iso_code) {
-  lang_scores <- compute_expectation_scores_lang(iso_code,'pud','characters') %>%
-      select(language,eta,psi,L,omega)
-  do.call(rbind.data.frame,lang_scores)
+iterations <- 10^6
+lapply(COLLS, function(collection) {
+  print(collection)
+  if (collection == 'pud') {
+    length_def <- 'characters'
+    suffix <- paste0("_",length_def)
+    scores <- lapply(langs_df_pud$language, function(language) {
+      compute_expectation_scores_lang(language,collection,length_def,n_experiments = iterations) 
+    })
+    null_df <- do.call(rbind.data.frame,scores)
+    write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_kendall.csv')))
+  } else if (collection == 'cv') {
+    lapply(c(length_defs), function(length_def) {
+      suffix <- paste0("_",length_def)
+      scores <- lapply(langs_df_cv$language, function(language) {
+        compute_expectation_scores_lang(language,collection,length_def,n_experiments = iterations) 
+      })
+      null_df <- do.call(rbind.data.frame,scores)
+      write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_kendall.csv')))
+    })
+  }
 })
 
