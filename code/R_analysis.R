@@ -41,7 +41,7 @@ source('R_functions.R')
 # - X compute omega with spearman correlation
 # - X correlation between scores and n types, n tokens, alphabet size (exclude strokes)
 # - X plot of timeVSspace for Psi as well
-# - O convergence of scores
+# - X convergence of scores
 
 
 # NOTES FOR ANALYSIS
@@ -52,13 +52,12 @@ source('R_functions.R')
 # - X Change order of script and family in table 5
 # - X figure 4 should be pud not cv
 # - X remove strokes from density plot and summary tables of opt scores
-# - O add pinyin?? (Mengxue)
+# - O add pinyin and romaji to code logics
 
 
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
 # - use median, it's more robust (move mean to appendix)
-# - cv summary table, add 'conlang' and comment in caption
 
 
 
@@ -68,7 +67,8 @@ source('R_functions.R')
 lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(tokens = X.tokens, types = X.types)
-  sum_coll <- sum_coll[,c('language','family','script','types','tokens')] %>% arrange(family,script,language)
+  sum_coll <- sum_coll[,c('language','family','script','types','tokens')] %>% 
+    filter(stringr::str_detect(language,'-') == F) %>% arrange(family,script,language)
   print(xtable(sum_coll, type = "latex"), 
         file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
         include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE)
@@ -285,40 +285,45 @@ rows <- lapply(COLLS, function(collection) {
 
 
 # kendall and spearman tables (language, family, script, tau, tau_min, ro, ro_min, Omega_tau, Omega_ro)
-lapply(COLLS, function(collection) {
-  opt_scores_dfs <- lapply(c('kendall','spearman'), function(corr_type) {
-    opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'_',corr_type,'.csv')))[-1] %>%
-      select(language,family, script,omega)
-    corr_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,'_',corr_type,'.csv')))[-1]      # to remove if add tau and tau_min before
-    opt_df  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                                 # to remove if add tau and tau_min before
-      select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language) 
-    if (corr_type=='kendall') {
-      opt_df %>% rename(omega_tau=omega, tau = corr, tau_min = corr_min) 
-      } else opt_df %>% rename(omega_ro=omega, ro = corr, ro_min = corr_min)
-  })
-  
-  df <- merge(opt_scores_dfs[[1]],opt_scores_dfs[[2]], by = c('language','family','script'))
-  df <- df[,c('language','family','script','tau','ro','tau_min','ro_min','omega_tau','omega_ro')] %>% 
-    arrange(family,script,language)
-  print(xtable(df,type = "latex"), 
-        file = here('latex_tables',paste0("omega_tau_omega_ro_",collection,".tex")),
-        include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+collection <- 'pud'
+suffix <- '_characters'
+opt_scores_dfs <- lapply(c('kendall','spearman'), function(corr_type) {
+  opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,'_',corr_type,'.csv')))[-1] %>%
+    select(language,family, script,omega)
+  corr_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,'_',corr_type,'.csv')))[-1]      # to remove if add tau and tau_min before
+  opt_df  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                                 # to remove if add tau and tau_min before
+    select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language) 
+  if (corr_type=='kendall') {
+    opt_df %>% rename(omega_tau=omega, tau = corr, tau_min = corr_min) 
+    } else opt_df %>% rename(omega_ro=omega, ro = corr, ro_min = corr_min)
 })
+
+df <- merge(opt_scores_dfs[[1]],opt_scores_dfs[[2]], by = c('language','family','script'))
+df <- df[,c('language','family','script','tau','ro','tau_min','ro_min','omega_tau','omega_ro')] %>% 
+  arrange(family,script,language)
+print(xtable(df,type = "latex"), 
+      file = here('latex_tables',paste0("omega_tau_omega_ro_",collection,".tex")),
+      include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+
 
 
 
 # correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
-lapply(COLLS, function(collection) {
-  if (collection == 'cv') {
-    lapply(length_defs, function(length_def) {
+
+lapply(c('kendall','pearson'), function(corr_type) {
+  corr_suffix <- paste0('_',corr_type)
+  lapply(COLLS, function(collection) {
+    if (collection == 'cv') {
+      lapply(length_defs, function(length_def) {
+        plot_corrplot_params(collection,length_def,corr_type)
+        ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
+      })
+    } else {
+      length_def <- 'characters'
       plot_corrplot_params(collection,length_def,corr_type)
       ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
-    })
-  } else {
-    length_def <- 'characters'
-    plot_corrplot_params(collection,length_def,corr_type)
-    ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
-  }
+    }
+  })
 })
 
 
@@ -327,9 +332,9 @@ lapply(COLLS, function(collection) {
 sample_sizes <- c(2^seq(3,14),14000, 17000, 20000)
 languages <- langs_df_pud$language
 
-scores <- lapply(languages, function(iso_code) {
+scores <- lapply(languages, function(lang) {
   lang_scores <- lapply(sample_sizes, function(n_sample) {
-    compute_optimality_scores_lang(iso_code,'pud','characters','kendall',n_sample) %>%
+    compute_optimality_scores_lang(lang,'pud','characters','kendall',n_sample) %>%
       select(language,eta,psi,omega) %>% mutate(`number of tokens`=n_sample)
   })
   do.call(rbind.data.frame,lang_scores)
@@ -338,7 +343,9 @@ scores_df <- do.call(rbind.data.frame,scores)
 melt(scores_df, id.vars=c('language','number of tokens')) %>%
   ggplot() + geom_line(aes(`number of tokens`,value,color=variable)) + 
   facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme(strip.text = element_text(size = 8)) +
+  scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
+                labels=scales::trans_format('log10',scales::math_format(10^.x)))
 ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
