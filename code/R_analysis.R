@@ -344,3 +344,12 @@ ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
 
+# shuffle len col, fre col: desc
+
+languages <- langs_df_pud$language
+scores_null <- lapply(languages, function(iso_code) {
+  lang_scores <- compute_expectation_scores_lang(iso_code,'pud','characters') %>%
+      select(language,eta,psi,L,omega)
+  do.call(rbind.data.frame,lang_scores)
+})
+
