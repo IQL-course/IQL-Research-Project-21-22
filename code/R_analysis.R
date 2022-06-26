@@ -68,11 +68,11 @@ lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(tokens = X.tokens, types = X.types)
   sum_coll <- sum_coll[,c('language','family','script','types','tokens')] %>% 
-    filter(stringr::str_detect(language,'-') == F) %>% arrange(family,script,language)
+    filter(stringr::str_detect(language,'-strokes') == F) %>% arrange(family,script,language)
   print(xtable(sum_coll, type = "latex"), 
         file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
-        include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE)
-  
+        include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE,
+        hline.after = c(nrow(sum_coll)))
 })
 
 
