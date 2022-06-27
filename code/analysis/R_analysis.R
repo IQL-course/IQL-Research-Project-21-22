@@ -1,40 +1,14 @@
 
 source('R_functions.R')
 
-# PLAN
-# - 0 - Check data
-    # + Filter cv based on standard deviation
-
-# - 1 - Optimality of word length
-    # + compute Omega, eta, L 
-    # + correlation between the scores (can we replace them with omega?)
-
-# - 2 - The significance of word lengths
-    # + tau correlation test: law of abbreviation
-    # + pearson correlation test: if ro is significantly low Omega is significantly large
-
-
-# - 3 - Sorting languages by their degree of optimality
-    # + plot language ranks?
-
-# - 4 - Stability under the null hypothesis
-# Ramon wrote:
-#To show that that E[𝜂] is is not stable under the null hypothesis we estimate E[𝜂] and E[Ω] with a
-#Monte Carlo procedure over 106 randomizations. Table ??? confirms numerically the estimated E[𝜂] is
-#not constant and depends on 𝐿𝑚𝑖𝑛 and 𝐿𝑟 ; in contrast, the estimated E[Ω] converges to 0 while being
-#independent from 𝐿𝑚𝑖𝑛 and 𝐿𝑟 
-    # + compute Omega with random matching of lengths and frequencies
-
-
-
 
 # RESULTS TO PRODUCE
 # - X tables of optimality scores for every collection and length definition (prepare tables for Latex)
 # - X density plot of omega 
 # - X distribution of omega values
 # - X tables of tau correlation with pvalues for every collection and length definition (plots)
-# - O density plot of null hypothesis (Mengxue)
-# - O how to show rankings by degree of optimality? (Mengxue)
+# - X density plot of null hypothesis (Mengxue)
+# - X how to show rankings by degree of optimality? (Mengxue)
 # - X omega bar plots (left value of omega, right composition in bars) (Sonia)
 # - X correlogram of opt scores (Sonia)
 # - X plot of Omega_time vs Omega_chars with 45 diagonal (Sonia)
@@ -52,7 +26,7 @@ source('R_functions.R')
 # - X Change order of script and family in table 5
 # - X figure 4 should be pud not cv
 # - X remove strokes from density plot and summary tables of opt scores
-# - O add pinyin and romaji to code logics
+# - X add pinyin and romaji to code logics
 
 
 # NOTES FOR REPORT
@@ -68,11 +42,11 @@ lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(tokens = X.tokens, types = X.types)
   sum_coll <- sum_coll[,c('language','family','script','types','tokens')] %>% 
-    filter(stringr::str_detect(language,'-') == F) %>% arrange(family,script,language)
+    filter(stringr::str_detect(language,'-strokes') == F) %>% arrange(family,script,language)
   print(xtable(sum_coll, type = "latex"), 
         file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
-        include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE)
-  
+        include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE,
+        hline.after = c(nrow(sum_coll)))
 })
 
 
@@ -178,7 +152,7 @@ ggsave(here('figures',paste0('corr_significance_',collection,corr_suffix,'.pdf')
 
 
 
-# PLOTS ------------------------------
+# OTHER PLOTS ------------------------------
 
 
 # DENSITY PLOT OF OMEGA PSI and ETA
@@ -208,7 +182,7 @@ ggsave(here('figures',paste0('opt_scores_density',corr_suffix,'.pdf')))
 
 
 
-# Score BARS
+# Score value and composition
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     rows_cv <- lapply(length_defs, function(length_def) {
@@ -278,7 +252,6 @@ print(xtable(df,type = "latex"),
 
 
 # correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
-
 lapply(c('kendall','pearson'), function(corr_type) {
   corr_suffix <- paste0('_',corr_type)
   lapply(COLLS, function(collection) {
@@ -297,10 +270,9 @@ lapply(c('kendall','pearson'), function(corr_type) {
 
 
 
-# CONVERGENCE of scores!
+# CONVERGENCE of scores
 sample_sizes <- c(2^seq(3,14),14000, 17000, 20000)
 languages <- langs_df_pud$language
-
 scores <- lapply(languages, function(lang) {
   lang_scores <- lapply(sample_sizes, function(n_sample) {
     compute_optimality_scores_lang(lang,'pud','characters','kendall',n_sample) %>%
@@ -383,7 +355,6 @@ rows <- lapply(COLLS, function(collection) {
     ggsave(here('figures',paste0('corrplot_null_',collection,suffix,corr_suffix,out_suffix,'.pdf')))
   }
 })
-
 
 # E[scores] vs Lmin/Lr
 collection <- 'cv'
