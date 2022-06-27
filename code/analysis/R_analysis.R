@@ -52,7 +52,7 @@ lapply(COLLS, function(collection) {
 
 
 
-# - 1 - optimality scores ------------------------------------------------------
+# OPTIMALITY SCORES ------------------------------------------------------
 corr_type <- 'kendall'
 corr_suffix <- paste0('_',corr_type)
 
@@ -122,6 +122,15 @@ lapply(c('omega','psi'), function(score) {
 })
 
 
+# + ranking of Duration VS time
+df <- read.csv(here('results',paste0('optimality_scores_cv_characters',corr_suffix,'.csv')))[-1] %>% 
+  arrange(desc(psi))
+langs_characters <- df$language
+df <- read.csv(here('results',paste0('optimality_scores_cv_medianDuration',corr_suffix,'.csv')))[-1] %>% 
+  arrange(desc(psi))
+langs_duration <- df$language
+plotRanks(langs_characters,langs_duration, 'characters   -   duration',labels.offset = 0.3)
+ggsave(here('figures',paste0(score,'_timeVSspace_ranks',corr_suffix,'.pdf')))
 
 # - 2 - correlation significance --------------------------------------------------------
 ## cv
@@ -152,10 +161,9 @@ ggsave(here('figures',paste0('corr_significance_',collection,corr_suffix,'.pdf')
 
 
 
-# OTHER PLOTS ------------------------------
+# SCORES DISTRIBUTION ---------------------------------------------------------
 
-
-# DENSITY PLOT OF OMEGA PSI and ETA
+# + density plots
 rows <- lapply(COLLS, function(collection) {
   if (collection =='cv') {
     rows <- lapply(length_defs, function(length) {
@@ -181,8 +189,7 @@ ggplot(df) + geom_density(aes(x=value,color = `length definition`, fill = `lengt
 ggsave(here('figures',paste0('opt_scores_density',corr_suffix,'.pdf')))
 
 
-
-# Score value and composition
+# + Scores values and composition
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     rows_cv <- lapply(length_defs, function(length_def) {
@@ -227,7 +234,7 @@ rows <- lapply(COLLS, function(collection) {
 
 
 
-# kendall and spearman tables (language, family, script, tau, tau_min, ro, ro_min, Omega_tau, Omega_ro)
+# + kendall vs spearman tables 
 collection <- 'pud'
 suffix <- '_characters'
 opt_scores_dfs <- lapply(c('kendall','spearman'), function(corr_type) {
@@ -251,7 +258,13 @@ print(xtable(df,type = "latex"),
 
 
 
-# correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
+
+
+
+
+
+# FINDING THE BEST SCORE  --------------------------------------------------------------
+# + correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
 lapply(c('kendall','pearson'), function(corr_type) {
   corr_suffix <- paste0('_',corr_type)
   lapply(COLLS, function(collection) {
@@ -270,7 +283,7 @@ lapply(c('kendall','pearson'), function(corr_type) {
 
 
 
-# CONVERGENCE of scores
+# + convergence of scores
 sample_sizes <- c(2^seq(3,14),14000, 17000, 20000)
 languages <- langs_df_pud$language
 scores <- lapply(languages, function(lang) {
@@ -292,7 +305,7 @@ ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
 
-# NULL HYPOTHESYS
+# NULL HYPOTHESYS --------------------------------------------------------------
 iters <- 10000
 
 ## bar plots
@@ -336,7 +349,6 @@ lapply(c('omega','eta','psi'), function(score) {
 remove_out <- T
 plot_corr <- 'kendall'
 out_suffix <- ifelse(remove_out==T,'_noOut','')
-
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
@@ -356,6 +368,7 @@ rows <- lapply(COLLS, function(collection) {
   }
 })
 
+
 # E[scores] vs Lmin/Lr
 collection <- 'cv'
 rows_cv <- lapply(length_defs, function(length_def) {
@@ -370,6 +383,11 @@ reshape2::melt(df, id.vars=c('language','Lmin/Lrand','length_def')) %>%
   geom_point() + geom_text(nudge_x = -0.1, nudge_y = -0.00005) +
   facet_grid(rows=vars(length_def),cols=vars(variable),scales = 'free_y')
 ggsave(here('figures',paste0('correlation_LminLr.pdf')))
+
+
+
+
+
 
 
 

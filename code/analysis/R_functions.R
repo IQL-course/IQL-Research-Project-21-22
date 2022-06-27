@@ -309,6 +309,30 @@ plot_timeVSspace <- function(score,corr_type) {
 }
 
 
+plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
+  old.par <- par(mar=c(1,1,1,1))
+  a <- rev(a)
+  b <- rev(b)
+  # Find the length of the vectors
+  len.1 <- length(a)
+  len.2 <- length(b)
+  # Plot two columns of equidistant points
+  plot(rep(1, len.1), 1:len.1, pch=20, cex=0.8, 
+       xlim=c(0, 3), ylim=c(0, max(len.1, len.2)),
+       axes=F, xlab="", ylab="",main=title) # Remove axes and labels
+  points(rep(2, len.2), 1:len.2, pch=20, cex=0.8)
+  # Put labels next to each observation
+  text(rep(1-labels.offset, len.1), 1:len.1, a, cex=0.7)
+  text(rep(2+labels.offset, len.2), 1:len.2, b, cex=0.7)
+  # Map where the elements of a are in b
+  a.to.b <- match(a, b)
+  # Now we can draw arrows from the first column to the second
+  arrows(rep(1.02, len.1), 1:len.1, rep(1.98, len.2), a.to.b, 
+         length=arrow.len, angle=20, col =  ifelse(abs(1:length(a)-a.to.b) >10,'red','black'))
+  par(old.par)
+}
+
+
 # CORRELOGRAMS
 plot_corrplot_scores <- function(df,corr_type) {
   cors <- round(cor(df,method=corr_type), 2)
