@@ -9,6 +9,7 @@ library('xtable')
 library(data.table)
 library(ggcorrplot)
 library(pcaPP)
+library(parallel)
 
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
@@ -59,7 +60,8 @@ dialects_cv <- langs_df_cv$dialect
 labs_cv <- langs_cv; names(labs_cv) <- ISO_cv
 
 
-
+corr_colors_r = c("blue", "white", "red")
+corr_colors_tau = c("green", "white", "orange")
 
 
 # functions  -------------------------------------------------------------------
@@ -169,7 +171,6 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
 
 
 compute_expectation_scores_lang <- function(lang, collection, length_def='characters', n_experiments = 10^2) {
-  print(lang)
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   iso_code  <- langs_df$iso_code[langs_df$language==lang]
   dialect   <- langs_df$dialect[langs_df$language==lang]
@@ -184,7 +185,9 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
   N_types    <- nrow(df)
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
-  Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
+  Lrand      <- sum(df$length)/N_types    # random baseline (unweighted)
+  
+  set.seed(23)
   scores <- lapply(1:n_experiments, function(i) {
     df         <- transform(df,length=sample(length))                                   # shuffle length, each time different
     L          <- sum(df$length*p)                                                      # real value (weight by freq)
@@ -196,6 +199,7 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
     omega <- corr/corr_min 
     list('L'=L,'eta'=eta,'psi'=psi,'omega'=omega)
   })
+  
   sums <- sapply(1:length(scores[[1]]), function(score_index) {
     score <- names(scores[[1]])[score_index]
     value <- do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
@@ -208,29 +212,30 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
 }
 
 
-
-  
-
-opt_score_summary <- function(score, corr_type='kendall') {
+opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
   corr_suffix <- paste0('_',corr_type)
   rows <- lapply(COLLS, function(collection) {
     if (collection == 'cv') {
       rows_cv <- lapply(length_defs, function(length_def) {
         suffix       <- paste0("_",length_def)
-        df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
+        df <- if (null == F) read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
+              else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
         df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
         df %>% mutate(collection = paste(collection,length_def,sep='-'))
       })
       do.call(rbind,rows_cv)
     } else {
-      df <- read.csv(here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))[-1]  %>%
-        filter(language %!in% c('Chinese-strokes','Japanese-strokes'))
+      length_def <- 'characters'
+      suffix       <- paste0("_",length_def)
+      df <- if (null == F) read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
+            else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
+      df <- df %>% filter(language %!in% c('Chinese-strokes','Japanese-strokes'))
       df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
       df %>% mutate(collection = paste(collection,'characters',sep='-'))
     }
   })
   df <- do.call(rbind,rows); setDT(df)
-  df <- df[, as.list(summary(score)), by = collection]
+  df[, as.list(summary(score)), by = collection]
 }
 
 
@@ -243,13 +248,6 @@ assign_stars <- function(df) {
 
 
 
-get_ranked_langs <- function(opt_df, metric) {
-  if (metric == 'omega') {
-    opt_df %>% arrange(desc(omega)) %>% dplyr::select(language) %>% mutate(ranking_omega = 1:nrow(opt_df))
-  } else if (metric == 'eta') {
-    opt_df %>% arrange(desc(eta))   %>% dplyr::select(language) %>% mutate(ranking_eta   = 1:nrow(opt_df))
-  }
-}
 
 
 # PLOT FUNCTIONS 
@@ -311,6 +309,16 @@ plot_timeVSspace <- function(score,corr_type) {
 }
 
 
+# CORRELOGRAMS
+plot_corrplot_scores <- function(df,corr_type) {
+  cors <- round(cor(df,method=corr_type), 2)
+  p.mat <- cor_pmat(df)
+  ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 8, tl.cex = 20, pch.cex = 25,
+             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
+    labs(title=paste(collection,length_def,sep='-'),subtitle='Relations among scores') + 
+    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
+}
+
 plot_corrplot_params <- function(collection, length_def, corr_type='kendall') {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(1:nrow(langs_df), function(i) {
@@ -331,10 +339,21 @@ plot_corrplot_params <- function(collection, length_def, corr_type='kendall') {
   all_df <- merge(params_df,opt_df, by='language') %>% select(-language)
   cors <- round(cor(all_df,method=corr_type), 2)
   p.mat <- cor_pmat(all_df)
-  ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 5, tl.cex = 20, pch.cex = 20) + 
-    labs(title=paste(collection,length_def,sep='-')) + theme(plot.title = element_text(size=22))
+  ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = 8, tl.cex = 20, pch.cex = 20, 
+             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
+    labs(title=paste(collection,length_def,sep='-'),subtitle='Relation with basic parameters') + 
+    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
 }
 
 
-
+plot_corrplot_null <- function(df,corr_type) {
+  df <- df %>% mutate(`Lmin/Lrand`=Lmin/Lrand) %>% dplyr::select(Lmin,Lrand,`Lmin/Lrand`,eta,psi,omega) %>% 
+    rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
+  cors <- round(cor(df,method='pearson'), 2)
+  p.mat <- cor_pmat(df)
+  ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 6, tl.cex = 15, pch.cex = 20,
+             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
+    labs(title=paste(collection,length_def,sep='-'),subtitle='Under null hypothesis') + 
+    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
+}
 
