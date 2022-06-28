@@ -72,7 +72,7 @@ read_language <- function(iso_code, collection, dialect = NULL, alternative = NU
     if (is.null(dialect)) dialect <- dialects_cv[ISO_cv==iso_code]
     dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
     language <- langs_cv[ISO_cv==iso_code]
-    read.csv(here("data/common-voice-forced-alignment",paste0(iso_code,dialect,"-word.csv"))) %>% 
+    read.csv(here("data/cv",paste0(iso_code,dialect,"-word.csv"))) %>% 
       arrange(desc(repetitions)) %>% filter(orthographic_form %!in% c('','<unk>')) %>% 
       rename(frequency = repetitions, word = orthographic_form) %>% 
       mutate(characters = nchar(word), language = language) 
@@ -247,6 +247,43 @@ assign_stars <- function(df) {
 }
 
 
+HB_correction <- function(p.mat) {
+  # find lower diagonal values
+  ind <- which( lower.tri(p.mat,diag=F) , arr.ind = TRUE )
+  p_vals <- data.frame( col = dimnames(p.mat)[[2]][ind[,2]] ,
+                        row = dimnames(p.mat)[[1]][ind[,1]] ,
+                        pvalue = p.mat[ ind ] ) %>% arrange(pvalue) %>% 
+    mutate(index=1:nrow(.)) %>% mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)  
+  for (i in 1:nrow(p_vals)) p.mat[p_vals$row[i], p_vals$col[i]] <- p_vals$hb_pvalue[i] 
+  return(p.mat)
+}
+
+get_langs_params <- function(collection) {
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  parameters <- lapply(1:nrow(langs_df), function(i) {
+    iso_code <- langs_df$iso_code[i]
+    language <- langs_df$language[i]
+    types   <- langs_df$X.types[i]
+    tokens   <- langs_df$X.tokens[i]
+    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
+    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
+    df <- read_language(iso_code,collection,dialect,alternative) 
+    words <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
+    alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
+    list("language"=language, "types"=types, "tokens"=tokens, 'ab_size'=alphabet_size)
+  })
+  return(do.call(rbind.data.frame,parameters))
+}
+
+
+add_corr_min <- function(opt_df,suffix,corr_suffix) {
+  corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
+  merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
+    select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
+}
+
+
+
 
 
 
@@ -334,50 +371,31 @@ plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
 
 
 # CORRELOGRAMS
-plot_corrplot_scores <- function(df,corr_type) {
-  cors <- round(cor(df,method=corr_type), 2)
-  p.mat <- cor_pmat(df)
-  ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 8, tl.cex = 20, pch.cex = 25,
-             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
-    labs(title=paste(collection,length_def,sep='-'),subtitle='Relations among scores') + 
+
+plot_correlogram <- function(df,plot_corr,title,type,HB_correct,lab_size,tl.cex,pch.cex) {
+  subtitle_pref <- switch(type, 'scores'='Relations among scores',
+                          'params'='Relations with parameters', 'null'='Under null hypothesis')
+  if (type == 'null')   df <- df %>% mutate(`Lmin/Lrand`=Lmin/Lrand) %>% dplyr::select(Lmin,Lrand,`Lmin/Lrand`,eta,psi,omega) %>% 
+                              rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
+  cors  <- round(cor(df, method=plot_corr), 2)
+  p.mat <- cor_pmat(df, method=plot_corr)
+  if (HB_correct) p.mat <- HB_correction(p.mat)
+  ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = lab_size, tl.cex = tl.cex, pch.cex = pch.cex, 
+             colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r)) + 
+    labs(title=title, subtitle=paste0(subtitle_pref, ifelse(HB_correct,' (HB)',''))) + 
     theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
 }
 
-plot_corrplot_params <- function(collection, length_def, corr_type='kendall') {
-  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  parameters <- lapply(1:nrow(langs_df), function(i) {
-    iso_code <- langs_df$iso_code[i]
-    language <- langs_df$language[i]
-    types   <- langs_df$X.types[i]
-    tokens   <- langs_df$X.tokens[i]
-    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
-    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
-    df <- read_language(iso_code,collection,dialect,alternative) 
-    words <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
-    alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
-    list("language"=language, "types"=types, "tokens"=tokens, 'ab_size'=alphabet_size)
-  })
-  params_df <- do.call(rbind.data.frame,parameters) %>% filter(language %!in% c('Japanese-strokes','Chinese-strokes'))
-  opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
-    select(language,eta,psi,omega)
-  all_df <- merge(params_df,opt_df, by='language') %>% select(-language)
-  cors <- round(cor(all_df,method=corr_type), 2)
-  p.mat <- cor_pmat(all_df)
-  ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = 8, tl.cex = 20, pch.cex = 20, 
-             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
-    labs(title=paste(collection,length_def,sep='-'),subtitle='Relation with basic parameters') + 
-    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
-}
-
-
-plot_corrplot_null <- function(df,corr_type) {
+plot_corrplot_null <- function(df,plot_corr, HB_correct = T) {
   df <- df %>% mutate(`Lmin/Lrand`=Lmin/Lrand) %>% dplyr::select(Lmin,Lrand,`Lmin/Lrand`,eta,psi,omega) %>% 
     rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
-  cors <- round(cor(df,method='pearson'), 2)
-  p.mat <- cor_pmat(df)
+  cors  <- round(cor(df, method=plot_corr), 2)
+  p.mat <- cor_pmat(df, method=plot_corr) 
+  if (HB_correct) p.mat <- HB_correction(p.mat)
   ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 6, tl.cex = 15, pch.cex = 20,
-             colors = switch(corr_type,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
-    labs(title=paste(collection,length_def,sep='-'),subtitle='Under null hypothesis') + 
+             colors = switch(plot_corr,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
+    labs(title=paste(collection,length_def,sep='-'),
+         subtitle=paste0('Under null hypothesis', ifelse(HB_correct,' (HB)',''))) + 
     theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
 }
 

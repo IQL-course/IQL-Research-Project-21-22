@@ -34,6 +34,16 @@ source('R_functions.R')
 # - use median, it's more robust (move mean to appendix)
 
 
+# QUESTIONS
+# - when to use which correlation?
+# - when to use HB correction?
+# - how to answer question 5 for cv?
+
+
+
+
+
+
 
 # IMPLEMENTATION
 
@@ -95,22 +105,26 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 # + correlogram of opt scores 
+plot_corr <- 'pearson'
+plot_corr_suffix <- paste0('_',plot_corr)
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
+      title <- paste(collection,length_def,sep='-')
       df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
         dplyr::select(L,eta,psi,omega)
-      plot_corrplot_scores(df,'pearson')
-      ggsave(here('figures',paste0('corrplot_',collection,suffix,corr_suffix,'.pdf')))
+      plot_correlogram(df,plot_corr,title,'scores',HB_correct = T,8,20,25)
+      ggsave(here('figures',paste0('corrplot_',collection,suffix,plot_corr_suffix,'.pdf')))
     })
   } else {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
+    title <- paste(collection,length_def,sep='-')
     df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
       dplyr::select(L,eta,psi,omega)
-    plot_corrplot_scores(df,'pearson')
-    ggsave(here('figures',paste0('corrplot_',collection,suffix,corr_suffix,'.pdf')))
+    plot_correlogram(df,plot_corr,title,'scores',HB_correct = T,8,20,25)
+    ggsave(here('figures',paste0('corrplot_',collection,suffix,plot_corr_suffix,'.pdf')))
   }
 })
 
@@ -131,6 +145,9 @@ df <- read.csv(here('results',paste0('optimality_scores_cv_medianDuration',corr_
 langs_duration <- df$language
 plotRanks(langs_characters,langs_duration, 'characters   -   duration',labels.offset = 0.3)
 ggsave(here('figures',paste0(score,'_timeVSspace_ranks',corr_suffix,'.pdf')))
+
+
+
 
 # - 2 - correlation significance --------------------------------------------------------
 ## cv
@@ -195,10 +212,8 @@ rows <- lapply(COLLS, function(collection) {
     rows_cv <- lapply(length_defs, function(length_def) {
       suffix     <- paste0("_",length_def)
       plot_title <- paste0(collection,' - ',length_def)
-      opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1]
-      corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
-      opt_df  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
-        select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
+      opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+        add_corr_min(suffix,corr_suffix)
       # PLOTS
       lapply(c('psi','omega'), function(score) {
         # plot 1
@@ -215,10 +230,8 @@ rows <- lapply(COLLS, function(collection) {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
     plot_title <- paste0(collection,' - ',length_def)
-    opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1]
-    corr_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
-    opt_df  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                                 # to remove if add tau and tau_min before
-      select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)         # to remove if add tau and tau_min before
+    opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+      add_corr_min(suffix,corr_suffix)
     # PLOTS
     lapply(c('psi','omega'), function(score) {
       # plot 1
@@ -265,18 +278,32 @@ print(xtable(df,type = "latex"),
 
 # FINDING THE BEST SCORE  --------------------------------------------------------------
 # + correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
-lapply(c('kendall','pearson'), function(corr_type) {
-  corr_suffix <- paste0('_',corr_type)
-  lapply(COLLS, function(collection) {
+lapply(COLLS, function(collection) {
+  params_df <- get_langs_params(collection)
+  lapply(c('kendall','pearson'), function(plot_corr) {
+    plot_corr_suffix <- paste0('_',plot_corr)
     if (collection == 'cv') {
       lapply(length_defs, function(length_def) {
-        plot_corrplot_params(collection,length_def,corr_type)
-        ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
+        # data
+        opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
+          select(language,eta,psi,omega)
+        df <- merge(params_df,opt_df, by='language') %>% select(-language)
+        # plot
+        title <- paste(collection,length_def,sep='-')
+        plot_correlogram(df,plot_corr,title,'params',HB_correct=T,5,18,18)
+        ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')))
       })
     } else {
       length_def <- 'characters'
-      plot_corrplot_params(collection,length_def,corr_type)
-      ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,corr_suffix,'.pdf')))
+      # data
+      params_df <- params_df %>% filter(language %!in% c('Japanese-strokes','Chinese-strokes'))
+      opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
+        select(language,eta,psi,omega)
+      all_df <- merge(params_df,opt_df, by='language') %>% select(-language)
+      # plot
+      title <- paste(collection,length_def,sep='-')
+      plot_correlogram(df,plot_corr,title,'params',HB_correct=T,5,18,18)
+      ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')))
     }
   })
 })
@@ -346,8 +373,9 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 ## correlation wit Lmin, Lr, and Lmin/Lr
-remove_out <- T
-plot_corr <- 'kendall'
+remove_out <- F
+plot_corr <- 'pearson'
+plot_corr_suffix <- paste0('_',plot_corr)
 out_suffix <- ifelse(remove_out==T,'_noOut','')
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
@@ -355,16 +383,18 @@ rows <- lapply(COLLS, function(collection) {
       suffix       <- paste0("_",length_def)
       df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
         if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
-      plot_corrplot_null(df,plot_corr)
-      ggsave(here('figures',paste0('corrplot_null_',collection,suffix,corr_suffix,out_suffix,'.pdf')))
+      title <- paste(collection,length_def,sep='-')
+      plot_correlogram(df,plot_corr,title,'null',HB_correct=T,6,15,18)
+        ggsave(here('figures',paste0('corrplot_null_',collection,suffix,plot_corr_suffix,out_suffix,'.pdf')))
     })
   } else {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
     df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
       if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
-    plot_corrplot_null(df,plot_corr)
-    ggsave(here('figures',paste0('corrplot_null_',collection,suffix,corr_suffix,out_suffix,'.pdf')))
+    title <- paste(collection,length_def,sep='-')
+    plot_correlogram(df,plot_corr,title,'null',HB_correct=T,6,15,18)
+      ggsave(here('figures',paste0('corrplot_null_',collection,suffix,plot_corr_suffix,out_suffix,'.pdf')))
   }
 })
 
