@@ -61,7 +61,12 @@ labs_cv <- langs_cv; names(labs_cv) <- ISO_cv
 
 
 corr_colors_r = c("blue", "white", "red")
-corr_colors_tau = c("green", "white", "orange")
+corr_colors_tau = c("#41B85C", "white", "orange")
+
+
+# SET
+corr_type <- 'kendall'
+corr_suffix <- paste0('_',corr_type)
 
 
 # functions  -------------------------------------------------------------------
@@ -340,7 +345,7 @@ plot_timeVSspace <- function(score,corr_type) {
   df %>% 
     ggplot(aes(space,time,label = label,color=color)) + geom_point() + theme(legend.position = 'bottom') +
     facet_wrap(~factor(time_def, levels=c('medianDuration','meanDuration'))) + 
-    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text(nudge_x = 0.04,nudge_y = 0.02,size = 3) +
+    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 3) + 
     labs(x=paste0(score,' (characters)'), y = paste0(score,' (duration)')) +
     scale_color_manual(values = c("blue","red"),limits = c('deviation>=10%', 'deviation<10%'))
 }
@@ -373,9 +378,10 @@ plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
 # CORRELOGRAMS
 
 plot_correlogram <- function(df,plot_corr,title,type,HB_correct,lab_size,tl.cex,pch.cex) {
+  df <- df %>% rename(Lr = Lrand)
   subtitle_pref <- switch(type, 'scores'='Relations among scores',
                           'params'='Relations with parameters', 'null'='Under null hypothesis')
-  if (type == 'null')   df <- df %>% mutate(`Lmin/Lrand`=Lmin/Lrand) %>% dplyr::select(Lmin,Lrand,`Lmin/Lrand`,eta,psi,omega) %>% 
+  if (type == 'null')   df <- df %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega) %>% 
                               rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
   cors  <- round(cor(df, method=plot_corr), 2)
   p.mat <- cor_pmat(df, method=plot_corr)
@@ -383,19 +389,6 @@ plot_correlogram <- function(df,plot_corr,title,type,HB_correct,lab_size,tl.cex,
   ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = lab_size, tl.cex = tl.cex, pch.cex = pch.cex, 
              colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r)) + 
     labs(title=title, subtitle=paste0(subtitle_pref, ifelse(HB_correct,' (HB)',''))) + 
-    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
-}
-
-plot_corrplot_null <- function(df,plot_corr, HB_correct = T) {
-  df <- df %>% mutate(`Lmin/Lrand`=Lmin/Lrand) %>% dplyr::select(Lmin,Lrand,`Lmin/Lrand`,eta,psi,omega) %>% 
-    rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
-  cors  <- round(cor(df, method=plot_corr), 2)
-  p.mat <- cor_pmat(df, method=plot_corr) 
-  if (HB_correct) p.mat <- HB_correction(p.mat)
-  ggcorrplot(cors, type = "lower", p.mat = p.mat, lab=T, lab_size = 6, tl.cex = 15, pch.cex = 20,
-             colors = switch(plot_corr,'kendall'=corr_colors_tau,'pearson'=corr_colors_r)) + 
-    labs(title=paste(collection,length_def,sep='-'),
-         subtitle=paste0('Under null hypothesis', ifelse(HB_correct,' (HB)',''))) + 
     theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
 }
 
