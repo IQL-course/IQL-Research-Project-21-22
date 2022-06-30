@@ -194,10 +194,10 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
   
   set.seed(23)
   scores <- lapply(1:n_experiments, function(i) {
-    df         <- transform(df,length=sample(length))                                   # shuffle length, each time different
-    L          <- sum(df$length*p)                                                      # real value (weight by freq)
-    corr       <- cor.fk(df$frequency, df$length)
-    corr_min   <- cor.fk(df$frequency, sort(df$length))
+    length     <- sample(df$length)                                   # shuffle length, each time different
+    L          <- sum(length*p)                                       # real value (weight by freq)
+    corr       <- cor.fk(df$frequency, length)
+    corr_min   <- cor.fk(df$frequency, sort(length))
     # scores:
     eta   <- Lmin/L
     psi   <- (Lrand-L)/(Lrand-Lmin)
