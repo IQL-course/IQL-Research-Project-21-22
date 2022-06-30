@@ -61,7 +61,7 @@ lapply(COLLS, function(collection) {
 
 if (length(args) >= 2) {
   iters     <- as.numeric(args[[2]])
-  job_index <- as.numeric(args[[3]])
+  job_index <- if (length(args) >= 3) as.numeric(args[[3]]) else NULL
   cores     <- if (length(args) == 4) as.numeric(args[[4]]) else 3
   lapply(COLLS, function(collection) {
     print(collection)
@@ -84,5 +84,6 @@ if (length(args) >= 2) {
 }
 
 
-
+# with sample -> 89
+# transform   -> 106 sec
 

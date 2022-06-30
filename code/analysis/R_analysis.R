@@ -233,16 +233,15 @@ rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     rows_cv <- lapply(length_defs, function(length_def) {
       suffix     <- paste0("_",length_def)
-      plot_title <- paste0(collection,' - ',length_def)
       opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
         add_corr_min(suffix,corr_suffix)
       # PLOTS
       lapply(c('psi','omega'), function(score) {
         # plot 1
-        plot_score(score,opt_df,plot_title)
+        plot_score(score,opt_df)
         ggsave(here('figures',paste0(score,'_',collection,suffix,corr_suffix,'.pdf')))
         # plot 2
-        plot_score_composition(score,opt_df,plot_title,corr_type)
+        plot_score_composition(score,opt_df,corr_type)
         ggsave(here('figures',paste0(score,'_composition_',collection,suffix,corr_suffix,'.pdf')))
       })
       
@@ -251,16 +250,15 @@ rows <- lapply(COLLS, function(collection) {
   } else if (collection == 'pud') {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
-    plot_title <- paste0(collection,' - ',length_def)
     opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
       add_corr_min(suffix,corr_suffix)
     # PLOTS
     lapply(c('psi','omega'), function(score) {
       # plot 1
-      plot_score(score,opt_df,plot_title)
+      plot_score(score,opt_df)
       ggsave(here('figures',paste0(score,'_',collection,suffix,corr_suffix,'.pdf')))
       # plot 2
-      plot_score_composition(score,opt_df,plot_title,corr_type)
+      plot_score_composition(score,opt_df,corr_type)
       ggsave(here('figures',paste0(score,'_composition_',collection,suffix,corr_suffix,'.pdf')))
     })
     

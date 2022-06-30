@@ -191,13 +191,13 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
   Lrand      <- sum(df$length)/N_types    # random baseline (unweighted)
+  corr_min   <- cor.fk(df$frequency, sort(df$length))
   
   set.seed(23)
   scores <- lapply(1:n_experiments, function(i) {
-    length     <- sample(df$length)                                   # shuffle length, each time different
+    length     <- sample(df$length)                                 # shuffle length, each time different
     L          <- sum(length*p)                                       # real value (weight by freq)
     corr       <- cor.fk(df$frequency, length)
-    corr_min   <- cor.fk(df$frequency, sort(length))
     # scores:
     eta   <- Lmin/L
     psi   <- (Lrand-L)/(Lrand-Lmin)
@@ -308,7 +308,7 @@ add_corr_min <- function(opt_df,suffix,corr_suffix) {
 
 # PLOT FUNCTIONS 
 
-plot_score_composition <- function(score,opt_df,plot_title, corr_type) {
+plot_score_composition <- function(score,opt_df, corr_type) {
   if (score == 'psi') {
     L_diff_df <- opt_df %>% select(language,Lmin,L,Lrand,psi) %>% summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
     L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
@@ -318,7 +318,7 @@ plot_score_composition <- function(score,opt_df,plot_title, corr_type) {
     melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
     ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
       theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
-      labs(y="Length", title=plot_title,subtitle='score composition') +
+      labs(y="Length", title ='score composition') +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') +
       scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
   } else if (score == 'omega') {
@@ -331,16 +331,16 @@ plot_score_composition <- function(score,opt_df,plot_title, corr_type) {
     melted$alphacol <- ifelse(melted$variable=="corr",1,0.3)
     ggplot(melted,aes(x=language,y=value,fill=variable))  + theme(legend.position = 'none') +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') + coord_flip() + 
-      labs(y=paste0(corr_type,' correlation'), title=plot_title,subtitle='score composition') +
+      labs(y=paste0(corr_type,' correlation'), title = 'score composition') +
       scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('corr_min-corr', 'corr'))
   }
 }
 
-plot_score <- function(score,opt_df,plot_title) {
+plot_score <- function(score,opt_df) {
   opt_df$score <- if (score == 'omega') opt_df$omega else if (score == 'psi') opt_df$psi
   ggplot(opt_df,aes(reorder(language,score),score)) + geom_bar(stat='identity',fill='lightblue') + 
     geom_text(aes(label = round(score,3)),nudge_y = -0.04, size=3) + theme(legend.position = 'bottom') +
-    coord_flip() + labs(x='language', y = score, title = plot_title, subtitle = 'score value')
+    coord_flip() + labs(x='language', y = score, title = 'score value')
 }
 
 
