@@ -217,6 +217,20 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
 }
 
 
+null_hyp_job_cv <- function(job_index,iters) {
+  collection <- 'cv'
+  big_langs <- c('German','English','Kinyarwanda')
+  length_def <- ifelse(job_index %in% c(1,2), 'medianDuration','characters')
+  langs      <- if (job_index %in% c(1,3)) big_langs else langs_df_cv$language[langs_df_cv$language %!in% big_langs]
+  suffix <- paste0("_",length_def)
+  scores <- mclapply(langs, function(language) {
+    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters) 
+  }, mc.cores = 3)
+  null_df <- do.call(rbind.data.frame,scores)
+  write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_',job_index,'.csv')))
+}
+
+
 opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
   corr_suffix <- paste0('_',corr_type)
   rows <- lapply(COLLS, function(collection) {

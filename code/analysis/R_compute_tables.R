@@ -43,30 +43,32 @@ lapply(COLLS, function(collection) {
 
 # null hypothesis
 
-if (length(args) == 2) {
+# JOBS DIVISION
+# approx each: 21.532.712
+# person 1: english (dur) 13.165.106 + german (dur) 5.569.590 + Kinyarwanda (dur) 2.673.259 <- 21.407.955
+# person 2: (sorted_df$X.tokens[1:41] + Catalan + French) (dur) <- 21.657.468
+# person 3: english (chars) 13.165.106 + german (chars) 5.569.590 + Kinyarwanda (chars) 2.673.259 <- 21.407.955
+# person 4: (sorted_df$X.tokens[1:41] + Catalan + French) (chars) <- 21.657.468
+
+
+if (length(args) >= 2) {
   iters <- as.numeric(args[[2]])
+  job_index <- as.numeric(args[[3]])
   lapply(COLLS, function(collection) {
     print(collection)
     if (collection == 'pud') {
-      length_def <- 'characters'
-      suffix <- paste0("_",length_def)
-      print(Sys.time())
-      scores <- mclapply(langs_df_pud$language, function(language) {
-        compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters) 
-      }, mc.cores = 3)
-      print(Sys.time())
-      null_df <- do.call(rbind.data.frame,scores)
-      write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
+      #length_def <- 'characters'
+      #suffix <- paste0("_",length_def)
+      #print(Sys.time())
+      #scores <- mclapply(langs_df_pud$language, function(language) {
+      #  compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters) 
+      #}, mc.cores = 3)
+      #print(Sys.time())
+      #null_df <- do.call(rbind.data.frame,scores)
+      #write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
     } else if (collection == 'cv') {
       print(Sys.time())
-      lapply(c('medianDuration','characters'), function(length_def) {
-        suffix <- paste0("_",length_def)
-        scores <- mclapply(langs_df_cv$language, function(language) {
-          compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters) 
-        }, mc.cores = 3)
-        null_df <- do.call(rbind.data.frame,scores)
-        write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
-      })
+      null_hyp_job_cv(job_index,iters)
       print(Sys.time())
     }
   })

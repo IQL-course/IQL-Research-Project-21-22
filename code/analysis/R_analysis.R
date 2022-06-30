@@ -405,7 +405,7 @@ rows_cv <- lapply(length_defs, function(length_def) {
 })
 df <- do.call(rbind,rows_cv)
 reshape2::melt(df, id.vars=c('language','Lmin','length_def')) %>% 
-  ggplot(aes(x=`Lmin`,y=value,label=language)) + 
+  ggplot(aes(x=`Lmin`,y=value,label=language)) + geom_text_repel(size=2)+
   geom_abline(slope=1,intercept=0,color='purple')+ 
   geom_point() + geom_hline(yintercept = 0,color='purple') +
   facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free')
