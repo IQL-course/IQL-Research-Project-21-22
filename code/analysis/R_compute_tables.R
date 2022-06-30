@@ -62,7 +62,7 @@ lapply(COLLS, function(collection) {
 if (length(args) >= 2) {
   iters     <- as.numeric(args[[2]])
   job_index <- as.numeric(args[[3]])
-  cores     <- as.numeric(args[[4]])
+  cores     <- if (length(args) == 4) as.numeric(args[[4]]) else 3
   lapply(COLLS, function(collection) {
     print(collection)
     if (collection == 'pud') {
