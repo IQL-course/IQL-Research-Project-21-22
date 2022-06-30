@@ -458,7 +458,7 @@ dfs <- lapply(COLLS, function(collection) {
 
 df_common <- merge(dfs[[1]],dfs[[2]],by=c('language','score'))
 ggplot(df_common,aes(pud,cv,label=language)) + geom_abline(intercept = 0,slope=1,color='purple')+
-  geom_point() + geom_text(size=2,nudge_y = 0.01) + facet_wrap(~score,scales='free')
+  geom_point() + geom_text_repel(size=2) + facet_wrap(~score,scales='free')
 ggsave(here('figures',paste0('cvVSpud.pdf')))
 
 

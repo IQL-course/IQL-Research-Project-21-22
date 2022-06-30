@@ -60,8 +60,9 @@ lapply(COLLS, function(collection) {
 
 
 if (length(args) >= 2) {
-  iters <- as.numeric(args[[2]])
+  iters     <- as.numeric(args[[2]])
   job_index <- as.numeric(args[[3]])
+  cores     <- as.numeric(args[[4]])
   lapply(COLLS, function(collection) {
     print(collection)
     if (collection == 'pud') {
@@ -76,7 +77,7 @@ if (length(args) >= 2) {
       #write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
     } else if (collection == 'cv') {
       print(Sys.time())
-      null_hyp_job_cv(job_index,iters)
+      null_hyp_job_cv(job_index,iters,cores)
       print(Sys.time())
     }
   })
