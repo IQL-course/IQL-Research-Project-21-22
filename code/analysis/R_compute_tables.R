@@ -2,10 +2,18 @@ source('R_functions.R')
 
 # WARNING! Running takes a long time!
 
+# INSTRUCTIONS FOR NULL HYPOTHESIS TESTING:
+# - run the following command: Rscript R_compute_tables.R null 1000000 'job_index'
+  # where 'job_index' is the value from 1 to 4 that you have been assigned, and 'null' is required to 
+  # avoid running the computation of the optimality scores.
+# - notice that the computation of pud is commented because it is already done.
+
 
 args = commandArgs(trailingOnly=TRUE)
 corr_suffix <- paste0('_',args[[1]])
 
+
+# OPTIMALITY SCORES ------------------------------------------------------------
 if (args[[1]] %in% c('kendall','spearman')) {  
 # optimality scores and significance of relation
 lapply(COLLS, function(collection) {
@@ -41,7 +49,7 @@ lapply(COLLS, function(collection) {
 }
 
 
-# null hypothesis
+# NULL HYPOTHESIS --------------------------------------------------------------
 
 # JOBS DIVISION
 # approx each: 21.532.712
