@@ -84,6 +84,4 @@ if (length(args) >= 2) {
 }
 
 
-# with sample -> 89
-# transform   -> 106 sec
 

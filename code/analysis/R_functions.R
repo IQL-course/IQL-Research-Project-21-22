@@ -391,18 +391,27 @@ plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
 
 # CORRELOGRAMS
 
-plot_correlogram <- function(df,plot_corr,title,type,HB_correct,lab_size,tl.cex,pch.cex) {
-  df <- df %>% rename(Lr = Lrand)
-  subtitle_pref <- switch(type, 'scores'='Relations among scores',
-                          'params'='Relations with parameters', 'null'='Under null hypothesis')
-  if (type == 'null')   df <- df %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega) %>% 
-                              rename(`E[eta]`=eta, `E[psi]`=psi, `E[omega]`=omega)
+plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.cex) {
+  if ('Lrand' %in% colnames(df)) df <- df %>% rename(Lr = Lrand)
+  if (type == 'null')   df <- df %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
+  
+  title        <- switch(type, 'scores'='Relations among scores',
+                        'params'='Relations with parameters', 'null'='Under null hypothesis')
+  greek_names  <- switch(type,
+                         'scores'=c('L','E[\u03B7]','E[\u03A8]','E[\u03A9]'),
+                          'params'=c('n. types', 'n. tokens', 'alphabet', 'E[\u03B7]','E[\u03A8]','E[\u03A9]'), 
+                         'null'=c(bquote(~L[min]),'L',bquote(~L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
+  legend_title <-  switch(plot_corr, 'kendall' = '\u03C4 corr', 'pearson'='r corr')
+  
   cors  <- round(cor(df, method=plot_corr), 2)
   p.mat <- cor_pmat(df, method=plot_corr)
   if (HB_correct) p.mat <- HB_correction(p.mat)
   ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = lab_size, tl.cex = tl.cex, pch.cex = pch.cex, 
-             colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r)) + 
-    labs(title=title, subtitle=paste0(subtitle_pref, ifelse(HB_correct,' (HB)',''))) + 
-    theme(plot.title = element_text(size=22),plot.subtitle = element_text(size=16))
+             colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r),
+             legend.title = legend_title) + 
+    labs(title = title) + 
+    scale_x_discrete(labels = greek_names[-1]) + 
+    scale_y_discrete(labels = greek_names[-length(greek_names)]) + 
+    theme(plot.title = element_text(size=20))
 }
 
