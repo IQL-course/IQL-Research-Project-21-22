@@ -77,13 +77,13 @@ read_language <- function(iso_code, collection, dialect = NULL, alternative = NU
     if (is.null(dialect)) dialect <- dialects_cv[ISO_cv==iso_code]
     dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
     language <- langs_cv[ISO_cv==iso_code]
-    read.csv(here("data/cv",paste0(iso_code,dialect,"-word.csv"))) %>% 
+    read.csv(here("data/cv",paste0(iso_code,dialect,"-word.csv")), fileEncoding = 'UTF-8') %>% 
       arrange(desc(repetitions)) %>% filter(orthographic_form %!in% c('','<unk>')) %>% 
       rename(frequency = repetitions, word = orthographic_form) %>% 
       mutate(characters = nchar(word), language = language) 
   } else if (collection == 'pud') {
     str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-    read.csv(here("data/pud",paste0(iso_code,"_pud",str_suffix,".csv")))[-1]
+    read.csv(here("data/pud",paste0(iso_code,"_pud",str_suffix,".csv")), fileEncoding = 'UTF-8')[-1]
   } else print('specify an available collection')
 }
 
