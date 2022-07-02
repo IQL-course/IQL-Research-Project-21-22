@@ -77,7 +77,7 @@ if (length(args) >= 2) {
       #write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
     } else if (collection == 'cv') {
       print(Sys.time())
-      null_hyp_job_cv(job_index,iters,cores)
+      null_hyp_job_cv(job_index,iters,1)
       print(Sys.time())
     }
   })
