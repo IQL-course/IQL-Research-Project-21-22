@@ -8,7 +8,7 @@ source('R_functions.R')
   # avoid running the computation of the optimality scores.
 # - notice that the computation of pud is commented because it is already done.
 
-
+Sys.setlocale("LC_ALL","English")
 args = commandArgs(trailingOnly=TRUE)
 corr_suffix <- paste0('_',args[[1]])
 
