@@ -18,6 +18,8 @@ library(parallel)
 # globals ----------------------------------------------------------------------
 COLLS       <- c('pud','cv')
 length_defs <- c('characters','medianDuration')   # 'meanDuration'
+scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi','omega')
+
 
 ## pud
 langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
@@ -78,7 +80,7 @@ read_language <- function(iso_code, collection, dialect = NULL, alternative = NU
     dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
     language <- langs_cv[ISO_cv==iso_code]
     read.csv(here("data/cv",paste0(iso_code,dialect,"-word.csv")), encoding = 'UTF-8') %>% 
-      arrange(desc(repetitions)) %>% 
+      arrange(desc(repetitions))  %>% 
       rename(frequency = repetitions, word = orthographic_form) %>% 
       mutate(characters = nchar(word), language = language) 
   } else if (collection == 'pud') {
@@ -240,7 +242,8 @@ opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
         df <- if (null == F) read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
               else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
         df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
-        df %>% mutate(collection = paste(collection,length_def,sep='-'))
+        length_def <- ifelse(length_def=='medianDuration','duration',length_def)
+        df %>% mutate(collection = paste(toupper(collection),length_def,sep='-'))
       })
       do.call(rbind,rows_cv)
     } else {
@@ -250,7 +253,7 @@ opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
             else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
       df <- df %>% filter(language %!in% c('Chinese-strokes','Japanese-strokes'))
       df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
-      df %>% mutate(collection = paste(collection,'characters',sep='-'))
+      df %>% mutate(collection = paste(toupper(collection),'characters',sep='-'))
     }
   })
   df <- do.call(rbind,rows); setDT(df)
@@ -295,12 +298,32 @@ get_langs_params <- function(collection) {
 }
 
 
-add_corr_min <- function(opt_df,suffix,corr_suffix) {
+add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
   corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
   merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
     select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
 }
 
+
+scores_convergence <- function(languages,sample_sizes,n_experiments) {
+  scores <- lapply(languages, function(lang) {
+    lang_scores <- lapply(sample_sizes, function(n_sample) {
+      set.seed(23)
+      scores <- lapply(1:n_experiments, function(i) {
+        compute_optimality_scores_lang(lang,'pud','characters','kendall',n_sample) %>%
+          select(eta,psi,omega)
+      })
+      sums <- sapply(1:length(scores[[1]]), function(score_index) {
+        score <- names(scores[[1]])[score_index]
+        do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
+      })
+      averages <- sums/n_experiments
+      list("language"=lang,"eta"=averages[1], "psi"=averages[2], "omega"=averages[3],'T'=n_sample)
+    })
+    do.call(rbind.data.frame,lang_scores)
+  })
+  do.call(rbind.data.frame,scores)
+}
 
 
 
@@ -308,60 +331,64 @@ add_corr_min <- function(opt_df,suffix,corr_suffix) {
 
 # PLOT FUNCTIONS 
 
-plot_score_composition <- function(score,opt_df, corr_type) {
+plot_score_composition <- function(score,opt_df) {
+  score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
   if (score == 'psi') {
     L_diff_df <- opt_df %>% select(language,Lmin,L,Lrand,psi) %>% summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
     L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
-    melted <- melt(L_diff_df, id.vars=c("language","psi")) %>% 
+    melted <- reshape2::melt(L_diff_df, id.vars=c("language","psi")) %>% 
       mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
     melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
     melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
     ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
       theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
-      labs(y="Length", title ='score composition') +
+      labs(x=score_latex, y="Length") + guides(fill=guide_legend(title="difference")) +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') +
       scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
   } else if (score == 'omega') {
     corr_diff_df <- opt_df %>% select(language,omega,corr,corr_min) %>% 
       summarise(language,omega,corr,'corr_min-corr' = corr_min-corr)
     corr_diff_df$language <- factor(corr_diff_df$language, levels = corr_diff_df$language[order(corr_diff_df$omega)])
-    melted <- melt(corr_diff_df, id.vars=c("language","omega")) %>% 
+    melted <- reshape2::melt(corr_diff_df, id.vars=c("language","omega")) %>% 
       mutate(masked_omega = ifelse(variable == "corr",round(omega,2),""))
     melted$variable <- factor(melted$variable, levels=c("corr_min-corr",'corr'))
     melted$alphacol <- ifelse(melted$variable=="corr",1,0.3)
     ggplot(melted,aes(x=language,y=value,fill=variable))  + theme(legend.position = 'none') +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') + coord_flip() + 
-      labs(y=paste0(corr_type,' correlation'), title = 'score composition') +
+      labs(x=score_latex, y= 'correlation') + guides(fill=guide_legend(title="difference")) +
       scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('corr_min-corr', 'corr'))
   }
 }
 
 plot_score <- function(score,opt_df) {
+  score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
   opt_df$score <- if (score == 'omega') opt_df$omega else if (score == 'psi') opt_df$psi
+  
   ggplot(opt_df,aes(reorder(language,score),score)) + geom_bar(stat='identity',fill='lightblue') + 
     geom_text(aes(label = round(score,3)),nudge_y = -0.04, size=3) + theme(legend.position = 'bottom') +
-    coord_flip() + labs(x='language', y = score, title = 'score value')
+    coord_flip() + labs(x='language', y = score_latex)
 }
 
 
-plot_timeVSspace <- function(score,corr_type) {
+plot_timeVSspace <- function(score,corr_type,length_def) {
   df_chars <- read.csv(here('results',paste0('optimality_scores_cv_characters',corr_suffix,'.csv')))[-1] 
   df_chars$space <- if (score == 'omega') df_chars$omega else if (score == 'psi') df_chars$psi
-  rows_cv <- lapply(c('medianDuration','meanDuration'), function(length_def) {
-    suffix       <- paste0("_",length_def)
-    df <- read.csv(here('results',paste0('optimality_scores_cv',suffix,corr_suffix,'.csv')))[-1 ]%>% dplyr::select(-Lmin,-L,-Lrand,-eta)
-    df$score <- if (score == 'omega') df$omega else if (score == 'psi') df$psi
-    df %>% rename(time = score) %>% mutate(time_def = length_def)  
-  })
-  merged_dfs <- lapply(rows_cv, function(df_time) merge(df_time,df_chars, by = c('language')))
-  df <- do.call(rbind.data.frame,merged_dfs) %>% 
-    mutate(label = ifelse(abs(time-space)>=0.10,language,''),color = ifelse(abs(time-space)<0.10,'deviation<10%','deviation>=10%'))
+  
+  suffix       <- paste0("_",length_def)
+  length_def <- gsub('Duration', "", length_def)
+  df <- read.csv(here('results',paste0('optimality_scores_cv',suffix,corr_suffix,'.csv')))[-1 ]%>% dplyr::select(-Lmin,-L,-Lrand,-eta)
+  df$score <- if (score == 'omega') df$omega else if (score == 'psi') df$psi
+  df_time <- df %>% rename(time = score) %>% mutate(time_def = length_def)
+
+  score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
+  df <- merge(df_time,df_chars, by = c('language')) %>% 
+    mutate(label = ifelse(abs(time-space)>=0.10,language,''),color = ifelse(abs(time-space)<0.10,'<10%','>=10%'))
   df %>% 
     ggplot(aes(space,time,label = label,color=color)) + geom_point() + theme(legend.position = 'bottom') +
-    facet_wrap(~factor(time_def, levels=c('medianDuration','meanDuration'))) + 
     geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 3) + 
-    labs(x=paste0(score,' (characters)'), y = paste0(score,' (duration)')) +
-    scale_color_manual(values = c("blue","red"),limits = c('deviation>=10%', 'deviation<10%'))
+    labs(x=bquote(.(score_latex)[chars]), y = bquote(.(score_latex)[dur])) +
+    scale_color_manual(values = c("blue","red"),limits = c('>=10%', '<10%')) + 
+    guides(color=guide_legend(title="deviation")) + theme(text = element_text(size = 20))
 }
 
 
@@ -389,17 +416,25 @@ plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
 }
 
 
-# CORRELOGRAMS
+# CORRELATIONS
+plot_corr_significance <- function(df,corr_type) {
+  low_col  <- ifelse(corr_type=='kendall','#41B85C','blue')
+  high_col <- ifelse(corr_type=='kendall','orange','red')
+  
+  df %>% assign_stars() %>% 
+    ggplot(aes(y=language, x=length_def, fill=corr)) + 
+    labs(x="length definition", y="language") +
+    geom_tile() + scale_y_discrete(labels=labs) + geom_text(aes(label=stars)) +
+    scale_fill_gradient2(midpoint=0, low=low_col,high = high_col, mid = "white", na.value = "#b9d0ed")
+}
 
 plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.cex) {
   if ('Lrand' %in% colnames(df)) df <- df %>% rename(Lr = Lrand)
   if (type == 'null')   df <- df %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
   
-  title        <- switch(type, 'scores'='Relations among scores',
-                        'params'='Relations with parameters', 'null'='Under null hypothesis')
   greek_names  <- switch(type,
-                         'scores'=c('L','E[\u03B7]','E[\u03A8]','E[\u03A9]'),
-                          'params'=c('n. types', 'n. tokens', 'alphabet', 'E[\u03B7]','E[\u03A8]','E[\u03A9]'), 
+                         'scores'=c('L','\u03B7','\u03A8','\u03A9'),
+                         'params'=c('n', 'T', 'A', '\u03B7','\u03A8','\u03A9'), 
                          'null'=c(bquote(~L[min]),'L',bquote(~L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
   legend_title <-  switch(plot_corr, 'kendall' = '\u03C4 corr', 'pearson'='r corr')
   
@@ -408,10 +443,19 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
   if (HB_correct) p.mat <- HB_correction(p.mat)
   ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = lab_size, tl.cex = tl.cex, pch.cex = pch.cex, 
              colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r),
-             legend.title = legend_title) + 
-    labs(title = title) + 
-    scale_x_discrete(labels = greek_names[-1]) + 
-    scale_y_discrete(labels = greek_names[-length(greek_names)]) + 
-    theme(plot.title = element_text(size=20))
+             legend.title = legend_title) +
+    theme(legend.key.size = unit(1, 'cm'), #change legend key size
+          legend.title = element_text(size=16), #change legend title font size
+          legend.text = element_text(size=13)) + #change legend text font size  
+    scale_x_discrete(labels = greek_names[-1]) + scale_y_discrete(labels = greek_names[-length(greek_names)])
+}
+
+plot_etaVSlowerbound <- function(df) {
+  df <- df %>% rename(`E[eta]`=eta) %>% mutate(`Lmin/Lr` = Lmin/Lrand) %>% 
+    select(language,`Lmin/Lr`,`E[eta]`)
+  ggplot(df, aes(x=`Lmin/Lr`,y=`E[eta]`,label=language)) + 
+    labs(y = 'E[\u03B7]', x = bquote(~L[min]/L[r])) + 
+    geom_abline(slope=1,intercept=0,color='purple')+
+    geom_point() + theme(text = element_text(size = 20))
 }
 

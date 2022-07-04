@@ -10,41 +10,44 @@ source('R_functions.R')
 
 Sys.setlocale("LC_ALL","English")
 args = commandArgs(trailingOnly=TRUE)
-corr_suffix <- paste0('_',args[[1]])
+
 
 
 # OPTIMALITY SCORES ------------------------------------------------------------
-if (args[[1]] %in% c('kendall','spearman')) {  
-# optimality scores and significance of relation
-lapply(COLLS, function(collection) {
-    print(collection)
-    if (collection == 'pud') {
-      # - 1 - Significance of word lengths
-      print('begin to compute tau correlations')
-      tau_df <- compute_corr(collection,args[[1]])
-      write.csv(tau_df, here('results',paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))
-      
-      # - 2 - Compute Omega
-      print('begin to compute optimality scores')
-      opt_df <- compute_optimality_scores_coll(collection,args[[1]],'characters')
-      write.csv(opt_df, here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))
-      
-    } else if (collection == 'cv') {
-      lapply(c(length_defs), function(length) {
-        suffix <- paste0("_",length)
-        print(length)
-        # - 1 - Significance of word lengths
-        print('begin to compute tau correlations')
-        tau_df <- compute_corr(collection,args[[1]],length)
-        write.csv(tau_df, here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))
-        
-        # - 2 - Compute Omega
-        print('begin to compute optimality scores')
-        opt_df <- compute_optimality_scores_coll(collection,args[[1]],length)
-        write.csv(opt_df, here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))
-      })
-    }
-})
+if (length(args) >= 1) {
+  if (args[[1]] %in% c('kendall','spearman')) {  
+    corr_suffix <- paste0('_',args[[1]])
+    # optimality scores and significance of relation
+    lapply(COLLS, function(collection) {
+        print(collection)
+        if (collection == 'pud') {
+          # - 1 - Significance of word lengths
+          print('begin to compute tau correlations')
+          tau_df <- compute_corr(collection,args[[1]])
+          write.csv(tau_df, here('results',paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))
+          
+          # - 2 - Compute Omega
+          print('begin to compute optimality scores')
+          opt_df <- compute_optimality_scores_coll(collection,args[[1]],'characters')
+          write.csv(opt_df, here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))
+          
+        } else if (collection == 'cv') {
+          #lapply(c(length_defs), function(length) {
+          #  suffix <- paste0("_",length)
+          #  print(length)
+          #  # - 1 - Significance of word lengths
+          #  print('begin to compute tau correlations')
+          #  tau_df <- compute_corr(collection,args[[1]],length)
+          #  write.csv(tau_df, here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))
+          #  
+          #  # - 2 - Compute Omega
+          #  print('begin to compute optimality scores')
+          #  opt_df <- compute_optimality_scores_coll(collection,args[[1]],length)
+          #  write.csv(opt_df, here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))
+          #})
+        }
+  })
+}
   
 }
 
@@ -81,6 +84,17 @@ if (length(args) >= 2) {
     }
   })
 }
+
+
+
+
+
+# SCORES CONVERGENCE -----------------------------------------------------------
+sample_sizes <- c(2^seq(3,14))
+n_experiments <- 10^3
+languages <- langs_df_pud$language
+scores_df <- scores_convergence(languages,sample_sizes,n_experiments)
+write.csv(scores_df,here('results','scores_convergence.csv'))
 
 
 
