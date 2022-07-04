@@ -8,7 +8,7 @@ source('R_functions.R')
   # avoid running the computation of the optimality scores.
 # - notice that the computation of pud is commented because it is already done.
 
-Sys.setlocale("LC_ALL","English")
+#Sys.setlocale("LC_ALL","English")
 args = commandArgs(trailingOnly=TRUE)
 
 
@@ -88,13 +88,18 @@ if (length(args) >= 2) {
 
 
 
-
-# SCORES CONVERGENCE -----------------------------------------------------------
-sample_sizes <- c(2^seq(3,14))
-n_experiments <- 10^3
-languages <- langs_df_pud$language
-scores_df <- scores_convergence(languages,sample_sizes,n_experiments)
-write.csv(scores_df,here('results','scores_convergence.csv'))
-
+if (length(args)==0) {
+  # SCORES CONVERGENCE -----------------------------------------------------------
+  sample_sizes <- c(2^seq(3,14))
+  n_experiments <- 10^2
+  languages <- langs_df_pud$language
+  start <- Sys.time()
+  print(start)
+  scores_df <- scores_convergence(languages,sample_sizes,n_experiments)
+  end <- Sys.time()
+  print(end)
+  print(paste0('started at:',start, '- ended at:',end))
+  write.csv(scores_df,here('results','scores_convergence.csv'))
+}
 
 

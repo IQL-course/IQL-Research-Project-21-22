@@ -23,13 +23,6 @@ scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi
 
 ## pud
 langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
-  mutate(family = case_when(language == "Turkish" ~ "Turkic",
-                           language == "Japanese" ~ "Japonic",
-                           language == "Korean" ~ "Koreanic",
-                           language == "Chinese" ~ "Sino-Tibetan",
-                           language == "Thai" ~ "Tai-Kadai",
-                           language == "Finnish" ~ "Uralic",
-                           TRUE ~ "Indo-European")) %>% 
   mutate(script = case_when(language == "Arabic" ~ "Arabic",
                             language == "Hindi" ~ "Devanagari",
                             language == "Japanese" ~ "Kanji-Kana",
@@ -47,14 +40,17 @@ labs_pud     <- langs_pud; names(labs_pud) <- ISO_pud
 
 
 ## cv
-langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% filter(iso_code %!in% c('ja','zh')) %>%
-  rows_update(tibble(language = "Interlingua", iso_code = 'ia'), by = "iso_code") %>%
-  rows_update(tibble(language = "Oriya", iso_code = 'or'), by = "iso_code") %>% 
-  rows_update(tibble(language = "Modern Greek", iso_code = 'el'), by = "iso_code") %>% 
+langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% filter(iso_code %!in% c('jpn','zho')) %>%
+  rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%
+  rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
+  rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code") %>%
+  rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code") %>% 
+  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
   filter(dialect != 'vallader') %>%
-  rows_update(tibble(X.types = 9801, iso_code = 'rm'), by = "iso_code") %>% 
-  rows_update(tibble(X.types = 44192, iso_code = 'rm'), by = "iso_code") %>% 
-  rows_update(tibble(dialect = '', iso_code = 'rm'), by = "iso_code")
+  rows_update(tibble(X.types = 9801, iso_code = 'roh'), by = "iso_code") %>% 
+  rows_update(tibble(X.types = 44192, iso_code = 'roh'), by = "iso_code") %>% 
+  rows_update(tibble(dialect = '', iso_code = 'roh'), by = "iso_code") 
+  
 
 langs_cv    <- langs_df_cv$language
 ISO_cv      <- langs_df_cv$iso_code
@@ -143,17 +139,11 @@ compute_optimality_scores_lang <- function(lang, collection, length_def='charact
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
   L          <- sum(df$length*p)                                                      # real value (weight by freq)
   Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
-  corr <- if (!is.null(sample_tokens)) {
-    if (!is.na(df$frequency[1])) {
-      cor.test(df$frequency,df$length, method=corr_type, alternative = "less")$estimate %>% unname()
-    } else NA
-  } else {
-    read.csv(here('results',paste0('correlation_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
+  corr <- read.csv(here('results',paste0('correlation_',collection,'_',length_def,'_',corr_type,'.csv'))) %>% 
       filter(language == lang) %>% select(corr) %>% as.numeric()
-  }
-  corr_min  <- if (!is.na(df$frequency[1])) { 
-    cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()
-  } else NA
+  corr_min  <- if (corr_type=='kendall') { 
+    cor.fk(df$frequency, length)
+  } else cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()
   # scores:
   eta   <- Lmin/L
   psi   <- (Lrand-L)/(Lrand-Lmin)
@@ -177,6 +167,60 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
 
 
 
+compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments = 10^2) {
+  set.seed(962)
+  scores <- lapply(1:n_experiments, function(i) {
+    # sample
+    df <- if (n_sample<=nrow(df_all)) {
+      sample_n(df_all,n_sample) %>% group_by(word) %>% summarise(frequency = n(),length=length) %>% 
+        unique() %>% arrange(desc(frequency))
+    } else df %>% mutate(length = NA, frequency=NA)
+    N_types    <- nrow(df)
+    p          <- df$frequency/sum(df$frequency)
+    Lmin       <- sum(sort(df$length)*p)                                               
+    Lrand      <- sum(df$length)/N_types    
+    L          <- sum(df$length*p)      
+    corr       <- if (!is.na(df$frequency[1])) cor.fk(df$frequency, df$length) else NA
+    corr_min   <- if (!is.na(df$frequency[1])) cor.fk(df$frequency, sort(df$length)) else NA
+    # scores:
+    eta   <- Lmin/L
+    psi   <- (Lrand-L)/(Lrand-Lmin)
+    omega <- corr/corr_min 
+    list('eta'=eta,'psi'=psi,'omega'=omega)
+  })
+  
+  sums <- sapply(1:length(scores[[1]]), function(score_index) {
+    score <- names(scores[[1]])[score_index]
+    value <- do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
+    names(value) <- score
+    value
+  })
+  averages <- sums/n_experiments
+  data.frame("language"=lang, "eta"=averages[1], "psi"=averages[2], "omega"=averages[3], 't'=n_sample)
+}
+
+
+scores_convergence <- function(languages,sample_sizes,n_experiments) {
+  scores <- mclapply(languages, function(lang) {
+    iso_code  <- langs_df_pud$iso_code[langs_df_pud$language==lang]
+    dialect   <- langs_df_pud$dialect[langs_df_pud$language==lang]
+    alternative <- if (stringr::str_detect(lang,'-')) sub(".*-","",lang) else NULL
+    df <- read_language(iso_code,'pud',dialect,alternative)
+    df_all <- df[rep(seq_len(nrow(df)), df$frequency),]
+    
+    lang_scores <- lapply(sample_sizes, function(n_sample) {
+      set.seed(19)
+      compute_convergence_scores_lang(df_all,lang,n_sample,n_experiments)
+    })
+    do.call(rbind.data.frame,lang_scores)
+  },mc.cores=3)
+  
+  do.call(rbind.data.frame,scores)
+}
+
+
+
+
 compute_expectation_scores_lang <- function(lang, collection, length_def='characters', n_experiments = 10^2) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   iso_code  <- langs_df$iso_code[langs_df$language==lang]
@@ -195,7 +239,7 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
   Lrand      <- sum(df$length)/N_types    # random baseline (unweighted)
   corr_min   <- cor.fk(df$frequency, sort(df$length))
   
-  set.seed(23)
+  set.seed(962)
   scores <- lapply(1:n_experiments, function(i) {
     length     <- sample(df$length)                                 # shuffle length, each time different
     L          <- sum(length*p)                                       # real value (weight by freq)
@@ -305,25 +349,6 @@ add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
 }
 
 
-scores_convergence <- function(languages,sample_sizes,n_experiments) {
-  scores <- lapply(languages, function(lang) {
-    lang_scores <- lapply(sample_sizes, function(n_sample) {
-      set.seed(23)
-      scores <- lapply(1:n_experiments, function(i) {
-        compute_optimality_scores_lang(lang,'pud','characters','kendall',n_sample) %>%
-          select(eta,psi,omega)
-      })
-      sums <- sapply(1:length(scores[[1]]), function(score_index) {
-        score <- names(scores[[1]])[score_index]
-        do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
-      })
-      averages <- sums/n_experiments
-      list("language"=lang,"eta"=averages[1], "psi"=averages[2], "omega"=averages[3],'T'=n_sample)
-    })
-    do.call(rbind.data.frame,lang_scores)
-  })
-  do.call(rbind.data.frame,scores)
-}
 
 
 

@@ -5,6 +5,7 @@ source('R_functions.R')
 # RESULTS TO PRODUCE
 # - X fix pud processing script
 # - O family and script to iso codes tables (someone)
+# - O recompute 1e05 with new seed (job 1 running)
 
 
 # NOTES FOR ANALYSIS
@@ -29,11 +30,10 @@ source('R_functions.R')
 # QUESTIONS
 # - what does it mean when Pearson is significant and kendall not?
 
-
 # UPDATES
 # - E[Omega] correlation with L_min: 1e06 does not solve the issue, orders of magnitude decrease but correlation remains
-
-
+# - convergence: initial observations are missing because if there is NA in average, all is NA
+# - convergence: compute with 10^3 also?
 
 
 
@@ -327,10 +327,11 @@ lapply(COLLS, function(collection) {
 
 
 # + convergence of scores TO REDO IN REPORT
-scores_df <- read.csv(here('results','scores_convergence.csv'))
-melt_df <- reshape2::melt(scores_df, id.vars=c('language','T')) %>% 
+scores_df <- read.csv(here('results','scores_convergence.csv'))[-1]  %>% 
+  mutate(t = rep(sample_sizes,length(languages)))
+melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
   rename(score = value)
-ggplot(melt_df) + geom_line(aes(`T`,score,color=variable)) + 
+ggplot(melt_df) + geom_line(aes(`t`,score,color=variable)) + 
   facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
   theme(strip.text = element_text(size = 8)) + theme(legend.position = 'bottom') +
   guides(color=guide_legend(title="score",nrow = 1)) +
@@ -343,7 +344,7 @@ ggsave(here('figures',paste0('convergence_pud.pdf')),device = cairo_pdf)
 
 
 # NULL HYPOTHESYS --------------------------------------------------------------
-iters <- 1e05
+iters <- 1e06
 
 # merge jobs 1 2 
 suffix <- '_medianDuration'
