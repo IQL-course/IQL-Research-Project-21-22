@@ -58,7 +58,6 @@ lapply(COLLS, function(collection) {
 # person 3: english (chars) 13.165.106 + german (chars) 5.569.590 + Kinyarwanda (chars) 2.673.259 <- 21.407.955
 # person 4: (sorted_df$X.tokens[1:41] + Catalan + French) (chars) <- 21.657.468
 
-
 if (length(args) >= 2) {
   iters     <- as.numeric(args[[2]])
   job_index <- if (length(args) >= 3) as.numeric(args[[3]]) else NULL
@@ -77,7 +76,7 @@ if (length(args) >= 2) {
       #write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
     } else if (collection == 'cv') {
       print(Sys.time())
-      null_hyp_job_cv(job_index,iters,1)
+      null_hyp_job_cv(job_index,iters,cores)
       print(Sys.time())
     }
   })

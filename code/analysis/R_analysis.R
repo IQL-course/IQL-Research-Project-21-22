@@ -3,31 +3,11 @@ source('R_functions.R')
 
 
 # RESULTS TO PRODUCE
-# - X tables of optimality scores for every collection and length definition (prepare tables for Latex)
-# - X density plot of omega 
-# - X distribution of omega values
-# - X tables of tau correlation with pvalues for every collection and length definition (plots)
-# - X density plot of null hypothesis (Mengxue)
-# - X how to show rankings by degree of optimality? (Mengxue)
-# - X omega bar plots (left value of omega, right composition in bars) (Sonia)
-# - X correlogram of opt scores (Sonia)
-# - X plot of Omega_time vs Omega_chars with 45 diagonal (Sonia)
-# - X compute omega with spearman correlation
-# - X correlation between scores and n types, n tokens, alphabet size (exclude strokes)
-# - X plot of timeVSspace for Psi as well
-# - X convergence of scores
+# - O family and script to iso codes tables (someone)
+# - O fix pud processing script
 
 
 # NOTES FOR ANALYSIS
-# - X for Romansh mix both dialects (Pre-processing people)
-# - X in opt scores tables: sort by family, writing system, language name (retrieve family info from Glottolog)
-# - X for Romansh we mixed both dialects, specify each dialect in materials, remove dialect from latex tables
-# - X For Japanese and Chinese use both length in strokes and in characters
-# - X Change order of script and family in table 5
-# - X figure 4 should be pud not cv
-# - X remove strokes from density plot and summary tables of opt scores
-# - X add pinyin and romaji to code logics
-# - X correlation between CV rankings
 # - O prettify labels of correlograms
 # - O correlation between pud and cv with k best sampled languages
 
@@ -35,14 +15,14 @@ source('R_functions.R')
 # NOTES FOR REPORT
 # - criterion to remove types based on sd is based on the assumption of linear relation between sd and mean
 # - use median, it's more robust (move mean to appendix)
+# - X E[eta] against  Lmin/E[L] plot
+# - X plot with arrows (6.4)
+# - X add HB note to correlogram captions
 # - O add kendall in correlogram scores
 # - O would we preserve PUD rankings if we measured in an other way?
 # - O pearson as robustness check for law of abbreviation 
    #(sometimes increase sometimes decrease)
-# - X E[eta] against  Lmin/E[L] plot
-# - X plot with arrows (6.4)
 # - O be careful when stating averages over all corpora
-# - X add HB note to correlogram captions
 
 
 
@@ -50,6 +30,8 @@ source('R_functions.R')
 # - what does it mean when Pearson is significant and kendall not?
 
 
+# UPDATES
+# - E[Omega] correlation with L_min: 1e06 does not solve the issue, orders of magnitude decrease but correlation remains
 
 
 
@@ -350,7 +332,15 @@ ggsave(here('figures',paste0('convergence_pud.pdf')))
 
 
 # NULL HYPOTHESYS --------------------------------------------------------------
-iters <- 1e05
+iters <- 1e06
+
+# merge jobs 1 2 
+suffix <- '_medianDuration'
+dfs <- lapply(1:2,function(job_id) read.csv(here('results',paste0('null_hypothesis_cv',suffix,'_',iters,'_',job_id,'.csv'))) )
+df <- do.call(rbind.data.frame,dfs)[-1]
+write.csv(df, here('results',paste0('null_hypothesis_cv',suffix,'_',iters,'_kendall.csv')))
+
+
 
 # + summary opt scores null
 lapply(c('omega','eta','psi'), function(score) {
@@ -374,7 +364,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
         df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
         if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
         plot_correlogram(df,plot_corr,'null',HB_correct=T,6,15,18)
-          ggsave(here('figures',paste0('corrplot_null_',collection,suffix,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
+          ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
       length_def <- 'characters'
@@ -382,15 +372,15 @@ lapply(c('kendall','pearson'), function(plot_corr) {
       df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1]
       if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
       plot_correlogram(df,plot_corr,'null',HB_correct=T,6,15,18)
-        ggsave(here('figures',paste0('corrplot_null_',collection,suffix,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
     }
   })
 })
 
 
-# E[scores] vs Lmin/Lr
+# E[scores] vs Lmin
 collection <- 'cv'
-rows_cv <- lapply(length_defs, function(length_def) {
+rows_cv <- lapply(length_defs[2], function(length_def) {
   suffix       <- paste0("_",length_def)
   df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
   df <- df %>% mutate(`Lmin/Lrand` = Lmin/Lrand) %>% dplyr::select(language,Lmin,psi,omega) %>% 
