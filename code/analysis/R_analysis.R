@@ -347,11 +347,12 @@ ggsave(here('figures',paste0('convergence_pud.pdf')),device = cairo_pdf)
 iters <- 1e06
 
 # merge jobs 1 2 
-suffix <- '_medianDuration'
-dfs <- lapply(1:2,function(job_id) read.csv(here('results',paste0('null_hypothesis_cv',suffix,'_',iters,'_',job_id,'.csv'))) )
-df <- do.call(rbind.data.frame,dfs)[-1]
-write.csv(df, here('results',paste0('null_hypothesis_cv',suffix,'_',iters,'_kendall.csv')))
-
+lapply(length_defs,function(length_def) {
+  job_ids <- if (length_def=='characters') 3:4 else 1:2
+  dfs <- lapply(job_ids,function(job_id) read.csv(here('results',paste0('null_hypothesis_cv_',length_def,'_',iters,'_',job_id,'.csv'))) )
+  df <- do.call(rbind.data.frame,dfs)[-1]
+  write.csv(df, here('results',paste0('null_hypothesis_cv_',length_def,'_',iters,'_kendall.csv')))
+})
 
 # + summary opt scores null
 lapply(c('omega','eta','psi'), function(score) {
@@ -391,7 +392,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
 
 # E[scores] vs Lmin
 collection <- 'cv'
-rows_cv <- lapply(length_defs[2], function(length_def) {
+rows_cv <- lapply(length_defs, function(length_def) {
   suffix       <- paste0("_",length_def)
   df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
   df <- df %>% mutate(`Lmin/Lrand` = Lmin/Lrand) %>% dplyr::select(language,Lmin,psi,omega) %>% 
@@ -399,7 +400,8 @@ rows_cv <- lapply(length_defs[2], function(length_def) {
 })
 df <- do.call(rbind,rows_cv)
 reshape2::melt(df, id.vars=c('language','Lmin','length_def')) %>% 
-  ggplot(aes(x=`Lmin`,y=value,label=language)) + geom_text_repel(size=2)+
+  mutate(color = ifelse(language %in% c('Vietnamese','Panjabi','Abkhazian','Dhivehi'),'undersampled','other')) %>% 
+  ggplot(aes(x=`Lmin`,y=value,label=language,color=color)) + geom_text_repel(size=2)+
   geom_abline(slope=1,intercept=0,color='purple')+ 
   geom_point() + geom_hline(yintercept = 0,color='purple') +
   facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free')
@@ -423,6 +425,37 @@ rows <- lapply(COLLS, function(collection) {
     })
   }
 })
+
+
+# UNDERSAMPLED LANGS
+collection <- 'cv'
+suffix <- '_medianDuration'
+out_langs <- c('Abkhazian','Dhivehi','Panjabi','Vietnamese')
+
+opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+  select(-family,-script)
+tau_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+  select(language,corr)
+df_null <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] %>% 
+  select(language,omega) %>% rename(exp_omega=omega)
+
+merged  <- merge(opt_df,tau_df, by = c('language')) %>% merge(df_null, by = c('language')) %>%  
+  mutate(corr_min = corr/omega, `Lmin/Lr`=Lmin/Lrand) %>% mutate(exp_tau = exp_omega*corr_min)
+
+
+# boxplots: Lr_diff, tau, tau_min, L_min
+par(mfrow=c(2,2))
+
+lapply(c('E[tau]','tau_min','Lmin_dur','Lmin_dur/Lr'), function(i) {
+  merged$var <- switch(i, 'E[tau]'=merged$exp_tau,'Lmin_dur'=merged$Lmin,
+                       'Lmin_dur/Lr'=merged$`Lmin/Lr`, 'tau_min'=merged$corr_min)
+  outs <- merged$var[merged$language %in% out_langs]
+  boxplot(merged$var)
+  abline(h=outs,col='red')
+  text(x=1, y=outs, labels=out_langs)
+  title(paste0('Boxplot of ',i))
+})
+pdf(here('figures','usl_all_boxplots.pdf'))
 
 
 
@@ -483,6 +516,8 @@ df_k <- do.call(rbind.data.frame,cors) %>% mutate(k = 2:13, min_size =sapply(sor
 print(xtable(df_k, type = "latex"), 
   file = here('latex_tables','cvVSpud_k.tex'),
   include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+
+
 
 
 

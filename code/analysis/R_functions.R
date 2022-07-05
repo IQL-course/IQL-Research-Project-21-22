@@ -23,6 +23,7 @@ scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi
 
 ## pud
 langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
+  mutate(dialect='') %>% 
   mutate(script = case_when(language == "Arabic" ~ "Arabic",
                             language == "Hindi" ~ "Devanagari",
                             language == "Japanese" ~ "Kanji-Kana",
@@ -250,7 +251,6 @@ compute_expectation_scores_lang <- function(lang, collection, length_def='charac
     omega <- corr/corr_min 
     list('L'=L,'eta'=eta,'psi'=psi,'omega'=omega)
   })
-  
   sums <- sapply(1:length(scores[[1]]), function(score_index) {
     score <- names(scores[[1]])[score_index]
     value <- do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
@@ -460,7 +460,7 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
   greek_names  <- switch(type,
                          'scores'=c('L','\u03B7','\u03A8','\u03A9'),
                          'params'=c('n', 'T', 'A', '\u03B7','\u03A8','\u03A9'), 
-                         'null'=c(bquote(~L[min]),'L',bquote(~L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
+                         'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
   legend_title <-  switch(plot_corr, 'kendall' = '\u03C4 corr', 'pearson'='r corr')
   
   cors  <- round(cor(df, method=plot_corr), 2)
