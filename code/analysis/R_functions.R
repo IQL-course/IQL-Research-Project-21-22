@@ -23,16 +23,6 @@ scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi
 
 ## pud
 langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
-  mutate(script = case_when(language == "Arabic" ~ "Arabic",
-                            language == "Hindi" ~ "Devanagari",
-                            language == "Japanese" ~ "Kanji-Kana",
-                            language == "Japanese-strokes" ~ "Kanji-Kana",
-                            language == "Korean" ~ "Hangul",
-                            language == "Russian" ~ "Cyrillic",
-                            language == "Thai" ~ "Thai",
-                            language == "Chinese" ~ "Chinese",
-                            language == "Chinese-strokes" ~ "Chinese",
-                            TRUE ~ "Latin")) %>% 
   arrange(iso_code) 
 langs_pud    <- langs_df_pud$language
 ISO_pud      <- langs_df_pud$iso_code
