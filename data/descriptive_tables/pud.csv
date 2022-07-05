@@ -1,25 +1,25 @@
 language,iso_code,dialect,#types,#tokens,family,script
-Japanese,ara,r,6597,18211,Afro-Asiatic,Arabic
-Arabic,ces,e,7360,15700,Indo-European,Latin
-Czech,deu,e,6215,18446,Indo-European,Latin
-German,eng,n,5082,18135,Indo-European,Latin
-English,fin,i,7076,12853,Uralic,Latin
-Finnish,fra,r,5593,21084,Indo-European,Latin
-French,hin,i,4894,21156,Indo-European,Devanagari
-Hindi,ind,n,4596,16819,Austronesian,Latin
-Indonesian,isl,s,6175,16385,Indo-European,Latin
-Icelandic,ita,t,5944,21815,Indo-European,Latin
-Italian,jpn,p,4852,24737,Japonic,Japanese
+Arabic,ara,r,6597,18211,Afro-Asiatic,Arabic
+Czech,ces,e,7360,15700,Indo-European,Latin
+German,deu,e,6215,18446,Indo-European,Latin
+English,eng,n,5082,18135,Indo-European,Latin
+Finnish,fin,i,7076,12853,Uralic,Latin
+French,fra,r,5593,21084,Indo-European,Latin
+Hindi,hin,i,4894,21156,Indo-European,Devanagari
+Indonesian,ind,n,4596,16819,Austronesian,Latin
+Icelandic,isl,s,6175,16385,Indo-European,Latin
+Italian,ita,t,5944,21815,Indo-European,Latin
+Japanese,jpn,p,4852,24737,Japonic,Japanese
 Japanese-romaji,jpn,p,4849,24734,Japonic,Latin
 Japanese-strokes,jpn,p,4852,24737,Japonic,Japanese
-Japanese,kor,o,7813,14229,Koreanic,Hangle
-Korean,pol,o,7329,15386,Indo-European,Latin
-Polish,por,o,5678,21873,Indo-European,Latin
-Portuguese,rus,u,7156,15636,Indo-European,Cyrillic
-Russian,spa,p,5765,21083,Indo-European,Latin
-Spanish,swe,w,5842,16653,Indo-European,Latin
-Swedish,tha,h,3782,21606,Kra-Dai,Thai
-Thai,tur,u,6793,14092,Turkic,Latin
-Turkish,zho,h,4970,17845,Sino-Tibetan,Han (Simplified variant)
+Korean,kor,o,7813,14229,Koreanic,Hangul
+Polish,pol,o,7329,15386,Indo-European,Latin
+Portuguese,por,o,5678,21873,Indo-European,Latin
+Russian,rus,u,7156,15636,Indo-European,Cyrillic
+Spanish,spa,p,5765,21083,Indo-European,Latin
+Swedish,swe,w,5842,16653,Indo-European,Latin
+Thai,tha,h,3782,21606,Kra-Dai,Thai
+Turkish,tur,u,6793,14092,Turkic,Latin
+Chinese,zho,h,4970,17845,Sino-Tibetan,Han (Simplified variant)
 Chinese-pinyin,zho,h,4971,17850,Sino-Tibetan,Latin
 Chinese-strokes,zho,h,4971,17850,Sino-Tibetan,Han (Simplified variant)
