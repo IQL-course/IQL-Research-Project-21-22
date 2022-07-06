@@ -23,34 +23,21 @@ scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi
 
 ## pud
 langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% 
-  mutate(dialect='') %>% 
-  mutate(script = case_when(language == "Arabic" ~ "Arabic",
-                            language == "Hindi" ~ "Devanagari",
-                            language == "Japanese" ~ "Kanji-Kana",
-                            language == "Japanese-strokes" ~ "Kanji-Kana",
-                            language == "Korean" ~ "Hangul",
-                            language == "Russian" ~ "Cyrillic",
-                            language == "Thai" ~ "Thai",
-                            language == "Chinese" ~ "Chinese",
-                            language == "Chinese-strokes" ~ "Chinese",
-                            TRUE ~ "Latin")) %>% 
-  arrange(iso_code) 
+  mutate(dialect='') %>% arrange(iso_code) 
 langs_pud    <- langs_df_pud$language
 ISO_pud      <- langs_df_pud$iso_code
 labs_pud     <- langs_pud; names(labs_pud) <- ISO_pud
 
 
 ## cv
-langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% filter(iso_code %!in% c('jpn','zho')) %>%
+langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% 
+  filter(iso_code %!in% c('jpn','zho')) %>%
   rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%
   rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
   rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code") %>%
   rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code") %>% 
   rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
-  filter(dialect != 'vallader') %>%
-  rows_update(tibble(X.types = 9801, iso_code = 'roh'), by = "iso_code") %>% 
-  rows_update(tibble(X.types = 44192, iso_code = 'roh'), by = "iso_code") %>% 
-  rows_update(tibble(dialect = '', iso_code = 'roh'), by = "iso_code") 
+  filter(dialect %!in% c('vallader','sursilv'))
   
 
 langs_cv    <- langs_df_cv$language
@@ -277,8 +264,7 @@ null_hyp_job_cv <- function(job_index,iters,cores) {
 }
 
 
-opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
-  corr_suffix <- paste0('_',corr_type)
+opt_score_summary <- function(score,null=F, iters = 1000) {
   rows <- lapply(COLLS, function(collection) {
     if (collection == 'cv') {
       rows_cv <- lapply(length_defs, function(length_def) {
@@ -301,7 +287,7 @@ opt_score_summary <- function(score, corr_type='kendall',null=F, iters = 1000) {
     }
   })
   df <- do.call(rbind,rows); setDT(df)
-  df[, as.list(summary(score)), by = collection]
+  df[, as.list(summary(score)), by = collection] %>% cbind('sd'=df[, as.list(sd(score)), by = collection]$V1)
 }
 
 

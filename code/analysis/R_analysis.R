@@ -106,9 +106,9 @@ lapply(COLLS, function(collection) {
 
 # + summary opt scores
 lapply(c('omega','eta','psi'), function(score) {
-  summ <- opt_score_summary(score,corr_type) %>% mutate(empty = rep('',3)) 
-  summ <- summ[,c(8,1,2,3,4,5,6,7)]
-  print(xtable(summ, type = "latex"), 
+  summ <- opt_score_summary(score) %>% mutate(empty = rep('',3)) 
+  summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
+  print(xtable(summ, type = "latex"),
         file = here('latex_tables',paste0("opt_scores_summary_",score,corr_suffix,".tex")),
         caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,only.contents = TRUE)
 })
@@ -356,8 +356,8 @@ lapply(length_defs,function(length_def) {
 
 # + summary opt scores null
 lapply(c('omega','eta','psi'), function(score) {
-  summ <- opt_score_summary(score,corr_type,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
-  summ <- summ[,c(8,1,2,3,4,5,6,7)]
+  summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
+  summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex",digits=3), 
         file = here('latex_tables',paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
         caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,only.contents = TRUE)
