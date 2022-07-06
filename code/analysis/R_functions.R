@@ -45,7 +45,6 @@ ISO_cv      <- langs_df_cv$iso_code
 dialects_cv <- langs_df_cv$dialect
 labs_cv <- langs_cv; names(labs_cv) <- ISO_cv
 
-
 corr_colors_r = c("blue", "white", "red")
 corr_colors_tau = c("#41B85C", "white", "orange")
 
@@ -57,8 +56,6 @@ corr_suffix <- paste0('_',corr_type)
 
 # functions  -------------------------------------------------------------------
 read_language <- function(iso_code, collection, dialect = NULL, alternative = NULL) {
-  # if no dialect is specified and it's unique for the language, it will be inferred
-  # specify the desired dialect if this is not unique
   if (collection == 'cv') {
     if (is.null(dialect)) dialect <- dialects_cv[ISO_cv==iso_code]
     dialect  <- ifelse(dialect != '',paste0('-',dialect),'')
@@ -75,24 +72,21 @@ read_language <- function(iso_code, collection, dialect = NULL, alternative = NU
 
 
 
-compute_corr <- function(collection, corr_type, length = 'characters') {
+compute_corr <- function(collection, corr_type='kendall', length = 'characters') {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  cors <- lapply(1:nrow(langs_df), function(i) {
+  cors <- mclapply(1:nrow(langs_df), function(i) {
     iso_code <- langs_df$iso_code[i]
     language <- langs_df$language[i]
-    family   <- langs_df$family[i]
-    script   <- langs_df$script[i]
     print(iso_code)
     dialect  <- ifelse(collection=='pud','',dialects_cv[i])
     alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
     df <- read_language(iso_code,collection,dialect,alternative) %>% mutate(rank=1:nrow(.))
-    # choose definition of 'length' in cv
     if (collection == 'cv') {
       df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$characters
     }
     res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
-    list("language"=language, "family"=family, "script"=script, "corr"=res$estimate, "pvalue"=res$p.value)
-  }) 
+    list("language"=language, "corr"=res$estimate, "pvalue"=res$p.value)
+  },mc.cores = 3) 
   df <- do.call(rbind.data.frame,cors) %>% 
     arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%                                                     # Holm-Bonferroni correction
     mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
@@ -101,23 +95,13 @@ compute_corr <- function(collection, corr_type, length = 'characters') {
 
 
 
-compute_optimality_scores_lang <- function(lang, collection, length_def='characters', corr_type='kendall', sample_tokens=NULL) {
+compute_optimality_scores_lang <- function(lang, collection, length_def='characters', corr_type='kendall') {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   iso_code  <- langs_df$iso_code[langs_df$language==lang]
   dialect   <- langs_df$dialect[langs_df$language==lang]
-  family    <- langs_df$family[langs_df$language==lang]
-  script    <- langs_df$script[langs_df$language==lang]
   alternative <- if (stringr::str_detect(lang,'-')) sub(".*-","",lang) else NULL
   df <- read_language(iso_code,collection,dialect,alternative)
-  # sample
-  if (!is.null(sample_tokens)) {
-    df <- df[rep(seq_len(nrow(df)), df$frequency),]
-    df <- if (sample_tokens<=nrow(df)) {
-        set.seed(300)
-        sample_n(df,sample_tokens) %>% group_by(word) %>% summarise(frequency = n(),length=length) %>% 
-        unique() %>% arrange(desc(frequency))
-        } else df %>% mutate(length = NA, frequency=NA)
-  }
+
   # choose definition of 'length' in cv
   if (collection == 'cv') {
     df$length <- if (length_def == 'meanDuration') df$meanDuration else if (length_def == 'medianDuration') df$medianDuration else df$characters
@@ -136,23 +120,22 @@ compute_optimality_scores_lang <- function(lang, collection, length_def='charact
   eta   <- Lmin/L
   psi   <- (Lrand-L)/(Lrand-Lmin)
   omega <- corr/corr_min 
-  data.frame("language"=lang, "family"=family, "script"=script, 
-       "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi, "omega"=omega)
+  data.frame("language"=lang, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand, "eta"=eta, "psi"=psi, "omega"=omega)
 }
 
 
-compute_optimality_scores_coll <- function(collection, corr_type='kendall', length_def = 'characters',sample_tokens = NULL) {
+compute_optimality_scores_coll <- function(collection, corr_type='kendall', length_def = 'characters') {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  res <- lapply(1:nrow(langs_df), function(i) {
+  res <- mclapply(1:4, function(i) {
     language <- langs_df$language[i]
-    print(language)
-    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
-    compute_optimality_scores_lang(language,collection,length_def,corr_type,sample_tokens)
-  })
-  df <- do.call(rbind.data.frame,res) %>% arrange(family,script,language)
+    compute_optimality_scores_lang(language,collection,length_def,corr_type)
+  },mc.cores = 3)
+  df <- do.call(rbind.data.frame,res) 
+  df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
 }
 
+compute_optimality_scores_coll('cv')
 
 
 compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments = 10^2) {
