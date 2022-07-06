@@ -1,25 +1,25 @@
 language,iso_code,dialect,#types,#tokens,family,script
-Arabic,ar,,6597,18211,Afro-Asiatic,Arabic
-Czech,cs,,7360,15700,Indo-European,Latin
-German,de,,6215,18446,Indo-European,Latin
-English,en,,5082,18135,Indo-European,Latin
-Finnish,fi,,7076,12853,Uralic,Latin
-French,fr,,5593,21084,Indo-European,Latin
-Hindi,hi,,4894,21156,Indo-European,Devanagari
-Indonesian,id,,4596,16819,Austronesian,Latin
-Icelandic,is,,6175,16385,Indo-European,Latin
-Italian,it,,5944,21815,Indo-European,Latin
-Japanese,ja,,4852,24737,Japonic,Japanese
-Japanese-romaji,ja,,4849,24734,Japonic,Latin
-Japanese-strokes,ja,,4852,24737,Japonic,Japanese
-Korean,ko,,7813,14229,Koreanic,Hangul
-Polish,pl,,7329,15386,Indo-European,Latin
-Portuguese,pt,,5678,21873,Indo-European,Latin
-Russian,ru,,7156,15636,Indo-European,Cyrillic
-Spanish,es,,5765,21083,Indo-European,Latin
-Swedish,sv,,5842,16653,Indo-European,Latin
-Thai,th,,3782,21606,Kra-Dai,Thai
-Turkish,tr,,6793,14092,Turkic,Latin
-Chinese-pinyin,zh,,4970,17845,Sino-Tibetan,Latin
-Chinese,zh,,4970,17845,Sino-Tibetan,Han (Simplified variant)
-Chinese-strokes,zh,,4970,17845,Sino-Tibetan,Han (Simplified variant)
+Arabic,ara,,6597,18211,Afro-Asiatic,Arabic
+Czech,ces,,7360,15700,Indo-European,Latin
+German,deu,,6215,18446,Indo-European,Latin
+English,eng,,5082,18135,Indo-European,Latin
+Finnish,fin,,7076,12853,Uralic,Latin
+French,fra,,5593,21084,Indo-European,Latin
+Hindi,hin,,4894,21156,Indo-European,Devanagari
+Indonesian,ind,,4596,16819,Austronesian,Latin
+Icelandic,isl,,6175,16385,Indo-European,Latin
+Italian,ita,,5944,21815,Indo-European,Latin
+Japanese,jpn,,4852,24737,Japonic,Japanese
+Japanese-romaji,jpn,,4849,24734,Japonic,Latin
+Japanese-strokes,jpn,,4852,24737,Japonic,Japanese
+Korean,kor,,7813,14229,Koreanic,Hangul
+Polish,pol,,7329,15386,Indo-European,Latin
+Portuguese,por,,5678,21873,Indo-European,Latin
+Russian,rus,,7156,15636,Indo-European,Cyrillic
+Spanish,spa,,5765,21083,Indo-European,Latin
+Swedish,swe,,5842,16653,Indo-European,Latin
+Thai,tha,,3782,21606,Kra-Dai,Thai
+Turkish,tur,,6793,14092,Turkic,Latin
+Chinese-pinyin,zho,,4970,17845,Sino-Tibetan,Latin
+Chinese,zho,,4970,17845,Sino-Tibetan,Han (Simplified variant)
+Chinese-strokes,zho,,4970,17845,Sino-Tibetan,Han (Simplified variant)
