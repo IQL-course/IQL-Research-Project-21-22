@@ -28,7 +28,7 @@ if (args[[1]] %in% c('kendall','spearman')) {
     if (collections %in% c('cv','both')) {
       collection <- 'cv'
       print(collection)
-      lapply(c(length_defs), function(length) {
+      res <- lapply(c(length_defs), function(length) {
         suffix <- paste0("_",length)
         print(length)
         # - 1 - Significance of word lengths

@@ -78,21 +78,17 @@ lapply(COLLS, function(collection) {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
       opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1]
-      tau_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1] 
-      merged  <- merge(opt_df,tau_df, by = c('language')) %>%
-        select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)
-      merged <- merged[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
-      print(xtable(merged,type = "latex"), 
+      opt_df <- opt_df[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
+      print(xtable(opt_df,type = "latex"), 
             file = here('latex_tables',paste0(collection,"_opt_scores",suffix,corr_suffix,".tex")),
-            include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+            include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
       })
   } else {
-    opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))[-1] %>% 
-      arrange(family,script,language)  
+    opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))[-1]
     opt_df <- opt_df[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
     print(xtable(opt_df,type = "latex"), 
           file = here('latex_tables',paste0(collection,"_opt_scores_characters",corr_suffix,".tex")),
-          include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+          include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
   }
 })
 
@@ -103,7 +99,8 @@ lapply(c('omega','eta','psi'), function(score) {
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex"),
         file = here('latex_tables',paste0("opt_scores_summary_",score,corr_suffix,".tex")),
-        caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,only.contents = TRUE)
+        caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
+        only.contents = TRUE,hline.after = c(nrow(summ)))
 })
 
 
@@ -276,7 +273,7 @@ df <- df[,c('language','family','script','tau','ro','tau_min','ro_min','omega_ta
   arrange(family,script,language)
 print(xtable(df,type = "latex"), 
       file = here('latex_tables',paste0("omega_tau_omega_ro_",collection,".tex")),
-      include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+      include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df)))
 
 
 
@@ -353,7 +350,8 @@ lapply(c('omega','eta','psi'), function(score) {
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex",digits=3), 
         file = here('latex_tables',paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
-        caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,only.contents = TRUE)
+        caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
+        only.contents = TRUE,hline.after = c(nrow(summ)))
 })
 
 
@@ -508,7 +506,7 @@ cors <- lapply(2:13, function(k) {
 df_k <- do.call(rbind.data.frame,cors) %>% mutate(k = 2:13, min_size =sapply(sorted_df$X.tokens[2:13],min))
 print(xtable(df_k, type = "latex"), 
   file = here('latex_tables','cvVSpud_k.tex'),
-  include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
+  include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df_k)))
 
 
 
