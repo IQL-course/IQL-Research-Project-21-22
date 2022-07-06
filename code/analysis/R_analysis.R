@@ -81,11 +81,10 @@ lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
-      label_length <- switch(length_def,"medianDuration" = 'median duration', 'characters' = 'number of characters')
-      opt_df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1]
-      tau_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]          # to remove if add tau and tau_min before
-      merged  <- merge(opt_df,tau_df, by = c('language','family','script')) %>%                                     # to remove if add tau and tau_min before
-        select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)             # to remove if add tau and tau_min before
+      opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1]
+      tau_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1] 
+      merged  <- merge(opt_df,tau_df, by = c('language')) %>%
+        select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)
       merged <- merged[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
       print(xtable(merged,type = "latex"), 
             file = here('latex_tables',paste0(collection,"_opt_scores",suffix,corr_suffix,".tex")),
