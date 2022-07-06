@@ -42,13 +42,9 @@ source('R_functions.R')
 # + alphabet sizes
 lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  parameters <- lapply(1:nrow(langs_df), function(i) {
-    iso_code <- langs_df$iso_code[i]
-    language <- langs_df$language[i]
-    dialect  <- ifelse(collection=='pud','',dialects_cv[i])
-    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
-    df <- read_language(iso_code,collection,dialect,alternative) 
-    words <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
+  parameters <- lapply(langs_df$language, function(language) {
+    df       <- read_language(language,collection) 
+    words    <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
     alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
     list("language"=language, 'A'=alphabet_size)
   })
@@ -60,7 +56,7 @@ lapply(COLLS,function(collection) {
 # + collections summary 
 lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(n = X.tokens, `T` = X.types)
+  sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(here('results',paste0('alphabet_sisez_',collection,'.csv')))
   sum_coll$A <- A_coll$A
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
@@ -91,12 +87,10 @@ lapply(COLLS, function(collection) {
             include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
       })
   } else {
-    opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))[-1]
-    corr_df  <- read.csv(here('results',paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))[-1]       # to remove if add tau and tau_min before
-    merged  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                           # to remove if add tau and tau_min before
-      select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)    # to remove if add tau and tau_min before
-    merged <- merged[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
-    print(xtable(merged,type = "latex"), 
+    opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))[-1] %>% 
+      arrange(family,script,language)  
+    opt_df <- opt_df[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
+    print(xtable(opt_df,type = "latex"), 
           file = here('latex_tables',paste0(collection,"_opt_scores_characters",corr_suffix,".tex")),
           include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE)
   }
