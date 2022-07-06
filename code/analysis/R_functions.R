@@ -44,19 +44,37 @@ ISO_cv      <- langs_df_cv$iso_code
 
 
 # functions  -------------------------------------------------------------------
-read_language <- function(language, collection) {
-  if (collection == 'cv') {
-    iso_code <- langs_df_cv$iso_code[langs_df_cv$language==language]
-    read.csv(here("data/cv",paste0(iso_code,"-word.csv")), encoding = 'UTF-8') %>% 
-      rename(frequency = repetitions, word = orthographic_form) %>% 
-      arrange(desc(frequency)) %>% 
-      mutate(characters = nchar(word), language = language) 
-  } else if (collection == 'pud') {
-    iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
-    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
-    str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-    read.csv(here("data/pud",paste0(iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
-  } else print('specify an available collection')
+read_language <- function(language, collection, remove_vowels=FALSE) {
+  if(!remove_vowels){
+    if (collection == 'cv') {
+      iso_code <- langs_df_cv$iso_code[langs_df_cv$language==language]
+      read.csv(here("data/cv",paste0(iso_code,"-word.csv")), encoding = 'UTF-8') %>% 
+        rename(frequency = repetitions, word = orthographic_form) %>% 
+        arrange(desc(frequency)) %>% 
+        mutate(characters = nchar(word), language = language) 
+    } else if (collection == 'pud') {
+      iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
+      alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
+      str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
+      read.csv(here("data/pud",paste0(iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
+    } else print('specify an available collection')}
+  else {
+    if(langs_df_pud$script[langs_df_pud$language==language]=='Latin'){
+      iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
+      alternative <- if(iso=='zho') "pinyin" else if(iso=='jpn') "romaji" else NULL   # file suffix
+      str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
+      df <- read.csv(here("data/pud",paste0(iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
+      df$word <- if(iso_code=='zho' | iso=='jpn') df$romanized_form else df$word      # word <- Latin script
+      # remove vowels
+      df$word <- if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol')              # with y
+        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", df$word) else
+          if(iso_code=='isl' | iso_code=='ces')                                       # with ý
+            gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", df$word) else
+              gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąęı]","", df$word)        # no y
+      df$length <- nchar(df$word)                                                     # compute new length
+      df <- df[-which(df$length==0),]
+    }
+  }
 }
 
 
