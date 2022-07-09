@@ -61,17 +61,19 @@ read_language <- function(language, collection, remove_vowels=FALSE) {
   }
   else {
     if(langs_df_pud$script[langs_df_pud$language==language]=='Latin'){
-      iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
+      iso_code    <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if(iso_code=='zho') "pinyin" else if(iso_code=='jpn') "romaji" else NULL   # file suffix
-      str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      df <- read.csv(here("data/pud",paste0(iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
-      df$word <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
+      str_suffix  <- ifelse (is.null(alternative),'',paste0('_',alternative))
+      df          <- read.csv(here("data/pud",paste0(iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
+      df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
-      df$word <- if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol')                   # with y
-        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", df$word) else
-          if(iso_code=='isl' | iso_code=='ces')                                            # with ý
-            gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", df$word) else
-              gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)               # no y
+      df$word <- if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol'){
+        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", df$word)                   # with y
+      } else  if(iso_code=='isl' | iso_code=='ces'){
+        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", df$word)                  # with ý
+      } else {
+        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)                     # no y
+      }
       df$length <- nchar(df$word)          
       if(length(which(df$length==0))==0) df
       else df[-which(df$length==0),]
@@ -100,7 +102,7 @@ compute_corr <- function(collection, corr_type='kendall', length = 'characters',
   }
   else {
     langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-    cors <- mclapply(langs_df$language[langs_df$script=='Latin'], function(language) {
+    cors     <- mclapply(langs_df$language[langs_df$script=='Latin'], function(language) {
       print(language)
       df <- read_language(language,collection,TRUE) %>% mutate(rank=1:nrow(.))
       #if (collection == 'cv') {
@@ -157,7 +159,7 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
   } 
   else {
     res <- mclapply(langs_df$language[langs_df$script=='Latin'], function(language) {
-      compute_optimality_scores_lang(language,collection,length_def,corr_type)
+      compute_optimality_scores_lang(language,collection,length_def,corr_type,TRUE)
     },mc.cores = 1)
   }
   
@@ -332,12 +334,15 @@ add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
 plot_score_composition <- function(score,opt_df) {
   score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
   if (score == 'psi') {
-    L_diff_df <- opt_df %>% select(language,Lmin,L,Lrand,psi) %>% summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
+    L_diff_df <- opt_df %>% 
+      select(language,Lmin,L,Lrand,psi) %>% 
+      summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
     L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
     melted <- reshape2::melt(L_diff_df, id.vars=c("language","psi")) %>% 
       mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
     melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
     melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
+    
     ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
       theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
       labs(x=score_latex, y="Length") + guides(fill=guide_legend(title="difference")) +
@@ -351,6 +356,7 @@ plot_score_composition <- function(score,opt_df) {
       mutate(masked_omega = ifelse(variable == "corr",round(omega,2),""))
     melted$variable <- factor(melted$variable, levels=c("corr_min-corr",'corr'))
     melted$alphacol <- ifelse(melted$variable=="corr",1,0.3)
+    
     ggplot(melted,aes(x=language,y=value,fill=variable))  + theme(legend.position = 'none') +
       geom_bar(stat="identity",aes(alpha=alphacol),color='white') + coord_flip() + 
       labs(x=score_latex, y= 'correlation') + guides(fill=guide_legend(title="difference")) +

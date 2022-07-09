@@ -508,6 +508,22 @@ print(xtable(df_k, type = "latex"),
   file = here('latex_tables','cvVSpud_k.tex'),
   include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df_k)))
 
+# PUD scores after removing vowels
+
+# - 1 - Significance of word lengths
+print('begin to compute tau correlations')
+tau_df <- compute_corr("pud", remove_vowels = TRUE)
+write.csv(tau_df, here('results',paste0('correlation_pud_remove_vowels_kendall.csv')))
+
+# - 2 - Compute scores
+print('begin to compute optimality scores')
+opt_df <- compute_optimality_scores_coll("pud", remove_vowels = TRUE)
+write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
+
+# plot comparison
+df_remove <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
+df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters_kendall.csv')))
+df_noremove <- df_noremove[which(df_noremove$script=="Latin"),]
 
 
 
