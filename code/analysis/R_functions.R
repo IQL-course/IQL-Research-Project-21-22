@@ -71,8 +71,10 @@ read_language <- function(language, collection, remove_vowels=FALSE) {
         gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", df$word)                   # with y
       } else  if(iso_code=='isl' | iso_code=='ces'){
         gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", df$word)                  # with ý
+      } else if(iso_code=='zho'){
+        print("test Chinese")
+        gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)                     
       } else {
-        print("test else")
         gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)                     # no y
       }
       df$length <- nchar(df$word)   
