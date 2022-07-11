@@ -1,0 +1,20 @@
+language,iso_code,dialect,#types,#tokens,family,script
+Arabic,ara,,3309,11667,Afro-Asiatic,Arabic
+Czech,ces,,7073,15331,Indo-European,Latin
+German,deu,,6116,18331,Indo-European,Latin
+English,eng,,5001,18028,Indo-European,Latin
+Finnish,fin,,6938,12701,Uralic,Latin
+French,fra,,5214,20407,Indo-European,Latin
+Hindi,hin,,4343,20071,Indo-European,Devanagari
+Indonesian,ind,,4501,16702,Austronesian,Latin
+Icelandic,isl,,6035,16209,Indo-European,Latin
+Italian,ita,,5606,21266,Indo-European,Latin
+Korean,kor,,6218,12307,Koreanic,Hangul
+Polish,pol,,7188,15191,Indo-European,Latin
+Portuguese,por,,5661,21855,Indo-European,Latin
+Russian,rus,,4666,11749,Indo-European,Cyrillic
+Spanish,spa,,5750,21067,Indo-European,Latin
+Swedish,swe,,5624,16378,Indo-European,Latin
+Thai,tha,,3573,20860,Kra-Dai,Thai
+Turkish,tur,,6587,13799,Turkic,Latin
+Chinese,zho,,3154,15436,Sino-Tibetan,Han (Simplified variant)
