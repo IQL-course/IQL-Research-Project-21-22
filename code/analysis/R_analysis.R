@@ -4,8 +4,15 @@ source('R_functions.R')
 
 # RESULTS TO PRODUCE
 # - X fix pud processing script
-# - O family and script to iso codes tables (someone)
-# - O recompute 1e05 with new seed (job 1 running)
+# - X family and script to iso codes tables (someone)
+# - X recompute 1e05 with new seed (job 1 running)
+# - O recompute expected values with DescTools:::.DoCount(x,y,wts) (or Condistpairs) and apply
+  # other formula for Omega
+# - O recompute all tables (to add abk)
+# - X compute convergence on available values
+# - X add strokes to pud descriptive table
+# - O convergence of CV
+
 
 
 # NOTES FOR ANALYSIS
@@ -26,15 +33,13 @@ source('R_functions.R')
 # - O be careful when stating averages over all corpora
 
 
-
-
 # QUESTIONS
-# - what does it mean when Pearson is significant and kendall not?
+# - shall " ", "'",  "-" be counted in A?
 
-# UPDATES
-# - E[Omega] correlation with L_min: 1e06 does not solve the issue, orders of magnitude decrease but correlation remains
-# - convergence: initial observations are missing because if there is NA in average, all is NA
-# - convergence: compute with 10^3 also?
+# TO SAY
+# - trash in cv (thus huge A)
+
+
 
 
 
@@ -45,7 +50,7 @@ lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(langs_df$language, function(language) {
     df       <- read_language(language,collection) 
-    words    <- if (is.null(alternative)) df$word else if (alternative == 'strokes') df$word else tolower(df$romanized_form)
+    words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
     alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
     list("language"=language, 'A'=alphabet_size)
   })
@@ -61,7 +66,7 @@ lapply(COLLS, function(collection) {
   A_coll   <- read.csv(here('results',paste0('alphabet_sisez_',collection,'.csv')))
   sum_coll$A <- A_coll$A
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
-    filter(stringr::str_detect(language,'-strokes') == F) %>% arrange(family,script,language)
+    arrange(family,script,language)
   write.csv(sum_coll,here('results',paste0('coll_summary_',collection,'.csv')))
   print(xtable(sum_coll, type = "latex"), 
         file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
@@ -357,7 +362,7 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 ## correlation wit Lmin, Lr, and Lmin/Lr
-remove_out <- F
+remove_out <- T
 lapply(c('kendall','pearson'), function(plot_corr) {
   plot_corr_suffix <- paste0('_',plot_corr)
   out_suffix <- ifelse(remove_out==T,'_noOut','')
@@ -366,7 +371,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
       lapply(length_defs, function(length_def) {
         suffix       <- paste0("_",length_def)
         df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
-        if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
+        if (remove_out == T) df <-  df %>% filter(language %!in% c('Panjabi'))
         plot_correlogram(df,plot_corr,'null',HB_correct=T,6,15,18)
           ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
       })

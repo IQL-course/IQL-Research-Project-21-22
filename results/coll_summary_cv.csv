@@ -1,45 +1,47 @@
 "","language","family","script","A","n","T"
-"1","Maltese","Afro-Asiatic","Latin",40,8148,44272
-"2","Vietnamese","Austroasiatic","Latin",86,574,1300
-"3","Indonesian","Austronesian","Latin",28,3817,44336
-"4","Esperanto","Conlang","Latin",38,27932,406725
-"5","Interlingua","Conlang","Latin",27,5552,31428
-"6","Tamil","Dravidian","Tamil",44,1525,7580
-"7","Persian","Indo-European","Arabic",105,13240,1665428
-"8","Assamese","Indo-European","Assamese",60,1115,2000
-"9","Russian","Indo-European","Cyrillic",54,31921,638782
-"10","Ukrainian","Indo-European","Cyrillic",44,14399,120984
-"11","Panjabi","Indo-European","Devanagari",48,95,110
-"12","Modern Greek","Indo-European","Greek",46,5834,37926
-"13","Breton","Indo-European","Latin",41,4322,38493
-"14","Catalan","Indo-European","Latin",67,79213,3294506
-"15","Czech","Indo-European","Latin",44,16032,150312
-"16","Dutch","Indo-European","Latin",41,10666,320992
-"17","English","Indo-European","Latin",97,173522,9829660
-"18","French","Indo-European","Latin",244,162740,3732822
-"19","German","Indo-European","Latin",152,150362,4235094
-"20","Irish","Indo-European","Latin",31,2311,22751
-"21","Italian","Indo-European","Latin",110,55480,812604
-"22","Latvian","Indo-European","Latin",35,7792,30358
-"23","Polish","Indo-European","Latin",38,25365,595613
-"24","Portuguese","Indo-European","Latin",41,13049,295042
-"25","Romanian","Indo-European","Latin",36,6449,33370
-"26","Romansh","Indo-European","Latin",40,9801,44192
-"27","Slovenian","Indo-European","Latin",28,5994,26402
-"28","Spanish","Indo-European","Latin",186,75617,1843646
-"29","Swedish","Indo-European","Latin",30,4454,63282
-"30","Welsh","Indo-European","Latin",43,11488,547345
-"31","Western Frisian","Indo-European","Latin",42,8419,63127
-"32","Oriya","Indo-European","Odia",59,921,1929
-"33","Dhivehi","Indo-European","Thaana",40,155,1388
-"34","Georgian","Kartvelian","Georgian",34,7945,15481
-"35","Basque","Language isolate","Latin",28,24998,460188
-"36","Mongolian","Mongolic","Mongolian",36,14844,70638
-"37","Kinyarwanda","Niger-Congo","Latin",96,135328,1945038
-"38","Hakha Chin","Sino-Tibetan","Latin",28,2515,17806
-"39","Chuvash","Turkic","Cyrillic",36,5565,16270
-"40","Kirghiz","Turkic","Cyrillic",38,10497,62687
-"41","Tatar","Turkic","Cyrillic",47,22313,145458
-"42","Yakut","Turkic","Cyrillic",42,8041,22795
-"43","Turkish","Turkic","Latin",37,8957,107910
-"44","Estonian","Uralic","Latin",34,30135,123895
+"1","Arabic","Afro-Asiatic","Arabic",44,7497,49448
+"2","Maltese","Afro-Asiatic","Latin",40,8148,44272
+"3","Vietnamese","Austroasiatic","Latin",86,574,1300
+"4","Indonesian","Austronesian","Latin",28,3817,44336
+"5","Esperanto","Conlang","Latin",38,27932,406725
+"6","Interlingua","Conlang","Latin",27,5552,31428
+"7","Tamil","Dravidian","Tamil",44,1525,7580
+"8","Persian","Indo-European","Arabic",105,13240,1665428
+"9","Assamese","Indo-European","Assamese",60,1115,2000
+"10","Russian","Indo-European","Cyrillic",54,31921,638782
+"11","Ukrainian","Indo-European","Cyrillic",44,14399,120984
+"12","Panjabi","Indo-European","Devanagari",48,95,110
+"13","Modern Greek","Indo-European","Greek",46,5834,37926
+"14","Breton","Indo-European","Latin",41,4322,38493
+"15","Catalan","Indo-European","Latin",67,79213,3294506
+"16","Czech","Indo-European","Latin",44,16032,150312
+"17","Dutch","Indo-European","Latin",41,10666,320992
+"18","English","Indo-European","Latin",97,173522,9829660
+"19","French","Indo-European","Latin",244,162740,3732822
+"20","German","Indo-European","Latin",152,150362,4235094
+"21","Irish","Indo-European","Latin",31,2311,22751
+"22","Italian","Indo-European","Latin",110,55480,812604
+"23","Latvian","Indo-European","Latin",35,7792,30358
+"24","Polish","Indo-European","Latin",38,25365,595613
+"25","Portuguese","Indo-European","Latin",41,13049,295042
+"26","Romanian","Indo-European","Latin",36,6449,33370
+"27","Romansh","Indo-European","Latin",40,9801,44192
+"28","Slovenian","Indo-European","Latin",28,5994,26402
+"29","Spanish","Indo-European","Latin",186,75617,1843646
+"30","Swedish","Indo-European","Latin",30,4454,63282
+"31","Welsh","Indo-European","Latin",43,11488,547345
+"32","Western Frisian","Indo-European","Latin",42,8419,63127
+"33","Oriya","Indo-European","Odia",59,921,1929
+"34","Dhivehi","Indo-European","Thaana",40,155,1388
+"35","Georgian","Kartvelian","Georgian",34,7945,15481
+"36","Basque","Language isolate","Latin",28,24998,460188
+"37","Mongolian","Mongolic","Mongolian",36,14844,70638
+"38","Kinyarwanda","Niger-Congo","Latin",96,135328,1945038
+"39","Abkhazian","Northwest Caucasian","Cyrillic",37,150,189
+"40","Hakha Chin","Sino-Tibetan","Latin",28,2515,17806
+"41","Chuvash","Turkic","Cyrillic",36,5565,16270
+"42","Kirghiz","Turkic","Cyrillic",38,10497,62687
+"43","Tatar","Turkic","Cyrillic",47,22313,145458
+"44","Yakut","Turkic","Cyrillic",42,8041,22795
+"45","Turkish","Turkic","Latin",37,8957,107910
+"46","Estonian","Uralic","Latin",34,30135,123895
