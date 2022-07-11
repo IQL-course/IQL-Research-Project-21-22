@@ -27,6 +27,7 @@ source('R_functions.R')
 
 
 
+
 # QUESTIONS
 # - what does it mean when Pearson is significant and kendall not?
 
@@ -425,18 +426,16 @@ out_langs <- c('Abkhazian','Dhivehi','Panjabi','Vietnamese')
 
 opt_df  <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
   select(-family,-script)
-tau_df  <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-  select(language,corr)
 df_null <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] %>% 
   select(language,omega) %>% rename(exp_omega=omega)
 
-merged  <- merge(opt_df,tau_df, by = c('language')) %>% merge(df_null, by = c('language')) %>%  
-  mutate(corr_min = corr/omega, `Lmin/Lr`=Lmin/Lrand) %>% mutate(exp_tau = exp_omega*corr_min)
+merged  <- merge(opt_df,df_null, by = c('language'))%>% 
+  mutate(exp_tau = exp_omega*corr_min, `Lmin/Lr`=Lmin/Lrand)
 
 
 # boxplots: Lr_diff, tau, tau_min, L_min
 par(mfrow=c(2,2))
-
+pdf(here('figures','usl_all_boxplots.pdf'))
 lapply(c('E[tau]','tau_min','Lmin_dur','Lmin_dur/Lr'), function(i) {
   merged$var <- switch(i, 'E[tau]'=merged$exp_tau,'Lmin_dur'=merged$Lmin,
                        'Lmin_dur/Lr'=merged$`Lmin/Lr`, 'tau_min'=merged$corr_min)
@@ -446,7 +445,7 @@ lapply(c('E[tau]','tau_min','Lmin_dur','Lmin_dur/Lr'), function(i) {
   text(x=1, y=outs, labels=out_langs)
   title(paste0('Boxplot of ',i))
 })
-pdf(here('figures','usl_all_boxplots.pdf'))
+dev.off()
 
 
 
