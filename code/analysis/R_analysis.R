@@ -31,11 +31,6 @@ source('R_functions.R')
 # - O be careful when stating averages over all corpora
 
 
-# QUESTIONS
-# - shall " ", "'",  "-" be counted in A?
-
-# TO SAY
-# - trash in cv (thus huge A)
 
 
 
@@ -59,13 +54,18 @@ lapply(COLLS,function(collection) {
 
 
 # + alphabet from k-means
-df_ab <- data.frame(table(unlist(strsplit(words, '')))) %>% 
-  mutate(Freq=log10(Freq)) %>% arrange(desc(Freq))
-library(cluster)
-df_ab$group <- kmeans(df_ab$Freq, centers = 2, nstart = 10)$cluster
-
 library(Ckmeans.1d.dp)
-df_ab$group_opt <- Ckmeans.1d.dp(df_ab$Freq, 2)$cluster
+lapply(COLLS,function(collection) {
+  iso_codes <- if (collection == 'pud') langs_df_pud$iso_code else if (collection == 'cv') langs_df_cv$iso_code
+  lapply(iso_codes, function(iso_code) {
+    df <- read.csv(here('code/preprocessing/',paste0(collection,'/characters/',iso_code,'-character.csv'))) %>% 
+      mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
+    df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
+    df <- df %>% filter(group_opt == 2)
+    alphabet <- df$character
+    write(alphabet, here('data/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
+  })
+})
 
 
 # + collections summary 
