@@ -72,11 +72,15 @@ read_language <- function(language, collection, remove_vowels=FALSE) {
       } else  if(iso_code=='isl' | iso_code=='ces'){
         gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", df$word)                  # with ý
       } else {
+        print("test else")
         gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)                     # no y
       }
-      df$length <- nchar(df$word)          
-      if(length(which(df$length==0))==0) df
-      else df[-which(df$length==0),]
+      df$length <- nchar(df$word)   
+      cat("number of length 0:",length(which(df$length==0)),"\nthey are:",which(df$length==0),"\n")
+      # do not remove length==0
+      # if(length(which(df$length==0))==0) df
+      # else df[-which(df$length==0),]
+      df
     } else print("Please specify a language of latin script")
   }
 }
