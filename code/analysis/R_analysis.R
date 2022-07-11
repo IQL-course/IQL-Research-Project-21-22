@@ -6,18 +6,16 @@ source('R_functions.R')
 # - X fix pud processing script
 # - X family and script to iso codes tables (someone)
 # - X recompute 1e05 with new seed (job 1 running)
-# - O recompute expected values with DescTools:::.DoCount(x,y,wts) (or Condistpairs) and apply
-  # other formula for Omega
-# - O recompute all tables (to add abk)
 # - X compute convergence on available values
 # - X add strokes to pud descriptive table
+# - O recompute all tables (to add abk and ara)
 # - O convergence of CV
+# - O recompute expected values with DescTools:::.DoCount(x,y,wts) (or Condistpairs) and apply
+  # other formula for Omega
 
 
 
 # NOTES FOR ANALYSIS
-# - O prettify labels of correlograms
-# - O correlation between pud and cv with k best sampled languages
 
 
 # NOTES FOR REPORT
@@ -26,9 +24,9 @@ source('R_functions.R')
 # - X E[eta] against  Lmin/E[L] plot
 # - X plot with arrows (6.4)
 # - X add HB note to correlogram captions
-# - O add kendall in correlogram scores
-# - O would we preserve PUD rankings if we measured in an other way?
-# - O pearson as robustness check for law of abbreviation 
+# - X add kendall in correlogram scores
+# - X would we preserve PUD rankings if we measured in an other way?
+# - X pearson as robustness check for law of abbreviation 
    #(sometimes increase sometimes decrease)
 # - O be careful when stating averages over all corpora
 
@@ -49,14 +47,25 @@ source('R_functions.R')
 lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(langs_df$language, function(language) {
-    df       <- read_language(language,collection) 
+    df       <- read_language(language,collection)
     words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
-    alphabet_size <- unique(unlist(strsplit(words, ''))) %>% length()
+    alphabet <- unique(unlist(strsplit(words, '')))
+    alphabet_size <- alphabet %>% length()
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
   write.csv(df, here('results',paste0('alphabet_sisez_',collection,'.csv')))
 })
+
+
+# + alphabet from k-means
+df_ab <- data.frame(table(unlist(strsplit(words, '')))) %>% 
+  mutate(Freq=log10(Freq)) %>% arrange(desc(Freq))
+library(cluster)
+df_ab$group <- kmeans(df_ab$Freq, centers = 2, nstart = 10)$cluster
+
+library(Ckmeans.1d.dp)
+df_ab$group_opt <- Ckmeans.1d.dp(df_ab$Freq, 2)$cluster
 
 
 # + collections summary 
@@ -119,7 +128,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
         suffix       <- paste0("_",length_def)
         df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
           dplyr::select(L,eta,psi,omega)
-        plot_correlogram(df,plot_corr,'scores',HB_correct = T,8,20,25)
+        plot_correlogram(df,plot_corr,'scores',HB_correct = T,10,22,25)
         ggsave(here('figures',paste0('corrplot_',collection,suffix,plot_corr_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
@@ -127,7 +136,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
       suffix       <- paste0("_",length_def)
       df <- read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
         dplyr::select(L,eta,psi,omega)
-      plot_correlogram(df,plot_corr,'scores',HB_correct = T,8,20,25)
+      plot_correlogram(df,plot_corr,'scores',HB_correct = T,10,22,25)
       ggsave(here('figures',paste0('corrplot_',collection,suffix,plot_corr_suffix,'.pdf')),device = cairo_pdf)
     }
     })
@@ -303,7 +312,7 @@ lapply(COLLS, function(collection) {
           select(language,eta,psi,omega)
         df <- merge(params_df,opt_df, by='language') %>% select(-language)
         # plot
-        plot_correlogram(df,plot_corr,'params',HB_correct=T,5,18,18)
+        plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
         ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
@@ -314,7 +323,7 @@ lapply(COLLS, function(collection) {
         select(language,eta,psi,omega)
       df <- merge(params_df,opt_df, by='language') %>% select(-language)
       # plot
-      plot_correlogram(df,plot_corr,'params',HB_correct=T,5,18,18)
+      plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
       ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
     }
   })
@@ -323,10 +332,15 @@ lapply(COLLS, function(collection) {
 
 
 # + convergence of scores TO REDO IN REPORT
-scores_df <- read.csv(here('results','scores_convergence.csv'))[-1]  %>% 
+collection <- 'pud'
+suffix <- '_characters'
+sample_sizes <- c(2^seq(3,23))
+languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
+
+scores_df <- read.csv(here('results',paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
   mutate(t = rep(sample_sizes,length(languages)))
 melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
-  rename(score = value)
+  rename(score = value) %>% na.omit()
 ggplot(melt_df) + geom_line(aes(`t`,score,color=variable)) + 
   facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
   theme(strip.text = element_text(size = 8)) + theme(legend.position = 'bottom') +
@@ -334,7 +348,7 @@ ggplot(melt_df) + geom_line(aes(`t`,score,color=variable)) +
   scale_color_discrete(labels=c('\u03B7','\u03A8','\u03A9')) +
   scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
                 labels=scales::trans_format('log10',scales::math_format(10^.x)))
-ggsave(here('figures',paste0('convergence_pud.pdf')),device = cairo_pdf)
+ggsave(here('figures',paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
 
 
 
@@ -362,7 +376,7 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 ## correlation wit Lmin, Lr, and Lmin/Lr
-remove_out <- T
+remove_out <- F
 lapply(c('kendall','pearson'), function(plot_corr) {
   plot_corr_suffix <- paste0('_',plot_corr)
   out_suffix <- ifelse(remove_out==T,'_noOut','')
@@ -372,7 +386,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
         suffix       <- paste0("_",length_def)
         df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
         if (remove_out == T) df <-  df %>% filter(language %!in% c('Panjabi'))
-        plot_correlogram(df,plot_corr,'null',HB_correct=T,6,15,18)
+        plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
           ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
@@ -380,7 +394,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
       suffix       <- paste0("_",length_def)
       df <- read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1]
       if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
-      plot_correlogram(df,plot_corr,'null',HB_correct=T,6,15,18)
+      plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
         ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
     }
   })

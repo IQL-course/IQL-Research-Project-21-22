@@ -177,12 +177,11 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall', leng
 
 compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments = 10^2) {
   set.seed(962)
+  if (n_sample<=nrow(df_all)) {
   scores <- lapply(1:n_experiments, function(i) {
     # sample
-    df <- if (n_sample<=nrow(df_all)) {
-      sample_n(df_all,n_sample) %>% group_by(word) %>% summarise(frequency = n(),length) %>% 
+    df <- sample_n(df_all,n_sample) %>% group_by(word) %>% summarise(frequency = n(),length) %>% 
         unique() %>% arrange(desc(frequency))
-    } else df_all %>% mutate(length = NA, frequency=NA)
     N_types    <- nrow(df)
     p          <- df$frequency/sum(df$frequency)
     Lmin       <- sum(sort(df$length)*p)                                               
@@ -196,6 +195,7 @@ compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments
     omega <- corr/corr_min 
     list('eta'=eta,'psi'=psi,'omega'=omega)
   })
+  } else scores <- list('eta'=NA,'psi'=NA,'omega'=NA)
   
   averages <- sapply(1:length(scores[[1]]), function(score_index) {
     scores_list   <- sapply(scores, `[[`, score_index)
