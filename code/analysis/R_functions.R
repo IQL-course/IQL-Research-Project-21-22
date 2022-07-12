@@ -225,18 +225,18 @@ compute_expectation_scores_lang <- function(lang,collection,length_def='characte
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
   Lrand      <- sum(df$length)/N_types    # random baseline (unweighted)
-  corr_min   <- cor.fk(df$frequency, sort(df$length))
-  nd_min     <- DescTools:::.DoCount(df$frequency,sort(df$length))$D
+  corr_min   <- if (other_def==F) cor.fk(df$frequency, sort(df$length)) else NULL
+  nd_min     <- if (other_def==T) DescTools:::.DoCount(df$frequency,sort(df$length))$D else NULL
   
   set.seed(962)
   scores <- lapply(1:n_experiments, function(i) {
     length     <- sample(df$length)                            # shuffle length, each time different
     L          <- sum(length*p)                                # real value (weight by freq)
-    corr       <- cor.fk(df$frequency, length)
+    corr       <- if (other_def==F) cor.fk(df$frequency, length) else NULL
     # alternative formula
-    res <- DescTools:::.DoCount(df$frequency,df$length)
-    nd <- res$D
-    nc <- res$C
+    res <- if (other_def==T) DescTools:::.DoCount(df$frequency,df$length) else NULL
+    nd <- if (other_def==T) res$D else NULL
+    nc <- if (other_def==T) res$C else NULL
     # scores:
     eta   <- Lmin/L
     psi   <- (Lrand-L)/(Lrand-Lmin)
