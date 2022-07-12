@@ -8,10 +8,9 @@ source('R_functions.R')
 # - X recompute 1e05 with new seed (job 1 running)
 # - X compute convergence on available values
 # - X add strokes to pud descriptive table
-# - O recompute all tables (to add abk and ara)
-# - O convergence of CV
-# - O recompute expected values with DescTools:::.DoCount(x,y,wts) (or Condistpairs) and apply
-  # other formula for Omega
+# - X recompute all tables (to add abk and ara)
+# - X convergence of CV
+# - O recompute expected values with DescTools:::.DoCount(x,y,wts) (to Run)
 
 
 
@@ -28,8 +27,8 @@ source('R_functions.R')
 # - X would we preserve PUD rankings if we measured in an other way?
 # - X pearson as robustness check for law of abbreviation 
    #(sometimes increase sometimes decrease)
-# - O be careful when stating averages over all corpora
-
+# - X be careful when stating averages over all corpora
+# - pud can make comparisons, but is not very large (still) the ranking could be preserved
 
 
 

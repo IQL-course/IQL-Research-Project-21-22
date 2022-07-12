@@ -18,6 +18,7 @@ library(DescTools)
 
 # set
 corr_type <- 'kendall'
+filter <- F
 corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
 folder_suffix <- ifelse(filter,'_filtered','')
 
@@ -214,8 +215,8 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
 
 
 
-compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,other_def=F) {
-  df <- read_language(lang,collection)
+compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,other_def=F) {
+  df <- read_language(lang,collection,F,filter)
   # choose definition of 'length' in cv
   if (collection == 'cv') {
     df$length <- if (length_def == 'medianDuration') df$medianDuration else df$characters
@@ -253,18 +254,23 @@ compute_expectation_scores_lang <- function(lang,collection,length_def='characte
              "Lmin"=Lmin, "L"=averages[1], "Lrand"=Lrand, "eta"=averages[2], "psi"=averages[3], "omega"=averages[4])
 }
 
+# job 1: old data, new formula
+# job 2: new data, old formula
 
-null_hyp_job_cv <- function(job_index,iters,cores,other_def) {
+null_hyp_job_cv <- function(job_index,iters,cores,length_def) {
   collection <- 'cv'
-  big_langs <- c('German','English','Kinyarwanda')
-  length_def <- ifelse(job_index %in% c(1,2), 'medianDuration','characters')
-  langs      <- if (job_index %in% c(1,3)) big_langs else langs_df_cv$language[langs_df_cv$language %!in% big_langs]
+  #big_langs <- c('German','English','Kinyarwanda')
+  #length_def <- ifelse(job_index %in% c(1,2), 'medianDuration','characters')
+  #langs      <- if (job_index %in% c(1,3)) big_langs else langs_df_cv$language[langs_df_cv$language %!in% big_langs]
+  filter     <- ifelse(job_index == 1, F,T)
+  other_def  <- ifelse(job_index == 1, T,F)
+  job_suffix <- ifelse(job_index == 1, '_olddata_newdef','_olddef_newdata')
   suffix <- paste0("_",length_def)
-  scores <- mclapply(langs, function(language) {
-    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters,other_def) 
+  scores <- mclapply(langs_df_cv$language, function(language) {
+    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters,filter,other_def) 
   }, mc.cores = cores)
   null_df <- do.call(rbind.data.frame,scores)
-  write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_',job_index,'.csv')))
+  write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,job_suffix,'.csv')))
 }
 
 

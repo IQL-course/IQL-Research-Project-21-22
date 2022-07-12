@@ -1,14 +1,18 @@
 
 # NULL HYPOTHESIS --------------------------------------------------------------
 source('R_functions.R')
+print('begin')
 args = commandArgs(trailingOnly=TRUE)
 
 # ARGS: iterations, collection, job_index(CV), cores(CV) = 3
+
 iters       <- as.numeric(args[[1]])
 collections <- args[[2]]
-job_index   <- if ('cv' %in% collections) as.numeric(args[[3]]) 
+job_index   <- if (collections == 'pud') NULL else as.numeric(args[[3]]) 
 cores       <- if (length(args)>=4) as.numeric(args[[4]]) else 3
-other_def <- if (length(args)>=5) as.logical(args[[5]]) else F
+other_def   <- if (length(args)>=5) as.logical(args[[5]]) else F
+
+
 
 
 # INSTRUCTIONS FOR NULL HYPOTHESIS TESTING:
@@ -17,12 +21,16 @@ other_def <- if (length(args)>=5) as.logical(args[[5]]) else F
 # avoid running the computation of the optimality scores.
 # - notice that the computation of pud is commented because it is already done.
 
-# JOBS DIVISION
+# OLD JOBS DIVISION
 # approx each: 21.532.712
 # person 1: english (dur) 13.165.106 + german (dur) 5.569.590 + Kinyarwanda (dur) 2.673.259 <- 21.407.955
 # person 2: (sorted_df$X.tokens[1:41] + Catalan + French) (dur) <- 21.657.468
 # person 3: english (chars) 13.165.106 + german (chars) 5.569.590 + Kinyarwanda (chars) 2.673.259 <- 21.407.955
 # person 4: (sorted_df$X.tokens[1:41] + Catalan + French) (chars) <- 21.657.468
+
+# NEW JOB DIVISION
+# 1: old data, new definition of omega
+# 2: new data, old definition of omega
 
 if (collections %in% c('pud','both')) {
   length_def <- 'characters'
@@ -38,10 +46,17 @@ if (collections %in% c('pud','both')) {
 } 
 
 if (collections %in% c('cv','both')) {
-  print(Sys.time())
-  null_hyp_job_cv(job_index,iters,cores,other_def)
-  print(Sys.time())
+  collection <- 'cv'
+  print(collection)
+  res <- lapply(c(length_defs), function(length) {
+    suffix <- paste0("_",length)
+    print(length)
+    print(Sys.time())
+    null_hyp_job_cv(job_index,iters,cores,length)
+    print(Sys.time())
+  })
 }
+
 
 
 
