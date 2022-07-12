@@ -6,8 +6,9 @@ args = commandArgs(trailingOnly=TRUE)
 # ARGS: iterations, collection, job_index(CV), cores(CV) = 3
 iters       <- as.numeric(args[[1]])
 collections <- args[[2]]
-job_index   <- if ('cv' %in% collections) as.numeric(args[[3]]) else print('specify a job')
-cores       <- if (length(args)==4) as.numeric(args[[4]]) else 3
+job_index   <- if ('cv' %in% collections) as.numeric(args[[3]]) 
+cores       <- if (length(args)>=4) as.numeric(args[[4]]) else 3
+other_def <- if (length(args)>=5) as.logical(args[[5]]) else F
 
 
 # INSTRUCTIONS FOR NULL HYPOTHESIS TESTING:
@@ -29,7 +30,7 @@ if (collections %in% c('pud','both')) {
   suffix <- paste0("_",length_def)
   print(Sys.time())
   scores <- mclapply(langs_df_pud$language, function(language) {
-    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters) 
+    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters,other_def) 
   }, mc.cores = 3)
   print(Sys.time())
   null_df <- do.call(rbind.data.frame,scores)
@@ -38,7 +39,7 @@ if (collections %in% c('pud','both')) {
 
 if (collections %in% c('cv','both')) {
   print(Sys.time())
-  null_hyp_job_cv(job_index,iters,cores)
+  null_hyp_job_cv(job_index,iters,cores,other_def)
   print(Sys.time())
 }
 
