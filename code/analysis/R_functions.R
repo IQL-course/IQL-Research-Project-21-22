@@ -50,14 +50,13 @@ ISO_cv      <- langs_df_cv$iso_code
 # functions  -------------------------------------------------------------------
 do_remove_vowels <- function(iso_code,words) {
   if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol'){
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", words)                   # with y
+    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", words)                   # with y
   } else  if(iso_code=='isl' | iso_code=='ces'){
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", words)                  # with ý
+    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", words)                  # with ý
   } else if(iso_code=='zho'){
-    print("test Chinese")
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     
+    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü]","",words)                     
   } else {
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     # no y
+    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     # no y
   }
 }
 
@@ -74,7 +73,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
       iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
       str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), fileEncoding = 'UTF-8')[-1]
+      read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
     } else print('specify an available collection')
   }
   else {
@@ -82,7 +81,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
       iso_code    <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if(iso_code=='zho') "pinyin" else if(iso_code=='jpn') "romaji" else NULL   # file suffix
       str_suffix  <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), fileEncoding = 'UTF-8')[-1]
+      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
       df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
       df$word <- do_remove_vowels(iso_code,df$word)
@@ -152,7 +151,7 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall',lengt
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
     res <- mclapply(languages, function(language) {
       compute_optimality_scores_lang(language,collection,length_def,corr_type,remove_vowels,filter)
-      },mc.cores=3)
+      },mc.cores=1)
   df <- do.call(rbind.data.frame,res) 
   df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
