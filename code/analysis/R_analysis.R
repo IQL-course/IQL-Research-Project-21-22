@@ -543,39 +543,11 @@ print(xtable(df_k, type = "latex"),
 # - 1 - Significance of word lengths
 print('begin to compute tau correlations')
 tau_df <- compute_corr("pud", remove_vowels = TRUE)
-# Chinese
-df      <- read_language("Chinese-pinyin",'pud',TRUE)
-df$word <- gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",df$word)
-df$length <- nchar(df$word)   
-df  <- df %>% mutate(rank=1:nrow(.))
-res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
-tau_df$corr[tau_df$language=="Chinese-pinyin"] <- res$estimate
-tau_df$pvalue[tau_df$language=="Chinese-pinyin"] <- res$p.value
-tau_df <- tau_df%>% 
-  arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%                                                     # Holm-Bonferroni correction
-  mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
-
 write.csv(tau_df, here('results',paste0('correlation_pud_remove_vowels_kendall.csv')))
 
 # - 2 - Compute scores
 print('begin to compute optimality scores')
 opt_df <- compute_optimality_scores_coll("pud", remove_vowels = TRUE)
-# Chinese
-N_types    <- nrow(df)
-p          <- df$frequency/sum(df$frequency)
-Lmin       <- sum(sort(df$length)*p)                                                # min baseline
-L          <- sum(df$length*p)                                                      # real value (weight by freq)
-Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
-corr_min   <- cor.fk(df$frequency, sort(df$length))
-corr       <- tau_df$corr[tau_df$language=="Chinese-pinyin"]
-opt_df$Lmin[opt_df$language=="Chinese-pinyin"]  <- Lmin
-opt_df$L[opt_df$language=="Chinese-pinyin"]     <- L
-opt_df$Lrand[opt_df$language=="Chinese-pinyin"] <- Lrand
-opt_df$corr_min[opt_df$language=="Chinese-pinyin"]  <- corr_min
-opt_df$eta[opt_df$language=="Chinese-pinyin"]   <- Lmin/L
-opt_df$psi[opt_df$language=="Chinese-pinyin"]   <- (Lrand-L)/(Lrand-Lmin)
-opt_df$omega[opt_df$language=="Chinese-pinyin"] <- corr/corr_min 
-
 write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
 
 # plot comparison

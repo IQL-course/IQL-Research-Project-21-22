@@ -49,14 +49,13 @@ ISO_cv      <- langs_df_cv$iso_code
 
 # functions  -------------------------------------------------------------------
 do_remove_vowels <- function(iso_code,words) {
-  if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol'){
-    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", words)                   # with y
-  } else  if(iso_code=='isl' | iso_code=='ces'){
-    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", words)                  # with ý
+  if(iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'|iso_code=='ces'){
+    gsub("[aeiouáóéíúàèùìòâôîêûyýäöæą\U0105ę\U0119ů\U016F]","", words)          # with y ý
   } else if(iso_code=='zho'){
-    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü]","",words)                     
+    gsub("[aeiouā\U0101áǎ\U01CEàō\u014dóǒ\u01d2òē\U0113éě\U011Bè
+         ī\u012bíǐ\u01d0ìū\u016búǔ\u01d4ùǖǘ\U01D8ǚ\U01DAǜ\U01DCü]","",words)                     
   } else {
-    gsub("[aeiouāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     # no y
+    gsub("[AEUIOaeiouàèùìòâôîêûäöüåı]","",words)                     # no y
   }
 }
 
@@ -84,12 +83,10 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
       df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
       df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
-      df$word <- do_remove_vowels(iso_code,df$word)
+      df$word   <- do_remove_vowels(iso_code,df$word)
       df$length <- nchar(df$word)   
-      cat("number of length 0:",length(which(df$length==0)),"\nthey are:",which(df$length==0),"\n")
-      # do not remove length==0
-      # if(length(which(df$length==0))==0) df
-      # else df[-which(df$length==0),]
+      cat("number of length 0:",length(which(df$length==0)),
+          "\nrows:", which(df$length==0), "\n")
       df
     } else print("Please specify a language of latin script")
   }
