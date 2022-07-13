@@ -59,6 +59,16 @@ do_remove_vowels <- function(iso_code,words) {
   }
 }
 
+form_table <- function(score){
+  df_remove <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
+  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
+  df <- merge(df_noremove[c("language",score)], 
+              df_remove[c("language",score)], by="language") %>% 
+    mutate(class=score) 
+  colnames(df) <- c("language","x","y","class")
+  df
+}
+
 read_language <- function(language, collection, remove_vowels=FALSE, filtered=FALSE) {
   folder <- if (filtered==FALSE) 'data' else 'data/filtered'
   if(!remove_vowels){
@@ -92,8 +102,6 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
   }
 }
 
-
-
 compute_corr <- function(collection,corr_type='kendall',length = 'characters',remove_vowels=FALSE,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
@@ -111,7 +119,6 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters',re
     mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
   return(df)
 }
-
 
 
 compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=F) {
@@ -142,7 +149,6 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
              "eta"=eta, "psi"=psi, "omega"=omega)
 }
 
-
 compute_optimality_scores_coll <- function(collection, corr_type='kendall',length_def='characters',remove_vowels=F,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
@@ -153,8 +159,6 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall',lengt
   df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
 }
-
-
 
 
 compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments = 10^2) {
@@ -188,7 +192,6 @@ compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments
   data.frame("language"=lang, "eta"=averages[1], "psi"=averages[2], "omega"=averages[3], 't'=n_sample)
 }
 
-
 scores_convergence <- function(collection,length_def='characters',sample_sizes,n_experiments) {
   languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
   scores <- mclapply(languages, function(lang) {
@@ -207,8 +210,6 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
   
   do.call(rbind.data.frame,scores)
 }
-
-
 
 
 compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,other_def=F) {
@@ -296,14 +297,12 @@ opt_score_summary <- function(score,null=F, iters = 1000) {
   df[, as.list(summary(score)), by = collection] %>% cbind('sd'=df[, as.list(sd(score)), by = collection]$V1)
 }
 
-
 assign_stars <- function(df) {
   df %>% mutate(stars = case_when(hb_pvalue<=0.01                  ~ '***',
                                   hb_pvalue>0.01 & hb_pvalue<=0.05 ~ '**',
                                   hb_pvalue>0.05 & hb_pvalue<=0.1  ~ '*',
                                   hb_pvalue>0.1                    ~ 'x'))
 }
-
 
 HB_correction <- function(p.mat) {
   # find lower diagonal values
@@ -316,14 +315,11 @@ HB_correction <- function(p.mat) {
   return(p.mat)
 }
 
-
-
 add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
   corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
   merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
     select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
 }
-
 
 get_filtered_ori_df <- function(collection,length_def) {
   dfs <- lapply(c('results','results_filtered'), function(folder) {
@@ -488,3 +484,12 @@ plot_convergence <- function(df) {
                   labels=scales::trans_format('log10',scales::math_format(10^.x)))
 }
 
+plot_score_comparison <- function(df) {
+  ggplot(df,aes(x=x,y=y,label=language)) + 
+    facet_wrap(~class, nrow = 1) + 
+    geom_text_repel(max.overlaps=50) + 
+    labs(y = 'new scores', x = "original scores") + 
+    geom_abline(slope=1,intercept=0,color='purple')+
+    geom_point() +
+    theme(text = element_text(size = 15))
+}

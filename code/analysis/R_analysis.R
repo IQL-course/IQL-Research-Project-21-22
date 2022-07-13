@@ -1,5 +1,5 @@
 
-source('R_functions.R')
+source('R_functions.R', encoding="utf-8")
 
 
 # RESULTS TO PRODUCE
@@ -551,10 +551,11 @@ opt_df <- compute_optimality_scores_coll("pud", remove_vowels = TRUE)
 write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
 
 # plot comparison
-df_remove <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
-df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
-df <- merge(df_noremove[c("language","psi","omega","eta")],df_remove[c("language","psi","omega","eta")],by="language")
 
+plot_score_comparison(rbind(form_table("psi"),
+                            form_table("omega"),
+                            form_table("eta")))
+ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')),scale = 1.5)
 
 
 # effect of FILTERING  ---------------------------------------------------------
