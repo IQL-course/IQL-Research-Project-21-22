@@ -1,4 +1,5 @@
 
+Sys.setlocale("LC_ALL","English")
 source('R_functions.R', encoding="utf-8")
 
 

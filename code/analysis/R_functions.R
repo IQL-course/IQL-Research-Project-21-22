@@ -12,6 +12,7 @@ library(ggcorrplot)
 library(pcaPP)
 library(parallel)
 library(DescTools)
+library(ggpmisc)
 
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
@@ -486,10 +487,16 @@ plot_convergence <- function(df) {
 
 plot_score_comparison <- function(df) {
   ggplot(df,aes(x=x,y=y,label=language)) + 
-    facet_wrap(~class, nrow = 1) + 
+    facet_wrap(~class, nrow = 1, scales="free") + 
     geom_text_repel(max.overlaps=50) + 
     labs(y = 'new scores', x = "original scores") + 
     geom_abline(slope=1,intercept=0,color='purple')+
     geom_point() +
+    geom_smooth(method = 'lm', formula = y~x) +
+    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+                 label.x.npc = "left", label.y.npc = 1.5,
+                 eq.with.lhs = "italic(hat(y))~`=`~",
+                 eq.x.rhs = "~italic(x)",
+                 formula = y~x, parse = TRUE, size = 3) +
     theme(text = element_text(size = 15))
 }
