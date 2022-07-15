@@ -553,11 +553,14 @@ write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_ken
 
 # plot comparison
 
-plot_score_comparison(rbind(form_table("psi"),
-                            form_table("omega"),
-                            form_table("eta")))
+df <-rbind(form_table("eta"),
+           form_table("psi"),
+           form_table("omega"))
+df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
+plot_score_comparison(df)
 ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')), 
        scale = 1.5, device = cairo_pdf)
+
 
 
 # effect of FILTERING  ---------------------------------------------------------

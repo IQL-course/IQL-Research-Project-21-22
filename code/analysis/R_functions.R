@@ -491,13 +491,22 @@ plot_score_comparison <- function(df) {
                labeller = labeller(class=c(eta='\u03B7',psi='\u03A8',omega='\u03A9'))) + 
     geom_text_repel(max.overlaps=50) + 
     labs(y = 'new scores', x = "original scores") + 
-    geom_abline(slope=1,intercept=0,color='purple')+
+    geom_abline(slope=1,intercept=0,color='purple', size = 1,show.legend = TRUE)+
     geom_point() +
     geom_smooth(method = 'lm', formula = y~x) +
     stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
-                 label.x.npc = "left", label.y.npc = 1.5,
+                 label.x.npc = "left", 
+                 label.y.npc = 1.5,
                  eq.with.lhs = "italic(hat(y))~`=`~",
                  eq.x.rhs = "~italic(x)",
-                 formula = y~x, parse = TRUE, size = 4) +
-    theme(text = element_text(size = 17))
+                 formula = y~x, parse = TRUE, size = 4, color="blue") +
+    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+                  vjust="right", hjust="top", size = 4,
+                  nudge_x=0.1, nudge_y=0.1, color="purple") +
+    theme(text = element_text(size = 20),
+          legend.position = "right",
+          plot.title = element_text(
+            size = rel(1.2), lineheight = .9,
+            family = "Calibri", face = "bold", colour = "brown"
+          ))
 }
