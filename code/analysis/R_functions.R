@@ -487,7 +487,8 @@ plot_convergence <- function(df) {
 
 plot_score_comparison <- function(df) {
   ggplot(df,aes(x=x,y=y,label=language)) + 
-    facet_wrap(~class, nrow = 1, scales="free") + 
+    facet_wrap(~class, nrow = 1, scales="free", 
+               labeller = labeller(class=c(eta='\u03B7',psi='\u03A8',omega='\u03A9'))) + 
     geom_text_repel(max.overlaps=50) + 
     labs(y = 'new scores', x = "original scores") + 
     geom_abline(slope=1,intercept=0,color='purple')+
@@ -497,6 +498,6 @@ plot_score_comparison <- function(df) {
                  label.x.npc = "left", label.y.npc = 1.5,
                  eq.with.lhs = "italic(hat(y))~`=`~",
                  eq.x.rhs = "~italic(x)",
-                 formula = y~x, parse = TRUE, size = 3) +
-    theme(text = element_text(size = 15))
+                 formula = y~x, parse = TRUE, size = 4) +
+    theme(text = element_text(size = 17))
 }

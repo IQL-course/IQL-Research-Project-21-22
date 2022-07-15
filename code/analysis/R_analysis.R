@@ -556,7 +556,8 @@ write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_ken
 plot_score_comparison(rbind(form_table("psi"),
                             form_table("omega"),
                             form_table("eta")))
-ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')),scale = 1.5)
+ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')), 
+       scale = 1.5, device = cairo_pdf)
 
 
 # effect of FILTERING  ---------------------------------------------------------
