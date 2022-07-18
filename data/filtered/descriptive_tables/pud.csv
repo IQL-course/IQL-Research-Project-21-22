@@ -9,6 +9,9 @@ Hindi,hin,,4343,20071,Indo-European,Devanagari
 Indonesian,ind,,4501,16702,Austronesian,Latin
 Icelandic,isl,,6035,16209,Indo-European,Latin
 Italian,ita,,5606,21266,Indo-European,Latin
+Japanese,jpn,,4852,24737,Japonic,Japanese
+Japanese-romaji,jpn,,4849,24734,Japonic,Latin
+Japanese-strokes,jpn,,4852,24737,Japonic,Japanese
 Korean,kor,,6218,12307,Koreanic,Hangul
 Polish,pol,,7188,15191,Indo-European,Latin
 Portuguese,por,,5661,21855,Indo-European,Latin
@@ -17,4 +20,6 @@ Spanish,spa,,5750,21067,Indo-European,Latin
 Swedish,swe,,5624,16378,Indo-European,Latin
 Thai,tha,,3573,20860,Kra-Dai,Thai
 Turkish,tur,,6587,13799,Turkic,Latin
-Chinese,zho,,3154,15436,Sino-Tibetan,Han (Simplified variant)
+Chinese-pinyin,zho,,4970,17845,Sino-Tibetan,Latin
+Chinese,zho,,4970,17845,Sino-Tibetan,Han (Simplified variant)
+Chinese-strokes,zho,,4970,17845,Sino-Tibetan,Han (Simplified variant)
