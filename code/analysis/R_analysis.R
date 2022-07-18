@@ -1,5 +1,6 @@
 
-source('R_functions.R')
+Sys.setlocale("LC_ALL","English")
+source('R_functions.R', encoding="utf-8")
 
 
 # RESULTS TO PRODUCE
@@ -463,19 +464,22 @@ rows <- lapply(COLLS, function(collection) {
 # - 1 - Significance of word lengths
 print('begin to compute tau correlations')
 tau_df <- compute_corr("pud", remove_vowels = TRUE)
-write.csv(tau_df, here(paste0('results',folder_suffix),paste0('correlation_pud_remove_vowels_kendall.csv')))
+write.csv(tau_df, here('results',paste0('correlation_pud_remove_vowels_kendall.csv')))
 
 # - 2 - Compute scores
 print('begin to compute optimality scores')
 opt_df <- compute_optimality_scores_coll("pud", remove_vowels = TRUE)
-write.csv(opt_df, here(paste0('results',folder_suffix),paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
+write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
 
 # plot comparison
-df_remove <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
-df_noremove <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_pud_characters_kendall.csv')))
-df_noremove <- df_noremove[which(df_noremove$script=="Latin"),]
 
-
+df <-rbind(form_table("eta"),
+           form_table("psi"),
+           form_table("omega"))
+df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
+plot_score_comparison(df)
+ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')), 
+       scale = 1.5, device = cairo_pdf)
 
 
 

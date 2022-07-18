@@ -12,6 +12,7 @@ library(ggcorrplot)
 library(pcaPP)
 library(parallel)
 library(DescTools)
+library(ggpmisc)
 
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
@@ -49,16 +50,24 @@ ISO_cv      <- langs_df_cv$iso_code
 
 # functions  -------------------------------------------------------------------
 do_remove_vowels <- function(iso_code,words) {
-  if(iso_code=='fin' | iso_code=='fra' | iso_code=='pol'){
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåyąę]","", words)                   # with y
-  } else  if(iso_code=='isl' | iso_code=='ces'){
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåýąęı]","", words)                  # with ý
+  if(iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'|iso_code=='ces'){
+    gsub("[aeiouáóéíúàèùìòâôîêûyýäöæą\U0105ę\U0119ů\U016F]","", words)          # with y ý
   } else if(iso_code=='zho'){
-    print("test Chinese")
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     
+    gsub("[aeiouā\U0101áǎ\U01CEàō\u014dóǒ\u01d2òē\U0113éě\U011Bè
+         ī\u012bíǐ\u01d0ìū\u016búǔ\u01d4ùǖǘ\U01D8ǚ\U01DAǜ\U01DCü]","",words)                     
   } else {
-    gsub("[aeiouAEIOUāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜäöüůåąı]","",words)                     # no y
+    gsub("[AEUIOaeiouàèùìòâôîêûäöüåı]","",words)                     # no y
   }
+}
+
+form_table <- function(score){
+  df_remove <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
+  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
+  df <- merge(df_noremove[c("language",score)], 
+              df_remove[c("language",score)], by="language") %>% 
+    mutate(class=score) 
+  colnames(df) <- c("language","x","y","class")
+  df
 }
 
 read_language <- function(language, collection, remove_vowels=FALSE, filtered=FALSE) {
@@ -74,7 +83,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
       iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
       str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), fileEncoding = 'UTF-8')[-1]
+      read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
     } else print('specify an available collection')
   }
   else {
@@ -82,21 +91,17 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
       iso_code    <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if(iso_code=='zho') "pinyin" else if(iso_code=='jpn') "romaji" else NULL   # file suffix
       str_suffix  <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), fileEncoding = 'UTF-8')[-1]
+      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
       df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
-      df$word <- do_remove_vowels(iso_code,df$word)
+      df$word   <- do_remove_vowels(iso_code,df$word)
       df$length <- nchar(df$word)   
-      cat("number of length 0:",length(which(df$length==0)),"\nthey are:",which(df$length==0),"\n")
-      # do not remove length==0
-      # if(length(which(df$length==0))==0) df
-      # else df[-which(df$length==0),]
+      cat("number of length 0:",length(which(df$length==0)),
+          "\nrows:", which(df$length==0), "\n")
       df
     } else print("Please specify a language of latin script")
   }
 }
-
-
 
 compute_corr <- function(collection,corr_type='kendall',length = 'characters',remove_vowels=FALSE,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
@@ -115,7 +120,6 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters',re
     mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
   return(df)
 }
-
 
 
 compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=F) {
@@ -146,19 +150,16 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
              "eta"=eta, "psi"=psi, "omega"=omega)
 }
 
-
 compute_optimality_scores_coll <- function(collection, corr_type='kendall',length_def='characters',remove_vowels=F,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
     res <- mclapply(languages, function(language) {
       compute_optimality_scores_lang(language,collection,length_def,corr_type,remove_vowels,filter)
-      },mc.cores=3)
+      },mc.cores=1)
   df <- do.call(rbind.data.frame,res) 
   df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
 }
-
-
 
 
 compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments = 10^2) {
@@ -194,6 +195,7 @@ compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments
 
 
 scores_convergence <- function(collection,length_def='characters',sample_sizes,n_experiments,filter) {
+
   languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
   scores <- mclapply(languages, function(lang) {
     print(lang)
@@ -212,7 +214,6 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
   
   do.call(rbind.data.frame,scores)
 }
-
 
 
 
@@ -303,14 +304,12 @@ opt_score_summary <- function(score,null=F, iters = 1000) {
   df[, as.list(summary(score)), by = collection] %>% cbind('sd'=df[, as.list(sd(score)), by = collection]$V1)
 }
 
-
 assign_stars <- function(df) {
   df %>% mutate(stars = case_when(hb_pvalue<=0.01                  ~ '***',
                                   hb_pvalue>0.01 & hb_pvalue<=0.05 ~ '**',
                                   hb_pvalue>0.05 & hb_pvalue<=0.1  ~ '*',
                                   hb_pvalue>0.1                    ~ 'x'))
 }
-
 
 HB_correction <- function(p.mat) {
   # find lower diagonal values
@@ -323,14 +322,11 @@ HB_correction <- function(p.mat) {
   return(p.mat)
 }
 
-
-
 add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
   corr_df <- read.csv(here(paste0('results',folder_suffix),paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
   merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
     select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
 }
-
 
 get_filtered_ori_df <- function(collection,length_def) {
   dfs <- lapply(c('results','results_filtered'), function(folder) {
@@ -495,3 +491,28 @@ plot_convergence <- function(df) {
                   labels=scales::trans_format('log10',scales::math_format(10^.x)))
 }
 
+plot_score_comparison <- function(df) {
+  ggplot(df,aes(x=x,y=y,label=language)) + 
+    facet_wrap(~class, nrow = 1, scales="free", 
+               labeller = labeller(class=c(eta='\u03B7',psi='\u03A8',omega='\u03A9'))) + 
+    geom_text_repel(max.overlaps=50) + 
+    labs(y = 'new scores', x = "original scores") + 
+    geom_abline(slope=1,intercept=0,color='purple', size = 1,show.legend = TRUE)+
+    geom_point() +
+    geom_smooth(method = 'lm', formula = y~x) +
+    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+                 label.x.npc = "left", 
+                 label.y.npc = 1.5,
+                 eq.with.lhs = "italic(hat(y))~`=`~",
+                 eq.x.rhs = "~italic(x)",
+                 formula = y~x, parse = TRUE, size = 4, color="blue") +
+    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+                  vjust="right", hjust="top", size = 4,
+                  nudge_x=0.1, nudge_y=0.1, color="purple") +
+    theme(text = element_text(size = 20),
+          legend.position = "right",
+          plot.title = element_text(
+            size = rel(1.2), lineheight = .9,
+            family = "Calibri", face = "bold", colour = "brown"
+          ))
+}
