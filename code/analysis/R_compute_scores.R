@@ -2,7 +2,7 @@ source('R_functions.R')
 
 # WARNING! Running takes a long time!
 
-# ARGS: corr_type=('kendall','spearman'), collection = ('pud','cv','both), what =('corr','scores','both), filter?
+# ARGS: corr_type=('kendall','spearman'), collection = ('pud','cv','both), what =('corr','scores','both'), filter?
 
 #Sys.setlocale("LC_ALL","English")
 args = commandArgs(trailingOnly=TRUE)
@@ -14,7 +14,7 @@ filter <- if (length(args)>=4) as.logical(args[[4]]) else F
 folder <- if (filter==F) 'results' else 'results_filtered'
 
 # OPTIMALITY SCORES ------------------------------------------------------------
-if (args[[1]] %in% c('kendall','spearman')) {  
+if (args[[1]] %in% c('kendall','spearman','pearson')) {  
     if (collections %in% c('pud','both')) {
       collection <- 'pud'
       print(collection)

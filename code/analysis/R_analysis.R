@@ -178,7 +178,7 @@ pval <- cor_pmat(df_psi,method='kendall')[2,1]
 # - 2 - correlation significance --------------------------------------------------------
 
 lapply(c('kendall','pearson'), function(corr_type) {
-  plot_corr_suffix <- paste0('_',corr_type)
+  corr_suffix <- if (corr_type == 'kendall') '' else paste0('_',corr_type)
   ## cv
   collection <- 'cv'
   rows_cv <- lapply(length_defs, function(length_def) {
@@ -190,14 +190,14 @@ lapply(c('kendall','pearson'), function(corr_type) {
   })
   df <- do.call(rbind,rows_cv) 
   plot_corr_significance(df,corr_type)
-  ggsave(here(paste0('figures',folder_suffix),paste0('corr_significance_',collection,plot_corr_suffix,'.pdf')))
+  ggsave(here(paste0('figures',folder_suffix),paste0('corr_significance_',collection,corr_suffix,'.pdf')))
   
   ## pud
   collection <- 'pud'
   df <- read.csv(here(paste0('results',folder_suffix),paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))[-1] %>% 
     mutate(length_def = 'characters')
   plot_corr_significance(df,corr_type)
-  ggsave(here(paste0('figures',folder_suffix),paste0('corr_significance_',collection,plot_corr_suffix,'.pdf')))
+  ggsave(here(paste0('figures',folder_suffix),paste0('corr_significance_',collection,corr_suffix,'.pdf')))
 })
 
 
@@ -242,8 +242,7 @@ rows <- lapply(COLLS, function(collection) {
     print(collection)
     lapply(length_defs, function(length_def) {
       suffix     <- paste0("_",length_def)
-      opt_df  <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-        add_corr_min(collection,suffix,corr_suffix)
+      opt_df  <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
       # plot 1
       plot_score(score,opt_df)
       ggsave(here(paste0('figures',folder_suffix),paste0(score,'_',collection,suffix,'.pdf')), device = cairo_pdf)
@@ -255,8 +254,7 @@ rows <- lapply(COLLS, function(collection) {
     print(collection)
     length_def   <- 'characters'
     suffix       <- paste0("_",length_def)
-    opt_df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-      add_corr_min(collection,suffix,corr_suffix)
+    opt_df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
     # plot 1
     plot_score(score,opt_df)
     ggsave(here(paste0('figures',folder_suffix),paste0(score,'_',collection,suffix,'.pdf')), device = cairo_pdf)
@@ -268,21 +266,22 @@ rows <- lapply(COLLS, function(collection) {
 
 
 
-# + kendall vs spearman tables 
+# + kendall vs spearman tables
 collection <- 'pud'
 suffix <- '_characters'
-opt_scores_dfs <- lapply(c('kendall','spearman'), function(corr_type) {
-  opt_df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,'_',corr_type,'.csv')))[-1] %>%
+opt_scores_dfs <- lapply(c('','_spearman'), function(corr_type) {
+  opt_df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_type,'.csv')))[-1] %>%
     select(language,family, script,omega)
-  corr_df  <- read.csv(here(paste0('results',folder_suffix),paste0('correlation_',collection,suffix,'_',corr_type,'.csv')))[-1]      # to remove if add tau and tau_min before
-  opt_df  <- merge(opt_df,corr_df, by = c('language','family','script')) %>%                                 # to remove if add tau and tau_min before
+  corr_df  <- read.csv(here(paste0('results',folder_suffix),paste0('correlation_',collection,suffix,corr_type,'.csv')))[-1]      # to remove if add tau and tau_min before
+  opt_df  <- merge(opt_df,corr_df, by = c('language')) %>%                                 # to remove if add tau and tau_min before
     select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language) 
-  if (corr_type=='kendall') {
+  if (corr_type=='') {
     opt_df %>% rename(omega_tau=omega, tau = corr, tau_min = corr_min) 
     } else opt_df %>% rename(omega_ro=omega, ro = corr, ro_min = corr_min)
 })
 
-df <- merge(opt_scores_dfs[[1]],opt_scores_dfs[[2]], by = c('language','family','script'))
+df <- merge(opt_scores_dfs[[1]],opt_scores_dfs[[2]], by = c('language')) %>% 
+  merge(langs_df_pud[,c('language','family','script')], by = c('language'))
 df <- df[,c('language','family','script','tau','ro','tau_min','ro_min','omega_tau','omega_ro')] %>% 
   arrange(family,script,language)
 print(xtable(df,type = "latex"), 
@@ -334,6 +333,7 @@ lapply(COLLS, function(collection) {
 sample_sizes <- c(2^seq(3,23))
 rows <- lapply(COLLS, function(collection) {
   languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
+  languages <- sort(languages)
   if (collection == 'cv') {
     print(collection)
     lapply(length_defs, function(length_def) {
@@ -363,8 +363,8 @@ rows <- lapply(COLLS, function(collection) {
 
 
 
-# NULL HYPOTHESYS --------------------------------------------------------------
-iters <- 1e06
+# NULL HYPOTHESYS --------------------------------------------------------- TO DO
+iters <- 10000
 
 # merge jobs 1 2 
 lapply(length_defs,function(length_def) {
@@ -387,6 +387,7 @@ lapply(c('omega','eta','psi'), function(score) {
 
 ## correlation wit Lmin, Lr, and Lmin/Lr
 remove_out <- F
+combo_suff <- '_newdata_nosamplefreq'
 lapply(c('kendall','pearson'), function(plot_corr) {
   plot_corr_suffix <- paste0('_',plot_corr)
   out_suffix <- ifelse(remove_out==T,'_noOut','')
@@ -394,28 +395,35 @@ lapply(c('kendall','pearson'), function(plot_corr) {
     if (collection == 'cv') {
       lapply(length_defs, function(length_def) {
         suffix       <- paste0("_",length_def)
-        df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
-        if (remove_out == T) df <-  df %>% filter(language %!in% c('Panjabi'))
+        df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,combo_suff,'.csv')))[-1] 
+        if (remove_out == T) df <-  df %>% filter(language %!in% c('Panjabi','Dhivehi','Vietnamese','Abkhazian'))
         plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-          ggsave(here(paste0('figures',folder_suffix),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
+          ggsave(here(paste0('figures',folder_suffix),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,combo_suff,'.pdf')),device = cairo_pdf)
       })
     } else {
-      length_def <- 'characters'
-      suffix       <- paste0("_",length_def)
-      df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1]
-      if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
-      plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-        ggsave(here(paste0('figures',folder_suffix),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
+      #length_def <- 'characters'
+      #suffix       <- paste0("_",length_def)
+      #df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1]
+      #if (remove_out == T) df <-  df %>% filter(language %!in% c('Abkhazian','Panjabi'))
+      #plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
+      #  ggsave(here(paste0('figures',folder_suffix),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,out_suffix,'.pdf')),device = cairo_pdf)
     }
   })
 })
+
+
+# check
+df_old <- read.csv(here(paste0('results_filtered'),paste0('null_hypothesis_',collection,'_characters_100_newdata_olddef.csv')))[-1] 
+df_old <- read.csv(here(paste0('results_filtered'),paste0('null_hypothesis_',collection,'_characters_100_newdata_olddefori.csv')))[-1] 
+
+cbind('diff'=df_old$omega-df_new$omega, df_old$language)
 
 
 # E[scores] vs Lmin
 collection <- 'cv'
 rows_cv <- lapply(length_defs, function(length_def) {
   suffix       <- paste0("_",length_def)
-  df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
+  df <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,combo_suff,'.csv')))[-1] 
   df <- df %>% mutate(`Lmin/Lrand` = Lmin/Lrand) %>% dplyr::select(language,Lmin,psi,omega) %>% 
     rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def)
 })
@@ -423,10 +431,9 @@ df <- do.call(rbind,rows_cv)
 reshape2::melt(df, id.vars=c('language','Lmin','length_def')) %>% 
   mutate(color = ifelse(language %in% c('Vietnamese','Panjabi','Abkhazian','Dhivehi'),'undersampled','other')) %>% 
   ggplot(aes(x=`Lmin`,y=value,label=language,color=color)) + geom_text_repel(size=2)+
-  geom_abline(slope=1,intercept=0,color='purple')+ 
   geom_point() + geom_hline(yintercept = 0,color='purple') +
   facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free')
-ggsave(here(paste0('figures',folder_suffix),paste0('correlation_scores_Lmin.pdf')))
+ggsave(here(paste0('figures',folder_suffix),paste0('correlation_scores_Lmin',combo_suff,'.pdf')))
 
 
 # E[eta] vs Lmin/E[L]
@@ -448,93 +455,6 @@ rows <- lapply(COLLS, function(collection) {
 })
 
 
-# UNDERSAMPLED LANGS
-collection <- 'cv'
-suffix <- '_medianDuration'
-out_langs <- c('Abkhazian','Dhivehi','Panjabi','Vietnamese')
-
-opt_df  <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-  select(-family,-script)
-df_null <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] %>% 
-  select(language,omega) %>% rename(exp_omega=omega)
-
-merged  <- merge(opt_df,df_null, by = c('language'))%>% 
-  mutate(exp_tau = exp_omega*corr_min, `Lmin/Lr`=Lmin/Lrand)
-
-
-# boxplots: Lr_diff, tau, tau_min, L_min
-par(mfrow=c(2,2))
-pdf(here(paste0('figures',folder_suffix),'usl_all_boxplots.pdf'))
-lapply(c('E[tau]','tau_min','Lmin_dur','Lmin_dur/Lr'), function(i) {
-  merged$var <- switch(i, 'E[tau]'=merged$exp_tau,'Lmin_dur'=merged$Lmin,
-                       'Lmin_dur/Lr'=merged$`Lmin/Lr`, 'tau_min'=merged$corr_min)
-  outs <- merged$var[merged$language %in% out_langs]
-  boxplot(merged$var)
-  abline(h=outs,col='red')
-  text(x=1, y=outs, labels=out_langs)
-  title(paste0('Boxplot of ',i))
-})
-dev.off()
-
-
-
-
-
-
-# PUD and CV languages  --------------------------------------------------------
-sorted_df <- langs_df_cv %>% arrange(desc(X.tokens))
-common_langs <- sorted_df[sorted_df$language %in% langs_df_pud$language,]$language
-
-dfs <- lapply(COLLS, function(collection) {
-  suffix <- '_characters'
-  dfs <- lapply(c('psi','omega'), function(score) {
-    df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-      filter(language %in% common_langs)
-    df <- if (score == 'psi') select(df,language,psi) %>% mutate(score = 'psi') else select(df,language,omega) %>% mutate(score = 'omega')
-    if (score == 'psi') rename(df,value=psi)  else rename(df,value=omega)
-    })
-  df <- do.call(rbind.data.frame,dfs)
-  if (collection == 'cv') rename(df, cv=value ) else rename(df, pud=value )
-})
-
-df_common <- merge(dfs[[1]],dfs[[2]],by=c('language','score'))
-df_common <- merge(df_common, langs_df_cv[,c('language','family','script')], by ='language') %>% 
-  mutate(score = factor(score,levels=c('psi','omega')))
-ggplot(df_common,aes(pud,cv,label=language)) + geom_abline(intercept = 0,slope=1,color='purple')+
-  geom_point(aes(color=family,shape=script)) + geom_text_repel(size=3) + 
-  theme(legend.position = 'bottom')+ guides(color=guide_legend(nrow=2,byrow=TRUE))+
-  facet_wrap(~score,scales='free',labeller = labeller(score=scores_labs))
-ggsave(here(paste0('figures',folder_suffix),paste0('cvVSpud_groups.pdf')), device = cairo_pdf)
-
-
-# + ranking correlation
-cors <- lapply(2:13, function(k) {
-  dfs <- lapply(COLLS, function(collection) {
-    suffix <- '_characters'
-    dfs <- lapply(c('psi','omega'), function(score) {
-      df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
-        filter(language %in% common_langs[1:k])
-      df <- if (score == 'psi') select(df,language,psi) %>% mutate(score = 'psi') else select(df,language,omega) %>% mutate(score = 'omega')
-      if (score == 'psi') rename(df,value=psi)  else rename(df,value=omega)
-    })
-    df <- do.call(rbind.data.frame,dfs)
-    if (collection == 'cv') rename(df, cv=value ) else rename(df, pud=value )
-  })
-  df_common <- merge(dfs[[1]],dfs[[2]],by=c('language','score'))
-  cors <- lapply(c('psi','omega'), function(scoree) {
-    score_df <- df_common %>% filter(score == scoree) %>% arrange(pud) %>% select(pud,cv)
-    cor  <- cor(score_df,method='kendall')[2,1]
-    pval <- cor_pmat(score_df,method='kendall')[2,1]
-    l <- list('cor'=cor, 'pval'=pval)
-    names(l) <- c(paste0('cor_',scoree),paste0('pval_',scoree))
-    l
-  })
-  do.call(c,cors)
-})
-df_k <- do.call(rbind.data.frame,cors) %>% mutate(k = 2:13, min_size =sapply(sorted_df$X.tokens[2:13],min))
-print(xtable(df_k, type = "latex"), 
-  file = here('latex_tables','cvVSpud_k.tex'),
-  include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df_k)))
 
 
 
@@ -566,13 +486,109 @@ lapply(COLLS, function(collection) {
     length_def <- if (collection=='pud') 'characters' else length_def
     get_filtered_ori_df(collection,length_def) %>% 
       ggplot(aes(original,filtered,label=language)) + 
-        geom_abline(intercept = 0,slope=1,color='purple') + geom_point() + geom_text_repel(size=3) + 
-        theme(legend.position = 'bottom') + guides(color=guide_legend(nrow=2,byrow=TRUE))+
-        facet_wrap(~score,scales='free',labeller = labeller(score=scores_labs))
+      geom_abline(intercept = 0,slope=1,color='purple') + geom_point() + geom_text_repel(size=3) + 
+      theme(legend.position = 'bottom') + guides(color=guide_legend(nrow=2,byrow=TRUE))+
+      facet_wrap(~score,scales='free',labeller = labeller(score=scores_labs))
     ggsave(here(paste0('figures',folder_suffix),paste0('filteredVSoriginal_',collection,'_',length_def,'.pdf')), device = cairo_pdf)
   })
 })
 
+
+
+
+# check
+lang <- 'Dhivehi'
+df <- read_language(lang,collection,F,filter)
+plot(df$medianDuration,df$frequency, main = lang, xlab = 'length',ylab='frequency')
+
+
+
+
+
+
+# UNDERSAMPLED LANGS
+#collection <- 'cv'
+#suffix <- '_medianDuration'
+#out_langs <- c('Abkhazian','Dhivehi','Panjabi','Vietnamese')
+#
+#opt_df  <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+#  select(-family,-script)
+#df_null <- read.csv(here(paste0('results',folder_suffix),paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] %>% 
+#  select(language,omega) %>% rename(exp_omega=omega)
+#
+#merged  <- merge(opt_df,df_null, by = c('language'))%>% 
+#  mutate(exp_tau = exp_omega*corr_min, `Lmin/Lr`=Lmin/Lrand)
+#
+#
+## boxplots: Lr_diff, tau, tau_min, L_min
+#par(mfrow=c(2,2))
+#pdf(here(paste0('figures',folder_suffix),'usl_all_boxplots.pdf'))
+#lapply(c('E[tau]','tau_min','Lmin_dur','Lmin_dur/Lr'), function(i) {
+#  merged$var <- switch(i, 'E[tau]'=merged$exp_tau,'Lmin_dur'=merged$Lmin,
+#                       'Lmin_dur/Lr'=merged$`Lmin/Lr`, 'tau_min'=merged$corr_min)
+#  outs <- merged$var[merged$language %in% out_langs]
+#  boxplot(merged$var)
+#  abline(h=outs,col='red')
+#  text(x=1, y=outs, labels=out_langs)
+#  title(paste0('Boxplot of ',i))
+#})
+#dev.off()
+
+
+# PUD and CV languages  --------------------------------------------------------
+#sorted_df <- langs_df_cv %>% arrange(desc(X.tokens))
+#common_langs <- sorted_df[sorted_df$language %in% langs_df_pud$language,]$language
+
+#dfs <- lapply(COLLS, function(collection) {
+#  suffix <- '_characters'
+#  dfs <- lapply(c('psi','omega'), function(score) {
+#    df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+#      filter(language %in% common_langs)
+#    df <- if (score == 'psi') select(df,language,psi) %>% mutate(score = 'psi') else select(df,language,omega) %>% mutate(score = 'omega')
+#    if (score == 'psi') rename(df,value=psi)  else rename(df,value=omega)
+#    })
+#  df <- do.call(rbind.data.frame,dfs)
+#  if (collection == 'cv') rename(df, cv=value ) else rename(df, pud=value )
+#})
+#
+#df_common <- merge(dfs[[1]],dfs[[2]],by=c('language','score'))
+#df_common <- merge(df_common, langs_df_cv[,c('language','family','script')], by ='language') %>% 
+#  mutate(score = factor(score,levels=c('psi','omega')))
+#ggplot(df_common,aes(pud,cv,label=language)) + geom_abline(intercept = 0,slope=1,color='purple')+
+#  geom_point(aes(color=family,shape=script)) + geom_text_repel(size=3) + 
+#  theme(legend.position = 'bottom')+ guides(color=guide_legend(nrow=2,byrow=TRUE))+
+#  facet_wrap(~score,scales='free',labeller = labeller(score=scores_labs))
+#ggsave(here(paste0('figures',folder_suffix),paste0('cvVSpud_groups.pdf')), device = cairo_pdf)
+
+
+# + ranking correlation
+#cors <- lapply(2:13, function(k) {
+#  dfs <- lapply(COLLS, function(collection) {
+#    suffix <- '_characters'
+#    dfs <- lapply(c('psi','omega'), function(score) {
+#      df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] %>% 
+#        filter(language %in% common_langs[1:k])
+#      df <- if (score == 'psi') select(df,language,psi) %>% mutate(score = 'psi') else select(df,language,omega) %>% mutate(score = 'omega')
+#      if (score == 'psi') rename(df,value=psi)  else rename(df,value=omega)
+#    })
+#    df <- do.call(rbind.data.frame,dfs)
+#    if (collection == 'cv') rename(df, cv=value ) else rename(df, pud=value )
+#  })
+#  df_common <- merge(dfs[[1]],dfs[[2]],by=c('language','score'))
+#  cors <- lapply(c('psi','omega'), function(scoree) {
+#    score_df <- df_common %>% filter(score == scoree) %>% arrange(pud) %>% select(pud,cv)
+#    cor  <- cor(score_df,method='kendall')[2,1]
+#    pval <- cor_pmat(score_df,method='kendall')[2,1]
+#    l <- list('cor'=cor, 'pval'=pval)
+#    names(l) <- c(paste0('cor_',scoree),paste0('pval_',scoree))
+#    l
+#  })
+#  do.call(c,cors)
+#})
+#df_k <- do.call(rbind.data.frame,cors) %>% mutate(k = 2:13, min_size =sapply(sorted_df$X.tokens[2:13],min))
+#print(xtable(df_k, type = "latex"), 
+#  file = here('latex_tables','cvVSpud_k.tex'),
+#  include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df_k)))
 
 
 

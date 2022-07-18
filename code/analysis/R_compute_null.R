@@ -1,18 +1,18 @@
 
 # NULL HYPOTHESIS --------------------------------------------------------------
 source('R_functions.R')
-print('begin')
 args = commandArgs(trailingOnly=TRUE)
 
-# ARGS: iterations, collection, job_index(CV), cores(CV) = 3
+# ARGS: iterations, collection, cores(CV) = 3, filter, other_def
 
 iters       <- as.numeric(args[[1]])
 collections <- args[[2]]
-job_index   <- if (collections == 'pud') NULL else as.numeric(args[[3]]) 
-cores       <- if (length(args)>=4) as.numeric(args[[4]]) else 3
-other_def   <- if (length(args)>=5) as.logical(args[[5]]) else F
+cores       <- if (length(args)>=3) as.numeric(args[[3]]) else 3
+filter      <- if (length(args)>=4) as.logical(args[[4]]) else F
+undersample <- if (length(args)>=5) as.numeric(args[[5]]) else 'no'
 
-
+which_data <- ifelse(filter,'_newdata','_olddata')
+folder <- if (filter==F) 'results' else 'results_filtered'
 
 
 # INSTRUCTIONS FOR NULL HYPOTHESIS TESTING:
@@ -38,11 +38,11 @@ if (collections %in% c('pud','both')) {
   suffix <- paste0("_",length_def)
   print(Sys.time())
   scores <- mclapply(langs_df_pud$language, function(language) {
-    compute_expectation_scores_lang(language,collection,length_def,n_experiments = iters,other_def) 
+    compute_expectation_scores_lang(language,collection,length_def,iters,filter,undersample) 
   }, mc.cores = 3)
   print(Sys.time())
   null_df <- do.call(rbind.data.frame,scores)
-  write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,'_kendall.csv')))
+  write.csv(null_df, here(folder,paste0('null_hypothesis_',collection,suffix,'_',iters,'.csv')))
 } 
 
 if (collections %in% c('cv','both')) {
@@ -52,7 +52,11 @@ if (collections %in% c('cv','both')) {
     suffix <- paste0("_",length)
     print(length)
     print(Sys.time())
-    null_hyp_job_cv(job_index,iters,cores,length)
+    scores <- mclapply(langs_df_cv$language, function(language) {
+      compute_expectation_scores_lang(language,collection,length,n_experiments = iters,filter,undersample) 
+    },mc.cores=cores)
+    null_df <- do.call(rbind.data.frame,scores)
+    write.csv(null_df, here(folder,paste0('null_hypothesis_',collection,suffix,'_',iters,which_data,'_',undersample,'.csv')))
     print(Sys.time())
   })
 }

@@ -18,9 +18,10 @@ library(DescTools)
 
 # set
 corr_type <- 'kendall'
-filter <- F
+filter <- T
 corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
 folder_suffix <- ifelse(filter,'_filtered','')
+data_folder   <- ifelse(filter,'data/filtered','data')
 
 # globals ----------------------------------------------------------------------
 COLLS       <- c('pud','cv')
@@ -31,12 +32,11 @@ corr_colors_tau = c("#41B85C", "white", "orange")
 
 
 ## pud
-langs_df_pud <- read.csv(here("data/descriptive_tables/pud.csv")) %>% select(-dialect)
+langs_df_pud <- read.csv(here('data',"descriptive_tables/pud.csv")) %>% select(-dialect)
 langs_pud    <- langs_df_pud$language
 
-
 ## cv
-langs_df_cv <- read.csv(here("data/descriptive_tables/common_voice.csv")) %>% 
+langs_df_cv <- read.csv(here('data',"descriptive_tables/common_voice.csv")) %>% 
   filter(iso_code %!in% c('jpn','zho')) %>% select(-dialect) %>%                                             # remove Chinese and Japanese
   rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%  # shorten names 
   rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
@@ -193,10 +193,11 @@ compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments
 }
 
 
-scores_convergence <- function(collection,length_def='characters',sample_sizes,n_experiments) {
+scores_convergence <- function(collection,length_def='characters',sample_sizes,n_experiments,filter) {
   languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
   scores <- mclapply(languages, function(lang) {
-    df <- read_language(lang,collection)
+    print(lang)
+    df <- read_language(lang,collection,F,filter)
     if (collection == 'cv') {
       df$length <- if (length_def == 'medianDuration') df$medianDuration else df$characters
       df <- df %>% select(word,length,frequency)
@@ -215,44 +216,46 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
 
 
 
-compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,other_def=F) {
+compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,undersample) {
   df <- read_language(lang,collection,F,filter)
   # choose definition of 'length' in cv
   if (collection == 'cv') {
     df$length <- if (length_def == 'medianDuration') df$medianDuration else df$characters
   }
+  if (undersample!='no' & sum(df$frequency)>=undersample) {
+    df_all <- df[rep(seq_len(nrow(df)), df$frequency),]
+    df <- sample_n(df_all,undersample) %>% group_by(word) %>% summarise(frequency = n(),length) %>% 
+      unique() %>% arrange(desc(frequency))
+  }
   N_types    <- nrow(df)
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
   Lrand      <- sum(df$length)/N_types    # random baseline (unweighted)
-  corr_min   <- if (other_def==F) cor.fk(df$frequency, sort(df$length)) else NULL
-  nd_min     <- if (other_def==T) DescTools:::.DoCount(df$frequency,sort(df$length))$D else NULL
+  corr_min   <- cor.fk(df$frequency, sort(df$length))
   
   set.seed(962)
   scores <- lapply(1:n_experiments, function(i) {
     length     <- sample(df$length)                            # shuffle length, each time different
-    L          <- sum(length*p)                                # real value (weight by freq)
-    corr       <- if (other_def==F) cor.fk(df$frequency, length) else NULL
-    # alternative formula
-    res <- if (other_def==T) DescTools:::.DoCount(df$frequency,df$length) else NULL
-    nd <- if (other_def==T) res$D else NULL
-    nc <- if (other_def==T) res$C else NULL
+    L          <- sum(length*p)         # real value (weight by freq)
+    corr       <- cor.fk(df$frequency,length)
     # scores:
     eta   <- Lmin/L
     psi   <- (Lrand-L)/(Lrand-Lmin)
-    omega <- if (other_def==T) (nd-nc)/nd_min else corr/corr_min 
-    list('L'=L,'eta'=eta,'psi'=psi,'omega'=omega)
+    list('L'=L,'eta'=eta,'psi'=psi,'corr'=corr)
   })
   sums <- sapply(1:length(scores[[1]]), function(score_index) {
-    score <- names(scores[[1]])[score_index]
     value <- do.call(c,lapply(scores, `[[`, score_index)) %>% sum()
-    names(value) <- score
-    value
   })
   averages <- sums/n_experiments
+  
   data.frame("language"=lang,
-             "Lmin"=Lmin, "L"=averages[1], "Lrand"=Lrand, "eta"=averages[2], "psi"=averages[3], "omega"=averages[4])
+             "Lmin"=Lmin, "L"=averages[1], "Lrand"=Lrand, "eta"=averages[2], "psi"=averages[3], "omega"=averages[4]/corr_min)
 }
+
+
+
+
+
 
 # job 1: old data, new formula
 # job 2: new data, old formula
@@ -323,7 +326,7 @@ HB_correction <- function(p.mat) {
 
 
 add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
-  corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
+  corr_df <- read.csv(here(paste0('results',folder_suffix),paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
   merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
     select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
 }
@@ -392,12 +395,12 @@ plot_score <- function(score,opt_df) {
 
 
 plot_timeVSspace <- function(score,corr_type,length_def) {
-  df_chars <- read.csv(here('results',paste0('optimality_scores_cv_characters',corr_suffix,'.csv')))[-1] 
+  df_chars <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_cv_characters',corr_suffix,'.csv')))[-1] 
   df_chars$space <- if (score == 'omega') df_chars$omega else if (score == 'psi') df_chars$psi
   
   suffix       <- paste0("_",length_def)
   length_def <- gsub('Duration', "", length_def)
-  df <- read.csv(here('results',paste0('optimality_scores_cv',suffix,corr_suffix,'.csv')))[-1 ]%>% dplyr::select(-Lmin,-L,-Lrand,-eta)
+  df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_cv',suffix,corr_suffix,'.csv')))[-1 ]%>% dplyr::select(-Lmin,-L,-Lrand,-eta)
   df$score <- if (score == 'omega') df$omega else if (score == 'psi') df$psi
   df_time <- df %>% rename(time = score) %>% mutate(time_def = length_def)
 
@@ -406,7 +409,7 @@ plot_timeVSspace <- function(score,corr_type,length_def) {
     mutate(label = ifelse(abs(time-space)>=0.10,language,''),color = ifelse(abs(time-space)<0.10,'<10%','>=10%'))
   df %>% 
     ggplot(aes(space,time,label = label,color=color)) + geom_point() + theme(legend.position = 'bottom') +
-    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 3) + 
+    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 4) + 
     labs(x=bquote(.(score_latex)[chars]), y = bquote(.(score_latex)[dur])) +
     scale_color_manual(values = c("blue","red"),limits = c('>=10%', '<10%')) + 
     guides(color=guide_legend(title="deviation")) + theme(text = element_text(size = 20))
