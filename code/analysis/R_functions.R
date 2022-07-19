@@ -60,9 +60,10 @@ do_remove_vowels <- function(iso_code,words) {
   }
 }
 
-form_table <- function(score){
-  df_remove <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
-  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
+form_table <- function(score, corr_type='kendall'){
+  df_remove   <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_',corr_type,'.csv')))
+  corr_type   <- ifelse(corr_type=="kendall", "", paste0('_', corr_type))
+  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters',corr_type,'.csv')))
   df <- merge(df_noremove[c("language",score)], 
               df_remove[c("language",score)], by="language") %>% 
     mutate(class=score) 
@@ -509,10 +510,6 @@ plot_score_comparison <- function(df) {
     geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
                   vjust="right", hjust="top", size = 4,
                   nudge_x=0.1, nudge_y=0.1, color="purple") +
-    theme(text = element_text(size = 20),
-          legend.position = "right",
-          plot.title = element_text(
-            size = rel(1.2), lineheight = .9,
-            family = "Calibri", face = "bold", colour = "brown"
-          ))
+    theme(text = element_text(size = 20)) # +
+    ggtitle("")
 }
