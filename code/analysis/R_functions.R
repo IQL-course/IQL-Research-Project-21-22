@@ -61,6 +61,7 @@ do_remove_vowels <- function(iso_code,words) {
 }
 
 form_table <- function(score, corr_type='kendall'){
+  cat(corr_type,score,"==============")
   df_remove   <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_',corr_type,'.csv')))
   corr_type   <- ifelse(corr_type=="kendall", "", paste0('_', corr_type))
   df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters',corr_type,'.csv')))
@@ -68,6 +69,10 @@ form_table <- function(score, corr_type='kendall'){
               df_remove[c("language",score)], by="language") %>% 
     mutate(class=score) 
   colnames(df) <- c("language","x","y","class")
+  cat("\n", score, "linear regression")
+  #print(summary(lm(y~x,df)))
+  cat("error:", summary(lm(y~x,df))$coefficients[2, 2])
+  cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3),"\n")
   df
 }
 
