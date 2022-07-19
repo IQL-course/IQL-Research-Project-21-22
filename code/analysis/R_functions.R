@@ -71,7 +71,8 @@ form_table <- function(score, corr_type='kendall'){
   colnames(df) <- c("language","x","y","class")
   cat("\n", score, "linear regression")
   #print(summary(lm(y~x,df)))
-  cat("error:", summary(lm(y~x,df))$coefficients[2, 2])
+  cat("\nstd. error:", summary(lm(y~x,df))$coefficients[2, 2])
+  cat("\nR^2:", summary(lm(y~x,df))$r.squared)
   cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3),"\n")
   df
 }
