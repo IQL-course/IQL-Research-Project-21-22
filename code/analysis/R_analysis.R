@@ -461,27 +461,30 @@ rows <- lapply(COLLS, function(collection) {
 
 # PUD scores after removing vowels ---------------------------------------------
 
-# - 1 - Significance of word lengths
-print('begin to compute tau correlations')
-tau_df <- compute_corr("pud", remove_vowels = TRUE)
-write.csv(tau_df, here('results',paste0('correlation_pud_remove_vowels_kendall.csv')))
-
-# - 2 - Compute scores
-print('begin to compute optimality scores')
-opt_df <- compute_optimality_scores_coll("pud", remove_vowels = TRUE)
-write.csv(opt_df, here('results',paste0('optimality_scores_pud_remove_vowels_kendall.csv')))
-
-# plot comparison
-
-df <-rbind(form_table("eta"),
-           form_table("psi"),
-           form_table("omega"))
-df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
-plot_score_comparison(df)
-ggsave(here('figures', paste0('scores_comparison_pud_kendall.pdf')), 
-       scale = 1.5, device = cairo_pdf)
-
-
+lapply(
+  c("kendall", "pearson"),
+  function(corr_type) {
+    # - 1 - Significance of word lengths
+    print('begin to compute correlations')
+    tau_df <- compute_corr("pud", corr_type = corr_type, remove_vowels = TRUE)
+    write.csv(tau_df, here('results', paste0('correlation_pud_remove_vowels_',corr_type,'.csv')))
+    
+    # - 2 - Compute scores
+    print('begin to compute optimality scores')
+    opt_df <- compute_optimality_scores_coll("pud", corr_type = corr_type, remove_vowels = TRUE)
+    write.csv(opt_df, here('results', paste0('optimality_scores_pud_remove_vowels_',corr_type,'.csv')))
+    
+    # plot comparison
+    
+    df <-rbind(form_table("eta", corr_type = corr_type),
+               form_table("psi", corr_type = corr_type),
+               form_table("omega", corr_type = corr_type))
+    df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
+    plot_score_comparison(df)
+    ggsave(here('figures', paste0('scores_comparison_pud_',corr_type,'.pdf')), 
+           scale = 1.5, device = cairo_pdf)
+  }
+)
 
 # effect of FILTERING  ---------------------------------------------------------
 collection <- 'cv'
