@@ -10,7 +10,7 @@ args = commandArgs(trailingOnly=TRUE)
 corr_suffix <- if (args[[1]] == 'kendall') '' else paste0('_',args[[1]])
 collections <- args[[2]]
 what <- args[[3]]
-filter <- if (length(args)>=4) as.logical(args[[4]]) else F
+filter <- if (length(args)>=4) as.logical(args[[4]]) else T
 folder <- if (filter==F) 'results' else 'results_filtered'
 
 # OPTIMALITY SCORES ------------------------------------------------------------

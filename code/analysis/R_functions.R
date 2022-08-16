@@ -13,6 +13,8 @@ library(pcaPP)
 library(parallel)
 library(DescTools)
 library(ggpmisc)
+library(Ckmeans.1d.dp)
+library("psych") 
 
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
@@ -27,18 +29,26 @@ data_folder   <- ifelse(filter,'data/filtered','data')
 # globals ----------------------------------------------------------------------
 COLLS       <- c('pud','cv')
 length_defs <- c('characters','medianDuration')   # 'meanDuration'
-scores_labs <- c('\u03B7','\u03A8','\u03A9'); names(scores_labs) <- c('eta','psi','omega')
+exp_scores_labs <- c('E[eta]'='E[\u03B7]','E[psi]'='E[\u03A8]','E[omega]'='E[\u03A9]')
+length_labs <- c('medianDuration'='duration','characters'='characters')
+
+scores_labs <- c('n', 'T', 'A','L','\u03B7','\u03A8','\u03A9',
+                 bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),
+                 'E[\u03B7]','E[\u03A8]','E[\u03A9]')
+names(scores_labs) <- c('n', 'T', 'A','L','eta','psi','omega',
+                        'Lmin','Lr','Lmin/Lr',
+                        'E[eta]','E[psi]','E[omega]')
 corr_colors_r = c("blue", "white", "red")
 corr_colors_tau = c("#41B85C", "white", "orange")
+non_imm_langs <- c('Chinese-strokes',"Japanese-strokes",'Chinese-pinyin','Japanese-romaji')
 
 
 ## pud
-langs_df_pud <- read.csv(here('data',"descriptive_tables/pud.csv")) %>% select(-dialect)
-langs_pud    <- langs_df_pud$language
+langs_df_pud    <- read.csv(here('data/filtered',"descriptive_tables/pud.csv"))
+
 
 ## cv
-langs_df_cv <- read.csv(here('data',"descriptive_tables/common_voice.csv")) %>% 
-  filter(iso_code %!in% c('jpn','zho')) %>% select(-dialect) %>%                                             # remove Chinese and Japanese
+langs_df_cv <- read.csv(here('data/filtered',"descriptive_tables/common_voice.csv")) %>% 
   rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%  # shorten names 
   rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
   rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code") %>%
@@ -60,14 +70,11 @@ do_remove_vowels <- function(iso_code,words) {
   }
 }
 
-form_table <- function(score, corr_type='kendall'){
+form_table <- function(score, df_remove){
   cat(corr_type,score,"==============")
-  df_remove   <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels_',corr_type,'.csv')))
-  corr_type   <- ifelse(corr_type=="kendall", "", paste0('_', corr_type))
-  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters',corr_type,'.csv')))
+  df_noremove <- read_file('opt','pud','characters')
   df <- merge(df_noremove[c("language",score)], 
-              df_remove[c("language",score)], by="language") %>% 
-    mutate(class=score) 
+              df_remove[c("language",score)], by="language") %>% mutate(class=score) 
   colnames(df) <- c("language","x","y","class")
   cat("\n", score, "linear regression")
   #print(summary(lm(y~x,df)))
@@ -110,10 +117,19 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=FA
   }
 }
 
+read_file <- function(what,collection,length_def='characters',filter=T,iters=1e+06, corr_type='kendall') {
+  file <- if (what=='corr') 'correlation_' else if (what=='opt')  'optimality_scores_' else if (what=='null') 'null_hypothesis_'
+  corr_suffix   <- ifelse(corr_type=='kendall','',paste0('_',corr_type))
+  folder_suffix <- ifelse(filter,'_filtered','')
+  iters_suffix  <- ifelse(what=='null',paste0('_',iters),'')
+  read.csv(here(paste0('results',folder_suffix),paste0(file,collection,'_',length_def,iters_suffix,corr_suffix,'.csv')))[-1]
+}
+
+
 compute_corr <- function(collection,corr_type='kendall',length = 'characters',remove_vowels=FALSE,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
-  cors <- lapply(languages, function(language) {
+  cors <- mclapply(languages, function(language) {
     print(language)
     df <- read_language(language,collection,remove_vowels,filter) %>% mutate(rank=1:nrow(.))
     if (collection == 'cv') {
@@ -121,10 +137,9 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters',re
     }
     res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
     list("language"=language, "corr"=res$estimate, "pvalue"=res$p.value)
-  })
+  }, mc.cores=3)
   df <- do.call(rbind.data.frame,cors) %>% 
-    arrange(pvalue) %>% mutate(index=1:nrow(.)) %>%                                                     # Holm-Bonferroni correction
-    mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)   
+    arrange(pvalue) %>% mutate(hb_pvalue = p.adjust(pvalue))   
   return(df)
 }
 
@@ -224,7 +239,7 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
 
 
 
-compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,undersample) {
+compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=F,undersample='no') {
   df <- read_language(lang,collection,F,filter)
   # choose definition of 'length' in cv
   if (collection == 'cv') {
@@ -285,13 +300,12 @@ null_hyp_job_cv <- function(job_index,iters,cores,length_def) {
 }
 
 
-opt_score_summary <- function(score,null=F, iters = 1000) {
+opt_score_summary <- function(score, null=F, iters = 1000) {
   rows <- lapply(COLLS, function(collection) {
     if (collection == 'cv') {
       rows_cv <- lapply(length_defs, function(length_def) {
-        suffix       <- paste0("_",length_def)
-        df <- if (null == F) read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
-              else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
+        df <- if (null == F) read_file('opt',collection,length_def,filter) 
+              else read_file('opt',collection,length_def,filter,iters)  
         df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
         length_def <- ifelse(length_def=='medianDuration','duration',length_def)
         df %>% mutate(collection = paste(toupper(collection),length_def,sep='-'))
@@ -299,10 +313,9 @@ opt_score_summary <- function(score,null=F, iters = 1000) {
       do.call(rbind,rows_cv)
     } else {
       length_def <- 'characters'
-      suffix       <- paste0("_",length_def)
-      df <- if (null == F) read.csv(here('results',paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))[-1] 
-            else read.csv(here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,corr_suffix,'.csv')))[-1] 
-      df <- df %>% filter(language %!in% c('Chinese-strokes','Japanese-strokes'))
+      df <- if (null == F) read_file('opt',collection,length_def,filter) 
+            else read_file('opt',collection,length_def,filter,iters) 
+      df <- df %>% filter(language %!in% non_imm_langs)
       df$score <- if (score=='omega') df$omega else if (score == 'eta') df$eta else if (score == 'psi') df$psi
       df %>% mutate(collection = paste(toupper(collection),'characters',sep='-'))
     }
@@ -319,13 +332,7 @@ assign_stars <- function(df) {
 }
 
 HB_correction <- function(p.mat) {
-  # find lower diagonal values
-  ind <- which( lower.tri(p.mat,diag=F) , arr.ind = TRUE )
-  p_vals <- data.frame( col = dimnames(p.mat)[[2]][ind[,2]] ,
-                        row = dimnames(p.mat)[[1]][ind[,1]] ,
-                        pvalue = p.mat[ ind ] ) %>% arrange(pvalue) %>% 
-    mutate(index=1:nrow(.)) %>% mutate(hb_pvalue = pvalue*(nrow(.)+1-index), index = NULL)  
-  for (i in 1:nrow(p_vals)) p.mat[p_vals$row[i], p_vals$col[i]] <- p_vals$hb_pvalue[i] 
+  p.mat[lower.tri(p.mat)] <- t(p.mat)[lower.tri(p.mat)]
   return(p.mat)
 }
 
@@ -356,35 +363,20 @@ get_filtered_ori_df <- function(collection,length_def) {
 
 plot_score_composition <- function(score,opt_df) {
   score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
-  if (score == 'psi') {
-    L_diff_df <- opt_df %>% 
-      select(language,Lmin,L,Lrand,psi) %>% 
-      summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
-    L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
-    melted <- reshape2::melt(L_diff_df, id.vars=c("language","psi")) %>% 
-      mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
-    melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
-    melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
-    
-    ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
-      theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
-      labs(x=score_latex, y="Length") + guides(fill=guide_legend(title="difference")) +
-      geom_bar(stat="identity",aes(alpha=alphacol),color='white') +
-      scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
-  } else if (score == 'omega') {
-    corr_diff_df <- opt_df %>% select(language,omega,corr,corr_min) %>% 
-      summarise(language,omega,corr,'corr_min-corr' = corr_min-corr)
-    corr_diff_df$language <- factor(corr_diff_df$language, levels = corr_diff_df$language[order(corr_diff_df$omega)])
-    melted <- reshape2::melt(corr_diff_df, id.vars=c("language","omega")) %>% 
-      mutate(masked_omega = ifelse(variable == "corr",round(omega,2),""))
-    melted$variable <- factor(melted$variable, levels=c("corr_min-corr",'corr'))
-    melted$alphacol <- ifelse(melted$variable=="corr",1,0.3)
-    
-    ggplot(melted,aes(x=language,y=value,fill=variable))  + theme(legend.position = 'none') +
-      geom_bar(stat="identity",aes(alpha=alphacol),color='white') + coord_flip() + 
-      labs(x=score_latex, y= 'correlation') + guides(fill=guide_legend(title="difference")) +
-      scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('corr_min-corr', 'corr'))
-  }
+  L_diff_df <- opt_df %>% 
+    select(language,Lmin,L,Lrand,psi) %>% 
+    summarise(language,psi,Lmin,`Lrand-L` = Lrand-L, `L-Lmin` = L-Lmin)
+  L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
+  melted <- reshape2::melt(L_diff_df, id.vars=c("language","psi")) %>% 
+    mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
+  melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
+  melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
+  
+  ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
+    theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
+    labs(x=score_latex, y="Length") + guides(fill=guide_legend(title="difference")) +
+    geom_bar(stat="identity",aes(alpha=alphacol),color='white') + standart_theme +
+    scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
 }
 
 plot_score <- function(score,opt_df) {
@@ -392,58 +384,60 @@ plot_score <- function(score,opt_df) {
   opt_df$score <- if (score == 'omega') opt_df$omega else if (score == 'psi') opt_df$psi
   
   ggplot(opt_df,aes(reorder(language,score),score)) + geom_bar(stat='identity',fill='lightblue') + 
-    geom_text(aes(label = round(score,3)),nudge_y = -0.04, size=3) + theme(legend.position = 'bottom') +
-    coord_flip() + labs(x='language', y = score_latex)
+    geom_text(aes(label = round(score,3)),nudge_y = -0.04, size=3.5) + theme(legend.position = 'bottom') +
+    coord_flip() + labs(x='language', y = score_latex) + standart_theme
 }
 
 
-plot_timeVSspace <- function(score,corr_type,length_def) {
-  df_chars <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_cv_characters',corr_suffix,'.csv')))[-1] 
+plot_timeVSspace <- function(score,length_def,filter) {
+  df_chars       <- read_file('opt','cv','characters',filter)
   df_chars$space <- if (score == 'omega') df_chars$omega else if (score == 'psi') df_chars$psi
   
-  suffix       <- paste0("_",length_def)
-  length_def <- gsub('Duration', "", length_def)
-  df <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_cv',suffix,corr_suffix,'.csv')))[-1 ]%>% dplyr::select(-Lmin,-L,-Lrand,-eta)
+  df       <- read_file('opt','cv',length_def,filter) %>% select(-Lmin,-L,-Lrand,-eta)
   df$score <- if (score == 'omega') df$omega else if (score == 'psi') df$psi
-  df_time <- df %>% rename(time = score) %>% mutate(time_def = length_def)
-
+  df_time  <- df %>% rename(time = score)
+  
   score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
-  df <- merge(df_time,df_chars, by = c('language')) %>% 
-    mutate(label = ifelse(abs(time-space)>=0.10,language,''),color = ifelse(abs(time-space)<0.10,'<10%','>=10%'))
-  df %>% 
-    ggplot(aes(space,time,label = label,color=color)) + geom_point() + theme(legend.position = 'bottom') +
-    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 4) + 
-    labs(x=bquote(.(score_latex)[chars]), y = bquote(.(score_latex)[dur])) +
-    scale_color_manual(values = c("blue","red"),limits = c('>=10%', '<10%')) + 
-    guides(color=guide_legend(title="deviation")) + theme(text = element_text(size = 20))
+  df <- merge(df_time,df_chars, by = c('language')) %>% merge(langs_df_cv[,c('language','X.tokens')]) %>% 
+    mutate(label = ifelse(abs(time-space)>=0.10,language,'')) %>% mutate(`T`=log10(X.tokens))
+  
+  ggplot(df,aes(space,time,label = label,fill=`T`)) + 
+    geom_point(colour="black",pch=21, size=4) + 
+    geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 5,color='black') + 
+    labs(x=bquote(.(score_latex)[chars]), y = bquote(.(score_latex)[dur]),
+         fill=expression(paste(log[10],'T'))) +
+    theme(text = element_text(size = 20),legend.position = 'bottom',
+          legend.text = element_text(size = 15),legend.title = element_text(size = 15)) +
+    scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) +
+    geom_smooth(method = 'lm', formula = y~x, linetype='dashed') +
+    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+                 label.x.npc = "left",label.y.npc = 1.5,
+                 eq.with.lhs = "italic(hat(y))~`=`~",eq.x.rhs = "~italic(x)",
+                 formula = y~x, parse = TRUE, size = 4, color="blue") +
+    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+                  vjust="right", hjust="top", size = 4,
+                  nudge_x=0.1, nudge_y=0.1, color="purple")
 }
 
 
-plotRanks <- function(a, b, title, labels.offset=0.1, arrow.len=0.1) {
-  old.par <- par(mar=c(1,1,1,1))
-  a <- rev(a)
-  b <- rev(b)
-  # Find the length of the vectors
-  len.1 <- length(a)
-  len.2 <- length(b)
-  # Plot two columns of equidistant points
-  plot(rep(1, len.1), 1:len.1, pch=20, cex=0.8, 
-       xlim=c(0, 3), ylim=c(0, max(len.1, len.2)),
-       axes=F, xlab="", ylab="",main=title) # Remove axes and labels
-  points(rep(2, len.2), 1:len.2, pch=20, cex=0.8)
-  # Put labels next to each observation
-  text(rep(1-labels.offset, len.1), 1:len.1, a, cex=0.7)
-  text(rep(2+labels.offset, len.2), 1:len.2, b, cex=0.7)
-  # Map where the elements of a are in b
-  a.to.b <- match(a, b)
-  # Now we can draw arrows from the first column to the second
-  arrows(rep(1.02, len.1), 1:len.1, rep(1.98, len.2), a.to.b, 
-         length=arrow.len, angle=20, col =  ifelse(abs(1:length(a)-a.to.b) >10,'blue','black'))
-  par(old.par)
+
+scientific_10 <- function(x) {
+  parse(text=gsub("e", " %*% 10^", scales::scientific_format()(x)))
 }
 
 
 # CORRELATIONS
+standart_theme <- theme(text = element_text(size = 16),
+                        legend.text = element_text(size = 13),
+                        legend.title = element_text(size = 13))
+
+format_log_x_axis <- scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
+                                 labels=scales::trans_format('log10',scales::math_format(10^.x))) 
+
+format_log_y_axis <- scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
+                                   labels=scales::trans_format('log10',scales::math_format(10^.x))) 
+
+
 plot_corr_significance <- function(df,corr_type) {
   low_col  <- ifelse(corr_type=='kendall','#41B85C','blue')
   high_col <- ifelse(corr_type=='kendall','orange','red')
@@ -451,7 +445,7 @@ plot_corr_significance <- function(df,corr_type) {
   
   df %>% assign_stars() %>% 
     ggplot(aes(y=language, x=length_def, fill=corr)) + 
-    labs(x="length definition", y="language") +
+    labs(x="length definition", y="language") + standart_theme +
     geom_tile() + scale_y_discrete(labels=labs) + geom_text(aes(label=stars)) +
     scale_fill_gradient2(midpoint=0, low=low_col,high = high_col, mid = "white", na.value = "#b9d0ed")
 }
@@ -464,19 +458,18 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
                          'scores'=c('L','\u03B7','\u03A8','\u03A9'),
                          'params'=c('n', 'T', 'A', '\u03B7','\u03A8','\u03A9'), 
                          'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
-  legend_title <-  switch(plot_corr, 'kendall' = '\u03C4 corr', 'pearson'='r corr')
-  
   cors  <- round(cor(df, method=plot_corr), 2)
-  p.mat <- cor_pmat(df, method=plot_corr)
+  p.mat <- corr.test(df, method=plot_corr, adjust = 'holm')$p
   if (HB_correct) p.mat <- HB_correction(p.mat)
   ggcorrplot(cors, type = "lower", p.mat = p.mat,lab=T, lab_size = lab_size, tl.cex = tl.cex, pch.cex = pch.cex, 
-             colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r),
-             legend.title = legend_title) +
+             colors = switch(plot_corr, 'kendall'=corr_colors_tau, 'pearson'=corr_colors_r)) +
     theme(legend.key.size = unit(1, 'cm'), #change legend key size
           legend.title = element_text(size=16), #change legend title font size
           legend.text = element_text(size=13)) + #change legend text font size  
     scale_x_discrete(labels = greek_names[-1]) + scale_y_discrete(labels = greek_names[-length(greek_names)])
 }
+
+
 
 plot_etaVSlowerbound <- function(df) {
   df <- df %>% rename(`E[eta]`=eta) %>% mutate(`Lmin/Lr` = Lmin/Lrand) %>% 
@@ -484,19 +477,20 @@ plot_etaVSlowerbound <- function(df) {
   ggplot(df, aes(x=`Lmin/Lr`,y=`E[eta]`,label=language)) + 
     labs(y = 'E[\u03B7]', x = bquote(~L[min]/L[r])) + 
     geom_abline(slope=1,intercept=0,color='purple')+
-    geom_point() + theme(text = element_text(size = 20))
+    geom_point(size=3) + theme(text = element_text(size = 20)) +
+    standart_theme
 }
 
 
 plot_convergence <- function(df) {
-  ggplot(df) + geom_line(aes(`t`,score,color=variable)) + 
+  ggplot(df) + geom_line(aes(`t`,score,color=variable),size=1) + 
     facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
-    theme(strip.text = element_text(size = 8)) + theme(legend.position = 'bottom') +
+    theme(strip.text = element_text(size = 12),legend.position = 'bottom') +
     guides(color=guide_legend(title="score",nrow = 1)) +
     scale_color_discrete(labels=c('\u03B7','\u03A8','\u03A9')) +
-    scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
-                  labels=scales::trans_format('log10',scales::math_format(10^.x)))
+    format_log_axis + standart_theme
 }
+
 
 plot_score_comparison <- function(df) {
   ggplot(df,aes(x=x,y=y,label=language)) + 
@@ -505,7 +499,7 @@ plot_score_comparison <- function(df) {
     geom_text_repel(max.overlaps=50) + 
     labs(y = 'new scores', x = "original scores") + 
     geom_abline(slope=1,intercept=0,color='purple', size = 1,show.legend = TRUE)+
-    geom_point() +
+    geom_point(colour="black", size=4) +
     geom_smooth(method = 'lm', formula = y~x) +
     stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
                  label.x.npc = "left", 
@@ -516,6 +510,58 @@ plot_score_comparison <- function(df) {
     geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
                   vjust="right", hjust="top", size = 4,
                   nudge_x=0.1, nudge_y=0.1, color="purple") +
-    theme(text = element_text(size = 20)) # +
-    ggtitle("")
+    theme(text = element_text(size = 20))
+}
+
+plot_score_comparison <- function(opt_df, score) {
+  df <- form_table(score, opt_df)
+  score_lab <- switch(score, eta='\u03B7',psi='\u03A8',omega='\u03A9')
+  ggplot(df,aes(x=x,y=y,label=language)) + 
+    geom_text_repel(max.overlaps=50) + 
+    labs(y = paste('new',score_lab), x = paste('original',score_lab)) + 
+    geom_abline(slope=1,intercept=0,color='purple', size = 1,show.legend = TRUE)+
+    geom_point(colour="black", size=4) +
+    geom_smooth(method = 'lm', formula = y~x) +
+    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+                 label.x.npc = "left", 
+                 label.y.npc = 1.5,
+                 eq.with.lhs = "italic(hat(y))~`=`~",
+                 eq.x.rhs = "~italic(x)",
+                 formula = y~x, parse = TRUE, size = 4, color="blue") +
+    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+                  vjust="right", hjust="top", size = 4,
+                  nudge_x=0.1, nudge_y=0.1, color="purple") +
+    theme(text = element_text(size = 20))
+}
+
+params_labs <- c('Lmin'='L[min]','Lr'='L[r]','Lmin/Lr'='L[min]/L[r]')
+scores_labs <- c('eta'='\u03B7','psi'='\u03A8','omega'='\u03A9')
+
+
+plot_corr_evolution <- function(df) {
+  df <- df %>% 
+  mutate(parameter = ifelse(parameter=='Lmin','L[min]',ifelse(parameter=='Lr','L[r]','L[min]/L[r]'))) %>% 
+    mutate(parameter = factor(parameter, levels = c('L[min]','L[r]','L[min]/L[r]')))
+  ggplot(df,aes(randomizations,coefficient,color=score)) + 
+    geom_line(size=1) + geom_point(aes(shape=significance),size=4) +
+    facet_grid(rows=vars(correlation),cols=vars(parameter),labeller = label_parsed) +
+    geom_hline(yintercept = 0,linetype='dashed') +
+    scale_shape_manual(values=c('significant'=1,'non-significant'=4)) +
+    scale_color_discrete(labels = c('E[\u03B7]','E[\u03A8]','E[\u03A9]')) +
+    format_log_x_axis + standart_theme
+}
+
+long_corr_df <- function(df,plot_corr,HB_correct=T) {
+  df <- df %>% rename(Lr = Lrand) %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
+  cors  <- round(cor(df, method=plot_corr), 2)
+  p.mat <- corr.test(df, method=plot_corr, adjust = 'holm')$p
+  if (HB_correct) p.mat <- HB_correction(p.mat)
+  ind <- which( lower.tri(p.mat,diag=F) , arr.ind = TRUE )
+  data.frame(parameter = factor(dimnames(p.mat)[[2]][ind[,2]],levels=c('Lmin','Lr','Lmin/Lr')),
+             score = factor(dimnames(p.mat)[[1]][ind[,1]],levels=c('eta','psi','omega')),
+             coefficient = cors[ind],
+             pvalue = p.mat[ ind ] ) %>% 
+    filter(score %in% c('eta','psi','omega') & parameter %in% c('Lmin','Lr','Lmin/Lr')) %>% 
+    mutate(significance=ifelse(pvalue<=0.05,'significant','non-significant'),
+           correlation=plot_corr)
 }
