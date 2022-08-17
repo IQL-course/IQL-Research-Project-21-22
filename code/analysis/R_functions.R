@@ -540,14 +540,15 @@ scores_labs <- c('eta'='\u03B7','psi'='\u03A8','omega'='\u03A9')
 
 plot_corr_evolution <- function(df) {
   df <- df %>% 
+    mutate(correlation=ifelse(correlation=='kendall', 'Kendall correlation','Pearson correlation')) %>% 
   mutate(parameter = ifelse(parameter=='Lmin','L[min]',ifelse(parameter=='Lr','L[r]','L[min]/L[r]'))) %>% 
     mutate(parameter = factor(parameter, levels = c('L[min]','L[r]','L[min]/L[r]')))
   ggplot(df,aes(randomizations,coefficient,color=score)) + 
     geom_line(size=1) + geom_point(aes(shape=significance),size=4) +
-    facet_grid(rows=vars(correlation),cols=vars(parameter),labeller = label_parsed) +
+    facet_grid(rows=vars(correlation),cols=vars(parameter),labeller = labeller(type = label_parsed)) +
     geom_hline(yintercept = 0,linetype='dashed') +
     scale_shape_manual(values=c('significant'=1,'non-significant'=4)) +
-    scale_color_discrete(labels = c('E[\u03B7]','E[\u03A8]','E[\u03A9]')) +
+    scale_color_discrete(labels = c('\u03B7','\u03A8','\u03A9')) +
     format_log_x_axis + standart_theme
 }
 

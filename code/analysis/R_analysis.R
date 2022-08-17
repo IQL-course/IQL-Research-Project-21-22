@@ -449,7 +449,7 @@ reshape2::melt(df, id.vars=c('language','Lmin','length_def','X.tokens')) %>%
 ggsave(here(paste0('figures',folder_suffix),paste0('correlation_scores_Lmin_',iters,'.pdf')),device = cairo_pdf)
 folder_suffix <- '_filtered'
 
-#low = "#2D43B6", mid = "#3BE0EB", high = "#35DC68"
+
 
 # E[eta] vs theoretical lower bound
 rows <- lapply(COLLS, function(collection) {
@@ -458,53 +458,16 @@ rows <- lapply(COLLS, function(collection) {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
     read_file('null',collection,length_def,filter=F,iters) %>% plot_etaVSlowerbound()
-    ggsave(here(paste0('figures',folder_suffix),paste0('E[eta]_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
+    ggsave(here(paste0('figures',folder_suffix),paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
   } else {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
       read_file('null',collection,length_def,filter=F,iters) %>% plot_etaVSlowerbound()
-      ggsave(here(paste0('figures',folder_suffix),paste0('E[eta]_LminLr_',collection,'_',length_def,'.pdf')),device = cairo_pdf)
+      ggsave(here(paste0('figures',folder_suffix),paste0('E_eta_LminLr_',collection,'_',length_def,'.pdf')),device = cairo_pdf)
     })
   }
 })
 
-
-# distribution of E[\tau] for Panjabi
-n_experiments <- 10^7
-df_lang <- read_language('Panjabi','cv',F,T)
-
-lapply(length_defs, function(length_def) {
-  df_lang$length <- if (length_def == 'medianDuration') df_lang$medianDuration else df_lang$characters
-  set.seed(962)
-  scores <- lapply(1:n_experiments, function(i) {
-    length     <- sample(df_lang$length)                            # shuffle length, each time different
-    tau        <- cor.fk(df_lang$frequency,length)
-    tau
-  })
-  values = do.call(c,lapply(scores, `[[`, 1))
-  write.csv(values, here(paste0('results',folder_suffix),paste0("panjabi_tau_",length_def,'_',n_experiments,".csv")))
-})
-
-length_def <- 'medianDuration'
-values <- fread(here(paste0('results',folder_suffix),paste0("panjabi_tau_",length_def,'_',n_experiments,".csv")))
-df <- data.frame(
-'experiment' = 1:n_experiments,
-'values' = values$x,
-'values_avgs' = cumsum(values$x)/(1:n_experiments)
-)
-
-## density plot of tau
-plot <- ggplot(df) + geom_density(aes(values)) + labs(x='tau',y='density')+
-  geom_vline(xintercept = mean(df$values)) + annotate('text',0.05,4.5,label=round(mean(df$values),5)) +
-  stat_function(fun = dnorm, args = list(mean = mean(df$values), sd = sd(df$values)),color='green')
-ggsave(here(paste0('figures',folder_suffix),paste0('Panjabi_tau_density_',length_def,'_',n_experiments,'.pdf')),device = cairo_pdf)
-
-## density plot of avg_tau vs iterations
-plot <- ggplot(sample_n(df,10^5)) + geom_point(aes(experiment,values_avgs)) + labs(x='experiments',y='<tau>')+
-  geom_hline(yintercept = 0,color='red') +    
-  scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
-                labels=scales::trans_format('log10',scales::math_format(10^.x)))
-ggsave(here(paste0('figures',folder_suffix),paste0('Panjabi_avg_tau_',length_def,'_',n_experiments,'.pdf')),device = cairo_pdf)
 
 
 
