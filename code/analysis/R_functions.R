@@ -369,12 +369,14 @@ plot_score_composition <- function(score,opt_df) {
   L_diff_df$language <- factor(L_diff_df$language, levels = L_diff_df$language[order(L_diff_df$psi)])
   melted <- reshape2::melt(L_diff_df, id.vars=c("language","psi")) %>% 
     mutate(masked_psi = ifelse(variable == "Lrand-L",round(psi,2),""))
-  melted$alphacol <- ifelse(melted$variable=="Lmin",0,ifelse(melted$variable=="L-Lmin",0.3,1))
+  melted$alphacol <- ifelse(melted$variable=="Lmin",0,0.6)
   melted$variable <- factor(melted$variable, levels=c("Lrand-L","L-Lmin","Lmin"))
   
   ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
-    theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank()) +
-    labs(x=score_latex, y="Length") + guides(fill=guide_legend(title="difference")) +
+    theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank(),
+          legend.key = element_rect(fill = "#edeff2")) +
+    labs(x=score_latex, y="Length") + 
+    guides(fill=guide_legend(title="difference",override.aes = list(alpha = 0.6))) +
     geom_bar(stat="identity",aes(alpha=alphacol),color='white') + standart_theme +
     scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
 }

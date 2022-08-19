@@ -224,16 +224,16 @@ ggsave(here(paste0('figures',folder_suffix),paste0('opt_scores_density',corr_suf
 score <- 'psi'
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
-    print(collection)
-    lapply(length_defs, function(length_def) {
-      opt_df  <- read_file('opt',collection,length_def,filter)
-      # plot 1
-      plot_score(score,opt_df)
-      ggsave(here(paste0('figures',folder_suffix),paste0(score,'_',collection,'_',length_def,'.pdf')), device = cairo_pdf)
-      # plot 2
-      plot_score_composition(score,opt_df)
-      ggsave(here(paste0('figures',folder_suffix),paste0(score,'_composition_',collection,'_',length_def,'.pdf')))
-    })
+  #  print(collection)
+  #  lapply(length_defs, function(length_def) {
+  #    opt_df  <- read_file('opt',collection,length_def,filter)
+  #    # plot 1
+  #    plot_score(score,opt_df)
+  #    ggsave(here(paste0('figures',folder_suffix),paste0(score,'_',collection,'_',length_def,'.pdf')), device = cairo_pdf)
+  #    # plot 2
+  #    plot_score_composition(score,opt_df)
+  #    ggsave(here(paste0('figures',folder_suffix),paste0(score,'_composition_',collection,'_',length_def,'.pdf')))
+  #  })
   } else if (collection == 'pud') {
     print(collection)
     length_def   <- 'characters'
