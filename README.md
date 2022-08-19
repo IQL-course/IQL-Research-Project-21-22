@@ -1,11 +1,14 @@
-# IQL Collaborative Research Project 2021-2022
-## The optimality of word lengths
- 
-Collaborative Research Project for the Introduction to Quantitative Linguistics course (2021-2022 edition).
+# The optimality of word lengths
+## Theoretical foundations and an empirical study.
 
-### Author information
+### Authors
 
-This Research Project is the result of the joint effort of several people.
+Sonia Petrini
+Antoni Casas-i-Muñoz
+Jordi Cluet-i-Martinell
+Mengxue Wang
+Christian Benz
+Ramon Ferrer-i-Cancho
 
 ### Repository organization
 The repository contains the following folders:
