@@ -1,14 +1,14 @@
 # The optimality of word lengths
-## Theoretical foundations and an empirical study.
+## Theoretical foundations and an empirical study
 
 ### Authors
 
-Sonia Petrini
-Antoni Casas-i-Muñoz
-Jordi Cluet-i-Martinell
-Mengxue Wang
-Christian Benz
-Ramon Ferrer-i-Cancho
+ * Sonia Petrini
+ * Antoni Casas-i-Muñoz
+ * Jordi Cluet-i-Martinell
+ * Mengxue Wang
+ * Christian Benz
+ * Ramon Ferrer-i-Cancho
 
 ### Repository organization
 The repository contains the following folders:
