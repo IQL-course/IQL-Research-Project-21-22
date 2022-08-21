@@ -1,25 +1,20 @@
 "","language","family","script","A","n","T"
-"1","Arabic","Afro-Asiatic","Arabic",20,6597,18211
-"2","Indonesian","Austronesian","Latin",23,4596,16819
-"3","Russian","Indo-European","Cyrillic",23,7156,15636
-"4","Hindi","Indo-European","Devanagari",44,4894,21156
-"5","Czech","Indo-European","Latin",33,7360,15700
-"6","English","Indo-European","Latin",25,5082,18135
-"7","French","Indo-European","Latin",26,5593,21084
-"8","German","Indo-European","Latin",28,6215,18446
-"9","Icelandic","Indo-European","Latin",32,6175,16385
-"10","Italian","Indo-European","Latin",24,5944,21815
-"11","Polish","Indo-European","Latin",31,7329,15386
-"12","Portuguese","Indo-European","Latin",38,5678,21873
-"13","Spanish","Indo-European","Latin",32,5765,21083
-"14","Swedish","Indo-European","Latin",25,5842,16653
-"15","Japanese","Japonic","Japanese",1549,4852,24737
-"16","Japanese-strokes","Japonic","Japanese",1549,4852,24737
-"17","Japanese-romaji","Japonic","Latin",24,4849,24734
-"18","Korean","Koreanic","Hangul",379,7813,14229
-"19","Thai","Kra-Dai","Thai",50,3782,21606
-"20","Chinese","Sino-Tibetan","Han (Simplified variant)",2038,4970,17845
-"21","Chinese-strokes","Sino-Tibetan","Han (Simplified variant)",2038,4970,17845
-"22","Chinese-pinyin","Sino-Tibetan","Latin",50,4970,17845
-"23","Turkish","Turkic","Latin",28,6793,14092
-"24","Finnish","Uralic","Latin",24,7076,12853
+"1","Arabic","Afro-Asiatic","Arabic",20,3309,11667
+"2","Indonesian","Austronesian","Latin",23,4501,16702
+"3","Russian","Indo-European","Cyrillic",23,4666,11749
+"4","Hindi","Indo-European","Devanagari",44,4343,20071
+"5","Czech","Indo-European","Latin",33,7073,15331
+"6","English","Indo-European","Latin",25,5001,18028
+"7","French","Indo-European","Latin",26,5214,20407
+"8","German","Indo-European","Latin",28,6116,18331
+"9","Icelandic","Indo-European","Latin",32,6035,16209
+"10","Italian","Indo-European","Latin",24,5606,21266
+"11","Polish","Indo-European","Latin",31,7188,15191
+"12","Portuguese","Indo-European","Latin",38,5661,21855
+"13","Spanish","Indo-European","Latin",32,5750,21067
+"14","Swedish","Indo-European","Latin",25,5624,16378
+"15","Korean","Koreanic","Hangul",379,6218,12307
+"16","Thai","Kra-Dai","Thai",50,3573,20860
+"17","Chinese","Sino-Tibetan","Han (Simplified variant)",2038,3154,15436
+"18","Turkish","Turkic","Latin",28,6587,13799
+"19","Finnish","Uralic","Latin",24,6938,12701
