@@ -1,48 +1,47 @@
-language,iso_code,dialect,#types,#tokens,family,script
-Abkhazian,abk,,150,189,Northwest Caucasian,Cyrillic
-Arabic,ara,,7497,49448,Afro-Asiatic,Arabic
-Assamese,asm,,1115,2000,Indo-European,Assamese
-Breton,bre,,4322,38493,Indo-European,Latin
-Catalan,cat,,79213,3294506,Indo-European,Latin
-Czech,ces,,16032,150312,Indo-European,Latin
-Chuvash,chv,,5565,16270,Turkic,Cyrillic
-Hakha Chin,cnh,,2515,17806,Sino-Tibetan,Latin
-Welsh,cym,,11488,547345,Indo-European,Latin
-German,deu,,150362,4235094,Indo-European,Latin
-Dhivehi,div,,155,1388,Indo-European,Thaana
-Modern Greek (1453-),ell,,5834,37926,Indo-European,Greek
-English,eng,,173522,9829660,Indo-European,Latin
-Esperanto,epo,,27932,406725,,Latin
-Estonian,est,,30135,123895,Uralic,Latin
-Basque,eus,,24998,460188,Language isolate,Latin
-Persian,fas,,13240,1665428,Indo-European,Arabic
-French,fra,,162740,3732822,Indo-European,Latin
-Western Frisian,fry,,8419,63127,Indo-European,Latin
-Irish,gle,,2311,22751,Indo-European,Latin
-Interlingua (International Auxiliary Language Association),ina,,5552,31428,,Latin
-Indonesian,ind,,3817,44336,Austronesian,Latin
-Italian,ita,,55480,812604,Indo-European,Latin
-Japanese,jpn,,54,545,Japonic,Japanese
-Georgian,kat,,7945,15481,Kartvelian,Georgian
-Kinyarwanda,kin,,135328,1945038,Niger-Congo,Latin
-Kirghiz,kir,,10497,62687,Turkic,Cyrillic
-Latvian,lav,,7792,30358,Indo-European,Latin
-Maltese,mlt,,8148,44272,Afro-Asiatic,Latin
-Mongolian,mon,,14844,70638,Mongolic,Mongolian
-Dutch,nld,,10666,320992,Indo-European,Latin
-Oriya (macrolanguage),ori,,921,1929,Indo-European,Odia
-Panjabi,pan,,95,110,Indo-European,Devanagari
-Polish,pol,,25365,595613,Indo-European,Latin
-Portuguese,por,,13049,295042,Indo-European,Latin
-Romansh,roh,,9801,44192,Indo-European,Latin
-Romanian,ron,,6449,33370,Indo-European,Latin
-Russian,rus,,31921,638782,Indo-European,Cyrillic
-Yakut,sah,,8041,22795,Turkic,Cyrillic
-Slovenian,slv,,5994,26402,Indo-European,Latin
-Spanish,spa,,75617,1843646,Indo-European,Latin
-Swedish,swe,,4454,63282,Indo-European,Latin
-Tamil,tam,,1525,7580,Dravidian,Tamil
-Tatar,tat,,22313,145458,Turkic,Cyrillic
-Turkish,tur,,8957,107910,Turkic,Latin
-Ukrainian,ukr,,14399,120984,Indo-European,Cyrillic
-Vietnamese,vie,,574,1300,Austroasiatic,Latin
+language,iso_code,#types,#tokens,family,script
+Abkhazian,abk,151,257,Northwest Caucasian,Cyrillic
+Arabic,ara,7498,75885,Afro-Asiatic,Arabic
+Assamese,asm,1117,5039,Indo-European,Assamese
+Breton,bre,4324,56318,Indo-European,Latin
+Catalan,cat,79215,4339527,Indo-European,Latin
+Hakha Chin,cnh,2516,24117,Sino-Tibetan,Latin
+Czech,ces,16034,208330,Indo-European,Latin
+Chuvash,chv,5567,22450,Turkic,Cyrillic
+Welsh,cym,11490,726539,Indo-European,Latin
+German,deu,150364,5569590,Indo-European,Latin
+Dhivehi,div,157,65725,Indo-European,Thaana
+Modern Greek (1453-),ell,5836,52685,Indo-European,Greek
+English,eng,173524,13165106,Indo-European,Latin
+Esperanto,epo,27934,580778,Conlang,Latin
+Spanish,spa,75619,2484983,Indo-European,Latin
+Estonian,est,30136,157136,Uralic,Latin
+Basque,eus,24999,647545,Language isolate,Latin
+Persian,fas,13242,2278604,Indo-European,Arabic
+French,fra,162742,5014779,Indo-European,Latin
+Western Frisian,fry,8420,83230,Indo-European,Latin
+Irish,gle,2313,30904,Indo-European,Latin
+Interlingua (International Auxiliary Language Association),ina,5554,44097,Conlang,Latin
+Indonesian,ind,3819,62555,Austronesian,Latin
+Italian,ita,55482,1052514,Indo-European,Latin
+Georgian,kat,7947,20253,Kartvelian,Georgian
+Kirghiz,kir,10499,87004,Turkic,Cyrillic
+Latvian,lav,7794,45502,Indo-European,Latin
+Mongolian,mon,14846,92335,Mongolic,Mongolian
+Maltese,mlt,8150,57768,Afro-Asiatic,Latin
+Dutch,nld,10668,414208,Indo-European,Latin
+Oriya (macrolanguage),ori,923,6868,Indo-European,Odia
+Panjabi,pan,97,483,Indo-European,Devanagari
+Polish,pol,25367,826468,Indo-European,Latin
+Portuguese,por,13051,397445,Indo-European,Latin
+Romansh,roh,9803,57875,Indo-European,Latin
+Romanian,ron,6451,43680,Indo-European,Latin
+Russian,rus,31923,830059,Indo-European,Cyrillic
+Kinyarwanda,kin,135330,2673259,Niger-Congo,Latin
+Yakut,sah,8043,31765,Turkic,Cyrillic
+Slovenian,slv,5995,37368,Indo-European,Latin
+Swedish,swe,4455,88684,Indo-European,Latin
+Tamil,tam,1527,90285,Dravidian,Tamil
+Turkish,tur,8959,152798,Turkic,Latin
+Tatar,tat,22315,208723,Turkic,Cyrillic
+Ukrainian,ukr,14401,166884,Indo-European,Cyrillic
+Vietnamese,vie,575,1744,Austroasiatic,Latin
