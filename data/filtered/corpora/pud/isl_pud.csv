@@ -205,6 +205,7 @@ svæðið,svæðið,7,6
 finna,finna,7,5
 mikið,mikið,7,5
 efni,efni,7,4
+sex,sex,7,3
 annað,annað,7,5
 hefðu,hefðu,7,5
 ekkert,ekkert,7,6
@@ -370,6 +371,7 @@ eiginkona,eiginkona,4,9
 tímum,tímum,4,5
 stór,stór,4,4
 þangað,þangað,4,6
+vaxandi,vaxandi,4,7
 yfirmaður,yfirmaður,4,9
 sá,sá,4,2
 hinna,hinna,4,5
@@ -543,6 +545,7 @@ gat,gat,3,3
 hefst,hefst,3,5
 vildu,vildu,3,5
 opna,opna,3,4
+new,new,3,3
 held,held,3,4
 munu,munu,3,4
 sigur,sigur,3,5
@@ -561,6 +564,7 @@ staðið,staðið,3,6
 sinna,sinna,3,5
 frammistöðu,frammistöðu,3,11
 skóla,skóla,3,5
+vöxtur,vöxtur,3,6
 upplýsingar,upplýsingar,3,11
 gaf,gaf,3,3
 leikstjórans,leikstjórans,3,12
@@ -651,10 +655,12 @@ blunt,blunt,3,5
 haldi,haldi,3,5
 gegnum,gegnum,3,6
 alveg,alveg,3,5
+washington,washington,3,10
 tækni,tækni,3,5
 rekja,rekja,3,5
 tölvupóst,tölvupóst,3,9
 yfirgefa,yfirgefa,3,8
+wright,wright,3,6
 litið,litið,3,5
 mann,mann,3,4
 veginn,veginn,3,6
@@ -670,6 +676,7 @@ flugi,flugi,3,5
 gerir,gerir,3,5
 milljónum,milljónum,3,9
 sagnfræðingar,sagnfræðingar,3,13
+mexíkó,mexíkó,3,6
 undan,undan,3,5
 tútmosar,tútmosar,3,8
 mishima,mishima,3,7
@@ -711,6 +718,7 @@ khaan,khaan,3,5
 bogd,bogd,3,4
 þessari,þessari,3,7
 miðjarðarhaf,miðjarðarhaf,3,12
+winstone,winstone,3,8
 örlítið,örlítið,3,7
 athugasemdir,athugasemdir,3,12
 repúblíkana,repúblíkana,3,11
@@ -754,6 +762,7 @@ skráði,skráði,3,6
 skotinn,skotinn,2,7
 umtalsverðan,umtalsverðan,2,12
 uppreisnar,uppreisnar,2,10
+alvarez,alvarez,2,7
 hugmynd,hugmynd,2,7
 virk,virk,2,4
 takmörk,takmörk,2,7
@@ -786,12 +795,14 @@ iðnbyltingin,iðnbyltingin,2,12
 kostar,kostar,2,6
 fréttum,fréttum,2,7
 ráðsins,ráðsins,2,7
+herzl,herzl,2,5
 innleiddi,innleiddi,2,9
 karlmanna,karlmanna,2,9
 hitchcocks,hitchcocks,2,10
 þrýstist,þrýstist,2,8
 ford,ford,2,4
 meðaltekjur,meðaltekjur,2,11
+hagvöxtur,hagvöxtur,2,9
 ratsjáraðflugskerfið,ratsjáraðflugskerfið,2,20
 skírnarnafnið,skírnarnafnið,2,13
 hlutverki,hlutverki,2,9
@@ -832,6 +843,7 @@ heimsstyrjaldarinnar,heimsstyrjaldarinnar,2,20
 braust,braust,2,6
 áherslu,áherslu,2,7
 hvatti,hvatti,2,6
+brexit,brexit,2,6
 filippus,filippus,2,8
 tíð,tíð,2,3
 áhuga,áhuga,2,5
@@ -856,6 +868,7 @@ hafnir,hafnir,2,6
 kosningar,kosningar,2,9
 best,best,2,4
 ljúka,ljúka,2,5
+winterkorn,winterkorn,2,10
 hershöfðingi,hershöfðingi,2,12
 náms,náms,2,4
 gömlu,gömlu,2,5
@@ -887,6 +900,7 @@ erfitt,erfitt,2,6
 stórveldin,stórveldin,2,10
 skoðanir,skoðanir,2,8
 orð,orð,2,3
+strax,strax,2,5
 donalds,donalds,2,7
 tilkall,tilkall,2,7
 áhorfendur,áhorfendur,2,10
@@ -942,6 +956,7 @@ horfði,horfði,2,6
 viðtal,viðtal,2,6
 útgáfusamning,útgáfusamning,2,13
 hljóðritaði,hljóðritaði,2,11
+glasgow,glasgow,2,7
 svæðisins,svæðisins,2,9
 raunverulega,raunverulega,2,12
 my,my,2,2
@@ -958,6 +973,7 @@ cumberland,cumberland,2,10
 opinberlega,opinberlega,2,11
 leitaðist,leitaðist,2,9
 opinberri,opinberri,2,9
+alexander,alexander,2,9
 læra,læra,2,4
 fann,fann,2,4
 viðhorf,viðhorf,2,7
@@ -1048,6 +1064,7 @@ sýndu,sýndu,2,5
 tuttugu,tuttugu,2,7
 margvíslegum,margvíslegum,2,12
 niðri,niðri,2,5
+dündar,dündar,2,6
 bjó,bjó,2,3
 liðs,liðs,2,4
 aukinn,aukinn,2,6
@@ -1216,6 +1233,7 @@ eingöngu,eingöngu,2,8
 hæstiréttur,hæstiréttur,2,11
 kynntist,kynntist,2,8
 kipling,kipling,2,7
+trix,trix,2,4
 stephen,stephen,2,7
 sjónarhóli,sjónarhóli,2,10
 orðnir,orðnir,2,6
@@ -1298,12 +1316,15 @@ borgunum,borgunum,2,8
 sýndur,sýndur,2,6
 ástandi,ástandi,2,7
 páll,páll,2,4
+snowman,snowman,2,7
 fært,fært,2,4
 heródesar,heródesar,2,9
 mongólíu,mongólíu,2,8
 svið,svið,2,4
+mexíkóum,mexíkóum,2,8
 anaya,anaya,2,5
 landsvæði,landsvæði,2,9
+gonzález,gonzález,2,8
 mansjúmanna,mansjúmanna,2,11
 kadesh,kadesh,2,6
 ramses,ramses,2,6
@@ -1446,6 +1467,7 @@ heim,heim,2,4
 nýrra,nýrra,2,5
 barn,barn,2,4
 stofna,stofna,2,6
+axla,axla,2,4
 eftirlit,eftirlit,2,8
 áætlanir,áætlanir,2,8
 framlag,framlag,2,7
@@ -1471,6 +1493,7 @@ nauðsynlegt,nauðsynlegt,2,11
 hlutverk,hlutverk,2,8
 bjóða,bjóða,2,5
 fylgja,fylgja,2,6
+æxli,æxli,2,4
 áskoranir,áskoranir,2,9
 byggingu,byggingu,2,8
 ákveða,ákveða,2,6
@@ -1536,6 +1559,7 @@ margvíslegra,margvíslegra,1,12
 sukhothai,sukhothai,1,9
 verulega,verulega,1,8
 taugakerfi,taugakerfi,1,10
+hagvaxtartíma,hagvaxtartíma,1,13
 leiðbeiningar,leiðbeiningar,1,13
 bandaríkjamanna,bandaríkjamanna,1,15
 sóknin,sóknin,1,6
@@ -1699,6 +1723,7 @@ fjörutíu,fjörutíu,1,8
 heinrich,heinrich,1,8
 kramer,kramer,1,6
 erkibiskupsins,erkibiskupsins,1,14
+salzburg,salzburg,1,8
 spænski,spænski,1,7
 rannsóknarrétturinn,rannsóknarrétturinn,1,19
 meðlimi,meðlimi,1,7
@@ -1794,6 +1819,7 @@ opinberar,opinberar,1,9
 hljóta,hljóta,1,6
 né,né,1,2
 hlýhugur,hlýhugur,1,8
+khanzir,khanzir,1,7
 churchill,churchill,1,9
 sjávarmáli,sjávarmáli,1,10
 kælir,kælir,1,5
@@ -1817,6 +1843,7 @@ gondólnum,gondólnum,1,9
 universal,universal,1,9
 afköst,afköst,1,6
 hraðbönkum,hraðbönkum,1,10
+prabowo,prabowo,1,7
 keppinautur,keppinautur,1,11
 byggði,byggði,1,6
 búninga,búninga,1,7
@@ -1829,6 +1856,7 @@ stærð,stærð,1,5
 óskarsstyttu,óskarsstyttu,1,12
 samanstóðu,samanstóðu,1,10
 heiðursóskarsverðlaun,heiðursóskarsverðlaun,1,21
+oswald,oswald,1,6
 njósnari,njósnari,1,8
 skyn,skyn,1,4
 kvennamálum,kvennamálum,1,11
@@ -1857,6 +1885,7 @@ bókmenntum,bókmenntum,1,10
 persóna,persóna,1,7
 heimsókn,heimsókn,1,8
 séra,séra,1,4
+william,william,1,7
 hechler,hechler,1,7
 presti,presti,1,6
 biskupakirkjunnar,biskupakirkjunnar,1,17
@@ -1888,6 +1917,7 @@ pelopsskaga,pelopsskaga,1,11
 skírnarnöfnum,skírnarnöfnum,1,13
 kallaðir,kallaðir,1,8
 keisararnir,keisararnir,1,11
+shōwa,shōwa,1,5
 valin,valin,1,5
 keisaranna,keisaranna,1,10
 tímabilanna,tímabilanna,1,11
@@ -1930,12 +1960,15 @@ vonandi,vonandi,1,7
 skinn,skinn,1,5
 vinnureglum,vinnureglum,1,11
 grundvallarbreytingu,grundvallarbreytingu,1,20
+watt,watt,1,4
 dýrum,dýrum,1,5
 gráta,gráta,1,5
 áburð,áburð,1,5
 japanska,japanska,1,8
 hernámsliðið,hernámsliðið,1,12
 þrýsta,þrýsta,1,6
+zexu,zexu,1,4
+saqib,saqib,1,5
 samþykktu,samþykktu,1,9
 hríð,hríð,1,4
 panvalkar,panvalkar,1,9
@@ -1966,6 +1999,7 @@ neyddust,neyddust,1,8
 búsetu,búsetu,1,6
 dýrategundum,dýrategundum,1,12
 opnaðar,opnaðar,1,7
+guangzhou,guangzhou,1,9
 samfélagsleg,samfélagsleg,1,12
 tónlistarsköpun,tónlistarsköpun,1,15
 söngvarar,söngvarar,1,9
@@ -1988,6 +2022,7 @@ rúmra,rúmra,1,5
 skylmingum,skylmingum,1,10
 hestbaki,hestbaki,1,8
 chandler,chandler,1,8
+weller,weller,1,6
 þungvopnað,þungvopnað,1,10
 riddaralið,riddaralið,1,10
 vænlegt,vænlegt,1,7
@@ -2016,6 +2051,7 @@ undersea,undersea,1,8
 heitinu,heitinu,1,7
 ritgerðin,ritgerðin,1,9
 höfðaborgar,höfðaborgar,1,11
+town,town,1,4
 cape,cape,1,4
 city,city,1,4
 trúnaðarupplýsingar,trúnaðarupplýsingar,1,19
@@ -2129,6 +2165,7 @@ minniháttar,minniháttar,1,11
 gjörbreytt,gjörbreytt,1,10
 innviðum,innviðum,1,8
 efnahagslegum,efnahagslegum,1,13
+vaxið,vaxið,1,5
 þjóðgarðurinn,þjóðgarðurinn,1,13
 bæjarbúum,bæjarbúum,1,9
 sjóflugvéla,sjóflugvéla,1,11
@@ -2149,6 +2186,7 @@ rými,rými,1,4
 opnu,opnu,1,4
 prentun,prentun,1,7
 námuvinnsla,námuvinnsla,1,11
+gazette,gazette,1,7
 ofbeldi,ofbeldi,1,7
 versti,versti,1,6
 trufluninni,trufluninni,1,11
@@ -2223,6 +2261,7 @@ minnkar,minnkar,1,7
 vatnsmengun,vatnsmengun,1,11
 einkaaðilar,einkaaðilar,1,11
 afganginn,afganginn,1,9
+twitter,twitter,1,7
 burt,burt,1,4
 mikillar,mikillar,1,8
 þéttbýlismyndun,þéttbýlismyndun,1,15
@@ -2311,6 +2350,7 @@ fimmtán,fimmtán,1,7
 nílarósa,nílarósa,1,8
 austan,austan,1,6
 þjóðhöfðingjamúrinn,þjóðhöfðingjamúrinn,1,19
+huawei,huawei,1,6
 styrki,styrki,1,6
 geimferðir,geimferðir,1,10
 barnaþátt,barnaþátt,1,9
@@ -2342,6 +2382,7 @@ skráð,skráð,1,5
 fæðingarvottorðum,fæðingarvottorðum,1,17
 taílenskum,taílenskum,1,10
 faraónum,faraónum,1,8
+gezer,gezer,1,5
 konungum,konungum,1,8
 tell,tell,1,4
 karnak,karnak,1,6
@@ -2365,6 +2406,7 @@ einkennislitir,einkennislitir,1,14
 taílenskir,taílenskir,1,10
 hefðum,hefðum,1,6
 afmælið,afmælið,1,7
+sextugasta,sextugasta,1,10
 api,api,1,3
 landstjórans,landstjórans,1,12
 margrétar,margrétar,1,9
@@ -2388,6 +2430,7 @@ vafasömum,vafasömum,1,9
 nefndu,nefndu,1,6
 dvöl,dvöl,1,4
 hæst,hæst,1,4
+wheeler,wheeler,1,7
 sögur,sögur,1,5
 birtust,birtust,1,7
 lahore,lahore,1,6
@@ -2468,17 +2511,20 @@ iag,iag,1,3
 skurðinn,skurðinn,1,8
 dýpka,dýpka,1,5
 sets,sets,1,4
+wangs,wangs,1,5
 augun,augun,1,5
 sendur,sendur,1,6
 stjórnandi,stjórnandi,1,10
 hæfni,hæfni,1,5
 kunnáttu,kunnáttu,1,8
 anshi,anshi,1,5
+wang,wang,1,4
 menntamenn,menntamenn,1,10
 rituðu,rituðu,1,6
 áburður,áburður,1,7
 farþegar,farþegar,1,8
 flestu,flestu,1,6
+newton,newton,1,6
 hlaupmánuður,hlaupmánuður,1,12
 aukalegur,aukalegur,1,9
 föstudegi,föstudegi,1,9
@@ -2611,6 +2657,7 @@ sjálfstjórnarsamfélög,sjálfstjórnarsamfélög,1,21
 orðræðu,orðræðu,1,7
 skiptist,skiptist,1,8
 birtast,birtast,1,7
+textarnir,textarnir,1,9
 stafrófið,stafrófið,1,9
 fönikíumanna,fönikíumanna,1,12
 letur,letur,1,5
@@ -2671,6 +2718,7 @@ sumrinu,sumrinu,1,7
 dvöldu,dvöldu,1,6
 flýja,flýja,1,5
 fjárhagsvandræðum,fjárhagsvandræðum,1,17
+textílefna,textílefna,1,10
 búnaðar,búnaðar,1,7
 dreifingaraðili,dreifingaraðili,1,15
 lokað,lokað,1,5
@@ -2693,6 +2741,7 @@ fylgd,fylgd,1,5
 georges,georges,1,7
 árangurs,árangurs,1,8
 stuðning,stuðning,1,8
+walt,walt,1,4
 fjármagnaðir,fjármagnaðir,1,12
 þessir,þessir,1,6
 vék,vék,1,3
@@ -2744,6 +2793,7 @@ aðferðin,aðferðin,1,8
 hæðum,hæðum,1,5
 múmían,múmían,1,6
 frosna,frosna,1,6
+ötzi,ötzi,1,4
 mannfjöldanum,mannfjöldanum,1,13
 þekktasti,þekktasti,1,9
 minjarnar,minjarnar,1,9
@@ -2812,6 +2862,7 @@ götukeppninnar,götukeppninnar,1,14
 ulrich,ulrich,1,6
 sóttist,sóttist,1,7
 aþenu,aþenu,1,5
+südbaden,südbaden,1,8
 merdingen,merdingen,1,9
 verðleikakerfis,verðleikakerfis,1,15
 kærustunnar,kærustunnar,1,11
@@ -2831,6 +2882,7 @@ einkalífi,einkalífi,1,9
 bremen,bremen,1,6
 köln,köln,1,4
 bókmenntaverðlaun,bókmenntaverðlaun,1,17
+weiss,weiss,1,5
 morðið,morðið,1,6
 þátttaka,þátttaka,1,8
 lögun,lögun,1,5
@@ -2992,6 +3044,7 @@ slá,slá,1,3
 record,record,1,6
 umskiptin,umskiptin,1,9
 rocket,rocket,1,6
+x,x,1,1
 luis,luis,1,4
 dætur,dætur,1,5
 ensku,ensku,1,5
@@ -3021,6 +3074,7 @@ frænka,frænka,1,6
 buenos,buenos,1,6
 konungdæmið,konungdæmið,1,11
 hrinda,hrinda,1,6
+enrique,enrique,1,7
 friðarumleitununum,friðarumleitununum,1,18
 ísabella,ísabella,1,8
 hlið,hlið,1,4
@@ -3136,6 +3190,7 @@ deilur,deilur,1,6
 lagalegar,lagalegar,1,9
 samstarfs,samstarfs,1,9
 þjálfuð,þjálfuð,1,7
+walter,walter,1,6
 beinast,beinast,1,7
 heimanna,heimanna,1,8
 bretlandseyjar,bretlandseyjar,1,14
@@ -3169,6 +3224,7 @@ brátt,brátt,1,5
 vonir,vonir,1,5
 friðarsamnings,friðarsamnings,1,14
 almenns,almenns,1,7
+austerlitz,austerlitz,1,10
 ótvíræði,ótvíræði,1,8
 yerba,yerba,1,5
 hvílt,hvílt,1,5
@@ -3182,11 +3238,13 @@ meðallag,meðallag,1,8
 jim,jim,1,3
 samin,samin,1,5
 lög,lög,1,3
+wheel,wheel,1,5
 stealers,stealers,1,8
 félaga,félaga,1,6
 egan,egan,1,4
 spilaði,spilaði,1,7
 prayer,prayer,1,6
+wing,wing,1,4
 father,father,1,6
 like,like,1,4
 óhóflegrar,óhóflegrar,1,10
@@ -3205,6 +3263,7 @@ head,head,1,4
 meðallagi,meðallagi,1,9
 over,over,1,4
 plötuna,plötuna,1,7
+anyway,anyway,1,6
 on,on,1,2
 jöfnuðust,jöfnuðust,1,9
 robinson,robinson,1,8
@@ -3258,6 +3317,7 @@ persónulega,persónulega,1,11
 lóðalyftingar,lóðalyftingar,1,13
 æfa,æfa,1,3
 ieyasu,ieyasu,1,6
+tokugawa,tokugawa,1,8
 afkomandi,afkomandi,1,9
 beinn,beinn,1,5
 ilmvatnsins,ilmvatnsins,1,11
@@ -3267,6 +3327,7 @@ yemen,yemen,1,5
 scott,scott,1,5
 kristin,kristin,1,7
 mcgregor,mcgregor,1,8
+ewan,ewan,1,4
 hallström,hallström,1,9
 lasse,lasse,1,5
 in,in,1,2
@@ -3292,10 +3353,12 @@ láglendinu,láglendinu,1,10
 einingu,einingu,1,7
 menningarþróun,menningarþróun,1,14
 passað,passað,1,6
+uaxactun,uaxactun,1,8
 gögnin,gögnin,1,6
 mynstrunum,mynstrunum,1,10
 valdaráðuneytanna,valdaráðuneytanna,1,17
 táknmyndum,táknmyndum,1,10
+textum,textum,1,6
 kenningin,kenningin,1,9
 snerist,snerist,1,7
 sjálfstæða,sjálfstæða,1,10
@@ -3324,6 +3387,8 @@ kennisetningar,kennisetningar,1,14
 gagnrýna,gagnrýna,1,8
 kristnir,kristnir,1,8
 earth,earth,1,5
+now,now,1,3
+power,power,1,5
 heildarsala,heildarsala,1,11
 nam,nam,1,3
 eintök,eintök,1,6
@@ -3339,6 +3404,7 @@ teikna,teikna,1,6
 alfarið,alfarið,1,7
 myndver,myndver,1,7
 kvikmyndagerðarmennirnir,kvikmyndagerðarmennirnir,1,24
+georgetown,georgetown,1,10
 vanda,vanda,1,5
 svipaðan,svipaðan,1,8
 opinn,opinn,1,5
@@ -3346,6 +3412,7 @@ lærdómskúrfa,lærdómskúrfa,1,12
 bók,bók,1,3
 skýringar,skýringar,1,9
 skáldskapinn,skáldskapinn,1,12
+lennox,lennox,1,6
 kirriemuir,kirriemuir,1,10
 journal,journal,1,7
 nottingham,nottingham,1,10
@@ -3359,9 +3426,11 @@ farþega,farþega,1,7
 niðurgreiðslum,niðurgreiðslum,1,14
 eldsneytisverð,eldsneytisverð,1,14
 ákvörðuninni,ákvörðuninni,1,12
+axlaði,axlaði,1,6
 yudhoyono,yudhoyono,1,9
 fráfarandi,fráfarandi,1,10
 fjórar,fjórar,1,6
+jokowi,jokowi,1,6
 ríminu,ríminu,1,6
 sviðsetja,sviðsetja,1,9
 íburðarmikla,íburðarmikla,1,12
@@ -3398,11 +3467,15 @@ frambjóðandinn,frambjóðandinn,1,14
 neðri,neðri,1,5
 tvisvar,tvisvar,1,7
 endurkjörinn,endurkjörinn,1,12
+wilkes,wilkes,1,6
+wiz,wiz,1,3
 guðræknir,guðræknir,1,9
 blöskraði,blöskraði,1,9
 siðleysi,siðleysi,1,8
 ungri,ungri,1,5
 söluhæsta,söluhæsta,1,9
+west,west,1,4
+wild,wild,1,4
 horton,horton,1,6
 anne,anne,1,4
 ekkju,ekkju,1,5
@@ -3436,6 +3509,7 @@ mannréttinda,mannréttinda,1,12
 smáskífa,smáskífa,1,8
 shaky,shaky,1,5
 ground,ground,1,6
+knew,knew,1,4
 peniston,peniston,1,8
 uppsögnina,uppsögnina,1,10
 lista,lista,1,5
@@ -3456,6 +3530,7 @@ sædýrasafn,sædýrasafn,1,10
 söguborð,söguborð,1,8
 oscar,oscar,1,5
 somerset,somerset,1,8
+wells,wells,1,5
 dorset,dorset,1,6
 poole,poole,1,5
 gift,gift,1,4
@@ -3476,7 +3551,9 @@ upphaf,upphaf,1,6
 viðurkenna,viðurkenna,1,10
 beiðnunum,beiðnunum,1,9
 bandaríkjadalir,bandaríkjadalir,1,15
+rambow,rambow,1,6
 son,son,1,3
+galaxy,galaxy,1,6
 to,to,1,2
 guide,guide,1,5
 hitchhiker,hitchhiker,1,10
@@ -3521,6 +3598,7 @@ kenningakerfi,kenningakerfi,1,13
 almennilegt,almennilegt,1,11
 dulspekihefðum,dulspekihefðum,1,14
 húmanismann,húmanismann,1,11
+marxisma,marxisma,1,8
 lundúnaráðstefnunnar,lundúnaráðstefnunnar,1,20
 höfnuðu,höfnuðu,1,7
 sendiherrar,sendiherrar,1,11
@@ -3534,6 +3612,7 @@ fjármögnuð,fjármögnuð,1,10
 reichenbach,reichenbach,1,11
 georg,georg,1,5
 verksmiðjueigandanum,verksmiðjueigandanum,1,20
+württemberg,württemberg,1,11
 seldi,seldi,1,5
 seinni,seinni,1,6
 eyðileggingu,eyðileggingu,1,12
@@ -3597,6 +3676,7 @@ utanhússleikhúsið,utanhússleikhúsið,1,17
 gíslatökunnar,gíslatökunnar,1,13
 vandamála,vandamála,1,9
 svínku,svínku,1,6
+mômone,mômone,1,6
 herberginu,herberginu,1,10
 marcelle,marcelle,1,8
 landamæraeftirlitið,landamæraeftirlitið,1,19
@@ -3623,6 +3703,7 @@ tilraunastofunni,tilraunastofunni,1,16
 pólonsýni,pólonsýni,1,9
 ynni,ynni,1,4
 club,club,1,4
+irène,irène,1,5
 meyer,meyer,1,5
 nútímaupplýsingatækni,nútímaupplýsingatækni,1,21
 forvera,forvera,1,7
@@ -3635,6 +3716,7 @@ skellti,skellti,1,7
 fjarlægð,fjarlægð,1,8
 þýskt,þýskt,1,5
 frumsýnd,frumsýnd,1,8
+willis,willis,1,6
 bruce,bruce,1,5
 johnson,johnson,1,7
 rian,rian,1,4
@@ -3660,6 +3742,7 @@ fundaði,fundaði,1,7
 þýskalands,þýskalands,1,10
 yfirformaður,yfirformaður,1,12
 karli,karli,1,5
+halifax,halifax,1,7
 júlíu,júlíu,1,5
 rómeó,rómeó,1,5
 talmadge,talmadge,1,8
@@ -3755,6 +3838,7 @@ jafnvægi,jafnvægi,1,8
 viðkvæmu,viðkvæmu,1,8
 ríkisvaldinu,ríkisvaldinu,1,12
 fjárframlaga,fjárframlaga,1,12
+hollywood,hollywood,1,9
 afhuga,afhuga,1,6
 fjölskylduáhorfendur,fjölskylduáhorfendur,1,20
 héraðslögreglunnar,héraðslögreglunnar,1,18
@@ -3772,6 +3856,7 @@ sunnudagseftirmiðdegi,sunnudagseftirmiðdegi,1,21
 blaðamenn,blaðamenn,1,9
 útkoman,útkoman,1,7
 skemmtunar,skemmtunar,1,10
+quebec,quebec,1,6
 stöðug,stöðug,1,6
 bob,bob,1,3
 breyst,breyst,1,6
@@ -3824,10 +3909,12 @@ morð,morð,1,4
 netfærslan,netfærslan,1,10
 heildarupphæð,heildarupphæð,1,13
 áráttu,áráttu,1,6
+sívaxandi,sívaxandi,1,9
 nátengd,nátengd,1,7
 áþreifanlegt,áþreifanlegt,1,12
 sýningaríbúðina,sýningaríbúðina,1,15
 hanna,hanna,1,5
+winham,winham,1,6
 greftrun,greftrun,1,8
 líki,líki,1,4
 samanteknar,samanteknar,1,11
@@ -3851,6 +3938,7 @@ innanhúsarkitektinn,innanhúsarkitektinn,1,19
 árangurslauna,árangurslauna,1,13
 slíkir,slíkir,1,6
 myrkraverk,myrkraverk,1,10
+zimmer,zimmer,1,6
 meðhöndlaði,meðhöndlaði,1,11
 mannlegrar,mannlegrar,1,10
 ofurhetjur,ofurhetjur,1,10
@@ -3926,6 +4014,7 @@ lögleg,lögleg,1,6
 lagarammi,lagarammi,1,9
 úrbætur,úrbætur,1,7
 rúmar,rúmar,1,5
+vw,vw,1,2
 vofa,vofa,1,4
 skaðabótakröfur,skaðabótakröfur,1,15
 háar,háar,1,4
@@ -4052,6 +4141,7 @@ virðingu,virðingu,1,8
 hitt,hitt,1,4
 tveir,tveir,1,5
 rai,rai,1,3
+news,news,1,4
 nine,nine,1,4
 golfmót,golfmót,1,7
 norðurkóreskt,norðurkóreskt,1,13
@@ -4136,6 +4226,7 @@ samdægurs,samdægurs,1,9
 tónleikunum,tónleikunum,1,11
 nýta,nýta,1,4
 ákvæði,ákvæði,1,6
+efnahagsvexti,efnahagsvexti,1,13
 sökum,sökum,1,5
 alejandra,alejandra,1,9
 brasilíu,brasilíu,1,8
@@ -4161,6 +4252,7 @@ skrúðganga,skrúðganga,1,10
 endanum,endanum,1,7
 jafnist,jafnist,1,7
 vona,vona,1,4
+mexíkóar,mexíkóar,1,8
 viðburður,viðburður,1,9
 niðrandi,niðrandi,1,8
 ummæla,ummæla,1,6
@@ -4176,6 +4268,8 @@ umræðuþátturinn,umræðuþátturinn,1,15
 viðhengi,viðhengi,1,8
 flórídabúa,flórídabúa,1,10
 svokölluð,svokölluð,1,9
+winter,winter,1,6
+winds,winds,1,5
 nöfnin,nöfnin,1,6
 vinsælu,vinsælu,1,7
 bókaröðinni,bókaröðinni,1,11
@@ -4328,6 +4422,7 @@ gögnum,gögnum,1,6
 flokkur,flokkur,1,7
 skil,skil,1,4
 sjálfsögðu,sjálfsögðu,1,10
+texta,texta,1,5
 myndaraða,myndaraða,1,9
 formi,formi,1,5
 sögurnar,sögurnar,1,8
@@ -4335,6 +4430,7 @@ sönnu,sönnu,1,5
 svokölluðu,svokölluðu,1,10
 aðgangsorð,aðgangsorð,1,10
 höfuðklút,höfuðklút,1,9
+gallabuxum,gallabuxum,1,10
 látlaus,látlaus,1,7
 óvenjulegri,óvenjulegri,1,11
 york,york,1,4
@@ -4378,6 +4474,7 @@ vergri,vergri,1,6
 orðinn,orðinn,1,6
 mildast,mildast,1,7
 efnahagsstefnu,efnahagsstefnu,1,14
+vöxturinn,vöxturinn,1,9
 herskáar,herskáar,1,8
 frú,frú,1,3
 rúgbímeistaradeildinni,rúgbímeistaradeildinni,1,22
@@ -4414,10 +4511,12 @@ næringarefni,næringarefni,1,12
 jarðveg,jarðveg,1,7
 breskan,breskan,1,7
 plantna,plantna,1,7
+vöxt,vöxt,1,4
 heilbrigðan,heilbrigðan,1,11
 tunglið,tunglið,1,7
 ósvarað,ósvarað,1,7
 brennisteinn,brennisteinn,1,12
+vextirnir,vextirnir,1,9
 vilt,vilt,1,4
 hvenær,hvenær,1,6
 spurningum,spurningum,1,10
@@ -4463,6 +4562,7 @@ englendinga,englendinga,1,11
 náttúrunnar,náttúrunnar,1,11
 augljóslega,augljóslega,1,11
 spreytti,spreytti,1,8
+woods,woods,1,5
 tölvupóstssamskiptum,tölvupóstssamskiptum,1,20
 ofsetprentunarinnar,ofsetprentunarinnar,1,19
 yfirbragð,yfirbragð,1,9
@@ -4495,7 +4595,9 @@ hárnákvæmir,hárnákvæmir,1,11
 hreyfa,hreyfa,1,6
 alice,alice,1,5
 listrænt,listrænt,1,8
+zay,zay,1,3
 yfirbót,yfirbót,1,7
+zayion,zayion,1,6
 fela,fela,1,4
 öruggara,öruggara,1,8
 platón,platón,1,6
@@ -4537,6 +4639,7 @@ forsetafrú,forsetafrú,1,10
 house,house,1,5
 bush,bush,1,4
 service,service,1,7
+world,world,1,5
 útvarpssendingar,útvarpssendingar,1,16
 meinlegri,meinlegri,1,9
 hluttekning,hluttekning,1,11
@@ -4568,6 +4671,7 @@ gagnrýnin,gagnrýnin,1,9
 ómeðvitaðir,ómeðvitaðir,1,11
 eftirherman,eftirherman,1,11
 aldurs,aldurs,1,6
+wolmar,wolmar,1,6
 frjálslyndir,frjálslyndir,1,12
 forsetakosningarnar,forsetakosningarnar,1,19
 kosningunum,kosningunum,1,11
@@ -4633,6 +4737,7 @@ hamar,hamar,1,5
 húfu,húfu,1,4
 lestinni,lestinni,1,8
 pano,pano,1,4
+texas,texas,1,5
 hjólabankari,hjólabankari,1,12
 pallinum,pallinum,1,8
 ríkjum,ríkjum,1,6
@@ -4656,6 +4761,7 @@ vanþóknun,vanþóknun,1,9
 tjáir,tjáir,1,5
 barnlaust,barnlaust,1,9
 rófubeini,rófubeini,1,9
+vex,vex,1,3
 sókn,sókn,1,4
 fæla,fæla,1,4
 þyrfti,þyrfti,1,6
@@ -4676,6 +4782,7 @@ púpurnar,púpurnar,1,8
 þykja,þykja,1,5
 lostæti,lostæti,1,7
 vísundalungu,vísundalungu,1,12
+benoît,benoît,1,6
 flytur,flytur,1,6
 súrefni,súrefni,1,7
 tilfellið,tilfellið,1,9
@@ -4731,6 +4838,7 @@ alþýðulýðveldinu,alþýðulýðveldinu,1,16
 almennar,almennar,1,8
 járnforða,járnforða,1,9
 marr,marr,1,4
+andrews,andrews,1,7
 hrinu,hrinu,1,5
 kreppu,kreppu,1,6
 lagalega,lagalega,1,8
@@ -4749,6 +4857,7 @@ krefst,krefst,1,6
 skartgripahönnun,skartgripahönnun,1,16
 bregður,bregður,1,7
 sjálfri,sjálfri,1,7
+wintour,wintour,1,7
 skrifstofuumhverfinu,skrifstofuumhverfinu,1,20
 fötum,fötum,1,5
 vitaskuld,vitaskuld,1,9
@@ -4905,6 +5014,7 @@ hernáminu,hernáminu,1,9
 ábyrgur,ábyrgur,1,7
 dariusar,dariusar,1,8
 mikilsvirtur,mikilsvirtur,1,12
+megabazus,megabazus,1,9
 bysans,bysans,1,6
 nýlenduna,nýlenduna,1,9
 makedóníski,makedóníski,1,11
@@ -4966,6 +5076,7 @@ greco,greco,1,5
 yannis,yannis,1,6
 smaragdis,smaragdis,1,9
 gripið,gripið,1,6
+záhorie,záhorie,1,7
 hármarkaðurinn,hármarkaðurinn,1,14
 móravíska,móravíska,1,9
 pólitíska,pólitíska,1,9
@@ -4992,6 +5103,7 @@ kosning,kosning,1,7
 valdastól,valdastól,1,9
 dýrlingurinn,dýrlingurinn,1,12
 slóvakía,slóvakía,1,8
+rastiz,rastiz,1,6
 frænda,frænda,1,6
 þýðverski,þýðverski,1,9
 loðvík,loðvík,1,6
@@ -5013,6 +5125,7 @@ takmarkaða,takmarkaða,1,10
 tryggði,tryggði,1,7
 umferðarlögreglan,umferðarlögreglan,1,17
 mónakóbúa,mónakóbúa,1,9
+shenzen,shenzen,1,7
 sáttmáli,sáttmáli,1,8
 notar,notar,1,5
 yfirstandandi,yfirstandandi,1,13
@@ -5026,6 +5139,7 @@ loftmassagreiningu,loftmassagreiningu,1,18
 byrjað,byrjað,1,6
 loftmassaflokkun,loftmassaflokkun,1,16
 landgræðsluverkefna,landgræðsluverkefna,1,19
+wales,wales,1,5
 framfylgjum,framfylgjum,1,11
 refsingum,refsingum,1,9
 munur,munur,1,5
@@ -5037,6 +5151,7 @@ yfirhúðina,yfirhúðina,1,10
 heimildamennirnir,heimildamennirnir,1,17
 þættinum,þættinum,1,8
 sósíalistar,sósíalistar,1,11
+sánchez,sánchez,1,7
 pedro,pedro,1,5
 aðalstitil,aðalstitil,1,10
 eini,eini,1,4
@@ -5089,6 +5204,7 @@ ráðstefnunnar,ráðstefnunnar,1,13
 gjaldkeri,gjaldkeri,1,9
 atvinnuleysi,atvinnuleysi,1,12
 serbneskan,serbneskan,1,10
+báñez,báñez,1,5
 vandræðamál,vandræðamál,1,11
 kljást,kljást,1,6
 auki,auki,1,4
@@ -5107,6 +5223,7 @@ bardagarnir,bardagarnir,1,11
 slagsmálin,slagsmálin,1,10
 barsmíðarnar,barsmíðarnar,1,12
 líkar,líkar,1,5
+plaza,plaza,1,5
 fsln,fsln,1,4
 fylgismanna,fylgismanna,1,11
 tugir,tugir,1,5
@@ -5236,6 +5353,7 @@ dana,dana,1,4
 hörfa,hörfa,1,5
 undanhaldinu,undanhaldinu,1,12
 leystur,leystur,1,7
+meza,meza,1,4
 óvinnandi,óvinnandi,1,9
 ströndum,ströndum,1,8
 danskan,danskan,1,7
@@ -5353,6 +5471,7 @@ faglærðum,faglærðum,1,9
 nauðungarvinnukerfinu,nauðungarvinnukerfinu,1,21
 afríska,afríska,1,7
 spíra,spíra,1,5
+vaxa,vaxa,1,4
 rhs,rhs,1,3
 skólabarna,skólabarna,1,10
 samþættu,samþættu,1,8
@@ -5365,9 +5484,11 @@ mállýskur,mállýskur,1,9
 norðursamískar,norðursamískar,1,14
 líkamshluta,líkamshluta,1,11
 einkennir,einkennir,1,9
+samhljóðastigvíxl,samhljóðastigvíxl,1,17
 noregi,noregi,1,6
 kven,kven,1,4
 svíþjóð,svíþjóð,1,7
+meänkieli,meänkieli,1,9
 hárið,hárið,1,5
 efnablöndu,efnablöndu,1,10
 sjálfstætt,sjálfstætt,1,10
@@ -5418,6 +5539,7 @@ mjöður,mjöður,1,6
 innflutt,innflutt,1,8
 ríku,ríku,1,4
 risaeðlunum,risaeðlunum,1,11
+ávaxtavín,ávaxtavín,1,9
 sterkt,sterkt,1,6
 bjór,bjór,1,4
 öl,öl,1,2
@@ -5464,9 +5586,11 @@ sameiginlegs,sameiginlegs,1,12
 samfélög,samfélög,1,8
 sjávarfangs,sjávarfangs,1,11
 öflun,öflun,1,5
+view,view,1,4
 mountain,mountain,1,8
 einkaviðburð,einkaviðburð,1,12
 miðskólanum,miðskólanum,1,11
+williams,williams,1,8
 serenu,serenu,1,6
 lokaleiknum,lokaleiknum,1,11
 leikmaðurinn,leikmaðurinn,1,12
@@ -5492,6 +5616,7 @@ myndbandið,myndbandið,1,10
 auglýsa,auglýsa,1,7
 segist,segist,1,6
 hinsti,hinsti,1,6
+axlað,axlað,1,5
 kalksteininn,kalksteininn,1,12
 höggvið,höggvið,1,7
 grafhýsi,grafhýsi,1,8
@@ -5517,6 +5642,7 @@ orgelið,orgelið,1,7
 leikið,leikið,1,6
 teljum,teljum,1,6
 seinasta,seinasta,1,8
+krätschmer,krätschmer,1,10
 væflast,væflast,1,7
 niðurnídda,niðurnídda,1,10
 hætt,hætt,1,4
@@ -5588,6 +5714,7 @@ skyldmenni,skyldmenni,1,10
 andleg,andleg,1,6
 værum,værum,1,5
 bruyn,bruyn,1,5
+günter,günter,1,6
 sjávar,sjávar,1,6
 sérfræðingarnir,sérfræðingarnir,1,15
 aoun,aoun,1,4
@@ -5705,9 +5832,11 @@ fúnir,fúnir,1,5
 hrist,hrist,1,5
 grunsamleg,grunsamleg,1,10
 fasteignafyrirtækið,fasteignafyrirtækið,1,19
+zeit,zeit,1,4
 die,die,1,3
 dagblaðið,dagblaðið,1,9
 höfuðið,höfuðið,1,7
+kühn,kühn,1,4
 innviðir,innviðir,1,8
 slæmu,slæmu,1,5
 þennan,þennan,1,6
@@ -5788,6 +5917,7 @@ cgi,cgi,1,3
 dísilolía,dísilolía,1,9
 bensín,bensín,1,6
 hækkar,hækkar,1,6
+textíliðnaði,textíliðnaði,1,12
 rannsakað,rannsakað,1,9
 hætta,hætta,1,5
 bandalagið,bandalagið,1,10
@@ -5800,6 +5930,7 @@ grandskoðað,grandskoðað,1,11
 spurninga,spurninga,1,9
 frumvörp,frumvörp,1,8
 nýrri,nýrri,1,5
+æxlum,æxlum,1,5
 óviðunandi,óviðunandi,1,10
 jafnlíklegar,jafnlíklegar,1,12
 afleiðingar,afleiðingar,1,11
@@ -5845,15 +5976,18 @@ roma,roma,1,4
 fjárfestingu,fjárfestingu,1,12
 lögreglunnar,lögreglunnar,1,12
 belgrad,belgrad,1,7
+amazon,amazon,1,6
 snapchat,snapchat,1,8
 tesla,tesla,1,5
 stjórnendur,stjórnendur,1,11
+exxonmobil,exxonmobil,1,10
 markaðsverðmætið,markaðsverðmætið,1,16
 fjórða,fjórða,1,6
 kísildal,kísildal,1,8
 félagsins,félagsins,1,9
 bardagaíþróttaskóla,bardagaíþróttaskóla,1,19
 street,street,1,6
+wall,wall,1,4
 ferðinni,ferðinni,1,8
 höfuðborginni,höfuðborginni,1,13
 tæknifyrirtæki,tæknifyrirtæki,1,14
@@ -5877,6 +6011,7 @@ gjaldmiðilinn,gjaldmiðilinn,1,13
 sameiginlega,sameiginlega,1,12
 síðast,síðast,1,6
 teljast,teljast,1,7
+zuckerberg,zuckerberg,1,10
 flokkinn,flokkinn,1,8
 neinum,neinum,1,6
 meiðslum,meiðslum,1,8
@@ -5934,6 +6069,7 @@ bréfinu,bréfinu,1,7
 árinu,árinu,1,5
 dpa,dpa,1,3
 youtube,youtube,1,7
+æxlið,æxlið,1,5
 gema,gema,1,4
 hægra,hægra,1,5
 plötufyrirtækið,plötufyrirtækið,1,15
@@ -6006,18 +6142,22 @@ innihald,innihald,1,8
 harmar,harmar,1,6
 skilaboðunum,skilaboðunum,1,12
 fasista,fasista,1,7
+hortefeux,hortefeux,1,9
 brice,brice,1,5
 réttlætisráðherrann,réttlætisráðherrann,1,19
 stökkbreytinga,stökkbreytinga,1,14
 sakaði,sakaði,1,6
+sarkozy,sarkozy,1,7
 dólg,dólg,1,4
 nicolas,nicolas,1,7
+æxlis,æxlis,1,5
 fundu,fundu,1,5
 dati,dati,1,4
 rachida,rachida,1,7
 prófkjöri,prófkjöri,1,9
 ævina,ævina,1,5
 takmörkin,takmörkin,1,9
+ouvrière,ouvrière,1,8
 átaka,átaka,1,5
 force,force,1,5
 stéttarfélagið,stéttarfélagið,1,14

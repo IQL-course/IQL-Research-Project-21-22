@@ -444,6 +444,7 @@ rise,rise,5,4
 global,global,5,6
 macedonian,macedonian,5,10
 say,say,5,3
+qing,qing,5,4
 developed,developed,5,9
 alone,alone,5,5
 military,military,5,8
@@ -489,6 +490,7 @@ resulted,resulted,5,8
 five,five,5,4
 ocean,ocean,5,5
 past,past,5,4
+questions,questions,5,9
 song,song,5,4
 need,need,5,4
 might,might,5,5
@@ -582,6 +584,7 @@ danish,danish,4,6
 drama,drama,4,5
 regions,regions,4,7
 certain,certain,4,7
+conquered,conquered,4,9
 troops,troops,4,6
 achaemenid,achaemenid,4,10
 directed,directed,4,8
@@ -1069,6 +1072,7 @@ attack,attack,2,6
 compromise,compromise,2,10
 similar,similar,2,7
 crop,crop,2,4
+question,question,2,8
 duke,duke,2,4
 alexander,alexander,2,9
 projects,projects,2,8
@@ -1104,10 +1108,12 @@ conservationists,conservationists,2,16
 pyongyang,pyongyang,2,9
 filming,filming,2,7
 celtic,celtic,2,6
+equal,equal,2,5
 anselmi,anselmi,2,7
 process,process,2,7
 tina,tina,2,4
 flow,flow,2,4
+gonzález,gonzález,2,8
 anaya,anaya,2,5
 elaborate,elaborate,2,9
 includes,includes,2,8
@@ -1182,6 +1188,7 @@ dust,dust,2,4
 offer,offer,2,5
 context,context,2,7
 storms,storms,2,6
+consequences,consequences,2,12
 landing,landing,2,7
 athens,athens,2,6
 watch,watch,2,5
@@ -1202,6 +1209,7 @@ minutes,minutes,2,7
 debt,debt,2,4
 ruin,ruin,2,4
 unfortunately,unfortunately,2,13
+quickly,quickly,2,7
 modifying,modifying,2,9
 increasingly,increasingly,2,12
 islam,islam,2,5
@@ -1264,6 +1272,7 @@ estimates,estimates,2,9
 promptly,promptly,2,8
 savings,savings,2,7
 referendum,referendum,2,10
+mojmír,mojmír,2,6
 poland,poland,2,6
 louis,louis,2,5
 forgone,forgone,2,7
@@ -1346,6 +1355,7 @@ finnish,finnish,2,7
 pebe,pebe,2,4
 episodes,episodes,2,8
 contain,contain,2,7
+dündar,dündar,2,6
 geyer,geyer,2,5
 surprise,surprise,2,8
 radical,radical,2,7
@@ -1356,6 +1366,7 @@ characters,characters,2,10
 governments,governments,2,11
 assembly,assembly,2,8
 frozen,frozen,2,6
+requested,requested,2,9
 george,george,2,6
 breaking,breaking,2,8
 norway,norway,2,6
@@ -1526,6 +1537,7 @@ awards,awards,2,6
 governing,governing,2,9
 apply,apply,2,5
 entertainment,entertainment,2,13
+equally,equally,2,7
 toxic,toxic,2,5
 steadily,steadily,2,8
 chapels,chapels,2,7
@@ -1609,6 +1621,7 @@ proper,proper,2,6
 animal,animal,2,6
 app,app,2,3
 tools,tools,2,5
+frequently,frequently,2,10
 changes,changes,2,7
 venice,venice,2,6
 usage,usage,2,5
@@ -1643,6 +1656,7 @@ surveillance,surveillance,2,12
 canaanite,canaanite,2,9
 preferential,preferential,2,12
 accorded,accorded,2,8
+requests,requests,2,8
 satisfied,satisfied,2,9
 literary,literary,2,8
 domestic,domestic,2,8
@@ -1653,6 +1667,7 @@ overall,overall,2,7
 services,services,2,8
 defenses,defenses,2,8
 temperament,temperament,2,11
+technique,technique,2,9
 silt,silt,2,4
 mother,mother,2,6
 attempt,attempt,2,7
@@ -1683,6 +1698,7 @@ below,below,2,5
 understanding,understanding,2,13
 kingdom,kingdom,2,7
 night,night,2,5
+headquarters,headquarters,2,12
 ambassadors,ambassadors,2,11
 meeting,meeting,2,7
 red,red,2,3
@@ -1736,6 +1752,7 @@ lamarr,lamarr,2,6
 white,white,2,5
 metro,metro,2,5
 publishing,publishing,2,10
+equipment,equipment,2,9
 discussed,discussed,2,9
 vigorously,vigorously,2,10
 win,win,2,3
@@ -1830,6 +1847,7 @@ evidence,evidence,2,8
 radar,radar,2,5
 reportedly,reportedly,2,10
 dozens,dozens,2,6
+equipped,equipped,2,8
 peninsula,peninsula,2,9
 marks,marks,2,5
 structure,structure,2,9
@@ -1848,7 +1866,9 @@ removing,removing,2,8
 ports,ports,2,5
 marco,marco,2,5
 walked,walked,1,6
+hallström,hallström,1,9
 propaganda,propaganda,1,10
+fjögur,fjögur,1,6
 achaeans,achaeans,1,8
 kenseth,kenseth,1,7
 miss,miss,1,4
@@ -1865,16 +1885,19 @@ receptionist,receptionist,1,12
 romanov,romanov,1,7
 band,band,1,4
 athenians,athenians,1,9
+rós,rós,1,3
 widow,widow,1,5
 nearly,nearly,1,6
 vision,vision,1,6
 piggy,piggy,1,5
 attending,attending,1,9
 anne,anne,1,4
+saqib,saqib,1,5
 idealized,idealized,1,9
 horton,horton,1,6
 actual,actual,1,6
 combatants,combatants,1,10
+conquering,conquering,1,10
 string,string,1,6
 pearl,pearl,1,5
 blinded,blinded,1,7
@@ -1885,6 +1908,7 @@ sellers,sellers,1,7
 bordering,bordering,1,9
 join,join,1,4
 kristin,kristin,1,7
+píanó,píanó,1,5
 starring,starring,1,8
 mcgregor,mcgregor,1,8
 extravagant,extravagant,1,11
@@ -1943,6 +1967,7 @@ villainous,villainous,1,10
 upper,upper,1,5
 malleus,malleus,1,7
 races,races,1,5
+petén,petén,1,5
 lacked,lacked,1,6
 dominican,dominican,1,9
 assumes,assumes,1,7
@@ -1967,6 +1992,7 @@ theorized,theorized,1,9
 salzburg,salzburg,1,8
 passages,passages,1,8
 beria,beria,1,5
+inquisition,inquisition,1,11
 counter,counter,1,7
 mgb,mgb,1,3
 cautioned,cautioned,1,9
@@ -2155,6 +2181,7 @@ commands,commands,1,8
 pilot,pilot,1,5
 untrained,untrained,1,9
 berlin,berlin,1,6
+quarters,quarters,1,8
 preferred,preferred,1,9
 designers,designers,1,9
 professionals,professionals,1,13
@@ -2177,6 +2204,7 @@ player,player,1,6
 earliest,earliest,1,8
 lenny,lenny,1,5
 william,william,1,7
+piqued,piqued,1,6
 reverend,reverend,1,8
 executed,executed,1,8
 posters,posters,1,7
@@ -2310,6 +2338,7 @@ static,static,1,6
 warfare,warfare,1,7
 economics,economics,1,9
 advantages,advantages,1,10
+shōwa,shōwa,1,5
 nottingham,nottingham,1,10
 journal,journal,1,7
 kirriemuir,kirriemuir,1,10
@@ -2381,6 +2410,7 @@ successes,successes,1,9
 telekom,telekom,1,7
 girlfriend,girlfriend,1,10
 merdingen,merdingen,1,9
+südbaden,südbaden,1,8
 ulrich,ulrich,1,6
 winner,winner,1,6
 censorship,censorship,1,10
@@ -2477,6 +2507,7 @@ describing,describing,1,10
 fifty,fifty,1,5
 witchcraft,witchcraft,1,10
 mummy,mummy,1,5
+ötzi,ötzi,1,4
 dates,dates,1,5
 pupils,pupils,1,6
 beatings,beatings,1,8
@@ -2514,6 +2545,8 @@ unions,unions,1,6
 combative,combative,1,9
 occasions,occasions,1,9
 repeal,repeal,1,6
+fátima,fátima,1,6
+báñez,báñez,1,5
 proudest,proudest,1,8
 faces,faces,1,5
 potato,potato,1,6
@@ -2524,9 +2557,12 @@ shadow,shadow,1,6
 spite,spite,1,5
 messages,messages,1,8
 yesterday,yesterday,1,9
+barón,barón,1,5
 claret,claret,1,6
 noble,noble,1,5
 pedro,pedro,1,5
+sánchez,sánchez,1,7
+évole,évole,1,5
 federico,federico,1,8
 fellini,fellini,1,7
 clown,clown,1,5
@@ -2545,6 +2581,7 @@ length,length,1,6
 offers,offers,1,6
 botanical,botanical,1,9
 planetarium,planetarium,1,11
+aquarium,aquarium,1,8
 franciscans,franciscans,1,11
 victorias,victorias,1,9
 yerba,yerba,1,5
@@ -2554,6 +2591,7 @@ moscone,moscone,1,7
 monument,monument,1,8
 luther,luther,1,6
 steep,steep,1,5
+sequence,sequence,1,8
 bosphorus,bosphorus,1,9
 istanbul,istanbul,1,8
 denied,denied,1,6
@@ -2583,6 +2621,7 @@ buildings,buildings,1,9
 manufacturer,manufacturer,1,12
 georg,georg,1,5
 reichenbach,reichenbach,1,11
+württemberg,württemberg,1,11
 stipulation,stipulation,1,11
 factory,factory,1,7
 emigrated,emigrated,1,9
@@ -2613,6 +2652,7 @@ este,este,1,4
 rasa,rasa,1,4
 saratoga,saratoga,1,8
 coup,coup,1,4
+grâce,grâce,1,5
 encouragement,encouragement,1,13
 settlers,settlers,1,8
 andino,andino,1,6
@@ -2637,6 +2677,7 @@ stylistic,stylistic,1,9
 solutions,solutions,1,9
 arrangements,arrangements,1,12
 characterised,characterised,1,13
+gaudí,gaudí,1,5
 apse,apse,1,4
 lateral,lateral,1,7
 buttresses,buttresses,1,10
@@ -2659,6 +2700,7 @@ illegally,illegally,1,9
 predictable,predictable,1,11
 caesarians,caesarians,1,10
 favor,favor,1,5
+césar,césar,1,5
 informed,informed,1,8
 aires,aires,1,5
 curio,curio,1,5
@@ -2701,6 +2743,7 @@ throne,throne,1,6
 aunt,aunt,1,4
 isabella,isabella,1,8
 ended,ended,1,5
+enrique,enrique,1,7
 execute,execute,1,7
 cecelia,cecelia,1,7
 bruno,bruno,1,5
@@ -2886,6 +2929,7 @@ debit,debit,1,5
 idiotic,idiotic,1,7
 justified,justified,1,9
 zeit,zeit,1,4
+inquired,inquired,1,8
 dubious,dubious,1,7
 cash,cash,1,4
 flows,flows,1,5
@@ -2910,6 +2954,7 @@ occupies,occupies,1,8
 discontinued,discontinued,1,12
 ducks,ducks,1,5
 deserved,deserved,1,8
+kühn,kühn,1,4
 stale,stale,1,5
 essen,essen,1,5
 secret,secret,1,6
@@ -2938,13 +2983,16 @@ rescind,rescind,1,7
 reimburse,reimburse,1,9
 incurred,incurred,1,8
 employee,employee,1,8
+quits,quits,1,5
 inherent,inherent,1,8
 humanism,humanism,1,8
 stresses,stresses,1,8
+irène,irène,1,5
 czechoslovakia,czechoslovakia,1,14
 stopping,stopping,1,8
 marcelle,marcelle,1,8
 piaf,piaf,1,4
+mômone,mômone,1,6
 streets,streets,1,7
 singing,singing,1,7
 smith,smith,1,5
@@ -2998,6 +3046,7 @@ cabinet,cabinet,1,7
 chamberlain,chamberlain,1,11
 lab,lab,1,3
 specimens,specimens,1,9
+subsequent,subsequent,1,10
 iran,iran,1,4
 carefree,carefree,1,8
 playboy,playboy,1,7
@@ -3098,6 +3147,7 @@ situations,situations,1,10
 arise,arise,1,5
 objects,objects,1,7
 desks,desks,1,5
+ouvrière,ouvrière,1,8
 regrets,regrets,1,7
 consultation,consultation,1,12
 eta,eta,1,3
@@ -3141,6 +3191,8 @@ conservative,conservative,1,12
 sectorial,sectorial,1,9
 javier,javier,1,6
 maroto,maroto,1,6
+durán,durán,1,5
+ángel,ángel,1,5
 drivers,drivers,1,7
 thoughts,thoughts,1,8
 vat,vat,1,3
@@ -3222,6 +3274,7 @@ machine,machine,1,7
 inimitably,inimitably,1,10
 dumb,dumb,1,4
 writer,writer,1,6
+günter,günter,1,6
 bruyn,bruyn,1,5
 relatives,relatives,1,9
 investigator,investigator,1,12
@@ -3246,8 +3299,10 @@ desired,desired,1,7
 akp,akp,1,3
 conservatives,conservatives,1,13
 refusal,refusal,1,7
+questionings,questionings,1,12
 increasing,increasing,1,10
 whereas,whereas,1,7
+required,required,1,8
 trigger,trigger,1,7
 gaudens,gaudens,1,7
 haute,haute,1,5
@@ -3287,6 +3342,7 @@ highest,highest,1,7
 priority,priority,1,8
 documented,documented,1,10
 unlike,unlike,1,6
+krätschmer,krätschmer,1,10
 thousands,thousands,1,9
 proxies,proxies,1,7
 actively,actively,1,8
@@ -3306,6 +3362,7 @@ immersed,immersed,1,8
 limit,limit,1,5
 litigation,litigation,1,10
 project,project,1,7
+quoted,quoted,1,6
 hardware,hardware,1,8
 reductions,reductions,1,10
 pencilled,pencilled,1,9
@@ -3433,6 +3490,7 @@ noma,noma,1,4
 websites,websites,1,8
 match,match,1,5
 fate,fate,1,4
+squad,squad,1,5
 infill,infill,1,6
 round,round,1,5
 though,though,1,6
@@ -3482,6 +3540,7 @@ borrow,borrow,1,6
 racist,racist,1,6
 sexist,sexist,1,6
 incredibly,incredibly,1,10
+unqualified,unqualified,1,11
 credit,credit,1,6
 manageable,manageable,1,10
 sudden,sudden,1,6
@@ -3585,6 +3644,7 @@ vernacular,vernacular,1,10
 homeland,homeland,1,8
 apartment,apartment,1,9
 rachel,rachel,1,6
+quality,quality,1,7
 designer,designer,1,8
 appealing,appealing,1,9
 medics,medics,1,6
@@ -3639,6 +3699,7 @@ maker,maker,1,5
 carlo,carlo,1,5
 paire,paire,1,5
 chairman,chairman,1,8
+benoît,benoît,1,6
 betel,betel,1,5
 nut,nut,1,3
 bark,bark,1,4
@@ -3698,6 +3759,7 @@ retail,retail,1,6
 wholesale,wholesale,1,9
 expanded,expanded,1,8
 shoppers,shoppers,1,8
+gchq,gchq,1,4
 upbeat,upbeat,1,6
 spy,spy,1,3
 spend,spend,1,5
@@ -3801,11 +3863,13 @@ customer,customer,1,8
 sasktel,sasktel,1,7
 gomery,gomery,1,6
 amazing,amazing,1,7
+inquiry,inquiry,1,7
 bodies,bodies,1,6
 iridium,iridium,1,7
 restore,restore,1,7
 confidence,confidence,1,10
 revelations,revelations,1,11
+quebec,quebec,1,6
 journalists,journalists,1,11
 provincial,provincial,1,10
 operations,operations,1,10
@@ -3860,6 +3924,7 @@ guitarist,guitarist,1,9
 headlines,headlines,1,9
 vladivostok,vladivostok,1,11
 pall,pall,1,4
+frequent,frequent,1,8
 kamchatka,kamchatka,1,9
 sakhalin,sakhalin,1,8
 notice,notice,1,6
@@ -3938,6 +4003,7 @@ reading,reading,1,7
 caplan,caplan,1,6
 dismisses,dismisses,1,9
 retrospective,retrospective,1,13
+quoting,quoting,1,7
 rational,rational,1,8
 killing,killing,1,7
 else,else,1,4
@@ -4066,11 +4132,13 @@ luxury,luxury,1,6
 debris,debris,1,6
 baby,baby,1,4
 develops,develops,1,8
+equator,equator,1,7
 teratoma,teratoma,1,8
 altering,altering,1,8
 folk,folk,1,4
 remedy,remedy,1,6
 guessing,guessing,1,8
+requires,requires,1,8
 protein,protein,1,7
 transporting,transporting,1,12
 oxygen,oxygen,1,6
@@ -4165,6 +4233,7 @@ panama,panama,1,6
 unknown,unknown,1,7
 populations,populations,1,11
 eurasia,eurasia,1,7
+quest,quest,1,5
 route,route,1,5
 hundreds,hundreds,1,8
 rapid,rapid,1,5
@@ -4300,6 +4369,7 @@ generating,generating,1,10
 kilowatts,kilowatts,1,9
 electricity,electricity,1,11
 rhine,rhine,1,5
+rhône,rhône,1,5
 inn,inn,1,3
 ticino,ticino,1,6
 po,po,1,2
@@ -4454,6 +4524,7 @@ markings,markings,1,8
 locate,locate,1,6
 sunrise,sunrise,1,7
 solstices,solstices,1,9
+equinoxes,equinoxes,1,9
 minimum,minimum,1,7
 declinations,declinations,1,12
 lengths,lengths,1,7
@@ -4461,6 +4532,7 @@ importance,importance,1,10
 resides,resides,1,7
 facts,facts,1,5
 classic,classic,1,7
+yucatán,yucatán,1,7
 disputed,disputed,1,8
 speculations,speculations,1,12
 merely,merely,1,6
@@ -4545,6 +4617,7 @@ stones,stones,1,6
 massebot,massebot,1,8
 altar,altar,1,5
 type,type,1,4
+square,square,1,6
 stone,stone,1,5
 salerno,salerno,1,7
 conceded,conceded,1,8
@@ -4799,10 +4872,12 @@ tended,tended,1,6
 intertwined,intertwined,1,11
 notable,notable,1,7
 classical,classical,1,9
+antiquity,antiquity,1,9
 phoenicians,phoenicians,1,11
 extensively,extensively,1,11
 colonised,colonised,1,9
 coastlines,coastlines,1,10
+quite,quite,1,5
 nostrum,nostrum,1,7
 straits,straits,1,7
 blindleia,blindleia,1,9
@@ -4874,6 +4949,7 @@ tulcea,tulcea,1,6
 lies,lies,1,4
 mead,mead,1,4
 tons,tons,1,4
+bjórr,bjórr,1,5
 fruit,fruit,1,5
 imported,imported,1,8
 celebrity,celebrity,1,9
@@ -4900,6 +4976,7 @@ shaped,shaped,1,6
 knightley,knightley,1,9
 schulman,schulman,1,8
 smaragdis,smaragdis,1,9
+monegasque,monegasque,1,10
 providing,providing,1,9
 limited,limited,1,7
 potomac,potomac,1,7
@@ -4932,6 +5009,7 @@ byzantium,byzantium,1,9
 darius,darius,1,6
 regarded,regarded,1,8
 megabazus,megabazus,1,9
+conquers,conquers,1,8
 mate,mate,1,4
 setback,setback,1,7
 samsung,samsung,1,7
@@ -4958,6 +5036,7 @@ keira,keira,1,5
 derived,derived,1,7
 evolved,evolved,1,7
 separately,separately,1,10
+meänkieli,meänkieli,1,9
 sweden,sweden,1,6
 kven,kven,1,4
 consonant,consonant,1,9
@@ -4991,6 +5070,8 @@ migration,migration,1,9
 slavs,slavs,1,5
 switched,switched,1,8
 moravian,moravian,1,8
+záhorie,záhorie,1,7
+conquest,conquest,1,8
 nitra,nitra,1,5
 battery,battery,1,7
 invaded,invaded,1,7

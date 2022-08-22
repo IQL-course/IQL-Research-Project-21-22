@@ -138,6 +138,7 @@ morze,morze,9,5
 część,część,9,5
 czasów,czasów,9,6
 których,których,9,7
+października,października,9,12
 jeszcze,jeszcze,9,7
 koniec,koniec,8,6
 tymczasem,tymczasem,8,9
@@ -152,6 +153,7 @@ poza,poza,8,4
 pomiędzy,pomiędzy,8,8
 euro,euro,8,4
 zawsze,zawsze,8,6
+później,później,8,7
 końcu,końcu,8,5
 sposób,sposób,8,6
 tej,tej,8,3
@@ -226,6 +228,7 @@ północna,północna,6,8
 ktoś,ktoś,6,4
 niego,niego,6,5
 bitwy,bitwy,6,5
+wyraźnie,wyraźnie,6,8
 aż,aż,6,2
 wyborów,wyborów,6,7
 dlatego,dlatego,6,7
@@ -338,6 +341,7 @@ uznawane,uznawane,4,8
 rebelii,rebelii,4,7
 liście,liście,4,6
 powierzchni,powierzchni,4,11
+danevirke,danevirke,4,9
 samym,samym,4,5
 kilku,kilku,4,5
 niej,niej,4,4
@@ -369,6 +373,7 @@ hongkongu,hongkongu,4,9
 teraz,teraz,4,5
 on,on,4,2
 tworząc,tworząc,4,7
+qing,qing,4,4
 szczęścia,szczęścia,4,9
 mają,mają,4,4
 całej,całej,4,5
@@ -485,6 +490,7 @@ ludzie,ludzie,3,6
 ważne,ważne,3,5
 wysokiej,wysokiej,3,8
 informacje,informacje,3,10
+źródła,źródła,3,6
 chińczyków,chińczyków,3,10
 męskiej,męskiej,3,7
 siedlisk,siedlisk,3,8
@@ -561,6 +567,7 @@ igrzysk,igrzysk,3,7
 guz,guz,3,3
 wtorek,wtorek,3,6
 istnieją,istnieją,3,8
+viii,viii,3,4
 zachodniej,zachodniej,3,10
 związana,związana,3,8
 pierwszym,pierwszym,3,9
@@ -614,6 +621,7 @@ obie,obie,3,4
 walki,walki,3,5
 południu,południu,3,8
 zdrowie,zdrowie,3,7
+v,v,3,1
 dniu,dniu,3,4
 prezydenta,prezydenta,3,10
 powrót,powrót,3,6
@@ -631,6 +639,7 @@ stanowisk,stanowisk,3,9
 cele,cele,3,4
 dodaje,dodaje,3,6
 pierwszych,pierwszych,3,10
+październiku,październiku,3,12
 seria,seria,3,5
 głos,głos,3,4
 niemcy,niemcy,3,6
@@ -707,6 +716,7 @@ budynek,budynek,3,7
 siły,siły,3,4
 córki,córki,3,5
 odpowiedzialności,odpowiedzialności,3,17
+mężczyźni,mężczyźni,3,9
 osiem,osiem,3,5
 najlepszym,najlepszym,3,10
 tworzyć,tworzyć,3,7
@@ -843,6 +853,7 @@ martwi,martwi,2,6
 cnn,cnn,2,3
 święto,święto,2,6
 czerwcu,czerwcu,2,7
+brexitu,brexitu,2,7
 kontekście,kontekście,2,10
 stanowiło,stanowiło,2,9
 uzyskać,uzyskać,2,7
@@ -895,6 +906,7 @@ najlepszych,najlepszych,2,11
 oznacza,oznacza,2,7
 pociągu,pociągu,2,7
 energia,energia,2,7
+źródło,źródło,2,6
 powszechne,powszechne,2,10
 brytyjskiego,brytyjskiego,2,12
 zapobiec,zapobiec,2,8
@@ -1002,6 +1014,7 @@ opium,opium,2,5
 generalny,generalny,2,9
 tworzenie,tworzenie,2,9
 muzyki,muzyki,2,6
+źródłem,źródłem,2,7
 kawalerii,kawalerii,2,9
 cesarzy,cesarzy,2,7
 meiji,meiji,2,5
@@ -1010,6 +1023,7 @@ oscara,oscara,2,6
 siedmiu,siedmiu,2,7
 decyzję,decyzję,2,7
 zajął,zajął,2,5
+wyraźnych,wyraźnych,2,9
 majowie,majowie,2,7
 zmarł,zmarł,2,5
 nagrania,nagrania,2,8
@@ -1058,6 +1072,7 @@ zainteresowania,zainteresowania,2,15
 przyszłości,przyszłości,2,11
 powrocie,powrocie,2,8
 stephen,stephen,2,7
+trix,trix,2,4
 utrzymał,utrzymał,2,8
 cesarz,cesarz,2,6
 kolejne,kolejne,2,7
@@ -1069,6 +1084,7 @@ powrócić,powrócić,2,8
 wschodnia,wschodnia,2,9
 macedonii,macedonii,2,9
 pokojowym,pokojowym,2,9
+xx,xx,2,2
 car,car,2,3
 nagród,nagród,2,6
 rewolucja,rewolucja,2,9
@@ -1097,6 +1113,7 @@ filip,filip,2,5
 starlin,starlin,2,7
 filmie,filmie,2,6
 boku,boku,2,4
+valentino,valentino,2,9
 próby,próby,2,5
 ucieczki,ucieczki,2,8
 miedzi,miedzi,2,6
@@ -1169,6 +1186,7 @@ kryzys,kryzys,2,6
 problemy,problemy,2,8
 urzędującym,urzędującym,2,11
 występował,występował,2,10
+iv,iv,2,2
 przegrała,przegrała,2,9
 zmienić,zmienić,2,7
 dysk,dysk,2,4
@@ -1197,6 +1215,7 @@ członkiem,członkiem,2,9
 artysta,artysta,2,7
 szybkim,szybkim,2,7
 kursu,kursu,2,5
+dündar,dündar,2,6
 nam,nam,2,3
 zamierzał,zamierzał,2,9
 funkcjonariusze,funkcjonariusze,2,15
@@ -1206,6 +1225,7 @@ jasne,jasne,2,5
 pokolenie,pokolenie,2,9
 smartfona,smartfona,2,9
 pole,pole,2,4
+von,von,2,3
 turecki,turecki,2,7
 wycofać,wycofać,2,7
 rosyjskiej,rosyjskiej,2,10
@@ -1230,6 +1250,7 @@ południowa,południowa,2,10
 wymiana,wymiana,2,7
 norwegii,norwegii,2,8
 fińskiego,fińskiego,2,9
+późniejszych,późniejszych,2,12
 kontrolą,kontrolą,2,8
 regionów,regionów,2,8
 określa,określa,2,7
@@ -1237,6 +1258,7 @@ dodatkowo,dodatkowo,2,9
 zastąpił,zastąpił,2,8
 południowo,południowo,2,10
 terenach,terenach,2,8
+vi,vi,2,2
 morawy,morawy,2,6
 przeszły,przeszły,2,8
 wiatr,wiatr,2,5
@@ -1284,6 +1306,7 @@ wszystkie,wszystkie,2,9
 przyczyniło,przyczyniło,2,11
 dokładny,dokładny,2,8
 anaya,anaya,2,5
+gonzález,gonzález,2,8
 kiedyś,kiedyś,2,6
 meksyk,meksyk,2,6
 żadnej,żadnej,2,6
@@ -1379,6 +1402,7 @@ tajskie,tajskie,2,7
 królów,królów,2,6
 listy,listy,2,5
 kilkakrotnie,kilkakrotnie,2,12
+znaleźć,znaleźć,2,7
 znaną,znaną,2,5
 trakcie,trakcie,2,7
 brązu,brązu,2,5
@@ -1432,8 +1456,10 @@ założony,założony,2,8
 rozwinęła,rozwinęła,2,9
 gospodarka,gospodarka,2,10
 yuan,yuan,2,4
+xiv,xiv,2,3
 naukowcami,naukowcami,2,10
 liczby,liczby,2,6
+xvi,xvi,2,3
 określenie,określenie,2,10
 otwartym,otwartym,2,8
 grup,grup,2,4
@@ -1515,6 +1541,7 @@ potrzebna,potrzebna,2,9
 paryżu,paryżu,2,6
 większą,większą,2,7
 osiągnąć,osiągnąć,2,8
+leive,leive,2,5
 twierdzi,twierdzi,2,8
 c,c,2,1
 południowokoreańska,południowokoreańska,2,19
@@ -1594,6 +1621,7 @@ temperament,temperament,2,11
 street,street,2,6
 powiązanie,powiązanie,2,10
 kolumbii,kolumbii,2,8
+najwyraźniej,najwyraźniej,2,12
 dna,dna,2,3
 wynosi,wynosi,2,6
 budowa,budowa,2,6
@@ -1719,6 +1747,7 @@ ludem,ludem,1,5
 obronnych,obronnych,1,9
 wzrośnie,wzrośnie,1,8
 thompsona,thompsona,1,9
+over,over,1,4
 gwarancjach,gwarancjach,1,11
 head,head,1,4
 artykuł,artykuł,1,7
@@ -1767,6 +1796,8 @@ siłowych,siłowych,1,8
 khanzir,khanzir,1,7
 umiejscowienie,umiejscowienie,1,14
 pozwoliły,pozwoliły,1,9
+uaxactun,uaxactun,1,8
+petén,petén,1,5
 schematy,schematy,1,8
 resortach,resortach,1,9
 abakumowa,abakumowa,1,9
@@ -1782,6 +1813,7 @@ numerze,numerze,1,7
 komedii,komedii,1,7
 stopniowo,stopniowo,1,9
 epizodyczną,epizodyczną,1,11
+hallströma,hallströma,1,10
 lasse,lasse,1,5
 jemenie,jemenie,1,7
 należała,należała,1,8
@@ -1816,6 +1848,7 @@ jasona,jasona,1,6
 zarobkom,zarobkom,1,8
 piggy,piggy,1,5
 laurent,laurent,1,7
+yves,yves,1,4
 rozbudowany,rozbudowany,1,11
 wydawanej,wydawanej,1,9
 dołączyć,dołączyć,1,8
@@ -1829,6 +1862,7 @@ opowieści,opowieści,1,9
 domowych,domowych,1,8
 należałaby,należałaby,1,10
 równocześnie,równocześnie,1,12
+marvela,marvela,1,7
 współpracował,współpracował,1,13
 przewijający,przewijający,1,12
 thanosa,thanosa,1,7
@@ -1888,11 +1922,13 @@ froncie,froncie,1,7
 podzielali,podzielali,1,10
 pobożności,pobożności,1,10
 modlitwie,modlitwie,1,9
+saqib,saqib,1,5
 spędzał,spędzał,1,7
 pobożny,pobożny,1,7
 grzegorz,grzegorz,1,8
 northa,northa,1,6
 lorda,lorda,1,5
+panvalkar,panvalkar,1,9
 czarownicy,czarownicy,1,10
 fragmentach,fragmentach,1,11
 autorem,autorem,1,7
@@ -1906,6 +1942,7 @@ odpowiadający,odpowiadający,1,13
 pięćdziesiątki,pięćdziesiątki,1,14
 dwuletniej,dwuletniej,1,10
 wydany,wydany,1,6
+love,love,1,4
 zabiła,zabiła,1,6
 andre,andre,1,5
 humanitarnej,humanitarnej,1,12
@@ -2010,6 +2047,8 @@ nago,nago,1,4
 zoo,zoo,1,3
 opłaty,opłaty,1,6
 islandzki,islandzki,1,9
+píanó,píanó,1,5
+fjögur,fjögur,1,6
 utworu,utworu,1,6
 teledysk,teledysk,1,8
 rós,rós,1,3
@@ -2046,6 +2085,7 @@ napisały,napisały,1,8
 kiplinga,kiplinga,1,8
 brytyjską,brytyjską,1,9
 tennessee,tennessee,1,9
+nashville,nashville,1,9
 przeniosła,przeniosła,1,10
 odpowiednią,odpowiednią,1,11
 piosenek,piosenek,1,8
@@ -2096,12 +2136,14 @@ czerwcem,czerwcem,1,8
 zakładnikami,zakładnikami,1,12
 myślał,myślał,1,6
 bid,bid,1,3
+davida,davida,1,6
 scritti,scritti,1,7
 codziennym,codziennym,1,10
 garrard,garrard,1,7
 kipling,kipling,1,7
 niepodległej,niepodległej,1,12
 ustanowienia,ustanowienia,1,12
+gchq,gchq,1,4
 odrzucili,odrzucili,1,9
 mocarstw,mocarstw,1,8
 ambasadorzy,ambasadorzy,1,11
@@ -2185,6 +2227,7 @@ zapomniane,zapomniane,1,10
 ulicy,ulicy,1,5
 śpiewały,śpiewały,1,8
 wysyłania,wysyłania,1,9
+mômone,mômone,1,6
 piaf,piaf,1,4
 zaatakowała,zaatakowała,1,11
 zostawała,zostawała,1,9
@@ -2212,6 +2255,7 @@ prekursorzy,prekursorzy,1,11
 roną,roną,1,4
 współpracę,współpracę,1,10
 sugerując,sugerując,1,9
+irène,irène,1,5
 meyer,meyer,1,5
 informacyjnych,informacyjnych,1,14
 technologii,technologii,1,11
@@ -2236,6 +2280,7 @@ araba,araba,1,5
 wizerunku,wizerunku,1,9
 stereotypowego,stereotypowego,1,14
 zdystansować,zdystansować,1,12
+halifax,halifax,1,7
 grami,grami,1,5
 paralele,paralele,1,8
 przekroczeniu,przekroczeniu,1,13
@@ -2294,10 +2339,12 @@ rozwiódł,rozwiódł,1,8
 wtrącony,wtrącony,1,8
 sprzymierzeniec,sprzymierzeniec,1,15
 uwolniony,uwolniony,1,9
+lyvet,lyvet,1,5
 rycerz,rycerz,1,6
 porażki,porażki,1,7
 szokującej,szokującej,1,10
 doznała,doznała,1,7
+źródeł,źródeł,1,6
 radowego,radowego,1,8
 gondolą,gondolą,1,7
 wróciła,wróciła,1,7
@@ -2329,6 +2376,7 @@ prezenterka,prezenterka,1,11
 ronie,ronie,1,5
 gościnna,gościnna,1,8
 montreal,montreal,1,8
+ctv,ctv,1,3
 sezonem,sezonem,1,7
 badaniach,badaniach,1,9
 laboratoryjne,laboratoryjne,1,13
@@ -2376,6 +2424,7 @@ zebrał,zebrał,1,6
 definiujemy,definiujemy,1,11
 brytyjska,brytyjska,1,9
 weller,weller,1,6
+zexu,zexu,1,4
 chandler,chandler,1,8
 alianci,alianci,1,7
 wybuchem,wybuchem,1,8
@@ -2385,6 +2434,7 @@ zabitych,zabitych,1,8
 cywilów,cywilów,1,7
 imionami,imionami,1,8
 nazywano,nazywano,1,8
+shōwa,shōwa,1,5
 japonią,japonią,1,7
 wybierano,wybierano,1,9
 czyniła,czyniła,1,7
@@ -2474,6 +2524,7 @@ warunki,warunki,1,7
 przystały,przystały,1,9
 spartan,spartan,1,7
 pokonane,pokonane,1,8
+navy,navy,1,4
 pokonani,pokonani,1,8
 zmuszeni,zmuszeni,1,8
 clyde,clyde,1,5
@@ -2580,6 +2631,7 @@ alfabetu,alfabetu,1,8
 banany,banany,1,6
 cesarzem,cesarzem,1,8
 keira,keira,1,5
+rozluźniona,rozluźniona,1,11
 nieznacznie,nieznacznie,1,11
 mozaiką,mozaiką,1,7
 etnicznych,etnicznych,1,10
@@ -2685,6 +2737,7 @@ pisał,pisał,1,5
 uczelnię,uczelnię,1,8
 ukończył,ukończył,1,8
 courant,courant,1,7
+evening,evening,1,7
 edinburgh,edinburgh,1,9
 teatralne,teatralne,1,9
 recenzje,recenzje,1,8
@@ -2696,6 +2749,7 @@ studiował,studiował,1,9
 zaoferować,zaoferować,1,10
 pójdzie,pójdzie,1,7
 kompromis,kompromis,1,9
+alexandra,alexandra,1,9
 jokowi,jokowi,1,6
 rościła,rościła,1,7
 odpowiedziawszy,odpowiedziawszy,1,15
@@ -2781,6 +2835,7 @@ księżniczką,księżniczką,1,11
 okazało,okazało,1,7
 przejście,przejście,1,9
 znalezione,znalezione,1,10
+lennox,lennox,1,6
 sprzedaż,sprzedaż,1,8
 niezawodnego,niezawodnego,1,12
 całkowitą,całkowitą,1,9
@@ -2800,6 +2855,7 @@ siostrę,siostrę,1,7
 przepisom,przepisom,1,9
 wszystkiemu,wszystkiemu,1,11
 potęgi,potęgi,1,6
+teraźniejszości,teraźniejszości,1,15
 prowadziła,prowadziła,1,10
 hrabinie,hrabinie,1,8
 douglas,douglas,1,7
@@ -2818,6 +2874,7 @@ wierzyli,wierzyli,1,8
 dmuchany,dmuchany,1,8
 szacowano,szacowano,1,9
 własności,własności,1,9
+universal,universal,1,9
 carangi,carangi,1,7
 radarów,radarów,1,7
 nieprzeszkolonymi,nieprzeszkolonymi,1,17
@@ -2863,11 +2920,13 @@ byłby,byłby,1,5
 kątowej,kątowej,1,7
 przynieść,przynieść,1,9
 macedońska,macedońska,1,10
+późno,późno,1,5
 działało,działało,1,8
 eagle,eagle,1,5
 wyposażona,wyposażona,1,10
 zdobyciu,zdobyciu,1,8
 pewna,pewna,1,5
+późnym,późnym,1,6
 internetu,internetu,1,9
 dość,dość,1,4
 ukończony,ukończony,1,9
@@ -2878,8 +2937,10 @@ heroiny,heroiny,1,7
 uzależnienie,uzależnienie,1,12
 systemem,systemem,1,8
 radarowym,radarowym,1,9
+alvarez,alvarez,1,7
 zawodny,zawodny,1,7
 rozdzielczości,rozdzielczości,1,14
+alvareza,alvareza,1,8
 dipolowej,dipolowej,1,9
 anteny,anteny,1,6
 prac,prac,1,4
@@ -3008,6 +3069,7 @@ mos,mos,1,3
 rzymskiej,rzymskiej,1,9
 fundament,fundament,1,9
 spisanie,spisanie,1,8
+ludźmi,ludźmi,1,6
 ośmioma,ośmioma,1,7
 dwudziestoma,dwudziestoma,1,12
 shackletona,shackletona,1,11
@@ -3049,6 +3111,7 @@ nagrodami,nagrodami,1,9
 conte,conte,1,5
 literackimi,literackimi,1,11
 la,la,1,2
+viguier,viguier,1,7
 dzielnicach,dzielnicach,1,11
 prasy,prasy,1,5
 stosunek,stosunek,1,8
@@ -3079,6 +3142,7 @@ terror,terror,1,6
 łagodząc,łagodząc,1,8
 luty,luty,1,4
 styczeń,styczeń,1,7
+pluviôse,pluviôse,1,8
 rewolucjonisty,rewolucjonisty,1,14
 skrajnego,skrajnego,1,9
 postrzegać,postrzegać,1,10
@@ -3119,6 +3183,7 @@ małych,małych,1,6
 podzielona,podzielona,1,10
 teksty,teksty,1,6
 odchodząc,odchodząc,1,9
+ix,ix,1,2
 grecki,grecki,1,6
 modyfikując,modyfikując,1,11
 fenicki,fenicki,1,7
@@ -3182,6 +3247,7 @@ kanału,kanału,1,6
 osmanowie,osmanowie,1,9
 mumia,mumia,1,5
 chcieli,chcieli,1,7
+ötzi,ötzi,1,4
 was,was,1,3
 postacią,postacią,1,8
 presji,presji,1,6
@@ -3201,9 +3267,11 @@ osmańskiemu,osmańskiemu,1,11
 zapotrzebowanie,zapotrzebowanie,1,15
 transportowi,transportowi,1,12
 cente,cente,1,5
+convention,convention,1,10
 moscone,moscone,1,7
 dachu,dachu,1,5
 odnowiony,odnowiony,1,9
+xiii,xiii,1,4
 obermarsbergu,obermarsbergu,1,13
 ratusz,ratusz,1,6
 zabytkowy,zabytkowy,1,9
@@ -3257,6 +3325,7 @@ ugodzie,ugodzie,1,7
 wolnych,wolnych,1,7
 powszechnych,powszechnych,1,12
 narzucenia,narzucenia,1,10
+groźba,groźba,1,6
 węgry,węgry,1,5
 nacisku,nacisku,1,7
 zyskały,zyskały,1,7
@@ -3359,6 +3428,7 @@ doprowadziły,doprowadziły,1,12
 saratoga,saratoga,1,8
 coup,coup,1,4
 wariant,wariant,1,7
+grâce,grâce,1,5
 pokojowe,pokojowe,1,8
 hudson,hudson,1,6
 freeman,freeman,1,7
@@ -3407,12 +3477,15 @@ subdukcję,subdukcję,1,9
 obaliła,obaliła,1,7
 uwolnieni,uwolnieni,1,9
 polityczni,polityczni,1,10
+więźniowie,więźniowie,1,10
 wygnańcom,wygnańcom,1,9
 pozwolono,pozwolono,1,9
 partie,partie,1,6
 zalegalizowano,zalegalizowano,1,14
 dopuszczono,dopuszczono,1,11
+reivindicadora,reivindicadora,1,14
 skorupy,skorupy,1,7
+revolución,revolución,1,10
 zwaną,zwaną,1,5
 rewolucję,rewolucję,1,9
 sprowokowały,sprowokowały,1,12
@@ -3475,6 +3548,7 @@ większe,większe,1,7
 miałyby,miałyby,1,7
 karola,karola,1,6
 filipa,filipa,1,6
+x,x,1,1
 ludwika,ludwika,1,7
 angielskie,angielskie,1,10
 użycia,użycia,1,6
@@ -3510,6 +3584,7 @@ buenos,buenos,1,6
 federalizacji,federalizacji,1,13
 królestwo,królestwo,1,9
 inwazję,inwazję,1,7
+gaudí,gaudí,1,5
 artystów,artystów,1,8
 georges,georges,1,7
 numizmatyczny,numizmatyczny,1,13
@@ -3582,9 +3657,11 @@ wystąpienie,wystąpienie,1,11
 wyspie,wyspie,1,6
 huraganów,huraganów,1,9
 tą,tą,1,2
+giovanni,giovanni,1,8
 sesto,sesto,1,5
 terenie,terenie,1,7
 pelucca,pelucca,1,7
+villa,villa,1,5
 fakt,fakt,1,4
 przemawiał,przemawiał,1,10
 przemawiałby,przemawiałby,1,12
@@ -3613,6 +3690,7 @@ ennio,ennio,1,5
 petrassiego,petrassiego,1,11
 goffredo,goffredo,1,8
 szkolona,szkolona,1,8
+olivia,olivia,1,6
 walter,walter,1,6
 przewidzieli,przewidzieli,1,12
 światami,światami,1,8
@@ -3634,9 +3712,11 @@ sporów,sporów,1,6
 doprowadziła,doprowadziła,1,12
 nieoficjalnej,nieoficjalnej,1,13
 rozpadła,rozpadła,1,8
+przyjaźń,przyjaźń,1,8
 krąg,krąg,1,4
 miłosny,miłosny,1,7
 morriconego,morriconego,1,11
+dźwiękowych,dźwiękowych,1,11
 ścieżkach,ścieżkach,1,9
 kinowych,kinowych,1,8
 współpracuje,współpracuje,1,12
@@ -3663,6 +3743,7 @@ dzielnic,dzielnic,1,8
 zrezygnował,zrezygnował,1,11
 stefan,stefan,1,6
 crouch,crouch,1,6
+david,david,1,5
 marengo,marengo,1,7
 zmusiło,zmusiło,1,7
 austriaków,austriaków,1,10
@@ -3750,6 +3831,7 @@ tygodnikowi,tygodnikowi,1,11
 lotniczą,lotniczą,1,8
 katastrofę,katastrofę,1,10
 badający,badający,1,8
+vance,vance,1,5
 larry,larry,1,5
 śledczy,śledczy,1,7
 kanadyjski,kanadyjski,1,10
@@ -3816,6 +3898,7 @@ idiotą,idiotą,1,6
 ministrem,ministrem,1,9
 faszystą,faszystą,1,8
 bycie,bycie,1,5
+hortefeux,hortefeux,1,9
 oskarżył,oskarżył,1,8
 sprawiedliwości,sprawiedliwości,1,15
 nicolasa,nicolasa,1,8
@@ -3957,6 +4040,7 @@ dfb,dfb,1,3
 strzelonych,strzelonych,1,11
 bramek,bramek,1,6
 złej,złej,1,4
+kühn,kühn,1,4
 bruyna,bruyna,1,6
 odrębnym,odrębnym,1,8
 kłócicie,kłócicie,1,8
@@ -3975,12 +4059,14 @@ zagadnieniu,zagadnieniu,1,11
 mistrzem,mistrzem,1,8
 sekund,sekund,1,6
 sztuką,sztuką,1,6
+vine,vine,1,4
 milionową,milionową,1,9
 zdobywa,zdobywa,1,7
 budzikiem,budzikiem,1,9
 mężczyznach,mężczyznach,1,11
 kręcić,kręcić,1,6
 mogłaby,mogłaby,1,7
+güntera,güntera,1,7
 pisarza,pisarza,1,7
 głupi,głupi,1,5
 niepodrabialnie,niepodrabialnie,1,15
@@ -4012,6 +4098,7 @@ hicie,hicie,1,5
 organy,organy,1,6
 odzywają,odzywają,1,8
 niewypłacalności,niewypłacalności,1,16
+groźbę,groźbę,1,6
 gotówki,gotówki,1,7
 przepływy,przepływy,1,9
 wątpliwe,wątpliwe,1,8
@@ -4039,6 +4126,7 @@ zrujnowanym,zrujnowanym,1,11
 omacku,omacku,1,6
 błądzi,błądzi,1,6
 samotnie,samotnie,1,8
+krätschmer,krätschmer,1,10
 simon,simon,1,5
 planowania,planowania,1,10
 szczegółowego,szczegółowego,1,13
@@ -4052,6 +4140,8 @@ wyzwaniami,wyzwaniami,1,10
 nowymi,nowymi,1,6
 departament,departament,1,11
 dumna,dumna,1,5
+báñez,báñez,1,5
+fátima,fátima,1,6
 ustawy,ustawy,1,6
 uchylenia,uchylenia,1,9
 wzywały,wzywały,1,7
@@ -4072,7 +4162,9 @@ prawach,prawach,1,7
 stronami,stronami,1,8
 narodów,narodów,1,7
 narodem,narodem,1,7
+évolego,évolego,1,7
 dopuszczalne,dopuszczalne,1,12
+sánchez,sánchez,1,7
 pedro,pedro,1,5
 szlacheckim,szlacheckim,1,11
 tytułem,tytułem,1,7
@@ -4086,6 +4178,7 @@ cospedal,cospedal,1,8
 stwierdziły,stwierdziły,1,11
 skarbnika,skarbnika,1,9
 pintado,pintado,1,7
+ángel,ángel,1,5
 rzecznika,rzecznika,1,9
 wyprzedzając,wyprzedzając,1,12
 rynkowej,rynkowej,1,8
@@ -4106,12 +4199,15 @@ dyrektorów,dyrektorów,1,10
 doinwestowanie,doinwestowanie,1,14
 zamian,zamian,1,6
 rossi,rossi,1,5
+exxonmobil,exxonmobil,1,10
 tesla,tesla,1,5
 snapchat,snapchat,1,8
 reprezentuje,reprezentuje,1,12
+durán,durán,1,5
 progresywnych,progresywnych,1,13
 reprezentują,reprezentują,1,12
 maroto,maroto,1,6
+javier,javier,1,6
 wicesekretarz,wicesekretarz,1,13
 przywódcy,przywódcy,1,9
 konserwatywnych,konserwatywnych,1,15
@@ -4121,6 +4217,7 @@ cristina,cristina,1,8
 madrytu,madrytu,1,7
 wspólnoty,wspólnoty,1,9
 summit,summit,1,6
+view,view,1,4
 mountain,mountain,1,8
 towarzyszącym,towarzyszącym,1,13
 wydarzeniu,wydarzeniu,1,10
@@ -4136,6 +4233,7 @@ mediów,mediów,1,6
 unikanie,unikanie,1,8
 krytyką,krytyką,1,7
 may,may,1,3
+victorias,victorias,1,9
 las,las,1,3
 plaza,plaza,1,5
 świętują,świętują,1,8
@@ -4211,8 +4309,10 @@ ujawnia,ujawnia,1,7
 sylaba,sylaba,1,6
 łez,łez,1,3
 zachodzą,zachodzą,1,8
+źrenice,źrenice,1,7
 czekając,czekając,1,8
 robi,robi,1,4
+valentinem,valentinem,1,10
 zdolnym,zdolnym,1,7
 biurkach,biurkach,1,8
 castelfranco,castelfranco,1,12
@@ -4236,6 +4336,7 @@ america,america,1,7
 konsekwencje,konsekwencje,1,12
 dokumentu,dokumentu,1,9
 przyszła,przyszła,1,8
+veneto,veneto,1,6
 etapu,etapu,1,5
 dorastała,dorastała,1,9
 włochom,włochom,1,7
@@ -4276,6 +4377,7 @@ naprawdę,naprawdę,1,8
 uwzględnione,uwzględnione,1,12
 instrukcji,instrukcji,1,10
 ubolewa,ubolewa,1,7
+ouvrière,ouvrière,1,8
 force,force,1,5
 spotkanie,spotkanie,1,9
 przedmioty,przedmioty,1,10
@@ -4364,12 +4466,14 @@ kasie,kasie,1,5
 okazać,okazać,1,6
 smartfonie,smartfonie,1,10
 zapisać,zapisać,1,7
+voucher,voucher,1,7
 generowany,generowany,1,10
 wydania,wydania,1,7
 otrzymają,otrzymają,1,9
 starsi,starsi,1,6
 sheppard,sheppard,1,8
 podwyżki,podwyżki,1,8
+vat,vat,1,3
 przypadkach,przypadkach,1,11
 wyższa,wyższa,1,6
 postawy,postawy,1,7
@@ -4442,6 +4546,8 @@ oszczędnościowych,oszczędnościowych,1,17
 powstrzymało,powstrzymało,1,12
 rządowych,rządowych,1,9
 dotyczą,dotyczą,1,7
+investments,investments,1,11
+savings,savings,1,7
 łączna,łączna,1,6
 zainwestowane,zainwestowane,1,13
 pieniądze,pieniądze,1,9
@@ -4472,12 +4578,15 @@ funduszach,funduszach,1,10
 target,target,1,6
 strategy,strategy,1,8
 multi,multi,1,5
+investors,investors,1,9
+aviva,aviva,1,5
 fundusze,fundusze,1,8
 dane,dane,1,4
 następne,następne,1,8
 pogodowych,pogodowych,1,10
 zdaje,zdaje,1,5
 dokonał,dokonał,1,7
+mroźnie,mroźnie,1,7
 błazenadą,błazenadą,1,9
 wesołą,wesołą,1,6
 równowagę,równowagę,1,9
@@ -4568,6 +4677,7 @@ spodziewać,spodziewać,1,10
 obligacjach,obligacjach,1,11
 inwestor,inwestor,1,8
 paire,paire,1,5
+benoît,benoît,1,6
 grał,grał,1,4
 zdecydowanie,zdecydowanie,1,12
 rozstrzygający,rozstrzygający,1,14
@@ -4602,6 +4712,7 @@ wszystko,wszystko,1,8
 ujawniły,ujawniły,1,8
 coroczne,coroczne,1,8
 wytycznych,wytycznych,1,10
+davis,davis,1,5
 zastanawiam,zastanawiam,1,11
 oczyszczając,oczyszczając,1,12
 zarzutów,zarzutów,1,8
@@ -4687,6 +4798,7 @@ taryfę,taryfę,1,6
 płaciliby,płaciliby,1,9
 rosła,rosła,1,5
 energy,energy,1,6
+avro,avro,1,4
 eonu,eonu,1,4
 skandal,skandal,1,7
 zużyciem,zużyciem,1,8
@@ -4704,12 +4816,14 @@ ogromne,ogromne,1,7
 wniosków,wniosków,1,8
 perspektywą,perspektywą,1,11
 organizacji,organizacji,1,11
+volkswagen,volkswagen,1,10
 udzieliły,udzieliły,1,9
 mln,mln,1,3
 naczelnego,naczelnego,1,10
 dyrektora,dyrektora,1,9
 kosztowało,kosztowało,1,10
 miliardów,miliardów,1,9
+volkswagena,volkswagena,1,11
 obniżyło,obniżyło,1,8
 oszustwa,oszustwa,1,8
 latami,latami,1,6
@@ -4721,6 +4835,7 @@ spodziewały,spodziewały,1,11
 skandalu,skandalu,1,8
 ujawnieniu,ujawnieniu,1,10
 dziennikarzy,dziennikarzy,1,12
+quebecu,quebecu,1,7
 prowincjonalnej,prowincjonalnej,1,15
 awans,awans,1,5
 powinno,powinno,1,7
@@ -4756,6 +4871,7 @@ pomija,pomija,1,6
 parą,parą,1,4
 mildred,mildred,1,7
 rozpoczyna,rozpoczyna,1,10
+loving,loving,1,6
 rozdzwonił,rozdzwonił,1,10
 widzimy,widzimy,1,7
 negana,negana,1,6
@@ -4806,11 +4922,13 @@ brali,brali,1,5
 liberties,liberties,1,9
 odgrywać,odgrywać,1,8
 guilbeault,guilbeault,1,10
+lovingowie,lovingowie,1,10
 najwyższego,najwyższego,1,11
 trafiła,trafiła,1,7
 państwu,państwu,1,7
 przeciwstawili,przeciwstawili,1,14
 union,union,1,5
+civil,civil,1,5
 kurczaka,kurczaka,1,8
 poczekać,poczekać,1,8
 zainteresowaniem,zainteresowaniem,1,16
@@ -5023,6 +5141,7 @@ gra,gra,1,3
 martin,martin,1,6
 aroganckim,aroganckim,1,10
 holenderscy,holenderscy,1,11
+obraźliwe,obraźliwe,1,9
 pojawiające,pojawiające,1,11
 przedstawicielka,przedstawicielka,1,16
 motocykl,motocykl,1,8
@@ -5156,6 +5275,7 @@ statku,statku,1,6
 house,house,1,5
 delhi,delhi,1,5
 bush,bush,1,4
+service,service,1,7
 world,world,1,5
 radia,radia,1,5
 rozrywkowych,rozrywkowych,1,12
@@ -5171,6 +5291,7 @@ zabijano,zabijano,1,8
 najważniejsze,najważniejsze,1,13
 nieświadomych,nieświadomych,1,13
 zasugerował,zasugerował,1,11
+vega,vega,1,4
 komentarzy,komentarzy,1,10
 konfrontuje,konfrontuje,1,11
 niepochlebnych,niepochlebnych,1,14
@@ -5209,6 +5330,7 @@ mogę,mogę,1,4
 york,york,1,4
 zaledwie,zaledwie,1,8
 business,business,1,8
+harvard,harvard,1,7
 corporation,corporation,1,11
 hospitals,hospitals,1,9
 głośno,głośno,1,6
@@ -5270,6 +5392,7 @@ ziarnistych,ziarnistych,1,11
 masę,masę,1,4
 łączący,łączący,1,7
 nerwowy,nerwowy,1,7
+wyraźny,wyraźny,1,7
 dodają,dodają,1,6
 pkb,pkb,1,3
 towarzyszące,towarzyszące,1,12
@@ -5285,6 +5408,7 @@ solidnego,solidnego,1,9
 artystyczną,artystyczną,1,11
 strażnikom,strażnikom,1,10
 przerażeniem,przerażeniem,1,12
+późna,późna,1,5
 siedział,siedział,1,8
 siedziałem,siedziałem,1,10
 miesiące,miesiące,1,8
@@ -5358,6 +5482,7 @@ wrzucił,wrzucił,1,7
 bombę,bombę,1,5
 zapalającą,zapalającą,1,10
 przedstawiające,przedstawiające,1,15
+kesteven,kesteven,1,8
 zimnej,zimnej,1,6
 wprowadziła,wprowadziła,1,11
 restrykcyjne,restrykcyjne,1,12
@@ -5399,6 +5524,7 @@ zachowaniu,zachowaniu,1,10
 przedziwnego,przedziwnego,1,12
 artystycznego,artystycznego,1,13
 ścierania,ścierania,1,9
+rozdźwięk,rozdźwięk,1,9
 wylał,wylał,1,5
 konfliktów,konfliktów,1,10
 nil,nil,1,3
@@ -5457,6 +5583,7 @@ dostępne,dostępne,1,8
 flądry,flądry,1,6
 rdzawca,rdzawca,1,7
 morzach,morzach,1,7
+denver,denver,1,6
 niechęć,niechęć,1,7
 lee,lee,1,3
 dr,dr,1,2
@@ -5624,6 +5751,7 @@ operacja,operacja,1,8
 potworniak,potworniak,1,10
 dowolnym,dowolnym,1,8
 rozwijający,rozwijający,1,11
+vantage,vantage,1,7
 opcję,opcję,1,5
 bezpłatną,bezpłatną,1,9
 konto,konto,1,5
@@ -5831,6 +5959,7 @@ powiązań,powiązań,1,8
 eurazji,eurazji,1,7
 nieznane,nieznane,1,8
 dinozaury,dinozaury,1,9
+xv,xv,1,2
 odnosiło,odnosiło,1,8
 antillas,antillas,1,8
 wysoka,wysoka,1,6
@@ -5892,6 +6021,7 @@ umowa,umowa,1,5
 mandżurską,mandżurską,1,10
 pozostawały,pozostawały,1,11
 chan,chan,1,4
+quing,quing,1,5
 popełnił,popełnił,1,8
 błąd,błąd,1,4
 shikai,shikai,1,6
@@ -6025,6 +6155,7 @@ podróżowali,podróżowali,1,11
 melanezyjczycy,melanezyjczycy,1,14
 zaczęło,zaczęło,1,7
 osadnictwo,osadnictwo,1,10
+powódź,powódź,1,6
 nieurodzaj,nieurodzaj,1,10
 uprawnej,uprawnej,1,8
 zdarzeń,zdarzeń,1,7
@@ -6075,6 +6206,7 @@ uregulowanie,uregulowanie,1,12
 mechaniką,mechaniką,1,9
 górnictwem,górnictwem,1,10
 turystyką,turystyką,1,9
+nevady,nevady,1,6
 nabrzeża,nabrzeża,1,8
 gezira,gezira,1,6
 ułatwiło,ułatwiło,1,8
@@ -6132,6 +6264,7 @@ atkinson,atkinson,1,8
 sallyanne,sallyanne,1,9
 ówczesną,ówczesną,1,8
 kosmicznej,kosmicznej,1,10
+wyraźnego,wyraźnego,1,9
 żadnego,żadnego,1,7
 właściwym,właściwym,1,9
 trwają,trwają,1,6
@@ -6163,6 +6296,7 @@ japońskiego,japońskiego,1,11
 wyraziła,wyraziła,1,8
 pretekstem,pretekstem,1,10
 hills,hills,1,5
+beverly,beverly,1,7
 hotelu,hotelu,1,6
 zwabiony,zwabiony,1,8
 aldrin,aldrin,1,6
@@ -6511,6 +6645,7 @@ tomografia,tomografia,1,10
 rządowej,rządowej,1,8
 wchodzi,wchodzi,1,7
 specjalna,specjalna,1,9
+fontvieille,fontvieille,1,11
 tkankach,tkankach,1,8
 niewystawionych,niewystawionych,1,15
 irlandii,irlandii,1,8
@@ -6577,6 +6712,7 @@ walii,walii,1,5
 klasyfikacja,klasyfikacja,1,12
 bergerona,bergerona,1,9
 mojmir,mojmir,1,6
+późniejszym,późniejszym,1,11
 rastizem,rastizem,1,8
 bratankiem,bratankiem,1,10
 mojmira,mojmira,1,7
@@ -6598,6 +6734,7 @@ nowemu,nowemu,1,6
 wszelkiemu,wszelkiemu,1,10
 austrii,austrii,1,7
 zapożyczeń,zapożyczeń,1,10
+meänkieli,meänkieli,1,9
 znane,znane,1,5
 osobno,osobno,1,6
 rozwinęły,rozwinęły,1,9
@@ -6661,6 +6798,7 @@ plemiona,plemiona,1,8
 danym,danym,1,5
 utrzymywało,utrzymywało,1,11
 dostaw,dostaw,1,6
+kven,kven,1,4
 ateny,ateny,1,5
 okazałości,okazałości,1,10
 stolicę,stolicę,1,7
@@ -6826,6 +6964,7 @@ podatki,podatki,1,7
 ściągającej,ściągającej,1,11
 kupieckiej,kupieckiej,1,10
 mieszczan,mieszczan,1,9
+rzeźbę,rzeźbę,1,6
 miejscowych,miejscowych,1,11
 kierowanej,kierowanej,1,10
 oświadczyła,oświadczyła,1,11
@@ -6927,7 +7066,9 @@ rozsądne,rozsądne,1,8
 niebieskawy,niebieskawy,1,11
 sony,sony,1,4
 czarnego,czarnego,1,8
+vulcanology,vulcanology,1,11
 pisowni,pisowni,1,7
+volcanology,volcanology,1,11
 angielsku,angielsku,1,9
 wulkanologią,wulkanologią,1,12
 nazywa,nazywa,1,6

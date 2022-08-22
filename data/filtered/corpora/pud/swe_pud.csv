@@ -213,11 +213,13 @@ klart,klart,7,5
 tid,tid,7,3
 året,året,7,4
 fick,fick,7,4
+sex,sex,7,3
 innehåller,innehåller,7,10
 frankrike,frankrike,7,9
 north,north,7,5
 norra,norra,7,5
 åt,åt,7,2
+armén,armén,7,5
 kom,kom,7,3
 sätt,sätt,7,4
 vissa,vissa,7,5
@@ -367,6 +369,7 @@ grekiska,grekiska,5,8
 leda,leda,5,4
 roll,roll,5,4
 egna,egna,5,4
+exempel,exempel,5,7
 nationella,nationella,5,10
 bygga,bygga,5,5
 franska,franska,5,7
@@ -418,6 +421,7 @@ vet,vet,4,3
 valet,valet,4,5
 område,område,4,6
 federala,federala,4,8
+armé,armé,4,4
 snart,snart,4,5
 nivå,nivå,4,4
 svar,svar,4,4
@@ -455,6 +459,7 @@ möjligen,möjligen,4,8
 namn,namn,4,4
 tillämpas,tillämpas,4,9
 ekonomi,ekonomi,4,7
+tillväxt,tillväxt,4,8
 området,området,4,7
 afrika,afrika,4,6
 östra,östra,4,5
@@ -487,6 +492,7 @@ tidigt,tidigt,4,6
 marken,marken,4,6
 hav,hav,4,3
 trupper,trupper,4,7
+växte,växte,4,5
 kvar,kvar,4,4
 följande,följande,4,8
 ligger,ligger,4,6
@@ -532,6 +538,8 @@ produktion,produktion,3,10
 vän,vän,3,3
 stormakterna,stormakterna,3,12
 ökning,ökning,3,6
+exakta,exakta,3,6
+wright,wright,3,6
 böcker,böcker,3,6
 mäklare,mäklare,3,7
 publik,publik,3,6
@@ -629,6 +637,7 @@ järn,järn,3,4
 desto,desto,3,5
 företagets,företagets,3,10
 spelar,spelar,3,6
+winstone,winstone,3,8
 språket,språket,3,7
 inrikes,inrikes,3,7
 antingen,antingen,3,8
@@ -642,6 +651,7 @@ utbildning,utbildning,3,10
 vann,vann,3,4
 kontroll,kontroll,3,8
 grad,grad,3,4
+schweiz,schweiz,3,7
 bildade,bildade,3,7
 enbart,enbart,3,6
 bestämde,bestämde,3,8
@@ -653,6 +663,7 @@ bank,bank,3,4
 tvingades,tvingades,3,9
 pengar,pengar,3,6
 york,york,3,4
+new,new,3,3
 global,global,3,6
 disney,disney,3,6
 röst,röst,3,4
@@ -730,6 +741,7 @@ fann,fann,3,4
 kände,kände,3,5
 thutmosis,thutmosis,3,9
 kommentarer,kommentarer,3,11
+växa,växa,3,4
 brev,brev,3,4
 henry,henry,3,5
 genomsnittet,genomsnittet,3,12
@@ -805,6 +817,7 @@ handlingar,handlingar,3,10
 övergången,övergången,3,10
 sammanhang,sammanhang,2,10
 tagit,tagit,2,5
+trix,trix,2,4
 rimligt,rimligt,2,7
 rasa,rasa,2,4
 teoretiskt,teoretiskt,2,10
@@ -843,6 +856,7 @@ börjat,börjat,2,6
 norr,norr,2,4
 analytiker,analytiker,2,10
 city,city,2,4
+extremt,extremt,2,7
 förekomsten,förekomsten,2,11
 mitt,mitt,2,4
 titta,titta,2,5
@@ -912,6 +926,8 @@ färg,färg,2,4
 ens,ens,2,3
 säkerställa,säkerställa,2,11
 råd,råd,2,3
+glasgow,glasgow,2,7
+alexander,alexander,2,9
 art,art,2,3
 älskade,älskade,2,7
 form,form,2,4
@@ -1020,6 +1036,7 @@ mps,mps,2,3
 ombord,ombord,2,6
 drar,drar,2,4
 agent,agent,2,5
+herzl,herzl,2,5
 kraftverk,kraftverk,2,9
 sydöstra,sydöstra,2,8
 flygplan,flygplan,2,8
@@ -1055,6 +1072,7 @@ respektive,respektive,2,10
 betyder,betyder,2,7
 orsakat,orsakat,2,7
 tillgångar,tillgångar,2,10
+washingtons,washingtons,2,11
 skräp,skräp,2,5
 efterfrågan,efterfrågan,2,11
 innehåll,innehåll,2,8
@@ -1080,6 +1098,7 @@ följt,följt,2,5
 hotet,hotet,2,5
 istället,istället,2,8
 album,album,2,5
+expanderade,expanderade,2,11
 separat,separat,2,7
 metod,metod,2,5
 vetenskaplig,vetenskaplig,2,12
@@ -1122,9 +1141,11 @@ david,david,2,5
 clintons,clintons,2,8
 avbryta,avbryta,2,7
 resten,resten,2,6
+mexiko,mexiko,2,6
 cnn,cnn,2,3
 pebe,pebe,2,4
 anaya,anaya,2,5
+gonzález,gonzález,2,8
 förföljelsen,förföljelsen,2,12
 mörka,mörka,2,5
 maya,maya,2,4
@@ -1177,6 +1198,8 @@ gris,gris,2,4
 handlar,handlar,2,7
 ordentligt,ordentligt,2,10
 erkännande,erkännande,2,10
+dündar,dündar,2,6
+vuxit,vuxit,2,5
 baserat,baserat,2,7
 listan,listan,2,6
 polen,polen,2,5
@@ -1207,6 +1230,7 @@ stenar,stenar,2,6
 keltiska,keltiska,2,8
 havets,havets,2,6
 torsk,torsk,2,5
+mojmír,mojmír,2,6
 åtalas,åtalas,2,6
 gäller,gäller,2,6
 arbetsplatsen,arbetsplatsen,2,13
@@ -1225,6 +1249,7 @@ söderut,söderut,2,7
 valdagen,valdagen,2,8
 aktuella,aktuella,2,8
 protester,protester,2,9
+show,show,2,4
 ordförande,ordförande,2,10
 sluta,sluta,2,5
 skaka,skaka,2,5
@@ -1248,6 +1273,7 @@ nyheten,nyheten,2,7
 värde,värde,2,5
 kostade,kostade,2,7
 thailändska,thailändska,2,11
+winterkorn,winterkorn,2,10
 klass,klass,2,5
 cumberland,cumberland,2,10
 förenades,förenades,2,9
@@ -1266,6 +1292,7 @@ består,består,2,6
 mormor,mormor,2,6
 nr,nr,2,2
 eget,eget,2,4
+snowman,snowman,2,7
 misstänkte,misstänkte,2,10
 reagan,reagan,2,6
 brand,brand,2,5
@@ -1332,6 +1359,7 @@ lämnats,lämnats,2,7
 hållet,hållet,2,6
 företräde,företräde,2,9
 regeringens,regeringens,2,11
+européer,européer,2,8
 brant,brant,2,5
 förstörelsen,förstörelsen,2,12
 jordbruksmark,jordbruksmark,2,13
@@ -1430,6 +1458,7 @@ hormonella,hormonella,2,10
 tumören,tumören,2,7
 manliga,manliga,2,7
 utposter,utposter,2,8
+växer,växer,2,5
 tvungen,tvungen,2,7
 alfabetet,alfabetet,2,9
 arbeta,arbeta,2,6
@@ -1471,6 +1500,8 @@ council,council,2,7
 reco,reco,2,4
 nuläget,nuläget,2,7
 förståelse,förståelse,2,10
+växande,växande,2,7
+qing,qing,2,4
 ser,ser,2,3
 manchuerna,manchuerna,2,10
 sydafrika,sydafrika,2,9
@@ -1499,6 +1530,7 @@ skillnader,skillnader,2,10
 använts,använts,2,7
 osmanerna,osmanerna,2,9
 juridiska,juridiska,2,9
+alvarez,alvarez,2,7
 väntar,väntar,2,6
 riktning,riktning,2,8
 händelserna,händelserna,2,11
@@ -1541,6 +1573,7 @@ you,you,2,3
 slog,slog,2,4
 teknologi,teknologi,2,9
 äldre,äldre,2,5
+wing,wing,1,4
 militären,militären,1,9
 prayer,prayer,1,6
 intensiv,intensiv,1,8
@@ -1585,6 +1618,7 @@ me,me,1,2
 bevakat,bevakat,1,7
 gjorts,gjorts,1,6
 rebellerna,rebellerna,1,10
+anyway,anyway,1,6
 over,over,1,4
 spartaner,spartaner,1,9
 atenare,atenare,1,7
@@ -1596,6 +1630,7 @@ jim,jim,1,3
 minst,minst,1,5
 head,head,1,4
 rebeller,rebeller,1,8
+befolkningstillväxten,befolkningstillväxten,1,21
 utlovade,utlovade,1,8
 begravningsplatser,begravningsplatser,1,18
 raffertys,raffertys,1,9
@@ -1614,6 +1649,7 @@ intog,intog,1,5
 nestus,nestus,1,6
 floden,floden,1,6
 säljande,säljande,1,8
+extravagant,extravagant,1,11
 spenderande,spenderande,1,11
 bananer,bananer,1,7
 lägre,lägre,1,5
@@ -1629,9 +1665,11 @@ inflytandet,inflytandet,1,11
 bandet,bandet,1,6
 sigur,sigur,1,5
 produktionstakt,produktionstakt,1,15
+rós,rós,1,3
 allmän,allmän,1,6
 pisanger,pisanger,1,8
 kultiverades,kultiverades,1,12
+west,west,1,4
 rollkaraktärer,rollkaraktärer,1,14
 strathearn,strathearn,1,10
 ull,ull,1,3
@@ -1650,6 +1688,7 @@ förutom,förutom,1,7
 horton,horton,1,6
 återkultiverades,återkultiverades,1,16
 säkrades,säkrades,1,8
+wild,wild,1,4
 sydostasien,sydostasien,1,11
 video,video,1,5
 kyme,kyme,1,4
@@ -1670,6 +1709,7 @@ poängställningen,poängställningen,1,16
 lopp,lopp,1,4
 familjer,familjer,1,8
 nascar,nascar,1,6
+winston,winston,1,7
 hjälpte,hjälpte,1,7
 fyrtio,fyrtio,1,6
 siste,siste,1,5
@@ -1679,6 +1719,7 @@ sviktande,sviktande,1,9
 lågor,lågor,1,5
 tillgivenhet,tillgivenhet,1,12
 fjögur,fjögur,1,6
+píanó,píanó,1,5
 labeouf,labeouf,1,7
 uppträder,uppträder,1,9
 västerut,västerut,1,8
@@ -1701,6 +1742,7 @@ mgb,mgb,1,3
 motverka,motverka,1,8
 tittar,tittar,1,6
 hallström,hallström,1,9
+ewan,ewan,1,4
 mcgregor,mcgregor,1,8
 radarsystemet,radarsystemet,1,13
 kristin,kristin,1,7
@@ -1733,6 +1775,7 @@ speciella,speciella,1,9
 statsmilistrupper,statsmilistrupper,1,17
 eagle,eagle,1,5
 nationalism,nationalism,1,11
+laxfiske,laxfiske,1,8
 utnämndes,utnämndes,1,9
 anta,anta,1,4
 förberedd,förberedd,1,9
@@ -1757,6 +1800,7 @@ tillståndet,tillståndet,1,11
 luftbro,luftbro,1,7
 julia,julia,1,5
 schenk,schenk,1,6
+halifax,halifax,1,7
 oenighet,oenighet,1,8
 tecken,tecken,1,6
 uppvisat,uppvisat,1,8
@@ -1776,6 +1820,7 @@ bruce,bruce,1,5
 upplösning,upplösning,1,10
 vision,vision,1,6
 kejsardömet,kejsardömet,1,11
+willis,willis,1,6
 optisk,optisk,1,6
 habsburgska,habsburgska,1,11
 controlled,controlled,1,10
@@ -1834,6 +1879,7 @@ mönstren,mönstren,1,8
 presenteras,presenteras,1,11
 datan,datan,1,5
 renässansen,renässansen,1,11
+uaxactun,uaxactun,1,8
 uppror,uppror,1,6
 saknade,saknade,1,7
 kommandon,kommandon,1,9
@@ -1858,6 +1904,7 @@ träningsmässiga,träningsmässiga,1,15
 rimligen,rimligen,1,8
 presenterade,presenterade,1,12
 ättling,ättling,1,7
+tokugawa,tokugawa,1,8
 utrustades,utrustades,1,10
 förbund,förbund,1,7
 överlät,överlät,1,7
@@ -1867,6 +1914,7 @@ förhistorisk,förhistorisk,1,12
 mesoamerikansk,mesoamerikansk,1,14
 ikonografi,ikonografi,1,10
 ockupation,ockupation,1,10
+texter,texter,1,6
 teoretiseras,teoretiseras,1,12
 kanoter,kanoter,1,7
 primära,primära,1,7
@@ -1892,6 +1940,7 @@ förklaringar,förklaringar,1,12
 sydasiatiskt,sydasiatiskt,1,12
 utarbeta,utarbeta,1,8
 källan,källan,1,6
+salzburg,salzburg,1,8
 kompromiss,kompromiss,1,10
 universitet,universitet,1,11
 löses,löses,1,5
@@ -1946,9 +1995,11 @@ fångade,fångade,1,7
 manus,manus,1,5
 totala,totala,1,6
 försäljningen,försäljningen,1,13
+power,power,1,5
 administrativa,administrativa,1,14
 inkvisitionen,inkvisitionen,1,13
 kavalleritrupper,kavalleritrupper,1,16
+now,now,1,3
 darnand,darnand,1,7
 vapen,vapen,1,5
 nottingham,nottingham,1,10
@@ -1956,6 +2007,7 @@ journalist,journalist,1,10
 rörda,rörda,1,5
 kolsyrad,kolsyrad,1,8
 episka,episka,1,6
+examen,examen,1,6
 indelning,indelning,1,9
 praktisk,praktisk,1,8
 effekt,effekt,1,6
@@ -1967,10 +2019,12 @@ carcalla,carcalla,1,8
 häst,häst,1,4
 dryck,dryck,1,5
 hechler,hechler,1,7
+william,william,1,7
 kavalleriet,kavalleriet,1,11
 kejsaren,kejsaren,1,8
 halvt,halvt,1,5
 erbjöds,erbjöds,1,7
+weller,weller,1,6
 chandler,chandler,1,8
 aktivitet,aktivitet,1,9
 yudhoyono,yudhoyono,1,9
@@ -1979,6 +2033,7 @@ lahore,lahore,1,6
 corona,corona,1,6
 militärteknik,militärteknik,1,13
 sammansättning,sammansättning,1,14
+gazzete,gazzete,1,7
 fördraget,fördraget,1,9
 pekingkonventionen,pekingkonventionen,1,18
 reda,reda,1,4
@@ -1997,6 +2052,7 @@ kineserna,kineserna,1,9
 bröt,bröt,1,4
 mellanösternfronten,mellanösternfronten,1,19
 inblandning,inblandning,1,11
+oswald,oswald,1,6
 academy,academy,1,7
 inledningsvis,inledningsvis,1,13
 elaine,elaine,1,6
@@ -2023,6 +2079,8 @@ residens,residens,1,8
 utkämpa,utkämpa,1,7
 förälskad,förälskad,1,9
 utropade,utropade,1,8
+zexu,zexu,1,4
+prabowo,prabowo,1,7
 garrard,garrard,1,7
 florence,florence,1,8
 lin,lin,1,3
@@ -2035,6 +2093,7 @@ otur,otur,1,4
 hunan,hunan,1,5
 förvirring,förvirring,1,10
 uppfinningar,uppfinningar,1,12
+jokowi,jokowi,1,6
 guvernörgeneralen,guvernörgeneralen,1,17
 förbättrat,förbättrat,1,10
 trafikljus,trafikljus,1,10
@@ -2044,11 +2103,14 @@ täckmantel,täckmantel,1,10
 homer,homer,1,5
 southsea,southsea,1,8
 kiplings,kiplings,1,8
+award,award,1,5
 brittisk,brittisk,1,8
 redaktören,redaktören,1,10
 underhåll,underhåll,1,9
+wheeler,wheeler,1,7
 öppnades,öppnades,1,8
 tas,tas,1,3
+guangzhou,guangzhou,1,9
 bankomater,bankomater,1,10
 skrivs,skrivs,1,6
 dominikanske,dominikanske,1,12
@@ -2077,6 +2139,7 @@ saul,saul,1,4
 mäter,mäter,1,5
 avsked,avsked,1,6
 peniston,peniston,1,8
+häxan,häxan,1,5
 car,car,1,3
 ställföreträdare,ställföreträdare,1,16
 glinda,glinda,1,6
@@ -2084,6 +2147,7 @@ gold,gold,1,4
 inflytelserika,inflytelserika,1,14
 teaterproduktion,teaterproduktion,1,16
 musikalen,musikalen,1,9
+knew,knew,1,4
 fakta,fakta,1,5
 thought,thought,1,7
 introducera,introducera,1,11
@@ -2094,6 +2158,7 @@ karriärtopp,karriärtopp,1,11
 konvention,konvention,1,10
 bilar,bilar,1,5
 tolkade,tolkade,1,7
+yucatán,yucatán,1,7
 storleksminskade,storleksminskade,1,16
 los,los,1,3
 sporrade,sporrade,1,8
@@ -2114,6 +2179,7 @@ mödrar,mödrar,1,6
 lät,lät,1,3
 lämnade,lämnade,1,7
 torypartiet,torypartiet,1,11
+watt,watt,1,4
 markeringar,markeringar,1,11
 instruktioner,instruktioner,1,13
 återta,återta,1,6
@@ -2136,7 +2202,9 @@ filmaffischdesigner,filmaffischdesigner,1,19
 deklinationerna,deklinationerna,1,15
 gaulle,gaulle,1,6
 minsta,minsta,1,6
+wiz,wiz,1,3
 tids,tids,1,4
+wilkes,wilkes,1,6
 föredrog,föredrog,1,8
 dagjämningarna,dagjämningarna,1,14
 vintersolstånden,vintersolstånden,1,16
@@ -2197,6 +2265,7 @@ inverkan,inverkan,1,8
 grevinna,grevinna,1,8
 krigföring,krigföring,1,10
 övertag,övertag,1,7
+lennox,lennox,1,6
 skönlitteratur,skönlitteratur,1,14
 slumpmässiga,slumpmässiga,1,12
 prinsessa,prinsessa,1,9
@@ -2229,6 +2298,7 @@ bevisen,bevisen,1,7
 europeisk,europeisk,1,9
 omtalats,omtalats,1,8
 härkomst,härkomst,1,8
+shōwa,shōwa,1,5
 baseras,baseras,1,7
 tematiskt,tematiskt,1,9
 samhälleliga,samhälleliga,1,12
@@ -2280,6 +2350,7 @@ censuren,censuren,1,8
 guldmedalj,guldmedalj,1,10
 landsvägsloppet,landsvägsloppet,1,15
 ulrich,ulrich,1,6
+südbaden,südbaden,1,8
 merdingen,merdingen,1,9
 flickvän,flickvän,1,8
 telekom,telekom,1,7
@@ -2357,10 +2428,12 @@ dikteras,dikteras,1,8
 mångt,mångt,1,5
 uppdelat,uppdelat,1,8
 uppträda,uppträda,1,8
+texterna,texterna,1,8
 förändrade,förändrade,1,10
 feniciska,feniciska,1,9
 grekerna,grekerna,1,8
 bransfield,bransfield,1,10
+häxeri,häxeri,1,6
 kläderna,kläderna,1,8
 springer,springer,1,8
 brann,brann,1,5
@@ -2376,6 +2449,7 @@ bremen,bremen,1,6
 köln,köln,1,4
 litteraturprisen,litteraturprisen,1,16
 hedrades,hedrades,1,8
+weiss,weiss,1,5
 mordet,mordet,1,6
 nyhetsrapporterna,nyhetsrapporterna,1,17
 mottog,mottog,1,6
@@ -2423,6 +2497,7 @@ ske,ske,1,3
 planerat,planerat,1,8
 helst,helst,1,5
 grundad,grundad,1,7
+brexit,brexit,1,6
 rättsutlåtandet,rättsutlåtandet,1,15
 media,media,1,5
 svarat,svarat,1,6
@@ -2430,6 +2505,7 @@ undvikit,undvikit,1,8
 may,may,1,3
 victorias,victorias,1,9
 las,las,1,3
+plaza,plaza,1,5
 firar,firar,1,5
 mundo,mundo,1,5
 oppositionen,oppositionen,1,12
@@ -2443,14 +2519,18 @@ skratta,skratta,1,7
 slutändan,slutändan,1,9
 människan,människan,1,9
 skuggan,skuggan,1,7
+clownen,clownen,1,7
 fellini,fellini,1,7
 partierna,partierna,1,9
 pupiller,pupiller,1,8
 nationer,nationer,1,8
 nation,nation,1,6
+évole,évole,1,5
 socialister,socialister,1,11
+sánchez,sánchez,1,7
 pedro,pedro,1,5
 adelstitel,adelstitel,1,10
+cowboy,cowboy,1,6
 indianfilmer,indianfilmer,1,12
 slagen,slagen,1,6
 slagsmålen,slagsmålen,1,10
@@ -2495,6 +2575,7 @@ regeringsplaner,regeringsplaner,1,15
 bosporen,bosporen,1,8
 mumie,mumie,1,5
 frusna,frusna,1,6
+ötzi,ötzi,1,4
 kopparåldern,kopparåldern,1,12
 personen,personen,1,8
 välkända,välkända,1,8
@@ -2511,6 +2592,7 @@ vila,vila,1,4
 akvarium,akvarium,1,8
 festliga,festliga,1,8
 byggnaderna,byggnaderna,1,11
+württemberg,württemberg,1,11
 reichenbach,reichenbach,1,11
 georg,georg,1,5
 fabrikören,fabrikören,1,10
@@ -2547,6 +2629,7 @@ turkiet,turkiet,1,7
 emigrerade,emigrerade,1,10
 bergskedjor,bergskedjor,1,11
 uppkomma,uppkomma,1,8
+barón,barón,1,5
 inriktningen,inriktningen,1,12
 tilläts,tilläts,1,7
 legaliserades,legaliserades,1,13
@@ -2565,6 +2648,7 @@ subduktion,subduktion,1,10
 formades,formades,1,8
 andino,andino,1,6
 tvingats,tvingats,1,8
+exil,exil,1,4
 fångarna,fångarna,1,8
 frigavs,frigavs,1,7
 kanada,kanada,1,6
@@ -2618,9 +2702,11 @@ absiden,absiden,1,7
 kapell,kapell,1,6
 parallella,parallella,1,10
 reform,reform,1,6
+gaudí,gaudí,1,5
 antonio,antonio,1,7
 frambringade,frambringade,1,12
 britterna,britterna,1,9
+exproprierade,exproprierade,1,13
 bruno,bruno,1,5
 kommando,kommando,1,8
 caesarianer,caesarianer,1,11
@@ -2660,7 +2746,9 @@ innehades,innehades,1,9
 fullgjort,fullgjort,1,9
 rocket,rocket,1,6
 generaler,generaler,1,9
+expeditionen,expeditionen,1,12
 variant,variant,1,7
+x,x,1,1
 luis,luis,1,4
 döttrarna,döttrarna,1,9
 spansktalandes,spansktalandes,1,14
@@ -2689,6 +2777,7 @@ diskuterade,diskuterade,1,11
 kungadömet,kungadömet,1,10
 plan,plan,1,4
 utföra,utföra,1,6
+enrique,enrique,1,7
 fred,fred,1,4
 försöken,försöken,1,8
 isabella,isabella,1,8
@@ -2740,10 +2829,12 @@ kommersiella,kommersiella,1,12
 skräckväldet,skräckväldet,1,12
 trycket,trycket,1,7
 lätta,lätta,1,5
+pluviôse,pluviôse,1,8
 revolutionär,revolutionär,1,12
 radikal,radikal,1,7
 startpunkten,startpunkten,1,12
 utvecklades,utvecklades,1,11
+walt,walt,1,4
 byggts,byggts,1,6
 nog,nog,1,3
 skepp,skepp,1,5
@@ -2767,6 +2858,7 @@ lekte,lekte,1,5
 remis,remis,1,5
 alltsammans,alltsammans,1,11
 svårigheter,svårigheter,1,11
+textilier,textilier,1,9
 distributören,distributören,1,13
 skolor,skolor,1,6
 stallet,stallet,1,7
@@ -2777,6 +2869,7 @@ nye,nye,1,3
 intet,intet,1,5
 föll,föll,1,4
 fredsfördag,fredsfördag,1,11
+austerlitz,austerlitz,1,10
 händelseutvecklingar,händelseutvecklingar,1,20
 flotta,flotta,1,6
 blockaden,blockaden,1,9
@@ -2797,6 +2890,7 @@ goffredo,goffredo,1,8
 tränades,tränades,1,8
 olivia,olivia,1,6
 förutsagt,förutsagt,1,9
+walter,walter,1,6
 universum,universum,1,9
 mannen,mannen,1,6
 kyrkan,kyrkan,1,6
@@ -2831,6 +2925,7 @@ etablerats,etablerats,1,10
 inkluderade,inkluderade,1,11
 samnium,samnium,1,7
 symboliska,symboliska,1,10
+existerat,existerat,1,9
 grevskap,grevskap,1,8
 handfull,handfull,1,8
 fokusera,fokusera,1,8
@@ -2896,6 +2991,7 @@ territoriella,territoriella,1,13
 makedonien,makedonien,1,10
 autonom,autonom,1,7
 bredvid,bredvid,1,7
+suzeränitet,suzeränitet,1,11
 osmanskt,osmanskt,1,8
 ambassadörerna,ambassadörerna,1,14
 förkastade,förkastade,1,10
@@ -2923,10 +3019,12 @@ politiske,politiske,1,9
 salaman,salaman,1,7
 självbelåten,självbelåten,1,12
 sjukvårdssystemet,sjukvårdssystemet,1,17
+rambow,rambow,1,6
 open,open,1,4
 väckarklocka,väckarklocka,1,12
 grälar,grälar,1,6
 oklart,oklart,1,6
+williams,williams,1,8
 serena,serena,1,6
 matchen,matchen,1,7
 förlorade,förlorade,1,9
@@ -2949,6 +3047,7 @@ kanadensiske,kanadensiske,1,12
 besläktade,besläktade,1,10
 intellektuellt,intellektuellt,1,14
 bruyn,bruyn,1,5
+günter,günter,1,6
 författaren,författaren,1,11
 dumma,dumma,1,5
 oefterhärmligt,oefterhärmligt,1,14
@@ -2966,13 +3065,16 @@ monster,monster,1,7
 spelas,spelas,1,6
 orgeln,orgeln,1,6
 läskiga,läskiga,1,7
+häxtimmen,häxtimmen,1,9
 insolvens,insolvens,1,9
 fastighetsföretaget,fastighetsföretaget,1,19
 app,app,1,3
 förhörde,förhörde,1,8
+zeit,zeit,1,4
 die,die,1,3
 tidningen,tidningen,1,9
 huvudet,huvudet,1,7
+kühn,kühn,1,4
 skick,skick,1,5
 beust,beust,1,5
 rättfärdigade,rättfärdigade,1,13
@@ -3018,6 +3120,7 @@ bouchard,bouchard,1,8
 led,led,1,3
 chockerande,chockerande,1,11
 skilde,skilde,1,6
+towern,towern,1,6
 slängdes,slängdes,1,8
 följare,följare,1,7
 lyvet,lyvet,1,5
@@ -3025,16 +3128,19 @@ riddaren,riddaren,1,8
 gent,gent,1,4
 johan,johan,1,5
 joan,joan,1,4
+edward,edward,1,6
 avkomlingar,avkomlingar,1,11
 hertigen,hertigen,1,8
 plantagenet,plantagenet,1,11
 cecily,cecily,1,6
 tresetsförlust,tresetsförlust,1,14
 radiuminstitutet,radiuminstitutet,1,16
+expert,expert,1,6
 gloria,gloria,1,6
 gränskontroller,gränskontroller,1,15
 gatorna,gatorna,1,7
 ute,ute,1,3
+mômone,mômone,1,6
 piaf,piaf,1,4
 kammaren,kammaren,1,8
 marcelle,marcelle,1,8
@@ -3061,6 +3167,7 @@ pettersson,pettersson,1,10
 poloniumprover,poloniumprover,1,14
 laboratorium,laboratorium,1,12
 föreslå,föreslå,1,7
+irène,irène,1,5
 meyer,meyer,1,5
 informationsteknik,informationsteknik,1,18
 föregångare,föregångare,1,11
@@ -3068,6 +3175,7 @@ blandar,blandar,1,7
 tema,tema,1,4
 skådespelerskan,skådespelerskan,1,15
 holden,holden,1,6
+galaxen,galaxen,1,7
 letade,letade,1,6
 släppt,släppt,1,6
 producera,producera,1,9
@@ -3103,6 +3211,7 @@ bidrar,bidrar,1,6
 serietidningskonstnär,serietidningskonstnär,1,21
 oscar,oscar,1,5
 somerset,somerset,1,8
+wells,wells,1,5
 teologi,teologi,1,7
 inneboende,inneboende,1,10
 kär,kär,1,3
@@ -3129,6 +3238,7 @@ republikanerna,republikanerna,1,14
 representanthuset,representanthuset,1,17
 implicita,implicita,1,9
 betonar,betonar,1,7
+marxism,marxism,1,7
 principen,principen,1,9
 vägledande,vägledande,1,10
 bloch,bloch,1,5
@@ -3174,6 +3284,7 @@ valutan,valutan,1,7
 överskrider,överskrider,1,11
 kostnad,kostnad,1,7
 betydligt,betydligt,1,9
+eurozonens,eurozonens,1,10
 jämfört,jämfört,1,7
 hänför,hänför,1,6
 siffran,siffran,1,7
@@ -3191,6 +3302,7 @@ kontingenten,kontingenten,1,12
 avslöjade,avslöjade,1,9
 eta,eta,1,3
 utförs,utförs,1,6
+textilarbetares,textilarbetares,1,15
 arbetstiden,arbetstiden,1,11
 mäta,mäta,1,4
 utförts,utförts,1,7
@@ -3221,7 +3333,9 @@ fullkomlig,fullkomlig,1,10
 anges,anges,1,5
 överklagande,överklagande,1,12
 cifuentes,cifuentes,1,9
+ángel,ángel,1,5
 talesman,talesman,1,8
+durán,durán,1,5
 maroto,maroto,1,6
 javier,javier,1,6
 understatssekreteraren,understatssekreteraren,1,22
@@ -3229,6 +3343,7 @@ sektorielle,sektorielle,1,11
 cristina,cristina,1,8
 överträffande,överträffande,1,13
 summit,summit,1,6
+view,view,1,4
 mountain,mountain,1,8
 tillställning,tillställning,1,13
 delta,delta,1,5
@@ -3247,10 +3362,13 @@ potatis,potatis,1,7
 het,het,1,3
 avdelning,avdelning,1,9
 stolt,stolt,1,5
+báñez,báñez,1,5
+fátima,fátima,1,6
 upphävande,upphävande,1,10
 krävt,krävt,1,5
 tillfällen,tillfällen,1,10
 stridslystna,stridslystna,1,12
+exxonmobil,exxonmobil,1,10
 börsvärdet,börsvärdet,1,10
 prerogativ,prerogativ,1,10
 franciskus,franciskus,1,10
@@ -3260,6 +3378,7 @@ utvecklat,utvecklat,1,9
 roma,roma,1,4
 marta,marta,1,5
 casa,casa,1,4
+zuckerberg,zuckerberg,1,10
 möte,möte,1,4
 fjärde,fjärde,1,6
 meddelades,meddelades,1,10
@@ -3271,9 +3390,12 @@ vägnar,vägnar,1,6
 uttala,uttala,1,6
 förutse,förutse,1,7
 förares,förares,1,7
+exemplen,exemplen,1,8
 säkerhetsåtgärder,säkerhetsåtgärder,1,17
+amazon,amazon,1,6
 valley,valley,1,6
 silicon,silicon,1,7
+wall,wall,1,4
 dagordningen,dagordningen,1,12
 teknikföretag,teknikföretag,1,13
 styrelsen,styrelsen,1,9
@@ -3311,6 +3433,7 @@ nyhetsbyrån,nyhetsbyrån,1,11
 dpa,dpa,1,3
 regeringarna,regeringarna,1,12
 hjärnan,hjärnan,1,7
+uppväxande,uppväxande,1,10
 nedsättning,nedsättning,1,11
 långvarig,långvarig,1,9
 lungorna,lungorna,1,8
@@ -3331,11 +3454,13 @@ uppståndelse,uppståndelse,1,12
 barrosos,barrosos,1,8
 bytet,bytet,1,5
 barroso,barroso,1,7
+tanzania,tanzania,1,8
 spolats,spolats,1,7
 boeing,boeing,1,6
 undersökningen,undersökningen,1,14
 organisationen,organisationen,1,14
 slutsatser,slutsatser,1,10
+experterna,experterna,1,10
 sjunka,sjunka,1,6
 havsytan,havsytan,1,8
 maskinen,maskinen,1,8
@@ -3363,6 +3488,7 @@ hariri,hariri,1,6
 klassificerat,klassificerat,1,13
 landsomfattande,landsomfattande,1,15
 hem,hem,1,3
+hortefeux,hortefeux,1,9
 situationer,situationer,1,11
 uttrycket,uttrycket,1,9
 gränserna,gränserna,1,9
@@ -3374,6 +3500,7 @@ brice,brice,1,5
 övervakar,övervakar,1,9
 justitieminister,justitieminister,1,16
 anklagas,anklagas,1,8
+sarkozys,sarkozys,1,8
 nicolas,nicolas,1,7
 stödjer,stödjer,1,7
 dati,dati,1,4
@@ -3395,6 +3522,7 @@ inkluderades,inkluderades,1,12
 guidens,guidens,1,7
 anmärkningar,anmärkningar,1,12
 beklagar,beklagar,1,8
+ouvrière,ouvrière,1,8
 force,force,1,5
 primärvalen,primärvalen,1,11
 slöts,slöts,1,5
@@ -3404,6 +3532,7 @@ tala,tala,1,4
 obama,obama,1,5
 hånade,hånade,1,6
 kärnvapenkoderna,kärnvapenkoderna,1,16
+twitterkonto,twitterkonto,1,12
 utredning,utredning,1,9
 försäkrade,försäkrade,1,10
 motståndare,motståndare,1,11
@@ -3453,6 +3582,7 @@ kampanj,kampanj,1,7
 inpiskare,inpiskare,1,9
 frun,frun,1,4
 stängas,stängas,1,7
+world,world,1,5
 olney,olney,1,5
 gudsgivna,gudsgivna,1,9
 matcha,matcha,1,6
@@ -3471,6 +3601,7 @@ sörjande,sörjande,1,8
 house,house,1,5
 frånskilda,frånskilda,1,10
 sarah,sarah,1,5
+växter,växter,1,6
 försummelse,försummelse,1,11
 kartor,kartor,1,6
 försvarsministeriets,försvarsministeriets,1,20
@@ -3482,6 +3613,7 @@ fullständig,fullständig,1,11
 slag,slag,1,4
 etymon,etymon,1,6
 forska,forska,1,6
+woods,woods,1,5
 korrespondens,korrespondens,1,13
 offseten,offseten,1,8
 fotografiska,fotografiska,1,12
@@ -3494,6 +3626,7 @@ förorten,förorten,1,8
 välbärgade,välbärgade,1,10
 liberaldemokraterna,liberaldemokraterna,1,19
 järnvägshistoria,järnvägshistoria,1,16
+wolmar,wolmar,1,6
 räkning,räkning,1,7
 militärhögskolan,militärhögskolan,1,16
 skattebetalarnas,skattebetalarnas,1,16
@@ -3505,6 +3638,7 @@ valkretsen,valkretsen,1,10
 längtan,längtan,1,7
 hårda,hårda,1,5
 eggen,eggen,1,5
+sexistisk,sexistisk,1,9
 plötslig,plötslig,1,8
 lånande,lånande,1,7
 kreditutlåning,kreditutlåning,1,14
@@ -3540,6 +3674,7 @@ vilkas,vilkas,1,6
 ambassadör,ambassadör,1,10
 hyllningar,hyllningar,1,10
 ovanliga,ovanliga,1,8
+växel,växel,1,5
 dämpad,dämpad,1,6
 hökliknande,hökliknande,1,11
 mrs,mrs,1,3
@@ -3561,6 +3696,7 @@ lösenord,lösenord,1,8
 sanna,sanna,1,5
 läggs,läggs,1,5
 meningsfulla,meningsfulla,1,12
+text,text,1,4
 hållas,hållas,1,6
 hörnet,hörnet,1,6
 tjej,tjej,1,4
@@ -3599,6 +3735,7 @@ mandatperioderna,mandatperioderna,1,16
 institutionella,institutionella,1,15
 lincolns,lincolns,1,8
 parti,parti,1,5
+idéer,idéer,1,5
 uppgifter,uppgifter,1,9
 tolka,tolka,1,5
 varnar,varnar,1,6
@@ -3636,6 +3773,7 @@ industri,industri,1,8
 underhållningsinnehåll,underhållningsinnehåll,1,22
 viktigast,viktigast,1,9
 diskurs,diskurs,1,7
+lyx,lyx,1,3
 oumbärligt,oumbärligt,1,10
 spillrorna,spillrorna,1,10
 ring,ring,1,4
@@ -3704,6 +3842,8 @@ kliniska,kliniska,1,8
 konsten,konsten,1,7
 förflytta,förflytta,1,9
 rumpor,rumpor,1,6
+zay,zay,1,3
+zayion,zayion,1,6
 knuck,knuck,1,5
 if,if,1,2
 buck,buck,1,4
@@ -3717,6 +3857,7 @@ paj,paj,1,3
 carlo,carlo,1,5
 monte,monte,1,5
 paire,paire,1,5
+benoît,benoît,1,6
 tappat,tappat,1,6
 davis,davis,1,5
 besvikna,besvikna,1,8
@@ -3727,7 +3868,9 @@ dröm,dröm,1,4
 ärligt,ärligt,1,6
 undrar,undrar,1,6
 cup,cup,1,3
+andrew,andrew,1,6
 pågått,pågått,1,6
+vw,vw,1,2
 öppnat,öppnat,1,6
 direktören,direktören,1,10
 högste,högste,1,6
@@ -3820,6 +3963,7 @@ skandalen,skandalen,1,9
 shoppare,shoppare,1,8
 partihandel,partihandel,1,11
 kunnat,kunnat,1,6
+brexitomröstningen,brexitomröstningen,1,18
 förväntat,förväntat,1,9
 uppdagades,uppdagades,1,10
 befordrades,befordrades,1,11
@@ -3850,6 +3994,7 @@ erhålla,erhålla,1,7
 station,station,1,7
 glider,glider,1,6
 minareter,minareter,1,9
+wintour,wintour,1,7
 motocross,motocross,1,9
 tittade,tittade,1,7
 intervjuad,intervjuad,1,10
@@ -3893,6 +4038,7 @@ absurd,absurd,1,6
 förargande,förargande,1,10
 silverkant,silverkant,1,10
 förvånande,förvånande,1,10
+examensutställningarna,examensutställningarna,1,22
 uppmärksamma,uppmärksamma,1,12
 spola,spola,1,5
 mineral,mineral,1,7
@@ -4002,6 +4148,7 @@ attackerna,attackerna,1,10
 förstör,förstör,1,7
 fåtalet,fåtalet,1,7
 demonstrera,demonstrera,1,11
+showen,showen,1,6
 årtiondet,årtiondet,1,9
 närmaste,närmaste,1,8
 avdelningen,avdelningen,1,11
@@ -4015,10 +4162,12 @@ behövas,behövas,1,7
 kol,kol,1,3
 c,c,1,1
 kolet,kolet,1,5
+webbsidor,webbsidor,1,9
 störningen,störningen,1,10
 orsaka,orsaka,1,6
 påvisade,påvisade,1,8
 analyser,analyser,1,8
+twitter,twitter,1,7
 reddit,reddit,1,6
 luftfartsmarknad,luftfartsmarknad,1,16
 sjöflygplan,sjöflygplan,1,11
@@ -4050,6 +4199,8 @@ jetplanen,jetplanen,1,9
 kursen,kursen,1,6
 väckte,väckte,1,6
 intäkter,intäkter,1,8
+säkerhetsexperter,säkerhetsexperter,1,17
+gchq,gchq,1,4
 spionmyndigheten,spionmyndigheten,1,16
 certifierats,certifierats,1,12
 marknadsföring,marknadsföring,1,14
@@ -4063,6 +4214,7 @@ straff,straff,1,6
 okonventionella,okonventionella,1,15
 valt,valt,1,4
 trafikpolis,trafikpolis,1,11
+shenzhens,shenzhens,1,9
 bestraffningar,bestraffningar,1,14
 handlat,handlat,1,7
 utför,utför,1,5
@@ -4101,12 +4253,14 @@ undergången,undergången,1,11
 dinosaurierna,dinosaurierna,1,13
 klimatförändringar,klimatförändringar,1,18
 människors,människors,1,10
+mexikanska,mexikanska,1,10
 grader,grader,1,6
 närheten,närheten,1,8
 insatser,insatser,1,8
 fantastiskt,fantastiskt,1,11
 miljöorgan,miljöorgan,1,10
 rymdfröer,rymdfröer,1,9
+experiment,experiment,1,10
 ruccolafrön,ruccolafrön,1,11
 flygas,flygas,1,6
 förvaras,förvaras,1,8
@@ -4120,8 +4274,10 @@ skickats,skickats,1,8
 skolbarn,skolbarn,1,8
 lärare,lärare,1,6
 deltagit,deltagit,1,8
+experimentet,experimentet,1,12
 bära,bära,1,4
 flygning,flygning,1,8
+reseexpert,reseexpert,1,10
 siri,siri,1,4
 h,h,1,1
 vetenskapligt,vetenskapligt,1,13
@@ -4150,6 +4306,7 @@ passagerare,passagerare,1,11
 uppskattar,uppskattar,1,10
 bid,bid,1,3
 infyllnadstunnelbanestation,infyllnadstunnelbanestation,1,27
+georgetown,georgetown,1,10
 sternlieb,sternlieb,1,9
 joe,joe,1,3
 överfarten,överfarten,1,10
@@ -4164,6 +4321,7 @@ invandring,invandring,1,10
 inskränka,inskränka,1,9
 avbrott,avbrott,1,7
 capitol,capitol,1,7
+växlingar,växlingar,1,9
 blogginlägg,blogginlägg,1,11
 tekniklobbyister,tekniklobbyister,1,16
 schulman,schulman,1,8
@@ -4180,6 +4338,7 @@ hatar,hatar,1,5
 er,er,1,2
 börda,börda,1,5
 öde,öde,1,3
+axlar,axlar,1,5
 folksamlingen,folksamlingen,1,13
 idrottsplan,idrottsplan,1,11
 utgifterna,utgifterna,1,10
@@ -4216,6 +4375,7 @@ artificiellt,artificiellt,1,12
 saknar,saknar,1,6
 tillbakagång,tillbakagång,1,12
 samsungs,samsungs,1,8
+huawei,huawei,1,6
 batterifel,batterifel,1,10
 föreslagit,föreslagit,1,10
 batteri,batteri,1,7
@@ -4232,10 +4392,12 @@ mörda,mörda,1,5
 försökt,försökt,1,7
 panvalkar,panvalkar,1,9
 tidpunkt,tidpunkt,1,8
+saqib,saqib,1,5
 djurparken,djurparken,1,10
 kapningen,kapningen,1,9
 befolka,befolka,1,7
 bett,bett,1,4
+khanzir,khanzir,1,7
 folkbokföringsbyrån,folkbokföringsbyrån,1,19
 lades,lades,1,5
 ökat,ökat,1,4
@@ -4250,6 +4412,7 @@ angel,angel,1,5
 åker,åker,1,4
 fängelse,fängelse,1,8
 ändå,ändå,1,4
+yazidiska,yazidiska,1,9
 kvinnorna,kvinnorna,1,9
 osborne,osborne,1,7
 talaragentur,talaragentur,1,12
@@ -4269,6 +4432,7 @@ tillgänglighet,tillgänglighet,1,14
 rättegången,rättegången,1,11
 övervakningsverksamhet,övervakningsverksamhet,1,22
 provinspolisens,provinspolisens,1,15
+quebec,quebec,1,6
 journalister,journalister,1,12
 dagarna,dagarna,1,7
 avslöjanden,avslöjanden,1,11
@@ -4318,6 +4482,7 @@ prestationslöner,prestationslöner,1,16
 bonusnivåer,bonusnivåer,1,11
 departement,departement,1,11
 uppgiften,uppgiften,1,9
+webben,webben,1,6
 föråldrad,föråldrad,1,9
 prestationslönen,prestationslönen,1,16
 bonusen,bonusen,1,7
@@ -4355,6 +4520,7 @@ operation,operation,1,9
 ofödda,ofödda,1,6
 ultraljudsundersökning,ultraljudsundersökning,1,22
 höra,höra,1,4
+texas,texas,1,5
 plano,plano,1,5
 boemer,boemer,1,6
 väntande,väntande,1,8
@@ -4395,8 +4561,10 @@ gissar,gissar,1,6
 livsviktigt,livsviktigt,1,11
 grundämne,grundämne,1,9
 mcneilly,mcneilly,1,8
+review,review,1,6
 gitarrist,gitarrist,1,9
 rökts,rökts,1,5
+exponerad,exponerad,1,9
 urinblåsan,urinblåsan,1,10
 vävnaden,vävnaden,1,8
 tumörens,tumörens,1,8
@@ -4411,11 +4579,13 @@ orsakerna,orsakerna,1,9
 bakomliggande,bakomliggande,1,13
 förklara,förklara,1,8
 pugh,pugh,1,4
+papworths,papworths,1,9
 foto,foto,1,4
 driva,driva,1,5
 inbjudan,inbjudan,1,8
 utsträcka,utsträcka,1,9
 trudeau,trudeau,1,7
+washington,washington,1,10
 representeras,representeras,1,13
 agenda,agenda,1,6
 försöket,försöket,1,8
@@ -4444,6 +4614,7 @@ kamtjatka,kamtjatka,1,9
 vladivostok,vladivostok,1,11
 farmor,farmor,1,6
 konsert,konsert,1,7
+ordväxling,ordväxling,1,10
 gräl,gräl,1,4
 skador,skador,1,6
 cuaron,cuaron,1,6
@@ -4479,12 +4650,14 @@ lungtilltäppande,lungtilltäppande,1,16
 uppleva,uppleva,1,7
 luft,luft,1,4
 trumps,trumps,1,6
+turnén,turnén,1,6
 hemlös,hemlös,1,6
 smärtpatienter,smärtpatienter,1,14
 independent,independent,1,11
 injektion,injektion,1,9
 receptblock,receptblock,1,11
 läkare,läkare,1,6
+news,news,1,4
 cbc,cbc,1,3
 katastrof,katastrof,1,9
 partikonventet,partikonventet,1,14
@@ -4539,6 +4712,7 @@ händelser,händelser,1,9
 ledningsprinciper,ledningsprinciper,1,17
 friskt,friskt,1,6
 vattenförorening,vattenförorening,1,16
+missväxt,missväxt,1,8
 lida,lida,1,4
 torka,torka,1,5
 översvämningar,översvämningar,1,14
@@ -4591,6 +4765,7 @@ kentucky,kentucky,1,8
 familjens,familjens,1,9
 norrut,norrut,1,6
 östmelanesier,östmelanesier,1,13
+expeditioner,expeditioner,1,12
 naturskyddsområde,naturskyddsområde,1,17
 allmänhet,allmänhet,1,9
 torkat,torkat,1,6
@@ -4598,6 +4773,8 @@ lagun,lagun,1,5
 regnperiodernas,regnperiodernas,1,15
 uppvärmning,uppvärmning,1,11
 katastrofalt,katastrofalt,1,12
+exploderar,exploderar,1,10
+växtfamiljer,växtfamiljer,1,12
 behandlas,behandlas,1,9
 åtskilda,åtskilda,1,8
 startar,startar,1,7
@@ -4627,6 +4804,7 @@ gruvdrift,gruvdrift,1,9
 turism,turism,1,6
 flodbankar,flodbankar,1,10
 åska,åska,1,4
+gezira,gezira,1,6
 styrning,styrning,1,8
 gynnade,gynnade,1,7
 miljon,miljon,1,6
@@ -4669,6 +4847,7 @@ utkanter,utkanter,1,8
 öknarna,öknarna,1,7
 ticino,ticino,1,6
 inn,inn,1,3
+rhône,rhône,1,5
 fruktvin,fruktvin,1,8
 slutade,slutade,1,7
 reglerna,reglerna,1,8
@@ -4676,6 +4855,7 @@ serverades,serverades,1,10
 vin,vin,1,3
 importerat,importerat,1,10
 rika,rika,1,4
+bjórr,bjórr,1,5
 schlei,schlei,1,6
 mjöd,mjöd,1,4
 öl,öl,1,2
@@ -4760,6 +4940,7 @@ chock,chock,1,5
 smältvatten,smältvatten,1,11
 floder,floder,1,6
 elektricitet,elektricitet,1,12
+kilowatt,kilowatt,1,8
 genererar,genererar,1,9
 hydroelektriska,hydroelektriska,1,15
 floderna,floderna,1,8
@@ -4787,6 +4968,7 @@ mängden,mängden,1,7
 ägo,ägo,1,3
 förblivit,förblivit,1,9
 entledigades,entledigades,1,12
+meza,meza,1,4
 ointagligt,ointagligt,1,10
 vänstra,vänstra,1,7
 odessa,odessa,1,6
@@ -4799,6 +4981,7 @@ topografiska,topografiska,1,12
 drag,drag,1,4
 algeriet,algeriet,1,8
 tempererade,tempererade,1,11
+zonen,zonen,1,5
 åtnjuter,åtnjuter,1,8
 milt,milt,1,4
 medelhavsklimat,medelhavsklimat,1,15
@@ -4859,11 +5042,13 @@ inspirerade,inspirerade,1,11
 verk,verk,1,4
 intellektuella,intellektuella,1,14
 imponerade,imponerade,1,10
+wang,wang,1,4
 anshi,anshi,1,5
 förmågor,förmågor,1,8
 administratör,administratör,1,13
 statlig,statlig,1,7
 tillsyn,tillsyn,1,7
+wangs,wangs,1,5
 program,program,1,7
 uppbyggnaden,uppbyggnaden,1,12
 slam,slam,1,4
@@ -4888,6 +5073,7 @@ beräknas,beräknas,1,8
 gynnsamma,gynnsamma,1,9
 thailändares,thailändares,1,12
 födelsedag,födelsedag,1,10
+sextonde,sextonde,1,8
 traditionellt,traditionellt,1,13
 apa,apa,1,3
 varierar,varierar,1,8
@@ -4908,6 +5094,8 @@ deltaregionen,deltaregionen,1,13
 murar,murar,1,5
 härskarens,härskarens,1,10
 försvaret,försvaret,1,9
+zodiaken,zodiaken,1,8
+zodiakdjurets,zodiakdjurets,1,13
 tillämpbara,tillämpbara,1,11
 stenskål,stenskål,1,8
 ca,ca,1,2
@@ -4937,6 +5125,7 @@ karnak,karnak,1,6
 tell,tell,1,4
 fvt,fvt,1,3
 kungarna,kungarna,1,8
+gezer,gezer,1,5
 födelsebevis,födelsebevis,1,12
 noterar,noterar,1,7
 veckodag,veckodag,1,8
@@ -4991,6 +5180,7 @@ undersea,undersea,1,8
 termen,termen,1,6
 tillämpades,tillämpades,1,11
 upptäckten,upptäckten,1,10
+européerna,européerna,1,10
 kontakten,kontakten,1,9
 grupperna,grupperna,1,9
 panamanäset,panamanäset,1,11
@@ -5001,11 +5191,13 @@ eurasien,eurasien,1,8
 uppdraget,uppdraget,1,9
 sjöväg,sjöväg,1,6
 snabb,snabb,1,5
+befolkningstillväxt,befolkningstillväxt,1,19
 stadsspridning,stadsspridning,1,14
 täckt,täckt,1,5
 kapstadens,kapstadens,1,10
 styre,styre,1,5
 cape,cape,1,4
+town,town,1,4
 stadskommun,stadskommun,1,11
 uppsatsen,uppsatsen,1,9
 upprättade,upprättade,1,10
@@ -5040,6 +5232,7 @@ dold,dold,1,4
 undantagsmässig,undantagsmässig,1,15
 tusen,tusen,1,5
 fas,fas,1,3
+newton,newton,1,6
 gillades,gillades,1,8
 införts,införts,1,7
 inskottsmånad,inskottsmånad,1,13
@@ -5118,6 +5311,7 @@ hjälpt,hjälpt,1,6
 tillskrivs,tillskrivs,1,10
 civilisationer,civilisationer,1,14
 poströster,poströster,1,10
+winds,winds,1,5
 hyllade,hyllade,1,7
 avsluta,avsluta,1,7
 thrones,thrones,1,7
@@ -5131,6 +5325,7 @@ röstat,röstat,1,6
 floridabor,floridabor,1,10
 skadligt,skadligt,1,8
 bryr,bryr,1,4
+winter,winter,1,6
 spring,spring,1,6
 smällen,smällen,1,7
 flutit,flutit,1,6
@@ -5164,6 +5359,7 @@ börja,börja,1,5
 önskan,önskan,1,6
 belyste,belyste,1,7
 åtgärden,åtgärden,1,8
+twitterflöde,twitterflöde,1,12
 ansluta,ansluta,1,7
 tennis,tennis,1,6
 set,set,1,3
@@ -5191,6 +5387,7 @@ ansträngningen,ansträngningen,1,14
 barratt,barratt,1,7
 dead,dead,1,4
 talking,talking,1,7
+eftershow,eftershow,1,9
 känsloläget,känsloläget,1,11
 kompisar,kompisar,1,8
 egenskapade,egenskapade,1,11
@@ -5220,6 +5417,7 @@ emojin,emojin,1,6
 berättigad,berättigad,1,10
 arrogant,arrogant,1,8
 pompös,pompös,1,6
+hollywood,hollywood,1,9
 familjestoj,familjestoj,1,11
 gladlynt,gladlynt,1,8
 balansakt,balansakt,1,9
@@ -5257,6 +5455,7 @@ görs,görs,1,4
 årtionden,årtionden,1,9
 underskattar,underskattar,1,12
 intagen,intagen,1,7
+sextiotalet,sextiotalet,1,11
 rsc,rsc,1,3
 lördag,lördag,1,6
 vintertid,vintertid,1,9
@@ -5265,6 +5464,7 @@ nio,nio,1,3
 tv,tv,1,2
 väder,väder,1,5
 skadats,skadats,1,7
+vuxna,vuxna,1,5
 tryck,tryck,1,5
 nhs,nhs,1,3
 varning,varning,1,7
@@ -5301,6 +5501,7 @@ organisations,organisations,1,13
 lagenlig,lagenlig,1,8
 mord,mord,1,4
 anklagad,anklagad,1,8
+fixering,fixering,1,8
 förknippad,förknippad,1,10
 bilagor,bilagor,1,7
 konsekvenserna,konsekvenserna,1,14
@@ -5311,6 +5512,7 @@ omtvistat,omtvistat,1,9
 tillräckligt,tillräckligt,1,12
 röstningsregistrerad,röstningsregistrerad,1,20
 tisdagen,tisdagen,1,8
+existentiella,existentiella,1,13
 terrorns,terrorns,1,8
 utbilda,utbilda,1,7
 skadliga,skadliga,1,8
@@ -5324,11 +5526,13 @@ visningslägenheten,visningslägenheten,1,18
 designa,designa,1,7
 superhjältar,superhjältar,1,12
 cottons,cottons,1,7
+zimmer,zimmer,1,6
 drama,drama,1,5
 behandlade,behandlade,1,10
 erfarenheten,erfarenheten,1,12
 mänskliga,mänskliga,1,9
 odi,odi,1,3
+winham,winham,1,6
 ryckiga,ryckiga,1,7
 buggiga,buggiga,1,7
 millican,millican,1,8
@@ -5348,6 +5552,7 @@ täcka,täcka,1,5
 londons,londons,1,7
 landmärke,landmärke,1,9
 south,south,1,5
+tower,tower,1,5
 anlitade,anlitade,1,8
 inredningsarkitekten,inredningsarkitekten,1,20
 rachel,rachel,1,6
@@ -5365,14 +5570,17 @@ håller,håller,1,6
 mähriska,mähriska,1,8
 årstidsbunden,årstidsbunden,1,13
 monsun,monsun,1,6
+idé,idé,1,3
 klimatologier,klimatologier,1,13
 synoptiska,synoptiska,1,10
 klimatologer,klimatologer,1,12
 slaverna,slaverna,1,8
+záhorie,záhorie,1,7
 fullmäktige,fullmäktige,1,11
 tyske,tyske,1,5
 bestämmer,bestämmer,1,9
 rastislav,rastislav,1,9
+rastiz,rastiz,1,6
 brorson,brorson,1,7
 dennes,dennes,1,6
 invaderade,invaderade,1,10
@@ -5416,6 +5624,7 @@ distriktet,distriktet,1,10
 fontvielle,fontvielle,1,10
 rättsprocesser,rättsprocesser,1,14
 nordirland,nordirland,1,10
+wales,wales,1,5
 bergeronklassificeringen,bergeronklassificeringen,1,24
 luftmasseklassificeringen,luftmasseklassificeringen,1,25
 författningen,författningen,1,13
@@ -5460,6 +5669,7 @@ skapat,skapat,1,6
 utvecklats,utvecklats,1,10
 nordsamiska,nordsamiska,1,11
 finska,finska,1,6
+stadieväxling,stadieväxling,1,13
 kven,kven,1,4
 sverige,sverige,1,7
 meänkieli,meänkieli,1,9
@@ -5485,6 +5695,7 @@ nederbörd,nederbörd,1,9
 absorberar,absorberar,1,10
 löser,löser,1,5
 vattendropparna,vattendropparna,1,15
+koldioxid,koldioxid,1,9
 väderkontroll,väderkontroll,1,13
 förberedelser,förberedelser,1,13
 soldater,soldater,1,8
@@ -5502,6 +5713,7 @@ talade,talade,1,6
 visionära,visionära,1,9
 skyskrapor,skyskrapor,1,10
 moderna,moderna,1,7
+uppväxten,uppväxten,1,9
 drivs,drivs,1,5
 åka,åka,1,3
 pendlarsystemen,pendlarsystemen,1,15
@@ -5542,6 +5754,7 @@ lada,lada,1,4
 ägorna,ägorna,1,6
 funnits,funnits,1,7
 evenemang,evenemang,1,9
+mexico,mexico,1,6
 karnevalen,karnevalen,1,10
 alejandra,alejandra,1,9
 paradens,paradens,1,8
@@ -5551,6 +5764,7 @@ bjuda,bjuda,1,5
 paraden,paraden,1,7
 underbart,underbart,1,9
 rädda,rädda,1,5
+mexikaner,mexikaner,1,9
 färdigställa,färdigställa,1,12
 konserten,konserten,1,9
 yas,yas,1,3
@@ -5573,6 +5787,7 @@ california,california,1,10
 baja,baja,1,4
 ökenö,ökenö,1,5
 helena,helena,1,6
+byzantion,byzantion,1,9
 högt,högt,1,4
 bildandet,bildandet,1,9
 accepterade,accepterade,1,11
@@ -5588,11 +5803,13 @@ styrkorna,styrkorna,1,9
 erövringen,erövringen,1,10
 fullborda,fullborda,1,9
 ansvaret,ansvaret,1,8
+megabazus,megabazus,1,9
 befälhavare,befälhavare,1,11
 sankta,sankta,1,6
 öar,öar,1,3
 vulkaniska,vulkaniska,1,10
 mineraler,mineraler,1,9
+zink,zink,1,4
 bly,bly,1,3
 mangan,mangan,1,6
 malm,malm,1,4
@@ -5600,6 +5817,7 @@ diamanter,diamanter,1,9
 fyndigheter,fyndigheter,1,11
 rikt,rikt,1,4
 tioman,tioman,1,6
+exceptionellt,exceptionellt,1,13
 passerade,passerade,1,9
 beskattade,beskattade,1,10
 borgerskap,borgerskap,1,10

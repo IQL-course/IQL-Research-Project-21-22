@@ -73,6 +73,7 @@ tím,tím,17,3
 tento,tento,16,5
 letech,letech,16,6
 proti,proti,16,5
+území,území,15,5
 době,době,15,4
 nové,nové,15,4
 není,není,15,4
@@ -261,6 +262,7 @@ svém,svém,6,4
 měly,měly,5,4
 vždy,vždy,5,4
 studenti,studenti,5,8
+úplně,úplně,5,5
 měla,měla,5,4
 kdo,kdo,5,3
 zhruba,zhruba,5,6
@@ -318,11 +320,13 @@ jinak,jinak,5,5
 hrál,hrál,5,4
 deset,deset,5,5
 knihy,knihy,5,5
+píseň,píseň,5,5
 pár,pár,5,3
 někteří,někteří,5,7
 získat,získat,5,6
 dat,dat,5,3
 zatím,zatím,5,5
+teď,teď,5,3
 studie,studie,5,6
 nimi,nimi,5,4
 volby,volby,5,5
@@ -412,6 +416,7 @@ veřejně,veřejně,4,7
 rozvoj,rozvoj,4,6
 obchodu,obchodu,4,7
 nelze,nelze,4,5
+existují,existují,4,8
 sice,sice,4,4
 vést,vést,4,4
 americké,americké,4,8
@@ -430,6 +435,7 @@ krátce,krátce,4,6
 konfliktu,konfliktu,4,9
 zimě,zimě,4,4
 dluhopisy,dluhopisy,4,9
+alespoň,alespoň,4,7
 the,the,4,3
 dalším,dalším,4,6
 chování,chování,4,7
@@ -438,6 +444,7 @@ státní,státní,4,6
 střední,střední,4,7
 muže,muže,4,4
 vydala,vydala,4,6
+ať,ať,4,2
 trump,trump,4,5
 republika,republika,4,9
 práce,práce,4,5
@@ -517,6 +524,7 @@ věku,věku,3,4
 obsahu,obsahu,3,6
 soudem,soudem,3,6
 donald,donald,3,6
+úspěch,úspěch,3,6
 dokáže,dokáže,3,6
 zdraví,zdraví,3,6
 okamžitě,okamžitě,3,8
@@ -544,6 +552,7 @@ skupin,skupin,3,6
 šen,šen,3,3
 procent,procent,3,7
 vybírat,vybírat,3,7
+údaje,údaje,3,5
 počátku,počátku,3,7
 plíce,plíce,3,5
 musíte,musíte,3,6
@@ -566,6 +575,7 @@ průmyslová,průmyslová,3,10
 výzkumu,výzkumu,3,7
 získal,získal,3,6
 návrat,návrat,3,6
+úterý,úterý,3,5
 blízkosti,blízkosti,3,9
 městské,městské,3,7
 císař,císař,3,5
@@ -598,6 +608,7 @@ manželka,manželka,3,8
 způsobem,způsobem,3,8
 já,já,3,2
 vzdát,vzdát,3,5
+wright,wright,3,6
 eu,eu,3,2
 trochu,trochu,3,6
 něm,něm,3,3
@@ -645,6 +656,7 @@ vzduchu,vzduchu,3,7
 funkci,funkci,3,6
 čas,čas,3,3
 několika,několika,3,8
+úroveň,úroveň,3,6
 dispozici,dispozici,3,9
 čeká,čeká,3,4
 měli,měli,3,4
@@ -706,6 +718,7 @@ někdy,někdy,3,5
 předávání,předávání,3,9
 propuštěn,propuštěn,3,9
 jisté,jisté,3,5
+úžasné,úžasné,3,6
 autorem,autorem,3,7
 našel,našel,3,5
 viděl,viděl,3,5
@@ -717,6 +730,7 @@ třikrát,třikrát,3,7
 problémy,problémy,3,8
 opět,opět,3,4
 zde,zde,3,3
+winstone,winstone,3,8
 ženu,ženu,3,4
 ředitel,ředitel,3,7
 obchodní,obchodní,3,8
@@ -737,6 +751,7 @@ veřejnost,veřejnost,3,9
 uznání,uznání,3,6
 částice,částice,3,7
 souvislosti,souvislosti,3,11
+útok,útok,3,4
 jednou,jednou,3,6
 institutu,institutu,3,9
 válce,válce,3,5
@@ -764,6 +779,7 @@ série,série,3,5
 tu,tu,3,2
 šest,šest,3,4
 zdroje,zdroje,3,6
+účtů,účtů,3,4
 boj,boj,3,3
 června,června,3,6
 dobrou,dobrou,3,6
@@ -798,6 +814,7 @@ amerických,amerických,2,10
 význam,význam,2,6
 pořád,pořád,2,5
 městem,městem,2,6
+křesťanské,křesťanské,2,10
 podívat,podívat,2,7
 neděli,neděli,2,6
 george,george,2,6
@@ -885,6 +902,8 @@ nová,nová,2,4
 pochází,pochází,2,7
 osm,osm,2,3
 přesné,přesné,2,6
+zároveň,zároveň,2,7
+expedice,expedice,2,8
 vlastních,vlastních,2,9
 kráse,kráse,2,5
 švýcarska,švýcarska,2,9
@@ -905,7 +924,9 @@ císařem,císařem,2,7
 psáno,psáno,2,5
 turecký,turecký,2,7
 čelí,čelí,2,4
+winterkorna,winterkorna,2,11
 sebe,sebe,2,4
+účinky,účinky,2,6
 martina,martina,2,7
 ředitele,ředitele,2,8
 generálního,generálního,2,11
@@ -936,6 +957,7 @@ potřebovali,potřebovali,2,11
 prvních,prvních,2,7
 smysl,smysl,2,5
 malých,malých,2,6
+brexitu,brexitu,2,7
 reakce,reakce,2,6
 veřejnosti,veřejnosti,2,10
 stáhnout,stáhnout,2,8
@@ -1004,6 +1026,7 @@ investic,investic,2,8
 vypadá,vypadá,2,6
 druhý,druhý,2,5
 afriky,afriky,2,6
+new,new,2,3
 letos,letos,2,5
 school,school,2,6
 těmi,těmi,2,4
@@ -1054,9 +1077,11 @@ zjistil,zjistil,2,7
 postupně,postupně,2,8
 vítr,vítr,2,4
 fotky,fotky,2,5
+dešťů,dešťů,2,5
 částech,částech,2,7
 smlouvě,smlouvě,2,7
 rybolovu,rybolovu,2,8
+glasgow,glasgow,2,7
 následující,následující,2,11
 prohlášení,prohlášení,2,10
 svět,svět,2,4
@@ -1179,6 +1204,7 @@ civilizací,civilizací,2,10
 příležitost,příležitost,2,11
 významně,významně,2,8
 předvídat,předvídat,2,9
+umožňuje,umožňuje,2,8
 poskytovalo,poskytovalo,2,11
 nárok,nárok,2,5
 internetových,internetových,2,13
@@ -1193,8 +1219,10 @@ nejhorších,nejhorších,2,10
 systémy,systémy,2,7
 australané,australané,2,10
 práci,práci,2,5
+maximální,maximální,2,9
 bývalého,bývalého,2,8
 nemusí,nemusí,2,6
+dündar,dündar,2,6
 konalo,konalo,2,6
 pouště,pouště,2,6
 sever,sever,2,5
@@ -1205,6 +1233,7 @@ seznam,seznam,2,6
 vládního,vládního,2,8
 městy,městy,2,5
 spojenectví,spojenectví,2,11
+kampaň,kampaň,2,6
 obilí,obilí,2,5
 zpátky,zpátky,2,6
 doba,doba,2,4
@@ -1253,11 +1282,13 @@ umožnily,umožnily,2,8
 filmem,filmem,2,6
 těmito,těmito,2,6
 projekty,projekty,2,8
+údajně,údajně,2,6
 hormonální,hormonální,2,10
 londýnské,londýnské,2,9
 antikoncepci,antikoncepci,2,12
 celý,celý,2,4
 počtem,počtem,2,6
+trix,trix,2,4
 výroby,výroby,2,6
 narodil,narodil,2,7
 dna,dna,2,3
@@ -1320,9 +1351,11 @@ snížil,snížil,2,6
 neměl,neměl,2,5
 průměr,průměr,2,6
 klein,klein,2,5
+existuje,existuje,2,8
 street,street,2,6
 teorie,teorie,2,6
 zkušenosti,zkušenosti,2,10
+jüan,jüan,2,4
 zjevně,zjevně,2,6
 abbotsfordu,abbotsfordu,2,11
 takovém,takovém,2,7
@@ -1397,6 +1430,8 @@ vůbec,vůbec,2,5
 vzestupu,vzestupu,2,8
 globálního,globálního,2,10
 osn,osn,2,3
+číňanů,číňanů,2,6
+oxidu,oxidu,2,5
 uveden,uveden,2,6
 přezkoumání,přezkoumání,2,11
 oběma,oběma,2,5
@@ -1439,12 +1474,14 @@ předseda,předseda,2,8
 patrně,patrně,2,6
 vojenského,vojenského,2,10
 bohužel,bohužel,2,7
+twitter,twitter,2,7
 antonius,antonius,2,8
 populární,populární,2,9
 vyšlo,vyšlo,2,5
 kurzu,kurzu,2,5
 kalendáře,kalendáře,2,9
 myslí,myslí,2,5
+úřady,úřady,2,5
 týdnu,týdnu,2,5
 regionální,regionální,2,10
 sekce,sekce,2,5
@@ -1461,6 +1498,7 @@ dramatici,dramatici,2,9
 tvořili,tvořili,2,7
 řada,řada,2,4
 omezil,omezil,2,6
+buď,buď,2,3
 vlasy,vlasy,2,5
 filmu,filmu,2,5
 sítích,sítích,2,6
@@ -1480,6 +1518,7 @@ ovlivnila,ovlivnila,2,9
 označen,označen,2,7
 tisíci,tisíci,2,6
 andy,andy,2,4
+úplňku,úplňku,2,6
 slunce,slunce,2,6
 používán,používán,2,8
 asociace,asociace,2,8
@@ -1503,6 +1542,7 @@ roně,roně,2,4
 znakem,znakem,2,6
 základní,základní,2,8
 nejen,nejen,2,5
+existence,existence,2,9
 španělština,španělština,2,11
 hnojiva,hnojiva,2,7
 volit,volit,2,5
@@ -1530,12 +1570,14 @@ ochranu,ochranu,2,7
 dvacátého,dvacátého,2,9
 hrát,hrát,2,4
 neměli,neměli,2,6
+úřad,úřad,2,4
 ženou,ženou,2,5
 členy,členy,2,5
 vznikl,vznikl,2,6
 tapie,tapie,2,5
 vzduch,vzduch,2,6
 spolupracoval,spolupracoval,2,13
+snowman,snowman,2,7
 značnou,značnou,2,7
 odkud,odkud,2,5
 bavili,bavili,2,6
@@ -1606,11 +1648,14 @@ odhadem,odhadem,2,7
 roční,roční,2,5
 albu,albu,2,4
 výkonnostních,výkonnostních,2,13
+texty,texty,2,5
 nechce,nechce,2,6
 zahrnuje,zahrnuje,2,8
 čemuž,čemuž,2,5
 nahrál,nahrál,2,6
+news,news,2,4
 spravedlnosti,spravedlnosti,2,13
+mexiko,mexiko,2,6
 company,company,2,7
 royal,royal,2,5
 přítelem,přítelem,2,8
@@ -1698,11 +1743,13 @@ alba,alba,2,4
 regionu,regionu,2,7
 učenci,učenci,1,6
 kritizují,kritizují,1,9
+křesťanští,křesťanští,1,10
 barrie,barrie,1,6
 romea,romea,1,5
 julie,julie,1,5
 jiní,jiní,1,4
 lasse,lasse,1,5
+wheel,wheel,1,5
 jednalo,jednalo,1,7
 tolleho,tolleho,1,7
 málem,málem,1,5
@@ -1715,14 +1762,19 @@ jemenu,jemenu,1,6
 jimem,jimem,1,5
 zpěvákem,zpěvákem,1,8
 kompromis,kompromis,1,9
+winston,winston,1,7
 lososů,lososů,1,6
 velebí,velebí,1,6
 faktu,faktu,1,5
 lov,lov,1,3
+wild,wild,1,4
 učinit,učinit,1,6
+textů,textů,1,5
 decca,decca,1,5
+alexandrově,alexandrově,1,11
 kniha,kniha,1,5
 bratrem,bratrem,1,7
+west,west,1,4
 patřilo,patřilo,1,7
 prodávaným,prodávaným,1,10
 nascar,nascar,1,6
@@ -1750,8 +1802,11 @@ nahý,nahý,1,4
 labeouf,labeouf,1,7
 nottingham,nottingham,1,10
 věnována,věnována,1,8
+píanó,píanó,1,5
+fjögur,fjögur,1,6
 popsal,popsal,1,6
 jasona,jasona,1,6
+wing,wing,1,4
 prayer,prayer,1,6
 johnson,johnson,1,7
 scotsman,scotsman,1,8
@@ -1764,6 +1819,7 @@ gordonem,gordonem,1,8
 josephem,josephem,1,8
 courant,courant,1,7
 inzerát,inzerát,1,7
+willisem,willisem,1,8
 brucem,brucem,1,6
 označil,označil,1,7
 evening,evening,1,7
@@ -1771,12 +1827,15 @@ labeoufových,labeoufových,1,12
 natáčet,natáčet,1,7
 looper,looper,1,6
 rian,rian,1,4
+pódia,pódia,1,5
 sestra,sestra,1,6
 piggy,piggy,1,5
 videonahrávku,videonahrávku,1,13
 miss,miss,1,4
 levittem,levittem,1,8
 vydání,vydání,1,6
+účastnil,účastnil,1,8
+parťákem,parťákem,1,8
 celkový,celkový,1,7
 otcova,otcova,1,6
 mihla,mihla,1,5
@@ -1784,6 +1843,7 @@ přítomnosti,přítomnosti,1,11
 prodaných,prodaných,1,9
 hudebník,hudebník,1,8
 kapely,kapely,1,6
+hallström,hallström,1,9
 utrácení,utrácení,1,8
 odhadován,odhadován,1,9
 zničilo,zničilo,1,7
@@ -1795,6 +1855,7 @@ edinburgh,edinburgh,1,9
 robinson,robinson,1,8
 kenseth,kenseth,1,7
 kin,kin,1,3
+rós,rós,1,3
 valentino,valentino,1,9
 odešel,odešel,1,6
 sigur,sigur,1,5
@@ -1830,6 +1891,7 @@ dosáhla,dosáhla,1,7
 lordem,lordem,1,6
 dopravy,dopravy,1,7
 vrcholu,vrcholu,1,7
+uaxactúnu,uaxactúnu,1,9
 způsob,způsob,1,6
 užívali,užívali,1,7
 složitý,složitý,1,7
@@ -1849,6 +1911,7 @@ love,love,1,4
 souběžně,souběžně,1,8
 vydán,vydán,1,5
 padesátky,padesátky,1,9
+nejúspěšnějších,nejúspěšnějších,1,15
 mgb,mgb,1,3
 marvelu,marvelu,1,7
 berijovo,berijovo,1,8
@@ -1864,9 +1927,11 @@ neobjevují,neobjevují,1,10
 mezoameriky,mezoameriky,1,11
 album,album,1,5
 udrželo,udrželo,1,7
+textech,textech,1,7
 týdny,týdny,1,5
 propuštění,propuštění,1,10
 kandidatura,kandidatura,1,11
+wilksova,wilksova,1,8
 ikonografii,ikonografii,1,11
 rozhodla,rozhodla,1,8
 prehistorické,prehistorické,1,13
@@ -1876,6 +1941,8 @@ peniston,peniston,1,8
 glindu,glindu,1,6
 čarodějku,čarodějku,1,9
 muzikálu,muzikálu,1,8
+wiz,wiz,1,3
+wilks,wilks,1,5
 mírumilovný,mírumilovný,1,11
 vyškrábala,vyškrábala,1,10
 hitparády,hitparády,1,9
@@ -1899,6 +1966,7 @@ předpokládá,předpokládá,1,11
 kandidáta,kandidáta,1,9
 thought,thought,1,7
 ya,ya,1,2
+knew,knew,1,4
 žebříčku,žebříčku,1,8
 vítěze,vítěze,1,6
 volnými,volnými,1,7
@@ -1935,6 +2003,7 @@ douglas,douglas,1,7
 hortonovou,hortonovou,1,10
 annu,annu,1,4
 hraběnce,hraběnce,1,8
+lennoxu,lennoxu,1,7
 fikci,fikci,1,5
 thomasové,thomasové,1,9
 scott,scott,1,5
@@ -1942,6 +2011,7 @@ kristin,kristin,1,7
 našla,našla,1,5
 snadno,snadno,1,6
 mcgregora,mcgregora,1,9
+ewana,ewana,1,5
 over,over,1,4
 psaní,psaní,1,5
 naučí,naučí,1,5
@@ -1955,6 +2025,7 @@ finální,finální,1,7
 týdně,týdně,1,5
 příběhu,příběhu,1,7
 techniků,techniků,1,8
+zosobňuje,zosobňuje,1,9
 rasovou,rasovou,1,7
 toleranci,toleranci,1,9
 stalin,stalin,1,6
@@ -1969,18 +2040,22 @@ babičku,babičku,1,7
 polsku,polsku,1,6
 komunistické,komunistické,1,12
 abakumova,abakumova,1,9
+síť,síť,1,3
 válečný,válečný,1,7
 uvnitř,uvnitř,1,6
 odpor,odpor,1,5
 nejméně,nejméně,1,7
 zapojilo,zapojilo,1,8
+pleť,pleť,1,4
 kapelou,kapelou,1,7
 tréninků,tréninků,1,8
+anyway,anyway,1,6
 režim,režim,1,5
 tréninkový,tréninkový,1,10
 posilováním,posilováním,1,11
 vévoda,vévoda,1,6
 podobě,podobě,1,6
+tokugawy,tokugawy,1,8
 henry,henry,1,5
 humblebums,humblebums,1,10
 tmavou,tmavou,1,6
@@ -2137,6 +2212,8 @@ rozmanitých,rozmanitých,1,11
 chráněna,chráněna,1,8
 zabezpečil,zabezpečil,1,10
 achájů,achájů,1,6
+sparťanů,sparťanů,1,8
+athéňanů,athéňanů,1,8
 spojeneckými,spojeneckými,1,12
 střežen,střežen,1,7
 přísně,přísně,1,6
@@ -2177,6 +2254,7 @@ makedonskou,makedonskou,1,11
 početnou,početnou,1,8
 shromáždil,shromáždil,1,10
 mej,mej,1,3
+ťin,ťin,1,3
 antické,antické,1,7
 drželi,drželi,1,6
 dětský,dětský,1,6
@@ -2232,6 +2310,7 @@ blogu,blogu,1,5
 narození,narození,1,8
 hodinu,hodinu,1,6
 zaznamenávají,zaznamenávají,1,13
+faraónovi,faraónovi,1,9
 egyptskému,egyptskému,1,10
 přísahají,přísahají,1,9
 gezeru,gezeru,1,6
@@ -2243,10 +2322,12 @@ karnaku,karnaku,1,7
 chrámu,chrámu,1,6
 thutmosově,thutmosově,1,10
 dobytých,dobytých,1,8
+zmiňující,zmiňující,1,9
 zvířetníkové,zvířetníkové,1,12
 zvířetníkovým,zvířetníkovým,1,13
 vypočítávají,vypočítávají,1,12
 znamením,znamením,1,8
+číňany,číňany,1,6
 thajskými,thajskými,1,9
 dodržované,dodržované,1,10
 svátky,svátky,1,6
@@ -2300,12 +2381,14 @@ třicet,třicet,1,6
 listopadem,listopadem,1,10
 gazette,gazette,1,7
 láhauru,láhauru,1,7
+neúnavná,neúnavná,1,8
 psát,psát,1,4
 potřeba,potřeba,1,7
 kiplingova,kiplingova,1,10
 oddechu,oddechu,1,7
 kiplingovi,kiplingovi,1,10
 nedopřál,nedopřál,1,8
+wheeler,wheeler,1,7
 editor,editor,1,6
 vrátila,vrátila,1,7
 kam,kam,1,3
@@ -2347,6 +2430,7 @@ zakládají,zakládají,1,9
 spekulace,spekulace,1,9
 rozličné,rozličné,1,8
 důkazy,důkazy,1,6
+zpochybňován,zpochybňován,1,12
 hispania,hispania,1,8
 slova,slova,1,5
 yucatánu,yucatánu,1,8
@@ -2361,6 +2445,7 @@ pozemním,pozemním,1,8
 pilotovi,pilotovi,1,8
 vysílanými,vysílanými,1,10
 slovními,slovními,1,8
+runway,runway,1,6
 přistávající,přistávající,1,12
 navádět,navádět,1,7
 monitory,monitory,1,8
@@ -2370,8 +2455,10 @@ alvarezem,alvarezem,1,9
 nápoj,nápoj,1,5
 vyvinutou,vyvinutou,1,9
 rozlišením,rozlišením,1,10
+úhlovým,úhlovým,1,7
 vysokým,vysokým,1,7
 anténu,anténu,1,6
+dipólovou,dipólovou,1,9
 využívá,využívá,1,7
 berlín,berlín,1,6
 mostu,mostu,1,5
@@ -2397,12 +2484,14 @@ využíval,využíval,1,8
 zemích,zemích,1,6
 skončení,skončení,1,8
 využívala,využívala,1,9
+úspěšný,úspěšný,1,7
 leteckého,leteckého,1,9
 poválečného,poválečného,1,11
 přiblížení,přiblížení,1,10
 náklonnost,náklonnost,1,10
 dána,dána,1,4
 churchillovi,churchillovi,1,12
+winstonu,winstonu,1,8
 gaulle,gaulle,1,6
 charles,charles,1,7
 popraven,popraven,1,8
@@ -2433,6 +2522,7 @@ dokončen,dokončen,1,8
 eagle,eagle,1,5
 aids,aids,1,4
 smrt,smrt,1,4
+úpadek,úpadek,1,6
 heroinu,heroinu,1,7
 závislosti,závislosti,1,10
 kariéry,kariéry,1,7
@@ -2457,6 +2547,7 @@ sošky,sošky,1,5
 akademie,akademie,1,8
 cenu,cenu,1,4
 čestnou,čestnou,1,7
+oswaldovi,oswaldovi,1,9
 universal,universal,1,9
 osobní,osobní,1,6
 léto,léto,1,4
@@ -2479,9 +2570,11 @@ dotace,dotace,1,6
 yudhoyono,yudhoyono,1,9
 dosluhující,dosluhující,1,11
 usiloval,usiloval,1,8
+jokowi,jokowi,1,6
 zmátlo,zmátlo,1,6
 indonéské,indonéské,1,9
 subianto,subianto,1,8
+prabowo,prabowo,1,7
 rival,rival,1,5
 tržnice,tržnice,1,7
 hammersmithu,hammersmithu,1,12
@@ -2508,6 +2601,7 @@ hitchcockových,hitchcockových,1,14
 tvořil,tvořil,1,6
 desetiletích,desetiletích,1,12
 prožíval,prožíval,1,8
+úspěchu,úspěchu,1,7
 corona,corona,1,6
 přáním,přáním,1,6
 homera,homera,1,6
@@ -2525,6 +2619,7 @@ epizody,epizody,1,7
 velvyslanectví,velvyslanectví,1,14
 anglikánský,anglikánský,1,11
 hechler,hechler,1,7
+william,william,1,7
 reverend,reverend,1,8
 herzla,herzla,1,6
 činný,činný,1,5
@@ -2558,6 +2653,7 @@ používání,používání,1,9
 nedoporučuje,nedoporučuje,1,12
 císařové,císařové,1,8
 japonsko,japonsko,1,8
+shōwou,shōwou,1,6
 počínaje,počínaje,1,8
 různým,různým,1,6
 vybírána,vybírána,1,8
@@ -2577,11 +2673,13 @@ užít,užít,1,4
 užívaných,užívaných,1,9
 součástkách,součástkách,1,11
 kovových,kovových,1,8
+úrodné,úrodné,1,6
 čtyřiceti,čtyřiceti,1,9
 žilo,žilo,1,4
 darů,darů,1,4
 pohřebních,pohřebních,1,10
 uložených,uložených,1,9
+pohřebišť,pohřebišť,1,9
 matky,matky,1,5
 zahrnujícího,zahrnujícího,1,12
 vzorku,vzorku,1,6
@@ -2599,6 +2697,7 @@ rodin,rodin,1,5
 pastvin,pastvin,1,7
 poptávce,poptávce,1,8
 rozšířili,rozšířili,1,9
+watt,watt,1,4
 james,james,1,5
 principech,principech,1,10
 usně,usně,1,4
@@ -2643,6 +2742,7 @@ guvernér,guvernér,1,8
 druhá,druhá,1,5
 poklidnost,poklidnost,1,10
 kolektivní,kolektivní,1,10
+číňané,číňané,1,6
 tabletu,tabletu,1,7
 semafory,semafory,1,8
 vylepšené,vylepšené,1,9
@@ -2705,9 +2805,12 @@ impozantní,impozantní,1,10
 rozdrcena,rozdrcena,1,9
 kavalérie,kavalérie,1,9
 mohutná,mohutná,1,7
+weller,weller,1,6
 chandler,chandler,1,8
 historici,historici,1,9
 talmadge,talmadge,1,8
+gólů,gólů,1,4
+halifax,halifax,1,7
 zlatou,zlatou,1,6
 silničního,silničního,1,10
 vítěz,vítěz,1,5
@@ -2724,6 +2827,7 @@ nastěhoval,nastěhoval,1,10
 telekomu,telekomu,1,8
 týmem,týmem,1,5
 podepsal,podepsal,1,8
+úspěších,úspěších,1,8
 stavělo,stavělo,1,7
 ruinách,ruinách,1,7
 eibingen,eibingen,1,8
@@ -2734,6 +2838,7 @@ medaili,medaili,1,7
 obyvatelstvem,obyvatelstvem,1,13
 cenzura,cenzura,1,7
 usmíření,usmíření,1,8
+uskutečňoval,uskutečňoval,1,12
 energicky,energicky,1,9
 springer,springer,1,8
 cenami,cenami,1,6
@@ -2741,6 +2846,7 @@ poctěn,poctěn,1,6
 brémy,brémy,1,5
 rýnem,rýnem,1,5
 kolín,kolín,1,5
+weiss,weiss,1,5
 informovaly,informovaly,1,11
 krve,krve,1,4
 stopy,stopy,1,5
@@ -2748,6 +2854,7 @@ nemožnou,nemožnou,1,8
 prakticky,prakticky,1,9
 životě,životě,1,6
 veřejném,veřejném,1,8
+účast,účast,1,5
 názory,názory,1,6
 nežádoucí,nežádoucí,1,9
 odstranila,odstranila,1,10
@@ -2755,6 +2862,7 @@ jeptišky,jeptišky,1,8
 vyhnané,vyhnané,1,7
 švédskými,švédskými,1,9
 zničen,zničen,1,6
+existovaly,existovaly,1,10
 socialisty,socialisty,1,10
 národními,národními,1,9
 převzetí,převzetí,1,8
@@ -2793,6 +2901,7 @@ získaly,získaly,1,7
 kompromisu,kompromisu,1,10
 svobodných,svobodných,1,10
 zavedení,zavedení,1,8
+maďarsko,maďarsko,1,8
 tlaku,tlaku,1,5
 zvýšeného,zvýšeného,1,9
 pobaltí,pobaltí,1,7
@@ -2802,6 +2911,7 @@ finsko,finsko,1,6
 podnikl,podnikl,1,7
 hitlerem,hitlerem,1,8
 odříznuta,odříznuta,1,9
+údolí,údolí,1,5
 samosprávných,samosprávných,1,13
 polohou,polohou,1,7
 diktovaném,diktovaném,1,10
@@ -2840,6 +2950,7 @@ nerozšiřovaly,nerozšiřovaly,1,13
 jazyce,jazyce,1,6
 mateřském,mateřském,1,9
 bibli,bibli,1,5
+křesťanů,křesťanů,1,8
 středověku,středověku,1,10
 politickými,politickými,1,11
 vlastními,vlastními,1,9
@@ -2874,6 +2985,7 @@ izraele,izraele,1,7
 lékařů,lékařů,1,6
 amnesty,amnesty,1,7
 international,international,1,13
+expedici,expedici,1,8
 zakládajícím,zakládajícím,1,12
 nákres,nákres,1,6
 překonat,překonat,1,8
@@ -2882,6 +2994,7 @@ osmi,osmi,1,4
 shackletona,shackletona,1,11
 ernesta,ernesta,1,7
 kapitána,kapitána,1,8
+loď,loď,1,3
 učinil,učinil,1,6
 novinové,novinové,1,8
 palmerem,palmerem,1,8
@@ -2931,6 +3044,7 @@ bavlnu,bavlnu,1,6
 závod,závod,1,5
 zřídit,zřídit,1,6
 podmínkou,podmínkou,1,9
+württemberg,württemberg,1,11
 reichenbachovi,reichenbachovi,1,14
 georgu,georgu,1,6
 výrobci,výrobci,1,7
@@ -2949,6 +3063,7 @@ mayová,mayová,1,6
 vázaných,vázaných,1,8
 tajemství,tajemství,1,9
 odevzdá,odevzdá,1,7
+úrodu,úrodu,1,5
 odhaluje,odhaluje,1,8
 času,času,1,4
 zub,zub,1,3
@@ -2985,6 +3100,7 @@ hlasovat,hlasovat,1,8
 vyjdou,vyjdou,1,6
 latinoameričané,latinoameričané,1,15
 časné,časné,1,5
+úrovni,úrovni,1,6
 latinoameričanů,latinoameričanů,1,15
 hlasováním,hlasováním,1,10
 nedělá,nedělá,1,6
@@ -2999,6 +3115,7 @@ měděné,měděné,1,6
 nejznámější,nejznámější,1,11
 datuje,datuje,1,6
 nález,nález,1,5
+nalezišť,nalezišť,1,8
 známo,známo,1,5
 kulturám,kulturám,1,8
 nejrozsáhlejším,nejrozsáhlejším,1,15
@@ -3013,11 +3130,13 @@ chtěli,chtěli,1,6
 osmané,osmané,1,6
 istanbulský,istanbulský,1,11
 postaví,postaví,1,7
+ötzi,ötzi,1,4
 kopcích,kopcích,1,7
 zlacení,zlacení,1,7
 napjatá,napjatá,1,7
 pobytů,pobytů,1,6
 nepřijal,nepřijal,1,8
+útěku,útěku,1,5
 zásobování,zásobování,1,10
 nedostatku,nedostatku,1,10
 chleba,chleba,1,6
@@ -3040,6 +3159,7 @@ uvolnění,uvolnění,1,8
 kostela,kostela,1,7
 plány,plány,1,5
 francisco,francisco,1,9
+relaxace,relaxace,1,8
 lokální,lokální,1,7
 slouží,slouží,1,6
 akvárium,akvárium,1,8
@@ -3087,8 +3207,10 @@ radikálního,radikálního,1,11
 revolucionáře,revolucionáře,1,13
 měsíci,měsíci,1,6
 čáru,čáru,1,4
+úsek,úsek,1,4
 bankrotovaly,bankrotovaly,1,12
 kapitálu,kapitálu,1,8
+úniku,úniku,1,5
 desítek,desítek,1,7
 intervence,intervence,1,10
 zhroucení,zhroucení,1,9
@@ -3180,6 +3302,7 @@ zvoleno,zvoleno,1,7
 traduje,traduje,1,7
 pilíři,pilíři,1,6
 kaplí,kaplí,1,5
+znárodňovali,znárodňovali,1,12
 pozemků,pozemků,1,7
 josefa,josefa,1,6
 hudebním,hudebním,1,8
@@ -3201,6 +3324,7 @@ breaking,breaking,1,8
 go,go,1,2
 don,don,1,3
 skladbu,skladbu,1,7
+úspěchem,úspěchem,1,8
 výrazným,výrazným,1,8
 něho,něho,1,4
 osobně,osobně,1,6
@@ -3253,6 +3377,7 @@ museli,museli,1,6
 zastaveni,zastaveni,1,9
 albany,albany,1,6
 ludvíka,ludvíka,1,7
+x,x,1,1
 filipa,filipa,1,6
 francouzského,francouzského,1,13
 armády,armády,1,6
@@ -3277,6 +3402,7 @@ teta,teta,1,4
 trůn,trůn,1,4
 metti,metti,1,5
 morriconeho,morriconeho,1,11
+pluviôse,pluviôse,1,8
 sesto,sesto,1,5
 villa,villa,1,5
 koní,koní,1,4
@@ -3331,6 +3457,7 @@ připustil,připustil,1,9
 všeho,všeho,1,5
 potížích,potížích,1,8
 číslo,číslo,1,5
+textilu,textilu,1,7
 zařízení,zařízení,1,8
 distributorem,distributorem,1,13
 firma,firma,1,5
@@ -3346,6 +3473,7 @@ zmírnil,zmírnil,1,7
 podezřelých,podezřelých,1,11
 různá,různá,1,5
 přijal,přijal,1,6
+únor,únor,1,4
 leden,leden,1,5
 pobýval,pobýval,1,7
 remis,remis,1,5
@@ -3362,6 +3490,7 @@ georg,georg,1,5
 podporu,podporu,1,7
 disneyovi,disneyovi,1,9
 myšlenkou,myšlenkou,1,9
+waltu,waltu,1,5
 tintina,tintina,1,7
 adaptaci,adaptaci,1,8
 filmovou,filmovou,1,8
@@ -3377,6 +3506,7 @@ rakušany,rakušany,1,8
 vychováván,vychováván,1,10
 fiorello,fiorello,1,8
 týče,týče,1,4
+alexandr,alexandr,1,8
 car,car,1,3
 jakoukoliv,jakoukoliv,1,10
 grenville,grenville,1,9
@@ -3390,6 +3520,7 @@ kontinentu,kontinentu,1,10
 vývoje,vývoje,1,6
 britských,britských,1,9
 invazivní,invazivní,1,9
+vyústila,vyústila,1,8
 flotily,flotily,1,7
 villeneuvovy,villeneuvovy,1,12
 blokáda,blokáda,1,7
@@ -3414,6 +3545,7 @@ trénovaná,trénovaná,1,9
 olivia,olivia,1,6
 důvodu,důvodu,1,6
 předpovídali,předpovídali,1,12
+walter,walter,1,6
 světy,světy,1,5
 muž,muž,1,3
 podruhé,podruhé,1,7
@@ -3458,6 +3590,7 @@ koalice,koalice,1,7
 crouch,crouch,1,6
 symbolické,symbolické,1,10
 jindřicha,jindřicha,1,9
+existovala,existovala,1,10
 hrabství,hrabství,1,8
 hrstka,hrstka,1,6
 soustředit,soustředit,1,10
@@ -3474,6 +3607,7 @@ fám,fám,1,3
 displeje,displeje,1,8
 dotykového,dotykového,1,10
 pruh,pruh,1,4
+úzký,úzký,1,4
 jasně,jasně,1,5
 klávesnicí,klávesnicí,1,10
 ušetřit,ušetřit,1,7
@@ -3542,6 +3676,7 @@ ohledu,ohledu,1,6
 etnické,etnické,1,7
 složení,složení,1,7
 dohledu,dohledu,1,7
+góly,góly,1,4
 investují,investují,1,9
 pšenice,pšenice,1,7
 výrobky,výrobky,1,7
@@ -3566,6 +3701,7 @@ zaměstnanec,zaměstnanec,1,11
 skončí,skončí,1,6
 přerušena,přerušena,1,9
 hádáte,hádáte,1,6
+williamsové,williamsové,1,11
 sereně,sereně,1,6
 hráčka,hráčka,1,6
 letá,letá,1,4
@@ -3574,6 +3710,7 @@ open,open,1,4
 australian,australian,1,10
 senzaci,senzaci,1,7
 neuvěřitelného,neuvěřitelného,1,14
+sezóny,sezóny,1,6
 kerberovou,kerberovou,1,10
 mistrem,mistrem,1,7
 sekundách,sekundách,1,9
@@ -3587,6 +3724,7 @@ generace,generace,1,8
 budíkem,budíkem,1,7
 antikoncepce,antikoncepce,1,12
 hrob,hrob,1,4
+günter,günter,1,6
 spiegelu,spiegelu,1,8
 havárie,havárie,1,7
 vyšetřovatel,vyšetřovatel,1,12
@@ -3623,6 +3761,7 @@ zeit,zeit,1,4
 die,die,1,3
 hlavou,hlavou,1,6
 kroutit,kroutit,1,7
+kühn,kühn,1,4
 špatném,špatném,1,7
 zahraničního,zahraničního,1,12
 zdravotnictví,zdravotnictví,1,13
@@ -3643,17 +3782,20 @@ domem,domem,1,5
 zchátralým,zchátralým,1,10
 zlověstným,zlověstným,1,10
 tápe,tápe,1,4
+krätschmer,krätschmer,1,10
 plánování,plánování,1,9
 začnou,začnou,1,6
 detailního,detailního,1,10
 nákladů,nákladů,1,7
 zvyšování,zvyšování,1,9
+ospravedlňoval,ospravedlňoval,1,14
 beust,beust,1,5
 mash,mash,1,4
 monster,monster,1,7
 strašidelné,strašidelné,1,11
 varhany,varhany,1,7
 duhy,duhy,1,4
+galaxií,galaxií,1,7
 pilotů,pilotů,1,6
 errani,errani,1,6
 zahrála,zahrála,1,7
@@ -3671,6 +3813,7 @@ umožnil,umožnil,1,7
 radia,radia,1,5
 malý,malý,1,4
 přenesla,přenesla,1,8
+expertem,expertem,1,8
 uznávaným,uznávaným,1,9
 zářičů,zářičů,1,6
 alfa,alfa,1,4
@@ -3680,6 +3823,7 @@ sarou,sarou,1,5
 bouchard,bouchard,1,8
 průvodce,průvodce,1,8
 utrpěla,utrpěla,1,7
+toweru,toweru,1,6
 uvržen,uvržen,1,6
 stoupenec,stoupenec,1,9
 lyvet,lyvet,1,5
@@ -3689,6 +3833,7 @@ jan,jan,1,3
 anglických,anglických,1,10
 babičkou,babičkou,1,8
 jana,jana,1,4
+edwarda,edwarda,1,7
 potomků,potomků,1,7
 vévodu,vévodu,1,6
 plantageneta,plantageneta,1,12
@@ -3703,6 +3848,7 @@ vylepšenou,vylepšenou,1,10
 vyvinula,vyvinula,1,8
 separaci,separaci,1,8
 marie,marie,1,5
+mômone,mômone,1,6
 piaf,piaf,1,4
 československa,československa,1,14
 pokoušeli,pokoušeli,1,9
@@ -3735,6 +3881,7 @@ hans,hans,1,4
 laboratoř,laboratoř,1,9
 pracovala,pracovala,1,9
 navrhl,navrhl,1,6
+irène,irène,1,5
 informačních,informačních,1,12
 zůstávala,zůstávala,1,9
 předchůdci,předchůdci,1,10
@@ -3789,15 +3936,19 @@ studiovém,studiovém,1,9
 komiksů,komiksů,1,7
 oskara,oskara,1,6
 somersetu,somersetu,1,9
+wells,wells,1,5
 vyrůstal,vyrůstal,1,8
 dorsetu,dorsetu,1,7
 poole,poole,1,5
 ona,ona,1,3
 uvěřit,uvěřit,1,6
 mystické,mystické,1,8
+zdůrazňuje,zdůrazňuje,1,10
 glorií,glorií,1,6
+marxistického,marxistického,1,13
 carter,carter,1,6
 jimmy,jimmy,1,5
+úřadující,úřadující,1,9
 prezidentská,prezidentská,1,12
 zvolení,zvolení,1,7
 usilovat,usilovat,1,8
@@ -3821,6 +3972,7 @@ vnitrostátních,vnitrostátních,1,14
 zajati,zajati,1,6
 atentát,atentát,1,7
 princip,princip,1,7
+úvah,úvah,1,4
 blochových,blochových,1,10
 předmětem,předmětem,1,9
 poslání,poslání,1,7
@@ -3831,6 +3983,7 @@ věřil,věřil,1,5
 střelné,střelné,1,7
 rukojmí,rukojmí,1,7
 přežil,přežil,1,6
+úřadujícím,úřadujícím,1,10
 nemocnice,nemocnice,1,9
 uzdravil,uzdravil,1,8
 podrželi,podrželi,1,8
@@ -3839,6 +3992,7 @@ křesel,křesel,1,6
 republikáni,republikáni,1,11
 získali,získali,1,7
 přesvědčen,přesvědčen,1,10
+úmyslu,úmyslu,1,6
 rvačky,rvačky,1,6
 alternativy,alternativy,1,11
 mluvila,mluvila,1,7
@@ -3847,6 +4001,7 @@ výsadou,výsadou,1,7
 uvedeno,uvedeno,1,7
 banka,banka,1,5
 uzavření,uzavření,1,8
+úplnému,úplnému,1,7
 postoji,postoji,1,7
 nabídku,nabídku,1,7
 stahuje,stahuje,1,7
@@ -3857,14 +4012,17 @@ měnu,měnu,1,4
 jednotnou,jednotnou,1,9
 přijaly,přijaly,1,7
 převyšují,převyšují,1,9
+eurozóny,eurozóny,1,8
 srovnání,srovnání,1,8
 nafta,nafta,1,5
+loňského,loňského,1,8
 vyloučení,vyloučení,1,9
 napsáno,napsáno,1,7
 rada,rada,1,4
 ministra,ministra,1,8
 humanoidního,humanoidního,1,12
 bezpečnostních,bezpečnostních,1,14
+uplatňovaného,uplatňovaného,1,13
 příkladů,příkladů,1,8
 řidičů,řidičů,1,6
 myšlenky,myšlenky,1,8
@@ -3888,6 +4046,7 @@ vztahují,vztahují,1,8
 případech,případech,1,9
 dph,dph,1,3
 obtížné,obtížné,1,7
+textilních,textilních,1,10
 právům,právům,1,6
 věnovala,věnovala,1,8
 unii,unii,1,4
@@ -3948,6 +4107,7 @@ horkým,horkým,1,6
 vypořádat,vypořádat,1,9
 výzvám,výzvám,1,6
 nejpyšnější,nejpyšnější,1,11
+báñez,báñez,1,5
 fátima,fátima,1,6
 předpisů,předpisů,1,8
 zrušení,zrušení,1,7
@@ -3987,6 +4147,7 @@ summitu,summitu,1,7
 snapchat,snapchat,1,8
 tesla,tesla,1,5
 představitelé,představitelé,1,13
+exxonmobil,exxonmobil,1,10
 překonal,překonal,1,8
 kapitalizací,kapitalizací,1,12
 tržní,tržní,1,5
@@ -3994,6 +4155,7 @@ tržní,tržní,1,5
 amazon,amazon,1,6
 valley,valley,1,6
 silicon,silicon,1,7
+wall,wall,1,4
 rozhoduje,rozhoduje,1,9
 kdykoli,kdykoli,1,7
 firem,firem,1,5
@@ -4003,6 +4165,7 @@ investici,investici,1,9
 obdrží,obdrží,1,6
 oplátku,oplátku,1,7
 mountain,mountain,1,8
+view,view,1,4
 navštíví,navštíví,1,8
 podtajemník,podtajemník,1,11
 míra,míra,1,4
@@ -4054,6 +4217,7 @@ maličkých,maličkých,1,9
 dospívajícího,dospívajícího,1,13
 nepřijatelné,nepřijatelné,1,12
 mozku,mozku,1,5
+účet,účet,1,4
 nezvládne,nezvládne,1,9
 vyšetřována,vyšetřována,1,11
 ujistil,ujistil,1,7
@@ -4067,6 +4231,7 @@ rozdíl,rozdíl,1,6
 koaliční,koaliční,1,8
 zdokumentovaly,zdokumentovaly,1,14
 prioritou,prioritou,1,9
+úsilí,úsilí,1,5
 celostátní,celostátní,1,10
 heritage,heritage,1,8
 natural,natural,1,7
@@ -4122,6 +4287,7 @@ omilostnil,omilostnil,1,10
 dům,dům,1,3
 bílý,bílý,1,4
 kandidátky,kandidátky,1,10
+twitteru,twitteru,1,8
 nemůže,nemůže,1,6
 jaderné,jaderné,1,7
 vznikají,vznikají,1,8
@@ -4138,6 +4304,7 @@ příručky,příručky,1,8
 poznámky,poznámky,1,8
 zahrnuty,zahrnuty,1,8
 lituje,lituje,1,6
+ouvrière,ouvrière,1,8
 force,force,1,5
 stolech,stolech,1,7
 předměty,předměty,1,8
@@ -4164,12 +4331,14 @@ skutečnou,skutečnou,1,9
 měřit,měřit,1,5
 uskutečněné,uskutečněné,1,11
 vypočítanou,vypočítanou,1,11
+úvahu,úvahu,1,5
 brát,brát,1,4
 klade,klade,1,5
 kasačním,kasačním,1,8
 odvolání,odvolání,1,8
 pracovišti,pracovišti,1,10
 situací,situací,1,7
+kódy,kódy,1,4
 soukromých,soukromých,1,10
 všeobecného,všeobecného,1,11
 zahájení,zahájení,1,8
@@ -4202,6 +4371,7 @@ kriminálník,kriminálník,1,11
 vnitra,vnitra,1,6
 debil,debil,1,5
 fašista,fašista,1,7
+hortefeuxe,hortefeuxe,1,10
 brice,brice,1,5
 sarkozyho,sarkozyho,1,9
 kandidaturu,kandidaturu,1,11
@@ -4217,6 +4387,7 @@ garonne,garonne,1,7
 haute,haute,1,5
 pramen,pramen,1,6
 písečné,písečné,1,7
+faraóna,faraóna,1,7
 rohu,rohu,1,4
 jediné,jediné,1,6
 srdce,srdce,1,5
@@ -4235,6 +4406,7 @@ khanzir,khanzir,1,7
 novodobé,novodobé,1,8
 chápu,chápu,1,5
 osamocené,osamocené,1,9
+textem,textem,1,6
 obrázků,obrázků,1,7
 smysluplných,smysluplných,1,12
 odpadají,odpadají,1,8
@@ -4242,9 +4414,11 @@ neobvyklým,neobvyklým,1,10
 postům,postům,1,6
 povyskočí,povyskočí,1,9
 odevzdáno,odevzdáno,1,9
+úvěr,úvěr,1,4
 velitele,velitele,1,8
 vrchního,vrchního,1,8
 nekvalifikovaný,nekvalifikovaný,1,15
+sexistický,sexistický,1,10
 rasistický,rasistický,1,10
 dopustit,dopustit,1,8
 sami,sami,1,4
@@ -4261,6 +4435,7 @@ velvyslance,velvyslance,1,11
 publikovány,publikovány,1,11
 pravdivé,pravdivé,1,8
 takzvané,takzvané,1,8
+útočit,útočit,1,6
 postavit,postavit,1,8
 kupředu,kupředu,1,7
 koráb,koráb,1,5
@@ -4291,6 +4466,7 @@ unavena,unavena,1,7
 válčením,válčením,1,8
 jestřába,jestřába,1,8
 nejisté,nejisté,1,7
+nervózní,nervózní,1,8
 udělalo,udělalo,1,7
 okamžení,okamžení,1,8
 rychlost,rychlost,1,8
@@ -4314,6 +4490,7 @@ nastraženýma,nastraženýma,1,12
 skončíte,skončíte,1,8
 smířit,smířit,1,6
 nedovolí,nedovolí,1,8
+oběť,oběť,1,4
 najdou,najdou,1,6
 změna,změna,1,5
 absurdity,absurdity,1,9
@@ -4321,6 +4498,7 @@ zloby,zloby,1,5
 plný,plný,1,4
 dobré,dobré,1,5
 něčemu,něčemu,1,6
+dešťové,dešťové,1,7
 kyselé,kyselé,1,6
 podezřelého,podezřelého,1,11
 nezdá,nezdá,1,5
@@ -4350,9 +4528,12 @@ oprávněně,oprávněně,1,9
 ačkoliv,ačkoliv,1,7
 klíčové,klíčové,1,7
 minerálu,minerálu,1,8
+účtu,účtu,1,4
 zákazníci,zákazníci,1,9
 paralely,paralely,1,8
+úročení,úročení,1,7
 hrami,hrami,1,5
+účty,účty,1,4
 tesco,tesco,1,5
 zařídit,zařídit,1,7
 naším,naším,1,5
@@ -4365,6 +4546,7 @@ dělníky,dělníky,1,7
 zvyšoval,zvyšoval,1,8
 splácením,splácením,1,9
 problémům,problémům,1,9
+úřadu,úřadu,1,5
 sčítání,sčítání,1,7
 scotland,scotland,1,8
 bezplatné,bezplatné,1,9
@@ -4381,10 +4563,12 @@ nectar,nectar,1,6
 věrnostních,věrnostních,1,11
 držitelé,držitelé,1,8
 sazbu,sazbu,1,5
+úrokovou,úrokovou,1,8
 penězům,penězům,1,7
 neomezený,neomezený,1,9
 máte,máte,1,4
 zůstatků,zůstatků,1,8
+úroku,úroku,1,5
 získají,získají,1,7
 aktivují,aktivují,1,8
 světových,světových,1,9
@@ -4403,6 +4587,7 @@ vzdělaným,vzdělaným,1,9
 svěřit,svěřit,1,6
 emailové,emailové,1,8
 bezpečnější,bezpečnější,1,11
+platón,platón,1,6
 napojení,napojení,1,8
 niterné,niterné,1,7
 nepohodlí,nepohodlí,1,9
@@ -4411,6 +4596,7 @@ výzva,výzva,1,5
 táhne,táhne,1,5
 podtrhuje,podtrhuje,1,9
 přitom,přitom,1,6
+experty,experty,1,7
 cítil,cítil,1,5
 rozumné,rozumné,1,7
 provizornosti,provizornosti,1,13
@@ -4488,9 +4674,11 @@ badarpuru,badarpuru,1,9
 elektrárna,elektrárna,1,10
 uhelná,uhelná,1,6
 umírali,umírali,1,7
+saqib,saqib,1,5
 nezná,nezná,1,5
 minulost,minulost,1,8
 vega,vega,1,4
+woodsem,woodsem,1,7
 posádky,posádky,1,7
 lodi,lodi,1,4
 zuřivosti,zuřivosti,1,9
@@ -4498,6 +4686,7 @@ hranicí,hranicí,1,7
 zato,zato,1,4
 chlap,chlap,1,5
 gentlemanský,gentlemanský,1,12
+whipa,whipa,1,5
 odloučená,odloučená,1,9
 prasete,prasete,1,7
 přeruší,přeruší,1,7
@@ -4518,6 +4707,7 @@ druhy,druhy,1,5
 house,house,1,5
 bush,bush,1,4
 service,service,1,7
+world,world,1,5
 rádiu,rádiu,1,5
 generátory,generátory,1,10
 dieselové,dieselové,1,9
@@ -4552,14 +4742,17 @@ kandidátka,kandidátka,1,10
 ukořistí,ukořistí,1,8
 doufají,doufají,1,7
 zastupovali,zastupovali,1,11
+čtvrť,čtvrť,1,5
 bohatou,bohatou,1,7
 liberální,liberální,1,9
 knih,knih,1,4
 dějinách,dějinách,1,8
+wolmar,wolmar,1,6
 christian,christian,1,9
 chybět,chybět,1,6
 těžce,těžce,1,5
 poplatníků,poplatníků,1,10
+daňových,daňových,1,8
 odpovědi,odpovědi,1,8
 získávat,získávat,1,8
 odchod,odchod,1,6
@@ -4570,6 +4763,7 @@ egyptského,egyptského,1,10
 podvodném,podvodném,1,9
 odškodnění,odškodnění,1,10
 požadavkům,požadavkům,1,10
+volkswagen,volkswagen,1,10
 stály,stály,1,5
 mezistanice,mezistanice,1,11
 snížily,snížily,1,7
@@ -4598,6 +4792,7 @@ národního,národního,1,9
 kupní,kupní,1,5
 stabilní,stabilní,1,8
 zachovat,zachovat,1,8
+uskromňovat,uskromňovat,1,11
 začít,začít,1,5
 referendu,referendu,1,9
 očekávaly,očekávaly,1,9
@@ -4618,6 +4813,7 @@ přála,přála,1,5
 přesvědčeni,přesvědčeni,1,11
 běží,běží,1,4
 marra,marra,1,5
+andrewa,andrewa,1,7
 pořadu,pořadu,1,6
 protestů,protestů,1,8
 vlnu,vlnu,1,4
@@ -4639,6 +4835,7 @@ zajímalo,zajímalo,1,8
 hledal,hledal,1,6
 čelíme,čelíme,1,6
 pairemu,pairemu,1,7
+benoîtovi,benoîtovi,1,9
 carlu,carlu,1,5
 monte,monte,1,5
 andyho,andyho,1,6
@@ -4683,11 +4880,13 @@ operaci,operaci,1,7
 provedená,provedená,1,9
 zimním,zimním,1,6
 zima,zima,1,4
+podceňuje,podceňuje,1,9
 osob,osob,1,4
 dospělých,dospělých,1,9
 utrpěli,utrpěli,1,7
 metoda,metoda,1,6
 špatného,špatného,1,8
+zvlášť,zvlášť,1,6
 převzala,převzala,1,8
 vyzval,vyzval,1,6
 tlakem,tlakem,1,6
@@ -4806,6 +5005,7 @@ rozhovorem,rozhovorem,1,10
 záběru,záběru,1,6
 řeku,řeku,1,4
 objeví,objeví,1,6
+wintour,wintour,1,7
 jídla,jídla,1,5
 kancelářích,kancelářích,1,11
 modelů,modelů,1,6
@@ -4834,7 +5034,9 @@ naivní,naivní,1,6
 lepším,lepším,1,6
 najdu,najdu,1,5
 kritéria,kritéria,1,8
+splňující,splňující,1,9
 inspiraci,inspiraci,1,9
+tržišť,tržišť,1,6
 normálně,normálně,1,8
 vedena,vedena,1,6
 čepicí,čepicí,1,6
@@ -4883,6 +5085,8 @@ vosí,vosí,1,4
 lízátka,lízátka,1,7
 hranic,hranic,1,6
 kanadských,kanadských,1,10
+georgetownské,georgetownské,1,13
+účinná,účinná,1,6
 dovednosti,dovednosti,1,10
 takové,takové,1,6
 potýká,potýká,1,6
@@ -4899,11 +5103,13 @@ nesouhlasu,nesouhlasu,1,10
 prostřednictvím,prostřednictvím,1,15
 vyjadřují,vyjadřují,1,9
 bezdětní,bezdětní,1,8
+neexistovalo,neexistovalo,1,12
 lee,lee,1,3
 dr,dr,1,2
 zavedena,zavedena,1,8
 pokusit,pokusit,1,7
 bellinghamu,bellinghamu,1,11
+firewall,firewall,1,8
 zastávka,zastávka,1,8
 moje,moje,1,4
 americký,americký,1,8
@@ -4931,6 +5137,7 @@ rakovin,rakovin,1,7
 příčiny,příčiny,1,7
 vysvětlit,vysvětlit,1,9
 nádoru,nádoru,1,6
+úpravě,úpravě,1,6
 legislativní,legislativní,1,12
 jakékoliv,jakékoliv,1,9
 dodavatele,dodavatele,1,10
@@ -4954,10 +5161,12 @@ ukázal,ukázal,1,6
 sken,sken,1,4
 cambridgeshire,cambridgeshire,1,14
 addenbrooke,addenbrooke,1,11
+papworth,papworth,1,8
 nemocnici,nemocnici,1,9
 ošetřena,ošetřena,1,8
 pughová,pughová,1,7
 slečna,slečna,1,6
+exponovány,exponovány,1,10
 měchýř,měchýř,1,6
 močový,močový,1,6
 tkáních,tkáních,1,7
@@ -4965,6 +5174,7 @@ vzorec,vzorec,1,6
 nemohli,nemohli,1,7
 nádorové,nádorové,1,8
 mutací,mutací,1,6
+vyměňovala,vyměňovala,1,10
 cigaret,cigaret,1,7
 rvačka,rvačka,1,6
 těžit,těžit,1,5
@@ -4981,6 +5191,7 @@ pocházela,pocházela,1,9
 babička,babička,1,7
 apple,apple,1,5
 tomtéž,tomtéž,1,6
+expert,expert,1,6
 nadšený,nadšený,1,7
 rozumně,rozumně,1,7
 cestování,cestování,1,9
@@ -4995,6 +5206,7 @@ srbské,srbské,1,6
 cuaron,cuaron,1,6
 samsungu,samsungu,1,8
 hlášena,hlášena,1,7
+huawei,huawei,1,6
 výtržností,výtržností,1,10
 následované,následované,1,11
 názorů,názorů,1,6
@@ -5027,6 +5239,7 @@ ontariu,ontariu,1,7
 pughové,pughové,1,7
 zastupující,zastupující,1,11
 jmen,jmen,1,4
+zúčastnil,zúčastnil,1,9
 budovy,budovy,1,6
 cely,cely,1,4
 ochotný,ochotný,1,7
@@ -5040,11 +5253,13 @@ pokuty,pokuty,1,6
 díl,díl,1,3
 přijímají,přijímají,1,9
 brazílie,brazílie,1,8
+znečišťovatelé,znečišťovatelé,1,14
 velcí,velcí,1,5
 neobvyklé,neobvyklé,1,9
 sledujeme,sledujeme,1,9
 ničí,ničí,1,4
 smog,smog,1,4
+toxického,toxického,1,9
 nespokojenost,nespokojenost,1,13
 popularity,popularity,1,10
 projevovala,projevovala,1,11
@@ -5065,6 +5280,7 @@ pozve,pozve,1,5
 takto,takto,1,5
 trudeau,trudeau,1,7
 zastupovány,zastupovány,1,11
+washingtonu,washingtonu,1,11
 zájmy,zájmy,1,5
 kanadské,kanadské,1,8
 zajistili,zajistili,1,9
@@ -5101,13 +5317,17 @@ pobodání,pobodání,1,8
 smrtelného,smrtelného,1,10
 přední,přední,1,6
 tohohle,tohohle,1,7
+toxičtější,toxičtější,1,10
+odstraňovat,odstraňovat,1,11
 nedávná,nedávná,1,7
 klimatu,klimatu,1,7
 službou,službou,1,7
 zpomalí,zpomalí,1,7
+gchq,gchq,1,4
 správným,správným,1,8
 jdeme,jdeme,1,5
 ovzduší,ovzduší,1,7
+oxid,oxid,1,4
 bezpečnostní,bezpečnostní,1,12
 smetly,smetly,1,6
 paříže,paříže,1,6
@@ -5116,6 +5336,7 @@ dosažení,dosažení,1,8
 vědců,vědců,1,5
 celsia,celsia,1,6
 stupni,stupni,1,6
+experti,experti,1,7
 teplot,teplot,1,6
 udržení,udržení,1,7
 kigali,kigali,1,6
@@ -5128,6 +5349,7 @@ charakter,charakter,1,9
 vymezí,vymezí,1,6
 vydělává,vydělává,1,8
 sponzorování,sponzorování,1,12
+mexického,mexického,1,9
 inzerci,inzerci,1,7
 stupně,stupně,1,6
 cílovým,cílovým,1,7
@@ -5162,11 +5384,13 @@ přirozeně,přirozeně,1,9
 námořnictvo,námořnictvo,1,11
 předvádět,předvádět,1,9
 vrtulníků,vrtulníků,1,9
+útočných,útočných,1,8
 jesse,jesse,1,5
 zakladatel,zakladatel,1,10
 plánů,plánů,1,5
 hack,hack,1,4
 národních,národních,1,9
+zpochybňují,zpochybňují,1,11
 bezprecedentní,bezprecedentní,1,14
 použito,použito,1,7
 výpadku,výpadku,1,7
@@ -5174,8 +5398,10 @@ způsobení,způsobení,1,9
 odhalila,odhalila,1,8
 potřebnost,potřebnost,1,10
 reddit,reddit,1,6
+weby,weby,1,4
 vyřadily,vyřadily,1,8
 dočasně,dočasně,1,7
+útoky,útoky,1,5
 událostmi,událostmi,1,9
 nedávnými,nedávnými,1,9
 uzavřena,uzavřena,1,8
@@ -5233,9 +5459,11 @@ odpudivého,odpudivého,1,10
 jiného,jiného,1,6
 někoho,někoho,1,6
 raketová,raketová,1,8
+wifi,wifi,1,4
 výsledků,výsledků,1,8
 vesmírných,vesmírných,1,10
 užitečnější,užitečnější,1,11
+úspěšnost,úspěšnost,1,9
 emaily,emaily,1,6
 občas,občas,1,5
 nadpřirozená,nadpřirozená,1,12
@@ -5260,11 +5488,13 @@ koupím,koupím,1,6
 představě,představě,1,9
 žáků,žáků,1,4
 pokusů,pokusů,1,6
+účastníků,účastníků,1,9
 řad,řad,1,3
 připomínky,připomínky,1,10
 shromáždilo,shromáždilo,1,11
 rhs,rhs,1,3
 aerolinka,aerolinka,1,9
+oplodňování,oplodňování,1,11
 dělala,dělala,1,6
 podstatný,podstatný,1,9
 připadalo,připadalo,1,9
@@ -5347,6 +5577,7 @@ vzácnou,vzácnou,1,7
 železa,železa,1,6
 nenarozené,nenarozené,1,10
 dozvěděla,dozvěděla,1,9
+texas,texas,1,5
 plano,plano,1,5
 boemerová,boemerová,1,9
 těhotná,těhotná,1,7
@@ -5370,6 +5601,7 @@ chtěly,chtěly,1,6
 hdp,hdp,1,3
 rostlo,rostlo,1,6
 lincolna,lincolna,1,8
+washingtona,washingtona,1,11
 andre,andre,1,5
 nezvládá,nezvládá,1,8
 ekonomickou,ekonomickou,1,11
@@ -5383,6 +5615,7 @@ republikánští,republikánští,1,13
 price,price,1,5
 povědomý,povědomý,1,8
 rétorikou,rétorikou,1,9
+údaji,údaji,1,5
 hospodářskými,hospodářskými,1,13
 starými,starými,1,7
 zabila,zabila,1,6
@@ -5417,8 +5650,10 @@ prstenec,prstenec,1,8
 rovníku,rovníku,1,7
 zemského,zemského,1,8
 vytvořila,vytvořila,1,9
+suť,suť,1,3
 nástroj,nástroj,1,7
 nezbytný,nezbytný,1,8
+luxus,luxus,1,5
 konců,konců,1,5
 vědeckého,vědeckého,1,9
 nýbrž,nýbrž,1,5
@@ -5495,6 +5730,7 @@ rozpočet,rozpočet,1,8
 průměrně,průměrně,1,8
 očekávání,očekávání,1,9
 překonali,překonali,1,9
+úspěchy,úspěchy,1,7
 výkonnostní,výkonnostní,1,11
 tzv,tzv,1,3
 dostávali,dostávali,1,9
@@ -5512,6 +5748,7 @@ menšin,menšin,1,6
 adresu,adresu,1,6
 výroky,výroky,1,6
 agresivní,agresivní,1,9
+zdůrazňují,zdůrazňují,1,10
 reflektorů,reflektorů,1,10
 snaží,snaží,1,5
 nezávislosti,nezávislosti,1,12
@@ -5533,6 +5770,7 @@ námořnictva,námořnictva,1,11
 utěšilo,utěšilo,1,7
 zabezpečí,zabezpečí,1,9
 stalo,stalo,1,5
+loďařský,loďařský,1,8
 pracovníky,pracovníky,1,10
 poradenskými,poradenskými,1,12
 setkávali,setkávali,1,9
@@ -5549,6 +5787,7 @@ novinky,novinky,1,7
 neustále,neustále,1,8
 nutí,nutí,1,4
 zákazníkům,zákazníkům,1,10
+přítelkyň,přítelkyň,1,9
 osborne,osborne,1,7
 představil,představil,1,10
 rogers,rogers,1,6
@@ -5595,6 +5834,7 @@ operace,operace,1,7
 sledovací,sledovací,1,9
 zacílena,zacílena,1,8
 novinářů,novinářů,1,8
+quebeckých,quebeckých,1,10
 odhalení,odhalení,1,8
 předvčerejška,předvčerejška,1,13
 včerejška,včerejška,1,9
@@ -5650,6 +5890,7 @@ uplynulých,uplynulých,1,10
 lagunu,lagunu,1,6
 deštivých,deštivých,1,9
 oteplování,oteplování,1,10
+explozí,explozí,1,7
 náhlou,náhlou,1,6
 katastrofy,katastrofy,1,10
 nepůsobí,nepůsobí,1,8
@@ -5669,6 +5910,7 @@ ekosystém,ekosystém,1,9
 kontaminace,kontaminace,1,11
 chorob,chorob,1,6
 šíření,šíření,1,6
+neúroda,neúroda,1,7
 sucha,sucha,1,5
 povodně,povodně,1,7
 katastrofám,katastrofám,1,11
@@ -5681,6 +5923,7 @@ povrch,povrch,1,6
 nedostane,nedostane,1,9
 křemičitého,křemičitého,1,11
 rýn,rýn,1,3
+kilowattů,kilowattů,1,9
 generuje,generuje,1,8
 elektrárnách,elektrárnách,1,12
 vodních,vodních,1,7
@@ -5700,6 +5943,7 @@ suchým,suchým,1,6
 plochy,plochy,1,6
 procentech,procentech,1,10
 elektřiny,elektřiny,1,9
+rhôna,rhôna,1,5
 vysokému,vysokému,1,8
 inn,inn,1,3
 vazké,vazké,1,5
@@ -5848,11 +6092,13 @@ tlačit,tlačit,1,6
 mokřady,mokřady,1,7
 schlei,schlei,1,6
 hřebců,hřebců,1,6
+úmrtí,úmrtí,1,5
 boje,boje,1,4
 jakákoli,jakákoli,1,8
 dovážené,dovážené,1,8
 bohaté,bohaté,1,6
 ovocné,ovocné,1,6
+bjórr,bjórr,1,5
 pivo,pivo,1,4
 nápoje,nápoje,1,6
 alkoholické,alkoholické,1,11
@@ -5870,6 +6116,7 @@ středomořského,středomořského,1,14
 hladomorem,hladomorem,1,10
 postižen,postižen,1,8
 sahel,sahel,1,5
+extrémní,extrémní,1,8
 vašich,vašich,1,6
 saharské,saharské,1,8
 podobné,podobné,1,7
@@ -5958,6 +6205,7 @@ považovalo,považovalo,1,10
 veřejné,veřejné,1,7
 dánské,dánské,1,6
 šokovaly,šokovaly,1,8
+ústupu,ústupu,1,6
 flensburgu,flensburgu,1,10
 využita,využita,1,7
 pořádně,pořádně,1,7
@@ -5971,6 +6219,7 @@ vás,vás,1,3
 dánská,dánská,1,6
 překvapil,překvapil,1,9
 pruskorakouskou,pruskorakouskou,1,15
+ústup,ústup,1,5
 armádou,armádou,1,7
 mínění,mínění,1,6
 nedobytné,nedobytné,1,9
@@ -5985,6 +6234,7 @@ tulcea,tulcea,1,6
 rumunsku,rumunsku,1,8
 dunajské,dunajské,1,8
 tun,tun,1,3
+miliónů,miliónů,1,7
 zvýšil,zvýšil,1,6
 dunaji,dunaji,1,6
 přepravovaného,přepravovaného,1,14
@@ -6008,16 +6258,19 @@ budovány,budovány,1,8
 pevnosti,pevnosti,1,8
 mlhou,mlhou,1,5
 určitý,určitý,1,6
+wanga,wanga,1,5
 nacházel,nacházel,1,8
 fázi,fázi,1,4
 určit,určit,1,5
 preferoval,preferoval,1,10
+newton,newton,1,6
 přestupný,přestupný,1,9
 výjimečný,výjimečný,1,9
 pátek,pátek,1,5
 připadnout,připadnout,1,10
 mechanismů,mechanismů,1,10
 latia,latia,1,5
+báseň,báseň,1,5
 pozdějších,pozdějších,1,10
 kua,kua,1,3
 konaly,konaly,1,6
@@ -6073,6 +6326,8 @@ jeruzalémě,jeruzalémě,1,10
 neshodnou,neshodnou,1,9
 herodiadou,herodiadou,1,10
 antipasem,antipasem,1,9
+héródem,héródem,1,7
+sňatku,sňatku,1,6
 brnění,brnění,1,6
 nasadit,nasadit,1,7
 obtěžoval,obtěžoval,1,9
@@ -6093,6 +6348,7 @@ kontinentální,kontinentální,1,13
 lodí,lodí,1,4
 příslušejí,příslušejí,1,10
 soudilo,soudilo,1,7
+oběťmi,oběťmi,1,6
 rituály,rituály,1,7
 svědomitě,svědomitě,1,9
 svými,svými,1,5
@@ -6117,6 +6373,7 @@ svatyni,svatyni,1,7
 kanaánskou,kanaánskou,1,10
 diskutuje,diskutuje,1,9
 megalitů,megalitů,1,8
+účelu,účelu,1,5
 mísou,mísou,1,5
 kamennou,kamennou,1,8
 čtverhrannou,čtverhrannou,1,12
@@ -6136,6 +6393,7 @@ dvora,dvora,1,5
 naneseného,naneseného,1,10
 nesmírnou,nesmírnou,1,9
 vysušil,vysušil,1,7
+úspěšně,úspěšně,1,7
 originální,originální,1,10
 pien,pien,1,4
 kanálu,kanálu,1,6
@@ -6143,6 +6401,7 @@ skladů,skladů,1,6
 stavby,stavby,1,6
 zmapování,zmapování,1,9
 program,program,1,7
+wangův,wangův,1,6
 dohlížel,dohlížel,1,8
 činitele,činitele,1,8
 správce,správce,1,7
@@ -6196,6 +6455,7 @@ dobách,dobách,1,6
 původních,původních,1,9
 dominantních,dominantních,1,12
 nikým,nikým,1,5
+zpochybňována,zpochybňována,1,13
 šestnáctého,šestnáctého,1,11
 evropané,evropané,1,8
 kaše,kaše,1,4
@@ -6260,6 +6520,7 @@ nilu,nilu,1,4
 číny,číny,1,4
 západ,západ,1,5
 povolil,povolil,1,7
+miliónu,miliónu,1,7
 káhira,káhira,1,6
 ohromné,ohromné,1,7
 pokryly,pokryly,1,7
@@ -6275,6 +6536,7 @@ lavičky,lavičky,1,7
 piknikovací,piknikovací,1,11
 prostá,prostá,1,6
 mobiliář,mobiliář,1,8
+úpravy,úpravy,1,6
 terénní,terénní,1,7
 proměnila,proměnila,1,9
 radikálně,radikálně,1,9
@@ -6285,6 +6547,7 @@ korjo,korjo,1,5
 vládu,vládu,1,5
 reformovat,reformovat,1,10
 národním,národním,1,8
+účelem,účelem,1,6
 odklonil,odklonil,1,8
 zajištění,zajištění,1,9
 pozbyla,pozbyla,1,7
@@ -6323,6 +6586,7 @@ publikovaná,publikovaná,1,11
 esej,esej,1,4
 správní,správní,1,7
 metropolitní,metropolitní,1,12
+town,town,1,4
 cape,cape,1,4
 nese,nese,1,4
 kapského,kapského,1,8
@@ -6393,6 +6657,7 @@ námluv,námluv,1,6
 přeskakuje,přeskakuje,1,10
 mildred,mildred,1,7
 loving,loving,1,6
+účastníky,účastníky,1,9
 nedobrovolnými,nedobrovolnými,1,14
 stali,stali,1,5
 richard,richard,1,7
@@ -6598,6 +6863,7 @@ kostýmy,kostýmy,1,7
 sade,sade,1,4
 marat,marat,1,5
 hře,hře,1,3
+ústavu,ústavu,1,6
 chovankyně,chovankyně,1,10
 rolí,rolí,1,4
 vyučovala,vyučovala,1,9
@@ -6610,6 +6876,7 @@ rozhlase,rozhlase,1,8
 divákům,divákům,1,7
 televizi,televizi,1,8
 rodinám,rodinám,1,7
+hollywood,hollywood,1,9
 změnila,změnila,1,7
 natolik,natolik,1,7
 filmařina,filmařina,1,9
@@ -6641,6 +6908,7 @@ následek,následek,1,8
 řídíme,řídíme,1,6
 pravidly,pravidly,1,8
 zabezpečeni,zabezpečeni,1,11
+zosobňují,zosobňují,1,9
 málokdy,málokdy,1,7
 výsledky,výsledky,1,8
 koneckonců,koneckonců,1,10
@@ -6701,17 +6969,21 @@ návrhem,návrhem,1,7
 jednatřicetiletý,jednatřicetiletý,1,16
 vzorového,vzorového,1,9
 konat,konat,1,5
+washingtonově,washingtonově,1,13
 posedlostí,posedlostí,1,10
 rostoucí,rostoucí,1,8
 naší,naší,1,4
 souvisí,souvisí,1,7
+úzce,úzce,1,4
 prožitek,prožitek,1,8
 dotykový,dotykový,1,8
 zaměřený,zaměřený,1,8
+winhamová,winhamová,1,9
 rachel,rachel,1,6
 designérka,designérka,1,10
 interiérová,interiérová,1,11
 pověřena,pověřena,1,8
+tower,tower,1,5
 south,south,1,5
 dominantě,dominantě,1,9
 bytu,bytu,1,4
@@ -6720,6 +6992,7 @@ vracel,vracel,1,6
 mé,mé,1,2
 předpovědích,předpovědích,1,12
 trvá,trvá,1,4
+sezónní,sezónní,1,7
 vytrvalý,vytrvalý,1,8
 monzun,monzun,1,6
 klimatologie,klimatologie,1,12
@@ -6734,7 +7007,9 @@ klasifikace,klasifikace,1,11
 bergeronova,bergeronova,1,11
 klasifikací,klasifikací,1,11
 nejrozšířenější,nejrozšířenější,1,15
+uplatňování,uplatňování,1,11
 zákonech,zákonech,1,8
+walesem,walesem,1,7
 anglií,anglií,1,6
 přináší,přináší,1,7
 šestém,šestém,1,6
@@ -6758,6 +7033,7 @@ germánských,germánských,1,11
 moravou,moravou,1,7
 stěhování,stěhování,1,9
 přehnalo,přehnalo,1,8
+útvar,útvar,1,5
 irskem,irskem,1,6
 bohatých,bohatých,1,8
 fontvieille,fontvieille,1,11
@@ -6767,9 +7043,11 @@ smaragdisem,smaragdisem,1,11
 yannisem,yannisem,1,8
 režírovaný,režírovaný,1,10
 greco,greco,1,5
+nejúspěšnějším,nejúspěšnějším,1,14
 asty,asty,1,4
 athina,athina,1,6
 filmová,filmová,1,7
+sňatky,sňatky,1,6
 promísily,promísily,1,9
 hodně,hodně,1,5
 elita,elita,1,5
@@ -6801,6 +7079,7 @@ výkonná,výkonná,1,7
 monakem,monakem,1,7
 protektorát,protektorát,1,11
 smluvní,smluvní,1,7
+zajišťovala,zajišťovala,1,11
 nitranského,nitranského,1,11
 morava,morava,1,6
 stodoly,stodoly,1,7
@@ -6818,6 +7097,7 @@ absorbují,absorbují,1,9
 králem,králem,1,6
 kapky,kapky,1,5
 srážek,srážek,1,6
+dešťových,dešťových,1,9
 celek,celek,1,5
 ovlivnit,ovlivnit,1,8
 silně,silně,1,5
@@ -6881,8 +7161,10 @@ přítomno,přítomno,1,8
 dialektů,dialektů,1,8
 severních,severních,1,9
 souhlásek,souhlásek,1,9
+stupňování,stupňování,1,10
 kven,kven,1,4
 švédsku,švédsku,1,7
+meänkieli,meänkieli,1,9
 známé,známé,1,5
 odděleně,odděleně,1,8
 odvozené,odvozené,1,8
@@ -6895,6 +7177,7 @@ status,status,1,6
 nadvládu,nadvládu,1,8
 achaimenovskou,achaimenovskou,1,14
 podnítilo,podnítilo,1,9
+úspěšné,úspěšné,1,7
 nimž,nimž,1,4
 využil,využil,1,6
 bangkoku,bangkoku,1,8
@@ -6972,6 +7255,7 @@ vlaky,vlaky,1,5
 tratě,tratě,1,5
 dokončení,dokončení,1,9
 japonsku,japonsku,1,8
+mexičany,mexičany,1,8
 formát,formát,1,6
 zachránit,zachránit,1,9
 dobrovolníků,dobrovolníků,1,12
@@ -6994,6 +7278,7 @@ předávací,předávací,1,9
 pátém,pátém,1,5
 atény,atény,1,5
 řecký,řecký,1,5
+mexiku,mexiku,1,6
 california,california,1,10
 baja,baja,1,4
 ostrůvky,ostrůvky,1,8
@@ -7019,6 +7304,7 @@ vojska,vojska,1,6
 achaimenovská,achaimenovská,1,13
 balkánských,balkánských,1,11
 dobytí,dobytí,1,6
+úplné,úplné,1,5
 megabazos,megabazos,1,9
 velitel,velitel,1,7
 vážený,vážený,1,6
@@ -7036,6 +7322,7 @@ mimořádně,mimořádně,1,9
 projížděli,projížděli,1,10
 samosprávným,samosprávným,1,12
 těch,těch,1,4
+daň,daň,1,3
 zastupiteli,zastupiteli,1,11
 městskými,městskými,1,9
 ovládaného,ovládaného,1,10

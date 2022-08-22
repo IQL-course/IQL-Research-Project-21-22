@@ -522,6 +522,7 @@ maupun,maupun,5,6
 koloni,koloni,5,6
 suatu,suatu,5,5
 kurang,kurang,5,6
+zaman,zaman,5,5
 terbesar,terbesar,5,8
 demikian,demikian,5,8
 diberikan,diberikan,5,9
@@ -569,10 +570,12 @@ hak,hak,5,3
 cina,cina,5,4
 lahir,lahir,5,5
 jadi,jadi,5,4
+mengizinkan,mengizinkan,5,11
 ottoman,ottoman,5,7
 bertahan,bertahan,5,8
 persis,persis,5,6
 binatang,binatang,5,8
+qing,qing,5,4
 ikan,ikan,5,4
 pengadilan,pengadilan,4,10
 layak,layak,4,5
@@ -1168,6 +1171,7 @@ tanggung,tanggung,2,8
 kursus,kursus,2,6
 alarm,alarm,2,5
 augustus,augustus,2,8
+brexit,brexit,2,6
 cup,cup,2,3
 menawarkan,menawarkan,2,10
 hispania,hispania,2,8
@@ -1257,6 +1261,7 @@ purnama,purnama,2,7
 mencegah,mencegah,2,8
 morricone,morricone,2,9
 pakar,pakar,2,5
+dündar,dündar,2,6
 kebiasaan,kebiasaan,2,9
 platform,platform,2,8
 penjaga,penjaga,2,7
@@ -1271,6 +1276,7 @@ populer,populer,2,7
 penghentian,penghentian,2,11
 label,label,2,5
 memasang,memasang,2,8
+zona,zona,2,4
 ditutup,ditutup,2,7
 geyer,geyer,2,5
 invasi,invasi,2,6
@@ -1375,6 +1381,7 @@ tampilan,tampilan,2,8
 waktunya,waktunya,2,8
 anaya,anaya,2,5
 katakan,katakan,2,7
+gonzález,gonzález,2,8
 pengguna,pengguna,2,8
 caesar,caesar,2,6
 tema,tema,2,4
@@ -1407,6 +1414,7 @@ menghapus,menghapus,2,9
 pasukannya,pasukannya,2,10
 bergetar,bergetar,2,8
 temuan,temuan,2,6
+trix,trix,2,4
 mengamankan,mengamankan,2,11
 baja,baja,2,4
 michael,michael,2,7
@@ -1475,6 +1483,7 @@ tautan,tautan,2,6
 konsekuensi,konsekuensi,2,11
 louis,louis,2,5
 moral,moral,2,5
+mojmír,mojmír,2,6
 david,david,2,5
 menemui,menemui,2,7
 menit,menit,2,5
@@ -1654,6 +1663,7 @@ lapor,lapor,2,5
 jurnalis,jurnalis,2,8
 sedikitnya,sedikitnya,2,10
 gca,gca,2,3
+alvarez,alvarez,2,7
 yesus,yesus,2,5
 aplikasi,aplikasi,2,8
 reformasi,reformasi,2,9
@@ -1690,6 +1700,7 @@ kabut,kabut,2,5
 menyaksikan,menyaksikan,2,11
 pupuk,pupuk,2,5
 istana,istana,2,6
+herzl,herzl,2,5
 provinsi,provinsi,2,8
 sekitarnya,sekitarnya,2,10
 saran,saran,2,5
@@ -1723,6 +1734,7 @@ artistik,artistik,2,8
 pasti,pasti,2,5
 ditunjukkan,ditunjukkan,2,11
 akal,akal,2,4
+zodiak,zodiak,2,6
 thomas,thomas,2,6
 bilang,bilang,2,6
 pinjaman,pinjaman,2,8
@@ -1802,6 +1814,7 @@ ditandai,ditandai,2,8
 fakta,fakta,2,5
 chris,chris,2,5
 mahasiswa,mahasiswa,2,9
+alexander,alexander,2,9
 hormat,hormat,2,6
 bencana,bencana,2,7
 disimpan,disimpan,2,8
@@ -1828,12 +1841,14 @@ gaulle,gaulle,1,6
 unjuk,unjuk,1,5
 persetujuannya,persetujuannya,1,14
 mendinginkan,mendinginkan,1,12
+uaxactun,uaxactun,1,8
 didinginkan,didinginkan,1,11
 terganggu,terganggu,1,9
 brand,brand,1,5
 antena,antena,1,6
 nasionalisme,nasionalisme,1,12
 churchill,churchill,1,9
+petén,petén,1,5
 jaringannya,jaringannya,1,11
 chandler,chandler,1,8
 berlebihan,berlebihan,1,10
@@ -1852,6 +1867,7 @@ kemanusiaannya,kemanusiaannya,1,14
 like,like,1,4
 berakhirnya,berakhirnya,1,11
 filipina,filipina,1,8
+lennox,lennox,1,6
 did,did,1,3
 diperoleh,diperoleh,1,9
 milice,milice,1,6
@@ -1883,6 +1899,7 @@ dieksekusi,dieksekusi,1,10
 romanov,romanov,1,7
 head,head,1,4
 masanya,masanya,1,7
+shōwa,shōwa,1,5
 pedang,pedang,1,6
 over,over,1,4
 resistance,resistance,1,10
@@ -2044,6 +2061,7 @@ peking,peking,1,6
 good,good,1,4
 penjelasan,penjelasan,1,10
 ditendang,ditendang,1,9
+wiz,wiz,1,3
 berdoa,berdoa,1,6
 taat,taat,1,4
 rambler,rambler,1,7
@@ -2071,6 +2089,7 @@ kesalehan,kesalehan,1,9
 diserahkan,diserahkan,1,10
 gm,gm,1,2
 bakar,bakar,1,5
+pezinah,pezinah,1,7
 terpaksa,terpaksa,1,8
 indonesia,indonesia,1,9
 witch,witch,1,5
@@ -2079,6 +2098,7 @@ komunal,komunal,1,7
 hunan,hunan,1,5
 bingung,bingung,1,7
 terungkap,terungkap,1,9
+guangzhou,guangzhou,1,9
 hubei,hubei,1,5
 strathearn,strathearn,1,10
 lin,lin,1,3
@@ -2086,6 +2106,7 @@ jokowi,jokowi,1,6
 shanghai,shanghai,1,8
 t,t,1,1
 pelabuhan,pelabuhan,1,9
+zexu,zexu,1,4
 ajang,ajang,1,5
 yudhoyono,yudhoyono,1,9
 kuliah,kuliah,1,6
@@ -2168,9 +2189,12 @@ thought,thought,1,7
 knew,knew,1,4
 corona,corona,1,6
 stage,stage,1,5
+píanó,píanó,1,5
 wol,wol,1,3
 fundamental,fundamental,1,11
 hammersmith,hammersmith,1,11
+fjögur,fjögur,1,6
+rós,rós,1,3
 evening,evening,1,7
 courant,courant,1,7
 menang,menang,1,6
@@ -2202,6 +2226,7 @@ semasa,semasa,1,6
 ucapannya,ucapannya,1,9
 parfum,parfum,1,6
 dikenali,dikenali,1,8
+ötzi,ötzi,1,4
 mummy,mummy,1,5
 bc,bc,1,2
 bukit,bukit,1,5
@@ -2218,10 +2243,12 @@ himne,himne,1,5
 dinyanyikan,dinyanyikan,1,11
 ulang,ulang,1,5
 pergeseran,pergeseran,1,10
+suez,suez,1,4
 pengambilalihan,pengambilalihan,1,15
 baltik,baltik,1,6
 hongaria,hongaria,1,8
 kompromi,kompromi,1,8
+franz,franz,1,5
 mengurusi,mengurusi,1,9
 terkenal,terkenal,1,8
 situsnya,situsnya,1,8
@@ -2248,6 +2275,7 @@ istanbul,istanbul,1,8
 paralel,paralel,1,7
 membutuhkannya,membutuhkannya,1,14
 membutuhkan,membutuhkan,1,11
+izin,izin,1,4
 mempertahankan,mempertahankan,1,14
 monarkinya,monarkinya,1,10
 disibodenberg,disibodenberg,1,13
@@ -2288,6 +2316,7 @@ telekom,telekom,1,7
 pacarnya,pacarnya,1,8
 pacar,pacar,1,5
 merdingen,merdingen,1,9
+südbaden,südbaden,1,8
 ulrich,ulrich,1,6
 balap,balap,1,5
 sensor,sensor,1,6
@@ -2306,6 +2335,8 @@ francisco,francisco,1,9
 biarawan,biarawan,1,8
 relaksasi,relaksasi,1,9
 pencabutan,pencabutan,1,10
+fátima,fátima,1,6
+báñez,báñez,1,5
 isu,isu,1,3
 kontroversial,kontroversial,1,13
 membiarkannya,membiarkannya,1,13
@@ -2315,8 +2346,11 @@ cospedal,cospedal,1,8
 coba,coba,1,4
 disampaikan,disampaikan,1,11
 kemarin,kemarin,1,7
+barón,barón,1,5
 claret,claret,1,6
 pedro,pedro,1,5
+sánchez,sánchez,1,7
+évole,évole,1,5
 federico,federico,1,8
 fellini,fellini,1,7
 badut,badut,1,5
@@ -2332,8 +2366,10 @@ china,china,1,5
 wall,wall,1,4
 silicon,silicon,1,7
 valley,valley,1,6
+amazon,amazon,1,6
 keempat,keempat,1,7
 kapitalisasi,kapitalisasi,1,12
+exxonmobil,exxonmobil,1,10
 tesla,tesla,1,5
 snapchat,snapchat,1,8
 mountain,mountain,1,8
@@ -2345,6 +2381,8 @@ cifuentes,cifuentes,1,9
 sectorial,sectorial,1,9
 javier,javier,1,6
 maroto,maroto,1,6
+durán,durán,1,5
+ángel,ángel,1,5
 pintado,pintado,1,7
 bendahara,bendahara,1,9
 ironi,ironi,1,5
@@ -2357,6 +2395,7 @@ diambil,diambil,1,7
 pengusaha,pengusaha,1,9
 georg,georg,1,5
 reichenbach,reichenbach,1,11
+württemberg,württemberg,1,11
 ketetapan,ketetapan,1,9
 kapas,kapas,1,5
 berdiam,berdiam,1,7
@@ -2395,6 +2434,7 @@ oposisi,oposisi,1,7
 mundo,mundo,1,5
 fsln,fsln,1,4
 merayakan,merayakan,1,9
+plaza,plaza,1,5
 las,las,1,3
 victorias,victorias,1,9
 may,may,1,3
@@ -2408,6 +2448,7 @@ menggulingkan,menggulingkan,1,13
 disetujui,disetujui,1,9
 dilegalisasi,dilegalisasi,1,12
 buangan,buangan,1,7
+diizinkan,diizinkan,1,9
 dibebaskan,dibebaskan,1,10
 ambruknya,ambruknya,1,9
 ambruk,ambruk,1,6
@@ -2416,6 +2457,7 @@ del,del,1,3
 este,este,1,4
 saratoga,saratoga,1,8
 coup,coup,1,4
+grâce,grâce,1,5
 indian,indian,1,6
 brant,brant,1,5
 kolonis,kolonis,1,7
@@ -2439,6 +2481,7 @@ bergaya,bergaya,1,7
 aransemen,aransemen,1,9
 mencirikan,mencirikan,1,10
 gaya,gaya,1,4
+gaudí,gaudí,1,5
 menghadirkan,menghadirkan,1,12
 sejajar,sejajar,1,7
 ujungnya,ujungnya,1,8
@@ -2462,6 +2505,7 @@ retribusi,retribusi,1,9
 ilegal,ilegal,1,6
 pendukung,pendukung,1,9
 mendukungnya,mendukungnya,1,12
+césar,césar,1,5
 curio,curio,1,5
 tempatnya,tempatnya,1,9
 ditempati,ditempati,1,9
@@ -2482,6 +2526,7 @@ penutur,penutur,1,7
 dee,dee,1,3
 historisnya,historisnya,1,11
 luis,luis,1,4
+x,x,1,1
 felipe,felipe,1,6
 v,v,1,1
 klaim,klaim,1,5
@@ -2489,6 +2534,7 @@ tahta,tahta,1,5
 tante,tante,1,5
 isabella,isabella,1,8
 berdamai,berdamai,1,8
+enrique,enrique,1,7
 rencananya,rencananya,1,10
 federalisasi,federalisasi,1,12
 buenos,buenos,1,6
@@ -2569,6 +2615,7 @@ penghadangan,penghadangan,1,12
 villeneuve,villeneuve,1,10
 british,british,1,7
 isles,isles,1,5
+austerlitz,austerlitz,1,10
 harapannya,harapannya,1,10
 grenville,grenville,1,9
 tsar,tsar,1,4
@@ -2634,6 +2681,7 @@ cameo,cameo,1,5
 hitchhiker,hitchhiker,1,10
 guide,guide,1,5
 to,to,1,2
+galaxy,galaxy,1,6
 son,son,1,3
 scritti,scritti,1,7
 kagumi,kagumi,1,6
@@ -2647,6 +2695,7 @@ bloch,bloch,1,5
 prihatin,prihatin,1,8
 prinsip,prinsip,1,7
 pemandu,pemandu,1,7
+marxisme,marxisme,1,8
 menekankan,menekankan,1,10
 humanisme,humanisme,1,9
 tersirat,tersirat,1,8
@@ -2680,9 +2729,11 @@ timbul,timbul,1,6
 maka,maka,1,4
 basi,basi,1,4
 memuaskan,memuaskan,1,9
+kühn,kühn,1,4
 menggelengkan,menggelengkan,1,13
 kepalanya,kepalanya,1,9
 die,die,1,3
+zeit,zeit,1,4
 arus,arus,1,4
 kasnya,kasnya,1,6
 kas,kas,1,3
@@ -2725,6 +2776,7 @@ norma,norma,1,5
 talmadge,talmadge,1,8
 romeo,romeo,1,5
 juliet,juliet,1,6
+halifax,halifax,1,7
 hitler,hitler,1,6
 hadapan,hadapan,1,7
 kabinet,kabinet,1,7
@@ -2736,6 +2788,7 @@ marcelle,marcelle,1,8
 ditinggal,ditinggal,1,9
 kamar,kamar,1,5
 piaf,piaf,1,4
+mômone,mômone,1,6
 menyanyi,menyanyi,1,8
 smith,smith,1,5
 menjauhkan,menjauhkan,1,10
@@ -2749,6 +2802,7 @@ fishing,fishing,1,7
 in,in,1,2
 yemen,yemen,1,5
 lasse,lasse,1,5
+hallström,hallström,1,9
 ewan,ewan,1,4
 mcgregor,mcgregor,1,8
 kristin,kristin,1,7
@@ -2796,12 +2850,14 @@ bouchard,bouchard,1,8
 meyer,meyer,1,5
 errani,errani,1,6
 menyurati,menyurati,1,9
+irène,irène,1,5
 bersamanya,bersamanya,1,10
 laboratoriumnya,laboratoriumnya,1,15
 sampel,sampel,1,6
 hans,hans,1,4
 pettersson,pettersson,1,10
 membiayai,membiayai,1,9
+mengizinkannya,mengizinkannya,1,14
 pemisahan,pemisahan,1,9
 curie,curie,1,5
 disempurnakan,disempurnakan,1,13
@@ -2846,6 +2902,7 @@ figaro,figaro,1,6
 isi,isi,1,3
 visi,visi,1,4
 dialokasikan,dialokasikan,1,12
+ouvrière,ouvrière,1,8
 pukul,pukul,1,5
 akp,akp,1,3
 penolakan,penolakan,1,9
@@ -2857,8 +2914,10 @@ pendahuluan,pendahuluan,1,11
 rachida,rachida,1,7
 dati,dati,1,4
 nicolas,nicolas,1,7
+sarkozy,sarkozy,1,7
 pesannya,pesannya,1,8
 brice,brice,1,5
+hortefeux,hortefeux,1,9
 fascist,fascist,1,7
 penjahat,penjahat,1,8
 menghambat,menghambat,1,10
@@ -2881,6 +2940,7 @@ luiss,luiss,1,5
 berlangsungnya,berlangsungnya,1,14
 bertempat,bertempat,1,9
 fransiskus,fransiskus,1,10
+zuckerberg,zuckerberg,1,10
 casa,casa,1,4
 marta,marta,1,5
 tre,tre,1,3
@@ -2934,6 +2994,7 @@ peristirahatan,peristirahatan,1,14
 mengiklankan,mengiklankan,1,12
 ditanyai,ditanyai,1,8
 mengenal,mengenal,1,8
+günter,günter,1,6
 bruyn,bruyn,1,5
 bersaudara,bersaudara,1,10
 penyelidik,penyelidik,1,10
@@ -2956,6 +3017,7 @@ beust,beust,1,5
 membenarkan,membenarkan,1,11
 perencanaan,perencanaan,1,11
 simon,simon,1,5
+krätschmer,krätschmer,1,10
 barak,barak,1,5
 bobrok,bobrok,1,6
 seram,seram,1,5
@@ -3001,6 +3063,7 @@ dikomentari,dikomentari,1,11
 demokrat,demokrat,1,8
 berbasis,berbasis,1,8
 energies,energies,1,8
+tanzania,tanzania,1,8
 renewable,renewable,1,9
 barroso,barroso,1,7
 penggantian,penggantian,1,11
@@ -3023,6 +3086,7 @@ pengertian,pengertian,1,10
 pergerakan,pergerakan,1,10
 adnan,adnan,1,5
 amin,amin,1,4
+organization,organization,1,12
 for,for,1,3
 ideal,ideal,1,5
 bawahan,bawahan,1,7
@@ -3100,6 +3164,8 @@ dicederai,dicederai,1,9
 memadai,memadai,1,7
 alasannya,alasannya,1,9
 mendadak,mendadak,1,8
+rezim,rezim,1,5
+nazi,nazi,1,4
 jilbab,jilbab,1,6
 jins,jins,1,4
 menyisihkan,menyisihkan,1,11
@@ -3138,6 +3204,8 @@ menanggapi,menanggapi,1,10
 sinis,sinis,1,5
 menggoyangkan,menggoyangkan,1,13
 pantat,pantat,1,6
+zay,zay,1,3
+zayion,zayion,1,6
 knuck,knuck,1,5
 mengungkapkan,mengungkapkan,1,13
 mendiskreditkan,mendiskreditkan,1,15
@@ -3166,6 +3234,7 @@ if,if,1,2
 laptop,laptop,1,6
 wajib,wajib,1,5
 etimologi,etimologi,1,9
+zettel,zettel,1,6
 traum,traum,1,5
 halangan,halangan,1,8
 nuansa,nuansa,1,6
@@ -3214,6 +3283,7 @@ wajar,wajar,1,5
 tersingkap,tersingkap,1,10
 merontokkan,merontokkan,1,11
 chief,chief,1,5
+executive,executive,1,9
 pekerjaannya,pekerjaannya,1,12
 tuntutan,tuntutan,1,8
 herbert,herbert,1,7
@@ -3246,6 +3316,7 @@ kecewa,kecewa,1,6
 tuan,tuan,1,4
 dialami,dialami,1,7
 andi,andi,1,4
+benoît,benoît,1,6
 paire,paire,1,5
 monte,monte,1,5
 carlo,carlo,1,5
@@ -3365,6 +3436,7 @@ megrim,megrim,1,6
 beras,beras,1,5
 tawon,tawon,1,5
 kepompongnya,kepompongnya,1,12
+lezat,lezat,1,5
 kerbau,kerbau,1,6
 daun,daun,1,4
 pinang,pinang,1,6
@@ -3397,6 +3469,7 @@ cincin,cincin,1,6
 mewah,mewah,1,5
 wacana,wacana,1,6
 ambisinya,ambisinya,1,9
+gchq,gchq,1,4
 mengajukan,mengajukan,1,10
 perlunya,perlunya,1,8
 belakangnya,belakangnya,1,11
@@ -3451,6 +3524,7 @@ kutikula,kutikula,1,8
 dimensi,dimensi,1,7
 politis,politis,1,7
 balok,balok,1,5
+shenzhen,shenzhen,1,8
 bertanya,bertanya,1,8
 pbb,pbb,1,3
 kenapa,kenapa,1,6
@@ -3542,6 +3616,7 @@ toh,toh,1,3
 penjara,penjara,1,7
 semoga,semoga,1,6
 sepadan,sepadan,1,7
+yazidi,yazidi,1,6
 menangis,menangis,1,8
 temannya,temannya,1,8
 agensi,agensi,1,6
@@ -3571,9 +3646,11 @@ pemilu,pemilu,1,6
 biro,biro,1,4
 sensus,sensus,1,6
 sepertinya,sepertinya,1,10
+khanzir,khanzir,1,7
 kesepian,kesepian,1,8
 mengisi,mengisi,1,7
 kebun,kebun,1,5
+saqib,saqib,1,5
 saatnya,saatnya,1,7
 panvalkar,panvalkar,1,9
 dicaplok,dicaplok,1,8
@@ -3620,6 +3697,7 @@ gomery,gomery,1,6
 pencarian,pencarian,1,9
 memulihkan,memulihkan,1,10
 pengungkapan,pengungkapan,1,12
+quebec,quebec,1,6
 individu,individu,1,8
 finansial,finansial,1,9
 kerangka,kerangka,1,8
@@ -3668,6 +3746,7 @@ rumit,rumit,1,5
 hamil,hamil,1,5
 boemer,boemer,1,6
 plano,plano,1,5
+texas,texas,1,5
 kajiannya,kajiannya,1,9
 gerry,gerry,1,5
 kamchatka,kamchatka,1,9
@@ -3770,6 +3849,7 @@ mendekati,mendekati,1,9
 menjadikannya,menjadikannya,1,13
 tambahan,tambahan,1,8
 memupuk,memupuk,1,7
+gezira,gezira,1,6
 nevada,nevada,1,6
 turisme,turisme,1,7
 pertambangan,pertambangan,1,12
@@ -3828,6 +3908,7 @@ amurru,amurru,1,6
 lewat,lewat,1,5
 tunip,tunip,1,5
 baju,baju,1,4
+zirah,zirah,1,5
 antipas,antipas,1,7
 herodias,herodias,1,8
 mengingat,mengingat,1,9
@@ -3877,12 +3958,15 @@ milan,milan,1,5
 sebanyak,sebanyak,1,8
 kilowatt,kilowatt,1,8
 rhine,rhine,1,5
+rhône,rhône,1,5
 inn,inn,1,3
 jantung,jantung,1,7
 mississippi,mississippi,1,11
 ohio,ohio,1,4
+aljazair,aljazair,1,8
 semestinya,semestinya,1,10
 terkalahkan,terkalahkan,1,11
+meza,meza,1,4
 dibebastugaskan,dibebastugaskan,1,15
 komandonya,komandonya,1,10
 ton,ton,1,3
@@ -3973,6 +4057,7 @@ karangan,karangan,1,8
 kebetulan,kebetulan,1,9
 didasarkan,didasarkan,1,10
 spekulasi,spekulasi,1,9
+yucatán,yucatán,1,7
 menikah,menikah,1,7
 habsburg,habsburg,1,8
 suci,suci,1,4
@@ -4038,6 +4123,7 @@ heinrich,heinrich,1,8
 kramer,kramer,1,6
 dominika,dominika,1,8
 uskup,uskup,1,5
+salzburg,salzburg,1,8
 diwawancarai,diwawancarai,1,12
 hills,hills,1,5
 korintus,korintus,1,8
@@ -4092,6 +4178,7 @@ dianut,dianut,1,6
 setia,setia,1,5
 akta,akta,1,4
 mencatat,mencatat,1,8
+zodiaknya,zodiaknya,1,9
 monyet,monyet,1,6
 keenampuluhnya,keenampuluhnya,1,14
 keenampuluh,keenampuluh,1,11
@@ -4108,6 +4195,7 @@ konstruksi,konstruksi,1,10
 kelihatannya,kelihatannya,1,12
 dibujuk,dibujuk,1,7
 hotel,hotel,1,5
+gezer,gezer,1,5
 amarna,amarna,1,6
 tell,tell,1,4
 karnak,karnak,1,6
@@ -4237,6 +4325,7 @@ odi,odi,1,3
 serial,serial,1,6
 pahlawan,pahlawan,1,8
 beraksi,beraksi,1,7
+zimmer,zimmer,1,6
 flock,flock,1,5
 tetapi,tetapi,1,6
 tindak,tindak,1,6
@@ -4321,8 +4410,10 @@ mengaku,mengaku,1,7
 melompati,melompati,1,9
 ditaklukkan,ditaklukkan,1,11
 ciscaucasus,ciscaucasus,1,11
+rastiz,rastiz,1,6
 rastislav,rastislav,1,9
 menentukan,menentukan,1,10
+meänkieli,meänkieli,1,9
 kven,kven,1,4
 gradasi,gradasi,1,7
 konsonan,konsonan,1,8
@@ -4359,6 +4450,7 @@ jermanis,jermanis,1,8
 slavik,slavik,1,6
 migrasi,migrasi,1,7
 slav,slav,1,4
+záhorie,záhorie,1,7
 lower,lower,1,5
 nitra,nitra,1,5
 lempeng,lempeng,1,7
@@ -4378,6 +4470,7 @@ beralkohol,beralkohol,1,10
 menyebarkan,menyebarkan,1,11
 bir,bir,1,3
 mead,mead,1,4
+bjórr,bjórr,1,5
 aturannya,aturannya,1,9
 pertarungan,pertarungan,1,11
 jantan,jantan,1,6
@@ -4457,12 +4550,14 @@ sirkuit,sirkuit,1,7
 detail,detail,1,6
 kenangan,kenangan,1,8
 yannis,yannis,1,6
+megabazuz,megabazuz,1,9
 padang,padang,1,6
 california,california,1,10
 scythia,scythia,1,7
 persekutuan,persekutuan,1,11
 selat,selat,1,5
 megaria,megaria,1,7
+byzantium,byzantium,1,9
 darius,darius,1,6
 dihormati,dihormati,1,9
 paeonian,paeonian,1,8

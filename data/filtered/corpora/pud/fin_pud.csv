@@ -236,6 +236,7 @@ pienen,pienen,5,6
 kongin,kongin,5,6
 kuuluvat,kuuluvat,5,8
 britannian,britannian,5,10
+qing,qing,5,4
 hetkellä,hetkellä,5,8
 vaikuttaa,vaikuttaa,5,9
 ainoastaan,ainoastaan,5,10
@@ -510,6 +511,7 @@ elämänsä,elämänsä,3,8
 saman,saman,3,5
 kuningaskunnan,kuningaskunnan,3,14
 yhdistyneen,yhdistyneen,3,11
+winstone,winstone,3,8
 mishima,mishima,3,7
 rooman,rooman,3,6
 osalla,osalla,3,6
@@ -608,6 +610,7 @@ yritys,yritys,3,6
 siis,siis,3,4
 ainoa,ainoa,3,5
 silloin,silloin,3,7
+new,new,3,3
 vaikutti,vaikutti,3,8
 viimeisin,viimeisin,3,9
 esittää,esittää,3,7
@@ -850,6 +853,7 @@ santa,santa,2,5
 kirjautui,kirjautui,2,9
 naisten,naisten,2,7
 valtasi,valtasi,2,7
+herzlin,herzlin,2,7
 tarkasti,tarkasti,2,8
 elokuvissa,elokuvissa,2,10
 osaa,osaa,2,4
@@ -958,6 +962,7 @@ international,international,2,13
 osoittamasta,osoittamasta,2,12
 vapauttaa,vapauttaa,2,9
 toistaiseksi,toistaiseksi,2,12
+dündar,dündar,2,6
 epäselvää,epäselvää,2,9
 lakkautettiin,lakkautettiin,2,13
 von,von,2,3
@@ -1026,6 +1031,7 @@ pohjoisosa,pohjoisosa,2,10
 vallan,vallan,2,6
 korvasi,korvasi,2,7
 ludvig,ludvig,2,6
+mojmír,mojmír,2,6
 tuuli,tuuli,2,5
 hyväksytty,hyväksytty,2,10
 tarjosivat,tarjosivat,2,10
@@ -1107,6 +1113,7 @@ tahansa,tahansa,2,7
 radan,radan,2,5
 tuoda,tuoda,2,5
 anaya,anaya,2,5
+gonzález,gonzález,2,8
 meksiko,meksiko,2,7
 carson,carson,2,6
 tapana,tapana,2,6
@@ -1240,6 +1247,7 @@ harvinainen,harvinainen,2,11
 america,america,2,7
 kaupungeissa,kaupungeissa,2,12
 havaittu,havaittu,2,8
+news,news,2,4
 association,association,2,11
 sille,sille,2,5
 kaltainen,kaltainen,2,9
@@ -1277,6 +1285,7 @@ kuussa,kuussa,2,6
 kehon,kehon,2,5
 tarkoitus,tarkoitus,2,9
 minuuttia,minuuttia,2,9
+washingtonin,washingtonin,2,12
 päällä,päällä,2,6
 toimia,toimia,2,6
 tulleen,tulleen,2,7
@@ -1387,10 +1396,12 @@ ikonografiassa,ikonografiassa,1,14
 mesoamerikkalaisessa,mesoamerikkalaisessa,1,20
 esihistoriallisessa,esihistoriallisessa,1,19
 sigur,sigur,1,5
+rós,rós,1,3
 kokonaisäänistä,kokonaisäänistä,1,15
 laululle,laululle,1,8
 fjögur,fjögur,1,6
 kuvata,kuvata,1,6
+píanó,píanó,1,5
 purjeita,purjeita,1,8
 puolustuksia,puolustuksia,1,12
 labeouf,labeouf,1,7
@@ -1444,7 +1455,9 @@ kannustaa,kannustaa,1,9
 over,over,1,4
 albumille,albumille,1,9
 abakumovia,abakumovia,1,10
+anyway,anyway,1,6
 raffertyn,raffertyn,1,9
+uaxactunista,uaxactunista,1,12
 saatujen,saatujen,1,8
 mayaintiaanien,mayaintiaanien,1,14
 väestörekisterin,väestörekisterin,1,16
@@ -1456,6 +1469,7 @@ henkilöä,henkilöä,1,8
 alamaiden,alamaiden,1,9
 esittämien,esittämien,1,10
 cup,cup,1,3
+winston,winston,1,7
 nascar,nascar,1,6
 kulttuuriseen,kulttuuriseen,1,13
 kehitykseen,kehitykseen,1,11
@@ -1467,10 +1481,12 @@ robinson,robinson,1,8
 perusteelliseksi,perusteelliseksi,1,16
 paluuksi,paluuksi,1,8
 genreen,genreen,1,7
+wing,wing,1,4
 pohjalta,pohjalta,1,8
 prayer,prayer,1,6
 mallien,mallien,1,7
 stealers,stealers,1,8
+wheel,wheel,1,5
 eganin,eganin,1,6
 useilla,useilla,1,7
 kappaleilla,kappaleilla,1,11
@@ -1531,6 +1547,7 @@ herra,herra,1,5
 maisterin,maisterin,1,9
 valmistui,valmistui,1,9
 evening,evening,1,7
+lennoxin,lennoxin,1,8
 edinburgh,edinburgh,1,9
 näytelmäarvioita,näytelmäarvioita,1,16
 edinburghin,edinburghin,1,11
@@ -1557,6 +1574,8 @@ järjestyksessä,järjestyksessä,1,14
 myyty,myyty,1,5
 in,in,1,2
 earth,earth,1,5
+power,power,1,5
+saqib,saqib,1,5
 painosta,painosta,1,8
 puolassa,puolassa,1,8
 eläintarhan,eläintarhan,1,11
@@ -1574,6 +1593,7 @@ tunteja,tunteja,1,7
 graftonin,graftonin,1,9
 pääasiallisena,pääasiallisena,1,14
 harras,harras,1,6
+khanzir,khanzir,1,7
 valtaan,valtaan,1,7
 paluun,paluun,1,6
 toryjen,toryjen,1,7
@@ -1591,6 +1611,8 @@ liuta,liuta,1,5
 kuluttaminen,kuluttaminen,1,12
 ylenpalttinen,ylenpalttinen,1,13
 myydyimmistään,myydyimmistään,1,14
+west,west,1,4
+wild,wild,1,4
 albuminsa,albuminsa,1,9
 hortonin,hortonin,1,8
 anne,anne,1,4
@@ -1622,13 +1644,16 @@ kansoilta,kansoilta,1,9
 apua,apua,1,4
 musiikkipiireissä,musiikkipiireissä,1,17
 thought,thought,1,7
+knew,knew,1,4
 nousu,nousu,1,5
 toiseksi,toiseksi,1,8
 mitätön,mitätön,1,7
 ehdokkuutensa,ehdokkuutensa,1,13
 alahuone,alahuone,1,8
 kahdesti,kahdesti,1,8
+wilkes,wilkes,1,6
 teatterituotannossa,teatterituotannossa,1,19
+wiz,wiz,1,3
 glindaa,glindaa,1,7
 noita,noita,1,5
 näytellä,näytellä,1,8
@@ -1713,6 +1738,7 @@ näyttelijätär,näyttelijätär,1,13
 kuninkaan,kuninkaan,1,9
 erosi,erosi,1,5
 jokin,jokin,1,5
+toweriin,toweriin,1,8
 vangittiin,vangittiin,1,10
 seuraajansa,seuraajansa,1,11
 uskomme,uskomme,1,7
@@ -1727,12 +1753,14 @@ edvard,edvard,1,6
 lasta,lasta,1,5
 plantagenetin,plantagenetin,1,13
 herttuan,herttuan,1,8
+georgetown,georgetown,1,10
 cecily,cecily,1,6
 säästi,säästi,1,6
 henkensä,henkensä,1,8
 täyttää,täyttää,1,7
 jenningsin,jenningsin,1,10
 ystävä,ystävä,1,6
+wrightin,wrightin,1,8
 jennings,jennings,1,8
 garth,garth,1,5
 ohjaajakollega,ohjaajakollega,1,14
@@ -1743,9 +1771,12 @@ konseptitaidetta,konseptitaidetta,1,16
 kuvakäsikirjoituksia,kuvakäsikirjoituksia,1,20
 sarjakuvataiteilija,sarjakuvataiteilija,1,19
 veli,veli,1,4
+wrightilla,wrightilla,1,10
+wellsissä,wellsissä,1,9
 somersetin,somersetin,1,10
 poolessa,poolessa,1,8
 dorsetin,dorsetin,1,8
+wright,wright,1,6
 parempia,parempia,1,8
 roolisuorituksia,roolisuorituksia,1,16
 linnunradan,linnunradan,1,11
@@ -1767,6 +1798,7 @@ konferenssi,konferenssi,1,11
 tunnustamisesta,tunnustamisesta,1,15
 vaatimuksia,vaatimuksia,1,11
 keskitasolla,keskitasolla,1,12
+rambow,rambow,1,6
 son,son,1,3
 liftareille,liftareille,1,11
 studioalbumistaan,studioalbumistaan,1,17
@@ -1786,6 +1818,7 @@ mystiseen,mystiseen,1,9
 painottaa,painottaa,1,9
 periaatteena,periaatteena,1,12
 johtavana,johtavana,1,9
+marxisminsa,marxisminsa,1,11
 maksoi,maksoi,1,6
 vakiinnuttaa,vakiinnuttaa,1,12
 bloch,bloch,1,5
@@ -1831,6 +1864,7 @@ roolin,roolin,1,6
 scott,scott,1,5
 kristin,kristin,1,7
 mcgregor,mcgregor,1,8
+ewan,ewan,1,4
 tähtinä,tähtinä,1,7
 muina,muina,1,5
 hallström,hallström,1,9
@@ -1849,6 +1883,7 @@ hahmon,hahmon,1,6
 etäännyttämään,etäännyttämään,1,14
 pyrki,pyrki,1,5
 epäillyn,epäillyn,1,8
+willis,willis,1,6
 bruce,bruce,1,5
 rooleissa,rooleissa,1,9
 muissa,muissa,1,6
@@ -1902,6 +1937,7 @@ viikossa,viikossa,1,8
 painoharjoittelun,painoharjoittelun,1,17
 jälkeläinen,jälkeläinen,1,11
 ieyasun,ieyasun,1,7
+tokugawa,tokugawa,1,8
 talmadgen,talmadgen,1,9
 näyttelemään,näyttelemään,1,12
 valentinon,valentinon,1,10
@@ -1921,6 +1957,7 @@ meyerin,meyerin,1,7
 oppiakseen,oppiakseen,1,10
 työskentelisi,työskentelisi,1,13
 ehdottaen,ehdottaen,1,9
+irène,irène,1,5
 meyer,meyer,1,5
 edeltäjiä,edeltäjiä,1,9
 informaatioteknologian,informaatioteknologian,1,22
@@ -1967,14 +2004,17 @@ poliisille,poliisille,1,10
 uhri,uhri,1,4
 hyökännyt,hyökännyt,1,9
 valtakunnanneuvoston,valtakunnanneuvoston,1,20
+halifax,halifax,1,7
 juliasta,juliasta,1,8
 romeosta,romeosta,1,8
 itävaltaa,itävaltaa,1,9
 toukokuussa,toukokuussa,1,11
+tšekkiläiset,tšekkiläiset,1,12
 tuohon,tuohon,1,6
 klubilla,klubilla,1,8
 kadulla,kadulla,1,7
 ulkona,ulkona,1,6
+mômone,mômone,1,6
 piaf,piaf,1,4
 huoneeseen,huoneeseen,1,10
 jätettiin,jätettiin,1,9
@@ -1983,6 +2023,7 @@ potomac,potomac,1,7
 rajavartijat,rajavartijat,1,12
 rajavalvontaa,rajavalvontaa,1,13
 pysähtymättä,pysähtymättä,1,12
+tšekkoslovakiaan,tšekkoslovakiaan,1,16
 river,river,1,5
 yrittivät,yrittivät,1,9
 maanviljelijää,maanviljelijää,1,14
@@ -2013,6 +2054,7 @@ pearl,pearl,1,5
 tyytyväinen,tyytyväinen,1,11
 sukhothai,sukhothai,1,9
 talouskasvun,talouskasvun,1,12
+alexanderin,alexanderin,1,11
 aikakauteen,aikakauteen,1,11
 floridan,floridan,1,8
 ruokaongelmia,ruokaongelmia,1,13
@@ -2049,6 +2091,7 @@ esittäneet,esittäneet,1,10
 maalitauluksi,maalitauluksi,1,13
 joutuivat,joutuivat,1,9
 portugaliin,portugaliin,1,11
+huawei,huawei,1,6
 lähtivät,lähtivät,1,8
 juutalaisista,juutalaisista,1,13
 espanjalaisista,espanjalaisista,1,15
@@ -2116,6 +2159,7 @@ periaatteissa,periaatteissa,1,13
 ruoan,ruoan,1,5
 työn,työn,1,4
 perusteellisen,perusteellisen,1,14
+watt,watt,1,4
 skotti,skotti,1,6
 lannoitetta,lannoitetta,1,11
 vuotia,vuotia,1,6
@@ -2174,11 +2218,14 @@ tarve,tarve,1,5
 kiplingin,kiplingin,1,9
 kiplingillä,kiplingillä,1,11
 teetti,teetti,1,6
+wheeler,wheeler,1,7
 lennolla,lennolla,1,8
 toimittaja,toimittaja,1,10
+trix,trix,1,4
 jonne,jonne,1,5
 southseassa,southseassa,1,11
 käytettävä,käytettävä,1,10
+trixin,trixin,1,6
 täysihoidossa,täysihoidossa,1,13
 garrardiin,garrardiin,1,10
 florence,florence,1,8
@@ -2206,6 +2253,7 @@ jin,jin,1,3
 tulevaisuutta,tulevaisuutta,1,13
 ajatellut,ajatellut,1,9
 marraskuun,marraskuun,1,10
+gazettessa,gazettessa,1,10
 tarinaansa,tarinaansa,1,10
 epäluotettava,epäluotettava,1,13
 kauneus,kauneus,1,7
@@ -2217,6 +2265,7 @@ alkuperä,alkuperä,1,8
 hispania,hispania,1,8
 sanan,sanan,1,5
 kolmas,kolmas,1,6
+yucatánissa,yucatánissa,1,11
 kaudella,kaudella,1,8
 jälkiklassisella,jälkiklassisella,1,16
 faktassa,faktassa,1,8
@@ -2290,6 +2339,7 @@ inkvisitio,inkvisitio,1,10
 sosiaalisesti,sosiaalisesti,1,13
 apulainen,apulainen,1,9
 arkkipiispan,arkkipiispan,1,12
+salzburgin,salzburgin,1,10
 kramer,kramer,1,6
 heinrich,heinrich,1,8
 dominikaanipappi,dominikaanipappi,1,16
@@ -2391,6 +2441,7 @@ henkilönä,henkilönä,1,9
 luotiin,luotiin,1,7
 suuntaerottelukyvyn,suuntaerottelukyvyn,1,19
 dipoliantennia,dipoliantennia,1,14
+alvarezin,alvarezin,1,9
 gca,gca,1,3
 approach,approach,1,8
 controlled,controlled,1,10
@@ -2402,6 +2453,7 @@ ilmailussa,ilmailussa,1,10
 roolissa,roolissa,1,8
 itkeä,itkeä,1,5
 parhaiten,parhaiten,1,9
+alvarez,alvarez,1,7
 tutkajärjestelmä,tutkajärjestelmä,1,16
 paljoakaan,paljoakaan,1,10
 muuttaakseen,muuttaakseen,1,12
@@ -2435,6 +2487,7 @@ tappoi,tappoi,1,6
 jättäen,jättäen,1,7
 voittaneensa,voittaneensa,1,12
 subianto,subianto,1,8
+prabowo,prabowo,1,7
 kilpailijansa,kilpailijansa,1,13
 kaksivuotiaan,kaksivuotiaan,1,13
 tapon,tapon,1,5
@@ -2471,9 +2524,11 @@ päätöksestään,päätöksestään,1,13
 vastuun,vastuun,1,7
 yudhoyonoa,yudhoyonoa,1,10
 väistyvää,väistyvää,1,9
+jokowi,jokowi,1,6
 täysikokoisesta,täysikokoisesta,1,15
 disney,disney,1,6
 halun,halun,1,5
+oswaldiin,oswaldiin,1,9
 peiteagentti,peiteagentti,1,12
 vihjataan,vihjataan,1,9
 tilanteessa,tilanteessa,1,11
@@ -2490,6 +2545,7 @@ jakson,jakson,1,6
 anglikaanipappi,anglikaanipappi,1,15
 suurlähetystön,suurlähetystön,1,14
 hechler,hechler,1,7
+william,william,1,7
 pastori,pastori,1,7
 maaliskuun,maaliskuun,1,10
 homer,homer,1,5
@@ -2530,6 +2586,7 @@ aasiassa,aasiassa,1,8
 tappoivat,tappoivat,1,9
 miehittäjäjoukot,miehittäjäjoukot,1,16
 japanilaiset,japanilaiset,1,12
+shōwasta,shōwasta,1,8
 eläessään,eläessään,1,9
 etunimillä,etunimillä,1,10
 viitataan,viitataan,1,9
@@ -2548,6 +2605,7 @@ hyökkäyksensä,hyökkäyksensä,1,13
 vaikuttavan,vaikuttavan,1,11
 toimintakykyisenä,toimintakykyisenä,1,17
 ratsuväki,ratsuväki,1,9
+weller,weller,1,6
 lisääntyneeseen,lisääntyneeseen,1,15
 chandler,chandler,1,8
 miekkailukoulutusta,miekkailukoulutusta,1,19
@@ -2657,6 +2715,7 @@ fallon,fallon,1,6
 oopiumkaupan,oopiumkaupan,1,12
 ulkomaisen,ulkomaisen,1,10
 kielsi,kielsi,1,6
+zexu,zexu,1,4
 lin,lin,1,3
 kenraalikuvernööri,kenraalikuvernööri,1,18
 hubein,hubein,1,6
@@ -2756,6 +2815,7 @@ voittaja,voittaja,1,8
 katuajon,katuajon,1,8
 olympiakisoissa,olympiakisoissa,1,15
 merdingeniin,merdingeniin,1,12
+südbadenin,südbadenin,1,10
 tyttöystävänsä,tyttöystävänsä,1,14
 telekomin,telekomin,1,9
 team,team,1,4
@@ -2773,6 +2833,7 @@ sovintoa,sovintoa,1,8
 tarmokkaasti,tarmokkaasti,1,12
 kirjallisuuspalkinnoilla,kirjallisuuspalkinnoilla,1,24
 olleen,olleen,1,6
+weissia,weissia,1,7
 kunnioittivat,kunnioittivat,1,13
 kaupungit,kaupungit,1,9
 bremenin,bremenin,1,8
@@ -2926,6 +2987,7 @@ georg,georg,1,5
 tehtailija,tehtailija,1,10
 maahanmuuttajia,maahanmuuttajia,1,15
 myi,myi,1,3
+württembergin,württembergin,1,13
 taloista,taloista,1,8
 säästyneistä,säästyneistä,1,12
 tuholta,tuholta,1,7
@@ -2982,6 +3044,7 @@ kansallissosialistit,kansallissosialistit,1,20
 rajoitukset,rajoitukset,1,11
 siirtomaavaltojen,siirtomaavaltojen,1,17
 kriisi,kriisi,1,6
+suezin,suezin,1,6
 muussa,muussa,1,6
 vapaiden,vapaiden,1,8
 frans,frans,1,5
@@ -3028,6 +3091,7 @@ kuparin,kuparin,1,7
 kukkuloilla,kukkuloilla,1,11
 muumio,muumio,1,6
 jäätynyt,jäätynyt,1,8
+ötzi,ötzi,1,4
 kireä,kireä,1,5
 leivän,leivän,1,6
 alituisesta,alituisesta,1,11
@@ -3051,6 +3115,7 @@ ryhtynyt,ryhtynyt,1,8
 puutteesta,puutteesta,1,10
 hinnasta,hinnasta,1,8
 taiteilija,taiteilija,1,10
+walt,walt,1,4
 toivoen,toivoen,1,7
 saratogassa,saratogassa,1,11
 brittiläiset,brittiläiset,1,12
@@ -3114,6 +3179,7 @@ tukipilarien,tukipilarien,1,12
 erityisavustaja,erityisavustaja,1,15
 rinnakkaista,rinnakkaista,1,12
 apsiksessa,apsiksessa,1,10
+gaudí,gaudí,1,5
 antonio,antonio,1,7
 tyylille,tyylille,1,8
 artistien,artistien,1,9
@@ -3229,6 +3295,7 @@ buenos,buenos,1,6
 valloittamisen,valloittamisen,1,14
 suunnitelmansa,suunnitelmansa,1,14
 toteuttaa,toteuttaa,1,9
+enrique,enrique,1,7
 molempien,molempien,1,9
 luonteenomaisia,luonteenomaisia,1,15
 ratkaisut,ratkaisut,1,9
@@ -3341,6 +3408,7 @@ koulutettiin,koulutettiin,1,12
 olivia,olivia,1,6
 syystä,syystä,1,6
 ennustaneet,ennustaneet,1,11
+walter,walter,1,6
 universumin,universumin,1,11
 sopuisa,sopuisa,1,7
 suhde,suhde,1,5
@@ -3404,6 +3472,7 @@ saarten,saarten,1,7
 rauhansopimukseen,rauhansopimukseen,1,17
 yleiseen,yleiseen,1,8
 selkeä,selkeä,1,6
+austerlitzin,austerlitzin,1,12
 mantereella,mantereella,1,11
 johtui,johtui,1,6
 luovuttiin,luovuttiin,1,10
@@ -3411,6 +3480,7 @@ valloitussuunnitelmasta,valloitussuunnitelmasta,1,23
 kunnalle,kunnalle,1,8
 varustettu,varustettu,1,10
 albaniaan,albaniaan,1,9
+renewable,renewable,1,9
 consumer,consumer,1,8
 menettelytavoille,menettelytavoille,1,17
 erdoganin,erdoganin,1,9
@@ -3430,6 +3500,7 @@ lähemmäs,lähemmäs,1,8
 vihollisryhmittymää,vihollisryhmittymää,1,19
 tuonut,tuonut,1,6
 haririn,haririn,1,7
+organization,organization,1,12
 energies,energies,1,8
 vanhemman,vanhemman,1,9
 irena,irena,1,5
@@ -3468,6 +3539,7 @@ sukulaisia,sukulaisia,1,10
 älyllisiä,älyllisiä,1,9
 olimmeko,olimmeko,1,8
 bruyn,bruyn,1,5
+günter,günter,1,6
 kirjoittaja,kirjoittaja,1,11
 tunsinko,tunsinko,1,8
 tapaansa,tapaansa,1,8
@@ -3531,6 +3603,7 @@ oikeusministeri,oikeusministeri,1,15
 edustajia,edustajia,1,9
 viestissä,viestissä,1,9
 ehdokkuutta,ehdokkuutta,1,11
+sarkozyn,sarkozyn,1,8
 nicolas,nicolas,1,7
 tukee,tukee,1,5
 dati,dati,1,4
@@ -3715,6 +3788,7 @@ selvää,selvää,1,6
 herätyskellosi,herätyskellosi,1,14
 kiisteletkö,kiisteletkö,1,11
 h,h,1,1
+williamsia,williamsia,1,10
 serena,serena,1,6
 finaalipelissä,finaalipelissä,1,14
 sensaation,sensaation,1,10
@@ -3729,6 +3803,7 @@ puutteella,puutteella,1,10
 sanomalehti,sanomalehti,1,11
 päätään,päätään,1,7
 pudistella,pudistella,1,10
+kühn,kühn,1,4
 kunnossa,kunnossa,1,8
 huonossa,huonossa,1,8
 ulkomaankauppa,ulkomaankauppa,1,14
@@ -3745,6 +3820,7 @@ turkkilainen,turkkilainen,1,12
 paikalla,paikalla,1,8
 etten,etten,1,5
 die,die,1,3
+zeit,zeit,1,4
 tutki,tutki,1,5
 hitissä,hitissä,1,7
 suunnittelun,suunnittelun,1,12
@@ -3769,6 +3845,7 @@ roistoksi,roistoksi,1,9
 kutsuttu,kutsuttu,1,8
 uskonnollisten,uskonnollisten,1,14
 ylpein,ylpein,1,6
+fátima,fátima,1,6
 kumoamista,kumoamista,1,10
 lainsäädännön,lainsäädännön,1,13
 vaatineet,vaatineet,1,9
@@ -3786,9 +3863,12 @@ kuuteen,kuuteen,1,7
 viimeiseen,viimeiseen,1,10
 taloudenhoitajana,taloudenhoitajana,1,17
 pintado,pintado,1,7
+ángel,ángel,1,5
+báñez,báñez,1,5
 osasto,osasto,1,6
 aatelisarvo,aatelisarvo,1,11
 kohtaa,kohtaa,1,6
+barón,barón,1,5
 eilen,eilen,1,5
 viestejä,viestejä,1,8
 ymmärtäneet,ymmärtäneet,1,11
@@ -3808,12 +3888,14 @@ kohtalo,kohtalo,1,7
 käsitellä,käsitellä,1,9
 haasteita,haasteita,1,9
 edustajana,edustajana,1,10
+durán,durán,1,5
 edistysmielisimpiä,edistysmielisimpiä,1,18
 edustavat,edustavat,1,9
 ohittaen,ohittaen,1,8
 piilaaksossa,piilaaksossa,1,12
 vahvemmin,vahvemmin,1,9
 streetillä,streetillä,1,10
+wall,wall,1,4
 tahtia,tahtia,1,6
 määräämässä,määräämässä,1,11
 teknologiayritys,teknologiayritys,1,16
@@ -3828,6 +3910,8 @@ rossin,rossin,1,6
 hartioillanne,hartioillanne,1,13
 humanoidirobotti,humanoidirobotti,1,16
 sovelluksista,sovelluksista,1,13
+exxonmobilin,exxonmobilin,1,12
+amazonista,amazonista,1,10
 neljäs,neljäs,1,6
 madridin,madridin,1,8
 maroto,maroto,1,6
@@ -3840,6 +3924,7 @@ lepää,lepää,1,5
 autonomisen,autonomisen,1,11
 summitin,summitin,1,8
 teslan,teslan,1,6
+view,view,1,4
 mountain,mountain,1,8
 tapahtumaan,tapahtumaan,1,11
 yksityiseen,yksityiseen,1,11
@@ -3872,6 +3957,8 @@ kauneuden,kauneuden,1,9
 mielin,mielin,1,6
 seuraajia,seuraajia,1,9
 voittoa,voittoa,1,7
+sánchez,sánchez,1,7
+plaza,plaza,1,5
 perustuen,perustuen,1,9
 pidettiin,pidettiin,1,9
 vihkimistilaisuus,vihkimistilaisuus,1,17
@@ -3883,6 +3970,7 @@ portailla,portailla,1,9
 suurilla,suurilla,1,8
 michaelin,michaelin,1,9
 ulkoilmateatteri,ulkoilmateatteri,1,16
+brexitistä,brexitistä,1,10
 medialle,medialle,1,8
 vastannut,vastannut,1,9
 vältellyt,vältellyt,1,9
@@ -3945,6 +4033,7 @@ digitaaliteknologiaan,digitaaliteknologiaan,1,21
 neuvonantajana,neuvonantajana,1,14
 neuvosto,neuvosto,1,8
 digitaalinen,digitaalinen,1,12
+numérique,numérique,1,9
 du,du,1,2
 conseil,conseil,1,7
 hyväksyä,hyväksyä,1,8
@@ -3989,6 +4078,7 @@ sisällöstä,sisällöstä,1,10
 oppaan,oppaan,1,6
 huomautuksia,huomautuksia,1,12
 pahoittelee,pahoittelee,1,11
+ouvrière,ouvrière,1,8
 force,force,1,5
 työpöydillään,työpöydillään,1,13
 esineitä,esineitä,1,8
@@ -4063,6 +4153,7 @@ martassa,martassa,1,8
 opiskelijoille,opiskelijoille,1,14
 casa,casa,1,4
 vaimoineen,vaimoineen,1,10
+zuckerbergin,zuckerbergin,1,12
 franciscus,franciscus,1,10
 urheilukentälle,urheilukentälle,1,15
 pidetystä,pidetystä,1,9
@@ -4129,6 +4220,7 @@ valtavat,valtavat,1,8
 esitetyt,esitetyt,1,8
 mahdollistanut,mahdollistanut,1,14
 työpaikkansa,työpaikkansa,1,12
+winterkornille,winterkornille,1,14
 rangaista,rangaista,1,9
 maksoivat,maksoivat,1,9
 arvosta,arvosta,1,7
@@ -4137,6 +4229,7 @@ kymmeniä,kymmeniä,1,8
 kiinteistönvälitysneuvostolle,kiinteistönvälitysneuvostolle,1,29
 epäeettisesti,epäeettisesti,1,13
 keskittyy,keskittyy,1,9
+winterkorniin,winterkorniin,1,13
 järjestön,järjestön,1,9
 jälleenmyynti,jälleenmyynti,1,13
 vakaata,vakaata,1,7
@@ -4163,6 +4256,7 @@ reco,reco,1,4
 carlossa,carlossa,1,8
 monte,monte,1,5
 pairea,pairea,1,6
+benoît,benoît,1,6
 kasvava,kasvava,1,7
 andyn,andyn,1,5
 ehdottomasti,ehdottomasti,1,12
@@ -4412,6 +4506,7 @@ sanottuna,sanottuna,1,9
 vallita,vallita,1,7
 yleiset,yleiset,1,7
 marr,marr,1,4
+andrew,andrew,1,6
 mielenosoitusaaltoihin,mielenosoitusaaltoihin,1,22
 varautuvan,varautuvan,1,10
 pitkittyminen,pitkittyminen,1,13
@@ -4533,6 +4628,7 @@ hautaamisen,hautaamisen,1,11
 laillisen,laillisen,1,9
 sijaitsevissa,sijaitsevissa,1,13
 murhasta,murhasta,1,8
+papworthin,papworthin,1,10
 addenbrooken,addenbrooken,1,12
 syytteessä,syytteessä,1,10
 lopputuloksena,lopputuloksena,1,14
@@ -4614,6 +4710,8 @@ päättäneet,päättäneet,1,10
 hollantilaiset,hollantilaiset,1,14
 spring,spring,1,6
 dream,dream,1,5
+winter,winter,1,6
+winds,winds,1,5
 tarkasteleminen,tarkasteleminen,1,15
 nimiksi,nimiksi,1,7
 kirjaa,kirjaa,1,6
@@ -4679,6 +4777,7 @@ presidentille,presidentille,1,13
 yleisöstä,yleisöstä,1,9
 perheet,perheet,1,7
 vieraannuttanut,vieraannuttanut,1,15
+hollywood,hollywood,1,9
 onkaan,onkaan,1,6
 vuosikymmenien,vuosikymmenien,1,14
 elokuvateollisuus,elokuvateollisuus,1,17
@@ -4749,6 +4848,7 @@ johtuneet,johtuneet,1,9
 teot,teot,1,4
 synkät,synkät,1,6
 cottonin,cottonin,1,8
+zimmer,zimmer,1,6
 draamaa,draamaa,1,7
 kohtelin,kohtelin,1,8
 kokeesta,kokeesta,1,8
@@ -4764,12 +4864,14 @@ pakkomielteeseemme,pakkomielteeseemme,1,18
 kasvavaan,kasvavaan,1,9
 läheisesti,läheisesti,1,10
 taktiilitrendi,taktiilitrendi,1,14
+winhamille,winhamille,1,10
 rachel,rachel,1,6
 sisustussuunnittelija,sisustussuunnittelija,1,21
 suunnittelusta,suunnittelusta,1,14
 toimeksiannon,toimeksiannon,1,13
 pinnan,pinnan,1,6
 keuhkossaan,keuhkossaan,1,11
+tower,tower,1,5
 south,south,1,5
 maamerkki,maamerkki,1,9
 muisto,muisto,1,6
@@ -4782,6 +4884,7 @@ odia,odia,1,4
 näytökseen,näytökseen,1,10
 eturyhmät,eturyhmät,1,9
 edustettuina,edustettuina,1,12
+washingtonissa,washingtonissa,1,14
 lopputulos,lopputulos,1,10
 lähde,lähde,1,5
 loputon,loputon,1,7
@@ -4890,6 +4993,7 @@ esitän,esitän,1,6
 seuraamaan,seuraamaan,1,10
 kaikenlaista,kaikenlaista,1,12
 mainos,mainos,1,6
+zay,zay,1,3
 kannettavalla,kannettavalla,1,13
 nauhoittamista,nauhoittamista,1,14
 buck,buck,1,4
@@ -4897,6 +5001,7 @@ sovellustyökalun,sovellustyökalun,1,16
 if,if,1,2
 knuck,knuck,1,5
 kuvailivat,kuvailivat,1,10
+zaylon,zaylon,1,6
 äskettäisessä,äskettäisessä,1,13
 loppuu,loppuu,1,6
 pääasiastaan,pääasiastaan,1,12
@@ -4911,6 +5016,7 @@ tutkijaa,tutkijaa,1,8
 järkevämmäksi,järkevämmäksi,1,13
 rajoittaa,rajoittaa,1,9
 puolueelle,puolueelle,1,10
+wolmar,wolmar,1,6
 christian,christian,1,9
 tehneet,tehneet,1,7
 rautatien,rautatien,1,9
@@ -4963,6 +5069,7 @@ tutustumiskynnyksen,tutustumiskynnyksen,1,19
 poistaen,poistaen,1,8
 toimivat,toimivat,1,8
 traum,traum,1,5
+zettels,zettels,1,7
 ladotun,ladotun,1,7
 järjestö,järjestö,1,8
 taiteellista,taiteellista,1,12
@@ -4975,6 +5082,7 @@ niili,niili,1,5
 tappaminen,tappaminen,1,10
 kokeilin,kokeilin,1,8
 keskustellen,keskustellen,1,12
+woodsin,woodsin,1,7
 tarinansa,tarinansa,1,9
 kylmän,kylmän,1,6
 kuviteltuja,kuviteltuja,1,11
@@ -5264,6 +5372,7 @@ provosoivia,provosoivia,1,11
 ajanjaksolla,ajanjaksolla,1,12
 lainata,lainata,1,7
 korusuunnittelua,korusuunnittelua,1,16
+glasgow,glasgow,1,7
 school,school,1,6
 art,art,1,3
 luonnonsuojelijoiden,luonnonsuojelijoiden,1,20
@@ -5320,6 +5429,7 @@ frankia,frankia,1,7
 pyytäisi,pyytäisi,1,8
 ehdotin,ehdotin,1,7
 löytääkseni,löytääkseni,1,11
+wintour,wintour,1,7
 yliopistossa,yliopistossa,1,12
 northamptonin,northamptonin,1,13
 näyttelyissä,näyttelyissä,1,12
@@ -5400,6 +5510,7 @@ palauttaa,palauttaa,1,9
 kaupankäynnistä,kaupankäynnistä,1,15
 luottamusta,luottamusta,1,11
 bbc,bbc,1,3
+quebeciläistä,quebeciläistä,1,13
 dieselgeneraattoreiden,dieselgeneraattoreiden,1,22
 päiväksi,päiväksi,1,8
 toiminnan,toiminnan,1,9
@@ -5417,6 +5528,7 @@ vega,vega,1,4
 jäsentä,jäsentä,1,7
 miehistön,miehistön,1,9
 laivassa,laivassa,1,8
+world,world,1,5
 service,service,1,7
 bush,bush,1,4
 vähintään,vähintään,1,9
@@ -5611,11 +5723,13 @@ teollisuustuotanto,teollisuustuotanto,1,18
 puoli,puoli,1,5
 nevadan,nevadan,1,7
 teknologiaa,teknologiaa,1,11
+geziran,geziran,1,7
 edistivät,edistivät,1,9
 ohjauskeinot,ohjauskeinot,1,12
 niilin,niilin,1,6
 länsipuolella,länsipuolella,1,13
 poistetaan,poistetaan,1,10
+townin,townin,1,6
 hallinto,hallinto,1,8
 kiinaa,kiinaa,1,6
 goryeon,goryeon,1,7
@@ -5637,6 +5751,7 @@ taloudellinen,taloudellinen,1,13
 suunnattomasti,suunnattomasti,1,14
 redditin,redditin,1,8
 murentua,murentua,1,8
+twitterin,twitterin,1,9
 tilasta,tilasta,1,7
 hyökkäyksiin,hyökkäyksiin,1,12
 hyödyksi,hyödyksi,1,8
@@ -5661,6 +5776,7 @@ nopeassa,nopeassa,1,8
 täyteen,täyteen,1,7
 hallinnon,hallinnon,1,9
 uudistamaan,uudistamaan,1,11
+townissa,townissa,1,8
 viimein,viimein,1,7
 brooks,brooks,1,6
 puoliväliin,puoliväliin,1,11
@@ -5919,6 +6035,7 @@ syntymätodistuksiin,syntymätodistuksiin,1,19
 thaimaalaisiin,thaimaalaisiin,1,14
 kuninkailta,kuninkailta,1,11
 temppelistä,temppelistä,1,11
+gezerin,gezerin,1,7
 veloittaako,veloittaako,1,11
 amarna,amarna,1,6
 käyttömaksua,käyttömaksua,1,12
@@ -5973,6 +6090,7 @@ tuottaa,tuottaa,1,7
 käytännöllisiä,käytännöllisiä,1,14
 horoskooppieläin,horoskooppieläin,1,16
 apina,apina,1,5
+mantšut,mantšut,1,7
 haastateltaisiin,haastateltaisiin,1,16
 margaretille,margaretille,1,12
 parman,parman,1,6
@@ -6095,6 +6213,7 @@ kuu,kuu,1,3
 tuhatta,tuhatta,1,7
 tiettynä,tiettynä,1,8
 vaihe,vaihe,1,5
+newton,newton,1,6
 pekingille,pekingille,1,10
 karkauskuukausi,karkauskuukausi,1,15
 poikkeuksellinen,poikkeuksellinen,1,16
@@ -6125,6 +6244,7 @@ entistä,entistä,1,7
 jesse,jesse,1,5
 hallitsema,hallitsema,1,10
 voimassa,voimassa,1,8
+mantšujen,mantšujen,1,9
 mongolian,mongolian,1,9
 selostus,selostus,1,8
 taistelusta,taistelusta,1,11
@@ -6165,6 +6285,7 @@ bianin,bianin,1,6
 rakentamista,rakentamista,1,12
 kartoitettiin,kartoitettiin,1,13
 projektia,projektia,1,9
+wangin,wangin,1,6
 valvomaan,valvomaan,1,9
 lähetettiin,lähetettiin,1,11
 asiamiehenä,asiamiehenä,1,11
@@ -6191,6 +6312,7 @@ kitaanit,kitaanit,1,8
 isobritannialainen,isobritannialainen,1,18
 vakoilutoimisto,vakoilutoimisto,1,15
 kitaanien,kitaanien,1,9
+gchq,gchq,1,4
 taidoillaan,taidoillaan,1,11
 kyseenalaistaneet,kyseenalaistaneet,1,17
 anshin,anshin,1,6
@@ -6215,6 +6337,7 @@ oikeudellisia,oikeudellisia,1,13
 integraatiolle,integraatiolle,1,14
 loivat,loivat,1,6
 inspiraationsa,inspiraationsa,1,14
+wang,wang,1,4
 runouden,runouden,1,8
 kurssille,kurssille,1,9
 kuo,kuo,1,3
@@ -6235,6 +6358,7 @@ kuolisi,kuolisi,1,7
 suihkukoneet,suihkukoneet,1,12
 ennustettu,ennustettu,1,10
 inn,inn,1,3
+rhône,rhône,1,5
 rein,rein,1,4
 mineraaleja,mineraaleja,1,11
 graniittisaariin,graniittisaariin,1,16
@@ -6313,6 +6437,7 @@ kauppiaiden,kauppiaiden,1,11
 johtaman,johtaman,1,8
 porvareiden,porvareiden,1,11
 sallittiin,sallittiin,1,10
+kamtšatkassa,kamtšatkassa,1,12
 suunnittelema,suunnittelema,1,13
 muistonsa,muistonsa,1,9
 kuolleita,kuolleita,1,9
@@ -6323,6 +6448,7 @@ veistoksellinen,veistoksellinen,1,15
 ulkonäöltään,ulkonäöltään,1,12
 palkittu,palkittu,1,8
 hallitsevien,hallitsevien,1,12
+mégaralaissiirtokunta,mégaralaissiirtokunta,1,21
 joet,joet,1,4
 kysyin,kysyin,1,6
 hyötykäyttöön,hyötykäyttöön,1,13
@@ -6365,8 +6491,10 @@ menetelmissä,menetelmissä,1,12
 laeissa,laeissa,1,7
 eroavaisuuksia,eroavaisuuksia,1,14
 tärkeitä,tärkeitä,1,8
+walesin,walesin,1,7
 monacon,monacon,1,7
 häneltä,häneltä,1,7
+byzantionin,byzantionin,1,11
 greco,greco,1,5
 arvoonsa,arvoonsa,1,8
 amyntas,amyntas,1,7
@@ -6383,6 +6511,7 @@ suorittamisesta,suorittamisesta,1,15
 valloitusten,valloitusten,1,12
 huomasitteko,huomasitteko,1,12
 vastuussa,vastuussa,1,9
+megabazus,megabazus,1,9
 komentaja,komentaja,1,9
 arvostettu,arvostettu,1,10
 dariuksen,dariuksen,1,9
@@ -6464,6 +6593,7 @@ tulleet,tulleet,1,7
 työmme,työmme,1,6
 dead,dead,1,4
 talking,talking,1,7
+jälkishow,jälkishow,1,9
 jaksoja,jaksoja,1,7
 tunnetilassa,tunnetilassa,1,12
 kurjaa,kurjaa,1,6
@@ -6500,6 +6630,7 @@ pääomamenoissa,pääomamenoissa,1,14
 golfaajaa,golfaajaa,1,9
 huijasi,huijasi,1,7
 johtavaan,johtavaan,1,9
+snowmanilla,snowmanilla,1,11
 marinan,marinan,1,7
 yas,yas,1,3
 konserttiin,konserttiin,1,11
@@ -6546,6 +6677,7 @@ tällaisen,tällaisen,1,9
 pääkaupunkiin,pääkaupunkiin,1,13
 ladolleni,ladolleni,1,9
 pitänyt,pitänyt,1,7
+snowman,snowman,1,7
 myydyksi,myydyksi,1,8
 sananvaihtoa,sananvaihtoa,1,12
 kiista,kiista,1,6
@@ -6618,6 +6750,7 @@ hallinnassa,hallinnassa,1,11
 rukolan,rukolan,1,7
 danevirke,danevirke,1,9
 johdosta,johdosta,1,8
+meza,meza,1,4
 valloittamattomana,valloittamattomana,1,18
 flensburgiin,flensburgiin,1,12
 pidetty,pidetty,1,7
@@ -6666,6 +6799,7 @@ tuontiviinejä,tuontiviinejä,1,13
 hedelmäviiniä,hedelmäviiniä,1,13
 järvet,järvet,1,6
 vahvaa,vahvaa,1,6
+bjórria,bjórria,1,7
 simaa,simaa,1,5
 olutta,olutta,1,6
 alkoholijuomia,alkoholijuomia,1,14
@@ -6700,6 +6834,7 @@ tuoduista,tuoduista,1,9
 tasot,tasot,1,5
 täyttyy,täyttyy,1,7
 sähköä,sähköä,1,6
+kilowattia,kilowattia,1,10
 tuottavat,tuottavat,1,9
 vesivoimalassa,vesivoimalassa,1,14
 vesiä,vesiä,1,5
@@ -6764,6 +6899,7 @@ toisten,toisten,1,7
 asuttivat,asuttivat,1,9
 kausittainen,kausittainen,1,12
 kieliä,kieliä,1,6
+shenzhenin,shenzhenin,1,10
 kaukasian,kaukasian,1,9
 kielihistoria,kielihistoria,1,13
 erilainen,erilainen,1,9
@@ -6811,6 +6947,7 @@ islannin,islannin,1,8
 ruhtinaskunnan,ruhtinaskunnan,1,14
 nitran,nitran,1,6
 keitä,keitä,1,5
+záhorien,záhorien,1,8
 demokraattien,demokraattien,1,13
 ruhtinaskunta,ruhtinaskunta,1,13
 lopussa,lopussa,1,7
@@ -6843,6 +6980,7 @@ epätavanomaisiin,epätavanomaisiin,1,16
 määrätään,määrätään,1,9
 asetuksessa,asetuksessa,1,11
 rastislav,rastislav,1,9
+rastizilla,rastizilla,1,10
 veljenpojallaan,veljenpojallaan,1,15
 päätynyt,päätynyt,1,8
 valloitti,valloitti,1,9

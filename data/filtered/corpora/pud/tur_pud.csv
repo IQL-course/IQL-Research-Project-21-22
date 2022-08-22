@@ -89,6 +89,7 @@ uzun,uzun,13,4
 söyledi,söyledi,13,7
 on,on,13,2
 the,the,12,3
+i̇ngiliz,i̇ngiliz,12,8
 üzerinde,üzerinde,12,8
 başkanı,başkanı,12,7
 bunu,bunu,12,4
@@ -184,6 +185,7 @@ nasıl,nasıl,8,5
 buna,buna,8,4
 iş,iş,8,2
 eğitim,eğitim,8,6
+i̇lk,i̇lk,8,4
 mevcut,mevcut,8,6
 ekim,ekim,8,4
 gerektiğini,gerektiğini,8,11
@@ -288,6 +290,7 @@ büyüme,büyüme,6,6
 kısmı,kısmı,6,5
 parti,parti,6,5
 değildir,değildir,6,8
+joseph,joseph,6,6
 yılı,yılı,6,4
 haziran,haziran,6,7
 avrupa,avrupa,6,6
@@ -338,11 +341,13 @@ bunların,bunların,5,8
 batı,batı,5,4
 olacağını,olacağını,5,9
 karşılık,karşılık,5,8
+hâlâ,hâlâ,5,4
 gerekiyor,gerekiyor,5,9
 para,para,5,4
 hayatta,hayatta,5,7
 parçası,parçası,5,7
 görünüyor,görünüyor,5,9
+i̇mparator,i̇mparator,5,10
 polonyum,polonyum,5,8
 tek,tek,5,3
 olabilir,olabilir,5,8
@@ -355,6 +360,7 @@ seçim,seçim,5,5
 üstünde,üstünde,5,7
 güvenlik,güvenlik,5,8
 yapıldı,yapıldı,5,7
+i̇ki,i̇ki,5,4
 kullanılan,kullanılan,5,10
 hiç,hiç,5,3
 edilmiş,edilmiş,5,7
@@ -399,6 +405,7 @@ bilim,bilim,4,5
 mi,mi,4,2
 yazdı,yazdı,4,5
 sahne,sahne,4,5
+i̇kinci,i̇kinci,4,7
 eylül,eylül,4,5
 şimdi,şimdi,4,5
 paris,paris,4,5
@@ -412,6 +419,7 @@ yönetimi,yönetimi,4,8
 açıkça,açıkça,4,6
 bölgenin,bölgenin,4,8
 bölümünde,bölümünde,4,9
+new,new,4,3
 yönettiği,yönettiği,4,9
 antlaşması,antlaşması,4,10
 yayınlanan,yayınlanan,4,10
@@ -568,6 +576,7 @@ paralel,paralel,3,7
 ölümünden,ölümünden,3,9
 dolayısıyla,dolayısıyla,3,11
 dur,dur,3,3
+dijital,dijital,3,7
 bizi,bizi,3,4
 manastır,manastır,3,8
 görevden,görevden,3,8
@@ -576,6 +585,7 @@ edebiyat,edebiyat,3,8
 hıristiyan,hıristiyan,3,10
 palmiye,palmiye,3,7
 çıkardı,çıkardı,3,7
+ajansı,ajansı,3,6
 şimdilik,şimdilik,3,8
 düz,düz,3,3
 tartışmalı,tartışmalı,3,10
@@ -589,6 +599,7 @@ afyon,afyon,3,5
 bankanın,bankanın,3,8
 toplumsal,toplumsal,3,9
 hareket,hareket,3,7
+john,john,3,4
 olmaya,olmaya,3,6
 yıllarca,yıllarca,3,8
 ifade,ifade,3,5
@@ -612,6 +623,7 @@ geçerli,geçerli,3,7
 sırada,sırada,3,6
 bahçesi,bahçesi,3,7
 işe,işe,3,3
+enerji,enerji,3,6
 ontario,ontario,3,7
 katolik,katolik,3,7
 sayısı,sayısı,3,6
@@ -621,6 +633,7 @@ istedi,istedi,3,6
 vermiştir,vermiştir,3,9
 artan,artan,3,5
 sabah,sabah,3,5
+i̇nsanlar,i̇nsanlar,3,9
 olsun,olsun,3,5
 papua,papua,3,5
 kanada,kanada,3,6
@@ -661,12 +674,14 @@ hüküm,hüküm,3,5
 ordu,ordu,3,4
 iddia,iddia,3,5
 verici,verici,3,6
+röportajda,röportajda,3,10
 kuvvetleri,kuvvetleri,3,10
 ayındaki,ayındaki,3,8
 yoksa,yoksa,3,5
 millet,millet,3,6
 duyduğu,duyduğu,3,7
 sınır,sınır,3,5
+japon,japon,3,5
 ülkelerin,ülkelerin,3,9
 ülkenin,ülkenin,3,7
 civarında,civarında,3,9
@@ -685,6 +700,7 @@ başardı,başardı,3,7
 kasaba,kasaba,3,6
 geçit,geçit,3,5
 töreni,töreni,3,6
+jasmine,jasmine,3,7
 söylediği,söylediği,3,9
 karşıya,karşıya,3,7
 ilgilidir,ilgilidir,3,9
@@ -740,6 +756,7 @@ arnavutluk,arnavutluk,3,10
 ayrıntılı,ayrıntılı,3,9
 sağladı,sağladı,3,7
 sanat,sanat,3,5
+teknoloji,teknoloji,3,9
 yapmıştır,yapmıştır,3,9
 el,el,3,2
 erken,erken,3,5
@@ -785,6 +802,7 @@ olimpiyat,olimpiyat,3,9
 protesto,protesto,3,8
 sahipliği,sahipliği,3,9
 adaları,adaları,3,7
+winstone,winstone,3,8
 hedefi,hedefi,3,6
 mısır,mısır,3,5
 bitki,bitki,3,5
@@ -821,6 +839,7 @@ iyice,iyice,3,5
 okulu,okulu,3,5
 başlar,başlar,3,6
 erkeklerin,erkeklerin,3,10
+twitter,twitter,3,7
 post,post,3,4
 beyaz,beyaz,3,5
 yılın,yılın,3,5
@@ -828,6 +847,7 @@ dönem,dönem,3,5
 teşvik,teşvik,3,6
 insanların,insanların,3,10
 talep,talep,3,5
+i̇spanyolca,i̇spanyolca,3,11
 erişim,erişim,3,6
 verilerin,verilerin,3,9
 gıda,gıda,3,4
@@ -843,6 +863,7 @@ büyükannesi,büyükannesi,3,11
 verdiğini,verdiğini,3,9
 fark,fark,3,4
 gelecek,gelecek,3,7
+mesajda,mesajda,3,7
 zamanın,zamanın,3,7
 belediye,belediye,3,8
 amaçlı,amaçlı,3,6
@@ -857,6 +878,7 @@ reform,reform,3,6
 olacaktır,olacaktır,3,9
 analiz,analiz,3,6
 göstermektedir,göstermektedir,2,14
+i̇slam,i̇slam,2,6
 kentin,kentin,2,6
 çizgi,çizgi,2,5
 rahatsız,rahatsız,2,8
@@ -926,6 +948,7 @@ göründüğü,göründüğü,2,9
 sistemin,sistemin,2,8
 zorlamıştır,zorlamıştır,2,11
 kariyerini,kariyerini,2,10
+i̇kincisi,i̇kincisi,2,9
 du,du,2,2
 anlamlı,anlamlı,2,7
 iktidarı,iktidarı,2,8
@@ -1033,6 +1056,7 @@ iyisini,iyisini,2,7
 yükseldi,yükseldi,2,8
 istikrarlı,istikrarlı,2,10
 liderliğindeki,liderliğindeki,2,14
+wright,wright,2,6
 müdahale,müdahale,2,8
 zodyak,zodyak,2,6
 kullanılmıştı,kullanılmıştı,2,13
@@ -1081,6 +1105,7 @@ birtakım,birtakım,2,8
 sponsorluk,sponsorluk,2,10
 alanda,alanda,2,6
 tarihinde,tarihinde,2,9
+i̇rlanda,i̇rlanda,2,8
 kıyafet,kıyafet,2,7
 getirecektir,getirecektir,2,12
 sterlinlik,sterlinlik,2,10
@@ -1156,6 +1181,7 @@ merkezde,merkezde,2,8
 hangisinin,hangisinin,2,10
 arkasından,arkasından,2,10
 edinburgh,edinburgh,2,9
+röportaj,röportaj,2,8
 bölünmüştür,bölünmüştür,2,11
 görevi,görevi,2,6
 tüzük,tüzük,2,5
@@ -1185,6 +1211,7 @@ dava,dava,2,4
 cumartesi,cumartesi,2,9
 kaydoldu,kaydoldu,2,8
 yapacak,yapacak,2,7
+washington,washington,2,10
 yerde,yerde,2,5
 metre,metre,2,5
 yatan,yatan,2,5
@@ -1222,6 +1249,7 @@ kalma,kalma,2,5
 yapıldığı,yapıldığı,2,9
 yas,yas,2,3
 sözcü,sözcü,2,5
+i̇ş,i̇ş,2,3
 bütçe,bütçe,2,5
 diğerlerinin,diğerlerinin,2,12
 vardı,vardı,2,5
@@ -1244,6 +1272,7 @@ kamuya,kamuya,2,6
 canlı,canlı,2,5
 birine,birine,2,6
 katılacak,katılacak,2,9
+snowman,snowman,2,7
 bölgeler,bölgeler,2,8
 ön,ön,2,2
 aziz,aziz,2,4
@@ -1258,6 +1287,7 @@ really,really,2,6
 kalmıştı,kalmıştı,2,8
 kamu,kamu,2,4
 döndüm,döndüm,2,6
+i̇şçi,i̇şçi,2,5
 çıkmıştır,çıkmıştır,2,9
 dönerdi,dönerdi,2,7
 hayatını,hayatını,2,8
@@ -1313,6 +1343,7 @@ metro,metro,2,5
 tercih,tercih,2,6
 eyaleti,eyaleti,2,7
 ünlü,ünlü,2,4
+projeleri,projeleri,2,9
 ülkede,ülkede,2,6
 ülkedeki,ülkedeki,2,8
 hangi,hangi,2,5
@@ -1324,8 +1355,10 @@ araştırma,araştırma,2,9
 sahipti,sahipti,2,7
 olduğundan,olduğundan,2,10
 kullanmaya,kullanmaya,2,10
+gonzález,gonzález,2,8
 krizi,krizi,2,5
 tane,tane,2,4
+news,news,2,4
 ermiştir,ermiştir,2,8
 kurak,kurak,2,5
 başkent,başkent,2,7
@@ -1385,6 +1418,7 @@ sömürge,sömürge,2,7
 rastlanan,rastlanan,2,9
 kişiler,kişiler,2,7
 dördü,dördü,2,5
+lojistik,lojistik,2,8
 ayrıcalıklı,ayrıcalıklı,2,11
 geçti,geçti,2,5
 okyanusu,okyanusu,2,8
@@ -1442,6 +1476,7 @@ geçmişi,geçmişi,2,7
 alana,alana,2,5
 arazisi,arazisi,2,7
 ziyade,ziyade,2,6
+i̇skoç,i̇skoç,2,6
 miken,miken,2,5
 işbirliği,işbirliği,2,9
 morricone,morricone,2,9
@@ -1469,9 +1504,11 @@ değişti,değişti,2,7
 unutulmuştu,unutulmuştu,2,11
 gerçekleşen,gerçekleşen,2,11
 duydukları,duydukları,2,10
+joliot,joliot,2,6
 görüyordu,görüyordu,2,9
 valentino,valentino,2,9
 yüzünden,yüzünden,2,8
+james,james,2,5
 abbotsford,abbotsford,2,10
 geldiği,geldiği,2,7
 sonucu,sonucu,2,6
@@ -1491,7 +1528,9 @@ sorular,sorular,2,7
 bireysel,bireysel,2,8
 elektrikli,elektrikli,2,10
 dram,dram,2,4
+i̇spanyol,i̇spanyol,2,9
 besin,besin,2,5
+i̇mparatorluğu,i̇mparatorluğu,2,14
 nihayet,nihayet,2,7
 alacak,alacak,2,6
 almak,almak,2,5
@@ -1514,6 +1553,7 @@ ahlaki,ahlaki,2,6
 sanayi,sanayi,2,6
 halihazırda,halihazırda,2,11
 devrimi,devrimi,2,7
+i̇spanya,i̇spanya,2,8
 yazın,yazın,2,5
 yıldır,yıldır,2,6
 araştırmacılar,araştırmacılar,2,14
@@ -1521,6 +1561,7 @@ yarattı,yarattı,2,7
 süresi,süresi,2,6
 katkıda,katkıda,2,7
 sırasıyla,sırasıyla,2,9
+jutting,jutting,2,7
 hizmetleri,hizmetleri,2,10
 bırakılan,bırakılan,2,9
 normal,normal,2,6
@@ -1705,8 +1746,10 @@ kurguya,kurguya,1,7
 taşımacılığı,taşımacılığı,1,12
 dolunayın,dolunayın,1,9
 hikayelerin,hikayelerin,1,11
+i̇kisi,i̇kisi,1,6
 derecesini,derecesini,1,10
 star,star,1,4
+antolojisi,antolojisi,1,10
 kurgu,kurgu,1,5
 kızkardeşinin,kızkardeşinin,1,13
 yayınlanmış,yayınlanmış,1,11
@@ -1728,6 +1771,7 @@ caracalla,caracalla,1,9
 savunuyor,savunuyor,1,9
 torunuydu,torunuydu,1,9
 tavsiyesi,tavsiyesi,1,9
+tokugawa,tokugawa,1,8
 uzlaşmaya,uzlaşmaya,1,9
 varmıştı,varmıştı,1,8
 massebot,massebot,1,8
@@ -1760,6 +1804,7 @@ olmadığı,olmadığı,1,8
 işletti,işletti,1,7
 romanı,romanı,1,6
 altyapıları,altyapıları,1,11
+lennox,lennox,1,6
 metinlerde,metinlerde,1,10
 keşfedilen,keşfedilen,1,10
 edilmemektedir,edilmemektedir,1,14
@@ -1771,7 +1816,9 @@ teorisine,teorisine,1,9
 kopyası,kopyası,1,7
 kullanıldığı,kullanıldığı,1,12
 kalıntıları,kalıntıları,1,11
+power,power,1,5
 kült,kült,1,4
+now,now,1,3
 romalılaştırmanın,romalılaştırmanın,1,17
 modeli,modeli,1,6
 satışları,satışları,1,9
@@ -1785,6 +1832,7 @@ olmalısınız,olmalısınız,1,11
 şampiyonluğu,şampiyonluğu,1,12
 cup,cup,1,3
 geleni,geleni,1,6
+winston,winston,1,7
 galip,galip,1,5
 nascar,nascar,1,6
 seçilmiş,seçilmiş,1,8
@@ -1815,6 +1863,7 @@ tesadüfi,tesadüfi,1,8
 prayer,prayer,1,6
 benzerlik,benzerlik,1,9
 tiyatro,tiyatro,1,7
+wing,wing,1,4
 nitelendirdiği,nitelendirdiği,1,14
 prodüksiyonunda,prodüksiyonunda,1,15
 glinda,glinda,1,6
@@ -1824,8 +1873,10 @@ good,good,1,4
 spekülasyonlara,spekülasyonlara,1,15
 kaldığından,kaldığından,1,11
 tom,tom,1,3
+witch,witch,1,5
 rolünü,rolünü,1,6
 gözlemlemek,gözlemlemek,1,11
+wilkes,wilkes,1,6
 avam,avam,1,4
 neyi,neyi,1,4
 koyu,koyu,1,4
@@ -1836,19 +1887,25 @@ zinacı,zinacı,1,6
 başrolünde,başrolünde,1,10
 ifşa,ifşa,1,4
 dul,dul,1,3
+rós,rós,1,3
 sözcüğünün,sözcüğünün,1,10
 anne,anne,1,4
 evlenmişti,evlenmişti,1,10
 sigur,sigur,1,5
 mevzuatı,mevzuatı,1,8
+fjögur,fjögur,1,6
+wild,wild,1,4
+west,west,1,4
 satan,satan,1,5
 çalışmalarından,çalışmalarından,1,15
 biriydi,biriydi,1,7
 abartılı,abartılı,1,8
+i̇zlandalı,i̇zlandalı,1,10
 harcamaları,harcamaları,1,11
 yatırımcılarının,yatırımcılarının,1,16
 bıraktı,bıraktı,1,7
 prens,prens,1,5
+píanó,píanó,1,5
 dindardı,dindardı,1,8
 performanslarından,performanslarından,1,18
 dindar,dindar,1,6
@@ -1874,6 +1931,7 @@ gördüğü,gördüğü,1,7
 sevdiğini,sevdiğini,1,9
 hispania,hispania,1,8
 tartışmalara,tartışmalara,1,12
+wiz,wiz,1,3
 peniston,peniston,1,8
 komünist,komünist,1,8
 ölçer,ölçer,1,5
@@ -1918,6 +1976,7 @@ titizlikle,titizlikle,1,10
 stüdyoda,stüdyoda,1,8
 bölgesinden,bölgesinden,1,11
 canlandırmaya,canlandırmaya,1,13
+petén,petén,1,5
 görünüşü,görünüşü,1,8
 avrupalı,avrupalı,1,8
 köklerine,köklerine,1,9
@@ -1929,11 +1988,13 @@ stealers,stealers,1,8
 decca,decca,1,5
 oradaki,oradaki,1,7
 destekleyici,destekleyici,1,12
+jim,jim,1,3
 sahnesinde,sahnesinde,1,10
 besteci,besteci,1,7
 edinmeye,edinmeye,1,8
 şarkıcı,şarkıcı,1,7
 los,los,1,3
+i̇lerlemesinin,i̇lerlemesinin,1,14
 anlaşan,anlaşan,1,7
 yükselişini,yükselişini,1,11
 şüphelidir,şüphelidir,1,10
@@ -1944,7 +2005,9 @@ parçada,parçada,1,7
 egan,egan,1,4
 ortağı,ortağı,1,6
 kalmasının,kalmasının,1,10
+knew,knew,1,4
 sıraya,sıraya,1,6
+wheel,wheel,1,5
 over,over,1,4
 açmıştı,açmıştı,1,7
 dönümlerini,dönümlerini,1,11
@@ -1988,12 +2051,14 @@ gelmektedir,gelmektedir,1,11
 öğelerinden,öğelerinden,1,11
 defin,defin,1,5
 bilgilerin,bilgilerin,1,10
+walls,walls,1,5
 döneme,döneme,1,6
 pithekoussae,pithekoussae,1,12
 gönderirken,gönderirken,1,11
 takvimine,takvimine,1,9
 alfabe,alfabe,1,6
 hesaplandığı,hesaplandığı,1,12
+watt,watt,1,4
 değişiklik,değişiklik,1,10
 köklü,köklü,1,5
 prensipleriyle,prensipleriyle,1,14
@@ -2047,12 +2112,14 @@ rönesans,rönesans,1,8
 makinelerde,makinelerde,1,11
 ziyafetler,ziyafetler,1,10
 hayvanı,hayvanı,1,7
+japonya,japonya,1,7
 isimler,isimler,1,7
 imparatorların,imparatorların,1,14
 değiştirildi,değiştirildi,1,12
 isimleri,isimleri,1,8
 gelenekseldir,gelenekseldir,1,13
 adlandırmak,adlandırmak,1,11
+psikoloji,psikoloji,1,9
 adıyla,adıyla,1,6
 endişeye,endişeye,1,8
 imparatoru,imparatoru,1,10
@@ -2060,10 +2127,13 @@ atamak,atamak,1,6
 uygunsuz,uygunsuz,1,8
 tay,tay,1,3
 ailesinde,ailesinde,1,9
+i̇mparatorluk,i̇mparatorluk,1,13
 eğilimine,eğilimine,1,9
+i̇mparatorlar,i̇mparatorlar,1,13
 metal,metal,1,5
 kompozisyon,kompozisyon,1,11
 müttefikler,müttefikler,1,11
+jin,jin,1,3
 öldürüldü,öldürüldü,1,9
 güçleri,güçleri,1,7
 maymun,maymun,1,6
@@ -2128,6 +2198,8 @@ ihtiyaçları,ihtiyaçları,1,11
 heinrich,heinrich,1,8
 papaz,papaz,1,5
 dominikli,dominikli,1,9
+pasajda,pasajda,1,7
+dejeneratif,dejeneratif,1,11
 insanlığın,insanlığın,1,10
 döndürmüştür,döndürmüştür,1,12
 aleyhine,aleyhine,1,8
@@ -2153,9 +2225,11 @@ isyanı,isyanı,1,6
 üstünlük,üstünlük,1,8
 başta,başta,1,5
 edilmişti,edilmişti,1,9
+i̇syanı,i̇syanı,1,7
 imparatorluğunun,imparatorluğunun,1,16
 hükümdarı,hükümdarı,1,9
 ihtimalleri,ihtimalleri,1,11
+i̇mparatoru,i̇mparatoru,1,11
 durumunda,durumunda,1,9
 unvanını,unvanını,1,8
 düşünmeleri,düşünmeleri,1,11
@@ -2204,6 +2278,7 @@ durumunu,durumunu,1,8
 ülkesinin,ülkesinin,1,9
 vizyonu,vizyonu,1,7
 idealize,idealize,1,8
+kârlı,kârlı,1,5
 yollarının,yollarının,1,10
 kurulmasıyla,kurulmasıyla,1,12
 gönüllülere,gönüllülere,1,11
@@ -2236,6 +2311,7 @@ mesta,mesta,1,5
 yansıması,yansıması,1,9
 nehrinde,nehrinde,1,8
 nestus,nestus,1,6
+mekân,mekân,1,5
 trakya,trakya,1,6
 alındı,alındı,1,6
 yahudilerin,yahudilerin,1,11
@@ -2258,6 +2334,7 @@ kuvvet,kuvvet,1,6
 spartalılar,spartalılar,1,11
 atinalılar,atinalılar,1,10
 ekonomi,ekonomi,1,7
+avantajlara,avantajlara,1,11
 müzikaller,müzikaller,1,10
 bill,bill,1,4
 ilişkilerinde,ilişkilerinde,1,13
@@ -2295,6 +2372,7 @@ saul,saul,1,4
 gold,gold,1,4
 bronz,bronz,1,5
 yangında,yangında,1,8
+i̇ttifakı,i̇ttifakı,1,9
 demokratik,demokratik,1,10
 kente,kente,1,5
 izlemesine,izlemesine,1,10
@@ -2302,6 +2380,7 @@ ekranlar,ekranlar,1,8
 kılavuzlamak,kılavuzlamak,1,12
 piste,piste,1,5
 uçağını,uçağını,1,7
+trix,trix,1,4
 fethedilen,fethedilen,1,10
 talimatlar,talimatlar,1,10
 sözlü,sözlü,1,5
@@ -2349,6 +2428,7 @@ bölünme,bölünme,1,7
 sunak,sunak,1,5
 haklarına,haklarına,1,9
 yükseği,yükseği,1,7
+prabowo,prabowo,1,7
 verirken,verirken,1,8
 zafer,zafer,1,5
 bestelediğini,bestelediğini,1,13
@@ -2361,6 +2441,7 @@ artırma,artırma,1,7
 fiyatlarını,fiyatlarını,1,11
 sübvansiyon,sübvansiyon,1,11
 etmeden,etmeden,1,7
+jokowi,jokowi,1,6
 uzanan,uzanan,1,6
 karıştırdı,karıştırdı,1,10
 vatandaşlarının,vatandaşlarının,1,15
@@ -2377,6 +2458,7 @@ ayaklı,ayaklı,1,6
 taştır,taştır,1,6
 çocukları,çocukları,1,9
 hechler,hechler,1,7
+william,william,1,7
 rahip,rahip,1,5
 doğduğunda,doğduğunda,1,10
 megalitlerin,megalitlerin,1,12
@@ -2399,6 +2481,7 @@ izlemeye,izlemeye,1,8
 alanının,alanının,1,8
 ima,ima,1,3
 gözlemevi,gözlemevi,1,9
+ajan,ajan,1,4
 homer,homer,1,5
 dipol,dipol,1,5
 çözünürlük,çözünürlük,1,10
@@ -2458,6 +2541,7 @@ kara,kara,1,4
 tiler,tiler,1,5
 düşünüyordu,düşünüyordu,1,11
 chandler,chandler,1,8
+weller,weller,1,6
 askerlerinin,askerlerinin,1,12
 genetik,genetik,1,7
 açıklamalar,açıklamalar,1,11
@@ -2471,6 +2555,7 @@ epik,epik,1,4
 dokuz,dokuz,1,5
 otozomal,otozomal,1,8
 edildiğini,edildiğini,1,10
+şarjlarını,şarjlarını,1,10
 hayvanının,hayvanının,1,10
 adını,adını,1,5
 içeriye,içeriye,1,7
@@ -2512,6 +2597,7 @@ donatılan,donatılan,1,9
 tell,tell,1,4
 gaulle,gaulle,1,6
 yönetti,yönetti,1,7
+teknolojide,teknolojide,1,11
 paramiliterleri,paramiliterleri,1,15
 çözülebilecek,çözülebilecek,1,13
 suda,suda,1,4
@@ -2529,6 +2615,7 @@ alır,alır,1,4
 tayland,tayland,1,7
 adamları,adamları,1,8
 tableti,tableti,1,7
+wheeler,wheeler,1,7
 senaryolar,senaryolar,1,10
 darnand,darnand,1,7
 milice,milice,1,6
@@ -2554,6 +2641,7 @@ oyunları,oyunları,1,8
 seyirci,seyirci,1,7
 karşılandı,karşılandı,1,10
 beğeniyle,beğeniyle,1,9
+i̇lahî,i̇lahî,1,6
 tanındı,tanındı,1,7
 defalarca,defalarca,1,9
 kaldığı,kaldığı,1,7
@@ -2599,6 +2687,7 @@ tahıla,tahıla,1,6
 osmanlılar,osmanlılar,1,10
 karadan,karadan,1,7
 bölgeyi,bölgeyi,1,7
+i̇stanbul,i̇stanbul,1,9
 erdoğan,erdoğan,1,7
 meclisi,meclisi,1,7
 türkiye,türkiye,1,7
@@ -2620,6 +2709,7 @@ devrimin,devrimin,1,8
 değer,değer,1,5
 değerdir,değerdir,1,8
 dikkate,dikkate,1,7
+teknolojik,teknolojik,1,10
 yaldızlama,yaldızlama,1,10
 duruyorlardı,duruyorlardı,1,12
 tepelerde,tepelerde,1,9
@@ -2697,6 +2787,7 @@ manastırına,manastırına,1,11
 eibingen,eibingen,1,8
 rahibeler,rahibeler,1,9
 birliklerince,birliklerince,1,13
+i̇sveç,i̇sveç,1,6
 rupertsberg,rupertsberg,1,11
 harabeleri,harabeleri,1,10
 yayılan,yayılan,1,7
@@ -2710,6 +2801,7 @@ madalyasını,madalyasını,1,11
 şehirlerinden,şehirlerinden,1,13
 bremen,bremen,1,6
 köln,köln,1,4
+weiss,weiss,1,5
 şekildeydi,şekildeydi,1,10
 anlatıldığı,anlatıldığı,1,11
 haberlerde,haberlerde,1,10
@@ -2739,6 +2831,8 @@ federico,federico,1,8
 haklarla,haklarla,1,8
 uluslardan,uluslardan,1,10
 programda,programda,1,9
+évole,évole,1,5
+sánchez,sánchez,1,7
 pedro,pedro,1,5
 unvanına,unvanına,1,8
 soyluluk,soyluluk,1,8
@@ -2768,21 +2862,27 @@ kovboy,kovboy,1,6
 kalıyor,kalıyor,1,7
 gelenin,gelenin,1,7
 elinden,elinden,1,7
+barón,barón,1,5
+mesajları,mesajları,1,9
 kongre,kongre,1,6
 öncesine,öncesine,1,8
 yapmaktadır,yapmaktadır,1,11
 sayman,sayman,1,6
 pintado,pintado,1,7
+ángel,ángel,1,5
+durán,durán,1,5
 temsilcileri,temsilcileri,1,12
 temsilcileridir,temsilcileridir,1,15
 kesimin,kesimin,1,7
 liderleri,liderleri,1,9
 maroto,maroto,1,6
+javier,javier,1,6
 müsteşar,müsteşar,1,8
 cifuentes,cifuentes,1,9
 cristina,cristina,1,8
 katılacaklar,katılacaklar,1,12
 etkinliğe,etkinliğe,1,9
+view,view,1,4
 mountain,mountain,1,8
 yöneticileri,yöneticileri,1,12
 işsizlik,işsizlik,1,8
@@ -2806,6 +2906,7 @@ kalkması,kalkması,1,8
 yürürlükten,yürürlükten,1,11
 mevzuatın,mevzuatın,1,9
 gurur,gurur,1,5
+fátima,fátima,1,6
 sendikalar,sendikalar,1,10
 bulutları,bulutları,1,9
 bebeklerini,bebeklerini,1,11
@@ -2818,6 +2919,7 @@ fabrikası,fabrikası,1,9
 pamuk,pamuk,1,5
 georg,georg,1,5
 fabrikatör,fabrikatör,1,10
+württemberg,württemberg,1,11
 biriyle,biriyle,1,7
 binadan,binadan,1,7
 olmaktan,olmaktan,1,8
@@ -2916,6 +3018,7 @@ andes,andes,1,5
 yutulmasıyla,yutulmasıyla,1,12
 kabuğunun,kabuğunun,1,9
 andlar,andlar,1,6
+orojeneze,orojeneze,1,9
 oluşmadan,oluşmadan,1,9
 dağları,dağları,1,7
 ucu,ucu,1,3
@@ -2961,6 +3064,7 @@ episcopal,episcopal,1,9
 fiorello,fiorello,1,8
 ibadetiyle,ibadetiyle,1,10
 yapılmasını,yapılmasını,1,11
+alexander,alexander,1,9
 çar,çar,1,3
 grenville,grenville,1,9
 başbakanı,başbakanı,1,9
@@ -2969,6 +3073,7 @@ gelişmiştir,gelişmiştir,1,11
 payandalar,payandalar,1,10
 akşam,akşam,1,5
 apsisde,apsisde,1,7
+gaudí,gaudí,1,5
 antonio,antonio,1,7
 düşündüğü,düşündüğü,1,9
 çözümleri,çözümleri,1,9
@@ -2995,6 +3100,7 @@ toplamaya,toplamaya,1,9
 vergiler,vergiler,1,8
 yasadışı,yasadışı,1,8
 yönetimini,yönetimini,1,10
+lejyonun,lejyonun,1,8
 pompey,pompey,1,6
 arkadaşıyla,arkadaşıyla,1,11
 dee,dee,1,3
@@ -3035,6 +3141,7 @@ federalleştirilmesini,federalleştirilmesini,1,21
 aires,aires,1,5
 buenos,buenos,1,6
 istila,istila,1,6
+i̇spanyolcası,i̇spanyolcası,1,13
 çağ,çağ,1,3
 kesilmiş,kesilmiş,1,8
 önleri,önleri,1,6
@@ -3045,6 +3152,7 @@ burgoyne,burgoyne,1,8
 amaçlayan,amaçlayan,1,9
 ulaşmayı,ulaşmayı,1,8
 desteklemişlerdi,desteklemişlerdi,1,16
+i̇ngilizleri,i̇ngilizleri,1,12
 koymasından,koymasından,1,11
 kolonicilerin,kolonicilerin,1,13
 gelmiş,gelmiş,1,6
@@ -3053,8 +3161,11 @@ darbe,darbe,1,5
 darbeydi,darbeydi,1,8
 kazanmaları,kazanmaları,1,11
 ortaçağ,ortaçağ,1,7
+i̇spanyolcasından,i̇spanyolcasından,1,17
+i̇spanyolcaya,i̇spanyolcaya,1,13
 teyzeleri,teyzeleri,1,9
 krallığına,krallığına,1,10
+enrique,enrique,1,7
 ermiş,ermiş,1,5
 ilkbaharında,ilkbaharında,1,12
 sağlamaya,sağlamaya,1,9
@@ -3110,6 +3221,7 @@ georges,georges,1,7
 ricası,ricası,1,6
 destek,destek,1,6
 görmeyecek,görmeyecek,1,10
+walt,walt,1,4
 umuduyla,umuduyla,1,8
 uyarlama,uyarlama,1,8
 sinemaya,sinemaya,1,8
@@ -3174,6 +3286,7 @@ tarihçi,tarihçi,1,7
 simgelemek,simgelemek,1,10
 güneyini,güneyini,1,8
 yarımadasının,yarımadasının,1,13
+i̇talyan,i̇talyan,1,8
 yazarlar,yazarlar,1,8
 onüçüncü,onüçüncü,1,8
 apulia,apulia,1,6
@@ -3317,6 +3430,7 @@ ailesini,ailesini,1,8
 imzaladıktan,imzaladıktan,1,12
 yazarlığı,yazarlığı,1,9
 oluşturulmalıdır,oluşturulmalıdır,1,16
+teoloji,teoloji,1,7
 ışığında,ışığında,1,8
 gelecekteki,gelecekteki,1,11
 hümanizmi,hümanizmi,1,9
@@ -3327,6 +3441,8 @@ evlenmek,evlenmek,1,8
 tanınmasına,tanınmasına,1,11
 üstlendi,üstlendi,1,8
 roller,roller,1,6
+rambow,rambow,1,6
+galaxy,galaxy,1,6
 to,to,1,2
 guide,guide,1,5
 garth,garth,1,5
@@ -3337,6 +3453,7 @@ resimleriyle,resimleriyle,1,12
 tanıtım,tanıtım,1,7
 kavramsal,kavramsal,1,9
 filmlerine,filmlerine,1,10
+wells,wells,1,5
 poole,poole,1,5
 inanmayı,inanmayı,1,8
 istemediğine,istemediğine,1,12
@@ -3373,6 +3490,7 @@ kışlayla,kışlayla,1,8
 fena,fena,1,4
 olmuş,olmuş,1,5
 harap,harap,1,5
+krätschmer,krätschmer,1,10
 simon,simon,1,5
 gerekçelendirdi,gerekçelendirdi,1,15
 eksikliğiyle,eksikliğiyle,1,12
@@ -3424,6 +3542,7 @@ alındığını,alındığını,1,10
 bilmiyor,bilmiyor,1,8
 sözleşmenin,sözleşmenin,1,11
 rusya,rusya,1,5
+ajanı,ajanı,1,5
 servisi,servisi,1,7
 indiğini,indiğini,1,8
 döneminden,döneminden,1,10
@@ -3445,6 +3564,7 @@ kuvvetlerinin,kuvvetlerinin,1,13
 yetkililerle,yetkililerle,1,12
 hitler,hitler,1,6
 gizlice,gizlice,1,7
+halifax,halifax,1,7
 ilgilendi,ilgilendi,1,9
 canlandırmakla,canlandırmakla,1,14
 norma,norma,1,5
@@ -3457,8 +3577,10 @@ tasvirinden,tasvirinden,1,11
 sudeten,sudeten,1,7
 laboratuvarının,laboratuvarının,1,15
 yazarak,yazarak,1,7
+irène,irène,1,5
 meyer,meyer,1,5
 öncülleriyle,öncülleriyle,1,12
+teknolojilerinin,teknolojilerinin,1,16
 teması,teması,1,6
 romanlarının,romanlarının,1,12
 skylark,skylark,1,7
@@ -3468,6 +3590,7 @@ marcelle,marcelle,1,8
 söylerken,söylerken,1,9
 kulüpte,kulüpte,1,7
 sokaklarda,sokaklarda,1,10
+mômone,mômone,1,6
 piaf,piaf,1,4
 vurdu,vurdu,1,5
 çiftçisini,çiftçisini,1,10
@@ -3479,6 +3602,7 @@ paylaştığı,paylaştığı,1,10
 scott,scott,1,5
 kristin,kristin,1,7
 mcgregor,mcgregor,1,8
+ewan,ewan,1,4
 başrolü,başrolü,1,7
 lasse,lasse,1,5
 seçildi,seçildi,1,7
@@ -3488,6 +3612,7 @@ yves,yves,1,4
 milliyetçi,milliyetçi,1,10
 sonuna,sonuna,1,6
 bozulmadı,bozulmadı,1,9
+rejimi,rejimi,1,6
 egzersiz,egzersiz,1,8
 seanstan,seanstan,1,8
 haftada,haftada,1,7
@@ -3500,6 +3625,7 @@ piyasaya,piyasaya,1,8
 çekmeye,çekmeye,1,7
 bilimkurgu,bilimkurgu,1,10
 gordon,gordon,1,6
+willis,willis,1,6
 bruce,bruce,1,5
 rian,rian,1,4
 başrol,başrol,1,6
@@ -3507,6 +3633,7 @@ engagement,engagement,1,10
 year,year,1,4
 five,five,1,4
 yapımı,yapımı,1,6
+jason,jason,1,5
 nicholas,nicholas,1,8
 resepsiyonisti,resepsiyonisti,1,14
 miss,miss,1,4
@@ -3536,6 +3663,7 @@ aktris,aktris,1,6
 atıldı,atıldı,1,6
 bırakılırken,bırakılırken,1,12
 lyvet,lyvet,1,5
+jimmy,jimmy,1,5
 yarışı,yarışı,1,6
 önermişti,önermişti,1,9
 kaygı,kaygı,1,5
@@ -3549,15 +3677,18 @@ girişimi,girişimi,1,8
 suikast,suikast,1,7
 taburcu,taburcu,1,7
 hastaneden,hastaneden,1,10
+i̇yileşerek,i̇yileşerek,1,11
 tuttu,tuttu,1,5
 ellerinde,ellerinde,1,9
 sandalye,sandalye,1,8
 cumhuriyetçiler,cumhuriyetçiler,1,15
 gerçekleştirildi,gerçekleştirildi,1,16
 rehin,rehin,1,5
+i̇ran,i̇ran,1,5
 durumlar,durumlar,1,8
 şövalye,şövalye,1,7
 kralının,kralının,1,8
+joan,joan,1,4
 olduklarında,olduklarında,1,12
 enstitüsüne,enstitüsüne,1,11
 radony,radony,1,6
@@ -3583,6 +3714,7 @@ disk,disk,1,4
 araştırmalarının,araştırmalarının,1,16
 errani,errani,1,6
 iv,iv,1,2
+edward,edward,1,6
 evlendiğinde,evlendiğinde,1,12
 cecily,cecily,1,6
 kayıp,kayıp,1,5
@@ -3640,6 +3772,7 @@ konseyi,konseyi,1,7
 veriler,veriler,1,7
 tasarılarına,tasarılarına,1,12
 uyum,uyum,1,4
+teknolojiyle,teknolojiyle,1,12
 sebebiyet,sebebiyet,1,9
 mevcudiyeti,mevcudiyeti,1,11
 evrağın,evrağın,1,7
@@ -3652,6 +3785,7 @@ dışa,dışa,1,4
 inancın,inancın,1,7
 şirketlerde,şirketlerde,1,11
 eşkıya,eşkıya,1,6
+i̇çişleri,i̇çişleri,1,9
 moron,moron,1,5
 faşist,faşist,1,6
 brice,brice,1,5
@@ -3672,6 +3806,7 @@ kılavuzun,kılavuzun,1,9
 nelerdir,nelerdir,1,8
 sağlanmamıştı,sağlanmamıştı,1,13
 gillard,gillard,1,7
+julia,julia,1,5
 esefle,esefle,1,6
 almamasını,almamasını,1,10
 kılavuzda,kılavuzda,1,9
@@ -3719,6 +3854,7 @@ piyasa,piyasa,1,6
 amazon,amazon,1,6
 geçer,geçer,1,5
 silikon,silikon,1,7
+wall,wall,1,4
 kurulunda,kurulunda,1,9
 şirketten,şirketten,1,9
 üretildi,üretildi,1,8
@@ -3901,6 +4037,7 @@ referandum,referandum,1,10
 gerekçesi,gerekçesi,1,9
 soruşturmaların,soruşturmaların,1,15
 reddi,reddi,1,5
+i̇slami,i̇slami,1,7
 tatmin,tatmin,1,6
 ilişkisi,ilişkisi,1,8
 kıtayla,kıtayla,1,7
@@ -3921,12 +4058,15 @@ kirleticiler,kirleticiler,1,12
 etkinleştirilecek,etkinleştirilecek,1,17
 ekonomide,ekonomide,1,9
 ekonomideki,ekonomideki,1,11
+enerjiden,enerjiden,1,9
 kömüre,kömüre,1,6
+enerjisi,enerjisi,1,8
 offshore,offshore,1,8
 konuşuyor,konuşuyor,1,9
 amin,amin,1,4
 adnan,adnan,1,5
 irena,irena,1,5
+enerjiler,enerjiler,1,9
 yenilenebilir,yenilenebilir,1,13
 gösterme,gösterme,1,8
 anlayış,anlayış,1,7
@@ -3962,6 +4102,7 @@ adalarla,adalarla,1,8
 aktarılana,aktarılana,1,10
 yayımladı,yayımladı,1,9
 yazışarak,yazışarak,1,9
+woods,woods,1,5
 kaldırdı,kaldırdı,1,8
 engeli,engeli,1,6
 kapılanlar,kapılanlar,1,10
@@ -3978,6 +4119,7 @@ onda,onda,1,4
 eleştirdi,eleştirdi,1,9
 yaparak,yaparak,1,7
 alıntı,alıntı,1,6
+etimoloji,etimoloji,1,9
 çıkarmaya,çıkarmaya,1,9
 çalıştım,çalıştım,1,8
 alice,alice,1,5
@@ -4098,6 +4240,7 @@ liberal,liberal,1,7
 banliyölerini,banliyölerini,1,13
 yarışmaya,yarışmaya,1,9
 yapılacak,yapılacak,1,9
+wolmar,wolmar,1,6
 christian,christian,1,9
 yazan,yazan,1,5
 kitaplar,kitaplar,1,8
@@ -4109,8 +4252,10 @@ sinirden,sinirden,1,8
 tutan,tutan,1,5
 radyosu,radyosu,1,7
 service,service,1,7
+world,world,1,5
 bush,bush,1,4
 durduracak,durduracak,1,10
+jeneratörleriyle,jeneratörleriyle,1,16
 şehirdeki,şehirdeki,1,9
 santrali,santrali,1,8
 kömürlü,kömürlü,1,7
@@ -4179,6 +4324,7 @@ elementtir,elementtir,1,10
 hemoglobini,hemoglobini,1,11
 hücrelerinde,hücrelerinde,1,12
 taşınmasından,taşınmasından,1,13
+oksijenin,oksijenin,1,9
 dokulara,dokulara,1,8
 vücudun,vücudun,1,7
 yürütebiliyor,yürütebiliyor,1,13
@@ -4348,6 +4494,7 @@ ruhsatı,ruhsatı,1,7
 avlanma,avlanma,1,7
 yasak,yasak,1,5
 knott,knott,1,5
+jeff,jeff,1,4
 politikaları,politikaları,1,12
 doğa,doğa,1,4
 yırtmasına,yırtmasına,1,10
@@ -4368,6 +4515,7 @@ yollarını,yollarını,1,9
 muhtemel,muhtemel,1,8
 sınırlamanın,sınırlamanın,1,12
 alanlarla,alanlarla,1,9
+projede,projede,1,7
 kapsamını,kapsamını,1,9
 sorgulayacakları,sorgulayacakları,1,16
 hedefleri,hedefleri,1,9
@@ -4376,7 +4524,9 @@ tartışması,tartışması,1,10
 bulduktan,bulduktan,1,9
 istediği,istediği,1,8
 programında,programında,1,11
+show,show,1,4
 marr,marr,1,4
+andrew,andrew,1,6
 dalgasını,dalgasını,1,9
 felcini,felcini,1,7
 kentte,kentte,1,6
@@ -4397,6 +4547,7 @@ hakim,hakim,1,5
 böyleydi,böyleydi,1,8
 oynadığında,oynadığında,1,11
 paire,paire,1,5
+benoît,benoît,1,6
 monte,monte,1,5
 andy,andy,1,4
 üz,üz,1,2
@@ -4502,6 +4653,7 @@ başörtülü,başörtülü,1,9
 köşede,köşede,1,6
 anlıyorum,anlıyorum,1,9
 ayrılması,ayrılması,1,9
+rejiminden,rejiminden,1,10
 nazi,nazi,1,4
 öyküler,öyküler,1,7
 sözde,sözde,1,5
@@ -4512,6 +4664,7 @@ güçlük,güçlük,1,6
 hatırlamakta,hatırlamakta,1,12
 parolaları,parolaları,1,10
 nitelikte,nitelikte,1,9
+i̇şkenceyi,i̇şkenceyi,1,10
 yumuşatılacaktır,yumuşatılacaktır,1,16
 kot,kot,1,3
 kız,kız,1,3
@@ -4542,6 +4695,7 @@ gözlüğünü,gözlüğünü,1,9
 güneş,güneş,1,5
 yapılmadan,yapılmadan,1,10
 kısaca,kısaca,1,6
+wintour,wintour,1,7
 yiyecek,yiyecek,1,7
 ofis,ofis,1,4
 güldü,güldü,1,5
@@ -4556,6 +4710,7 @@ tropikal,tropikal,1,8
 tasarımı,tasarımı,1,8
 takarken,takarken,1,8
 yarışına,yarışına,1,8
+glasgow,glasgow,1,7
 baktım,baktım,1,6
 safçadır,safçadır,1,8
 ilginç,ilginç,1,6
@@ -4622,6 +4777,7 @@ değiştiren,değiştiren,1,10
 program,program,1,7
 uzmanları,uzmanları,1,9
 onaylandı,onaylandı,1,9
+gchq,gchq,1,4
 casusluk,casusluk,1,8
 kurs,kurs,1,4
 haftalık,haftalık,1,8
@@ -4655,6 +4811,7 @@ donanımı,donanımı,1,8
 uçaklarına,uçaklarına,1,10
 helikopterlerinden,helikopterlerinden,1,18
 görülürdü,görülürdü,1,9
+jetler,jetler,1,6
 önceleri,önceleri,1,8
 gündeme,gündeme,1,7
 vermenin,vermenin,1,8
@@ -4699,6 +4856,7 @@ yardımcısı,yardımcısı,1,10
 google,google,1,6
 telefonları,telefonları,1,11
 mate,mate,1,4
+jesse,jesse,1,5
 labrocca,labrocca,1,8
 bölümün,bölümün,1,7
 hayattaydı,hayattaydı,1,10
@@ -4729,6 +4887,7 @@ desteklemektedir,desteklemektedir,1,16
 tezini,tezini,1,6
 saklanabileceği,saklanabileceği,1,15
 götürülüp,götürülüp,1,9
+i̇stasyonuna,i̇stasyonuna,1,12
 uzay,uzay,1,4
 etkilenmeden,etkilenmeden,1,12
 yetişme,yetişme,1,7
@@ -4778,6 +4937,7 @@ ilerliyoruz,ilerliyoruz,1,11
 yolda,yolda,1,5
 ulaşmak,ulaşmak,1,7
 hedeflerine,hedeflerine,1,11
+teknolojisinin,teknolojisinin,1,14
 ayrıştırma,ayrıştırma,1,10
 karbonu,karbonu,1,7
 kiera,kiera,1,5
@@ -4806,6 +4966,7 @@ bilgisini,bilgisini,1,9
 ekibi,ekibi,1,5
 ünite,ünite,1,5
 geliştirme,geliştirme,1,10
+georgetown,georgetown,1,10
 istasyonunu,istasyonunu,1,11
 noma,noma,1,4
 açılan,açılan,1,6
@@ -4863,6 +5024,7 @@ onaylayacağını,onaylayacağını,1,14
 girişini,girişini,1,8
 ülkeye,ülkeye,1,6
 göçmenin,göçmenin,1,8
+joe,joe,1,3
 rekabete,rekabete,1,8
 olduğunda,olduğunda,1,9
 michael,michael,1,7
@@ -4920,6 +5082,7 @@ görgü,görgü,1,5
 sürmektedir,sürmektedir,1,11
 geçmesi,geçmesi,1,7
 potomac,potomac,1,7
+telesiyej,telesiyej,1,9
 yolcunun,yolcunun,1,8
 fizibilite,fizibilite,1,10
 hafifletebileceğini,hafifletebileceğini,1,19
@@ -4939,6 +5102,7 @@ artırmak,artırmak,1,8
 bahçesinde,bahçesinde,1,10
 bahçesindeki,bahçesindeki,1,12
 hayvanat,hayvanat,1,8
+saqib,saqib,1,5
 eskiden,eskiden,1,7
 khanzir,khanzir,1,7
 yükselecek,yükselecek,1,10
@@ -4957,6 +5121,7 @@ mcneilly,mcneilly,1,8
 gerry,gerry,1,5
 değerlendirme,değerlendirme,1,13
 iğneleri,iğneleri,1,8
+enjeksiyon,enjeksiyon,1,10
 defteri,defteri,1,7
 reçete,reçete,1,6
 aletlere,aletlere,1,8
@@ -4965,6 +5130,7 @@ felaket,felaket,1,7
 hastalar,hastalar,1,8
 ağrılı,ağrılı,1,6
 şartlarını,şartlarını,1,10
+i̇nceleme,i̇nceleme,1,9
 perşembe,perşembe,1,8
 memurlarından,memurlarından,1,13
 seviyelerini,seviyelerini,1,12
@@ -5247,6 +5413,7 @@ tarama,tarama,1,6
 tedavi,tedavi,1,6
 hastanelerinde,hastanelerinde,1,14
 addenbrooke,addenbrooke,1,11
+papworth,papworth,1,8
 pugh,pugh,1,4
 bulunamadı,bulunamadı,1,10
 dokularda,dokularda,1,9
@@ -5320,6 +5487,7 @@ yapraklar,yapraklar,1,9
 bölündüğünü,bölündüğünü,1,11
 derinden,derinden,1,8
 tepkiler,tepkiler,1,8
+i̇klim,i̇klim,1,6
 oblast,oblast,1,6
 odessa,odessa,1,6
 demiryolunun,demiryolunun,1,12
@@ -5406,6 +5574,7 @@ adaya,adaya,1,5
 silika,silika,1,6
 denir,denir,1,5
 söğüt,söğüt,1,5
+kilowatt,kilowatt,1,8
 santralde,santralde,1,9
 nehirlerden,nehirlerden,1,11
 bağımlıdır,bağımlıdır,1,10
@@ -5425,8 +5594,10 @@ kullanmıştır,kullanmıştır,1,12
 dalları,dalları,1,7
 kullanılmakta,kullanılmakta,1,13
 üretmektedir,üretmektedir,1,12
+volkanoloji,volkanoloji,1,11
 rhine,rhine,1,5
 telaffuz,telaffuz,1,8
+vulkanoloji,vulkanoloji,1,11
 incelendiği,incelendiği,1,11
 volkanların,volkanların,1,11
 boşalırlar,boşalırlar,1,10
@@ -5441,6 +5612,7 @@ başlıca,başlıca,1,7
 po,po,1,2
 ticino,ticino,1,6
 inn,inn,1,3
+rhône,rhône,1,5
 ölümüyle,ölümüyle,1,8
 atlardan,atlardan,1,8
 kurallar,kurallar,1,8
@@ -5472,6 +5644,7 @@ yaymıştır,yaymıştır,1,9
 kuşağına,kuşağına,1,8
 kenya,kenya,1,5
 dağı,dağı,1,4
+kilimanjaro,kilimanjaro,1,11
 doruk,doruk,1,5
 şekillendirilen,şekillendirilen,1,15
 tektonik,tektonik,1,8
@@ -5500,16 +5673,19 @@ mevsim,mevsim,1,6
 yağmurlu,yağmurlu,1,8
 muson,muson,1,5
 başlamışlardır,başlamışlardır,1,14
+klimatolojileri,klimatolojileri,1,15
 sinoptik,sinoptik,1,8
 iklimbilimciler,iklimbilimciler,1,15
 aşağı,aşağı,1,5
 slovakya,slovakya,1,8
+meänkieli,meänkieli,1,9
 fethi,fethi,1,5
 türetilip,türetilip,1,9
 kelime,kelime,1,6
 etkilenip,etkilenip,1,9
 danimarkacadan,danimarkacadan,1,14
 dili,dili,1,4
+i̇zlandaca,i̇zlandaca,1,10
 denetimi,denetimi,1,8
 tarihe,tarihe,1,6
 belirler,belirler,1,8
@@ -5519,6 +5695,7 @@ bölgelerden,bölgelerden,1,11
 metropolit,metropolit,1,10
 yeğeni,yeğeni,1,6
 rastislav,rastislav,1,9
+mojmír,mojmír,1,6
 kralları,kralları,1,8
 ekonomisini,ekonomisini,1,11
 entegre,entegre,1,7
@@ -5552,6 +5729,7 @@ içecekler,içecekler,1,9
 alkollü,alkollü,1,7
 şarabı,şarabı,1,6
 meyve,meyve,1,5
+bjorr,bjorr,1,5
 mead,mead,1,4
 bira,bira,1,4
 derindir,derindir,1,8
@@ -5572,6 +5750,7 @@ yaşlarındaki,yaşlarındaki,1,12
 yaş,yaş,1,3
 bulguları,bulguları,1,9
 biçimleriyle,biçimleriyle,1,12
+i̇şçiliğinin,i̇şçiliğinin,1,12
 birleşmiştir,birleşmiştir,1,12
 kurmak,kurmak,1,6
 kamerunları,kamerunları,1,11
@@ -5583,6 +5762,7 @@ değiştirerek,değiştirerek,1,12
 sistemini,sistemini,1,9
 aktarmıştır,aktarmıştır,1,11
 sahra,sahra,1,5
+jeoloji,jeoloji,1,7
 çölünün,çölünün,1,7
 kültürler,kültürler,1,9
 merkezli,merkezli,1,8
@@ -5691,6 +5871,7 @@ değiştirmesinden,değiştirmesinden,1,16
 geçirmiştir,geçirmiştir,1,11
 toplanan,toplanan,1,8
 teknik,teknik,1,6
+orijinal,orijinal,1,8
 gönderildi,gönderildi,1,10
 denetlemek,denetlemek,1,10
 programını,programını,1,10
@@ -5701,6 +5882,7 @@ bian,bian,1,4
 yetenek,yetenek,1,7
 temsilcisi,temsilcisi,1,10
 yönetici,yönetici,1,8
+wang,wang,1,4
 kuo,kuo,1,3
 düşünülüyor,düşünülüyor,1,11
 oyunlarının,oyunlarının,1,11
@@ -5780,6 +5962,7 @@ nehrin,nehrin,1,6
 büyüdükçe,büyüdükçe,1,9
 çaldılar,çaldılar,1,8
 kano,kano,1,4
+aborijinleri,aborijinleri,1,12
 binlerce,binlerce,1,8
 gelmesinden,gelmesinden,1,11
 halklarının,halklarının,1,11
@@ -5868,6 +6051,7 @@ kanalın,kanalın,1,7
 avrupalılar,avrupalılar,1,11
 kesindi,kesindi,1,7
 konumu,konumu,1,6
+i̇spanyolların,i̇spanyolların,1,14
 yüzyılı,yüzyılı,1,7
 gelişimin,gelişimin,1,9
 alternatif,alternatif,1,10
@@ -5887,6 +6071,7 @@ yolculuğun,yolculuğun,1,10
 tabanında,tabanında,1,9
 undersea,undersea,1,8
 şehridir,şehridir,1,8
+town,town,1,4
 belediyesi,belediyesi,1,10
 büyükşehir,büyükşehir,1,10
 kapsadı,kapsadı,1,7
@@ -5958,6 +6143,7 @@ tıpkı,tıpkı,1,5
 yükselişe,yükselişe,1,9
 simgesi,simgesi,1,7
 south,south,1,5
+tower,tower,1,5
 yasalara,yasalara,1,8
 cenazenin,cenazenin,1,9
 ilişkili,ilişkili,1,8
@@ -5995,6 +6181,7 @@ eğlenceli,eğlenceli,1,9
 yönetmene,yönetmene,1,9
 uzaklaştırdı,uzaklaştırdı,1,12
 izleyicisini,izleyicisini,1,12
+hollywood,hollywood,1,9
 daimi,daimi,1,5
 bob,bob,1,3
 zannettik,zannettik,1,9
@@ -6015,6 +6202,7 @@ hayal,hayal,1,5
 izleyiciler,izleyiciler,1,11
 tecrübeye,tecrübeye,1,9
 çatışması,çatışması,1,9
+pijamaları,pijamaları,1,10
 defnedilmesine,defnedilmesine,1,14
 engel,engel,1,5
 suçlarıyla,suçlarıyla,1,10
@@ -6022,6 +6210,7 @@ kitabını,kitabını,1,8
 adlarıyla,adlarıyla,1,9
 rüyası,rüyası,1,6
 bahar,bahar,1,5
+rüzgârları,rüzgârları,1,10
 serisinin,serisinin,1,9
 toplayan,toplayan,1,8
 bahsediyoruz,bahsediyoruz,1,12
@@ -6100,6 +6289,7 @@ ihlal,ihlal,1,5
 eğitmeliyiz,eğitmeliyiz,1,11
 sinema,sinema,1,6
 çekmiş,çekmiş,1,6
+metrajlı,metrajlı,1,8
 beklenmektedir,beklenmektedir,1,14
 arttıkça,arttıkça,1,8
 kullanım,kullanım,1,8
@@ -6162,8 +6352,10 @@ oynayıp,oynayıp,1,7
 bunda,bunda,1,5
 buharlaştırdı,buharlaştırdı,1,13
 işinden,işinden,1,7
+brexit,brexit,1,6
 tazminat,tazminat,1,8
 ayından,ayından,1,7
+i̇şletmeler,i̇şletmeler,1,11
 terfi,terfi,1,5
 başkanlığa,başkanlığa,1,10
 çıkmasından,çıkmasından,1,11
@@ -6174,6 +6366,7 @@ yöneticisi,yöneticisi,1,10
 çalışmaya,çalışmaya,1,9
 üreticisinde,üreticisinde,1,12
 otomobil,otomobil,1,8
+winterkorn,winterkorn,1,10
 fona,fona,1,4
 avrodan,avrodan,1,7
 işlemlere,işlemlere,1,9
@@ -6184,6 +6377,7 @@ bugüne,bugüne,1,6
 sesinin,sesinin,1,7
 tetikleyecek,tetikleyecek,1,12
 dalgalarını,dalgalarını,1,11
+enerjinin,enerjinin,1,9
 kıyafetleri,kıyafetleri,1,11
 rolüyle,rolüyle,1,7
 mahkum,mahkum,1,6
@@ -6234,6 +6428,7 @@ sterlindeki,sterlindeki,1,11
 izledi,izledi,1,6
 fonları,fonları,1,7
 getiri,getiri,1,6
+stratejisi,stratejisi,1,10
 çoklu,çoklu,1,5
 aviva,aviva,1,5
 durdurmadı,durdurmadı,1,10
@@ -6283,8 +6478,10 @@ tasarlanan,tasarlanan,1,10
 salas,salas,1,5
 tüccar,tüccar,1,6
 oluşturulmasını,oluşturulmasını,1,15
+juan,juan,1,4
 mineraller,mineraller,1,10
 universiade,universiade,1,11
+winter,winter,1,6
 durumdadır,durumdadır,1,10
 uçları,uçları,1,6
 kuzeybatının,kuzeybatının,1,12
@@ -6352,6 +6549,7 @@ kişilik,kişilik,1,7
 kolu,kolu,1,4
 yürütme,yürütme,1,7
 imzalanmıştır,imzalanmıştır,1,13
+monegasque,monegasque,1,10
 franco,franco,1,6
 koruması,koruması,1,8
 greco,greco,1,5
@@ -6372,6 +6570,7 @@ bergeron,bergeron,1,8
 farklılıklar,farklılıklar,1,12
 prosedür,prosedür,1,8
 galler,galler,1,6
+i̇ngiltere,i̇ngiltere,1,10
 genişletilmesini,genişletilmesini,1,16
 fontvieille,fontvieille,1,11
 ıslah,ıslah,1,5
@@ -6394,6 +6593,7 @@ tahıl,tahıl,1,5
 örnek,örnek,1,5
 kıyılarındaki,kıyılarındaki,1,13
 california,california,1,10
+baja,baja,1,4
 adasına,adasına,1,7
 volkanik,volkanik,1,8
 helena,helena,1,6
@@ -6441,15 +6641,18 @@ norman,norman,1,6
 özgürlüklere,özgürlüklere,1,12
 morgan,morgan,1,6
 dean,dean,1,4
+jeffrey,jeffrey,1,7
 negan,negan,1,5
 karakterlerden,karakterlerden,1,14
 aşamasında,aşamasında,1,10
 edeceğiz,edeceğiz,1,8
 bölümlerin,bölümlerin,1,10
+i̇nternet,i̇nternet,1,9
 sanayinin,sanayinin,1,9
 çarşamba,çarşamba,1,8
 microsoft,microsoft,1,9
 benimsediler,benimsediler,1,12
+teknolojili,teknolojili,1,11
 araçlarını,araçlarını,1,10
 insansız,insansız,1,8
 yetkililer,yetkililer,1,10
@@ -6515,6 +6718,7 @@ tepki,tepki,1,5
 çıkmasına,çıkmasına,1,9
 sırtına,sırtına,1,7
 merdivenle,merdivenle,1,10
+johnny,johnny,1,6
 yaptım,yaptım,1,6
 istemiyor,istemiyor,1,9
 adama,adama,1,5
@@ -6539,6 +6743,7 @@ geldiğine,geldiğine,1,9
 vakti,vakti,1,5
 hazırlanma,hazırlanma,1,10
 şovun,şovun,1,5
+alejandra,alejandra,1,9
 yönetmenlerinden,yönetmenlerinden,1,16
 yaratıcı,yaratıcı,1,8
 töreninin,töreninin,1,9
@@ -6564,6 +6769,7 @@ beslemenize,beslemenize,1,11
 resim,resim,1,5
 komik,komik,1,5
 gif,gif,1,3
+emoji,emoji,1,5
 şirketlerinden,şirketlerinden,1,14
 tenis,tenis,1,5
 kandırarak,kandırarak,1,10
