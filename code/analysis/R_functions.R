@@ -22,8 +22,6 @@ options(dplyr.summarise.inform = FALSE)
 which_folder <- function(folder,filter=T) paste(folder,ifelse(filter,'filtered','non_filtered'),sep='/')
 
 
-# to set
-filter    <- T
 
 # globals ----------------------------------------------------------------------
 corr_type <- 'kendall'
@@ -43,17 +41,6 @@ non_imm_langs <- c('Chinese-strokes',"Japanese-strokes",'Chinese-pinyin','Japane
 corr_suffix   <- if (corr_type=='kendall') '' else paste0('_',corr_type)
 
 
-## pud
-langs_df_pud    <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
-
-
-## cv
-langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
-  rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%  # shorten names 
-  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
-  rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code") %>%
-  rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
-  rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code")
 
 
 
@@ -87,20 +74,17 @@ form_table <- function(score,filter){
 }
 
 read_language <- function(language, collection, remove_vowels=FALSE, filtered=TRUE) {
-  folder <- if (filtered==T) 'data/filtered' else 'data/non_filtered'
-  folder <- paste(folder,'corpora',sep='/')
+  folder <- if (filtered==T) 'data/filtered/corpora' else 'data/non_filtered/corpora'
   if(!remove_vowels){
     if (collection == 'cv') {
       iso_code <- langs_df_cv$iso_code[langs_df_cv$language==language]
       read.csv(here(folder,paste0(collection,'/',iso_code,"-word.csv")), encoding = 'UTF-8', fileEncoding = 'UTF-8') %>% 
-        rename(frequency = repetitions, word = orthographic_form) %>% 
-        arrange(desc(frequency)) %>% 
-        mutate(characters = nchar(word), language = language) 
+        arrange(desc(frequency)) 
     } else if (collection == 'pud') {
       iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
       str_suffix <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
+      read.csv(here(folder,paste0(collection,'/',iso_code,"_pud",str_suffix,".csv")), encoding = 'UTF-8')[-1]
     } else print('specify an available collection')
   }
   else {
@@ -108,7 +92,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=TR
       iso_code    <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if(iso_code=='zho') "pinyin" else if(iso_code=='jpn') "romaji" else NULL   # file suffix
       str_suffix  <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,str_suffix,"_pud.csv")), encoding = 'UTF-8')[-1]
+      df          <- read.csv(here(folder,paste0(collection,'/',iso_code,"_pud",str_suffix,".csv")), encoding = 'UTF-8')[-1]
       df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
       df$word   <- do_remove_vowels(iso_code,df$word)
@@ -134,9 +118,10 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters', r
   cors <- mclapply(languages, function(language) {
     print(language)
     df <- read_language(language,collection,remove_vowels,filter) %>% mutate(rank=1:nrow(.))
-    if (collection == 'cv') {
-      df$length <- if (length == 'meanDuration') df$meanDuration else if (length == 'medianDuration') df$medianDuration else df$characters
-    }
+    # definition of length
+    df$length <- if (collection == 'cv') { 
+      switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+    } else if (collection == 'pud') df$n_characters
     res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
     list("language"=language, "corr"=res$estimate, "pvalue"=res$p.value)
   }, mc.cores=3)
@@ -149,9 +134,10 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters', r
 compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=T) {
   corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
   df <- read_language(lang,collection,remove_vowels,filter)
-  if (collection == 'cv') {
-    df$length <- switch(length_def,'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$characters)
-  }
+  # definition of length
+  df$length <- if (collection == 'cv') { 
+    switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+  } else if (collection == 'pud') df$n_characters
   N_types    <- nrow(df)
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
@@ -223,10 +209,11 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
   scores <- mclapply(languages, function(lang) {
     print(lang)
     df <- read_language(lang,collection,F,filter)
-    if (collection == 'cv') {
-      df$length <- if (length_def == 'medianDuration') df$medianDuration else df$characters
-      df <- df %>% select(word,length,frequency)
-    }
+    # definition of length
+    df$length <- if (collection == 'cv') { 
+      switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+    } else if (collection == 'pud') df$n_characters
+    df <- df %>% select(word,frequency,length)
     df_all <- df[rep(seq_len(nrow(df)), df$frequency),]
     lang_scores <- lapply(sample_sizes, function(n_sample) {
       set.seed(19)
@@ -243,9 +230,9 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
 compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=T) {
   df <- read_language(lang,collection,F,filter)
   # choose definition of 'length' in cv
-  if (collection == 'cv') {
-    df$length <- if (length_def == 'medianDuration') df$medianDuration else df$characters
-  }
+  df$length <- if (collection == 'cv') { 
+    switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+  } else if (collection == 'pud') df$n_characters
   N_types    <- nrow(df)
   p          <- df$frequency/sum(df$frequency)
   Lmin       <- sum(sort(df$length)*p)            # min baseline

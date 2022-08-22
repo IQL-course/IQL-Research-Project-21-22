@@ -3,14 +3,32 @@
 source('R_functions.R')
 args = commandArgs(trailingOnly=TRUE)
 
-# ARGS: iterations, collections, cores = 3, filter = T
+# ARGUMENTS: randomizations  collections  cores  filter
 
-iters         <- as.numeric(args[[1]])
-collections   <- args[[2]]
-cores         <- if (length(args)>=3) as.numeric(args[[3]]) else 3
-filter        <- if (length(args)>=4) as.logical(args[[4]]) else T
-filter_suffix <- ifelse(filter,'','_non_filtered')
+## description:
+  # - randomizations: number of randomizations to perform
+  # - collections:    collection to be used
+  # - cores:          number of cores to be used
+  # - filter:         whether to apply the optional filtering
 
+## values:
+  # - randomizations: any integer value
+  # - collections:    one of ('pud','cv','both') [default is 'both']
+  # - cores:          any integer value lower than or equal to your available number of cores [default is 1]
+  # - filter:         one of (T,F) [default is T]
+
+
+# NOTE:
+# The minimum outputs to run the script "R_analysis.R" are obtained by the following commands:
+  # - Rscript R_compute_null.R 1000 both [cores] [filter]
+  # - Rscript R_compute_null.R 10000 both [cores] [filter]
+  # - Rscript R_compute_null.R 100000 both [cores] [filter]
+  # - Rscript R_compute_null.R 1000000 both [cores] [filter]
+
+randomizations <- as.numeric(args[[1]])
+collections    <- if (length(args)>=2) args[[2]] else 'both'
+cores          <- if (length(args)>=3) as.numeric(args[[3]]) else 1
+filter         <- if (length(args)>=4) as.logical(args[[4]]) else T
 
 
 if (collections %in% c('pud','both')) {
@@ -19,11 +37,11 @@ if (collections %in% c('pud','both')) {
   suffix <- paste0("_",length_def)
   print(Sys.time())
   scores <- mclapply(langs_df_pud$language, function(language) {
-    compute_expectation_scores_lang(language,collection,length_def,iters,filter) 
+    compute_expectation_scores_lang(language,collection,length_def,randomizations,filter) 
   }, mc.cores = 3)
   print(Sys.time())
   null_df <- do.call(rbind.data.frame,scores)
-  write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,filter_suffix,'.csv')))
+  write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',iters,'.csv')))
 } 
 
 if (collections %in% c('cv','both')) {
@@ -34,10 +52,10 @@ if (collections %in% c('cv','both')) {
     print(length)
     print(Sys.time())
     scores <- mclapply(langs_df_cv$language, function(language) {
-      compute_expectation_scores_lang(language,collection,length,iters,filter) 
+      compute_expectation_scores_lang(language,collection,length,randomizations,filter) 
     },mc.cores=cores)
     null_df <- do.call(rbind.data.frame,scores)
-    write.csv(null_df, here('results',paste0('null_hypothesis_',collection,suffix,'_',iters,filter_suffix,'.csv')))
+    write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',iters,'.csv')))
     print(Sys.time())
   })
 }

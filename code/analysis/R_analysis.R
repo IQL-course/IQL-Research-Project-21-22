@@ -2,15 +2,32 @@
 Sys.setlocale("LC_ALL","English")
 source('R_functions.R', encoding="utf-8")
 
+# ARGUMENTS: filter
+# where:
+  # filter = (T,F) [default is T]
 
-# NOTICE: the default is using the optional filter, but this can be over-ridden here
-filter = F
+
+args = commandArgs(trailingOnly=TRUE)
+filter = if (length(args) == 1) as.logical(args[[1]]) else T
+
+# GLOBALS  --------------------------------------------------------
+## pud
+langs_df_pud    <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
+
+## cv
+langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
+  # shorten long names
+  rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>% 
+  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
+  rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code")
+
 
 
 # COLLECTIONS SUMMARIES --------------------------------------------------------
 
 # + filter alphabet with k-means
-lapply(COLLS,function(collection) {
+print('file: alphabets')
+res <- lapply(COLLS,function(collection) {
   iso_codes <- if (collection == 'pud') langs_df_pud$iso_code else if (collection == 'cv') langs_df_cv$iso_code
   lapply(iso_codes, function(iso_code) {
     df <- read.csv(here('code/preprocessing/',paste0(collection,'/characters/',iso_code,'-character.csv'))) %>% 
@@ -23,7 +40,8 @@ lapply(COLLS,function(collection) {
 })
 
 # + alphabet sizes 
-lapply(COLLS,function(collection) {
+print('file: alphabets sizes')
+res <- lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(langs_df$language, function(language) {
     df       <- read_language(language,collection,F,filtered=T)
@@ -38,7 +56,8 @@ lapply(COLLS,function(collection) {
 
 
 # + collections summary 
-lapply(COLLS, function(collection) {
+print('tables: collection summaries')
+res <- lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(here(which_folder('results',filter),paste0('alphabet_sisez_',collection,'.csv')))
@@ -57,7 +76,8 @@ lapply(COLLS, function(collection) {
 # OPTIMALITY SCORES ------------------------------------------------------
 
 # + scores for each language, collection, length_def
-lapply(COLLS, function(collection) {
+print('tables: optimality scores')
+res <- lapply(COLLS, function(collection) {
   if (collection == 'cv') {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
@@ -78,7 +98,8 @@ lapply(COLLS, function(collection) {
 
 
 # + summary opt scores
-lapply(c('omega','eta','psi'), function(score) {
+print('tables: optimality scores summaries')
+res <- lapply(c('omega','eta','psi'), function(score) {
   summ <- opt_score_summary(score) %>% mutate(empty = rep('',3)) 
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex"),
@@ -89,7 +110,8 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 # + correlogram of opt scores 
-lapply(c('kendall','pearson'), function(plot_corr) {
+print('figures: correlogram between optimality scores')
+res <- lapply(c('kendall','pearson'), function(plot_corr) {
   plot_corr_suffix <- paste0('_',plot_corr)
   rows <- lapply(COLLS, function(collection) {
     if (collection == 'cv') {
@@ -112,6 +134,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
 
 # TIME VS SPACE  ------------------------------------------------------
 ## scatterplot
+print('figures: psi in duration versus characters')
 score <- 'psi'
 rows_cv <- lapply(c('medianDuration','meanDuration'), function(length_def) {
   plot_timeVSspace(score,length_def,filter)
@@ -127,14 +150,15 @@ psi_values <- lapply(length_defs, function(length_def) {
 df_psi <- do.call(cbind,psi_values) 
 cor  <- cor(df_psi,method='kendall')[2,1]
 pval <- cor_pmat(df_psi,method='kendall')[2,1]
-
+print(paste0('relation between psi in characters and in duration: ',cor, 
+             'with pvalue:',pval))
 
 
 
 
 # CORRELATION SIGNIFICANCE --------------------------------------------------------
-
-lapply(c('kendall','pearson'), function(corr_type) {
+print('figures: correlation significance')
+res <- lapply(c('kendall','pearson'), function(corr_type) {
   corr_suffix <- paste0('_',corr_type)
   ## cv
   collection <- 'cv'
@@ -160,6 +184,7 @@ lapply(c('kendall','pearson'), function(corr_type) {
 # SCORES DISTRIBUTION ---------------------------------------------------------
 
 # + density plots
+print('figures: scores density plots')
 rows <- lapply(COLLS, function(collection) {
   if (collection =='cv') {
     rows <- lapply(length_defs, function(length) {
@@ -189,6 +214,7 @@ ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suff
 
 
 # + Psi values and composition
+print('figures: psi values and composition')
 score <- 'psi'
 length_def   <- 'characters'
 opt_df <- read_file('opt','pud',length_def,filter)
@@ -204,6 +230,7 @@ ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',leng
 
 
 # + kendall vs spearman table
+print('tables: kendall vs spearman in pud')
 opt_scores_dfs <- lapply(c('kendall','spearman'), function(corr_type) {
   opt_df   <- read_file('opt','pud','characters',filter,corr_type=corr_type) %>% select(language,family, script,omega)
   corr_df  <- read_file('corr','pud','characters',filter,corr_type=corr_type)     
@@ -230,7 +257,8 @@ print(xtable(df,type = "latex"),
 
 # FINDING THE BEST SCORE  --------------------------------------------------------------
 ## correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
-lapply(COLLS, function(collection) {
+print('figures: correlograms of scores and basic language parameters')
+res <- lapply(COLLS, function(collection) {
   params_df <-   read.csv(here(which_folder('results',filter),paste0('coll_summary_',collection,'.csv'))) %>% 
     select(-X,-family,-script)
   lapply(c('kendall','pearson'), function(plot_corr) {
@@ -261,6 +289,7 @@ lapply(COLLS, function(collection) {
 
 
 ## convergence of scores 
+print('figures: convergence of scores')
 sample_sizes <- c(2^seq(3,23))
 rows <- lapply(COLLS, function(collection) {
   languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
@@ -297,9 +326,9 @@ rows <- lapply(COLLS, function(collection) {
 # NULL HYPOTHESYS --------------------------------------------------------- TO DO
 iters <- 1e+06
 
-
 # + summary opt scores null
-lapply(c('omega','eta','psi'), function(score) {
+print('tables: summary of scores expected values')
+res <- lapply(c('omega','eta','psi'), function(score) {
   summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex",digits=3), 
@@ -310,7 +339,8 @@ lapply(c('omega','eta','psi'), function(score) {
 
 
 ## correlation wit Lmin, Lr, and Lmin/Lr
-lapply(c(1e+06), function(iters) {
+print('figures: correlograms of scores expectations with baselines')
+res <- lapply(c(1e+06), function(iters) {
   combo_suff <- ''
   lapply(c('kendall','pearson'), function(plot_corr) {
     plot_corr_suffix <- paste0('_',plot_corr)
@@ -334,8 +364,9 @@ lapply(c(1e+06), function(iters) {
 
 
 # evolution of correlation 
+print('figures: evolution of correlation over number of randomizations')
 ## cv
-lapply(length_defs, function(length_def) {
+res <- lapply(length_defs, function(length_def) {
   dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
     dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
       read_file('null','cv',length_def,filter,iters) %>% 
@@ -362,6 +393,7 @@ ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters
 
 
 # E[scores] vs Lmin
+print('figures: correlation between scores expectations and Lmin')
 iters <- 1e+06
 rows_cv <- lapply(length_defs, function(length_def) {
   df <- read_file('null','cv',length_def,filter,iters)%>% 
@@ -387,6 +419,7 @@ ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',ite
 
 
 # E[eta] vs theoretical lower bound
+print('figures: E[eta] vs theoretical lower bound')
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'pud') {
     length_def <- 'characters'
@@ -404,19 +437,18 @@ rows <- lapply(COLLS, function(collection) {
 
 
 # PUD scores after removing vowels ---------------------------------------------
-
+print('files: vowel removal analysis')
 # - 1 - Significance of word lengths
-print('Vowel removal: begin to compute correlations')
 tau_df <- compute_corr("pud", corr_type = "kendall", remove_vowels = TRUE, filter)
 write.csv(tau_df, here(which_folder('results',filter), 'correlation_pud_remove_vowels.csv'))
 
 # - 2 - Compute scores
-print('Vowel removal: begin to compute optimality scores')
 opt_df <- compute_optimality_scores_coll("pud", corr_type = "kendall", remove_vowels = TRUE, filter)
 write.csv(opt_df, here(which_folder('results',filter), 'optimality_scores_pud_remove_vowels.csv'))
 
 # plot comparison
-lapply(c('eta','omega','psi'), function(score){
+print('figures: vowel removal analysis')
+res <- lapply(c('eta','omega','psi'), function(score){
   df <- form_table(score,filter)
   plot_score_comparison(score,df)    
   ggsave(here(which_folder('figures',filter), paste0('scores_comparison_pud_',score,'.pdf')), 
@@ -425,7 +457,8 @@ lapply(c('eta','omega','psi'), function(score){
 
 
 # effect of FILTERING  ---------------------------------------------------------
-lapply(COLLS, function(collection) {
+print('files: scores with filtered vs non filtered data')
+res <- lapply(COLLS, function(collection) {
   lapply(length_defs, function(length_def) {
     length_def <- if (collection=='pud') 'characters' else length_def
     get_filtered_ori_df(collection,length_def) %>% 

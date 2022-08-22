@@ -1,24 +1,31 @@
-source('R_functions.R')
 
+# CORRELATIONS AND OPTIMALITY SCORES  ------------------------------------------
+source('R_functions.R')
+Sys.setlocale("LC_ALL","English")     # might be needed for Windows
+args = commandArgs(trailingOnly=TRUE)
 
 # ARGUMENTS: corr_type  collections  what  filter
-# where:
-  # corr_type = ('kendall','spearman','pearson')
-  # collections = ('pud','cv','both')
-  # what = ('corr','scores','both')
-  # filter = (T,F)
+
+## description:
+  # - corr_type:   correlation to be used
+  # - collections: collections to be used
+  # - what :       what should be computed
+  # - filter:      whether to apply the optional filtering
+
+## values:
+  # - corr_type:   one of ('kendall','spearman','pearson')
+  # - collections: one of ('pud','cv','both') [default is 'both']
+  # - what :       one of ('corr','scores','both') [default is 'both']
+  # - filter:      one of (T,F) [default is T]
 
 # NOTE:
-# The minimum outputs to run the script "R_analysis.R" are obtained by the following commands,
-# where [filter] can be set to either T or F:
+# The minimum outputs to run the script "R_analysis.R" are obtained by the following commands:
   # - Rscript R_compute_scores.R kendall both both [filter]
   # - Rscript R_compute_scores.R spearman pud both [filter]
   # - Rscript R_compute_scores.R pearson both corr [filter]
 
 
 
-Sys.setlocale("LC_ALL","English")     # might be needed for Windows
-args = commandArgs(trailingOnly=TRUE)
 
 corr_suffix <- if (args[[1]] == 'kendall') '' else paste0('_',args[[1]])
 collections <- if (length(args)>=2) args[[2]] else 'both'
@@ -31,13 +38,13 @@ if (args[[1]] %in% c('kendall','spearman','pearson')) {
       collection <- 'pud'
       print(collection)
       if (what %in% c('corr','both')) {
-        # - 1 - Significance of word lengths
+        # - 1 - Correlations with significance
         print('begin to compute tau correlations')
         tau_df <- compute_corr(collection,args[[1]],'characters',F,filter)
         write.csv(tau_df, here(which_folder('results',filter),paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))
         }
       if (what %in% c('scores','both')) {
-      # - 2 - Compute scores
+      # - 2 - Optimality scores
       print('begin to compute optimality scores')
       opt_df <- compute_optimality_scores_coll(collection,args[[1]],'characters',F,filter)
       write.csv(opt_df, here(which_folder('results',filter),paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))
@@ -51,13 +58,13 @@ if (args[[1]] %in% c('kendall','spearman','pearson')) {
         suffix <- paste0("_",length)
         print(length)
         if (what %in% c('corr','both')) {
-        # - 1 - Significance of word lengths
+        # - 1 - Correlations with significance
           print('begin to compute tau correlations')
           tau_df <- compute_corr(collection,args[[1]],length,F,filter)
           write.csv(tau_df, here(which_folder('results',filter),paste0('correlation_',collection,suffix,corr_suffix,'.csv')))
         }
         if (what %in% c('scores','both')) {
-          ## - 2 - Compute scores
+          ## - 2 - Optimality scores
           print('begin to compute optimality scores')
           opt_df <- compute_optimality_scores_coll(collection,args[[1]],length,F,filter)
           write.csv(opt_df, here(which_folder('results',filter),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))
