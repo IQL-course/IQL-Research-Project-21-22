@@ -1,7 +1,7 @@
 
 # CORRELATIONS AND OPTIMALITY SCORES  ------------------------------------------
 source('code/analysis/R_functions.R')
-Sys.setlocale("LC_ALL","English")     # might be needed for Windows
+#Sys.setlocale("LC_ALL","English")     # might be needed for Windows
 args = commandArgs(trailingOnly=TRUE)
 
 # ARGUMENTS: corr_type  collections  what  filter

@@ -121,7 +121,7 @@ read_file <- function(what,collection,length_def='characters',filter=T,iters=1e+
 compute_corr <- function(collection,corr_type='kendall',length = 'characters', remove_vowels=FALSE, filter=T) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==T & collection == 'pud') langs_df$language[langs_df$script=='Latin'] else langs_df$language
-  cors <- mclapply(languages, function(language) {
+  cors <- lapply(languages, function(language) {
     print(language)
     df <- read_language(language,collection,remove_vowels,filter) %>% mutate(rank=1:nrow(.))
     # definition of length
@@ -130,7 +130,7 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters', r
     } else if (collection == 'pud') df$n_characters
     res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
     list("language"=language, "corr"=res$estimate, "pvalue"=res$p.value)
-  }, mc.cores=3)
+  })
   df <- do.call(rbind.data.frame,cors) %>% 
     arrange(pvalue) %>% mutate(hb_pvalue = p.adjust(pvalue))   
   return(df)
