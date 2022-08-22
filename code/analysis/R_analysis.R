@@ -1,6 +1,6 @@
 
 Sys.setlocale("LC_ALL","English")
-source('R_functions.R', encoding="utf-8")
+source('code/analysis/R_functions.R', encoding="utf-8")
 
 # ARGUMENTS: filter
 # where:
@@ -8,21 +8,14 @@ source('R_functions.R', encoding="utf-8")
 
 
 args = commandArgs(trailingOnly=TRUE)
-filter = if (length(args) == 1) as.logical(args[[1]]) else T
+filter <- if (length(args) == 1) as.logical(args[[1]]) else T
 
 # GLOBALS  --------------------------------------------------------
 ## pud
-langs_df_pud    <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
-
+langs_df_pud <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
 ## cv
 langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
-  # shorten long names
-  rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>% 
-  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
-  rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code")
-
-
-
+  shorten_names()
 
 
 

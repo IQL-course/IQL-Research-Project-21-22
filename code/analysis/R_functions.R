@@ -46,6 +46,12 @@ corr_suffix   <- if (corr_type=='kendall') '' else paste0('_',corr_type)
 
 # functions  -------------------------------------------------------------------
 
+shorten_names <- function(df) {
+  df %>% rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>% 
+    rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
+    rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code")
+}
+
 do_remove_vowels <- function(iso_code,words) {
   if(iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'|iso_code=='ces'){
     gsub("[aeiouáóéíúàèùìòâôîêûyýäöæą\U0105ę\U0119ů\U016F]","", words)          # with y ý
@@ -114,7 +120,7 @@ read_file <- function(what,collection,length_def='characters',filter=T,iters=1e+
 
 compute_corr <- function(collection,corr_type='kendall',length = 'characters', remove_vowels=FALSE, filter=T) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
+  languages <- if (remove_vowels==T & collection == 'pud') langs_df$language[langs_df$script=='Latin'] else langs_df$language
   cors <- mclapply(languages, function(language) {
     print(language)
     df <- read_language(language,collection,remove_vowels,filter) %>% mutate(rank=1:nrow(.))
@@ -231,7 +237,7 @@ compute_expectation_scores_lang <- function(lang,collection,length_def='characte
   df <- read_language(lang,collection,F,filter)
   # choose definition of 'length' in cv
   df$length <- if (collection == 'cv') { 
-    switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+    switch(length_def, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
   } else if (collection == 'pud') df$n_characters
   N_types    <- nrow(df)
   p          <- df$frequency/sum(df$frequency)

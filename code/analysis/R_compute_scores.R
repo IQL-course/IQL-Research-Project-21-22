@@ -1,6 +1,6 @@
 
 # CORRELATIONS AND OPTIMALITY SCORES  ------------------------------------------
-source('R_functions.R')
+source('code/analysis/R_functions.R')
 Sys.setlocale("LC_ALL","English")     # might be needed for Windows
 args = commandArgs(trailingOnly=TRUE)
 
@@ -25,12 +25,19 @@ args = commandArgs(trailingOnly=TRUE)
   # - Rscript R_compute_scores.R pearson both corr [filter]
 
 
-
-
 corr_suffix <- if (args[[1]] == 'kendall') '' else paste0('_',args[[1]])
 collections <- if (length(args)>=2) args[[2]] else 'both'
 what        <- if (length(args)>=3) args[[3]] else 'both'
 filter      <- if (length(args)>=4) as.logical(args[[4]]) else T
+
+
+# GLOBALS  --------------------------------------------------------
+## pud
+langs_df_pud <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
+## cv
+langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
+  shorten_names()
+
 
 # OPTIMALITY SCORES ------------------------------------------------------------
 if (args[[1]] %in% c('kendall','spearman','pearson')) {  

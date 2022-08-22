@@ -1,6 +1,6 @@
 
 # NULL HYPOTHESIS --------------------------------------------------------------
-source('R_functions.R')
+source('code/analysis/R_functions.R')
 args = commandArgs(trailingOnly=TRUE)
 
 # ARGUMENTS: randomizations  collections  cores  filter
@@ -31,6 +31,15 @@ cores          <- if (length(args)>=3) as.numeric(args[[3]]) else 1
 filter         <- if (length(args)>=4) as.logical(args[[4]]) else T
 
 
+# GLOBALS  --------------------------------------------------------
+## pud
+langs_df_pud <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
+## cv
+langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
+  shorten_names()
+
+
+# SCORES EXPECTATIONS   --------------------------------------------------------
 if (collections %in% c('pud','both')) {
   length_def <- 'characters'
   collection <- 'pud'
@@ -41,7 +50,7 @@ if (collections %in% c('pud','both')) {
   }, mc.cores = 3)
   print(Sys.time())
   null_df <- do.call(rbind.data.frame,scores)
-  write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',iters,'.csv')))
+  write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',randomizations,'.csv')))
 } 
 
 if (collections %in% c('cv','both')) {
@@ -55,7 +64,7 @@ if (collections %in% c('cv','both')) {
       compute_expectation_scores_lang(language,collection,length,randomizations,filter) 
     },mc.cores=cores)
     null_df <- do.call(rbind.data.frame,scores)
-    write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',iters,'.csv')))
+    write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',randomizations,'.csv')))
     print(Sys.time())
   })
 }
