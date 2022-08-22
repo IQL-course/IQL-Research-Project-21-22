@@ -729,7 +729,6 @@
 オーストリア,オーストリア,4,9,Oosutoria
 使っ,使っ,4,4,Tuka
 消費,消費,4,6,Syouhi
-bbc,bbc,4,3,Bbc
 ウィンストン,ウィンストン,4,8,In suton
 準備,準備,4,6,Zyunbi
 発展,発展,4,6,Hatten
@@ -814,7 +813,6 @@ bbc,bbc,4,3,Bbc
 制度,制度,3,5,Seido
 促進,促進,3,7,Sokusin
 部門,部門,3,5,Bumon
-you,you,3,3,You
 優先,優先,3,6,Yuusen
 監視,監視,3,5,Kansi
 主,主,3,4,Nusi
@@ -895,7 +893,6 @@ you,you,3,3,You
 汚染,汚染,3,4,Osen
 ゴルフ,ゴルフ,3,6,Goruhu
 本当,本当,3,5,Honto
-eu,eu,3,2,Eu
 勢力,勢力,3,8,Seiryoku
 後年,後年,3,6,Kounen
 アイスランド,アイスランド,3,10,Aisu rando
@@ -993,7 +990,6 @@ eu,eu,3,2,Eu
 強調,強調,3,8,Kyoutyou
 訓練,訓練,3,6,Kunren
 着陸,着陸,3,9,Tyakuriku
-uber,uber,3,4,Uber
 取っ,取っ,3,2,To
 パイロット,パイロット,3,8,Pairotto
 伯爵,伯爵,3,9,Hakusyaku
@@ -1056,7 +1052,6 @@ uber,uber,3,4,Uber
 送信,送信,3,6,Sousin
 含ん,含ん,3,5,Hukun
 レビュー,レビュー,3,6,Rebyuu
-a,a,3,1,A
 反対,反対,3,6,Hantai
 祖母,祖母,3,4,Sobo
 内戦,内戦,3,6,Naisen
@@ -1129,7 +1124,6 @@ a,a,3,1,A
 最良,最良,3,7,Sairyou
 スコットランド,スコットランド,3,12,Sukottorando
 構造,構造,3,6,Kouzou
-cnn,cnn,3,3,Cnn
 改革,改革,3,7,Kaikaku
 良い,良い,3,3,Yoi
 テーマ,テーマ,3,5,Teema
@@ -1140,7 +1134,6 @@ cnn,cnn,3,3,Cnn
 土曜,土曜,2,5,Doyou
 助ける,助ける,2,8,Tasukeru
 遂げ,遂げ,2,4,Toge
-and,and,2,3,And
 絵,絵,2,1,E
 カルロス,カルロス,2,8,Karurosu
 変動,変動,2,6,Hendou
@@ -1272,7 +1265,6 @@ and,and,2,3,And
 迎え,迎え,2,5,Mukae
 ゲイヤー,ゲイヤー,2,7,Ge iyaa
 入り,入り,2,3,Iri
-really,really,2,6,Really
 体制,体制,2,6,Taisei
 ポーランド,ポーランド,2,8,Poorando
 スタジオ,スタジオ,2,7,Sutazio
@@ -1347,7 +1339,6 @@ really,really,2,6,Really
 衰え,衰え,2,6,Otoroe
 高地,高地,2,5,Kouti
 ディスプレイ,ディスプレイ,2,9,Disupurei
-gca,gca,2,3,Gca
 果たし,果たし,2,6,Hatasi
 博士,博士,2,6,Hakase
 アルバレス,アルバレス,2,9,Arubaresu
@@ -1400,7 +1391,6 @@ gca,gca,2,3,Gca
 アーティスト,アーティスト,2,8,Aatisuto
 ベルギー,ベルギー,2,7,Berugii
 中世,中世,2,7,Tyuusei
-mps,mps,2,3,Mps
 採択,採択,2,7,Saitaku
 ジョリオ,ジョリオ,2,6,Zyorio
 現金,現金,2,6,Genkin
@@ -1550,7 +1540,6 @@ mps,mps,2,3,Mps
 トリックス,トリックス,2,9,Torikkusu
 サウスシー,サウスシー,2,8,Saususii
 大きい,大きい,2,5,Ookii
-new,new,2,3,New
 裏付ける,裏付ける,2,9,Urazukeru
 証拠,証拠,2,6,Syouko
 ヒスパニア,ヒスパニア,2,9,Hisupania
@@ -1697,7 +1686,6 @@ new,new,2,3,New
 打倒,打倒,2,5,Datou
 ロケット,ロケット,2,7,Roketto
 ジャーナリスト,ジャーナリスト,2,12,Zyaanarisuto
-dna,dna,2,3,Dna
 ひとりぼっち,ひとりぼっち,2,11,Hitoribotti
 わかる,わかる,2,6,Wakaru
 顔,顔,2,3,Kao
@@ -1706,7 +1694,6 @@ dna,dna,2,3,Dna
 保存,保存,2,5,Hozon
 治療,治療,2,6,Tiryou
 果たす,果たす,2,6,Hatasu
-spotify,spotify,2,7,Spotify
 発行,発行,2,6,Hakkou
 ソーシャル,ソーシャル,2,8,Soosyaru
 被っ,被っ,2,4,Kabu
@@ -1732,7 +1719,6 @@ spotify,spotify,2,7,Spotify
 温暖,温暖,2,5,Ondan
 起訴,起訴,2,4,Kiso
 規制,規制,2,5,Kisei
-reco,reco,2,4,Reco
 強化,強化,2,6,Kyouka
 熟練,熟練,2,8,Zyukuren
 先月,先月,2,7,Sengetu
@@ -1752,7 +1738,6 @@ reco,reco,2,4,Reco
 夜,夜,2,4,Yoru
 ブラジル,ブラジル,2,8,Buraziru
 大麻,大麻,2,5,Taima
-web,web,2,3,Web
 入れ,入れ,2,3,Ire
 南アフリカ,南アフリカ,2,13,Minamiahurika
 地図,地図,2,4,Tizu
@@ -1761,7 +1746,6 @@ web,web,2,3,Web
 バージョン,バージョン,2,7,Baazyon
 差別,差別,2,6,Sabetu
 状,状,2,4,Zyou
-facebook,facebook,2,9,Face book
 住宅,住宅,2,8,Zyuutaku
 酸化,酸化,2,5,Sanka
 料金,料金,2,7,Ryoukin
@@ -1889,13 +1873,11 @@ facebook,facebook,2,9,Face book
 大会,大会,2,6,Taikai
 アシスタント,アシスタント,2,10,Asisutanto
 ジョンソン,ジョンソン,1,7,Zyonson
-humblebums,humblebums,1,10,Humblebums
 マペッツ,マペッツ,1,7,Mapettu
 サイエンス,サイエンス,1,7,Saiensu
 シンガー,シンガー,1,6,Singaa
 ソングライター,ソングライター,1,11,Songuraitaa
 アーク,アーク,1,4,Aaku
-over,over,1,4,Over
 極悪,極悪,1,7,Gokuaku
 デッカ,デッカ,1,5,Dekka
 マーベル,マーベル,1,7,Maaberu
@@ -1917,7 +1899,6 @@ over,over,1,4,Over
 スティーラーズ,スティーラーズ,1,10,Sutiiraazu
 ホイール,ホイール,1,6,Hoiiru
 イーガン,イーガン,1,5,Iigan
-gchq,gchq,1,4,Gchq
 結成,結成,1,6,Kessei
 メソアメリカ,メソアメリカ,1,11,Mesoamerika
 次号,次号,1,5,Zigou
@@ -1952,17 +1933,14 @@ gchq,gchq,1,4,Gchq
 徳川,徳川,1,8,Tokugawa
 ベリヤ,ベリヤ,1,6,Beriya
 家康,家康,1,6,Ieyasu
-mgb,mgb,1,3,Mgb
 アバクーモフ,アバクーモフ,1,10,Abakuumohu
 サンローラン,サンローラン,1,9,Sanrooran
 取組,取組,1,8,Torikumi
 サーモン,サーモン,1,6,Saamon
 組ん,組ん,1,3,Kun
 選集,選集,1,7,Sensyuu
-my,my,1,2,My
 スター,スター,1,5,Sutaa
 コメディ,コメディ,1,6,Komedi
-head,head,1,4,Head
 録音,録音,1,6,Rokuon
 空港,空港,1,6,Kuukou
 スコット,スコット,1,7,Sukotto
@@ -1988,7 +1966,6 @@ head,head,1,4,Head
 ブロッホ,ブロッホ,1,7,Burohho
 マルクス,マルクス,1,8,Marukusu
 原則,原則,1,7,Gensoku
-google,google,1,6,Google
 願い,願い,1,5,Negai
 神秘,神秘,1,5,Sinpi
 本来,本来,1,6,Honrai
@@ -2001,7 +1978,6 @@ google,google,1,6,Google
 ナッシュビル,ナッシュビル,1,11,Nassyu biru
 移し,移し,1,5,Utusi
 挫折,挫折,1,6,Zasetu
-stephen,stephen,1,7,Stephen
 尊敬,尊敬,1,6,Sonkei
 サムスン,サムスン,1,7,Samusun
 ガムソン,ガムソン,1,8,Gamu son
@@ -2023,8 +1999,6 @@ stephen,stephen,1,7,Stephen
 カーター,カーター,1,6,Kaataa
 イラン,イラン,1,4,Iran
 人質,人質,1,8,Hitoziti
-siri,siri,1,4,Siri
-apple,apple,1,5,Apple
 議席,議席,1,6,Giseki
 留まっ,留まっ,1,4,Toma
 退院,退院,1,5,Taiin
@@ -2106,7 +2080,6 @@ apple,apple,1,5,Apple
 ヒトラー,ヒトラー,1,7,Hitoraa
 ゴードン,ゴードン,1,6,Goodon
 レヴィット,レヴィット,1,7,Revitto
-sf,sf,1,2,Sf
 ルーパー,ルーパー,1,6,Ruupaa
 ヴァレンティノ,ヴァレンティノ,1,9,Varentino
 ステレオタイプ,ステレオタイプ,1,13,Sutereo taipu
@@ -2138,7 +2111,6 @@ sf,sf,1,2,Sf
 ジョーン,ジョーン,1,5,Zyoon
 騎士,騎士,1,4,Kisi
 前兆,前兆,1,7,Zentyou
-lyvet,lyvet,1,5,Lyvet
 知能,知能,1,5,Tinou
 弟子,弟子,1,4,Desi
 塔,塔,1,3,Tou
@@ -2155,9 +2127,7 @@ lyvet,lyvet,1,5,Lyvet
 漠然,漠然,1,7,Bakuzen
 ひび,ひび,1,4,Hibi
 学ぶ,学ぶ,1,6,Manabu
-iag,iag,1,3,Iag
 イレーヌ,イレーヌ,1,6,Ireenu
-ba,ba,1,2,Ba
 ハンス,ハンス,1,5,Hansu
 ペテルソン,ペテルソン,1,10,Peteru son
 原料,原料,1,7,Genryou
@@ -2169,10 +2139,7 @@ ba,ba,1,2,Ba
 ラジウム,ラジウム,1,7,Raziumu
 持ち帰っ,持ち帰っ,1,7,Motikae
 オフ,オフ,1,3,Ohu
-ctv,ctv,1,3,Ctv
-prayer,prayer,1,6,Prayer
 与党,与党,1,5,Yotou
-wing,wing,1,4,Wing
 公的,公的,1,7,Kouteki
 溺れ,溺れ,1,5,Obore
 下り坂,下り坂,1,10,Kudarizaka
@@ -2181,7 +2148,6 @@ wing,wing,1,4,Wing
 キャランジ,キャランジ,1,8,Kyaranzi
 描い,描い,1,4,Egai
 終盤,終盤,1,7,Syuuban
-b,b,1,1,B
 イーグル,イーグル,1,6,Iiguru
 搭載,搭載,1,6,Tousai
 まずまず,まずまず,1,8,Mazumazu
@@ -2206,10 +2172,8 @@ b,b,1,1,B
 小学,小学,1,8,Syougaku
 関与,関与,1,6,Kan'yo
 そそら,そそら,1,6,Sosora
-rhs,rhs,1,3,Rhs
 ダルナン,ダルナン,1,7,Darunan
 親衛,親衛,1,6,Sin'ei
-ss,ss,1,2,Ss
 中尉,中尉,1,5,Tyuui
 レジスタンス,レジスタンス,1,11,Rezisutansu
 掃討,掃討,1,6,Soutou
@@ -2272,14 +2236,12 @@ ss,ss,1,2,Ss
 付き添っ,付き添っ,1,6,Tukiso
 マンドル,マンドル,1,8,Man doru
 ギター,ギター,1,5,Gitaa
-t,t,1,1,T
 カー,カー,1,3,Kaa
 センチュリー,センチュリー,1,9,Sentyurii
 アメリカン,アメリカン,1,8,Amerikan
 モータース,モータース,1,8,Mootaasu
 ハイ,ハイ,1,3,Hai
 ランブラー,ランブラー,1,9,Ran buraa
-gm,gm,1,2,Gm
 駆り立て,駆り立て,1,8,Karitate
 今夜,今夜,1,6,Kon'ya
 緩ん,緩ん,1,5,Yurun
@@ -2370,7 +2332,6 @@ gm,gm,1,2,Gm
 断言,断言,1,6,Dangen
 ヘクラー,ヘクラー,1,7,Hekuraa
 プレーヤー,プレーヤー,1,8,Pureeyaa
-on,on,1,2,On
 失速,失速,1,7,Sissoku
 上り詰め,上り詰め,1,10,Noboritume
 チャート,チャート,1,6,Tyaato
@@ -2388,7 +2349,6 @@ on,on,1,2,On
 再選,再選,1,6,Saisen
 除名,除名,1,6,Zyomei
 グラフトン,グラフトン,1,9,Gurahuton
-h,h,1,1,H
 メトロポリタン,メトロポリタン,1,13,Metoroporitan
 トーリー,トーリー,1,6,Toorii
 小麦,小麦,1,6,Komugi
@@ -2400,17 +2360,12 @@ h,h,1,1,H
 表す,表す,1,7,Arawasu
 名詞,名詞,1,5,Meisi
 共産,共産,1,7,Kyousan
-twitter,twitter,1,7,Twitter
-reddit,reddit,1,6,Reddit
 終焉,終焉,1,6,Syuuen
 戦時,戦時,1,5,Senzi
 抵抗,抵抗,1,6,Teikou
 人道,人道,1,6,Zindou
 閉じ,閉じ,1,4,Tozi
-love,love,1,4,Love
 シングル,シングル,1,7,Singuru
-shaky,shaky,1,5,Shaky
-ground,ground,1,6,Ground
 自宅,自宅,1,6,Zitaku
 絶頂,絶頂,1,7,Zettyou
 ラブロッカ,ラブロッカ,1,10,Rabu rokka
@@ -2432,7 +2387,6 @@ ground,ground,1,6,Ground
 提起,提起,1,5,Teiki
 葬式,葬式,1,7,Sousiki
 参列,参列,1,7,Sanretu
-nascar,nascar,1,6,Nascar
 背後,背後,1,5,Haigo
 輝き,輝き,1,8,Kagayaki
 ドライバー,ドライバー,1,8,Doraibaa
@@ -2459,8 +2413,6 @@ nascar,nascar,1,6,Nascar
 アン,アン,1,2,An
 ピアノ,ピアノ,1,5,Piano
 ホートン,ホートン,1,6,Hooton
-wild,wild,1,4,Wild
-west,west,1,5,We st
 金遣い,金遣い,1,9,Kanezukai
 荒,荒,1,3,Are
 シガー,シガー,1,5,Sigaa
@@ -2476,7 +2428,6 @@ west,west,1,5,We st
 サイズ,サイズ,1,5,Saizu
 制服,制服,1,7,Seihuku
 手当,手当,1,5,Teate
-atm,atm,1,3,Atm
 修復,修復,1,8,Syuuhuku
 プラボウォ,プラボウォ,1,7,Puraboo
 スビアント,スビアント,1,8,Subianto
@@ -2513,7 +2464,6 @@ atm,atm,1,3,Atm
 イレイン,イレイン,1,6,Ire in
 ソルヘイム,ソルヘイム,1,9,Soruheimu
 エリック,エリック,1,6,Erikku
-hfc,hfc,1,3,Hfc
 ユニバーサル,ユニバーサル,1,11,Yunibaasaru
 改正,改正,1,6,Kaisei
 オスワルド,オスワルド,1,9,Osuwarudo
@@ -2521,11 +2471,6 @@ hfc,hfc,1,3,Hfc
 オペラ,オペラ,1,5,Opera
 遠い,遠い,1,4,Tooi
 抑える,抑える,1,6,Osaeru
-now,now,1,3,Now
-earth,earth,1,5,Earth
-in,in,1,2,In
-north,north,1,5,North
-america,america,1,7,America
 売上,売上,1,6,Uriage
 トール,トール,1,5,Tooru
 教え,教え,1,4,Osie
@@ -2542,9 +2487,6 @@ america,america,1,7,America
 簡潔,簡潔,1,7,Kanketu
 アニメーション,アニメーション,1,10,Animeesyon
 仕上がっ,仕上がっ,1,5,Siaga
-of,of,1,2,Of
-power,power,1,5,Power
-the,the,1,3,The
 批評,批評,1,6,Hihyou
 演出,演出,1,7,Ensyutu
 楽しん,楽しん,1,7,Tanosin
@@ -2611,8 +2553,6 @@ the,the,1,3,The
 追わ,追わ,1,3,Owa
 アイビンゲン,アイビンゲン,1,8,Aibingen
 移っ,移っ,1,3,Utu
-team,team,1,4,Team
-telekom,telekom,1,7,Telekom
 恋人,恋人,1,7,Koibito
 シュドバーデン,シュドバーデン,1,11,Syudobaaden
 メルディンゲン,メルディンゲン,1,10,Merudingen
@@ -2645,7 +2585,6 @@ telekom,telekom,1,7,Telekom
 商業,商業,1,8,Syougyou
 前哨,前哨,1,7,Zensyou
 離れる,離れる,1,8,Hanareru
-maiorum,maiorum,1,7,Maiorum
 福祉,福祉,1,6,Hukusi
 パーマー,パーマー,1,6,Paamaa
 移住,移住,1,5,Izyuu
@@ -2659,11 +2598,9 @@ maiorum,maiorum,1,7,Maiorum
 ブランズフィールド,ブランズフィールド,1,14,Buranzuhiirudo
 陸地,陸地,1,6,Rikuti
 残す,残す,1,6,Nokosu
-mos,mos,1,3,Mos
 アーネスト,アーネスト,1,9,Aa nesuto
 シャックルトン,シャックルトン,1,11,Sya kuruton
 パバルカル,パバルカル,1,10,Pabarukaru
-endurance,endurance,1,9,Endurance
 号,号,1,3,Gou
 乗せ,乗せ,1,4,Nose
 出航,出航,1,7,Syukkou
@@ -2682,7 +2619,6 @@ endurance,endurance,1,9,Endurance
 ゲート,ゲート,1,5,Geeto
 パーク,パーク,1,5,Paaku
 全長,全長,1,7,Zentyou
-km,km,1,2,Km
 プラネタリウム,プラネタリウム,1,13,Puranetariumu
 水族,水族,1,7,Suizoku
 オーバーマルスベルク,オーバーマルスベルク,1,17,Oobaamarusuberuku
@@ -2722,7 +2658,6 @@ km,km,1,2,Km
 ライヘンバッハ,ライヘンバッハ,1,11,Raihenbahha
 売却,売却,1,8,Baikyaku
 エア,エア,1,2,Ea
-jr,jr,1,2,Jr
 納める,納める,1,7,Osameru
 奪回,奪回,1,6,Dakkai
 感激,感激,1,7,Kangeki
@@ -2776,7 +2711,6 @@ jr,jr,1,2,Jr
 ベルサイユ,ベルサイユ,1,9,Berusaiyu
 基地,基地,1,4,Kiti
 プリュヴィオーズ,プリュヴィオーズ,1,11,Puryuvioozu
-iii,iii,1,3,Iii
 犯,犯,1,3,Han
 造山,造山,1,6,Zouzan
 海洋,海洋,1,6,Kaiyou
@@ -2814,7 +2748,6 @@ iii,iii,1,3,Iii
 わたり,わたり,1,6,Watari
 職業,職業,1,9,Syokugyou
 芽生え,芽生え,1,5,Mebae
-metti,metti,1,5,Metti
 再度,再度,1,5,Saido
 友情,友情,1,7,Yuuzyou
 協業,協業,1,8,Kyougyou
@@ -2907,7 +2840,6 @@ metti,metti,1,5,Metti
 少女,少女,1,7,Syouzyo
 休暇,休暇,1,6,Kyuuka
 ウォルター,ウォルター,1,6,Orutaa
-remis,remis,1,5,Remis
 緩和,緩和,1,5,Kanwa
 べく,べく,1,4,Beku
 バーナード,バーナード,1,8,Baanaado
@@ -2986,10 +2918,7 @@ remis,remis,1,5,Remis
 資源,資源,1,5,Sigen
 好,好,1,3,Kou
 再生,再生,1,6,Saisei
-irena,irena,1,5,Irena
 総裁,総裁,1,6,Sousai
-z,z,1,1,Z
-amin,amin,1,5,Am in
 洋上,洋上,1,7,Youzyou
 風力,風力,1,8,Huuryoku
 うる,うる,1,3,Uru
@@ -3022,18 +2951,14 @@ amin,amin,1,5,Am in
 ナイトレイ,ナイトレイ,1,9,Nai torei
 為替,為替,1,6,Kawase
 今回,今回,1,6,Konkai
-rich,rich,1,4,Rich
 逮捕,逮捕,1,5,Taiho
 悪ふざけ,悪ふざけ,1,10,Waruhuzake
 優れ,優れ,1,6,Sugure
-aoun,aoun,1,4,Aoun
-hariri,hariri,1,6,Hariri
 取引,取引,1,8,Torihiki
 同士,同士,1,5,Dousi
 内紛,内紛,1,6,Naihun
 夫,夫,1,4,Otto
 在任,在任,1,6,Zainin
-dpa,dpa,1,3,Dpa
 確約,確約,1,8,Kakuyaku
 着,着,1,2,Ki
 中止,中止,1,6,Tyuusi
@@ -3048,7 +2973,6 @@ dpa,dpa,1,3,Dpa
 市長,市長,1,6,Sityou
 履行,履行,1,5,Rikou
 ラチダ,ラチダ,1,6,Ratida
-akp,akp,1,3,Akp
 ダティ,ダティ,1,4,Dati
 サルコジ,サルコジ,1,8,Sarukozi
 予備,予備,1,4,Yobi
@@ -3061,10 +2985,8 @@ akp,akp,1,3,Akp
 内務,内務,1,5,Naimu
 工業,工業,1,7,Kougyou
 成し遂げる,成し遂げる,1,10,Nasitogeru
-gema,gema,1,4,Gema
 最,最,1,3,Sai
 会員,会員,1,5,Kaiin
-tube,tube,1,4,Tube
 有効,有効,1,6,Yuukou
 海軍,海軍,1,6,Kaigun
 侵す,侵す,1,5,Okasu
@@ -3090,7 +3012,6 @@ tube,tube,1,4,Tube
 ミヒャエル,ミヒャエル,1,8,Mihyaeru
 見地,見地,1,5,Kenti
 あらまし,あらまし,1,7,Aramasi
-nato,nato,1,4,Nato
 償還,償還,1,7,Syoukan
 たろう,たろう,1,5,Tarou
 併せ,併せ,1,5,Awase
@@ -3106,7 +3027,6 @@ nato,nato,1,4,Nato
 不調,不調,1,6,Hutyou
 クーン,クーン,1,4,Kuun
 振る,振る,1,4,Buru
-diezeit,diezeit,1,7,Diezeit
 アイデンティティ,アイデンティティ,1,9,Aidentiti
 名付け,名付け,1,6,Nazuke
 危機,危機,1,4,Kiki
@@ -3115,11 +3035,9 @@ diezeit,diezeit,1,7,Diezeit
 部員,部員,1,4,Buin
 マッシュ,マッシュ,1,6,Massyu
 キーボード,キーボード,1,8,Kiiboodo
-dfb,dfb,1,3,Dfb
 達成,達成,1,6,Tassei
 打ち立て,打ち立て,1,7,Utitate
 デビッド,デビッド,1,7,Debiddo
-essen,essen,1,5,Essen
 退職,退職,1,8,Taisyoku
 他者,他者,1,5,Tasya
 除外,除外,1,6,Zyogai
@@ -3154,8 +3072,6 @@ essen,essen,1,5,Essen
 休息,休息,1,8,Kyuusoku
 オーストラリアン,オーストラリアン,1,12,Oosutorarian
 作者,作者,1,7,Sakusya
-de,de,1,2,De
-bruyn,bruyn,1,5,Bruyn
 業者,業者,1,7,Gyousya
 極めて,極めて,1,8,Kiwamete
 言葉少な,言葉少な,1,12,Kotobazukuna
@@ -3163,7 +3079,6 @@ bruyn,bruyn,1,5,Bruyn
 ラリーバンス,ラリーバンス,1,10,Rariibansu
 沈む,沈む,1,6,Sizumu
 大騒ぎ,大騒ぎ,1,8,Oosawagi
-kerber,kerber,1,6,Kerber
 演奏,演奏,1,5,Ensou
 ゆく,ゆく,1,4,Yuku
 ボイスト,ボイスト,1,8,Boisu to
@@ -3187,7 +3102,6 @@ kerber,kerber,1,6,Kerber
 何百,何百,1,8,Nanbyaku
 相応しい,相応しい,1,9,Husawasii
 アプリ,アプリ,1,5,Apuri
-vine,vine,1,4,Vine
 刺客,刺客,1,6,Sikaku
 妨げる,妨げる,1,10,Samatageru
 難局,難局,1,8,Nankyoku
@@ -3218,8 +3132,6 @@ vine,vine,1,4,Vine
 陣,陣,1,3,Zin
 笑顔,笑顔,1,4,Egao
 クリスティーナ,クリスティーナ,1,11,Kurisutiina
-snap,snap,1,4,Snap
-chat,chat,1,5,Ch at
 ヤジディ,ヤジディ,1,6,Yazidi
 マウンテン,マウンテン,1,7,Maunten
 ビュー,ビュー,1,4,Byuu
@@ -3292,7 +3204,6 @@ chat,chat,1,5,Ch at
 涙,涙,1,6,Namida
 瞳,瞳,1,6,Hitomi
 曇ら,曇ら,1,6,Kumora
-tesla,tesla,1,5,Tesla
 総額,総額,1,7,Sougaku
 時価,時価,1,4,Zika
 繊維,繊維,1,5,Sen'i
@@ -3313,14 +3224,12 @@ tesla,tesla,1,5,Tesla
 全的,全的,1,7,Zenteki
 絶対,絶対,1,6,Zettai
 シェパード,シェパード,1,7,Sepaado
-geronimo,geronimo,1,8,Geronimo
 当該,当該,1,6,Tougai
 支給,支給,1,6,Sikyuu
 バウチャー,バウチャー,1,7,Bautyaa
 渡さ,渡さ,1,6,Watasa
 投じ,投じ,1,5,Touzi
 フィガロ,フィガロ,1,6,Higaro
-exxonmobil,exxonmobil,1,10,Exxonmobil
 条項,条項,1,7,Zyoukou
 置く,置く,1,3,Oku
 許容,許容,1,6,Kyoyou
@@ -3341,12 +3250,10 @@ exxonmobil,exxonmobil,1,10,Exxonmobil
 差し引い,差し引い,1,7,Sasihii
 考慮,考慮,1,6,Kouryo
 入れよう,入れよう,1,6,Ireyou
-eta,eta,1,3,Eta
 社員,社員,1,5,Syain
 提言,提言,1,6,Teigen
 ガソリン,ガソリン,1,7,Gasorin
 値上がり,値上がり,1,7,Neagari
-cgi,cgi,1,3,Cgi
 事例,事例,1,5,Zirei
 オズボーン,オズボーン,1,7,Ozuboon
 マルタ,マルタ,1,6,Maruta
@@ -3365,7 +3272,6 @@ cgi,cgi,1,3,Cgi
 ロボット,ロボット,1,7,Robotto
 理事,理事,1,4,Rizi
 ウォール,ウォール,1,4,Ooru
-bid,bid,1,3,Bid
 シリコンバレー,シリコンバレー,1,13,Sirikon baree
 続々,続々,1,8,Zokuzoku
 増える,増える,1,5,Hueru
@@ -3387,14 +3293,12 @@ bid,bid,1,3,Bid
 オファー,オファー,1,4,Ohaa
 取り下げる,取り下げる,1,10,Torisageru
 上述,上述,1,9,Zyouzyutu
-ecb,ecb,1,3,Ecb
 特権,特権,1,6,Tokken
 代案,代案,1,5,Daian
 ジョージタウン,ジョージタウン,1,10,Zyoozitaun
 去る,去る,1,4,Saru
 記し,記し,1,6,Sirusi
 会合,会合,1,6,Kaigou
-luiss,luiss,1,5,Luiss
 耕作,耕作,1,7,Kousaku
 言い合い,言い合い,1,4,Iiai
 担う,担う,1,5,Ninau
@@ -3412,10 +3316,8 @@ luiss,luiss,1,5,Luiss
 マイクロ,マイクロ,1,7,Maikuro
 水曜,水曜,1,6,Suiyou
 最愛,最愛,1,5,Saiai
-slack,slack,1,5,Slack
 勝負,勝負,1,6,Syoubu
 郊外,郊外,1,6,Kougai
-gif,gif,1,3,Gif
 カスタム,カスタム,1,8,Kasutamu
 ミーム,ミーム,1,5,Miimu
 ステッカー,ステッカー,1,8,Sutekkaa
@@ -3551,9 +3453,7 @@ gif,gif,1,3,Gif
 実用,実用,1,7,Zituyou
 食欲,食欲,1,9,Syokuyoku
 乗組,乗組,1,8,Norikumi
-kfc,kfc,1,3,Kfc
 親,親,1,3,Oya
-yum,yum,1,3,Yum
 好む,好む,1,6,Konomu
 人権,人権,1,6,Zinken
 どころ,どころ,1,6,Dokoro
@@ -3614,20 +3514,15 @@ yum,yum,1,3,Yum
 ペルシャ,ペルシャ,1,7,Perusya
 上級,上級,1,8,Zyoukyuu
 階層,階層,1,6,Kaisou
-slate,slate,1,5,Slate
 姻戚,姻戚,1,6,Inseki
 ドメニコ,ドメニコ,1,8,Domeniko
-athina,athina,1,6,Athina
 マイアミ,マイアミ,1,6,Maiami
 負っ,負っ,1,1,O
 アスティ,アスティ,1,5,Asuti
 責務,責務,1,6,Sekimu
 スキタイ,スキタイ,1,7,Sukitai
 違う,違う,1,5,Tigau
-buck,buck,1,4,Buck
-if,if,1,2,If
 補佐,補佐,1,4,Hosa
-knuck,knuck,1,5,Knuck
 パソコン,パソコン,1,7,Pasokon
 ノート,ノート,1,5,Nooto
 メガラ,メガラ,1,6,Megara
@@ -3640,10 +3535,8 @@ knuck,knuck,1,5,Knuck
 ダリウス,ダリウス,1,7,Dariusu
 司令,司令,1,5,Sirei
 メガバズス,メガバズス,1,10,Megabazusu
-megabazus,megabazus,1,9,Megabazus
 ノリ,ノリ,1,4,Nori
 関わる,関わる,1,8,Kakawaru
-film,film,1,4,Film
 フィルム,フィルム,1,6,Hirumu
 ライバル,ライバル,1,7,Raibaru
 手続き,手続き,1,8,Tetuzuki
@@ -3734,8 +3627,6 @@ film,film,1,4,Film
 リニア,リニア,1,5,Rinia
 モーターカー,モーターカー,1,9,Mootaakaa
 タイプ,タイプ,1,5,Taipu
-traum,traum,1,5,Traum
-f,f,1,1,F
 チケット,チケット,1,7,Tiketto
 入れる,入れる,1,5,Ireru
 ヤス,ヤス,1,4,Yasu
@@ -3847,7 +3738,6 @@ f,f,1,1,F
 開設,開設,1,7,Kaisetu
 数百,数百,1,8,Suuhyaku
 下げ,下げ,1,4,Sage
-ceo,ceo,1,3,Ceo
 辞職,辞職,1,7,Zisyoku
 賠償,賠償,1,7,Baisyou
 請求,請求,1,7,Seikyuu
@@ -3974,8 +3864,6 @@ ceo,ceo,1,3,Ceo
 軽々しく,軽々しく,1,12,Karugarusiku
 野獣,野獣,1,6,Yazyuu
 フランク,フランク,1,7,Huranku
-e,e,1,1,E
-micro,micro,1,5,Micro
 漏れる,漏れる,1,6,Moreru
 取り上げる,取り上げる,1,9,Toriageru
 講じる,講じる,1,7,Kouziru
@@ -4129,9 +4017,7 @@ micro,micro,1,5,Micro
 固定,固定,1,5,Kotei
 害,害,1,3,Gai
 アブロエナジー,アブロエナジー,1,11,Aburoenazii
-simple,simple,1,6,Simple
 水準,水準,1,7,Suizyun
-select,select,1,6,Select
 キャピトル,キャピトル,1,9,Kyapitoru
 高価,高価,1,5,Kouka
 前払,前払,1,8,Maebarai
@@ -4181,7 +4067,6 @@ select,select,1,6,Select
 天才,天才,1,6,Tensai
 リハビリ,リハビリ,1,8,Rihabiri
 ホスピタル,ホスピタル,1,10,Hosupitaru
-nhs,nhs,1,3,Nhs
 目下,目下,1,5,Mokka
 コーポレーション,コーポレーション,1,12,Kooporeesyon
 民衆,民衆,1,7,Minsyuu
@@ -4505,7 +4390,6 @@ nhs,nhs,1,3,Nhs
 偶然,偶然,1,6,Guuzen
 弱い,弱い,1,5,Yowai
 タバコ,タバコ,1,7,Ta bako
-comers,comers,1,6,Comers
 吸っ,吸っ,1,2,Su
 段階,段階,1,6,Dankai
 分断,分断,1,6,Bundan
@@ -4573,7 +4457,6 @@ comers,comers,1,6,Comers
 落ち,落ち,1,3,Oti
 スティーブン,スティーブン,1,8,Sutiibun
 ウィーラー,ウィーラー,1,5,Iiraa
-mla,mla,1,3,Mla
 欲求,欲求,1,7,Yokkyuu
 ラホール,ラホール,1,7,Rahooru
 ガゼット,ガゼット,1,7,Gazetto
@@ -4662,9 +4545,7 @@ mla,mla,1,3,Mla
 ディートリッヒ,ディートリッヒ,1,10,Diitorihhi
 黄緑,黄緑,1,8,Kimidori
 見なさ,見なさ,1,6,Minasa
-canadian,canadian,1,8,Canadian
 一報,一報,1,5,Ippou
-blood,blood,1,5,Blood
 攻略,攻略,1,8,Kouryaku
 困難,困難,1,6,Konnan
 音波,音波,1,5,Otowa
@@ -4681,10 +4562,7 @@ blood,blood,1,5,Blood
 ルーマニア,ルーマニア,1,8,Ruumania
 トゥルチャ,トゥルチャ,1,8,Turu tya
 県,県,1,3,Ken
-chilia,chilia,1,6,Chilia
-cbs,cbs,1,3,Cbs
 左岸,左岸,1,5,Sagan
-services,services,1,8,Services
 オデッサ,オデッサ,1,6,Odessa
 愛す,愛す,1,4,Aisu
 地質,地質,1,6,Tisitu
@@ -4706,12 +4584,9 @@ services,services,1,8,Services
 コーサカス,コーサカス,1,10,Koosa kasu
 重力,重力,1,9,Zyuuryoku
 シスコーカサス,シスコーカサス,1,13,Sisukookasasu
-ciscaucasus,ciscaucasus,1,11,Ciscaucasus
 リング,リング,1,5,Ringu
 トランスコーカシア,トランスコーカシア,1,15,Toransukookasia
-transcaucasus,transcaucasus,1,13,Transcaucasus
 赤道,赤道,1,7,Sekidou
-kven,kven,1,4,Kven
 仕掛け,仕掛け,1,6,Sikake
 ボノ,ボノ,1,4,Bono
 西暦,西暦,1,7,Seireki
@@ -4739,7 +4614,6 @@ kven,kven,1,4,Kven
 起きる,起きる,1,5,Okiru
 降っ,降っ,1,2,Hu
 水滴,水滴,1,7,Suiteki
-crtc,crtc,1,4,Crtc
 有能,有能,1,6,Yuunou
 矮小,矮小,1,7,Waisyou
 インフラ,インフラ,1,6,Inhura
@@ -4847,9 +4721,6 @@ crtc,crtc,1,4,Crtc
 注射,注射,1,7,Tyuusya
 パッド,パッド,1,5,Paddo
 処方,処方,1,6,Syohou
-under,under,1,5,Under
-sea,sea,1,3,Sea
-cbc,cbc,1,3,Cbc
 エッセイ,エッセイ,1,5,Essei
 海底,海底,1,6,Kaitei
 沿い,沿い,1,3,Zoi
@@ -4868,11 +4739,9 @@ cbc,cbc,1,3,Cbc
 加工,加工,1,5,Kakou
 電気,電気,1,5,Denki
 設備,設備,1,6,Setubi
-caribbean,caribbean,1,9,Caribbean
 後半,後半,1,6,Kouhan
 足,足,1,3,Asi
 踏み入れ,踏み入れ,1,7,Humiire
-caribs,caribs,1,6,Caribs
 ゲリー,ゲリー,1,5,Geri-
 由来,由来,1,5,Yurai
 アンティリャス,アンティリャス,1,9,Antiryasu
@@ -4894,8 +4763,6 @@ caribs,caribs,1,6,Caribs
 アプリケーション,アプリケーション,1,12,Apurikeesyon
 達し,達し,1,5,Tassi
 学問,学問,1,7,Gakumon
-volcanology,volcanology,1,11,Volcanology
-vulcanology,vulcanology,1,11,Vulcanology
 表記,表記,1,6,Hyouki
 ロジャース,ロジャース,1,8,Rozyaasu
 ケイ酸,ケイ酸,1,6,Keisan
@@ -4923,7 +4790,6 @@ vulcanology,vulcanology,1,11,Vulcanology
 腰痛,腰痛,1,6,Youtuu
 柳,柳,1,6,Yanagi
 飲料,飲料,1,6,Inryou
-gta,gta,1,3,Gta
 灌漑,灌漑,1,6,Kangai
 合致,合致,1,5,Gatti
 コンドミニアム,コンドミニアム,1,12,Kondominiamu
@@ -4975,7 +4841,6 @@ gta,gta,1,3,Gta
 度合い,度合い,1,4,Doai
 まん延,まん延,1,6,Man'en
 水質,水質,1,7,Suisitu
-sasktel,sasktel,1,7,Sasktel
 脆弱,脆弱,1,8,Zeizyaku
 携帯,携帯,1,6,Keitai
 慣行,慣行,1,6,Kankou
