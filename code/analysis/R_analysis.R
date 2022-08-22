@@ -403,12 +403,6 @@ rows <- lapply(COLLS, function(collection) {
 })
 
 
-
-
-
-
-
-
 # PUD scores after removing vowels ---------------------------------------------
 
 # - 1 - Significance of word lengths
@@ -422,19 +416,12 @@ opt_df <- compute_optimality_scores_coll("pud", corr_type = "kendall", remove_vo
 write.csv(opt_df, here(which_folder('results',filter), 'optimality_scores_pud_remove_vowels.csv'))
 
 # plot comparison
-df <-rbind(form_table("eta", corr_type = "kendall"),
-           form_table("psi", corr_type = "kendall"),
-           form_table("omega", corr_type = "kendall"))
-df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
-
 lapply(c('eta','omega','psi'), function(score){
-  df <- form_table(score)
+  df <- form_table(score,filter)
   plot_score_comparison(score,df)    
   ggsave(here(which_folder('figures',filter), paste0('scores_comparison_pud_',score,'.pdf')), 
          width = 5, height = 7, device = cairo_pdf)
 })
-
-
 
 
 # effect of FILTERING  ---------------------------------------------------------

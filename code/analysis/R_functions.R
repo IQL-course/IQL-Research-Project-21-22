@@ -14,6 +14,7 @@ library("DescTools")
 library("ggpmisc")
 library("Ckmeans.1d.dp")
 library("psych") 
+library('latex2exp')
 options(dplyr.summarise.inform = FALSE)
 
 # preliminary functions
@@ -69,17 +70,19 @@ do_remove_vowels <- function(iso_code,words) {
   }
 }
 
-form_table <- function(score, df_remove){
-  cat(corr_type,score,"==============")
-  df_noremove <- read_file('opt','pud','characters')
+form_table <- function(score,filter){
+  cat(score,"==============")
+  df_remove   <- read.csv(here(which_folder('results',filter),paste0('optimality_scores_pud_remove_vowels.csv')))
+  df_noremove <- read.csv(here(which_folder('results',filter),paste0('optimality_scores_pud_characters.csv')))
   df <- merge(df_noremove[c("language",score)], 
-              df_remove[c("language",score)], by="language") %>% mutate(class=score) 
+              df_remove[c("language",score)], by="language") %>% 
+    mutate(class=score) 
   colnames(df) <- c("language","x","y","class")
   cat("\n", score, "linear regression")
-  #print(summary(lm(y~x,df)))
   cat("\nstd. error:", summary(lm(y~x,df))$coefficients[2, 2])
   cat("\nR^2:", summary(lm(y~x,df))$r.squared)
-  cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3),"\n")
+  cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3))
+  cat("\n", score, "pearson correlation p-value:",cor.test(df$x,df$y)$p.value,"\n")
   df
 }
 
@@ -497,7 +500,7 @@ plot_score_comparison <- function(score,df){
     stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
                  label.x.npc = "left", 
                  label.y.npc = 1.5,
-                 eq.with.lhs = "italic(hat(y))~=~",
+                 eq.with.lhs = "italic(hat(y))~`=`~",
                  eq.x.rhs = "~italic(x)",
                  formula = y~x, parse = TRUE, size = 4, color="blue",coef.digits=3,f.digits=3) +
     geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
