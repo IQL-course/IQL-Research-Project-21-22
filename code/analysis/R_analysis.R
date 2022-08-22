@@ -3,6 +3,8 @@ Sys.setlocale("LC_ALL","English")
 source('R_functions.R', encoding="utf-8")
 
 
+# NOTICE: the default is using the optional filter, but this can be over-ridden here
+filter = F
 
 
 # COLLECTIONS SUMMARIES --------------------------------------------------------
@@ -14,14 +16,9 @@ lapply(COLLS,function(collection) {
     df <- read.csv(here('code/preprocessing/',paste0(collection,'/characters/',iso_code,'-character.csv'))) %>% 
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
-    # non filtered
+    df <- if (filter == T) filter(df,group_opt == 2) else df
     alphabet <- df$character
-    write(alphabet, here('data/non_filtered/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
-    
-    # optional filter 
-    df_filtered <- df %>% filter(group_opt == 2)
-    alphabet_filtered <- df_filtered$character
-    write(alphabet, here('data/filtered/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
+    write(alphabet, here(which_folder('data',filter),paste0('alphabets/',collection,'/alphabet_',iso_code,'.txt')))
   })
 })
 
@@ -36,7 +33,7 @@ lapply(COLLS,function(collection) {
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
-  write.csv(df, here('results',paste0('alphabet_sisez_',collection,'.csv')))
+  write.csv(df, here(which_folder('results',filter),paste0('alphabet_sisez_',collection,'.csv')))
 })
 
 
@@ -44,13 +41,13 @@ lapply(COLLS,function(collection) {
 lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
-  A_coll   <- read.csv(here('results',paste0('alphabet_sisez_',collection,'.csv')))
+  A_coll   <- read.csv(here(which_folder('results',filter),paste0('alphabet_sisez_',collection,'.csv')))
   sum_coll$A <- A_coll$A
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
     arrange(family,script,language)
-  write.csv(sum_coll,here('results',paste0('coll_summary_',collection,'.csv')))
+  write.csv(sum_coll,here(which_folder('results',filter),paste0('coll_summary_',collection,'.csv')))
   print(xtable(sum_coll, type = "latex"), 
-        file = here('latex_tables',paste0('coll_summary_',collection,".tex")),
+        file = here(which_folder('latex_tables',filter),paste0('coll_summary_',collection,".tex")),
         include.rownames=FALSE,include.colnames=FALSE, only.contents = TRUE,
         hline.after = c(nrow(sum_coll)))
 })
@@ -67,14 +64,14 @@ lapply(COLLS, function(collection) {
       opt_df <- read_file('opt',collection,length_def,filter)
       opt_df <- opt_df[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
       print(xtable(opt_df,type = "latex"), 
-            file = here('latex_tables',paste0(collection,"_opt_scores",suffix,corr_suffix,".tex")),
+            file = here(which_folder('latex_tables',filter),paste0(collection,"_opt_scores",suffix,corr_suffix,".tex")),
             include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
       })
   } else {
     opt_df <- read_file('opt',collection,'characters',filter)
     opt_df <- opt_df[,c('language', 'family', 'script', 'Lmin' , 'L', 'Lrand', 'corr', 'corr_min', 'eta' , 'psi' ,'omega')]
     print(xtable(opt_df,type = "latex"), 
-          file = here('latex_tables',paste0(collection,"_opt_scores_characters",corr_suffix,".tex")),
+          file = here(which_folder('latex_tables',filter),paste0(collection,"_opt_scores_characters",corr_suffix,".tex")),
           include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
   }
 })
@@ -85,7 +82,7 @@ lapply(c('omega','eta','psi'), function(score) {
   summ <- opt_score_summary(score) %>% mutate(empty = rep('',3)) 
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex"),
-        file = here('latex_tables',paste0("opt_scores_summary_",score,corr_suffix,".tex")),
+        file = here(which_folder('latex_tables',filter),paste0("opt_scores_summary_",score,corr_suffix,".tex")),
         caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
         only.contents = TRUE,hline.after = c(nrow(summ)))
 })
@@ -99,7 +96,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
       lapply(length_defs, function(length_def) {
         df <- read_file('opt',collection,length_def,filter) %>% select(L,eta,psi,omega)
         plot_correlogram(df,plot_corr,'scores',HB_correct = T,10,22,25)
-        ggsave(here('figures',paste0('corrplot_',collection,"_",length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('corrplot_',collection,"_",length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
       length_def <- 'characters'
@@ -107,7 +104,7 @@ lapply(c('kendall','pearson'), function(plot_corr) {
         filter(language %!in% c('Chinese-strokes','Japanese-strokes')) %>% 
         select(L,eta,psi,omega)
       plot_correlogram(df,plot_corr,'scores',HB_correct = T,10,22,25)
-      ggsave(here('figures',paste0('corrplot_',collection,"_",length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('corrplot_',collection,"_",length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
     }
     })
 })
@@ -117,8 +114,8 @@ lapply(c('kendall','pearson'), function(plot_corr) {
 ## scatterplot
 score <- 'psi'
 rows_cv <- lapply(c('medianDuration','meanDuration'), function(length_def) {
-  plot_timeVSspace(score,length_def,filter=T)
-  ggsave(here('figures',paste0(score,'_timeVSspace_',length_def,'.pdf')),device = cairo_pdf)
+  plot_timeVSspace(score,length_def,filter)
+  ggsave(here(which_folder('figures',filter),paste0(score,'_timeVSspace_',length_def,'.pdf')),device = cairo_pdf)
 })
 
 
@@ -147,13 +144,13 @@ lapply(c('kendall','pearson'), function(corr_type) {
     df
   })
   do.call(rbind,rows_cv) %>% plot_corr_significance(corr_type)
-  ggsave(here('figures',paste0('corr_significance_',collection,corr_suffix,'.pdf')))
+  ggsave(here(which_folder('figures',filter),paste0('corr_significance_',collection,corr_suffix,'.pdf')))
   
   ## pud
   collection <- 'pud'
   df <- read_file('corr',collection,'characters',filter,corr_type=corr_type) %>% mutate(length_def = 'characters')
   plot_corr_significance(df,corr_type)
-  ggsave(here('figures',paste0('corr_significance_',collection,corr_suffix,'.pdf')))
+  ggsave(here(which_folder('figures',filter),paste0('corr_significance_',collection,corr_suffix,'.pdf')))
 })
 
 
@@ -185,7 +182,7 @@ ggplot(df,aes(x=value,color = `length definition`, fill = `length definition`)) 
              labeller = labeller(variable=scores_labs)) + standart_theme +
   geom_vline(data=means, aes(xintercept=meanvalue, color = `length definition`),linetype='dashed') +
   theme(legend.position = 'bottom') + theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5))
-ggsave(here('figures',paste0('opt_scores_density',corr_suffix,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suffix,'.pdf')), device = cairo_pdf)
 
 
 
@@ -197,10 +194,10 @@ length_def   <- 'characters'
 opt_df <- read_file('opt','pud',length_def,filter)
 # plot 1
 plot_score(score,opt_df)
-ggsave(here('figures',paste0(score,'_pud_',length_def,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0(score,'_pud_',length_def,'.pdf')), device = cairo_pdf)
 # plot 2
 plot_score_composition(score,opt_df)
-ggsave(here('figures',paste0(score,'_composition_pud_',length_def,'.pdf')))
+ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',length_def,'.pdf')))
 
 
 
@@ -222,7 +219,7 @@ df <- merge(opt_scores_dfs[[1]],opt_scores_dfs[[2]], by = c('language')) %>%
 df <- df[,c('language','family','script','tau','ro','tau_min','ro_min','omega_tau','omega_ro')] %>% 
   arrange(family,script,language)
 print(xtable(df,type = "latex"), 
-      file = here('latex_tables',paste0("omega_tau_omega_ro_pud.tex")),
+      file = here(which_folder('latex_tables',filter),paste0("omega_tau_omega_ro_pud.tex")),
       include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(df)))
 
 
@@ -234,7 +231,7 @@ print(xtable(df,type = "latex"),
 # FINDING THE BEST SCORE  --------------------------------------------------------------
 ## correlation of scores with basic parameters (n tokens, n types, alphabet, L, eta, psi, omega)
 lapply(COLLS, function(collection) {
-  params_df <-   read.csv(here('results',paste0('coll_summary_',collection,'.csv'))) %>% 
+  params_df <-   read.csv(here(which_folder('results',filter),paste0('coll_summary_',collection,'.csv'))) %>% 
     select(-X,-family,-script)
   lapply(c('kendall','pearson'), function(plot_corr) {
     plot_corr_suffix <- paste0('_',plot_corr)
@@ -245,7 +242,7 @@ lapply(COLLS, function(collection) {
         df <- merge(params_df,opt_df, by='language') %>% select(-language)
         # plot
         plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-        ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
       })
     } else {
       length_def <- 'characters'
@@ -256,7 +253,7 @@ lapply(COLLS, function(collection) {
       df <- merge(params_df,opt_df, by='language') %>%  select(-language)
       # plot
       plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-      ggsave(here('figures',paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
     }
   })
 })
@@ -272,26 +269,26 @@ rows <- lapply(COLLS, function(collection) {
     print(collection)
     lapply(length_defs, function(length_def) {
       suffix     <- paste0("_",length_def)
-      scores_df <- read.csv(here('results',paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
+      scores_df <- read.csv(here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
         mutate(t = rep(sample_sizes,length(languages)))
       melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
         rename(score = value) %>% na.omit()
       melt_df_1 <- subset(melt_df, language %in% languages[1:23])
       plot_convergence(melt_df_1)
-      ggsave(here('figures',paste0('convergence_',collection,suffix,'_1.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_1.pdf')),device = cairo_pdf)
       melt_df_2 <- subset(melt_df, language %in% languages[24:46])
       plot_convergence(melt_df_2)
-      ggsave(here('figures',paste0('convergence_',collection,suffix,'_2.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_2.pdf')),device = cairo_pdf)
     })
   } else if (collection == 'pud') {
     print(collection)
     suffix <- '_characters'
-    scores_df <- read.csv(here('results',paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
+    scores_df <- read.csv(here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
       mutate(t = rep(sample_sizes,length(languages)))
     melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
       rename(score = value) %>% na.omit()
     plot_convergence(melt_df)
-    ggsave(here('figures',paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
+    ggsave(here(which_folder('results',filter),paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
   }
 })
 
@@ -300,20 +297,13 @@ rows <- lapply(COLLS, function(collection) {
 # NULL HYPOTHESYS --------------------------------------------------------- TO DO
 iters <- 1e+06
 
-# merge jobs 1 2 
-lapply(length_defs,function(length_def) {
-  job_ids <- if (length_def=='characters') 3:4 else 1:2
-  dfs <- lapply(job_ids,function(job_id) read.csv(here('results',paste0('null_hypothesis_cv_',length_def,'_',iters,'_',job_id,'.csv'))) )
-  df <- do.call(rbind.data.frame,dfs)[-1]
-    write.csv(df, here('results',paste0('null_hypothesis_cv_',length_def,'_',iters,'_kendall.csv')))
-})
 
 # + summary opt scores null
 lapply(c('omega','eta','psi'), function(score) {
   summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
   summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
   print(xtable(summ, type = "latex",digits=3), 
-        file = here('latex_tables',paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
+        file = here(which_folder('latex_tables',filter),paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
         caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
         only.contents = TRUE,hline.after = c(nrow(summ)))
 })
@@ -327,16 +317,16 @@ lapply(c(1e+06), function(iters) {
     rows <- lapply(COLLS, function(collection) {
       if (collection == 'cv') {
         lapply(length_defs, function(length_def) {
-          df <- read_file('null',collection,length_def,iters)
+          df <- read_file('null',collection,length_def,filter,iters)
           plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-            ggsave(here('figures',paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,combo_suff,'.pdf')),device = cairo_pdf)
+            ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,combo_suff,'.pdf')),device = cairo_pdf)
         })
       } else {
         length_def <- 'characters'
         suffix       <- paste0("_",length_def)
-        df <- read_file('null',collection,length_def,iters) 
+        df <- read_file('null',collection,length_def,filter,iters) 
         plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-          ggsave(here('figures',paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+          ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')),device = cairo_pdf)
       }
     })
   })
@@ -348,31 +338,33 @@ lapply(c(1e+06), function(iters) {
 lapply(length_defs, function(length_def) {
   dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
     dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-      read_file('null','cv',length_def,iters) %>% long_corr_df(plot_corr,HB_correct = T)
+      read_file('null','cv',length_def,filter,iters) %>% 
+        long_corr_df(plot_corr,HB_correct = T)
     })
     do.call(rbind,dfs) %>% mutate(randomizations=iters)
   })
   p <- do.call(rbind,dfs) %>% plot_corr_evolution()
-  ggsave(here('figures',paste0('corr_evolution_cv_',length_def,'.pdf')),device = cairo_pdf)
+  ggsave(here(which_folder('figures',filter),paste0('corr_evolution_cv_',length_def,'.pdf')),device = cairo_pdf)
 })
 
 # pud
 dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
   dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-    read_file('null','pud','characters',iters) %>% long_corr_df(plot_corr,HB_correct = T)
+    read_file('null','pud','characters',filter,iters) %>% 
+      long_corr_df(plot_corr,HB_correct = T)
   })
   do.call(rbind,dfs) %>% mutate(randomizations=iters)
 })
 df <- do.call(rbind,dfs)
 plot_corr_evolution(df)
-ggsave(here('figures',paste0('corr_evolution_pud_characters.pdf')),device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters.pdf')),device = cairo_pdf)
 
 
 
 # E[scores] vs Lmin
 iters <- 1e+06
 rows_cv <- lapply(length_defs, function(length_def) {
-  df <- read_file('null','cv',length_def,iters)%>% 
+  df <- read_file('null','cv',length_def,filter,iters)%>% 
     mutate(`Lmin/Lrand` = Lmin/Lrand) %>% select(language,Lmin,psi,omega) %>% 
     rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def) %>% 
     merge(langs_df_cv[,c('language','X.tokens')], by = 'language')
@@ -390,7 +382,7 @@ reshape2::melt(df, id.vars=c('language','Lmin','length_def','X.tokens')) %>%
   theme(text = element_text(size = 16),
         legend.text = element_text(size = 13),
         legend.title = element_text(size = 13))
-ggsave(here('figures',paste0('correlation_scores_Lmin_',iters,'.pdf')),device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',iters,'.pdf')),device = cairo_pdf)
 
 
 
@@ -399,13 +391,13 @@ rows <- lapply(COLLS, function(collection) {
   if (collection == 'pud') {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
-    read_file('null',collection,length_def,iters) %>% plot_etaVSlowerbound()
-    ggsave(here('figures',paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
+    read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
+    ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
   } else {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
-      read_file('null',collection,length_def,iters) %>% plot_etaVSlowerbound()
-      ggsave(here('figures',paste0('E_eta_LminLr_',collection,'_',length_def,'.pdf')),device = cairo_pdf)
+      read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
+      ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
     })
   }
 })
@@ -420,14 +412,14 @@ rows <- lapply(COLLS, function(collection) {
 # PUD scores after removing vowels ---------------------------------------------
 
 # - 1 - Significance of word lengths
-print('begin to compute correlations')
-tau_df <- compute_corr("pud", corr_type = "kendall", remove_vowels = TRUE, filter=T)
-write.csv(tau_df, here('results', 'correlation_pud_remove_vowels.csv'))
+print('Vowel removal: begin to compute correlations')
+tau_df <- compute_corr("pud", corr_type = "kendall", remove_vowels = TRUE, filter)
+write.csv(tau_df, here(which_folder('results',filter), 'correlation_pud_remove_vowels.csv'))
 
 # - 2 - Compute scores
-print('begin to compute optimality scores')
-opt_df <- compute_optimality_scores_coll("pud", corr_type = "kendall", remove_vowels = TRUE, filter=T)
-write.csv(opt_df, here('results', 'optimality_scores_pud_remove_vowels.csv'))
+print('Vowel removal: begin to compute optimality scores')
+opt_df <- compute_optimality_scores_coll("pud", corr_type = "kendall", remove_vowels = TRUE, filter)
+write.csv(opt_df, here(which_folder('results',filter), 'optimality_scores_pud_remove_vowels.csv'))
 
 # plot comparison
 df <-rbind(form_table("eta", corr_type = "kendall"),
@@ -438,7 +430,7 @@ df$class <- factor(df$class, levels = c("eta", "psi", "omega"))
 lapply(c('eta','omega','psi'), function(score){
   df <- form_table(score)
   plot_score_comparison(score,df)    
-  ggsave(here('figures', paste0('scores_comparison_pud_',score,'.pdf')), 
+  ggsave(here(which_folder('figures',filter), paste0('scores_comparison_pud_',score,'.pdf')), 
          width = 5, height = 7, device = cairo_pdf)
 })
 

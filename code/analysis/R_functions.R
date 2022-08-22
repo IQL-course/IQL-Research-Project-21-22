@@ -16,15 +16,16 @@ library("Ckmeans.1d.dp")
 library("psych") 
 options(dplyr.summarise.inform = FALSE)
 
-
+# preliminary functions
 '%!in%' <- function(x,y)!('%in%'(x,y))
+which_folder <- function(folder,filter=T) paste(folder,ifelse(filter,'filtered','non_filtered'),sep='/')
 
-# set
-corr_type <- 'kendall'
-filter <- T
-corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
+
+# to set
+filter    <- T
 
 # globals ----------------------------------------------------------------------
+corr_type <- 'kendall'
 COLLS       <- c('pud','cv')
 length_defs <- c('characters','medianDuration')
 exp_scores_labs <- c('E[eta]'='E[\u03B7]','E[psi]'='E[\u03A8]','E[omega]'='E[\u03A9]')
@@ -38,24 +39,25 @@ names(scores_labs) <- c('n', 'T', 'A','L','eta','psi','omega',
 corr_colors_r = c("blue", "white", "red")
 corr_colors_tau = c("#41B85C", "white", "orange")
 non_imm_langs <- c('Chinese-strokes',"Japanese-strokes",'Chinese-pinyin','Japanese-romaji')
+corr_suffix   <- if (corr_type=='kendall') '' else paste0('_',corr_type)
 
 
 ## pud
-langs_df_pud    <- read.csv(here('data/filtered',"descriptive_tables/pud.csv"))
+langs_df_pud    <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
 
 
 ## cv
-langs_df_cv <- read.csv(here('data/filtered',"descriptive_tables/common_voice.csv")) %>% 
+langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
   rows_update(tibble(language = "Interlingua", iso_code = 'ina'), by = "iso_code") %>%  # shorten names 
-  rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
-  rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code") %>%
+  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code") %>% 
   rows_update(tibble(language = "Oriya", iso_code = 'ori'), by = "iso_code") %>%
-  rows_update(tibble(language = "Modern Greek", iso_code = 'ell'), by = "iso_code")
-langs_cv    <- langs_df_cv$language
-ISO_cv      <- langs_df_cv$iso_code
+  rows_update(tibble(family = "Conlang", iso_code = 'ina'), by = "iso_code") %>%
+  rows_update(tibble(family = "Conlang", iso_code = 'epo'), by = "iso_code")
+
 
 
 # functions  -------------------------------------------------------------------
+
 do_remove_vowels <- function(iso_code,words) {
   if(iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'|iso_code=='ces'){
     gsub("[aeiouáóéíúàèùìòâôîêûyýäöæą\U0105ę\U0119ů\U016F]","", words)          # with y ý
@@ -118,13 +120,12 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=TR
 read_file <- function(what,collection,length_def='characters',filter=T,iters=1e+06, corr_type='kendall') {
   file <- if (what=='corr') 'correlation_' else if (what=='opt')  'optimality_scores_' else if (what=='null') 'null_hypothesis_'
   corr_suffix   <- ifelse(corr_type=='kendall','',paste0('_',corr_type))
-  filter_suffix <- ifelse(filter,'','_non_filtered')
   iters_suffix  <- ifelse(what=='null',paste0('_',iters),'')
-  read.csv(here('results',paste0(file,collection,'_',length_def,iters_suffix,corr_suffix,filter_suffix,'.csv')))[-1]
+  read.csv(here(which_folder('results',filter),paste0(file,collection,'_',length_def,iters_suffix,corr_suffix,'.csv')))[-1]
 }
 
 
-compute_corr <- function(collection,corr_type='kendall',length = 'characters',remove_vowels=FALSE,filter=F) {
+compute_corr <- function(collection,corr_type='kendall',length = 'characters', remove_vowels=FALSE, filter=T) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
   cors <- mclapply(languages, function(language) {
@@ -142,7 +143,7 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters',re
 }
 
 
-compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=F) {
+compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=T) {
   corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
   df <- read_language(lang,collection,remove_vowels,filter)
   if (collection == 'cv') {
@@ -154,11 +155,10 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
   L          <- sum(df$length*p)                                                      # real value (weight by freq)
   Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
   
-  filter_suff <- if (filter==T) '' else '_non_filtered'
   file_corr <- if (!remove_vowels) { 
-    paste0('correlation_',collection,'_',length_def,corr_suffix,filter_suff,'.csv')
-    } else { 'correlation_pud_remove_vowels_kendall.csv' }
-  corr <- read.csv(here('results',file_corr)) %>% filter(language == lang) %>% select(corr) %>% as.numeric()
+    paste0('correlation_',collection,'_',length_def,corr_suffix,'.csv')
+    } else { 'correlation_pud_remove_vowels.csv' }
+  corr <- read.csv(here(which_folder('results',filter),file_corr)) %>% filter(language == lang) %>% select(corr) %>% as.numeric()
   corr_min  <- if (corr_type=='kendall') { 
     cor.fk(df$frequency, sort(df$length))
      } else { cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()}
@@ -175,8 +175,8 @@ compute_optimality_scores_coll <- function(collection, corr_type='kendall',lengt
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
     res <- mclapply(languages, function(language) {
       compute_optimality_scores_lang(language,collection,length_def,corr_type,remove_vowels,filter)
-      },mc.cores=1)
-  df <- do.call(rbind.data.frame,res) 
+      },mc.cores=3)
+  df <- do.call(rbind.data.frame,res)
   df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
 }
@@ -308,21 +308,21 @@ symmetrise_mat <- function(p.mat) {
   return(p.mat)
 }
 
-add_corr_min <- function(opt_df,collection,suffix,corr_suffix) {
-  corr_df <- read.csv(here('results',paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1]      # to remove if add tau and tau_min before
-  merge(opt_df,corr_df, by = c('language','family','script')) %>%                         # to remove if add tau and tau_min before
-    select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language)  # to remove if add tau and tau_min before
+add_corr_min <- function(opt_df,collection,suffix,corr_suffix,filter) {
+  corr_df <- read.csv(here(which_folder('results',filter),paste0('correlation_',collection,suffix,corr_suffix,'.csv')))[-1] 
+  merge(opt_df,corr_df, by = c('language','family','script')) %>%                         
+    select(-pvalue,-hb_pvalue) %>% mutate(corr_min = corr/omega) %>% arrange(family,script,language) 
 }
 
 get_filtered_ori_df <- function(collection,length_def) {
-  dfs <- lapply(c('','_non_filtered'), function(filter_suff) {
+  dfs <- lapply(c(T,F), function(filtering) {
     dfs <- lapply(c('psi','omega'), function(score) {
-      df <- read.csv(here('results',paste0('optimality_scores_',collection,'_',length_def,corr_suffix,filter_suff,'.csv')))[-1]    
+      df <- read.csv(here(which_folder('results',filtering), paste0('optimality_scores_',collection,'_',length_def,corr_suffix,'.csv')))[-1]    
       df <- if (score == 'psi') select(df,language,psi) %>% mutate(score = 'psi') else select(df,language,omega) %>% mutate(score = 'omega')
       if (score == 'psi') rename(df,value=psi)  else rename(df,value=omega)
     })
     df <- do.call(rbind.data.frame,dfs)
-    if (filter_suff == '_non_filtered') rename(df, original=value ) else rename(df, filtered=value )
+    if (filtering == F) rename(df, original=value ) else rename(df, filtered=value )
   })
   merge(dfs[[1]],dfs[[2]],by=c('language','score')) %>% 
     mutate(score = factor(score,levels=c('psi','omega')))
@@ -462,7 +462,7 @@ plot_convergence <- function(df) {
     theme(strip.text = element_text(size = 12),legend.position = 'bottom') +
     guides(color=guide_legend(title="score",nrow = 1)) +
     scale_color_discrete(labels=c('\u03B7','\u03A8','\u03A9')) +
-    format_log_axis + standart_theme
+    format_log_x_axis + standart_theme
 }
 
 
