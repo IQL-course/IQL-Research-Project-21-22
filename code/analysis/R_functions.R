@@ -14,6 +14,7 @@ library("DescTools")
 library("ggpmisc")
 library("Ckmeans.1d.dp")
 library("psych") 
+library(latex2exp)
 options(dplyr.summarise.inform = FALSE)
 
 
@@ -69,13 +70,12 @@ do_remove_vowels <- function(iso_code,words) {
 
 form_table <- function(score){
   cat(score,"==============")
-  df_remove   <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_pud_remove_vowels.csv')))
+  df_remove   <- read.csv(here('results',paste0('optimality_scores_pud_remove_vowels.csv')))
   df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
   df <- merge(df_noremove[c("language",score)], 
-              df_remove[c("language",score,"tokens")], by="language") %>% 
+              df_remove[c("language",score)], by="language") %>% 
     mutate(class=score) 
-  df$tokens <- log10(df$tokens)
-  colnames(df) <- c("language","x","y","tokens","class")
+  colnames(df) <- c("language","x","y","class")
   cat("\n", score, "linear regression")
   cat("\nstd. error:", summary(lm(y~x,df))$coefficients[2, 2])
   cat("\nR^2:", summary(lm(y~x,df))$r.squared)
@@ -160,7 +160,7 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
   filter_suff <- if (filter==T) '' else '_non_filtered'
   file_corr <- if (!remove_vowels) { 
     paste0('correlation_',collection,'_',length_def,corr_suffix,filter_suff,'.csv')
-    } else { 'correlation_pud_remove_vowels_kendall.csv' }
+    } else { 'correlation_pud_remove_vowels.csv' }
   corr <- read.csv(here('results',file_corr)) %>% filter(language == lang) %>% select(corr) %>% as.numeric()
   corr_min  <- if (corr_type=='kendall') { 
     cor.fk(df$frequency, sort(df$length))
@@ -500,7 +500,7 @@ plot_score_comparison <- function(score,df){
     stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
                  label.x.npc = "left", 
                  label.y.npc = 1.5,
-                 eq.with.lhs = "italic(hat(y))~=~",
+                 eq.with.lhs = "italic(hat(y))~`=`~",
                  eq.x.rhs = "~italic(x)",
                  formula = y~x, parse = TRUE, size = 4, color="blue",coef.digits=3,f.digits=3) +
     geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
