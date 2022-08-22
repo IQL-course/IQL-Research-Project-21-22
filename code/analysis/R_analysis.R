@@ -5,7 +5,7 @@ source('R_functions.R', encoding="utf-8")
 
 
 
-# IMPLEMENTATION
+# COLLECTIONS SUMMARIES --------------------------------------------------------
 
 # + filter alphabet with k-means
 lapply(COLLS,function(collection) {
@@ -14,9 +14,14 @@ lapply(COLLS,function(collection) {
     df <- read.csv(here('code/preprocessing/',paste0(collection,'/characters/',iso_code,'-character.csv'))) %>% 
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
-    df <- df %>% filter(group_opt == 2)
+    # non filtered
     alphabet <- df$character
-    write(alphabet, here('data/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
+    write(alphabet, here('data/non_filtered/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
+    
+    # optional filter 
+    df_filtered <- df %>% filter(group_opt == 2)
+    alphabet_filtered <- df_filtered$character
+    write(alphabet, here('data/filtered/alphabets',paste0(collection,'/alphabet_',iso_code,'.txt')))
   })
 })
 
@@ -411,7 +416,7 @@ rows <- lapply(COLLS, function(collection) {
 
 
 
-# CHECK WITH MENGXUE
+
 # PUD scores after removing vowels ---------------------------------------------
 
 # - 1 - Significance of word lengths

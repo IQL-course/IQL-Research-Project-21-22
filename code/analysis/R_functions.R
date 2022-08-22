@@ -81,8 +81,9 @@ form_table <- function(score, df_remove){
   df
 }
 
-read_language <- function(language, collection, remove_vowels=FALSE, filtered=FALSE) {
+read_language <- function(language, collection, remove_vowels=FALSE, filtered=TRUE) {
   folder <- if (filtered==T) 'data/filtered' else 'data/non_filtered'
+  folder <- paste(folder,'corpora',sep='/')
   if(!remove_vowels){
     if (collection == 'cv') {
       iso_code <- langs_df_cv$iso_code[langs_df_cv$language==language]
