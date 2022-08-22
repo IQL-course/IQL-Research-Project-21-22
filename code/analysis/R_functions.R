@@ -67,17 +67,20 @@ do_remove_vowels <- function(iso_code,words) {
   }
 }
 
-form_table <- function(score, df_remove){
-  cat(corr_type,score,"==============")
-  df_noremove <- read_file('opt','pud','characters')
+form_table <- function(score){
+  cat(score,"==============")
+  df_remove   <- read.csv(here(paste0('results',folder_suffix),paste0('optimality_scores_pud_remove_vowels.csv')))
+  df_noremove <- read.csv(here('results',paste0('optimality_scores_pud_characters.csv')))
   df <- merge(df_noremove[c("language",score)], 
-              df_remove[c("language",score)], by="language") %>% mutate(class=score) 
-  colnames(df) <- c("language","x","y","class")
+              df_remove[c("language",score,"tokens")], by="language") %>% 
+    mutate(class=score) 
+  df$tokens <- log10(df$tokens)
+  colnames(df) <- c("language","x","y","tokens","class")
   cat("\n", score, "linear regression")
-  #print(summary(lm(y~x,df)))
   cat("\nstd. error:", summary(lm(y~x,df))$coefficients[2, 2])
   cat("\nR^2:", summary(lm(y~x,df))$r.squared)
-  cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3),"\n")
+  cat("\n", score, "pearson correlation:",round(cor(df$x, df$y),3))
+  cat("\n", score, "pearson correlation p-value:",cor.test(df$x,df$y)$p.value,"\n")
   df
 }
 
