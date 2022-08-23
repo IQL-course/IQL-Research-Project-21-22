@@ -1,7 +1,7 @@
 # The optimality of word lengths
 ## Theoretical foundations and an empirical study
 
-This is the supporting repository of the article https://arxiv.org/abs/2208.10384.
+This is the supporting repository of the article https://arxiv.org/abs/2208.10384, that is the product of the research project of the master level course _Introduction to Quantitative Linguistics_ (_IQL_) at Universitat Politècnica de Catalunya (spring semester, 2022).
 
 ### Authors
 
