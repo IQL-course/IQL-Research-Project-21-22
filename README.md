@@ -18,6 +18,7 @@ The repository contains the following folders:
  * _data_: Common Voice Forced Alignments and Parallel Universal Dependencies datasets, both filtered (_filtered_ subfolder) and not filtered (_non\_filtered_ subfolder)  as described in the paper
  * _figures_: figures produced for the paper, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
  * _latex\_tables_: latex tables produced for the paper, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
+ * _other_: other material used throughout the project
  * _results_: csv files obtained from the analysis, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
 
 Throughout the whole repository _pud_ stands for the Parallel Universal Dependencies collection and _cv_ stands for the Common Voice Forced Alignments collection.
