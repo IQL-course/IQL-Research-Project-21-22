@@ -1,6 +1,8 @@
 # The optimality of word lengths
 ## Theoretical foundations and an empirical study
 
+This is the supporting repository of the article https://arxiv.org/abs/2208.10384.
+
 ### Authors
 
  * Sonia Petrini
