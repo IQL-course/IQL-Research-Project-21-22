@@ -84,7 +84,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=TR
   if(!remove_vowels){
     if (collection == 'cv') {
       iso_code <- langs_df_cv$iso_code[langs_df_cv$language==language]
-      read.csv(here(folder,paste0(collection,'/',iso_code,"-word.csv")), encoding = 'UTF-8', fileEncoding = 'UTF-8') %>% 
+      read.csv(here(folder,paste0(collection,'/',iso_code,"-word.csv")), encoding = 'UTF-8') %>% 
         arrange(desc(frequency)) 
     } else if (collection == 'pud') {
       iso_code <- langs_df_pud$iso_code[langs_df_pud$language==language]
@@ -211,7 +211,7 @@ compute_convergence_scores_lang <- function(df_all,lang, n_sample, n_experiments
 
 scores_convergence <- function(collection,length_def='characters',sample_sizes,n_experiments,filter) {
 
-  languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
+  languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language 
   scores <- mclapply(languages, function(lang) {
     print(lang)
     df <- read_language(lang,collection,F,filter)

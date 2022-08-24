@@ -22,7 +22,7 @@ args = commandArgs(trailingOnly=TRUE)
 
 collections   <- if (length(args)>=1) args[[1]] else 'both'
 n_experiments <- if (length(args)>=2) as.numeric(args[[2]]) else 10^2
-filter        <- if (length(args)>=3) as.logical(args[[3]]) else F
+filter        <- if (length(args)>=3) as.logical(args[[3]]) else T
 sample_sizes <- c(2^seq(3,23))
 
 # GLOBALS  --------------------------------------------------------
