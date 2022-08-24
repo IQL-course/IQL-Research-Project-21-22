@@ -13,8 +13,13 @@
 "12","Portuguese","Indo-European","Latin",38,5661,21855
 "13","Spanish","Indo-European","Latin",32,5750,21067
 "14","Swedish","Indo-European","Latin",25,5624,16378
-"15","Korean","Koreanic","Hangul",379,6218,12307
-"16","Thai","Kra-Dai","Thai",50,3573,20860
-"17","Chinese","Sino-Tibetan","Han (Simplified variant)",2038,3154,15436
-"18","Turkish","Turkic","Latin",28,6587,13799
-"19","Finnish","Uralic","Latin",24,6938,12701
+"15","Japanese","Japonic","Japanese",1549,4852,24737
+"16","Japanese-strokes","Japonic","Japanese",1549,4852,24737
+"17","Japanese-romaji","Japonic","Latin",24,4849,24734
+"18","Korean","Koreanic","Hangul",379,6218,12307
+"19","Thai","Kra-Dai","Thai",50,3573,20860
+"20","Chinese","Sino-Tibetan","Han (Traditional variant)",50,4970,17845
+"21","Chinese-strokes","Sino-Tibetan","Han (Traditional variant)",2038,4970,17845
+"22","Chinese-pinyin","Sino-Tibetan","Latin",2038,4970,17845
+"23","Turkish","Turkic","Latin",28,6587,13799
+"24","Finnish","Uralic","Latin",24,6938,12701
