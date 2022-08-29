@@ -30,8 +30,9 @@ res <- lapply(COLLS,function(collection) {
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
     df <- if (filter == T) filter(df,group_opt == 2) else df
-    alphabet <- df$character
-    write(alphabet, here(which_folder('data',filter),paste0('alphabets/',collection,'/alphabet_',iso_code,'.txt')))
+    alphabet <- df[,c(1,2,3)]
+    print(paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/alphabet_',iso_code,'.csv'))
+    write.csv(alphabet, paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/alphabet_',iso_code,'.csv'),row.names = FALSE)
   })
 })
 
