@@ -26,13 +26,13 @@ print('file: alphabets')
 res <- lapply(COLLS,function(collection) {
   iso_codes <- if (collection == 'pud') langs_df_pud$iso_code else if (collection == 'cv') langs_df_cv$iso_code
   lapply(iso_codes, function(iso_code) {
-    df <- read.csv(here('code/preprocessing/',paste0(collection,'/characters/',iso_code,'-character.csv'))) %>% 
+    df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,'-character.csv'))) %>% 
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
     df <- if (filter == T) filter(df,group_opt == 2) else df
     alphabet <- df[,c(1,2,3)]
-    print(paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/alphabet_',iso_code,'.csv'))
-    write.csv(alphabet, paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/alphabet_',iso_code,'.csv'),row.names = FALSE)
+    print(paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/',iso_code,'-character.csv'))
+    write.csv(alphabet, paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/',iso_code,'-character.csv'),row.names = FALSE)
   })
 })
 
@@ -41,10 +41,11 @@ print('file: alphabets sizes')
 res <- lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   parameters <- lapply(langs_df$language, function(language) {
-    df       <- read_language(language,collection,F,filtered=filter)
-    words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
-    alphabet <- unique(unlist(strsplit(words, '')))
-    alphabet_size <- alphabet %>% length()
+    df       <- read.csv(here(which_folder('data',filter),paste0('alphabets/',collection,'/',iso_code,'-character.csv')))
+    #words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
+    #alphabet <- unique(unlist(strsplit(words, '')))
+    #alphabet_size <- alphabet %>% length()
+    alphabet_size <- nrow(df)
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
