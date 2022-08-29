@@ -24,15 +24,18 @@ langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/com
 # + filter alphabet with k-means
 print('file: alphabets')
 res <- lapply(COLLS,function(collection) {
-  iso_codes <- if (collection == 'pud') langs_df_pud$iso_code else if (collection == 'cv') langs_df_cv$iso_code
-  lapply(iso_codes, function(iso_code) {
-    df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,'-character.csv'))) %>% 
+  langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
+  lapply(langs_df$language, function(language) {
+    iso_code    <- langs_df$iso_code[langs_df$language==language]
+    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
+    str_suffix  <- ifelse (is.null(alternative),'',paste0('-',alternative))
+    df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))) %>% 
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
-    df <- if (filter == T) filter(df,group_opt == 2) else df
+    df <- if (iso_code %in% c('zho','jpn','kor')) df else filter(df,group_opt == 2)
     alphabet <- df[,c(1,2,3)]
-    print(paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/',iso_code,'-character.csv'))
-    write.csv(alphabet, paste0(here(which_folder('data',filter)),'/alphabets/',collection,'/',iso_code,'-character.csv'),row.names = FALSE)
+    print(paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))
+    write.csv(alphabet, paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'),row.names = FALSE)
   })
 })
 
@@ -40,11 +43,11 @@ res <- lapply(COLLS,function(collection) {
 print('file: alphabets sizes')
 res <- lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  parameters <- lapply(langs_df$iso_code, function(iso_code) {
-    df       <- read.csv(here(which_folder('data',filter),paste0('alphabets/',collection,'/',iso_code,'-character.csv')))
-    #words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
-    #alphabet <- unique(unlist(strsplit(words, '')))
-    #alphabet_size <- alphabet %>% length()
+  parameters <- lapply(langs_df$language, function(language) {
+    iso_code    <- langs_df$iso_code[langs_df$language==language]
+    alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
+    str_suffix  <- ifelse (is.null(alternative),'',paste0('-',alternative))
+    df       <- read.csv(here(which_folder('data',filter),paste0('alphabets/',collection,'/',iso_code,str_suffix,'-character.csv')))
     alphabet_size <- nrow(df)
     list("language"=language, 'A'=alphabet_size)
   })
@@ -57,7 +60,7 @@ res <- lapply(COLLS,function(collection) {
 print('tables: collection summaries')
 res <- lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  sum_coll <- langs_df %>% mutate(dialect = NULL, iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
+  sum_coll <- langs_df %>% mutate(iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(here(which_folder('results',filter),paste0('alphabet_sisez_',collection,'.csv')))
   sum_coll$A <- A_coll$A
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
