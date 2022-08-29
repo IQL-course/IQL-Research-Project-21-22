@@ -261,7 +261,7 @@ res <- lapply(COLLS, function(collection) {
       length_def <- 'characters'
       # data
       params_df <- params_df %>% 
-        filter(language %!in% c('Japanese-strokes','Chinese-strokes','Chinese-pinjin','Japanese-romaji'))
+        filter(language %!in% c('Japanese-strokes','Chinese-strokes','Chinese-pinyin','Japanese-romaji'))
       opt_df <- read_file('opt',collection,length_def,filter) %>% select(language,eta,psi,omega)
       df <- merge(params_df,opt_df, by='language') %>%  select(-language)
       # plot
@@ -305,7 +305,7 @@ if (filter==T) {
       melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
         rename(score = value) %>% na.omit()
       plot_convergence(melt_df)
-      ggsave(here(which_folder('results',filter),paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
     }
   })
 

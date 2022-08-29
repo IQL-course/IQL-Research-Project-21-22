@@ -342,11 +342,14 @@ plot_score_composition <- function(score,opt_df) {
   
   ggplot(melted,aes(x=language,y=value,fill=variable)) + coord_flip() + 
     theme(legend.position = 'right',axis.title.y = element_blank(),axis.text.y = element_blank(),
-          legend.key = element_rect(fill = "#edeff2")) +
+          legend.key = element_rect(fill = "#edeff2"), legend.text.align = 0) +
     labs(x=score_latex, y="Length") + 
     guides(fill=guide_legend(title="difference",override.aes = list(alpha = 0.6))) +
-    geom_bar(stat="identity",aes(alpha=alphacol),color='white') + standart_theme +
-    scale_alpha_identity() + scale_fill_manual(values = c("blue","lightblue"),limits = c('L-Lmin','Lrand-L'))
+    geom_bar(stat="identity",aes(alpha=alphacol),color='white') + 
+    standart_theme +
+    scale_alpha_identity() + 
+    scale_fill_manual(values = c("blue","lightblue"),
+                      limits = c('L-Lmin','Lrand-L'),label= c(TeX("$L-L_{min}$"),TeX("$L_r-L$")))
 }
 
 plot_score <- function(score,opt_df) {
