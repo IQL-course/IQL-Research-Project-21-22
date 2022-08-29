@@ -40,7 +40,7 @@ res <- lapply(COLLS,function(collection) {
 print('file: alphabets sizes')
 res <- lapply(COLLS,function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
-  parameters <- lapply(langs_df$language, function(language) {
+  parameters <- lapply(langs_df$iso_code, function(iso_code) {
     df       <- read.csv(here(which_folder('data',filter),paste0('alphabets/',collection,'/',iso_code,'-character.csv')))
     #words    <- if ('romanized_form' %in% colnames(df)) tolower(df$romanized_form) else df$word
     #alphabet <- unique(unlist(strsplit(words, '')))
