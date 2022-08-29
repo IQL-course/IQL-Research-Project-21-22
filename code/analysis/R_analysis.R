@@ -87,7 +87,7 @@ res <- lapply(COLLS, function(collection) {
       geom_abline(intercept = 0,slope=1,color='purple') + geom_point() + geom_text_repel(size=3) + 
       theme(legend.position = 'bottom') + guides(color=guide_legend(nrow=2,byrow=TRUE))+
       facet_wrap(~score,scales='free',labeller = labeller(score=scores_labs))
-    ggsave(here('figures',paste0('filteredVSoriginal_',collection,'_',length_def,'.pdf')), device = cairo_pdf)
+    ggsave(here('figures/non_filtered',paste0('filteredVSoriginal_',collection,'_',length_def,'.pdf')), device = cairo_pdf)
   })
 })
 
