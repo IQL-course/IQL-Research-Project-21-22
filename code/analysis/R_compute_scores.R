@@ -56,6 +56,9 @@ if (args[[1]] %in% c('kendall','spearman','pearson')) {
       opt_df <- compute_optimality_scores_coll(collection,args[[1]],'characters',F,filter)
       write.csv(opt_df, here(which_folder('results',filter),paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))
       }
+      if (!(what %in% c('corr','both','scores')) ){
+        cat("\nChoose to compute correlations, scores, or both: corr, scores, both")
+      }
     } 
     if (collections %in% c('cv','both')) {
       collection <- 'cv'
@@ -76,9 +79,12 @@ if (args[[1]] %in% c('kendall','spearman','pearson')) {
           opt_df <- compute_optimality_scores_coll(collection,args[[1]],length,F,filter)
           write.csv(opt_df, here(which_folder('results',filter),paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))
         }
+        if (!(what %in% c('corr','both','scores')) ){
+          print("Choose to compute correlations, scores, or both: corr, scores, both")
+        }
       })
     }
-} else print("Choose and available correlation type, among: 'kendal, 'spearman', 'pearson'")
+} else print("Choose and available correlation type, among: 'kendall, 'spearman', 'pearson'")
 
 
 

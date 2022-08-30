@@ -201,7 +201,8 @@ ggplot(df,aes(x=value,color = `length definition`, fill = `length definition`)) 
              labeller = labeller(variable=scores_labs)) + standart_theme +
   geom_vline(data=means, aes(xintercept=meanvalue, color = `length definition`),linetype='dashed') +
   theme(legend.position = 'bottom') + theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5))
-ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suffix,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suffix,'.pdf')), 
+       device = cairo_pdf, width = 8, height = 5)
 
 
 # + Psi values and composition
@@ -211,10 +212,12 @@ length_def   <- 'characters'
 opt_df <- read_file('opt','pud',length_def,filter)
 # plot 1
 plot_score(score,opt_df)
-ggsave(here(which_folder('figures',filter),paste0(score,'_pud_',length_def,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0(score,'_pud_',length_def,'.pdf')), 
+       device = cairo_pdf, width = 4, height = 5)
 # plot 2
 plot_score_composition(score,opt_df)
-ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',length_def,'.pdf')))
+ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',length_def,'.pdf')),
+       width = 4, height = 5)
 
 
 
@@ -258,7 +261,8 @@ res <- lapply(COLLS, function(collection) {
         df <- merge(params_df,opt_df, by='language') %>% select(-language)
         # plot
         plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-        ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')), 
+               device = cairo_pdf, width = 6, height = 6)
       })
     } else {
       length_def <- 'characters'
@@ -269,7 +273,8 @@ res <- lapply(COLLS, function(collection) {
       df <- merge(params_df,opt_df, by='language') %>%  select(-language)
       # plot
       plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-      ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),
+             device = cairo_pdf, width = 6, height = 6)
     }
   })
 })
