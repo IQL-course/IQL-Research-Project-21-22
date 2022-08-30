@@ -238,7 +238,7 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
       compute_convergence_scores_lang(df_all,lang,n_sample,n_experiments)
     })
     do.call(rbind.data.frame,lang_scores)
-  },mc.cores=1)
+  },mc.cores=3)
   
   do.call(rbind.data.frame,scores)
 }
@@ -442,7 +442,8 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
   greek_names  <- switch(type,
                          'scores'=c('L','\u03B7','\u03A8','\u03A9'),
                          'params'=c('n', 'T', 'A', '\u03B7','\u03A8','\u03A9'), 
-                         'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
+                         'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),
+                                  'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
   cors  <- round(cor(df, method=plot_corr), 2)
   p.mat <- corr.test(df, method=plot_corr, adjust = 'holm')$p
   if (HB_correct) p.mat <- symmetrise_mat(p.mat)
@@ -451,7 +452,8 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
     theme(legend.key.size = unit(1, 'cm'), #change legend key size
           legend.title = element_text(size=16), #change legend title font size
           legend.text = element_text(size=13)) + #change legend text font size  
-    scale_x_discrete(labels = greek_names[-1]) + scale_y_discrete(labels = greek_names[-length(greek_names)])
+    scale_x_discrete(labels = greek_names[-1]) + 
+    scale_y_discrete(labels = greek_names[-length(greek_names)])
 }
 
 
