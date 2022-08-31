@@ -32,7 +32,7 @@ res <- lapply(COLLS,function(collection) {
     df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))) %>% 
       mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
-    df <- if (iso_code %in% c('zho','jpn','kor')) df else filter(df,group_opt == 2)
+    df <- filter(df,group_opt == 2)
     alphabet <- df[,c(1,2,3)]
     print(paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))
     write.csv(alphabet, paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'),row.names = FALSE)
