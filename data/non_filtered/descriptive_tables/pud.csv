@@ -9,8 +9,8 @@ Hindi,hin,4920,21184,Indo-European,Devanagari
 Indonesian,ind,4596,16819,Austronesian,Latin
 Icelandic,isl,6175,16385,Indo-European,Latin
 Italian,ita,5944,21815,Indo-European,Latin
-Japanese,jpn,4852,24737,Japonic,Japanese
-Japanese-romaji,jpn,4849,24734,Japonic,Latin
+Japanese,jpn,4990,24899,Japonic,Japanese
+Japanese-romaji,jpn,4984,24892,Japonic,Latin
 Japanese-strokes,jpn,4852,24737,Japonic,Japanese
 Korean,kor,8031,14475,Koreanic,Hangul
 Polish,pol,7329,15386,Indo-European,Latin
@@ -20,6 +20,6 @@ Spanish,spa,5765,21083,Indo-European,Latin
 Swedish,swe,5842,16653,Indo-European,Latin
 Thai,tha,3818,21642,Kra-Dai,Thai
 Turkish,tur,6793,14092,Turkic,Latin
-Chinese,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
-Chinese-pinyin,zho,4970,17845,Sino-Tibetan,Latin
+Chinese,zho,5224,18129,Sino-Tibetan,Han (Traditional variant)
+Chinese-pinyin,zho,5224,18129,Sino-Tibetan,Latin
 Chinese-strokes,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
