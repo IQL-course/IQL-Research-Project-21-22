@@ -47,7 +47,7 @@ if (collections %in% c('pud','both')) {
   print(Sys.time())
   scores <- mclapply(langs_df_pud$language, function(language) {
     compute_expectation_scores_lang(language,collection,length_def,randomizations,filter) 
-  }, mc.cores = 3)
+  }, mc.cores = cores)
   print(Sys.time())
   null_df <- do.call(rbind.data.frame,scores)
   write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',randomizations,'.csv')))
