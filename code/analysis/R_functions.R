@@ -141,6 +141,7 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters', r
 compute_optimality_scores_lang <- function(lang, collection,length_def='characters',corr_type='kendall',remove_vowels=F,filter=T) {
   corr_suffix <- if (corr_type=='kendall') '' else paste0('_',corr_type)
   df <- read_language(lang,collection,remove_vowels,filter)
+  print(lang)
   # definition of length
   df$length <- if (collection == 'cv') { 
     switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
@@ -150,7 +151,6 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
   Lmin       <- sum(sort(df$length)*p)                                                # min baseline
   L          <- sum(df$length*p)                                                      # real value (weight by freq)
   Lrand      <- sum(df$length)/N_types                                                # random baseline (unweighted)
-  
   file_corr <- if (!remove_vowels) { 
     paste0('correlation_',collection,'_',length_def,corr_suffix,'.csv')
     } else { 'correlation_pud_remove_vowels.csv' }
@@ -159,19 +159,31 @@ compute_optimality_scores_lang <- function(lang, collection,length_def='characte
     cor.fk(df$frequency, sort(df$length))
      } else { cor.test(df$frequency,sort(df$length), method=corr_type, alternative = "less")$estimate %>% unname()}
   # scores:
-  eta   <- Lmin/L
-  psi   <- (Lrand-L)/(Lrand-Lmin)
-  omega <- corr/corr_min
-  data.frame("language"=lang, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand,'corr'=corr, 'corr_min'=corr_min, 
-             "eta"=eta, "psi"=psi, "omega"=omega)
+  # check Lmin > 0, check L_r >  L_min, corr_tau != 0
+  if ((Lmin > 0) & (Lrand > Lmin) & (corr_min!=0)){
+    eta   <- Lmin/L
+    psi   <- (Lrand-L)/(Lrand-Lmin)
+    omega <- corr/corr_min
+    return(data.frame("language"=lang, "Lmin"=Lmin, "L"=L, "Lrand"=Lrand,'corr'=corr, 'corr_min'=corr_min, 
+             "eta"=eta, "psi"=psi, "omega"=omega))
+  } else if (Lmin <= 0){
+    # error 1: Lmin<=0
+    stop(" L_min <= 0 ")
+  } else if (Lrand <= Lmin){
+    # error 2: L_rand <= L_min
+    stop(" L_rand <= L_min ")
+  } else if (corr_min == 0){
+    # error 3: corr_min == 0
+    stop(corr_type, " corr_min equals to 0 ")
+  }
 }
 
 compute_optimality_scores_coll <- function(collection, corr_type='kendall',length_def='characters',remove_vowels=F,filter=F) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   languages <- if (remove_vowels==F) langs_df$language else langs_df$language[langs_df$script=='Latin']
-    res <- mclapply(languages, function(language) {
-      compute_optimality_scores_lang(language,collection,length_def,corr_type,remove_vowels,filter)
-      },mc.cores=3)
+  res <- mclapply(languages, function(language) {
+    compute_optimality_scores_lang(language,collection,length_def,corr_type,remove_vowels,filter)
+  },mc.cores=3)
   df <- do.call(rbind.data.frame,res)
   df <- merge(df,langs_df[,c('language','family','script')], by='language') %>% arrange(family,script,language)
   return(df)
@@ -437,7 +449,8 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
   greek_names  <- switch(type,
                          'scores'=c('L','\u03B7','\u03A8','\u03A9'),
                          'params'=c('n', 'T', 'A', '\u03B7','\u03A8','\u03A9'), 
-                         'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
+                         'null'=c(bquote(~L[min]),bquote(~L[r]),bquote(~L[min]/L[r]),
+                                  'E[\u03B7]','E[\u03A8]','E[\u03A9]'))
   cors  <- round(cor(df, method=plot_corr), 2)
   p.mat <- corr.test(df, method=plot_corr, adjust = 'holm')$p
   if (HB_correct) p.mat <- symmetrise_mat(p.mat)
@@ -446,7 +459,8 @@ plot_correlogram <- function(df,plot_corr,type,HB_correct=T,lab_size,tl.cex,pch.
     theme(legend.key.size = unit(1, 'cm'), #change legend key size
           legend.title = element_text(size=16), #change legend title font size
           legend.text = element_text(size=13)) + #change legend text font size  
-    scale_x_discrete(labels = greek_names[-1]) + scale_y_discrete(labels = greek_names[-length(greek_names)])
+    scale_x_discrete(labels = greek_names[-1]) + 
+    scale_y_discrete(labels = greek_names[-length(greek_names)])
 }
 
 

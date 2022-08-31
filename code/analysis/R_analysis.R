@@ -201,7 +201,8 @@ ggplot(df,aes(x=value,color = `length definition`, fill = `length definition`)) 
              labeller = labeller(variable=scores_labs)) + standart_theme +
   geom_vline(data=means, aes(xintercept=meanvalue, color = `length definition`),linetype='dashed') +
   theme(legend.position = 'bottom') + theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5))
-ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suffix,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0('opt_scores_density',corr_suffix,'.pdf')), 
+       device = cairo_pdf, width = 8, height = 5)
 
 
 # + Psi values and composition
@@ -211,10 +212,12 @@ length_def   <- 'characters'
 opt_df <- read_file('opt','pud',length_def,filter)
 # plot 1
 plot_score(score,opt_df)
-ggsave(here(which_folder('figures',filter),paste0(score,'_pud_',length_def,'.pdf')), device = cairo_pdf)
+ggsave(here(which_folder('figures',filter),paste0(score,'_pud_',length_def,'.pdf')), 
+       device = cairo_pdf, width = 4, height = 5)
 # plot 2
 plot_score_composition(score,opt_df)
-ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',length_def,'.pdf')))
+ggsave(here(which_folder('figures',filter),paste0(score,'_composition_pud_',length_def,'.pdf')),
+       width = 4, height = 5)
 
 
 
@@ -258,7 +261,8 @@ res <- lapply(COLLS, function(collection) {
         df <- merge(params_df,opt_df, by='language') %>% select(-language)
         # plot
         plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-        ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')), 
+               device = cairo_pdf, width = 6, height = 6)
       })
     } else {
       length_def <- 'characters'
@@ -269,7 +273,8 @@ res <- lapply(COLLS, function(collection) {
       df <- merge(params_df,opt_df, by='language') %>%  select(-language)
       # plot
       plot_correlogram(df,plot_corr,'params',HB_correct=T,8,21,18)
-      ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('corrplot_params_',collection,'_',length_def,plot_corr_suffix,'.pdf')),
+             device = cairo_pdf, width = 6, height = 6)
     }
   })
 })
@@ -295,10 +300,12 @@ if (filter==T) {
           rename(score = value) %>% na.omit()
         melt_df_1 <- subset(melt_df, language %in% languages[1:23])
         plot_convergence(melt_df_1)
-        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_1.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_1.pdf')),
+               device = cairo_pdf, width = 10, height = 6)
         melt_df_2 <- subset(melt_df, language %in% languages[24:46])
         plot_convergence(melt_df_2)
-        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_2.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_2.pdf')),
+               device = cairo_pdf, width = 10, height = 6)
       })
     } else if (collection == 'pud') {
       print(collection)
@@ -308,7 +315,8 @@ if (filter==T) {
       melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
         rename(score = value) %>% na.omit()
       plot_convergence(melt_df)
-      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'.pdf')),
+             device = cairo_pdf, width = 10, height = 6)
     }
   })
 
@@ -401,14 +409,16 @@ if (filter == T) {
           lapply(length_defs, function(length_def) {
             df <- read_file('null',collection,length_def,filter,iters)
             plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-              ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,combo_suff,'.pdf')),device = cairo_pdf)
+              ggsave(here(which_folder('figures',filter), paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,combo_suff,'.pdf')), 
+                     device = cairo_pdf, width = 6, height = 6)
           })
         } else {
           length_def <- 'characters'
           suffix       <- paste0("_",length_def)
           df <- read_file('null',collection,length_def,filter,iters) 
           plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-            ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')),device = cairo_pdf)
+            ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')), 
+                   device = cairo_pdf, width = 6, height = 6)
         }
       })
     })
@@ -427,7 +437,8 @@ if (filter == T) {
       do.call(rbind,dfs) %>% mutate(randomizations=iters)
     })
     p <- do.call(rbind,dfs) %>% plot_corr_evolution()
-    ggsave(here(which_folder('figures',filter),paste0('corr_evolution_cv_',length_def,'.pdf')),device = cairo_pdf)
+    ggsave(here(which_folder('figures',filter),paste0('corr_evolution_cv_',length_def,'.pdf')), 
+           device = cairo_pdf, width = 9, height = 5)
   })
   
   # pud
@@ -440,7 +451,8 @@ if (filter == T) {
   })
   df <- do.call(rbind,dfs)
   plot_corr_evolution(df)
-  ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters.pdf')),device = cairo_pdf)
+  ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters.pdf')), 
+         device = cairo_pdf, width = 9, height = 5)
   
   
   
@@ -466,7 +478,8 @@ if (filter == T) {
     theme(text = element_text(size = 16),
           legend.text = element_text(size = 13),
           legend.title = element_text(size = 13))
-  ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',iters,'.pdf')),device = cairo_pdf)
+  ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',iters,'.pdf')), 
+         device = cairo_pdf, width = 8, height = 7)
   
   
   
@@ -477,12 +490,14 @@ if (filter == T) {
       length_def <- 'characters'
       suffix       <- paste0("_",length_def)
       read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
-      ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
+      ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')), 
+             device = cairo_pdf, width = 5, height = 5)
     } else {
       lapply(length_defs, function(length_def) {
         suffix       <- paste0("_",length_def)
         read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
-        ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')),device = cairo_pdf)
+        ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')), 
+               device = cairo_pdf, width = 5, height = 5)
       })
     }
   })
