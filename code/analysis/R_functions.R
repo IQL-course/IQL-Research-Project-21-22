@@ -278,8 +278,6 @@ compute_expectation_scores_lang <- function(lang,collection,length_def='characte
 
 
 
-
-
 opt_score_summary <- function(score, null=F, iters = 1000) {
   rows <- lapply(COLLS, function(collection) {
     if (collection == 'cv') {
