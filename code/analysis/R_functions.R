@@ -15,6 +15,7 @@ library("ggpmisc")
 library("Ckmeans.1d.dp")
 library("psych") 
 library('latex2exp')
+library("robslopes")
 options(dplyr.summarise.inform = FALSE)
 
 # preliminary functions
@@ -363,17 +364,22 @@ plot_score <- function(score,opt_df) {
 
 
 plot_timeVSspace <- function(score,length_def,filter) {
-  df_chars       <- read_file('opt','cv','characters',filter)
+  # get data
+  df_chars       <- read_file('opt','cv','characters',filter) %>% select(language,omega,psi)
   df_chars$space <- if (score == 'omega') df_chars$omega else if (score == 'psi') df_chars$psi
-  
-  df       <- read_file('opt','cv',length_def,filter) %>% select(-Lmin,-L,-Lrand,-eta)
-  df$score <- if (score == 'omega') df$omega else if (score == 'psi') df$psi
-  df_time  <- df %>% rename(time = score)
-  
-  score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
+  df_time        <- read_file('opt','cv',length_def,filter) %>% select(language,omega,psi)
+  df_time$time   <- if (score == 'omega') df_time$omega else if (score == 'psi') df_time$psi
   df <- merge(df_time,df_chars, by = c('language')) %>% merge(langs_df_cv[,c('language','X.tokens')]) %>% 
-    mutate(label = ifelse(abs(time-space)>=0.10,language,'')) %>% mutate(`T`=log10(X.tokens))
+     mutate(`T`=log10(X.tokens), label = ifelse(abs(time-space)>=0.10,language,''))
   
+  fit <- TheilSen(df$space,df$time,verbose = F)
+  intercept_TS <- fit$intercept
+  slope_TS <- fit$slope
+  
+  lm(df$time~df$space)
+  
+  # plot
+  score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
   ggplot(df,aes(space,time,label = label,fill=`T`)) + 
     geom_point(colour="black",pch=21, size=4) + 
     geom_abline(intercept = 0, slope=1, color = 'purple') + geom_text_repel(size = 5,color='black') + 
@@ -382,14 +388,15 @@ plot_timeVSspace <- function(score,length_def,filter) {
     theme(text = element_text(size = 20),legend.position = 'bottom',
           legend.text = element_text(size = 15),legend.title = element_text(size = 15)) +
     scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) +
-    geom_smooth(method = 'lm', formula = y~x, linetype='dashed') +
-    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
-                 label.x.npc = "left",label.y.npc = 1.5,
-                 eq.with.lhs = "italic(hat(y))~`=`~",eq.x.rhs = "~italic(x)",
-                 formula = y~x, parse = TRUE, size = 4, color="blue") +
-    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
-                  vjust="right", hjust="top", size = 4,
-                  nudge_x=0.1, nudge_y=0.1, color="purple")
+    geom_abline(intercept = intercept_TS, slope=slope_TS, color = 'blue') 
+    #geom_smooth(method = 'lm', formula = y~x, linetype='dashed') +
+    #stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+    #             label.x.npc = "left",label.y.npc = 1.5,
+    #             eq.with.lhs = "italic(hat(y))~`=`~",eq.x.rhs = "~italic(x)",
+    #             formula = y~x, parse = TRUE, size = 4, color="blue") +
+    #geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+    #              vjust="right", hjust="top", size = 4,
+    #              nudge_x=0.1, nudge_y=0.1, color="purple")
 }
 
 

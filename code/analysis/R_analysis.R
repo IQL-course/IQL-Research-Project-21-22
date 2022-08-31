@@ -338,6 +338,15 @@ print(paste0('relation between psi in characters and in duration: ',cor,
              'with pvalue:',pval))
 
 
+## Teil-Sein regression
+estimate_params <- function(df,theilsen) {
+    fit <- TheilSen(log10(df$x),log10(df$y),verbose = F)
+    intercept <- fit$intercept
+    slope <- fit$slope
+  }
+  data.frame(intercept=intercept,slope=slope)
+}
+
 # VOWELS REMOVAL (weak recoding) --------------------------------------------------------------
 print('files: vowel removal analysis')
 # - 1 - Significance of word lengths
