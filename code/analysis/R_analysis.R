@@ -329,7 +329,7 @@ if (filter==T) {
 score <- 'psi'
 print(paste0('figures: ',score,' in duration versus characters'))
 rows_cv <- lapply(c('medianDuration','meanDuration'), function(length_def) {
-  plot_timeVSspace(score,length_def,filter)
+  plot_timeVSspace(score,length_def,filter,robust=T)
   ggsave(here(which_folder('figures',filter),paste0(score,'_timeVSspace_',length_def,'.pdf')),device = cairo_pdf)
 })
 
@@ -346,14 +346,7 @@ print(paste0('relation between psi in characters and in duration: ',cor,
              'with pvalue:',pval))
 
 
-## Teil-Sein regression
-estimate_params <- function(df,theilsen) {
-    fit <- TheilSen(log10(df$x),log10(df$y),verbose = F)
-    intercept <- fit$intercept
-    slope <- fit$slope
-  }
-  data.frame(intercept=intercept,slope=slope)
-}
+
 
 # VOWELS REMOVAL (weak recoding) --------------------------------------------------------------
 print('files: vowel removal analysis')

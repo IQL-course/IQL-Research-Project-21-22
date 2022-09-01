@@ -15,7 +15,7 @@ library("ggpmisc")
 library("Ckmeans.1d.dp")
 library("psych") 
 library('latex2exp')
-library("robslopes")
+library('mblm')
 options(dplyr.summarise.inform = FALSE)
 
 # preliminary functions
@@ -372,8 +372,11 @@ plot_score <- function(score,opt_df) {
     coord_flip() + labs(x='language', y = score_latex) + standart_theme
 }
 
+sen <- function(..., weights = NULL) {
+  mblm::mblm(...)
+}
 
-plot_timeVSspace <- function(score,length_def,filter) {
+plot_timeVSspace <- function(score,length_def,filter,robust) {
   # get data
   df_chars       <- read_file('opt','cv','characters',filter) %>% select(language,omega,psi)
   df_chars$space <- if (score == 'omega') df_chars$omega else if (score == 'psi') df_chars$psi
@@ -382,11 +385,12 @@ plot_timeVSspace <- function(score,length_def,filter) {
   df <- merge(df_time,df_chars, by = c('language')) %>% merge(langs_df_cv[,c('language','X.tokens')]) %>% 
      mutate(`T`=log10(X.tokens), label = ifelse(abs(time-space)>=0.10,language,''))
   
-  fit <- TheilSen(df$space,df$time,verbose = F)
-  intercept_TS <- fit$intercept
-  slope_TS <- fit$slope
+  if (robust==F) {
+    cat("\nstd. error:", summary(lm(time~space,df))$coefficients[2, 2])
+  } else cat("\nstd. error:", summary(mblm(time~space,df))$coefficients[2, 2])
   
-  lm(df$time~df$space)
+  cat("\n", score, "pearson correlation:",round(cor(df$space, df$time),3))
+  cat("\n", score, "pearson correlation p-value:",cor.test(df$space,df$time)$p.value,"\n")
   
   # plot
   score_latex <- if (score=='omega') '\u03A9'  else if (score=='psi') '\u03A8'
@@ -398,15 +402,14 @@ plot_timeVSspace <- function(score,length_def,filter) {
     theme(text = element_text(size = 20),legend.position = 'bottom',
           legend.text = element_text(size = 15),legend.title = element_text(size = 15)) +
     scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) +
-    geom_abline(intercept = intercept_TS, slope=slope_TS, color = 'blue') 
-    #geom_smooth(method = 'lm', formula = y~x, linetype='dashed') +
-    #stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
-    #             label.x.npc = "left",label.y.npc = 1.5,
-    #             eq.with.lhs = "italic(hat(y))~`=`~",eq.x.rhs = "~italic(x)",
-    #             formula = y~x, parse = TRUE, size = 4, color="blue") +
-    #geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
-    #              vjust="right", hjust="top", size = 4,
-    #              nudge_x=0.1, nudge_y=0.1, color="purple")
+    geom_smooth(method = ifelse(robust==T,sen,'lm')) +
+    stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), 
+                 label.x.npc = "left",label.y.npc = 1.5,
+                 eq.with.lhs = "italic(hat(y))~`=`~",eq.x.rhs = "~italic(x)",
+                 method=ifelse(robust==T,sen,'lm'), parse = TRUE, size = 4, color="blue") +
+    geom_text_npc(mapping = aes(npcx=0.15, npcy=0.95, label="y = x"), 
+                  vjust="right", hjust="top", size = 4,
+                  nudge_x=0.1, nudge_y=0.1, color="purple")
 }
 
 
