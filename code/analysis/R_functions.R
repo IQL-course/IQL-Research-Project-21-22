@@ -244,6 +244,17 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
   do.call(rbind.data.frame,scores)
 }
 
+run_convergence <- function(collection,length_def,sample_sizes,n_experiments,filter) {
+  suffix <- paste0("_",length_def)
+  print(length_def)
+  start <- Sys.time()
+  print(start)
+  scores_df <- scores_convergence(collection,length_def,sample_sizes,n_experiments,filter)
+  end <- Sys.time()
+  print(end)
+  print(paste0('started at:',start, '- ended at:',end))
+  write.csv(scores_df,here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'_',n_experiments,'.csv')))
+}
 
 
 compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=T) {
