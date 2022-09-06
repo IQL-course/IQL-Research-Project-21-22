@@ -15,7 +15,7 @@ args = commandArgs(trailingOnly=TRUE)
   # - collections:    one of ('pud','cv','both') [default is 'both']
   # - n_experiments:  any integer value [default is 10^2]
   # - filter:         one of (T,F) [default is T]
-  # - length_def:     one of ('characters','medianDuration') [default is 'charcters']
+  # - length_def:     one of ('characters','medianDuration') [default is 'characters']
 
 # NOTE:
 # The minimum outputs to run the script "R_analysis.R" are obtained by the following command:

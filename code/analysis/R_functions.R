@@ -256,6 +256,18 @@ run_convergence <- function(collection,length_def,sample_sizes,n_experiments,fil
   write.csv(scores_df,here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'_',n_experiments,'.csv')))
 }
 
+run_null <- function(length,collection,randomizations,filter,cores) {
+  suffix <- paste0("_",length)
+  print(length)
+  print(Sys.time())
+  scores <- mclapply(langs_df_cv$language, function(language) {
+    compute_expectation_scores_lang(language,collection,length,randomizations,filter) 
+  },mc.cores=cores)
+  print(Sys.time())
+  null_df <- do.call(rbind.data.frame,scores)
+  write.csv(null_df, here(which_folder('results',filter),paste0('null_hypothesis_',collection,suffix,'_',randomizations,'.csv')))
+}
+
 
 compute_expectation_scores_lang <- function(lang,collection,length_def='characters', n_experiments = 10^2,filter=T) {
   df <- read_language(lang,collection,F,filter)
