@@ -3,7 +3,7 @@
 source('code/analysis/R_functions.R')
 args = commandArgs(trailingOnly=TRUE)
 
-# ARGUMENTS: randomizations  collections  cores  filter
+# ARGUMENTS: randomizations  collections  cores  filter length_def
 
 ## description:
   # - randomizations: number of randomizations to perform

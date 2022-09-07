@@ -230,7 +230,7 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
     df <- read_language(lang,collection,F,filter)
     # definition of length
     df$length <- if (collection == 'cv') { 
-      switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
+      switch(length_def, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
     } else if (collection == 'pud') df$n_characters
     df <- df %>% select(word,frequency,length)
     df_all <- df[rep(seq_len(nrow(df)), df$frequency),]
