@@ -8,7 +8,7 @@ source('code/analysis/R_functions.R', encoding="utf-8")
 
 
 args = commandArgs(trailingOnly=TRUE)
-filter <- if (length(args) == 1) as.logical(args[[1]]) else T
+filter <- if (length(args) == 1) as.logical(args[[1]]) else F
 
 # GLOBALS  --------------------------------------------------------
 ## pud
@@ -30,7 +30,7 @@ res <- lapply(COLLS,function(collection) {
     alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
     str_suffix  <- ifelse (is.null(alternative),'',paste0('-',alternative))
     df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))) %>% 
-      mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
+      mutate(Freq=log10(frequency)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
     df <- filter(df,group_opt == 2)
     alphabet <- df[,c(1,2,3)]
