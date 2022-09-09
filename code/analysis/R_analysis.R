@@ -30,7 +30,7 @@ res <- lapply(COLLS,function(collection) {
     alternative <- if (stringr::str_detect(language,'-')) sub(".*-","",language) else NULL
     str_suffix  <- ifelse (is.null(alternative),'',paste0('-',alternative))
     df <- read.csv(here('data/non_filtered',paste0('alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))) %>% 
-      mutate(Freq=log10(frequencyTot)) %>% arrange(desc(Freq))
+      mutate(Freq=log10(frequency)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
     df <- filter(df,group_opt == 2)
     alphabet <- df[,c(1,2,3)]
@@ -281,46 +281,41 @@ res <- lapply(COLLS, function(collection) {
 
 
 ## + convergence analysis 
-if (filter==T) {
-# to produce the same results with non-filtered data
-# the relative files should be produced with R_compute_convergence.R with filter=F
-
-  print('figures: convergence of scores')
-  sample_sizes <- c(2^seq(3,23))
-  rows <- lapply(COLLS, function(collection) {
-    languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
-    languages <- sort(languages)
-    if (collection == 'cv') {
-      print(collection)
-      lapply(length_defs, function(length_def) {
-        suffix     <- paste0("_",length_def)
-        scores_df <- read.csv(here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
-          mutate(t = rep(sample_sizes,length(languages)))
-        melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
-          rename(score = value) %>% na.omit()
-        melt_df_1 <- subset(melt_df, language %in% languages[1:23])
-        plot_convergence(melt_df_1)
-        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_1.pdf')),
-               device = cairo_pdf, width = 10, height = 6)
-        melt_df_2 <- subset(melt_df, language %in% languages[24:46])
-        plot_convergence(melt_df_2)
-        ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_2.pdf')),
-               device = cairo_pdf, width = 10, height = 6)
-      })
-    } else if (collection == 'pud') {
-      print(collection)
-      suffix <- '_characters'
+print('figures: convergence of scores')
+sample_sizes <- c(2^seq(3,23))
+rows <- lapply(COLLS, function(collection) {
+  languages <- if (collection=='pud') langs_df_pud$language else langs_df_cv$language
+  languages <- sort(languages)
+  if (collection == 'cv') {
+    print(collection)
+    lapply(length_defs, function(length_def) {
+      suffix     <- paste0("_",length_def)
       scores_df <- read.csv(here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
         mutate(t = rep(sample_sizes,length(languages)))
       melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
         rename(score = value) %>% na.omit()
-      plot_convergence(melt_df)
-      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'.pdf')),
+      melt_df_1 <- subset(melt_df, language %in% languages[1:23])
+      plot_convergence(melt_df_1)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_1.pdf')),
              device = cairo_pdf, width = 10, height = 6)
-    }
-  })
+      melt_df_2 <- subset(melt_df, language %in% languages[24:46])
+      plot_convergence(melt_df_2)
+      ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'_2.pdf')),
+             device = cairo_pdf, width = 10, height = 6)
+    })
+  } else if (collection == 'pud') {
+    print(collection)
+    suffix <- '_characters'
+    scores_df <- read.csv(here(which_folder('results',filter),paste0('scores_convergence_',collection,suffix,'.csv')))[-1]  %>% 
+      mutate(t = rep(sample_sizes,length(languages)))
+    melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
+      rename(score = value) %>% na.omit()
+    plot_convergence(melt_df)
+    ggsave(here(which_folder('figures',filter),paste0('convergence_',collection,suffix,'.pdf')),
+           device = cairo_pdf, width = 10, height = 6)
+  }
+})
 
-}
 
 
 
@@ -373,129 +368,123 @@ res <- lapply(c('eta','omega','psi'), function(score){
 
 # NULL HYPOTHESYS --------------------------------------------------------------
 
-# to produce these results with non-filtered data
-# the relative files should be produced with R_compute_null.R with filter=F
+iters <- 1e+06
 
-if (filter == T) {
-  iters <- 1e+06
-  
-  # + summary opt scores null
-  print('tables: summary of scores expected values')
-  res <- lapply(c('omega','eta','psi'), function(score) {
-    summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
-    summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
-    print(xtable(summ, type = "latex",digits=3), 
-          file = here(which_folder('latex_tables',filter),paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
-          caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
-          only.contents = TRUE,hline.after = c(nrow(summ)))
-  })
-  
-  
-  ## correlation wit Lmin, Lr, and Lmin/Lr
-  print('figures: correlograms of scores expectations with baselines')
-  res <- lapply(c(1e+06), function(iters) {
-    combo_suff <- ''
-    lapply(c('kendall','pearson'), function(plot_corr) {
-      plot_corr_suffix <- paste0('_',plot_corr)
-      rows <- lapply(COLLS, function(collection) {
-        if (collection == 'cv') {
-          lapply(length_defs, function(length_def) {
-            df <- read_file('null',collection,length_def,filter,iters)
-            plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-              ggsave(here(which_folder('figures',filter), paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,combo_suff,'.pdf')), 
-                     device = cairo_pdf, width = 6, height = 6)
-          })
-        } else {
-          length_def <- 'characters'
-          suffix       <- paste0("_",length_def)
-          df <- read_file('null',collection,length_def,filter,iters) 
+# + summary opt scores null
+print('tables: summary of scores expected values')
+res <- lapply(c('omega','eta','psi'), function(score) {
+  summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
+  summ <- summ[,c(9,1,2,3,4,5,6,7,8)]
+  print(xtable(summ, type = "latex",digits=3), 
+        file = here(which_folder('latex_tables',filter),paste0("opt_scores_summary_null_",score,corr_suffix,".tex")),
+        caption.placement = "top",include.rownames=FALSE,include.colnames=FALSE,
+        only.contents = TRUE,hline.after = c(nrow(summ)))
+})
+
+
+## correlation wit Lmin, Lr, and Lmin/Lr
+print('figures: correlograms of scores expectations with baselines')
+res <- lapply(c(1e+06), function(iters) {
+  lapply(c('kendall','pearson'), function(plot_corr) {
+    plot_corr_suffix <- paste0('_',plot_corr)
+    rows <- lapply(COLLS, function(collection) {
+      if (collection == 'cv') {
+        lapply(length_defs, function(length_def) {
+          df <- read_file('null',collection,length_def,filter,iters)
           plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
-            ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')), 
+            ggsave(here(which_folder('figures',filter), paste0('corrplot_null_',collection,'_',length_def,'_',iters,plot_corr_suffix,'.pdf')), 
                    device = cairo_pdf, width = 6, height = 6)
-        }
-      })
+        })
+      } else {
+        length_def <- 'characters'
+        suffix       <- paste0("_",length_def)
+        df <- read_file('null',collection,length_def,filter,iters) 
+        plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
+          ggsave(here(which_folder('figures',filter),paste0('corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf')), 
+                 device = cairo_pdf, width = 6, height = 6)
+      }
     })
   })
-  
-  
-  # evolution of correlation 
-  print('figures: evolution of correlation over number of randomizations')
-  ## cv
-  res <- lapply(length_defs, function(length_def) {
-    dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
-      dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-        read_file('null','cv',length_def,filter,iters) %>% 
-          long_corr_df(plot_corr,HB_correct = T)
-      })
-      do.call(rbind,dfs) %>% mutate(randomizations=iters)
-    })
-    p <- do.call(rbind,dfs) %>% plot_corr_evolution()
-    ggsave(here(which_folder('figures',filter),paste0('corr_evolution_cv_',length_def,'.pdf')), 
-           device = cairo_pdf, width = 9, height = 5)
-  })
-  
-  # pud
+})
+
+
+# evolution of correlation 
+print('figures: evolution of correlation over number of randomizations')
+## cv
+res <- lapply(length_defs, function(length_def) {
   dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
     dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-      read_file('null','pud','characters',filter,iters) %>% 
+      read_file('null','cv',length_def,filter,iters) %>% 
         long_corr_df(plot_corr,HB_correct = T)
     })
     do.call(rbind,dfs) %>% mutate(randomizations=iters)
   })
-  df <- do.call(rbind,dfs)
-  plot_corr_evolution(df)
-  ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters.pdf')), 
+  p <- do.call(rbind,dfs) %>% plot_corr_evolution()
+  ggsave(here(which_folder('figures',filter),paste0('corr_evolution_cv_',length_def,'.pdf')), 
          device = cairo_pdf, width = 9, height = 5)
-  
-  
-  
-  # E[scores] vs Lmin
-  print('figures: correlation between scores expectations and Lmin')
-  iters <- 1e+06
-  rows_cv <- lapply(length_defs, function(length_def) {
-    df <- read_file('null','cv',length_def,filter,iters)%>% 
-      mutate(`Lmin/Lrand` = Lmin/Lrand) %>% select(language,Lmin,psi,omega) %>% 
-      rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def) %>% 
-      merge(langs_df_cv[,c('language','X.tokens')], by = 'language')
+})
+
+# pud
+dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
+  dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
+    read_file('null','pud','characters',filter,iters) %>% 
+      long_corr_df(plot_corr,HB_correct = T)
   })
-  df <- do.call(rbind,rows_cv)
-  reshape2::melt(df, id.vars=c('language','Lmin','length_def','X.tokens')) %>% 
-    ggplot(aes(x=`Lmin`,y=value,label=ifelse(log10(X.tokens)<=4,language,''),fill=log10(X.tokens))) + 
-    geom_text_repel(size=3,color='black',box.padding=0.5)+
-    geom_point(colour="black",pch=21,size=3) + geom_hline(yintercept = 0,color='purple',linetype='dashed') +
-    facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free', 
-               labeller = labeller(variable=exp_scores_labs, length_def=length_labs)) +
-    scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) + 
-    labs(fill=expression(paste(log[10],'T')), x=bquote(L[min]), y = 'expected score value') +
-    scale_y_continuous(label=scientific_10) +
-    theme(text = element_text(size = 16),
-          legend.text = element_text(size = 13),
-          legend.title = element_text(size = 13))
-  ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',iters,'.pdf')), 
-         device = cairo_pdf, width = 8, height = 7)
-  
-  
-  
-  # E[eta] vs theoretical lower bound
-  print('figures: E[eta] vs theoretical lower bound')
-  rows <- lapply(COLLS, function(collection) {
-    if (collection == 'pud') {
-      length_def <- 'characters'
+  do.call(rbind,dfs) %>% mutate(randomizations=iters)
+})
+df <- do.call(rbind,dfs)
+plot_corr_evolution(df)
+ggsave(here(which_folder('figures',filter),paste0('corr_evolution_pud_characters.pdf')), 
+       device = cairo_pdf, width = 9, height = 5)
+
+
+
+# E[scores] vs Lmin
+print('figures: correlation between scores expectations and Lmin')
+iters <- 1e+06
+rows_cv <- lapply(length_defs, function(length_def) {
+  df <- read_file('null','cv',length_def,filter,iters)%>% 
+    mutate(`Lmin/Lrand` = Lmin/Lrand) %>% select(language,Lmin,psi,omega) %>% 
+    rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def) %>% 
+    merge(langs_df_cv[,c('language','X.tokens')], by = 'language')
+})
+df <- do.call(rbind,rows_cv)
+reshape2::melt(df, id.vars=c('language','Lmin','length_def','X.tokens')) %>% 
+  ggplot(aes(x=`Lmin`,y=value,label=ifelse(log10(X.tokens)<=4,language,''),fill=log10(X.tokens))) + 
+  geom_text_repel(size=3,color='black',box.padding=0.5)+
+  geom_point(colour="black",pch=21,size=3) + geom_hline(yintercept = 0,color='purple',linetype='dashed') +
+  facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free', 
+             labeller = labeller(variable=exp_scores_labs, length_def=length_labs)) +
+  scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) + 
+  labs(fill=expression(paste(log[10],'T')), x=bquote(L[min]), y = 'expected score value') +
+  scale_y_continuous(label=scientific_10) +
+  theme(text = element_text(size = 16),
+        legend.text = element_text(size = 13),
+        legend.title = element_text(size = 13))
+ggsave(here(which_folder('figures',filter),paste0('correlation_scores_Lmin_',iters,'.pdf')), 
+       device = cairo_pdf)
+
+
+
+# E[eta] vs theoretical lower bound
+print('figures: E[eta] vs theoretical lower bound')
+rows <- lapply(COLLS, function(collection) {
+  if (collection == 'pud') {
+    length_def <- 'characters'
+    suffix       <- paste0("_",length_def)
+    read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
+    ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')), 
+           device = cairo_pdf, width = 5, height = 5)
+  } else {
+    lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
       read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
       ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')), 
              device = cairo_pdf, width = 5, height = 5)
-    } else {
-      lapply(length_defs, function(length_def) {
-        suffix       <- paste0("_",length_def)
-        read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
-        ggsave(here(which_folder('figures',filter),paste0('E_eta_LminLr_',collection,suffix,'.pdf')), 
-               device = cairo_pdf, width = 5, height = 5)
-      })
-    }
-  })
-  
-}
+    })
+  }
+})
+
 
 
 
