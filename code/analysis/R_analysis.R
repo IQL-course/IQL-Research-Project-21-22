@@ -8,7 +8,7 @@ source('code/analysis/R_functions.R', encoding="utf-8")
 
 
 args = commandArgs(trailingOnly=TRUE)
-filter <- if (length(args) == 1) as.logical(args[[1]]) else T
+filter <- if (length(args) == 1) as.logical(args[[1]]) else F
 
 # GLOBALS  --------------------------------------------------------
 ## pud
