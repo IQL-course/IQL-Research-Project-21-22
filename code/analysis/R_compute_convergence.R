@@ -30,10 +30,11 @@ sample_sizes  <- c(2^seq(3,23))
 
 # GLOBALS  --------------------------------------------------------
 ## pud
-langs_df_pud <- read.csv(here(which_folder('data',filter),"descriptive_tables/pud.csv"))
+langs_df_pud <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/pud.csv"))
 ## cv
-langs_df_cv <- read.csv(here(which_folder('data',filter),"descriptive_tables/common_voice.csv")) %>% 
+langs_df_cv <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/common_voice.csv")) %>% 
   shorten_names()
+
 
 # CONVERGENCE SCORES --------------------------------------------------------
 if (collections %in% c('pud','both')) {

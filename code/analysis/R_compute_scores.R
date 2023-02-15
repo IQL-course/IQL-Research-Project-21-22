@@ -1,57 +1,73 @@
-source('R_functions.R')
 
-# WARNING! Running takes a long time!
-
-# ARGS: corr_type=('kendall','spearman'), collection = ('pud','cv','both), what =('corr','scores','both'), filter?
-
-#Sys.setlocale("LC_ALL","English")
+# CORRELATIONS AND OPTIMALITY SCORES  ------------------------------------------
+source('code/analysis/R_functions.R')
+#Sys.setlocale("LC_ALL","English")     # might be needed for Windows
 args = commandArgs(trailingOnly=TRUE)
 
-corr_suffix <- if (args[[1]] == 'kendall') '' else paste0('_',args[[1]])
-collections <- args[[2]]
-what <- args[[3]]
-filter <- if (length(args)>=4) as.logical(args[[4]]) else F
-folder <- if (filter==F) 'results' else 'results_filtered'
+# ARGUMENTS: corr_type  collections  what  filter
+
+## description:
+  # - corr_type:   correlation to be used
+  # - collections: collections to be used
+  # - what :       what should be computed
+  # - filter:      whether to apply the optional filtering
+
+## values:
+  # - corr_type:   one of ('kendall','spearman','pearson')
+  # - collections: one of ('pud','cv','both') [default is 'both']
+  # - what :       one of ('corr','scores','both') [default is 'both']
+  # - filter:      one of (T,F) [default is T]
+
+# NOTE:
+# The minimum outputs to run the script "R_analysis.R" are obtained by the following commands:
+  # - Rscript R_compute_scores.R kendall both both [filter]
+  # - Rscript R_compute_scores.R spearman pud both [filter]
+  # - Rscript R_compute_scores.R pearson both corr [filter]
+
+
+collections <- if (length(args)>=1) args[[1]] else 'both'
+filter      <- if (length(args)>=2) as.logical(args[[2]]) else T
+
+
+# GLOBALS  --------------------------------------------------------
+langs_df_pud <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/pud.csv"))
+langs_df_cv <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/common_voice.csv")) %>% 
+  shorten_names()
+
 
 # OPTIMALITY SCORES ------------------------------------------------------------
-if (args[[1]] %in% c('kendall','spearman','pearson')) {  
-    if (collections %in% c('pud','both')) {
-      collection <- 'pud'
-      print(collection)
-      if (what %in% c('corr','both')) {
-        # - 1 - Significance of word lengths
-        print('begin to compute tau correlations')
-        tau_df <- compute_corr(collection,args[[1]],'characters',F,filter)
-        write.csv(tau_df, here(folder,paste0('correlation_',collection,'_characters',corr_suffix,'.csv')))
-        }
-      if (what %in% c('scores','both')) {
-      # - 2 - Compute scores
-      print('begin to compute optimality scores')
-      opt_df <- compute_optimality_scores_coll(collection,args[[1]],'characters',F,filter)
-      write.csv(opt_df, here(folder,paste0('optimality_scores_',collection,'_characters',corr_suffix,'.csv')))
-      }
-    } 
-    if (collections %in% c('cv','both')) {
-      collection <- 'cv'
-      print(collection)
-      res <- lapply(c(length_defs), function(length) {
-        suffix <- paste0("_",length)
-        print(length)
-        if (what %in% c('corr','both')) {
-        # - 1 - Significance of word lengths
-          print('begin to compute tau correlations')
-          tau_df <- compute_corr(collection,args[[1]],length,F,filter)
-          write.csv(tau_df, here(folder,paste0('correlation_',collection,suffix,corr_suffix,'.csv')))
-        }
-        if (what %in% c('scores','both')) {
-          ## - 2 - Compute scores
-          print('begin to compute optimality scores')
-          opt_df <- compute_optimality_scores_coll(collection,args[[1]],length,F,filter)
-          write.csv(opt_df, here(folder,paste0('optimality_scores_',collection,suffix,corr_suffix,'.csv')))
-        }
-      })
-    }
-} else print("Choose and available correlation type, among: 'kendal, 'spearman'")
+if (collections %in% c('pud','both')) {
+  collection <- 'pud'
+  length_def <- 'characters'
+  # compute
+  corrs_kendall_df <- compute_corr(collection,'kendall',length_def,F,filter)
+  corrs_pearson_df <- compute_corr(collection,'pearson',length_def,F,filter)
+  opt_df           <- compute_optimality_scores_coll(corrs_kendall_df,collection,length_def,F,filter)
+  # rename
+  corrs_pearson_df <- rename(corrs_pearson_df, r = corr,   r_pval = pvalue, r_min = corr_min)
+  corrs_kendall_df <- rename(corrs_kendall_df, tau = corr, tau_pval = pvalue, tau_min = corr_min)
+  # merge
+  df <- merge(corrs_kendall_df,corrs_pearson_df, by='language') %>% merge(opt_df,  by='language') %>% 
+    mutate(length_def = length_def)
+  write.csv(df, paste0(which_folder('results',filter),'/scores_',collection,'.csv'))
+  
+} else if (collections %in% c('cv','both')) {
+  collection <- 'cv'
+  res <- lapply(c(length_defs,'meanDuration'), function(length_def) {
+    # compute
+    corrs_kendall_df <- compute_corr(collection,'kendall',length_def,F,filter)
+    corrs_pearson_df <- compute_corr(collection,'pearson',length_def,F,filter)
+    opt_df           <- compute_optimality_scores_coll(corrs_kendall_df,collection,length_def,F,filter)
+    # rename
+    corrs_pearson_df <- rename(corrs_pearson_df, r = corr,   r_pval = pvalue, r_min = corr_min)
+    corrs_kendall_df <- rename(corrs_kendall_df, tau = corr, tau_pval = pvalue, tau_min = corr_min)
+    # merge
+    merge(corrs_kendall_df,corrs_pearson_df, by='language') %>% merge(opt_df,  by='language') %>% 
+      mutate(length_def = length_def)
+  })
+  df <- do.call(rbind.data.frame,res)
+  write.csv(df, paste0(which_folder('results',filter),'/scores_',collection,'.csv'))
+}
 
 
 
