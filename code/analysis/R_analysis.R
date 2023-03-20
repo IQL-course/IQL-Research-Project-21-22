@@ -312,27 +312,26 @@ rows <- lapply(COLLS, function(collection) {
     print(collection)
     lapply(length_defs, function(length_def) {
       suffix     <- paste0("_",length_def)
+      # df
       scores_df <- read.csv(paste0(which_folder('results',filter),'/scores_convergence_',collection,suffix,'.csv'))[-1]  %>% 
-        mutate(t = rep(sample_sizes,length(languages)))
-      melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
+        mutate(t = rep(sample_sizes,length(languages))) %>% 
+        reshape2::melt(id.vars=c('language','t')) %>% 
         rename(score = value) %>% na.omit()
-      melt_df_1 <- subset(melt_df, language %in% languages[1:23])
-      plot_convergence(melt_df_1)
-      ggsave(paste0(which_folder('figures',filter),'/convergence_',collection,suffix,'_1.pdf'),
-             device = cairo_pdf, width = 10, height = 6)
-      melt_df_2 <- subset(melt_df, language %in% languages[24:46])
-      plot_convergence(melt_df_2)
-      ggsave(paste0(which_folder('figures',filter),'/convergence_',collection,suffix,'_2.pdf'),
-             device = cairo_pdf, width = 10, height = 6)
+      # plot
+      plot_convergence(scores_df)
+       ggsave(paste0(which_folder('figures',filter),'/convergence_',collection,suffix,'.pdf'),
+             device = cairo_pdf, width = 11, height = 12)
     })
   } else if (collection == 'pud') {
     print(collection)
     suffix <- '_characters'
+    # df
     scores_df <- read.csv(paste0(which_folder('results',filter),'/scores_convergence_',collection,suffix,'.csv'))[-1]  %>% 
-      mutate(t = rep(sample_sizes,length(languages)))
-    melt_df   <- reshape2::melt(scores_df, id.vars=c('language','t')) %>% 
+      mutate(t = rep(sample_sizes,length(languages))) %>% 
+      reshape2::melt(id.vars=c('language','t')) %>% 
       rename(score = value) %>% na.omit()
-    plot_convergence(melt_df)
+    # plot
+    plot_convergence(scores_df)
     ggsave(paste0(which_folder('figures',filter),'/convergence_',collection,suffix,'.pdf'),
            device = cairo_pdf, width = 10, height = 6)
   }
@@ -392,7 +391,7 @@ res <- lapply(c('eta','omega','psi'), function(score){
 
 iters <- 1e+06
 
-# + summary opt scores null
+## + summary opt scores null
 print('tables: summary of scores expected values')
 res <- lapply(c('omega','eta','psi'), function(score) {
   summ <- opt_score_summary(score,null=T,iters = iters) %>% mutate(empty = rep('',3)) 
@@ -430,9 +429,9 @@ res <- lapply(c(1e+06), function(iters) {
 })
 
 
-# evolution of correlation 
+## evolution of correlation 
 print('figures: evolution of correlation over number of randomizations')
-## cv
+## + cv
 res <- lapply(length_defs, function(length_def) {
   dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
     dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
@@ -446,7 +445,7 @@ res <- lapply(length_defs, function(length_def) {
          device = cairo_pdf, width = 9, height = 5)
 })
 
-# pud
+## + pud
 dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
   dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
     read_file('null','pud','characters',filter,iters) %>% 
@@ -461,7 +460,7 @@ ggsave(paste0(which_folder('figures',filter),'/corr_evolution_pud_characters.pdf
 
 
 
-# E[scores] vs Lmin
+## E[scores] vs Lmin
 print('figures: correlation between scores expectations and Lmin')
 iters <- 1e+06
 rows_cv <- lapply(length_defs, function(length_def) {
@@ -488,7 +487,7 @@ ggsave(paste0(which_folder('figures',filter),'/correlation_scores_Lmin_',iters,'
 
 
 
-# E[eta] vs theoretical lower bound
+## E[eta] vs theoretical lower bound
 print('figures: E[eta] vs theoretical lower bound')
 rows <- lapply(COLLS, function(collection) {
   if (collection == 'pud') {
@@ -509,8 +508,21 @@ rows <- lapply(COLLS, function(collection) {
 
 
 
+# INGREDIENTS OF OPTIMALITY SCORES ---------------------------------------------
+#Panel (a) for eta: L_min on the x axis and L on the y axis.
+#Panel (b) for Psi: L_r - L on the x axis and L_r - L_min on the y axis.
+#Panel (c) for Psi: \tau_min on the x axis and \tau on the y axis.
 
 
-
+rows <- lapply(COLLS, function(collection) {
+  if (collection == 'cv') {
+    lapply(length_defs, function(length_def) {
+      plot_scores_ingredients(filter, collection, length_def)
+    })
+  } else {
+    length_def <- 'characters'
+    plot_scores_ingredients(filter, collection, length_def)
+  }
+})
 
 

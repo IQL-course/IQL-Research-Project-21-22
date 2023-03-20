@@ -450,11 +450,11 @@ standart_theme <- theme(text = element_text(size = 16),
                         legend.text = element_text(size = 13),
                         legend.title = element_text(size = 13))
 
-format_log_x_axis <- scale_x_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
-                                 labels=scales::trans_format('log10',scales::math_format(10^.x))) 
+library(scales)
+format_log_y_axis <- scale_y_log10(labels = label_log())
 
-format_log_y_axis <- scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
-                                   labels=scales::trans_format('log10',scales::math_format(10^.x))) 
+#format_log_y_axis <- scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^as.integer(x)),
+#                                   labels=scales::trans_format('log10',scales::math_format(10^.x))) 
 
 assign_stars <- function(df) {
   df %>% mutate(stars = case_when(pvalue<=0.01               ~ '***',
@@ -511,11 +511,11 @@ plot_etaVSlowerbound <- function(df) {
 
 plot_convergence <- function(df) {
   ggplot(df) + geom_line(aes(`t`,score,color=variable),size=1) + 
-    facet_wrap(~language) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
+    facet_wrap(~language, ncol = 6) + geom_hline(yintercept=0,linetype='dashed',color='purple') + 
     theme(strip.text = element_text(size = 12),legend.position = 'bottom') +
     guides(color=guide_legend(title="score",nrow = 1)) +
     scale_color_discrete(labels=c('\u03B7','\u03A8','\u03A9')) +
-    format_log_x_axis + standart_theme
+    scale_x_log10(breaks = 10^(c(1,3,5,7)), labels = label_log()) + standart_theme
 }
 
 
@@ -575,7 +575,7 @@ plot_corr_evolution <- function(df) {
     geom_hline(yintercept = 0,linetype='dashed') +
     scale_shape_manual(values=c('significant'=1,'non-significant'=4)) +
     scale_color_discrete(labels = c('\u03B7','\u03A8','\u03A9')) +
-    format_log_x_axis + standart_theme
+    scale_x_log10(labels = label_log()) + standart_theme
 }
 
 long_corr_df <- function(df,plot_corr,HB_correct=T) {
@@ -592,3 +592,31 @@ long_corr_df <- function(df,plot_corr,HB_correct=T) {
     mutate(significance=ifelse(pvalue<=0.05,'significant','non-significant'),
            correlation=plot_corr)
 }
+
+
+
+plot_scores_ingredients <- function(filter, collection, length_def) {
+  df <- read_file('opt',collection,filter,length_def) %>% select(language, L,Lmin,Lrand,tau_min,tau)
+  # a)
+  ggplot(df,aes(x=Lmin, y=L, label=language)) + geom_point(size=2) + labs(x=bquote(L[min])) +
+    geom_abline(slope=1, intercept=0, color = 'purple', size = 1) + geom_text_repel(size=4) +
+    theme(text = element_text(size = 20))
+  ggsave(paste0(which_folder('figures',filter),'/a_',collection,"_",length_def,'.pdf'),
+         device = cairo_pdf, width = 6, height = 8)
+  # b)
+  df %>% mutate(`Lr-Lmin`=Lrand-Lmin, `Lr-L`=Lrand-L) %>% 
+    ggplot(aes(y=`Lr-Lmin`, x=`Lr-L`, label=language)) + geom_point(size=2) + 
+    labs(y=bquote(L[r]-L[min]), x = bquote(L[r]-L)) +
+    geom_abline(slope=1, intercept=0, color = 'purple') + geom_text_repel(size=4) +
+    theme(text = element_text(size = 20))
+  ggsave(paste0(which_folder('figures',filter),'/b_',collection,"_",length_def,'.pdf'),
+         device = cairo_pdf, width = 6, height = 8)
+  # c)
+  ggplot(df,aes(x=tau_min, y=tau, label=language)) + geom_point(size=2) + 
+    labs(x=expression(tau[min]), y=expression(tau)) + scale_y_continuous(limits = c(-0.9, 0)) +
+    geom_abline(slope=1, intercept=0, color = 'purple') + geom_text_repel(size=4) +
+    theme(text = element_text(size = 20))
+  ggsave(paste0(which_folder('figures',filter),'/c_',collection,"_",length_def,'.pdf'),
+         device = cairo_pdf, width = 6, height = 8)
+}
+
