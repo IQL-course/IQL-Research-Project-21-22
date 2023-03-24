@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 24,тепӗр,0.30750000000000005,0.29999999999999993,0.036623822135682216,5
 13,хут,0.22538461538461532,0.20000000000000018,NA,3
 67,вара,0.26492537313432835,0.25,0.06177606514854641,4

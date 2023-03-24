@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 612,энэ,0.21362745098039218,0.20999999999999996,0.06686022573480109,3
 28,бүхнийг,0.3914285714285714,0.37500000000000006,0.07372191421090911,7
 2,нөхөртэйгөө,0.595,0.595,NA,11

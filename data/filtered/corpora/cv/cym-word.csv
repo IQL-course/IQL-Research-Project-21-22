@@ -1,4 +1,3 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 85,gwelais,0.44529411764705884,0.45000000000000007,0.07880941802695855,7
 20009,i,0.09019591183967215,0.07000000000000028,0.059716205432051216,1

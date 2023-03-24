@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 17,إننا,0.46352941176470586,0.5,NA,4
 8,اشترى,0.4775,0.4599999999999999,NA,5
 37,لها,0.3291891891891892,0.33000000000000007,0.09598548438807408,3

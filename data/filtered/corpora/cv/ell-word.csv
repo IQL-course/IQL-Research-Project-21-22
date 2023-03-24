@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 116,γιατί,0.4142241379310346,0.4,0.12273088879523267,5
 52,όχι,0.4603846153846154,0.485,0.1341635165402182,3
 108,αν,0.2049074074074074,0.21,0.07209152244313416,2

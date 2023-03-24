@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 16,кожному,0.49875,0.51,NA,7
 17,гарантується,0.7376470588235293,0.7199999999999998,NA,12
 9,недоторканність,0.9244444444444445,0.8600000000000001,NA,15

@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 771,مگه,0.2819714656290532,0.27,0.07949192046050023,3
 43320,می,0.1368421052631579,0.13,0.04962799352124849,2
 542,شه,0.2140036900369004,0.17999999999999994,0.0875019090641483,2

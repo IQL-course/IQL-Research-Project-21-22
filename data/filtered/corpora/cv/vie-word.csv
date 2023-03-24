@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 4,bố,0.15750000000000003,0.13999999999999999,NA,2
 13,nó,0.2161538461538461,0.19999999999999973,NA,2
 16,thì,0.31249999999999994,0.24,NA,3

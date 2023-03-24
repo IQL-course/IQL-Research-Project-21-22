@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 3479,eu,0.1574216728945099,0.14999999999999997,0.06994241533072403,2
 6,estive,0.41999999999999993,0.395,NA,6
 260,lá,0.25138461538461543,0.2599999999999999,0.09369921354815429,2

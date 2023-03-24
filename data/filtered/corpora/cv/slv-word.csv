@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 2,primarna,0.585,0.585,NA,8
 2,tuljava,0.54,0.54,NA,7
 89,ima,0.3098876404494382,0.30999999999999983,0.06189239896829878,3

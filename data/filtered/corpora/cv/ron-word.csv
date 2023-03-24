@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 340,am,0.17038235294117646,0.17000000000000004,0.0492615167528916,2
 32,avut,0.294375,0.275,0.05841660722773959,4
 2,discuții,0.595,0.595,NA,8

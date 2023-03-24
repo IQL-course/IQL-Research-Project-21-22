@@ -1,4 +1,3 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 50,zei,0.2722,0.27,0.057686344014110325,3
 9,ruang,0.30333333333333323,0.31000000000000005,NA,5

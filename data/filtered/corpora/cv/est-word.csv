@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 452,nii,0.20546460176991152,0.19999999999999996,0.08389099718906332,3
 10,sündis,0.425,0.41500000000000004,NA,6
 1260,ka,0.12896825396825398,0.11000000000000032,0.054599842090263924,2

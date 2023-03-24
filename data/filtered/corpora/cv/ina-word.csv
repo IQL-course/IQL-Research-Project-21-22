@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 923,io,0.2648104008667389,0.24,0.0944675788256922,2
 1299,es,0.23244803695150118,0.18000000000000016,0.11640815779269478,2
 75,multo,0.4657333333333332,0.42999999999999994,0.11687569434201421,5

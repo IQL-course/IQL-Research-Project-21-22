@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 1,କାଣ୍ଡ,0.28,0.28,NA,5
 2,ପନ୍ଦର,0.41000000000000025,0.41000000000000025,NA,5
 4,ବର୍ଷର,0.44499999999999995,0.43999999999999995,NA,5

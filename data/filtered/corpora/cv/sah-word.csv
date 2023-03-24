@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 34,аны,0.27294117647058824,0.26999999999999996,0.06617375712400884,3
 21,уолаттар,0.5276190476190477,0.51,0.09974491274770664,8
 4,сырсан,0.46,0.46999999999999986,NA,6

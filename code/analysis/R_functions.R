@@ -597,25 +597,34 @@ long_corr_df <- function(df,plot_corr,HB_correct=T) {
 
 plot_scores_ingredients <- function(filter, collection, length_def) {
   df <- read_file('opt',collection,filter,length_def) %>% select(language, L,Lmin,Lrand,tau_min,tau)
+
+  # add control points
+  df_control <- df %>% mutate(L=Lrand, tau=0, language='')
+  df <- rbind(df,df_control) %>% mutate(color=ifelse(language=='','control','real'))
+  
   # a)
-  ggplot(df,aes(x=Lmin, y=L, label=language)) + geom_point(size=2) + labs(x=bquote(L[min])) +
+  ggplot(df,aes(y=Lmin, x=L, label=language,color=color)) + geom_point(size=2) + labs(y=bquote(L[min])) +
     geom_abline(slope=1, intercept=0, color = 'purple', size = 1) + geom_text_repel(size=4) +
-    theme(text = element_text(size = 20))
+    theme(text = element_text(size = 20), legend.position = 'none') + 
+    scale_color_manual(values = c("real" = "black", "control" = "red"))
   ggsave(paste0(which_folder('figures',filter),'/a_',collection,"_",length_def,'.pdf'),
          device = cairo_pdf, width = 6, height = 8)
   # b)
   df %>% mutate(`Lr-Lmin`=Lrand-Lmin, `Lr-L`=Lrand-L) %>% 
-    ggplot(aes(y=`Lr-Lmin`, x=`Lr-L`, label=language)) + geom_point(size=2) + 
-    labs(y=bquote(L[r]-L[min]), x = bquote(L[r]-L)) +
+    ggplot(aes(x=`Lr-Lmin`, y=`Lr-L`, label=language,color=color)) + geom_point(size=2) + 
+    labs(x=bquote(L[r]-L[min]), y = bquote(L[r]-L)) +
     geom_abline(slope=1, intercept=0, color = 'purple') + geom_text_repel(size=4) +
-    theme(text = element_text(size = 20))
+    theme(text = element_text(size = 20), legend.position = 'none') + 
+    scale_color_manual(values = c("real" = "black", "control" = "red"))
   ggsave(paste0(which_folder('figures',filter),'/b_',collection,"_",length_def,'.pdf'),
          device = cairo_pdf, width = 6, height = 8)
   # c)
-  ggplot(df,aes(x=tau_min, y=tau, label=language)) + geom_point(size=2) + 
-    labs(x=expression(tau[min]), y=expression(tau)) + scale_y_continuous(limits = c(-0.9, 0)) +
+  df %>% mutate(tau=-tau, tau_min=-tau_min) %>% 
+  ggplot(aes(y=tau, x=tau_min, label=language,color=color)) + geom_point(size=2) + 
+    labs(x=expression(-tau[min]), y=expression(-tau)) + scale_y_continuous(limits = c(0,1)) +
     geom_abline(slope=1, intercept=0, color = 'purple') + geom_text_repel(size=4) +
-    theme(text = element_text(size = 20))
+    theme(text = element_text(size = 20), legend.position = 'none') + 
+    scale_color_manual(values = c("real" = "black", "control" = "red"))
   ggsave(paste0(which_folder('figures',filter),'/c_',collection,"_",length_def,'.pdf'),
          device = cairo_pdf, width = 6, height = 8)
 }

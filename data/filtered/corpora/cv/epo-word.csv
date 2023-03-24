@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 547,sen,0.31956124314442413,0.3199999999999994,0.07718839872730526,3
 13,speso,0.6807692307692309,0.7000000000000002,NA,5
 315,unua,0.4844761904761905,0.4800000000000004,0.10022567801323178,4

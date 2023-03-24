@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 1,ხოსე,0.5,0.5,NA,4
 1,ვისენტე,0.55,0.55,NA,7
 3,ნიკარაგუის,0.7133333333333335,0.7,NA,10

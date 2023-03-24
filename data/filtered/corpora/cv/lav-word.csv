@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 318,vai,0.2081446540880503,0.1900000000000001,0.06759046621196388,3
 1,teltis,0.53,0.53,NA,6
 81,jums,0.2855555555555555,0.26,0.10122993628369033,4

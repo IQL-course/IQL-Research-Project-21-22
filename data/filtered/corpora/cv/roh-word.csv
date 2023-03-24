@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 1207,la,0.14021541010770505,0.1299999999999999,0.04979013996387123,2
 13,uniun,0.46846153846153843,0.45999999999999996,NA,5
 1559,da,0.13464400256574727,0.1299999999999999,0.0458536029344403,2

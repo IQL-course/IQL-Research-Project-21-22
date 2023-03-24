@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 22,তেও,0.28954545454545455,0.2499999999999999,0.14571587725130325,3
 10,এজন,0.39900000000000013,0.3600000000000001,NA,3
 13,মোৰ,0.36769230769230765,0.26,NA,3

@@ -1,4 +1,4 @@
- ,frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
+frequency,word,meanDuration,medianDuration,stDevDuration,n_characters
 1076,сегодня,0.485957249070632,0.47,0.09349500189828455,7
 5426,это,0.22843346848507187,0.21999999999999997,0.06517595395284405,3
 1617,является,0.49997526283240573,0.4899999999999999,0.08414170262341461,8
