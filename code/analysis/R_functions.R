@@ -113,7 +113,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=TR
 
 read_file <- function(what, collection, filter=T, length='characters', corr_type='kendall', iters=1e+06) {
   file <- if (what %in% c('corr','opt')) 'scores_' else if (what=='null') 'null_hypothesis_'
-  length_suffix <- ifelse(what=='null',paste0('_',length_def),'')
+  length_suffix <- ifelse(what=='null',paste0('_',length),'')
   iters_suffix  <- ifelse(what=='null',paste0('_',iters),'')
   df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1] %>% 
     filter(length_def == length)
@@ -579,7 +579,7 @@ plot_corr_evolution <- function(df) {
 }
 
 long_corr_df <- function(df,plot_corr,HB_correct=T) {
-  df <- df %>% rename(Lr = Lrand) %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
+  df    <- df %>% rename(Lr = Lrand) %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
   cors  <- round(cor(df, method=plot_corr), 2)
   p.mat <- corr.test(df, method=plot_corr, adjust = 'holm')$p
   if (HB_correct) p.mat <- symmetrise_mat(p.mat)

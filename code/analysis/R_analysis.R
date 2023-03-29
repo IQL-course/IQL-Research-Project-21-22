@@ -435,7 +435,7 @@ print('figures: evolution of correlation over number of randomizations')
 res <- lapply(length_defs, function(length_def) {
   dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
     dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-      read_file('null','cv',length_def,filter,iters) %>% 
+      read_file('null','cv',filter=filter,length=length_def,iters=iters) %>% 
         long_corr_df(plot_corr,HB_correct = T)
     })
     do.call(rbind,dfs) %>% mutate(randomizations=iters)
@@ -448,7 +448,7 @@ res <- lapply(length_defs, function(length_def) {
 ## + pud
 dfs <- lapply(c(1000,10000,1e+05,1e+06), function(iters) {
   dfs <- lapply(c('kendall','pearson'), function(plot_corr) {
-    read_file('null','pud','characters',filter,iters) %>% 
+    read_file('null','pud',filter=filter,length='characters',iters=iters) %>% 
       long_corr_df(plot_corr,HB_correct = T)
   })
   do.call(rbind,dfs) %>% mutate(randomizations=iters)
@@ -464,7 +464,7 @@ ggsave(paste0(which_folder('figures',filter),'/corr_evolution_pud_characters.pdf
 print('figures: correlation between scores expectations and Lmin')
 iters <- 1e+06
 rows_cv <- lapply(length_defs, function(length_def) {
-  df <- read_file('null','cv',length_def,filter,iters)%>% 
+  df <- read_file('null','cv',filter,length_def,iters=iters)%>% 
     mutate(`Lmin/Lrand` = Lmin/Lrand) %>% select(language,Lmin,psi,omega) %>% 
     rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def) %>% 
     merge(langs_df_cv[,c('language','X.tokens')], by = 'language')
@@ -493,13 +493,13 @@ rows <- lapply(COLLS, function(collection) {
   if (collection == 'pud') {
     length_def <- 'characters'
     suffix       <- paste0("_",length_def)
-    read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
+    read_file('null',collection,filter,length_def,iters=iters) %>% plot_etaVSlowerbound()
     ggsave(paste0(which_folder('figures',filter),'/E_eta_LminLr_',collection,suffix,'.pdf'), 
            device = cairo_pdf, width = 5, height = 5)
   } else {
     lapply(length_defs, function(length_def) {
       suffix       <- paste0("_",length_def)
-      read_file('null',collection,length_def,filter,iters) %>% plot_etaVSlowerbound()
+      read_file('null',collection,filter,length_def,iters=filter) %>% plot_etaVSlowerbound()
       ggsave(paste0(which_folder('figures',filter),'/E_eta_LminLr_',collection,suffix,'.pdf'), 
              device = cairo_pdf, width = 5, height = 5)
     })
