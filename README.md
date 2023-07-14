@@ -9,7 +9,7 @@ This is the supporting repository of the article https://arxiv.org/abs/2208.1038
  * Antoni Casas-i-Muñoz
  * Jordi Cluet-i-Martinell
  * Mengxue Wang
- * Christian Benz
+ * Christian Bentz
  * Ramon Ferrer-i-Cancho
 
 ### Repository organization
