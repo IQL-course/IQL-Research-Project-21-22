@@ -153,7 +153,7 @@ res <- lapply(COLLS, function(collection) {
       })
   } else {
     opt_df <- read_file('opt',collection,filter) %>% select(language,L,Lrand,tau,tau_pval,r,r_pval)
-    opt_df <- merge(opt_df, select(langs_df_cv,language,family,script))
+    opt_df <- merge(opt_df, select(langs_df_pud,language,family,script))
     opt_df <- opt_df[,c('language', 'family', 'script', 'L', 'Lrand', 'tau', 'tau_pval', 'r', 'r_pval')]
     print(xtable(opt_df,type = "latex",digits=c(0,0,0,0,2,2,2,-2,2,-2)),math.style.exponents = TRUE,
           file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores_characters.tex"),
