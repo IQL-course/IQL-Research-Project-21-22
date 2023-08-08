@@ -371,8 +371,13 @@ tau_df <- compute_corr("pud", corr_type = "kendall", remove_vowels = TRUE, filte
 write.csv(tau_df, paste0(which_folder('results',filter),'/correlation_pud_remove_vowels.csv'))
 
 # - 2 - Compute scores
-opt_df <- compute_optimality_scores_coll("pud", corr_type = "kendall", remove_vowels = TRUE, filter)
-write.csv(opt_df, paste0(which_folder('results',filter),'/optimality_scores_pud_remove_vowels.csv'))
+corrs_noremove <- compute_corr('pud',remove_vowels=F)
+opt_df <- compute_optimality_scores_coll(corrs_noremove,'pud',remove_vowels = F,filter) 
+write.csv(opt_df, paste0(which_folder('results',filter),'/optimality_scores_pud_characters.csv'))
+
+corrs_remove <- compute_corr('pud',remove_vowels=T)
+opt_remove_df <- compute_optimality_scores_coll(corrs_remove,'pud',remove_vowels = TRUE,filter) 
+write.csv(opt_remove_df, paste0(which_folder('results',filter),'/optimality_scores_pud_remove_vowels.csv'))
 
 # plot comparison
 print('figures: vowel removal analysis')

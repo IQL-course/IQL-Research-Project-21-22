@@ -52,13 +52,23 @@ shorten_names <- function(df) {
 }
 
 do_remove_vowels <- function(iso_code,words) {
-  if(iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'|iso_code=='ces'){
-    gsub("[aeiouáóéíúàèùìòâôîêûyýäöæą\U0105ę\U0119ů\U016F]","", words)          # with y ý
+  words <- gsub("[\u0061\u0065\u0069\u006f\u0075]","", words)  # aeiou
+  words <- gsub("[\u00e0\u00e8\u00ec\u00f2\u00f9]","", words)  # àèìòù
+  words <- gsub("[\u00e1\u00e9\u00ed\u00f3\u00fa]","", words)  # áéíóú
+  words <- gsub("[\u00e2\u00ea\u00ee\u00f4\u00fb]","", words)  # âêîôû 
+  words <- gsub("[\u00e4\u00eb\u00ef\u00fc\u00f6]","", words)  # äëïüö (fin,fra,isl)
+  if(iso_code=='ces'|iso_code=='fin'|iso_code=='isl'|iso_code=='fra'|iso_code=='pol'){
+    words <- gsub("[\u0079\u00fd]","", words)  # yý 
+    words <- gsub("[\u16f]","", words)  # ů (ces)
+    words <- gsub("[\u11b]","", words)  # ě (ces)
+    words <- gsub("[\u00e6]","", words)  # æ (isl)
+    words <- gsub("[\u105\u119]","", words)  # ąę (pol)
   } else if(iso_code=='zho'){
-    gsub("[aeiouā\U0101áǎ\U01CEàō\u014dóǒ\u01d2òē\U0113éě\U011Bè
-         ī\u012bíǐ\u01d0ìū\u016búǔ\u01d4ùǖǘ\U01D8ǚ\U01DAǜ\U01DCü]","",words)                     
+    words <- gsub("[\u101\u113\u12b\u14d\u16b]","", words)  # āēīōū
+    words <- gsub("[\u1ce\u11b\u1d0\u1d2\u1d4]","", words)  # ǎěǐǒǔ     
+    words <- gsub("[\u1d6\u1d8\u1da\u1dc]","", words)  # ǖǘǚǜ            
   } else {
-    gsub("[AEUIOaeiouàèùìòâôîêûäöüåı]","",words)                     # no y
+    words <- gsub("[\u00e3\u00f5\u131]","", words)  # ãõı (prt,tur)
   }
 }
 
@@ -98,7 +108,7 @@ read_language <- function(language, collection, remove_vowels=FALSE, filtered=TR
       iso_code    <- langs_df_pud$iso_code[langs_df_pud$language==language]
       alternative <- if(iso_code=='zho') "pinyin" else if(iso_code=='jpn') "romaji" else NULL   # file suffix
       str_suffix  <- ifelse (is.null(alternative),'',paste0('_',alternative))
-      df          <- read.csv(paste0(folder,collection,'/',iso_code,"_pud",str_suffix,".csv"), encoding = 'UTF-8')[-1]
+      df          <- read.csv(paste0(folder,collection,'/',iso_code,"_pud",str_suffix,".csv"), encoding = 'UTF-8')
       df$word     <- if(iso_code=='zho' | iso_code=='jpn') df$romanized_form else df$word      # word <- Latin script
       # remove vowels
       df$word   <- do_remove_vowels(iso_code,df$word)
@@ -135,7 +145,8 @@ compute_corr <- function(collection,corr_type='kendall',length = 'characters', r
     # definition of length
     df$length <- if (collection == 'cv') { 
       switch(length, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
-    } else if (collection == 'pud') df$n_characters
+    } else if (remove_vowels==T & collection == 'pud') df$length 
+    else if (remove_vowels==F & collection == 'pud') df$n_characters
     # compute corr and pvalue
     res <- cor.test(df$frequency,df$length, method=corr_type, alternative = "less")
     # compute minimum correlation
@@ -189,12 +200,13 @@ compute_optimality_scores_coll <- function(corrs_df, collection, length_def='cha
     # definition of length
     df$length <- if (collection == 'cv') { 
       switch(length_def, 'meanDuration'=df$meanDuration,'medianDuration'=df$medianDuration,'characters'=df$n_characters)
-    } else if (collection == 'pud') df$n_characters
+    } else if (remove_vowels==T & collection == 'pud') df$length 
+    else if (remove_vowels==F & collection == 'pud') df$n_characters
     # correlations
     corr_df_lang <- filter(corrs_df, language==lang)
     # compute scores
     compute_optimality_scores_lang(df, corr_df_lang, lang)
-  }, mc.cores=3)
+  }, mc.cores=1)
   df <- do.call(rbind.data.frame,res)
   return(df)
 }
@@ -248,7 +260,7 @@ scores_convergence <- function(collection,length_def='characters',sample_sizes,n
       compute_convergence_scores_lang(df_all,lang,n_sample,n_experiments)
     })
     do.call(rbind.data.frame,lang_scores)
-  },mc.cores=3)
+  },mc.cores=1)
   
   do.call(rbind.data.frame,scores)
 }
