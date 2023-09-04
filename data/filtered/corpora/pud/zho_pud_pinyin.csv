@@ -1,4 +1,4 @@
-,word,frequency,n_characters
+word,frequency,n_characters,romanized_form
 的,1,2,de
 在,1,3,zài
 了,1,2,le
@@ -377,6 +377,7 @@
 死,1,2,sǐ
 建議,2,6,jiànyì
 附近,2,5,fùjìn
+法律,2,4,fǎlǜ
 歌曲,2,4,gēqǔ
 學生,2,8,xuéshēng
 導演,2,6,dǎoyǎn
@@ -509,6 +510,7 @@
 馬克,2,4,mǎkè
 年輕,2,8,niánqīng
 之中,2,8,zhīzhōng
+女士,2,5,nǚshì
 嗎,1,2,ma
 描述,2,7,miáoshù
 俄羅斯,3,6,éluósī
@@ -561,6 +563,7 @@
 專輯,2,7,zhuānjí
 初,1,3,chū
 缺少,2,7,quēshǎo
+女,1,2,nǚ
 智能,2,7,zhìnéng
 簽訂,2,8,qiāndìng
 修道院,3,10,xiūdàoyuàn
@@ -633,6 +636,7 @@ bbc,3,3,bbc
 建造,2,7,jiànzào
 夏天,2,7,xiàtiān
 大概,2,5,dàgài
+女兒,2,4,nǚér
 上漲,2,10,shàngzhǎng
 農曆,2,6,nónglì
 星期,2,6,xīngqī
@@ -663,6 +667,7 @@ the,3,3,the
 當地,2,6,dāngdì
 單曲,2,5,dānqū
 需求,2,5,xūqiú
+安大略省,4,12,āndàlüèshěng
 地位,2,5,dìwèi
 泰國,2,6,tàiguó
 海洋,2,7,hǎiyáng
@@ -675,6 +680,7 @@ the,3,3,the
 破壞,2,6,pòhuài
 唐納德,3,8,tángnàdé
 生,1,5,shēng
+女人,2,5,nǚrén
 殖民,2,6,zhímín
 唱片,2,9,chàngpiàn
 首,1,4,shǒu
@@ -715,6 +721,7 @@ the,3,3,the
 此次,2,4,cǐcì
 內容,2,7,nèiróng
 電視,2,7,diànshì
+機率,2,4,jīlǜ
 較低,2,6,jiàodī
 批評,2,6,pīpíng
 從未,2,7,cóngwèi
@@ -790,6 +797,7 @@ cnn,3,3,cnn
 用地,2,6,yòngdì
 同意,2,6,tóngyì
 理解,2,5,lǐjiě
+女性,2,6,nǚxìng
 城鎮化,3,12,chéngzhènhuà
 解決,2,6,jiějué
 瓦倫蒂諾,4,10,wǎlúndìnuò
@@ -1088,6 +1096,7 @@ martin,6,6,martin
 兄弟,2,7,xiōngdì
 轉型,2,9,zhuǎnxíng
 徵收,2,9,zhēngshōu
+侵略,2,6,qīnlüè
 行,1,4,xíng
 改革,2,5,gǎigé
 言,1,3,yán
@@ -1115,6 +1124,7 @@ martin,6,6,martin
 疑問,2,5,yíwèn
 奧巴馬,3,6,àobāmǎ
 二十,2,5,èrshí
+女孩,2,5,nǚhái
 特點,2,6,tèdiǎn
 卡塔拉諾,4,9,kǎtǎlānuò
 食物,2,5,shíwù
@@ -1288,6 +1298,8 @@ nicolai,7,7,nicolai
 防衛,2,7,fángwèi
 局,1,2,jú
 歌手,2,6,gēshǒu
+考慮,2,5,kǎolǜ
+希律,2,4,xīlǜ
 即將,2,7,jíjiāng
 亞歷山大,4,10,yàlìshāndà
 停留,2,7,tíngliú
@@ -1413,6 +1425,7 @@ nicolai,7,7,nicolai
 專業,2,7,zhuānyè
 那里,2,4,nàlǐ
 早期,2,5,zǎoqī
+女巫,2,4,nǚwū
 牧師,2,5,mùshī
 統治者,3,10,tǒngzhìzhě
 觀察,2,7,guānchá
@@ -1446,9 +1459,11 @@ nicolai,7,7,nicolai
 滿意,2,5,mǎnyì
 收益,2,6,shōuyì
 阿爾瓦雷茨,5,10,āěrwǎléicí
+增長率,3,11,zēngzhǎnglǜ
 進場,2,8,jìnchǎng
 收入,2,6,shōurù
 人均,2,6,rénjūn
+入讀率,3,6,rùdúlǜ
 男子,2,5,nánzi
 標誌,2,7,biāozhì
 梅,1,3,méi
@@ -1528,6 +1543,7 @@ de,2,2,de
 太平洋,3,11,tàipíngyáng
 barrosos,8,8,barrosos
 艾達,2,4,àidá
+dündar,6,6,dündar
 城鎮,2,9,chéngzhèn
 埃爾多安,4,9,āiěrduōān
 卡洛斯,3,7,kǎluòsī
@@ -1718,6 +1734,7 @@ facebook,8,8,facebook
 顯而易見,4,12,xiǎnéryìjiàn
 話,1,3,huà
 面,1,4,miàn
+旅程,2,7,lǚchéng
 展現,2,8,zhǎnxiàn
 鬥志,2,6,dòuzhì
 周圍,2,7,zhōuwéi
@@ -1773,6 +1790,7 @@ dna,3,3,dna
 超越,2,7,chāoyuè
 充滿,2,8,chōngmǎn
 今天,2,7,jīntiān
+發生率,3,9,fāshēnglǜ
 成長,2,10,chéngzhǎng
 巴西,2,4,bāxī
 選項,2,9,xuǎnxiàng
@@ -1793,6 +1811,7 @@ dna,3,3,dna
 版本,2,6,bǎnběn
 控,1,4,kòng
 仍舊,2,7,réngjiù
+情侶,2,6,qínglǚ
 別人,2,6,biérén
 收到,2,7,shōudào
 博客,2,4,bókè
@@ -1871,6 +1890,7 @@ dna,3,3,dna
 蘇格蘭,3,7,sūgélán
 形式,2,7,xíngshì
 環節,2,7,huánjié
+旅行,2,6,lǚxíng
 飛行,2,7,fēixíng
 猜測,2,5,cāicè
 起源,2,6,qǐyuán
@@ -1886,6 +1906,7 @@ dna,3,3,dna
 認識,2,6,rènshí
 總部,2,6,zǒngbù
 群體,2,5,qúntǐ
+leive,5,5,leive
 pugh,4,4,pugh
 實驗,2,6,shíyàn
 數字,2,5,shùzì
@@ -1951,6 +1972,7 @@ pugh,4,4,pugh
 故鄉,2,7,gùxiāng
 巔峰,2,8,diānfēng
 一心一意,4,9,yìxīnyíyì
+綠野,2,4,lǜyě
 音樂界,3,8,yīnlèjiè
 公告牌,3,10,gōnggàopái
 二百,2,5,èrbǎi
@@ -1982,6 +2004,7 @@ pugh,4,4,pugh
 簽約,2,7,qiānyuē
 迪卡,2,4,díkǎ
 遊蕩者,3,10,yóudàngzhě
+艾略特,3,7,àilüètè
 轉身,2,9,zhuǎnshēn
 肯瑟斯,3,7,kěnsèsī
 玫瑰,2,6,méiguī
@@ -2241,6 +2264,7 @@ t型車,3,8,txíngchē
 情操,2,7,qíngcāo
 加深,2,7,jiāshēn
 物種,2,7,wùzhǒng
+婦女,2,4,fùnǚ
 埋葬,2,7,máizàng
 字母,2,4,zìmǔ
 陪葬品,3,10,péizàngpǐn
@@ -2307,6 +2331,7 @@ t型車,3,8,txíngchē
 靜態,2,7,jìngtài
 募集,2,4,mùjí
 銥,1,2,yī
+菲律賓,3,8,fēilǜbīn
 槌,1,4,chuí
 段落,2,7,duànluò
 化學浴,3,8,huàxuéyù
@@ -2379,6 +2404,7 @@ tarlo,5,5,tarlo
 待命區,3,9,dàimìngqū
 志願軍,3,10,zhìyuànjūn
 警衛,2,7,jǐngwèi
+略,1,3,lüè
 糧食,2,8,liángshí
 波多黎各,4,9,bōduōlígè
 理想,2,7,lǐxiǎng
@@ -2405,6 +2431,7 @@ rhs,3,3,rhs
 深入,2,6,shēnrù
 長久,2,8,zhǎngjiǔ
 征服戰,3,11,zhēngfúzhàn
+女皇,2,7,nǚhuáng
 葉卡捷琳娜,5,12,yèkǎjiélínnà
 氣溫,2,5,qìwēn
 南京,2,7,nánjīng
@@ -2489,6 +2516,7 @@ mate,4,4,mate
 讚賞,2,8,zànshǎng
 歌劇,2,4,gējù
 招聘,2,7,zhāopìn
+旅客,2,4,lǚkè
 達成,2,7,dáchéng
 往往,2,8,wǎngwǎng
 貝瑞,2,6,bèiruì
@@ -2602,6 +2630,7 @@ gchq,4,4,gchq
 天線,2,8,tiānxiàn
 很高,2,6,hěngāo
 角,1,4,jiǎo
+分辨率,3,9,fēnbiànlǜ
 簡單,2,7,jiǎndān
 撰稿人,3,11,zhuàngǎorén
 此前,2,6,cǐqián
@@ -2640,6 +2669,7 @@ conte,5,5,conte
 榮譽,2,6,róngyù
 勳章,2,8,xūnzhāng
 住房,2,7,zhùfáng
+viguier區,8,9,viguierqū
 追逐,2,7,zhuīzhú
 烏爾里希,4,8,wūěrlǐxī
 街道賽,3,9,jiēdàosài
@@ -2659,6 +2689,7 @@ conte,5,5,conte
 魯帕斯堡,4,9,lǔpàsībǎo
 rupertsberg,11,11,rupertsberg
 流離失所,4,11,liúlíshīsuǒ
+修女們,3,8,xiūnǚmen
 艾賓根,3,8,àibīngēn
 eibingen,8,8,eibingen
 重建,2,9,chóngjiàn
@@ -2807,6 +2838,7 @@ garden,6,6,garden
 農村,2,7,nóngcūn
 鍍銅,2,6,dùtóng
 山上,2,9,shānshàng
+ötzi,4,4,ötzi
 莫斯克尼,4,8,mòsīkèní
 頂部,2,6,dǐngbù
 路德,2,4,lùdé
@@ -2925,6 +2957,7 @@ freeman,7,7,freeman
 英國法,3,9,yīngguófǎ
 十世,2,6,shíshì
 五世,2,5,wǔshì
+女兒們,3,7,nǚérmen
 繼承,2,7,jìchéng
 順位,2,7,shùnwèi
 她們,2,5,tāmen
@@ -2950,6 +2983,7 @@ metti,5,5,metti
 超,1,4,chāo
 碰撞,2,10,pèngzhuàng
 塞斯托聖喬瓦尼,7,21,sāisītuōshèngqiáowǎní
+villa,5,5,villa
 pelucca,7,7,pelucca
 馬匹,2,4,mǎpǐ
 旁邊,2,8,pángbiān
@@ -2992,6 +3026,7 @@ rosane,6,6,rosane
 婚外情,3,10,hūnwàiqíng
 低處,2,5,dīchù
 棵,1,2,kē
+棕櫚樹,3,9,zōnglǘshù
 罪行,2,7,zuìxíng
 紀念幣,3,8,jìniànbì
 本質,2,6,běnzhì
@@ -3012,6 +3047,7 @@ rosane,6,6,rosane
 員,1,4,yuán
 walter,6,6,walter
 宇宙,2,6,yǔzhòu
+olivia,6,6,olivia
 受訓,2,7,shòuxùn
 goffredo,8,8,goffredo
 petrassi,8,8,petrassi
@@ -3034,6 +3070,7 @@ bruno,5,5,bruno
 薩謨奈,3,7,sàmónài
 莫利塞,3,7,mòlìsāi
 巴西利卡塔,5,10,bāxīlìkǎtǎ
+david,5,5,david
 crouch,6,6,crouch
 stephen,7,7,stephen
 專心,2,8,zhuānxīn
@@ -3047,7 +3084,10 @@ stephen,7,7,stephen
 定,1,4,dìng
 清醒,2,8,qīngxǐng
 滴,1,2,dī
+vance,5,5,vance
 德,1,2,dé
+布呂因,3,7,bùlǚyīn
+günter,6,6,günter
 bruyn,5,5,bruyn
 是否是,3,9,shìfǒushì
 親戚,2,5,qīnqī
@@ -3075,6 +3115,7 @@ spiegel,7,7,spiegel
 明確,2,7,míngquè
 數百萬,3,9,shùbǎiwàn
 買家,2,6,mǎijiā
+vine,4,4,vine
 秒鐘,2,9,miǎozhōng
 科貝爾,3,7,kēbèiěr
 kerber,6,6,kerber
@@ -3208,6 +3249,7 @@ salaman,7,7,salaman
 觸控,2,7,chùkòng
 總投票額,4,12,zǒngtóupiàoé
 本機,2,5,běnjī
+von,3,3,von
 現金流,3,10,xiànjīnliú
 魔幻,2,6,móhuàn
 風琴,2,7,fēngqín
@@ -3223,6 +3265,7 @@ beust,5,5,beust
 繁殖期,3,8,fánzhíqī
 西蒙,2,6,xīméng
 simon,5,5,simon
+krätschmer,10,10,krätschmer
 破舊,2,5,pòjiù
 危險,2,7,wēixiǎn
 軍營,2,7,jūnyíng
@@ -3255,6 +3298,7 @@ die,3,3,die
 陳腐,2,6,chénfǔ
 自滿,2,5,zìmǎn
 庫恩,2,4,kùēn
+kühn,4,4,kühn
 只好,2,6,zhǐhǎo
 搖搖頭,3,9,yáoyáotóu
 gema,4,4,gema
@@ -3270,12 +3314,14 @@ cifuentes,9,9,cifuentes
 保守,2,7,bǎoshǒu
 沉悶,2,7,chénmèn
 副部長,3,9,fùbùzhǎng
+javier,6,6,javier
 maroto,6,6,maroto
 durán,5,5,durán
 引以為豪,4,11,yǐnyǐwèiháo
 ángel,5,5,ángel
 pintado,7,7,pintado
 財務長,3,10,cáiwùzhǎng
+失業率,3,7,shīyèlǜ
 頭,1,3,tóu
 以下,2,5,yǐxià
 新工作,3,10,xīngōngzuò
@@ -3310,6 +3356,7 @@ fátima,6,6,fátima
 華爾街,3,8,huáěrjiē
 矽谷,2,4,xìgǔ
 亞馬遜,3,7,yàmǎxùn
+báñez,5,5,báñez
 對付,2,5,duìfù
 污染物,3,7,wūrǎnwù
 手法,2,6,shǒufǎ
@@ -3351,6 +3398,7 @@ claret,6,6,claret
 唯一,2,5,wéiyī
 pedro,5,5,pedro
 sánchez,7,7,sánchez
+évole,5,5,évole
 萬民,2,6,wànmín
 邦,1,4,bāng
 權力派,3,9,quánlìpài
@@ -3571,8 +3619,10 @@ karel,5,5,karel
 廢話,2,6,fèihuà
 勉強,2,9,miǎnqiáng
 參與者,3,8,cānyǔzhě
+愛侶,2,4,àilǚ
 米爾德里德,5,10,mǐěrdélǐdé
 mildred,7,7,mildred
+省略,2,8,shěnglüè
 求婚,2,6,qiúhūn
 簡短,2,8,jiǎnduǎn
 威脅,2,6,wēixié
@@ -3802,6 +3852,7 @@ crtc,4,4,crtc
 舉動,2,6,jǔdòng
 期望,2,6,qīwàng
 看看,2,6,kànkàn
+生產率,3,11,shēngchǎnlǜ
 場所,2,8,chǎngsuǒ
 牠們,2,5,tāmen
 打成,2,7,dǎchéng
@@ -4052,6 +4103,7 @@ rocco,5,5,rocco
 圖案,2,4,túàn
 硫,1,3,liú
 搬到,2,6,bāndào
+利率,2,4,lìlǜ
 貸款,2,7,dàikuǎn
 珠寶,2,6,zhūbǎo
 越野賽,3,8,yuèyěsài
@@ -4060,6 +4112,7 @@ rocco,5,5,rocco
 把玩,2,5,bǎwán
 艾弗里,3,6,àifúlǐ
 mark,4,4,mark
+avery,5,5,avery
 克,1,2,kè
 帕克漢姆,4,9,pàkèhànmǔ
 chris,5,5,chris
@@ -4140,6 +4193,8 @@ rspb,4,4,rspb
 分居,2,5,fēnjū
 英傑華,3,10,yīngjiéhuá
 黨鞭,2,8,dǎngbiān
+aviva,5,5,aviva
+investors,9,9,investors
 收益型,3,10,shōuyìxíng
 multi,5,5,multi
 strategy,8,8,strategy
@@ -4214,11 +4269,13 @@ sade,4,4,sade
 成群結隊,4,14,chéngqúnjiéduì
 橄欖球,3,9,gǎnlǎnqiú
 非洲人,3,10,fēizhōurén
+benoît,6,6,benoît
 paire,5,5,paire
 對打,2,5,duìdǎ
 情景,2,8,qíngjǐng
 失常,2,8,shīcháng
 戴維斯盃,4,11,dàiwéisībēi
+davis,5,5,davis
 cup,3,3,cup
 溫柔,2,6,wēnróu
 強硬,2,9,qiángyìng
@@ -4288,6 +4345,7 @@ select,6,6,select
 處之泰然,4,12,chùzhītàirán
 籌募,2,6,chóumù
 仁慈,2,5,réncí
+avro,4,4,avro
 固定,2,6,gùdìng
 eon,3,3,eon
 其實,2,5,qíshí
@@ -4313,6 +4371,7 @@ diess,5,5,diess
 城內,2,8,chéngnèi
 巴達爾普爾,5,10,bādáěrpǔěr
 用量,2,9,yòngliàng
+女孩們,3,8,nǚháimen
 大流士,3,8,dàliúshì
 交警,2,8,jiāojǐng
 議程,2,7,yìchéng
@@ -4442,6 +4501,7 @@ mla,3,3,mla
 海濱,2,6,hǎibīn
 內華達州,4,12,nèihuádázhōu
 輸出,2,6,shūchū
+旅遊業,3,7,lǚyóuyè
 礦業,2,7,kuàngyè
 機械,2,5,jīxiè
 加工業,3,9,jiāgōngyè
@@ -4768,6 +4828,7 @@ rogers,6,6,rogers
 夜晚,2,5,yèwǎn
 大城市,3,11,dàichéngshì
 構造力,3,8,gòuzàolì
+kven,4,4,kven
 輔音,2,5,fǔyīn
 漸變,2,8,jiànbiàn
 薩米人,3,7,sàmǐrén
@@ -4845,6 +4906,7 @@ sasktel,7,7,sasktel
 捐助,2,7,juānzhù
 克溫斯語,4,9,kèwēnsīyǔ
 療法,2,6,liáofǎ
+meänkieli,9,9,meänkieli
 超聲波,3,11,chāoshēngbō
 斯瑪拉迪斯,5,10,sīmǎlādísī
 葛雷柯,3,7,géléikē
@@ -4908,6 +4970,7 @@ athina,6,6,athina
 王位,2,7,wángwèi
 各個,2,4,gègè
 羅斯季斯拉夫,6,13,luósījìsīlāfū
+rastislav,9,9,rastislav
 傳送,2,9,chuánsòng
 氧氣,2,6,yǎngqì
 蛋白質,3,9,dànbáizhì
@@ -4987,8 +5050,10 @@ mailis,6,6,mailis
 源頭,2,7,yuántóu
 火山,2,7,huǒshān
 火山學,3,10,huǒshānxué
+volcanology,11,11,volcanology
 拼寫,2,6,pīnxiě
 變暖,2,8,biànnuǎn
+vulcanology,11,11,vulcanology
 岩漿,2,8,yánjiāng
 矽,1,2,xì
 折磨,2,5,zhémó
@@ -5114,6 +5179,7 @@ cbc,3,3,cbc
 主日,2,5,zhǔrì
 訂立,2,6,dìnglì
 柳枝,2,6,liǔzhī
+棕櫚葉,3,8,zōnglǘyè
 邁科內爾里,5,12,màikēnèiěrlǐ
 格里,2,4,gélǐ
 飲用水,3,11,yǐnyòngshuǐ
@@ -5132,6 +5198,7 @@ cbc,3,3,cbc
 水電站,3,12,shuǐdiànzhàn
 覆核,2,4,fùhé
 不一而足,4,8,bùyīérzú
+藍綠色,3,7,lánlǜsè
 核心,2,5,héxīn
 地形,2,6,dìxíng
 阿爾及利亞,5,9,āěrjílìyà
@@ -5144,6 +5211,7 @@ cbc,3,3,cbc
 俄亥俄河,4,7,éhàiéhé
 矛盾,2,6,máodùn
 高管們,3,10,gāoguǎnmen
+黃綠色,3,9,huánglǜsè
 自由州,3,9,zìyóuzhōu
 奴隸制州,4,11,núlìzhìzhōu
 煽動性,3,12,shāndòngxìng
@@ -5153,4 +5221,5 @@ cbc,3,3,cbc
 警官,2,8,jǐngguān
 葉子,2,4,yèzi
 多樣,2,7,duōyàng
+綠色,2,4,lǜsè
 宣言,2,7,xuānyán
