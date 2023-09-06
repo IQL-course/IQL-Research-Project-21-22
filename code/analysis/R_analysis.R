@@ -463,10 +463,10 @@ ggsave(paste0(which_folder('figures',filter),'/corr_evolution_pud_characters.pdf
 ## E[scores] vs Lmin
 print('figures: correlation between scores expectations and Lmin')
 iters <- 1e+06
-rows_cv <- lapply(length_defs, function(length_def) {
-  df <- read_file('null','cv',filter,length_def,iters=iters)%>% 
+rows_cv <- lapply(length_defs, function(length) {
+  df <- read_file('null','cv',filter,length,iters=iters) %>% 
     mutate(`Lmin/Lrand` = Lmin/Lrand) %>% select(language,Lmin,psi,omega) %>% 
-    rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length_def) %>% 
+    rename(`E[psi]`=psi, `E[omega]`=omega) %>% mutate(length_def = length) %>% 
     merge(langs_df_cv[,c('language','X.tokens')], by = 'language')
 })
 df <- do.call(rbind,rows_cv)
@@ -474,16 +474,16 @@ reshape2::melt(df, id.vars=c('language','Lmin','length_def','X.tokens')) %>%
   ggplot(aes(x=`Lmin`,y=value,label=ifelse(log10(X.tokens)<=4,language,''),fill=log10(X.tokens))) + 
   geom_text_repel(size=3,color='black',box.padding=0.5)+
   geom_point(colour="black",pch=21,size=3) + geom_hline(yintercept = 0,color='purple',linetype='dashed') +
-  facet_grid(cols=vars(length_def),rows=vars(variable),scales = 'free', 
+  facet_grid(cols=vars(length_def), rows=vars(variable),scales = 'free', 
              labeller = labeller(variable=exp_scores_labs, length_def=length_labs)) +
   scale_fill_gradient2(low = "red", mid = "yellow", high = "green", midpoint = 5) + 
-  labs(fill=expression(paste(log[10],'T')), x=bquote(L[min]), y = 'expected score value') +
+  labs(fill=expression(paste(log[10],'T')), x=bquote(L[min]), y = 'expected score') +
   scale_y_continuous(label=scientific_10) +
   theme(text = element_text(size = 16),
         legend.text = element_text(size = 13),
         legend.title = element_text(size = 13))
 ggsave(paste0(which_folder('figures',filter),'/correlation_scores_Lmin_',iters,'.pdf'), 
-       device = cairo_pdf)
+       device = cairo_pdf, width = 7, height = 5)
 
 
 

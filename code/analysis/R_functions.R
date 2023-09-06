@@ -115,8 +115,7 @@ read_file <- function(what, collection, filter=T, length='characters', corr_type
   file <- if (what %in% c('corr','opt')) 'scores_' else if (what=='null') 'null_hypothesis_'
   length_suffix <- ifelse(what=='null',paste0('_',length),'')
   iters_suffix  <- ifelse(what=='null',paste0('_',iters),'')
-  df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1] %>% 
-    filter(length_def == length)
+  df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1]
   # for correlation files
   if (what=='corr' & corr_type == 'kendall') { 
     df <- select(df, language, tau, tau_pval, length_def) %>% rename(corr = tau, pvalue = tau_pval) 
@@ -560,7 +559,7 @@ plot_score_comparison <- function(score,df){
     labs(y = TeX(paste0(score,"$_{rem}$")), x = TeX(paste(score,"$_{chars}$")) ) 
 }
 
-params_labs <- c('Lmin'='L[min]','Lr'='L[r]','Lmin/Lr'='L[min]/L[r]')
+params_labs <- c('Lmin'=expression(L[min]),'Lr'=expression(L[r]),'Lmin/Lr'=expression(L[min]/L[r]))
 scores_labs <- c('eta'='\u03B7','psi'='\u03A8','omega'='\u03A9')
 
 
@@ -571,12 +570,13 @@ plot_corr_evolution <- function(df) {
     mutate(parameter = factor(parameter, levels = c('L[min]','L[r]','L[min]/L[r]')))
   ggplot(df,aes(randomizations,coefficient,color=score)) + 
     geom_line(size=1) + geom_point(aes(shape=significance),size=4) +
-    facet_grid(rows=vars(correlation),cols=vars(parameter),labeller = labeller(type = label_parsed)) +
+    facet_grid(rows=vars(correlation),cols=vars(parameter),labeller = labeller(parameter = label_parsed)) +
     geom_hline(yintercept = 0,linetype='dashed') +
     scale_shape_manual(values=c('significant'=1,'non-significant'=4)) +
     scale_color_discrete(labels = c('\u03B7','\u03A8','\u03A9')) +
     scale_x_log10(labels = label_log()) + standart_theme
 }
+
 
 long_corr_df <- function(df,plot_corr,HB_correct=T) {
   df    <- df %>% rename(Lr = Lrand) %>% mutate(`Lmin/Lr`=Lmin/Lr) %>% dplyr::select(Lmin,Lr,`Lmin/Lr`,eta,psi,omega)
