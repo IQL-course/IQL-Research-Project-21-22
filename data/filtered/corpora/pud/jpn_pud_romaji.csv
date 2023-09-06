@@ -729,7 +729,6 @@ word,frequency,n_characters,romanized_form
 オーストリア,6,9,oosutoria
 使っ,2,4,tuka
 消費,2,6,syouhi
-bbc,3,3,bbc
 ウィンストン,6,7,insuton
 準備,2,6,zyunbi
 発展,2,6,hatten
@@ -814,7 +813,6 @@ bbc,3,3,bbc
 制度,2,5,seido
 促進,2,7,sokusin
 部門,2,5,bumon
-you,3,3,you
 優先,2,6,yuusen
 監視,2,5,kansi
 主,1,4,nusi
@@ -895,7 +893,6 @@ you,3,3,you
 汚染,2,4,osen
 ゴルフ,3,6,goruhu
 本当,2,5,honto
-eu,2,2,eu
 勢力,2,8,seiryoku
 後年,2,6,kounen
 アイスランド,6,9,aisurando
@@ -993,7 +990,6 @@ eu,2,2,eu
 強調,2,8,kyoutyou
 訓練,2,6,kunren
 着陸,2,9,tyakuriku
-uber,4,4,uber
 取っ,2,2,to
 パイロット,5,8,pairotto
 伯爵,2,9,hakusyaku
@@ -1056,7 +1052,6 @@ uber,4,4,uber
 送信,2,6,sousin
 含ん,2,5,hukun
 レビュー,4,6,rebyuu
-a,1,1,a
 反対,2,6,hantai
 祖母,2,4,sobo
 内戦,2,6,naisen
@@ -1129,7 +1124,6 @@ a,1,1,a
 最良,2,7,sairyou
 スコットランド,7,12,sukottorando
 構造,2,6,kouzou
-cnn,3,3,cnn
 改革,2,7,kaikaku
 良い,2,3,yoi
 テーマ,3,5,teema
@@ -1140,7 +1134,6 @@ cnn,3,3,cnn
 土曜,2,5,doyou
 助ける,3,8,tasukeru
 遂げ,2,4,toge
-and,3,3,and
 絵,1,1,e
 カルロス,4,8,karurosu
 変動,2,6,hendou
@@ -1272,7 +1265,6 @@ and,3,3,and
 迎え,2,5,mukae
 ゲイヤー,4,6,geiyaa
 入り,2,3,iri
-really,6,6,really
 体制,2,6,taisei
 ポーランド,5,8,poorando
 スタジオ,4,7,sutazio
@@ -1347,7 +1339,6 @@ really,6,6,really
 衰え,2,6,otoroe
 高地,2,5,kouti
 ディスプレイ,6,9,disupurei
-gca,3,3,gca
 果たし,3,6,hatasi
 博士,2,6,hakase
 アルバレス,5,9,arubaresu
@@ -1400,7 +1391,6 @@ gca,3,3,gca
 アーティスト,6,8,aatisuto
 ベルギー,4,7,berugii
 中世,2,7,tyuusei
-mps,3,3,mps
 採択,2,7,saitaku
 ジョリオ,4,6,zyorio
 現金,2,6,genkin
@@ -1550,7 +1540,6 @@ mps,3,3,mps
 トリックス,5,9,torikkusu
 サウスシー,5,8,saususii
 大きい,3,5,ookii
-new,3,3,new
 裏付ける,4,9,urazukeru
 証拠,2,6,syouko
 ヒスパニア,5,9,hisupania
@@ -1697,7 +1686,6 @@ new,3,3,new
 打倒,2,5,datou
 ロケット,4,7,roketto
 ジャーナリスト,7,12,zyaanarisuto
-dna,3,3,dna
 ひとりぼっち,6,11,hitoribotti
 わかる,3,6,wakaru
 顔,1,3,kao
@@ -1706,7 +1694,6 @@ dna,3,3,dna
 保存,2,5,hozon
 治療,2,6,tiryou
 果たす,3,6,hatasu
-spotify,7,7,spotify
 発行,2,6,hakkou
 ソーシャル,5,8,soosyaru
 被っ,2,4,kabu
@@ -1732,7 +1719,6 @@ spotify,7,7,spotify
 温暖,2,5,ondan
 起訴,2,4,kiso
 規制,2,5,kisei
-reco,4,4,reco
 強化,2,6,kyouka
 熟練,2,8,zyukuren
 先月,2,7,sengetu
@@ -1752,7 +1738,6 @@ reco,4,4,reco
 夜,1,4,yoru
 ブラジル,4,8,buraziru
 大麻,2,5,taima
-web,3,3,web
 入れ,2,3,ire
 南アフリカ,5,13,minamiahurika
 地図,2,4,tizu
@@ -1761,7 +1746,6 @@ web,3,3,web
 バージョン,5,7,baazyon
 差別,2,6,sabetu
 状,1,4,zyou
-facebook,8,8,facebook
 住宅,2,8,zyuutaku
 酸化,2,5,sanka
 料金,2,7,ryoukin
@@ -1889,13 +1873,11 @@ facebook,8,8,facebook
 大会,2,6,taikai
 アシスタント,6,10,asisutanto
 ジョンソン,5,7,zyonson
-humblebums,10,10,humblebums
 マペッツ,4,7,mapettu
 サイエンス,5,7,saiensu
 シンガー,4,6,singaa
 ソングライター,7,11,songuraitaa
 アーク,3,4,aaku
-over,4,4,over
 極悪,2,7,gokuaku
 デッカ,3,5,dekka
 マーベル,4,7,maaberu
@@ -1917,7 +1899,6 @@ over,4,4,over
 スティーラーズ,7,10,sutiiraazu
 ホイール,4,6,hoiiru
 イーガン,4,5,iigan
-gchq,4,4,gchq
 結成,2,6,kessei
 メソアメリカ,6,11,mesoamerika
 次号,2,5,zigou
@@ -1952,17 +1933,14 @@ gchq,4,4,gchq
 徳川,2,8,tokugawa
 ベリヤ,3,6,beriya
 家康,2,6,ieyasu
-mgb,3,3,mgb
 アバクーモフ,6,10,abakuumohu
 サンローラン,6,9,sanrooran
 取組,2,8,torikumi
 サーモン,4,6,saamon
 組ん,2,3,kun
 選集,2,7,sensyuu
-my,2,2,my
 スター,3,5,sutaa
 コメディ,4,6,komedi
-head,4,4,head
 録音,2,6,rokuon
 空港,2,6,kuukou
 スコット,4,7,sukotto
@@ -1988,7 +1966,6 @@ head,4,4,head
 ブロッホ,4,7,burohho
 マルクス,4,8,marukusu
 原則,2,7,gensoku
-google,6,6,google
 願い,2,5,negai
 神秘,2,5,sinpi
 本来,2,6,honrai
@@ -2001,7 +1978,6 @@ google,6,6,google
 ナッシュビル,6,10,nassyubiru
 移し,2,5,utusi
 挫折,2,6,zasetu
-stephen,7,7,stephen
 尊敬,2,6,sonkei
 サムスン,4,7,samusun
 ガムソン,4,7,gamuson
@@ -2023,8 +1999,6 @@ stephen,7,7,stephen
 カーター,4,6,kaataa
 イラン,3,4,iran
 人質,2,8,hitoziti
-siri,4,4,siri
-apple,5,5,apple
 議席,2,6,giseki
 留まっ,3,4,toma
 退院,2,5,taiin
@@ -2106,7 +2080,6 @@ apple,5,5,apple
 ヒトラー,4,7,hitoraa
 ゴードン,4,6,goodon
 レヴィット,5,7,revitto
-sf,2,2,sf
 ルーパー,4,6,ruupaa
 ヴァレンティノ,7,9,varentino
 ステレオタイプ,7,12,sutereotaipu
@@ -2138,7 +2111,6 @@ sf,2,2,sf
 ジョーン,4,5,zyoon
 騎士,2,4,kisi
 前兆,2,7,zentyou
-lyvet,5,5,lyvet
 知能,2,5,tinou
 弟子,2,4,desi
 塔,1,3,tou
@@ -2155,9 +2127,7 @@ lyvet,5,5,lyvet
 漠然,2,7,bakuzen
 ひび,2,4,hibi
 学ぶ,2,6,manabu
-iag,3,3,iag
 イレーヌ,4,6,ireenu
-ba,2,2,ba
 ハンス,3,5,hansu
 ペテルソン,5,9,peteruson
 原料,2,7,genryou
@@ -2169,10 +2139,7 @@ ba,2,2,ba
 ラジウム,4,7,raziumu
 持ち帰っ,4,7,motikae
 オフ,2,3,ohu
-ctv,3,3,ctv
-prayer,6,6,prayer
 与党,2,5,yotou
-wing,4,4,wing
 公的,2,7,kouteki
 溺れ,2,5,obore
 下り坂,3,10,kudarizaka
@@ -2181,7 +2148,6 @@ wing,4,4,wing
 キャランジ,5,8,kyaranzi
 描い,2,4,egai
 終盤,2,7,syuuban
-b,1,1,b
 イーグル,4,6,iiguru
 搭載,2,6,tousai
 まずまず,4,8,mazumazu
@@ -2206,10 +2172,8 @@ b,1,1,b
 小学,2,8,syougaku
 関与,2,6,kan'yo
 そそら,3,6,sosora
-rhs,3,3,rhs
 ダルナン,4,7,darunan
 親衛,2,6,sin'ei
-ss,2,2,ss
 中尉,2,5,tyuui
 レジスタンス,6,11,rezisutansu
 掃討,2,6,soutou
@@ -2272,14 +2236,12 @@ ss,2,2,ss
 付き添っ,4,6,tukiso
 マンドル,4,7,mandoru
 ギター,3,5,gitaa
-t,1,1,t
 カー,2,3,kaa
 センチュリー,6,9,sentyurii
 アメリカン,5,8,amerikan
 モータース,5,8,mootaasu
 ハイ,2,3,hai
 ランブラー,5,8,ranburaa
-gm,2,2,gm
 駆り立て,4,8,karitate
 今夜,2,6,kon'ya
 緩ん,2,5,yurun
@@ -2370,7 +2332,6 @@ gm,2,2,gm
 断言,2,6,dangen
 ヘクラー,4,7,hekuraa
 プレーヤー,5,8,pureeyaa
-on,2,2,on
 失速,2,7,sissoku
 上り詰め,4,10,noboritume
 チャート,4,6,tyaato
@@ -2388,7 +2349,6 @@ on,2,2,on
 再選,2,6,saisen
 除名,2,6,zyomei
 グラフトン,5,9,gurahuton
-h,1,1,h
 メトロポリタン,7,13,metoroporitan
 トーリー,4,6,toorii
 小麦,2,6,komugi
@@ -2400,17 +2360,12 @@ h,1,1,h
 表す,2,7,arawasu
 名詞,2,5,meisi
 共産,2,7,kyousan
-twitter,7,7,twitter
-reddit,6,6,reddit
 終焉,2,6,syuuen
 戦時,2,5,senzi
 抵抗,2,6,teikou
 人道,2,6,zindou
 閉じ,2,4,tozi
-love,4,4,love
 シングル,4,7,singuru
-shaky,5,5,shaky
-ground,6,6,ground
 自宅,2,6,zitaku
 絶頂,2,7,zettyou
 ラブロッカ,5,9,raburokka
@@ -2432,7 +2387,6 @@ ground,6,6,ground
 提起,2,5,teiki
 葬式,2,7,sousiki
 参列,2,7,sanretu
-nascar,6,6,nascar
 背後,2,5,haigo
 輝き,2,8,kagayaki
 ドライバー,5,8,doraibaa
@@ -2459,8 +2413,6 @@ nascar,6,6,nascar
 アン,2,2,an
 ピアノ,3,5,piano
 ホートン,4,6,hooton
-wild,4,4,wild
-west,4,4,west
 金遣い,3,9,kanezukai
 荒,1,3,are
 シガー,3,5,sigaa
@@ -2476,7 +2428,6 @@ west,4,4,west
 サイズ,3,5,saizu
 制服,2,7,seihuku
 手当,2,5,teate
-atm,3,3,atm
 修復,2,8,syuuhuku
 プラボウォ,5,7,puraboo
 スビアント,5,8,subianto
@@ -2513,7 +2464,6 @@ atm,3,3,atm
 イレイン,4,5,irein
 ソルヘイム,5,9,soruheimu
 エリック,4,6,erikku
-hfc,3,3,hfc
 ユニバーサル,6,11,yunibaasaru
 改正,2,6,kaisei
 オスワルド,5,9,osuwarudo
@@ -2521,11 +2471,6 @@ hfc,3,3,hfc
 オペラ,3,5,opera
 遠い,2,4,tooi
 抑える,3,6,osaeru
-now,3,3,now
-earth,5,5,earth
-in,2,2,in
-north,5,5,north
-america,7,7,america
 売上,2,6,uriage
 トール,3,5,tooru
 教え,2,4,osie
@@ -2542,9 +2487,6 @@ america,7,7,america
 簡潔,2,7,kanketu
 アニメーション,7,10,animeesyon
 仕上がっ,4,5,siaga
-of,2,2,of
-power,5,5,power
-the,3,3,the
 批評,2,6,hihyou
 演出,2,7,ensyutu
 楽しん,3,7,tanosin
@@ -2611,8 +2553,6 @@ the,3,3,the
 追わ,2,3,owa
 アイビンゲン,6,8,aibingen
 移っ,2,3,utu
-team,4,4,team
-telekom,7,7,telekom
 恋人,2,7,koibito
 シュドバーデン,7,11,syudobaaden
 メルディンゲン,7,10,merudingen
@@ -2645,7 +2585,6 @@ telekom,7,7,telekom
 商業,2,8,syougyou
 前哨,2,7,zensyou
 離れる,3,8,hanareru
-maiorum,7,7,maiorum
 福祉,2,6,hukusi
 パーマー,4,6,paamaa
 移住,2,5,izyuu
@@ -2659,11 +2598,9 @@ maiorum,7,7,maiorum
 ブランズフィールド,9,14,buranzuhiirudo
 陸地,2,6,rikuti
 残す,2,6,nokosu
-mos,3,3,mos
 アーネスト,5,8,aanesuto
 シャックルトン,7,10,syakuruton
 パバルカル,5,10,pabarukaru
-endurance,9,9,endurance
 号,1,3,gou
 乗せ,2,4,nose
 出航,2,7,syukkou
@@ -2682,7 +2619,6 @@ endurance,9,9,endurance
 ゲート,3,5,geeto
 パーク,3,5,paaku
 全長,2,7,zentyou
-km,2,2,km
 プラネタリウム,7,13,puranetariumu
 水族,2,7,suizoku
 オーバーマルスベルク,10,17,oobaamarusuberuku
@@ -2722,7 +2658,6 @@ km,2,2,km
 ライヘンバッハ,7,11,raihenbahha
 売却,2,8,baikyaku
 エア,2,2,ea
-jr,2,2,jr
 納める,3,7,osameru
 奪回,2,6,dakkai
 感激,2,7,kangeki
@@ -2776,7 +2711,6 @@ jr,2,2,jr
 ベルサイユ,5,9,berusaiyu
 基地,2,4,kiti
 プリュヴィオーズ,8,11,puryuvioozu
-iii,3,3,iii
 犯,1,3,han
 造山,2,6,zouzan
 海洋,2,6,kaiyou
@@ -2814,7 +2748,6 @@ iii,3,3,iii
 わたり,3,6,watari
 職業,2,9,syokugyou
 芽生え,3,5,mebae
-metti,5,5,metti
 再度,2,5,saido
 友情,2,7,yuuzyou
 協業,2,8,kyougyou
@@ -2907,7 +2840,6 @@ metti,5,5,metti
 少女,2,7,syouzyo
 休暇,2,6,kyuuka
 ウォルター,5,6,orutaa
-remis,5,5,remis
 緩和,2,5,kanwa
 べく,2,4,beku
 バーナード,5,8,baanaado
@@ -2986,10 +2918,7 @@ remis,5,5,remis
 資源,2,5,sigen
 好,1,3,kou
 再生,2,6,saisei
-irena,5,5,irena
 総裁,2,6,sousai
-z,1,1,z
-amin,4,4,amin
 洋上,2,7,youzyou
 風力,2,8,huuryoku
 うる,2,3,uru
@@ -3022,18 +2951,14 @@ amin,4,4,amin
 ナイトレイ,5,8,naitorei
 為替,2,6,kawase
 今回,2,6,konkai
-rich,4,4,rich
 逮捕,2,5,taiho
 悪ふざけ,4,10,waruhuzake
 優れ,2,6,sugure
-aoun,4,4,aoun
-hariri,6,6,hariri
 取引,2,8,torihiki
 同士,2,5,dousi
 内紛,2,6,naihun
 夫,1,4,otto
 在任,2,6,zainin
-dpa,3,3,dpa
 確約,2,8,kakuyaku
 着,1,2,ki
 中止,2,6,tyuusi
@@ -3048,7 +2973,6 @@ dpa,3,3,dpa
 市長,2,6,sityou
 履行,2,5,rikou
 ラチダ,3,6,ratida
-akp,3,3,akp
 ダティ,3,4,dati
 サルコジ,4,8,sarukozi
 予備,2,4,yobi
@@ -3061,10 +2985,8 @@ akp,3,3,akp
 内務,2,5,naimu
 工業,2,7,kougyou
 成し遂げる,5,10,nasitogeru
-gema,4,4,gema
 最,1,3,sai
 会員,2,5,kaiin
-tube,4,4,tube
 有効,2,6,yuukou
 海軍,2,6,kaigun
 侵す,2,5,okasu
@@ -3090,7 +3012,6 @@ tube,4,4,tube
 ミヒャエル,5,8,mihyaeru
 見地,2,5,kenti
 あらまし,4,7,aramasi
-nato,4,4,nato
 償還,2,7,syoukan
 たろう,3,5,tarou
 併せ,2,5,awase
@@ -3106,7 +3027,6 @@ nato,4,4,nato
 不調,2,6,hutyou
 クーン,3,4,kuun
 振る,2,4,buru
-diezeit,7,7,diezeit
 アイデンティティ,8,9,aidentiti
 名付け,3,6,nazuke
 危機,2,4,kiki
@@ -3115,11 +3035,9 @@ diezeit,7,7,diezeit
 部員,2,4,buin
 マッシュ,4,6,massyu
 キーボード,5,8,kiiboodo
-dfb,3,3,dfb
 達成,2,6,tassei
 打ち立て,4,7,utitate
 デビッド,4,7,debiddo
-essen,5,5,essen
 退職,2,8,taisyoku
 他者,2,5,tasya
 除外,2,6,zyogai
@@ -3154,8 +3072,6 @@ essen,5,5,essen
 休息,2,8,kyuusoku
 オーストラリアン,8,12,oosutorarian
 作者,2,7,sakusya
-de,2,2,de
-bruyn,5,5,bruyn
 業者,2,7,gyousya
 極めて,3,8,kiwamete
 言葉少な,4,12,kotobazukuna
@@ -3163,7 +3079,6 @@ bruyn,5,5,bruyn
 ラリーバンス,6,10,rariibansu
 沈む,2,6,sizumu
 大騒ぎ,3,8,oosawagi
-kerber,6,6,kerber
 演奏,2,5,ensou
 ゆく,2,4,yuku
 ボイスト,4,7,boisuto
@@ -3187,7 +3102,6 @@ kerber,6,6,kerber
 何百,2,8,nanbyaku
 相応しい,4,9,husawasii
 アプリ,3,5,apuri
-vine,4,4,vine
 刺客,2,6,sikaku
 妨げる,3,10,samatageru
 難局,2,8,nankyoku
@@ -3218,8 +3132,6 @@ vine,4,4,vine
 陣,1,3,zin
 笑顔,2,4,egao
 クリスティーナ,7,11,kurisutiina
-snap,4,4,snap
-chat,4,4,chat
 ヤジディ,4,6,yazidi
 マウンテン,5,7,maunten
 ビュー,3,4,byuu
@@ -3292,7 +3204,6 @@ chat,4,4,chat
 涙,1,6,namida
 瞳,1,6,hitomi
 曇ら,2,6,kumora
-tesla,5,5,tesla
 総額,2,7,sougaku
 時価,2,4,zika
 繊維,2,5,sen'i
@@ -3313,14 +3224,12 @@ tesla,5,5,tesla
 全的,2,7,zenteki
 絶対,2,6,zettai
 シェパード,5,7,sepaado
-geronimo,8,8,geronimo
 当該,2,6,tougai
 支給,2,6,sikyuu
 バウチャー,5,7,bautyaa
 渡さ,2,6,watasa
 投じ,2,5,touzi
 フィガロ,4,6,higaro
-exxonmobil,10,10,exxonmobil
 条項,2,7,zyoukou
 置く,2,3,oku
 許容,2,6,kyoyou
@@ -3341,12 +3250,10 @@ exxonmobil,10,10,exxonmobil
 差し引い,4,7,sasihii
 考慮,2,6,kouryo
 入れよう,4,6,ireyou
-eta,3,3,eta
 社員,2,5,syain
 提言,2,6,teigen
 ガソリン,4,7,gasorin
 値上がり,4,7,neagari
-cgi,3,3,cgi
 事例,2,5,zirei
 オズボーン,5,7,ozuboon
 マルタ,3,6,maruta
@@ -3365,7 +3272,6 @@ cgi,3,3,cgi
 ロボット,4,7,robotto
 理事,2,4,rizi
 ウォール,4,4,ooru
-bid,3,3,bid
 シリコンバレー,7,12,sirikonbaree
 続々,2,8,zokuzoku
 増える,3,5,hueru
@@ -3387,14 +3293,12 @@ bid,3,3,bid
 オファー,4,4,ohaa
 取り下げる,5,10,torisageru
 上述,2,9,zyouzyutu
-ecb,3,3,ecb
 特権,2,6,tokken
 代案,2,5,daian
 ジョージタウン,7,10,zyoozitaun
 去る,2,4,saru
 記し,2,6,sirusi
 会合,2,6,kaigou
-luiss,5,5,luiss
 耕作,2,7,kousaku
 言い合い,4,4,iiai
 担う,2,5,ninau
@@ -3412,10 +3316,8 @@ luiss,5,5,luiss
 マイクロ,4,7,maikuro
 水曜,2,6,suiyou
 最愛,2,5,saiai
-slack,5,5,slack
 勝負,2,6,syoubu
 郊外,2,6,kougai
-gif,3,3,gif
 カスタム,4,8,kasutamu
 ミーム,3,5,miimu
 ステッカー,5,8,sutekkaa
@@ -3551,9 +3453,7 @@ gif,3,3,gif
 実用,2,7,zituyou
 食欲,2,9,syokuyoku
 乗組,2,8,norikumi
-kfc,3,3,kfc
 親,1,3,oya
-yum,3,3,yum
 好む,2,6,konomu
 人権,2,6,zinken
 どころ,3,6,dokoro
@@ -3614,20 +3514,15 @@ yum,3,3,yum
 ペルシャ,4,7,perusya
 上級,2,8,zyoukyuu
 階層,2,6,kaisou
-slate,5,5,slate
 姻戚,2,6,inseki
 ドメニコ,4,8,domeniko
-athina,6,6,athina
 マイアミ,4,6,maiami
 負っ,2,1,o
 アスティ,4,5,asuti
 責務,2,6,sekimu
 スキタイ,4,7,sukitai
 違う,2,5,tigau
-buck,4,4,buck
-if,2,2,if
 補佐,2,4,hosa
-knuck,5,5,knuck
 パソコン,4,7,pasokon
 ノート,3,5,nooto
 メガラ,3,6,megara
@@ -3640,10 +3535,8 @@ knuck,5,5,knuck
 ダリウス,4,7,dariusu
 司令,2,5,sirei
 メガバズス,5,10,megabazusu
-megabazus,9,9,megabazus
 ノリ,2,4,nori
 関わる,3,8,kakawaru
-film,4,4,film
 フィルム,4,6,hirumu
 ライバル,4,7,raibaru
 手続き,3,8,tetuzuki
@@ -3734,8 +3627,6 @@ film,4,4,film
 リニア,3,5,rinia
 モーターカー,6,9,mootaakaa
 タイプ,3,5,taipu
-traum,5,5,traum
-f,1,1,f
 チケット,4,7,tiketto
 入れる,3,5,ireru
 ヤス,2,4,yasu
@@ -3847,7 +3738,6 @@ f,1,1,f
 開設,2,7,kaisetu
 数百,2,8,suuhyaku
 下げ,2,4,sage
-ceo,3,3,ceo
 辞職,2,7,zisyoku
 賠償,2,7,baisyou
 請求,2,7,seikyuu
@@ -3974,8 +3864,6 @@ ceo,3,3,ceo
 軽々しく,4,12,karugarusiku
 野獣,2,6,yazyuu
 フランク,4,7,huranku
-e,1,1,e
-micro,5,5,micro
 漏れる,3,6,moreru
 取り上げる,5,9,toriageru
 講じる,3,7,kouziru
@@ -4129,9 +4017,7 @@ micro,5,5,micro
 固定,2,5,kotei
 害,1,3,gai
 アブロエナジー,7,11,aburoenazii
-simple,6,6,simple
 水準,2,7,suizyun
-select,6,6,select
 キャピトル,5,9,kyapitoru
 高価,2,5,kouka
 前払,2,8,maebarai
@@ -4181,7 +4067,6 @@ select,6,6,select
 天才,2,6,tensai
 リハビリ,4,8,rihabiri
 ホスピタル,5,10,hosupitaru
-nhs,3,3,nhs
 目下,2,5,mokka
 コーポレーション,8,12,kooporeesyon
 民衆,2,7,minsyuu
@@ -4505,7 +4390,6 @@ nhs,3,3,nhs
 偶然,2,6,guuzen
 弱い,2,5,yowai
 タバコ,3,6,tabako
-comers,6,6,comers
 吸っ,2,2,su
 段階,2,6,dankai
 分断,2,6,bundan
@@ -4573,7 +4457,6 @@ comers,6,6,comers
 落ち,2,3,oti
 スティーブン,6,8,sutiibun
 ウィーラー,5,5,iiraa
-mla,3,3,mla
 欲求,2,7,yokkyuu
 ラホール,4,7,rahooru
 ガゼット,4,7,gazetto
@@ -4662,9 +4545,7 @@ mla,3,3,mla
 ディートリッヒ,7,10,diitorihhi
 黄緑,2,8,kimidori
 見なさ,3,6,minasa
-canadian,8,8,canadian
 一報,2,5,ippou
-blood,5,5,blood
 攻略,2,8,kouryaku
 困難,2,6,konnan
 音波,2,5,otowa
@@ -4681,10 +4562,7 @@ blood,5,5,blood
 ルーマニア,5,8,ruumania
 トゥルチャ,5,7,turutya
 県,1,3,ken
-chilia,6,6,chilia
-cbs,3,3,cbs
 左岸,2,5,sagan
-services,8,8,services
 オデッサ,4,6,odessa
 愛す,2,4,aisu
 地質,2,6,tisitu
@@ -4706,12 +4584,9 @@ services,8,8,services
 コーサカス,5,9,koosakasu
 重力,2,9,zyuuryoku
 シスコーカサス,7,13,sisukookasasu
-ciscaucasus,11,11,ciscaucasus
 リング,3,5,ringu
 トランスコーカシア,9,15,toransukookasia
-transcaucasus,13,13,transcaucasus
 赤道,2,7,sekidou
-kven,4,4,kven
 仕掛け,3,6,sikake
 ボノ,2,4,bono
 西暦,2,7,seireki
@@ -4739,7 +4614,6 @@ kven,4,4,kven
 起きる,3,5,okiru
 降っ,2,2,hu
 水滴,2,7,suiteki
-crtc,4,4,crtc
 有能,2,6,yuunou
 矮小,2,7,waisyou
 インフラ,4,6,inhura
@@ -4847,9 +4721,6 @@ crtc,4,4,crtc
 注射,2,7,tyuusya
 パッド,3,5,paddo
 処方,2,6,syohou
-under,5,5,under
-sea,3,3,sea
-cbc,3,3,cbc
 エッセイ,4,5,essei
 海底,2,6,kaitei
 沿い,2,3,zoi
@@ -4868,11 +4739,9 @@ cbc,3,3,cbc
 加工,2,5,kakou
 電気,2,5,denki
 設備,2,6,setubi
-caribbean,9,9,caribbean
 後半,2,6,kouhan
 足,1,3,asi
 踏み入れ,4,7,humiire
-caribs,6,6,caribs
 ゲリー,3,5,geri-
 由来,2,5,yurai
 アンティリャス,7,9,antiryasu
@@ -4894,8 +4763,6 @@ caribs,6,6,caribs
 アプリケーション,8,12,apurikeesyon
 達し,2,5,tassi
 学問,2,7,gakumon
-volcanology,11,11,volcanology
-vulcanology,11,11,vulcanology
 表記,2,6,hyouki
 ロジャース,5,8,rozyaasu
 ケイ酸,3,6,keisan
@@ -4923,7 +4790,6 @@ vulcanology,11,11,vulcanology
 腰痛,2,6,youtuu
 柳,1,6,yanagi
 飲料,2,6,inryou
-gta,3,3,gta
 灌漑,2,6,kangai
 合致,2,5,gatti
 コンドミニアム,7,12,kondominiamu
@@ -4975,7 +4841,6 @@ gta,3,3,gta
 度合い,3,4,doai
 まん延,3,6,man'en
 水質,2,7,suisitu
-sasktel,7,7,sasktel
 脆弱,2,8,zeizyaku
 携帯,2,6,keitai
 慣行,2,6,kankou
