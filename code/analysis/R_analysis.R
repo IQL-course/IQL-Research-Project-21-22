@@ -52,7 +52,7 @@ res <- lapply(COLLS,function(collection) {
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
-  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'))
+  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'),row.names = F)
 })
 
 
@@ -62,7 +62,7 @@ res <- lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'))
-  sum_coll$A <- A_coll$A
+  sum_coll <- merge(sum_coll, A_coll, 'language')
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
     arrange(family,script,language)
   write.csv(sum_coll,paste0(which_folder('results',filter),'/coll_summary_',collection,'.csv'))
