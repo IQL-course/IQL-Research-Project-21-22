@@ -2,7 +2,8 @@
 Sys.setlocale("LC_ALL","English")
 source('code/analysis/R_functions.R', encoding="utf-8")
 
-# ARGUMENTS: filter
+# ARGUMENTS: 
+  # filter
 # where:
   # filter = (T,F) [default is T]
 
@@ -157,7 +158,7 @@ res <- lapply(articles, function(article) {
           }
         opt_df <- opt_df %>% arrange(family,script,language)
         print(xtable(opt_df,type = "latex",digits=xdigits),math.style.exponents = TRUE, 
-              file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores",suffix,".tex"),
+              file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores",suffix,article,".tex"),
               include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
         })
     } else {
@@ -172,7 +173,7 @@ res <- lapply(articles, function(article) {
       }
       opt_df <- opt_df %>% arrange(family,script,language)
       print(xtable(opt_df,type = "latex",digits=xdigits),math.style.exponents = TRUE,
-            file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores_characters.tex"),
+            file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores_characters",article,".tex"),
             include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
     }
   })
