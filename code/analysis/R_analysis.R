@@ -64,8 +64,7 @@ res <- lapply(COLLS, function(collection) {
   sum_coll <- langs_df %>% mutate(iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'))
   sum_coll <- merge(sum_coll, A_coll, 'language')
-  sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
-    arrange(family,script,language)
+  sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% arrange(family,script,language)
   write.csv(sum_coll,paste0(which_folder('results',filter),'/coll_summary_',collection,'.csv'))
   print(xtable(sum_coll, type = "latex"), 
         file = paste0(which_folder('latex_tables',filter),'/coll_summary_',collection,".tex"),
