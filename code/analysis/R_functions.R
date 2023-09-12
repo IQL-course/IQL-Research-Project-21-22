@@ -281,7 +281,8 @@ run_null <- function(length,collection,randomizations,filter,cores) {
   suffix <- paste0("_",length)
   print(length)
   print(Sys.time())
-  scores <- mclapply(langs_df_cv$language, function(language) {
+  languages <- if (collection == 'pud') langs_df_pud$language else langs_df_cv$language
+  scores <- mclapply(languages, function(language) {
     compute_expectation_scores_lang(language,collection,length,randomizations,filter) 
   },mc.cores=cores)
   print(Sys.time())
