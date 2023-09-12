@@ -2,7 +2,8 @@
 Sys.setlocale("LC_ALL","English")
 source('code/analysis/R_functions.R', encoding="utf-8")
 
-# ARGUMENTS: filter
+# ARGUMENTS: 
+  # filter
 # where:
   # filter = (T,F) [default is T]
 
@@ -52,7 +53,7 @@ res <- lapply(COLLS,function(collection) {
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
-  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'))
+  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'),row.names = F)
 })
 
 
@@ -62,7 +63,7 @@ res <- lapply(COLLS, function(collection) {
   langs_df <- if (collection == 'pud') langs_df_pud else if (collection == 'cv') langs_df_cv
   sum_coll <- langs_df %>% mutate(iso_code = NULL) %>% rename(T = X.tokens, n = X.types)
   A_coll   <- read.csv(paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'))
-  sum_coll$A <- A_coll$A
+  sum_coll <- merge(sum_coll, A_coll, 'language')
   sum_coll <- sum_coll[,c('language','family','script','A','n','T')] %>% 
     arrange(family,script,language)
   write.csv(sum_coll,paste0(which_folder('results',filter),'/coll_summary_',collection,'.csv'))
@@ -139,26 +140,43 @@ res <- lapply(COLLS, function(collection) {
 
 # OPTIMALITY SCORES ------------------------------------------------------
 # + scores for each language, collection, length_def
+articles <- c(1,2)
 print('tables: optimality scores')
-res <- lapply(COLLS, function(collection) {
-  if (collection == 'cv') {
-    lapply(length_defs, function(length_def) {
-      suffix       <- paste0("_",length_def)
-      opt_df <- read_file('opt',collection,filter,length_def) %>% select(language,L,Lrand,tau,tau_pval,r,r_pval)
-      opt_df <- merge(opt_df, select(langs_df_cv,language,family,script))
-      opt_df <- opt_df[,c('language', 'family', 'script', 'L', 'Lrand', 'tau', 'tau_pval', 'r', 'r_pval')]
-      print(xtable(opt_df,type = "latex",digits=c(0,0,0,0,2,2,2,-2,2,-2)),math.style.exponents = TRUE, 
-            file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores",suffix,".tex"),
+res <- lapply(articles, function(article) {
+  res <- lapply(COLLS, function(collection) {
+    if (collection == 'cv') {
+      lapply(length_defs, function(length_def) {
+        suffix       <- paste0("_",length_def)
+        opt_df <- read_file('opt',collection,filter,length_def)
+        opt_df <- merge(opt_df, select(langs_df_cv,language,family,script))
+        if (article == 1) {
+            opt_df  <- select(opt_df, language,family,script,L,Lrand,tau,tau_pval,r,r_pval) 
+            xdigits <- c(0,0,0,0,2,2,2,-2,2,-2)
+          } else if (article == 2) {
+            opt_df  <- select(opt_df, language,family,script,Lmin,L,Lrand,tau,tau_min,eta,psi,omega)
+            xdigits <- 2
+          }
+        opt_df <- opt_df %>% arrange(family,script,language)
+        print(xtable(opt_df,type = "latex",digits=xdigits),math.style.exponents = TRUE, 
+              file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores",suffix,article,".tex"),
+              include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
+        })
+    } else {
+      opt_df <- read_file('opt',collection,filter)
+      opt_df <- merge(opt_df, select(langs_df_pud,language,family,script))
+      if (article == 1) {
+        opt_df  <- select(opt_df, language,family,script,L,Lrand,tau,tau_pval,r,r_pval) 
+        xdigits <- c(0,0,0,0,2,2,2,-2,2,-2)
+      } else if (article == 2) {
+        opt_df  <- select(opt_df, language,family,script,Lmin,L,Lrand,tau,tau_min,eta,psi,omega)
+        xdigits <- 2
+      }
+      opt_df <- opt_df %>% arrange(family,script,language)
+      print(xtable(opt_df,type = "latex",digits=xdigits),math.style.exponents = TRUE,
+            file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores_characters",article,".tex"),
             include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
-      })
-  } else {
-    opt_df <- read_file('opt',collection,filter) %>% select(language,L,Lrand,tau,tau_pval,r,r_pval)
-    opt_df <- merge(opt_df, select(langs_df_pud,language,family,script))
-    opt_df <- opt_df[,c('language', 'family', 'script', 'L', 'Lrand', 'tau', 'tau_pval', 'r', 'r_pval')]
-    print(xtable(opt_df,type = "latex",digits=c(0,0,0,0,2,2,2,-2,2,-2)),math.style.exponents = TRUE,
-          file = paste0(which_folder('latex_tables',filter),'/',collection,"_opt_scores_characters.tex"),
-          include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,hline.after = c(nrow(opt_df)))
-  }
+    }
+  })
 })
 
 
