@@ -14,13 +14,13 @@ This is the supporting repository of two articles, which are the product of the 
 
 ### Repository organization
 The repository contains the following folders:
- * _code_: all the R and Python code developed to preprocess and analyze the data (running R code requires being located in this folder)
+ * _code_: all the R and Python code developed to preprocess and analyze the data (running R code requires being located in the parent directory)
  * _data_: Common Voice Forced Alignments and Parallel Universal Dependencies datasets, both filtered (_filtered_ subfolder) and not filtered (_non\_filtered_ subfolder)  as described in the paper. The _other_ subfolder contains other material used throughout the project
  * _figures_: figures produced for the paper, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
  * _latex\_tables_: latex tables produced for the paper, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
  * _results_: csv files obtained from the analysis, both using the filtered data (_filtered_ subfolder) and the non-filtered data (_non\_filtered_ subfolder)
 
-### Branhches
+### Branches
 The two branches are related to the first and the second article respectively. The data for _pud_ differs slightly between branches, as we improved its preprocessing after the publication of the first article. However, the changes are minimal, only concern few languages, and do not impact the qualitative results.
 
 ### Notes
