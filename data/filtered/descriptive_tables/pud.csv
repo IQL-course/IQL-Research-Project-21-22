@@ -1,25 +1,25 @@
 language,iso_code,#types,#tokens,family,script
-Arabic,ara,5596,31008,Afro-Asiatic,Arabic
-Czech,ces,7069,51383,Indo-European,Latin
-German,deu,6186,52973,Indo-European,Latin
-English,eng,5048,35322,Indo-European,Latin
-Finnish,fin,6933,64554,Uralic,Latin
-French,fra,5585,41736,Indo-European,Latin
-Hindi,hin,4716,27589,Indo-European,Devanagari
-Indonesian,ind,4095,29360,Austronesian,Latin
-Icelandic,isl,6035,47753,Indo-European,Latin
-Italian,ita,5839,44504,Indo-European,Latin
-Japanese,jpn,4852,13154,Japonic,Japanese
-Japanese-romaji,jpn,4849,29415,Japonic,Latin
-Japanese-strokes,jpn,4852,67476,Japonic,Japanese
-Korean,kor,8031,26049,Koreanic,Hangul
-Polish,pol,7175,57326,Indo-European,Latin
-Portuguese,por,4832,36215,Indo-European,Latin
-Russian,rus,7143,57716,Indo-European,Cyrillic
-Spanish,spa,5689,43072,Indo-European,Latin
-Swedish,swe,5624,44954,Indo-European,Latin
-Thai,tha,3599,22783,Kra-Dai,Thai
-Turkish,tur,6494,51158,Turkic,Latin
-Chinese,zho,4970,10851,Sino-Tibetan,Han (Traditional variant)
-Chinese-pinyin,zho,4970,32432,Sino-Tibetan,Latin
-Chinese-strokes,zho,4970,107299,Sino-Tibetan,Han (Traditional variant)
+Arabic,ara,5596,16608,Afro-Asiatic,Arabic
+Czech,ces,7069,15286,Indo-European,Latin
+German,deu,6186,18095,Indo-European,Latin
+English,eng,5048,18091,Indo-European,Latin
+Finnish,fin,6933,12691,Uralic,Latin
+French,fra,5585,20484,Indo-European,Latin
+Hindi,hin,4716,20796,Indo-European,Devanagari
+Indonesian,ind,4095,16121,Austronesian,Latin
+Icelandic,isl,6035,16207,Indo-European,Latin
+Italian,ita,5839,20454,Indo-European,Latin
+Japanese,jpn,4852,24737,Japonic,Japanese
+Japanese-romaji,jpn,4849,24734,Japonic,Latin
+Japanese-strokes,jpn,4852,24737,Japonic,Japanese
+Korean,kor,8031,14475,Koreanic,Hangul
+Polish,pol,7175,15207,Indo-European,Latin
+Portuguese,por,4832,18994,Indo-European,Latin
+Russian,rus,7143,15622,Indo-European,Cyrillic
+Spanish,spa,5689,20602,Indo-European,Latin
+Swedish,swe,5624,16369,Indo-European,Latin
+Thai,tha,3599,21121,Kra-Dai,Thai
+Turkish,tur,6494,13704,Turkic,Latin
+Chinese,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
+Chinese-pinyin,zho,4970,17845,Sino-Tibetan,Latin
+Chinese-strokes,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
