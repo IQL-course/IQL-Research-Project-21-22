@@ -68,7 +68,7 @@ res <- lapply(COLLS, function(collection) {
   write.csv(sum_coll,paste0(which_folder('results',filter),'/coll_summary_',collection,'.csv'))
   print(xtable(sum_coll, type = "latex"), 
         file = paste0(which_folder('latex_tables',filter),'/coll_summary_',collection,".tex"),
-        include.rownames=FALSE,include.colnames=T, only.contents = F,
+        include.rownames=FALSE,include.colnames=T, only.contents = T,
         hline.after = c(nrow(sum_coll)))
 })
 
