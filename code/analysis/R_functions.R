@@ -125,8 +125,11 @@ read_file <- function(what, collection, filter=T, length='characters', corr_type
   file <- if (what %in% c('corr','opt')) 'scores_' else if (what=='null') 'null_hypothesis_'
   length_suffix <- ifelse(what=='null',paste0('_',length),'')
   iters_suffix  <- ifelse(what=='null',paste0('_',iters),'')
-  df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1] %>% 
+  if (what %in% c('corr','opt')) 
+    df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1] %>% 
     filter(length_def == length)
+  else if (what=='null') 	
+    df <- read.csv(paste0(which_folder('results',filter),'/',file,collection,length_suffix,iters_suffix,'.csv'))[-1]
   # for correlation files
   if (what=='corr' & corr_type == 'kendall') { 
     df <- select(df, language, tau, tau_pval, length_def) %>% rename(corr = tau, pvalue = tau_pval) 
