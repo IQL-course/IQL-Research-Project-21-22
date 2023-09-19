@@ -425,7 +425,7 @@ res <- lapply(c(1e+06), function(iters) {
       } else {
         length_def <- 'characters'
         suffix       <- paste0("_",length_def)
-        df <- read_file('null',collection,length_def,filter,iters) 
+        df <- read_file('null',collection,filter,length_def,iters) 
         plot_correlogram(df,plot_corr,'null',HB_correct=T,8,22,18)
           ggsave(paste0(which_folder('figures',filter),'/corrplot_null_',collection,suffix,'_',iters,plot_corr_suffix,'.pdf'), 
                  device = cairo_pdf, width = 6, height = 6)
