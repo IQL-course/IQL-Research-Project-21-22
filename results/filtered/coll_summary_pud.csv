@@ -1,16 +1,16 @@
 "","language","family","script","A","n","T"
-"1","Arabic","Afro-Asiatic","Arabic",39,5596,16608
-"2","Indonesian","Austronesian","Latin",23,4095,16121
-"3","Russian","Indo-European","Cyrillic",31,7143,15622
+"1","Arabic","Afro-Asiatic","Arabic",39,6596,18201
+"2","Indonesian","Austronesian","Latin",23,4221,16305
+"3","Russian","Indo-European","Cyrillic",31,7113,15588
 "4","Hindi","Indo-European","Devanagari",50,4716,20796
 "5","Czech","Indo-European","Latin",33,7069,15286
-"6","English","Indo-European","Latin",25,5048,18091
-"7","French","Indo-European","Latin",26,5585,20484
-"8","German","Indo-European","Latin",28,6186,18095
+"6","English","Indo-European","Latin",25,5001,18021
+"7","French","Indo-European","Latin",26,5211,19812
+"8","German","Indo-European","Latin",28,6108,18003
 "9","Icelandic","Indo-European","Latin",32,6035,16207
-"10","Italian","Indo-European","Latin",24,5839,20454
-"11","Polish","Indo-European","Latin",32,7175,15207
-"12","Portuguese","Indo-European","Latin",37,4832,18994
+"10","Italian","Indo-European","Latin",24,5528,19935
+"11","Polish","Indo-European","Latin",32,7204,15216
+"12","Portuguese","Indo-European","Latin",37,5621,20367
 "13","Spanish","Indo-European","Latin",32,5689,20602
 "14","Swedish","Indo-European","Latin",25,5624,16369
 "15","Japanese","Japonic","Japanese",631,4852,24737
@@ -21,5 +21,5 @@
 "20","Chinese","Sino-Tibetan","Han (Traditional variant)",839,4970,17845
 "21","Chinese-strokes","Sino-Tibetan","Han (Traditional variant)",881,4970,17845
 "22","Chinese-pinyin","Sino-Tibetan","Latin",45,4970,17845
-"23","Turkish","Turkic","Latin",28,6494,13704
+"23","Turkish","Turkic","Latin",28,6373,13512
 "24","Finnish","Uralic","Latin",24,6933,12691
