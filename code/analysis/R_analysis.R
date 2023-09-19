@@ -76,7 +76,7 @@ res <- lapply(COLLS, function(collection) {
 
 
 
-# EFFECT OF FILTERING  ---------------------------------------------------------
+ # EFFECT OF FILTERING  ---------------------------------------------------------
 # assumes that optimality scores have been computed on both collections 
 # with and without filtering
 
