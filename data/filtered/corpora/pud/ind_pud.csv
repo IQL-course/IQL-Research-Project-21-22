@@ -346,6 +346,7 @@ asli,7,4
 khusus,7,6
 target,7,6
 selesai,7,7
+revolusi,7,8
 informasi,7,9
 upaya,7,5
 iklim,7,5
@@ -358,6 +359,7 @@ acara,7,5
 konflik,7,7
 siapa,7,5
 mengakibatkan,7,13
+investor,7,8
 peningkatan,7,11
 pertengahan,7,11
 terbuka,7,7
@@ -519,6 +521,7 @@ menyebut,5,8
 jadi,5,4
 polonium,5,8
 punya,5,5
+university,5,10
 karier,5,6
 bagus,5,5
 mata,5,4
@@ -528,11 +531,13 @@ penghargaan,5,11
 tertinggi,5,9
 donald,5,6
 negeri,5,6
+november,5,8
 persen,5,6
 denmark,5,7
 sang,5,4
 pertanyaan,5,10
 kaum,5,4
+moravia,5,7
 total,5,5
 terbesar,5,8
 mendapati,5,9
@@ -547,6 +552,7 @@ binatang,5,8
 samudra,5,7
 bayi,5,4
 badai,5,5
+investasi,5,9
 pribadi,5,7
 demikian,5,8
 benua,5,5
@@ -580,6 +586,7 @@ layak,4,5
 kemenangan,4,10
 kematian,4,8
 kuda,4,4
+danevirke,4,9
 india,4,5
 peran,4,5
 historis,4,8
@@ -684,6 +691,7 @@ golf,4,4
 berhenti,4,8
 artis,4,5
 melaporkan,4,10
+level,4,5
 mengawasi,4,9
 dijual,4,6
 bahkan,4,6
@@ -726,6 +734,7 @@ diterima,4,8
 belanda,4,7
 a,4,1
 tekanan,4,7
+intervensi,4,10
 berdiri,4,7
 contoh,4,6
 muda,4,4
@@ -775,7 +784,9 @@ genting,3,7
 raya,3,4
 aman,3,4
 kristen,3,7
+video,3,5
 wright,3,6
+versi,3,5
 powers,3,6
 merekam,3,7
 berkebangsaan,3,13
@@ -932,6 +943,7 @@ karakter,3,8
 kursi,3,5
 membintangi,3,11
 tokoh,3,5
+valentino,3,9
 mantan,3,6
 komando,3,7
 pantas,3,6
@@ -1129,6 +1141,7 @@ mark,2,4
 menikahi,2,8
 petisi,2,6
 terkemuka,2,9
+konservasionis,2,14
 petani,2,6
 thomas,2,6
 sutradara,2,9
@@ -1156,6 +1169,7 @@ memainkan,2,9
 ramesses,2,8
 ii,2,2
 tahanan,2,7
+tv,2,2
 praktik,2,7
 ekosistem,2,9
 dimiliki,2,8
@@ -1237,6 +1251,7 @@ latin,2,5
 polandia,2,8
 edinburgh,2,9
 riang,2,5
+vw,2,2
 mempelajari,2,11
 pedesaan,2,8
 really,2,6
@@ -1270,6 +1285,7 @@ kawasan,2,7
 curah,2,5
 meter,2,5
 pyongyang,2,9
+david,2,5
 menemui,2,7
 smartphone,2,10
 arsitektur,2,10
@@ -1310,6 +1326,7 @@ menyaingi,2,9
 impor,2,5
 perangkat,2,9
 jalanan,2,7
+iv,2,2
 terlupakan,2,10
 populer,2,7
 klimatologi,2,11
@@ -1358,6 +1375,7 @@ slowakia,2,8
 m,2,1
 pilihan,2,7
 obrolan,2,7
+konservatif,2,11
 desainer,2,8
 menjalani,2,9
 hijau,2,5
@@ -1413,6 +1431,7 @@ berpusat,2,8
 anggur,2,6
 agung,2,5
 ditampilkan,2,11
+von,2,3
 hit,2,3
 dibuka,2,6
 minuman,2,7
@@ -1450,6 +1469,7 @@ motor,2,5
 akurat,2,6
 final,2,5
 artileri,2,8
+evakuasi,2,8
 hill,2,4
 artikel,2,7
 generasi,2,8
@@ -1484,6 +1504,7 @@ jajaran,2,7
 perunggu,2,8
 radar,2,5
 mycenaean,2,9
+kavaleri,2,8
 kebijakan,2,9
 skandal,2,7
 bara,2,4
@@ -1537,6 +1558,7 @@ perintah,2,8
 menyesali,2,9
 persahabatan,2,12
 membahas,2,8
+provinsi,2,8
 kesulitan,2,9
 barang,2,6
 kedokteran,2,10
@@ -1553,6 +1575,7 @@ penghentian,2,11
 banjir,2,6
 diduga,2,6
 eksekutif,2,9
+invasi,2,6
 gubernur,2,8
 produser,2,8
 bangsawan,2,9
@@ -1585,6 +1608,7 @@ ngeri,2,5
 semenanjung,2,11
 facebook,2,8
 bass,2,4
+televisi,2,8
 berpendapat,2,11
 seminggu,2,8
 ditandai,2,8
@@ -1594,6 +1618,7 @@ nicolai,2,7
 belgia,2,6
 democrat,2,8
 menandai,2,8
+konvensi,2,8
 penunjukan,2,10
 street,2,6
 kolaborasi,2,10
@@ -1647,6 +1672,7 @@ san,2,3
 aplikasi,2,8
 memproduksi,2,11
 maret,2,5
+leive,2,5
 babi,2,4
 lihat,2,5
 opsi,2,4
@@ -1684,6 +1710,7 @@ diperhatikan,2,12
 perumahan,2,9
 dipenuhi,2,8
 menyenangkan,2,12
+venesia,2,7
 panglima,2,8
 rutin,2,5
 perdana,2,7
@@ -1741,6 +1768,7 @@ autosomal,1,9
 genetis,1,7
 star,1,4
 antologi,1,8
+marvel,1,6
 piaf,1,4
 ringkas,1,7
 thanos,1,6
@@ -1776,6 +1804,8 @@ plot,1,4
 hubei,1,5
 smith,1,5
 tokugawa,1,8
+aktivitas,1,9
+novel,1,5
 skylark,1,7
 komunal,1,7
 pelopor,1,7
@@ -1834,6 +1864,7 @@ watt,1,4
 fishing,1,7
 pundak,1,6
 hayat,1,5
+individual,1,10
 nasionalisme,1,12
 cumae,1,5
 menembak,1,8
@@ -1875,6 +1906,7 @@ kabinet,1,7
 pelatihan,1,9
 nasib,1,5
 laurent,1,7
+yves,1,4
 parfum,1,6
 prabowo,1,7
 sosok,1,5
@@ -1895,6 +1927,7 @@ dilema,1,6
 william,1,7
 pembelajaran,1,12
 pengajaran,1,10
+kurva,1,5
 hechler,1,7
 picture,1,7
 pelayan,1,7
@@ -1934,6 +1967,7 @@ menikmati,1,9
 didinginkan,1,11
 single,1,6
 shaky,1,5
+love,1,4
 bill,1,4
 gold,1,4
 komunis,1,7
@@ -1950,6 +1984,7 @@ grup,1,4
 mengerjakan,1,11
 march,1,5
 technology,1,10
+universal,1,9
 cipta,1,5
 opera,1,5
 kim,1,3
@@ -1968,6 +2003,7 @@ tunjangan,1,9
 atm,1,3
 bingung,1,7
 seragam,1,7
+merenovasi,1,10
 indonesia,1,9
 saingan,1,7
 subianto,1,8
@@ -1998,8 +2034,10 @@ lulus,1,5
 homer,1,5
 courant,1,7
 dijadwalkan,1,11
+evening,1,7
 ulasan,1,6
 barrie,1,6
+universitas,1,11
 corona,1,6
 kuliah,1,6
 lisan,1,5
@@ -2044,6 +2082,7 @@ menandingi,1,10
 mgb,1,3
 nanking,1,7
 diserahkan,1,10
+abakumov,1,8
 pelabuhan,1,9
 stalin,1,6
 shanghai,1,8
@@ -2056,6 +2095,7 @@ diproduksi,1,10
 peking,1,6
 berdagang,1,9
 head,1,4
+over,1,4
 anyway,1,6
 me,1,2
 like,1,4
@@ -2074,6 +2114,7 @@ eagle,1,5
 terlambat,1,9
 prince,1,6
 kendur,1,6
+aviasi,1,6
 pengangkutan,1,12
 kesalehan,1,9
 berlin,1,6
@@ -2126,6 +2167,7 @@ janda,1,5
 kecanduan,1,9
 heroin,1,6
 terungkap,1,9
+denver,1,6
 menakutkan,1,10
 hans,1,4
 disibodenberg,1,13
@@ -2165,6 +2207,7 @@ bukit,1,5
 penggilingan,1,12
 keparahan,1,9
 kehadiran,1,9
+versailles,1,10
 kekesalan,1,9
 ulrich,1,6
 sensor,1,6
@@ -2198,6 +2241,7 @@ weiss,1,5
 hadiah,1,6
 cologne,1,7
 bremen,1,6
+privat,1,6
 springer,1,8
 bersemangat,1,11
 rekonsiliasi,1,12
@@ -2208,6 +2252,7 @@ tanda,1,5
 kehormatan,1,10
 ramah,1,5
 pers,1,4
+viguier,1,7
 la,1,2
 conte,1,5
 ketujuh,1,7
@@ -2219,6 +2264,7 @@ pemukulan,1,9
 ironi,1,5
 sindiran,1,8
 kasar,1,5
+verbal,1,6
 orasi,1,5
 parlementer,1,11
 dagelan,1,7
@@ -2242,6 +2288,7 @@ pengangguran,1,12
 pencabutan,1,10
 dibanggakan,1,11
 isu,1,3
+kontroversial,1,13
 sekretaris,1,10
 dihubungi,1,9
 cospedal,1,8
@@ -2252,6 +2299,7 @@ claret,1,6
 pedro,1,5
 merayakan,1,9
 las,1,3
+direnovasi,1,10
 gate,1,4
 kilometer,1,9
 botani,1,6
@@ -2266,12 +2314,14 @@ buena,1,5
 garden,1,6
 atap,1,4
 moscone,1,7
+convention,1,10
 center,1,6
 kori,1,4
 monumen,1,7
 luther,1,6
 golden,1,6
 obermarsberg,1,12
+victorias,1,9
 balai,1,5
 may,1,3
 merespons,1,9
@@ -2304,6 +2354,7 @@ dibebaskan,1,10
 ambruk,1,6
 imajiner,1,8
 este,1,4
+konservatorium,1,14
 saratoga,1,8
 coup,1,4
 indian,1,6
@@ -2336,6 +2387,7 @@ rangkaian,1,9
 tipo,1,4
 hudson,1,6
 keemasan,1,8
+varian,1,6
 kiki,1,4
 do,1,2
 go,1,2
@@ -2363,6 +2415,7 @@ referensi,1,9
 penutur,1,7
 luis,1,4
 felipe,1,6
+v,1,1
 klaim,1,5
 tahta,1,5
 tante,1,5
@@ -2393,8 +2446,10 @@ ennio,1,5
 hipotesis,1,9
 peternakan,1,10
 hebat,1,5
+villa,1,5
 pelucca,1,7
 sesto,1,5
+giovanni,1,8
 hektar,1,6
 samping,1,7
 tayangan,1,8
@@ -2405,6 +2460,8 @@ lembah,1,6
 terisolasi,1,10
 alkitab,1,7
 terdepan,1,8
+revolusioner,1,12
+pluviose,1,8
 februari,1,8
 meringankan,1,11
 reign,1,5
@@ -2420,12 +2477,15 @@ sekembalinya,1,12
 menyimpan,1,9
 menghancurkan,1,13
 terbuat,1,7
+vi,1,2
 pencerahan,1,10
 pemecah,1,7
 marengo,1,7
 penghadangan,1,12
+villeneuve,1,10
 british,1,7
 isles,1,5
+grenville,1,9
 tsar,1,4
 fiorello,1,8
 dididik,1,7
@@ -2433,11 +2493,13 @@ episkopal,1,9
 protestan,1,9
 semesta,1,7
 walter,1,6
+olivia,1,6
 dilatih,1,7
 goffredo,1,8
 petrassi,1,8
 bonaparte,1,9
 mendapat,1,8
+vatikan,1,7
 korsika,1,7
 mencabut,1,8
 numismatik,1,10
@@ -2497,7 +2559,9 @@ terlepas,1,8
 komposisi,1,9
 menundukkan,1,11
 salaman,1,7
+veteran,1,7
 mohammed,1,8
+menginvestasikan,1,16
 goal,1,4
 mencetak,1,8
 rekor,1,5
@@ -2507,6 +2571,7 @@ maroto,1,6
 serena,1,6
 jutaan,1,6
 capitol,1,7
+vine,1,4
 detik,1,5
 kerber,1,6
 dinyana,1,7
@@ -2548,6 +2613,7 @@ menempati,1,9
 son,1,3
 to,1,2
 humphrey,1,8
+lyvet,1,5
 dilepaskan,1,10
 dimasukkan,1,10
 bercerai,1,8
@@ -2581,6 +2647,7 @@ radium,1,6
 spesimen,1,8
 selanjutnya,1,11
 institut,1,8
+ctv,1,3
 montreal,1,8
 pembawa,1,7
 tamu,1,4
@@ -2631,15 +2698,18 @@ teologi,1,7
 dikonstruksi,1,12
 mempertimbangkan,1,16
 memindahkan,1,11
+nashville,1,9
 tennessee,1,9
 publikasi,1,9
 mengenal,1,8
 bruyn,1,5
+voucher,1,7
 guru,1,4
 sulit,1,5
 dipikirkan,1,10
 km,1,2
 ditekankan,1,10
+mengevaluasi,1,12
 geronimo,1,8
 sheppard,1,8
 dihabiskan,1,10
@@ -2649,6 +2719,7 @@ kasir,1,5
 bensin,1,6
 cgi,1,3
 mestre,1,6
+vat,1,3
 ue,1,2
 melebihi,1,8
 tunggal,1,7
@@ -2656,6 +2727,7 @@ corrado,1,7
 militan,1,7
 blog,1,4
 penganiayaan,1,12
+veneto,1,6
 bermasalah,1,10
 darurat,1,7
 klausul,1,7
@@ -2683,16 +2755,19 @@ direksi,1,7
 china,1,5
 wall,1,4
 silicon,1,7
+valley,1,6
 keempat,1,7
 kapitalisasi,1,12
 tesla,1,5
 snapchat,1,8
 mountain,1,8
+view,1,4
 summit,1,6
 community,1,9
 cristina,1,8
 cifuentes,1,9
 sectorial,1,9
+javier,1,6
 dolar,1,5
 rossi,1,5
 penutupan,1,9
@@ -2745,6 +2820,7 @@ kelanjutan,1,10
 penyelidik,1,10
 kecelakaan,1,10
 larry,1,5
+vance,1,5
 spiegel,1,7
 mendaratkan,1,11
 supaya,1,6
@@ -2836,13 +2912,18 @@ monte,1,5
 carlo,1,5
 keteraturan,1,11
 pertengkaran,1,12
+davis,1,5
 berperan,1,8
+survei,1,6
 kekhawatiran,1,12
 mulut,1,5
 hopley,1,6
 grosir,1,6
 optimis,1,7
+gravity,1,7
 aset,1,4
+aviva,1,5
+investors,1,9
 multistrategy,1,13
 return,1,6
 penghasilan,1,11
@@ -2859,13 +2940,18 @@ pall,1,4
 kalian,1,6
 plastik,1,7
 hei,1,3
+investments,1,11
+savings,1,7
+diinvestasikan,1,14
 tabungan,1,8
 defisit,1,7
 substansial,1,11
 kebangsaan,1,10
 sakhalin,1,8
 kamchatka,1,9
+vladivostok,1,11
 eon,1,3
+avro,1,4
 energy,1,6
 membayar,1,8
 simple,1,6
@@ -2902,6 +2988,7 @@ diisap,1,6
 tumbang,1,7
 seumur,1,6
 papworth,1,8
+avery,1,5
 presenter,1,9
 packham,1,7
 pengobatan,1,10
@@ -3009,8 +3096,10 @@ cumbuan,1,7
 liberties,1,9
 menantang,1,9
 mahkamah,1,8
+lovings,1,7
 peserta,1,7
 enggan,1,6
+loving,1,6
 mildred,1,7
 fans,1,4
 berdampingan,1,12
@@ -3022,6 +3111,7 @@ roket,1,5
 menyala,1,7
 negan,1,5
 jeffrey,1,7
+civil,1,5
 brands,1,6
 yum,1,3
 kfc,1,3
@@ -3032,6 +3122,7 @@ rhs,1,3
 mengatasi,1,9
 tumpukan,1,8
 diakumulasi,1,11
+environmental,1,13
 protection,1,10
 agency,1,6
 bertunas,1,8
@@ -3230,6 +3321,7 @@ tulang,1,6
 ekor,1,4
 berarti,1,7
 cbs,1,3
+services,1,8
 blood,1,5
 kerangka,1,8
 obat,1,4
@@ -3258,12 +3350,14 @@ mewah,1,5
 finansial,1,9
 cincin,1,6
 khatulistiwa,1,12
+gravitasi,1,9
 hillsborough,1,12
 penyayang,1,9
 chapel,1,6
 meledakkan,1,10
 bom,1,3
 markas,1,6
+individu,1,8
 campbell,1,8
 safari,1,6
 mengajari,1,9
@@ -3295,6 +3389,7 @@ bunga,1,5
 nasabah,1,7
 scotland,1,8
 saldo,1,5
+vantage,1,7
 gratis,1,6
 kriminal,1,8
 mengakses,1,9
@@ -3317,6 +3412,7 @@ city,1,4
 health,1,6
 hospitals,1,9
 corporation,1,11
+harvard,1,7
 business,1,8
 asosiasi,1,8
 dimenangkan,1,11
@@ -3380,6 +3476,7 @@ butuhkan,1,8
 meluncurkan,1,11
 marah,1,5
 kru,1,3
+vega,1,4
 minoritas,1,9
 bertenaga,1,9
 disorot,1,7
@@ -3389,6 +3486,7 @@ berikut,1,7
 generator,1,9
 diesel,1,6
 world,1,5
+service,1,7
 bush,1,4
 belasungkawa,1,12
 menggembirakan,1,14
@@ -3400,6 +3498,7 @@ membayangkan,1,12
 cbc,1,3
 ujian,1,5
 kontituensi,1,11
+kesteven,1,8
 penderita,1,9
 wajib,1,5
 dirindukan,1,10
@@ -3431,6 +3530,7 @@ dipisahkan,1,10
 penegakan,1,9
 jilbab,1,6
 jins,1,4
+vokal,1,5
 rugby,1,5
 mantel,1,6
 kejuaraan,1,9
@@ -3491,6 +3591,7 @@ price,1,5
 andre,1,5
 shikai,1,6
 penerus,1,7
+panvalkar,1,9
 sepertinya,1,10
 yerusalem,1,9
 mereformasi,1,11
@@ -3509,6 +3610,7 @@ kuo,1,3
 anshi,1,5
 kagum,1,5
 administrator,1,13
+menyurvei,1,9
 benang,1,6
 bian,1,4
 mengeruk,1,8
@@ -3545,6 +3647,7 @@ memburuk,1,8
 selokan,1,7
 sallyanne,1,9
 atkinson,1,8
+vegetasi,1,8
 giliran,1,7
 pemotongan,1,10
 terhembus,1,9
@@ -3605,6 +3708,7 @@ dipecat,1,7
 mendekati,1,9
 tambahan,1,8
 memupuk,1,7
+nevada,1,6
 turisme,1,7
 pertambangan,1,12
 permesinan,1,10
@@ -3663,7 +3767,9 @@ utusan,1,6
 sukhothai,1,9
 harbor,1,6
 propaganda,1,10
+visi,1,4
 ideal,1,5
+romanov,1,7
 membutakan,1,10
 pengelompokan,1,13
 perpecahan,1,10
@@ -3698,6 +3804,7 @@ thermopylae,1,11
 dijaga,1,6
 achaean,1,7
 macedon,1,7
+divisi,1,6
 caracalla,1,9
 administratif,1,13
 tell,1,4
@@ -3737,6 +3844,7 @@ gondola,1,7
 praktis,1,7
 ritual,1,6
 persembahan,1,11
+river,1,5
 peribadatan,1,11
 keenampuluh,1,11
 tabel,1,5
@@ -3747,6 +3855,7 @@ liga,1,4
 parma,1,5
 perjuangan,1,10
 persaingan,1,10
+observatorium,1,13
 astronomi,1,9
 melayani,1,8
 noma,1,4
@@ -3761,6 +3870,7 @@ charles,1,7
 suci,1,4
 dianut,1,6
 joe,1,3
+bervariasi,1,10
 kebudayaan,1,10
 dihitung,1,8
 memperkuat,1,10
@@ -3771,6 +3881,7 @@ kelihatannya,1,12
 sternlieb,1,9
 dibujuk,1,7
 hotel,1,5
+beverly,1,7
 hills,1,5
 dalih,1,5
 diwawancarai,1,12
@@ -3788,6 +3899,7 @@ maladewa,1,8
 c,1,1
 granite,1,7
 seychelles,1,10
+vulkanik,1,8
 selat,1,5
 helena,1,6
 ketinggalan,1,11
@@ -3797,9 +3909,11 @@ pbb,1,3
 gangguan,1,8
 scythia,1,7
 persekutuan,1,11
+universiade,1,11
 siberia,1,7
 taiga,1,5
 kigali,1,6
+environment,1,11
 kenangan,1,8
 piagam,1,6
 un,1,2
@@ -3831,6 +3945,7 @@ mendemonstrasikan,1,17
 patroli,1,7
 reklamasi,1,9
 memperluas,1,10
+fontvieille,1,11
 prosedur,1,8
 wales,1,5
 bergeron,1,8
@@ -3861,8 +3976,10 @@ detail,1,6
 pahatan,1,7
 penentuan,1,9
 stiker,1,6
+via,1,3
 feed,1,4
 menyoroti,1,9
+produktivitas,1,13
 isner,1,5
 tenis,1,5
 mengimbangi,1,11
@@ -3905,6 +4022,7 @@ segala,1,6
 kemegahan,1,9
 pergi,1,5
 mahanakhon,1,10
+visioner,1,8
 bangkok,1,7
 transformasi,1,12
 terkubur,1,8
@@ -3930,11 +4048,13 @@ duduk,1,5
 membelakangi,1,12
 berlumpur,1,9
 dinosaurus,1,10
+karnaval,1,8
 alejandra,1,9
 kreatif,1,7
 format,1,6
 lingkungan,1,10
 sifat,1,5
+maglev,1,6
 tiket,1,5
 sinoptik,1,8
 helikopter,1,10
@@ -4000,7 +4120,9 @@ perusakan,1,9
 kerentanan,1,10
 kekeringan,1,10
 magma,1,5
+vulkanologi,1,11
 dieja,1,5
+volkanologi,1,11
 pengganti,1,9
 kieraa,1,6
 keira,1,5
@@ -4041,8 +4163,11 @@ menyebarkan,1,11
 sabuk,1,5
 konsonan,1,8
 gradasi,1,7
+kven,1,4
+slavik,1,6
 migrasi,1,7
 menyajikan,1,10
+slav,1,4
 blogger,1,7
 lower,1,5
 jet,1,3
@@ -4050,6 +4175,7 @@ nitra,1,5
 mengajukan,1,10
 menyerbu,1,8
 keponakan,1,9
+rastislav,1,9
 menentukan,1,10
 disertifikasi,1,13
 bantu,1,5

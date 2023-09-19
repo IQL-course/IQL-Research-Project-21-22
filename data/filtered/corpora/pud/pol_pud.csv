@@ -137,7 +137,6 @@ wcześniej,9,9
 całkowicie,9,10
 jeszcze,9,7
 nad,9,3
-października,9,12
 zostało,9,7
 usa,9,3
 poza,8,4
@@ -152,7 +151,6 @@ nawet,8,5
 wielkiej,8,8
 nowych,8,6
 pomiędzy,8,8
-później,8,7
 koniec,8,6
 przypadku,8,9
 końcu,8,5
@@ -206,7 +204,6 @@ nowego,6,6
 miejsca,6,7
 innymi,6,6
 żeby,6,4
-wyraźnie,6,8
 ktoś,6,4
 której,6,6
 rozwoju,6,7
@@ -362,6 +359,7 @@ rebelii,4,7
 dlaczego,4,8
 dzień,4,5
 porozumienie,4,12
+danevirke,4,9
 większości,4,10
 głęboko,4,7
 wschodniej,4,10
@@ -495,13 +493,13 @@ kto,3,3
 studenci,3,8
 mieście,3,7
 pokoju,3,6
-mężczyźni,3,9
 wybory,3,6
 pokazał,3,7
 męskiej,3,7
 władzy,3,6
 wyspa,3,5
 główne,3,6
+v,3,1
 pomocą,3,6
 postać,3,6
 dziś,3,4
@@ -586,7 +584,6 @@ albo,3,4
 ryzyka,3,6
 traktat,3,7
 obligacje,3,9
-październiku,3,12
 następnym,3,9
 chciał,3,6
 bezpośrednio,3,12
@@ -722,7 +719,6 @@ wojnie,3,6
 wprowadzono,3,11
 spółka,3,6
 szwajcarii,3,10
-źródła,3,6
 sąd,3,3
 względem,3,8
 joseph,3,6
@@ -771,6 +767,7 @@ zachodniej,3,10
 kościoła,3,8
 procent,3,7
 zanim,3,5
+viii,3,4
 pierwszą,3,8
 terytorium,3,10
 sam,3,3
@@ -1066,7 +1063,6 @@ znaczące,2,8
 kontekście,2,10
 monarchii,2,9
 uważał,2,6
-znaleźć,2,7
 władzę,2,6
 cząstki,2,7
 paweł,2,5
@@ -1092,7 +1088,6 @@ duży,2,4
 majowie,2,7
 produkty,2,8
 głowę,2,5
-wyraźnych,2,9
 starlin,2,7
 disney,2,6
 branży,2,6
@@ -1104,7 +1099,6 @@ rafferty,2,8
 anaya,2,5
 regionów,2,8
 kontrolą,2,8
-późniejszych,2,12
 kiedyś,2,6
 żadnej,2,6
 zmarł,2,5
@@ -1122,6 +1116,7 @@ otaczającego,2,12
 kobiet,2,6
 afryce,2,6
 znajdują,2,8
+valentino,2,9
 powodem,2,7
 lord,2,4
 dopiero,2,7
@@ -1161,7 +1156,6 @@ znaczący,2,8
 boku,2,4
 ojca,2,4
 dokładny,2,8
-źródłem,2,7
 labeoufa,2,8
 really,2,6
 sierpniu,2,8
@@ -1204,6 +1198,7 @@ mas,2,3
 przyszłości,2,11
 trację,2,6
 achemenidów,2,11
+vi,2,2
 przykładami,2,11
 dobrej,2,6
 pjongjangu,2,10
@@ -1304,6 +1299,7 @@ finansowych,2,11
 wzrósł,2,6
 generalny,2,9
 cup,2,3
+von,2,3
 możliwe,2,7
 grając,2,6
 kolejne,2,7
@@ -1349,6 +1345,7 @@ stanął,2,6
 ściśle,2,6
 sahelu,2,6
 ryszarda,2,8
+iv,2,2
 budynków,2,8
 inni,2,4
 tower,2,5
@@ -1417,7 +1414,6 @@ niektórych,2,10
 doświadczenia,2,13
 zaczyna,2,7
 działał,2,7
-źródło,2,6
 cel,2,3
 jeziora,2,7
 głębokie,2,8
@@ -1491,6 +1487,7 @@ komisji,2,7
 prywatnym,2,9
 zaplanowane,2,11
 pierwotnie,2,10
+leive,2,5
 post,2,4
 wpływu,2,6
 trzydziestoletniej,2,18
@@ -1593,7 +1590,6 @@ wskazuje,2,8
 oddanych,2,8
 kolonii,2,7
 narodowych,2,10
-najwyraźniej,2,12
 największy,2,10
 nasion,2,6
 hemoglobiny,2,11
@@ -1730,7 +1726,6 @@ zatwardziały,1,12
 dość,1,4
 kapelan,1,7
 lenny,1,5
-późnym,1,6
 biegły,1,6
 pokazany,1,8
 symboliczne,1,11
@@ -1751,6 +1746,7 @@ poznał,1,6
 trzynastym,1,10
 stracony,1,8
 elaine,1,6
+olivia,1,6
 that,1,4
 szkolona,1,8
 basilicata,1,10
@@ -1791,6 +1787,7 @@ stefan,1,6
 zgody,1,5
 crouch,1,6
 uprzedniej,1,10
+david,1,5
 churchilla,1,10
 sympatii,1,8
 historyk,1,8
@@ -1869,6 +1866,7 @@ rozdzielczości,1,14
 jakiegokolwiek,1,14
 sławę,1,5
 znany,1,5
+alvarez,1,7
 wiernie,1,7
 filmy,1,5
 radarowym,1,9
@@ -1877,7 +1875,6 @@ doświadczał,1,11
 systemem,1,8
 wewnętrznego,1,12
 taki,1,4
-późno,1,5
 działało,1,8
 pragnieniem,1,11
 pokojowego,1,10
@@ -1899,6 +1896,7 @@ lotnictwie,1,10
 powojennym,1,10
 moście,1,6
 wolał,1,5
+alvareza,1,8
 pracować,1,8
 rozstrzygnęło,1,13
 dipolowej,1,9
@@ -1924,6 +1922,7 @@ rozwiane,1,8
 premier,1,7
 plakaty,1,7
 powietrznym,1,11
+universal,1,9
 dotacji,1,7
 intelektualnej,1,14
 glindy,1,6
@@ -1971,6 +1970,7 @@ thought,1,7
 billboard,1,9
 odpowiadający,1,13
 wydany,1,6
+love,1,4
 płyt,1,4
 indyjskiej,1,10
 humanitarnej,1,12
@@ -2174,6 +2174,7 @@ bazarów,1,7
 tradycyjnych,1,12
 pięć,1,4
 wyremontował,1,12
+evening,1,7
 courant,1,7
 ukończył,1,8
 sesto,1,5
@@ -2193,10 +2194,12 @@ fikcji,1,6
 skalę,1,5
 przejście,1,9
 hrabinie,1,8
+giovanni,1,8
 twórcy,1,6
 torze,1,5
 wykonać,1,7
 tolerancja,1,10
+villa,1,5
 obywatelskie,1,12
 tematy,1,6
 pochodzeniu,1,11
@@ -2253,7 +2256,6 @@ używany,1,7
 pożar,1,5
 szacowano,1,9
 ameryce,1,7
-teraźniejszości,1,15
 żaden,1,5
 rezultacie,1,10
 projektów,1,9
@@ -2479,6 +2481,7 @@ japońskiego,1,11
 wywiadu,1,7
 pretekstem,1,10
 odczytał,1,8
+beverly,1,7
 wyboru,1,6
 hotelu,1,6
 zwabiony,1,8
@@ -2750,7 +2753,6 @@ pekińskiej,1,10
 tiencin,1,7
 zmuszeni,1,8
 pokonani,1,8
-dźwiękowych,1,11
 morriconego,1,11
 miłosny,1,7
 chińczycy,1,9
@@ -2763,7 +2765,6 @@ szanghaj,1,8
 porty,1,5
 krąg,1,4
 przekazana,1,10
-rozluźniona,1,11
 nieznacznie,1,11
 mieszkali,1,9
 przekazała,1,10
@@ -2862,7 +2863,6 @@ peloponezie,1,11
 potęgą,1,6
 lokalną,1,7
 meseńskiej,1,10
-więźniowie,1,10
 maszynach,1,9
 metalowe,1,8
 linaresem,1,9
@@ -2922,7 +2922,9 @@ sprowokowały,1,12
 wełnę,1,5
 rewolucję,1,9
 zwaną,1,5
+revolución,1,10
 pożywienia,1,10
+reivindicadora,1,14
 służenia,1,8
 obaliła,1,7
 najprawdopodobniej,1,18
@@ -2932,7 +2934,6 @@ plantany,1,8
 banany,1,6
 sięgnął,1,7
 alfabetu,1,8
-przyjaźń,1,8
 majańskich,1,10
 stealers,1,8
 prawicy,1,7
@@ -3183,6 +3184,7 @@ badający,1,8
 rupertsbergu,1,12
 zniszczony,1,10
 zakonnice,1,9
+vance,1,5
 larry,1,5
 przeniesiono,1,12
 śledczy,1,7
@@ -3237,7 +3239,6 @@ zbytnią,1,7
 irena,1,5
 nacisku,1,7
 węgry,1,5
-groźba,1,6
 narzucenia,1,10
 stać,1,4
 wiatrowa,1,8
@@ -3338,11 +3339,13 @@ czwartą,1,7
 zastrzeżeniem,1,13
 towarzyszącym,1,13
 mountain,1,8
+view,1,4
 wirtembergię,1,12
 progresywnych,1,13
 reprezentują,1,12
 fabrykantowi,1,12
 maroto,1,6
+javier,1,6
 wicesekretarz,1,13
 przywódcy,1,9
 konserwatywnych,1,15
@@ -3363,8 +3366,8 @@ zachodzą,1,8
 świętują,1,8
 plaza,1,5
 las,1,3
+victorias,1,9
 may,1,3
-źrenice,1,7
 krytyką,1,7
 pasują,1,6
 czeka,1,5
@@ -3444,6 +3447,7 @@ mestre,1,6
 wyborczych,1,10
 przypadkach,1,11
 przebieg,1,8
+vat,1,3
 podwyżki,1,8
 żywiołowej,1,10
 erdogan,1,7
@@ -3482,6 +3486,7 @@ nasz,1,4
 wygrać,1,6
 smartfonie,1,10
 zapisać,1,7
+voucher,1,7
 katolickiej,1,11
 prawami,1,7
 zajmowała,1,9
@@ -3494,6 +3499,7 @@ antyfaszystowskich,1,18
 rodzinie,1,8
 odciążenie,1,10
 dorastała,1,9
+veneto,1,6
 castelfranco,1,12
 ń,1,1
 przyszła,1,8
@@ -3544,6 +3550,7 @@ czytać,1,6
 potrafi,1,7
 motocyklowy,1,11
 długości,1,8
+valentinem,1,10
 kilometry,1,9
 rossi,1,5
 większym,1,8
@@ -3580,6 +3587,7 @@ ebc,1,3
 moscone,1,7
 przywilejem,1,11
 powiedziano,1,11
+convention,1,10
 okazał,1,6
 zamknięcia,1,10
 cente,1,5
@@ -3630,7 +3638,6 @@ ekspert,1,7
 izolowaniem,1,11
 zyskawszy,1,9
 alfa,1,4
-źródeł,1,6
 metodę,1,6
 opracowała,1,10
 rona,1,4
@@ -3704,6 +3711,7 @@ bogarta,1,7
 sprzymierzeniec,1,15
 nastąpiły,1,9
 uwolniony,1,9
+lyvet,1,5
 rycerz,1,6
 gandawy,1,7
 jan,1,3
@@ -3733,6 +3741,7 @@ playboy,1,7
 babką,1,5
 mykeńskiej,1,10
 joanna,1,6
+ctv,1,3
 sarą,1,4
 mistrza,1,7
 broniącą,1,8
@@ -3837,6 +3846,7 @@ eganem,1,6
 spędzili,1,8
 rozważali,1,9
 bycia,1,5
+over,1,4
 head,1,4
 nagranej,1,8
 wyłącznie,1,9
@@ -3912,6 +3922,7 @@ antologii,1,9
 opowieści,1,9
 ewanem,1,6
 równocześnie,1,12
+marvela,1,7
 seriach,1,7
 przewijający,1,12
 thanosa,1,7
@@ -3925,6 +3936,7 @@ tokugawy,1,8
 zakładanie,1,10
 laurent,1,7
 saint,1,5
+yves,1,4
 placówek,1,8
 zapachu,1,7
 ambasadorką,1,11
@@ -4002,6 +4014,7 @@ biernie,1,7
 śledztwo,1,8
 prowadzi,1,8
 essen,1,5
+viguier,1,7
 medal,1,5
 zaoszczędzić,1,12
 zdjęciu,1,7
@@ -4030,6 +4043,7 @@ zasługiwało,1,11
 sekund,1,6
 mieszkał,1,8
 sztuką,1,6
+vine,1,4
 milionową,1,9
 zdobywa,1,7
 sytuacja,1,8
@@ -4079,7 +4093,6 @@ organy,1,6
 krwi,1,4
 niewypłacalności,1,16
 wyspecjalizowany,1,16
-groźbę,1,6
 gotówki,1,7
 ubraniach,1,9
 przepływy,1,9
@@ -4121,10 +4134,12 @@ scritti,1,7
 sir,1,3
 gamsona,1,7
 okręt,1,5
+davida,1,6
 piosenkę,1,8
 napisały,1,8
 shackletona,1,11
 tennessee,1,9
+nashville,1,9
 rodziną,1,7
 przeniosła,1,10
 studyjnym,1,9
@@ -4182,7 +4197,6 @@ teologię,1,8
 odpowiednią,1,11
 skonstruować,1,12
 mistycznej,1,10
-ludźmi,1,6
 spisanie,1,8
 tradycji,1,8
 inherentny,1,10
@@ -4356,6 +4370,7 @@ postów,1,6
 dekadę,1,6
 house,1,5
 bush,1,4
+service,1,7
 world,1,5
 radia,1,5
 dieslowskie,1,11
@@ -4368,6 +4383,7 @@ elektrownia,1,11
 zabijano,1,8
 nieświadomych,1,13
 zasugerował,1,11
+vega,1,4
 opinię,1,6
 opowiedział,1,11
 torturami,1,9
@@ -4399,6 +4415,7 @@ zainteresowanych,1,16
 nectar,1,6
 lojalnościowych,1,15
 dowolnym,1,8
+vantage,1,7
 opcję,1,5
 bezpłatną,1,9
 konto,1,5
@@ -4443,6 +4460,7 @@ new,1,3
 postąpić,1,8
 mogę,1,4
 business,1,8
+harvard,1,7
 corporation,1,11
 hospitals,1,9
 health,1,6
@@ -4532,7 +4550,6 @@ dyskursem,1,9
 hill,1,4
 gospodarczymi,1,13
 danymi,1,6
-rozdźwięk,1,9
 ścierania,1,9
 przedziwnego,1,12
 konfliktów,1,10
@@ -4581,6 +4598,7 @@ brakować,1,8
 wyjściem,1,8
 opowiedziało,1,12
 wyborców,1,8
+kesteven,1,8
 okręgu,1,6
 koncentruje,1,11
 elektorat,1,9
@@ -4601,7 +4619,6 @@ cytując,1,7
 masę,1,4
 łączący,1,7
 nerwowy,1,7
-wyraźny,1,7
 dodają,1,6
 towarzyszące,1,12
 laptopie,1,8
@@ -4627,7 +4644,6 @@ caplan,1,6
 sondaże,1,7
 śledząc,1,7
 przerażeniem,1,12
-późna,1,5
 siedział,1,8
 strażnikom,1,10
 przywołanie,1,11
@@ -4675,6 +4691,7 @@ niepokoju,1,9
 gwałtownie,1,10
 ujawniły,1,8
 coroczne,1,8
+davis,1,5
 zastanawiam,1,11
 rozsypce,1,8
 wszystko,1,8
@@ -4742,6 +4759,7 @@ simple,1,6
 taryfę,1,6
 płacili,1,7
 energy,1,6
+avro,1,4
 eonu,1,4
 zużyciem,1,8
 zwiększonym,1,11
@@ -4756,6 +4774,8 @@ spodziewać,1,10
 trwającego,1,10
 rocznie,1,7
 multi,1,5
+investors,1,9
+aviva,1,5
 fundusze,1,8
 następne,1,8
 funduszach,1,10
@@ -4763,6 +4783,8 @@ lokowaniem,1,10
 masowym,1,7
 powstrzymało,1,12
 rządowych,1,9
+investments,1,11
+savings,1,7
 zainwestowane,1,13
 pieniądze,1,9
 oszczędnościowych,1,17
@@ -4783,11 +4805,13 @@ odszkodowania,1,13
 ogromne,1,7
 wniosków,1,8
 perspektywą,1,11
+volkswagen,1,10
 winterkorna,1,11
 naczelnego,1,10
 dyrektora,1,9
 kosztowało,1,10
 miliardów,1,9
+volkswagena,1,11
 obniżyło,1,8
 oszustwa,1,8
 latami,1,6
@@ -5162,7 +5186,6 @@ dinozaury,1,9
 dowód,1,5
 rhs,1,3
 kiełkowania,1,11
-wyraźnego,1,9
 kosmicznej,1,10
 przechowywane,1,13
 transportowane,1,14
@@ -5278,6 +5301,7 @@ knightley,1,9
 szkocji,1,7
 niepodległości,1,14
 sprzed,1,6
+navy,1,4
 clyde,1,5
 stoczniowego,1,12
 obietnica,1,9
@@ -5358,6 +5382,7 @@ próbę,1,5
 oskarżona,1,9
 powinni,1,7
 poczuł,1,6
+panvalkar,1,9
 władywostoku,1,12
 wschodzie,1,9
 odwiedzał,1,9
@@ -5451,6 +5476,7 @@ federalnym,1,10
 sponsorowaniem,1,14
 dietrich,1,8
 spółki,1,6
+denver,1,6
 ślad,1,4
 opowieściami,1,12
 pozostawiła,1,11
@@ -5650,7 +5676,6 @@ niewłaściwym,1,12
 czynią,1,6
 mniejszościach,1,14
 kobietach,1,9
-obraźliwe,1,9
 przekonując,1,11
 starają,1,7
 pociechy,1,8
@@ -5762,7 +5787,6 @@ chorób,1,6
 rozprzestrzenianie,1,18
 nieurodzaj,1,10
 susza,1,5
-powódź,1,6
 żywiołowe,1,9
 klęski,1,6
 podatność,1,9
@@ -5802,7 +5826,9 @@ krzemu,1,6
 zawartości,1,10
 lepka,1,5
 magma,1,5
+vulcanology,1,11
 pisowni,1,7
+volcanology,1,11
 angielsku,1,9
 wulkanologią,1,12
 nazywa,1,6
@@ -6326,6 +6352,7 @@ branżą,1,6
 mechaniką,1,9
 górnictwem,1,10
 turystyką,1,9
+nevady,1,6
 nabrzeża,1,8
 gezira,1,6
 ułatwiło,1,8
@@ -6590,14 +6617,17 @@ okropnie,1,8
 kolega,1,6
 norman,1,6
 swobodą,1,7
+loving,1,6
 akcja,1,5
 brali,1,5
+lovingowie,1,10
 najwyższego,1,11
 trafiła,1,7
 państwu,1,7
 przeciwstawili,1,14
 union,1,5
 liberties,1,9
+civil,1,5
 zainteresowaniem,1,16
 ogromnym,1,8
 cieszyła,1,8
@@ -6653,7 +6683,6 @@ niewiarygodny,1,13
 sobotę,1,6
 żyły,1,4
 konfrontacji,1,12
-mroźnie,1,7
 trzęsą,1,6
 radykalnie,1,10
 zmieniło,1,8
@@ -6822,6 +6851,7 @@ obowiązującymi,1,14
 procedurami,1,11
 przepisami,1,10
 różnice,1,7
+fontvieille,1,11
 powiększenie,1,12
 obejmują,1,8
 gruntu,1,6
@@ -6950,6 +6980,7 @@ tektoniczne,1,11
 ruchy,1,5
 północnych,1,10
 cechą,1,5
+kven,1,4
 szwecji,1,7
 niemiecki,1,9
 ludwik,1,6
@@ -6990,7 +7021,6 @@ pozostawania,1,12
 metropolitalnych,1,16
 okręgów,1,7
 rościsławem,1,11
-późniejszym,1,11
 cieśniny,1,8
 kontrolującymi,1,14
 miastami,1,8
@@ -7154,7 +7184,6 @@ pojawienia,1,10
 żywymi,1,6
 zmarłymi,1,8
 pewnego,1,7
-rzeźbę,1,6
 gildii,1,6
 mieszczan,1,9
 miejscowych,1,11

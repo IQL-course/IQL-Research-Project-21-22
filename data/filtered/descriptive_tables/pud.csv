@@ -1,25 +1,25 @@
 language,iso_code,#types,#tokens,family,script
-Arabic,ara,5596,16608,Afro-Asiatic,Arabic
+Arabic,ara,6596,18201,Afro-Asiatic,Arabic
 Czech,ces,7069,15286,Indo-European,Latin
-German,deu,6186,18095,Indo-European,Latin
-English,eng,5048,18091,Indo-European,Latin
+German,deu,6108,18003,Indo-European,Latin
+English,eng,5001,18021,Indo-European,Latin
 Finnish,fin,6933,12691,Uralic,Latin
-French,fra,5585,20484,Indo-European,Latin
+French,fra,5211,19812,Indo-European,Latin
 Hindi,hin,4716,20796,Indo-European,Devanagari
-Indonesian,ind,4095,16121,Austronesian,Latin
+Indonesian,ind,4221,16305,Austronesian,Latin
 Icelandic,isl,6035,16207,Indo-European,Latin
-Italian,ita,5839,20454,Indo-European,Latin
+Italian,ita,5528,19935,Indo-European,Latin
 Japanese,jpn,4852,24737,Japonic,Japanese
 Japanese-romaji,jpn,4849,24734,Japonic,Latin
 Japanese-strokes,jpn,4852,24737,Japonic,Japanese
 Korean,kor,8031,14475,Koreanic,Hangul
-Polish,pol,7175,15207,Indo-European,Latin
-Portuguese,por,4832,18994,Indo-European,Latin
-Russian,rus,7143,15622,Indo-European,Cyrillic
+Polish,pol,7204,15216,Indo-European,Latin
+Portuguese,por,5621,20367,Indo-European,Latin
+Russian,rus,7113,15588,Indo-European,Cyrillic
 Spanish,spa,5689,20602,Indo-European,Latin
 Swedish,swe,5624,16369,Indo-European,Latin
 Thai,tha,3599,21121,Kra-Dai,Thai
-Turkish,tur,6494,13704,Turkic,Latin
+Turkish,tur,6373,13512,Turkic,Latin
 Chinese,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
 Chinese-pinyin,zho,4970,17845,Sino-Tibetan,Latin
 Chinese-strokes,zho,4970,17845,Sino-Tibetan,Han (Traditional variant)
