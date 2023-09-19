@@ -95,6 +95,21 @@ res <- lapply(COLLS, function(collection) {
 })
 
 
+print('table: language parameters with filtered vs non filtered data')
+res <- lapply(COLLS, function(collection) {
+    sum_filter    <- read.csv(paste0(which_folder('results',T),'/coll_summary_',collection,'.csv'))[-1] %>% 
+      rename(`A'`=A, `n'`=n, `T'`=T)
+    sum_no_filter <- read.csv(paste0(which_folder('results',F),'/coll_summary_',collection,'.csv'))[-1]
+    sum <- merge(sum_filter,sum_no_filter, c('language','family','script')) %>% arrange(family,script,language)
+    sum <- select(sum, language, family, script, A, `A'`, n, `n'`, T, `T'`)
+    print(xtable(sum, type = "latex"), 
+          file = paste0(which_folder('latex_tables',T),'/coll_comparison_',collection,".tex"),
+          include.rownames=FALSE, include.colnames=FALSE, only.contents = TRUE,
+          hline.after = c(nrow(sum)))
+})
+
+
+
 
 # CORRELATION SIGNIFICANCE --------------------------------------------------------
 print('figures: correlation significance')
