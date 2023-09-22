@@ -38,6 +38,7 @@ res <- lapply(COLLS,function(collection) {
   })
 })
 
+
 # + alphabet sizes 
 print('file: alphabets sizes')
 res <- lapply(COLLS,function(collection) {
@@ -54,6 +55,8 @@ res <- lapply(COLLS,function(collection) {
   df = do.call(rbind.data.frame,parameters)
   write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'),row.names = F)
 })
+
+
 
 
 # + collections summary 
