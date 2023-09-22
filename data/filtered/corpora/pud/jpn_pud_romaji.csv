@@ -1,4 +1,4 @@
-word,frequency,n_characters,romanized_form
+word,frequency,n_characters
 の,1753,2,no
 に,1162,2,ni
 は,1157,2,wa
@@ -729,6 +729,7 @@ word,frequency,n_characters,romanized_form
 オーストリア,4,9,oosutoria
 使っ,4,4,tuka
 消費,4,6,syouhi
+bbc,4,3,bbc
 ウィンストン,4,7,insuton
 準備,4,6,zyunbi
 発展,4,6,hatten
@@ -813,6 +814,7 @@ word,frequency,n_characters,romanized_form
 制度,3,5,seido
 促進,3,7,sokusin
 部門,3,5,bumon
+you,3,3,you
 優先,3,6,yuusen
 監視,3,5,kansi
 主,3,4,nusi
@@ -893,6 +895,7 @@ word,frequency,n_characters,romanized_form
 汚染,3,4,osen
 ゴルフ,3,6,goruhu
 本当,3,5,honto
+eu,3,2,eu
 勢力,3,8,seiryoku
 後年,3,6,kounen
 アイスランド,3,9,aisurando
@@ -990,6 +993,7 @@ word,frequency,n_characters,romanized_form
 強調,3,8,kyoutyou
 訓練,3,6,kunren
 着陸,3,9,tyakuriku
+uber,3,4,uber
 取っ,3,2,to
 パイロット,3,8,pairotto
 伯爵,3,9,hakusyaku
@@ -1052,6 +1056,7 @@ word,frequency,n_characters,romanized_form
 送信,3,6,sousin
 含ん,3,5,hukun
 レビュー,3,6,rebyuu
+a,3,1,a
 反対,3,6,hantai
 祖母,3,4,sobo
 内戦,3,6,naisen
@@ -1124,6 +1129,7 @@ word,frequency,n_characters,romanized_form
 最良,3,7,sairyou
 スコットランド,3,12,sukottorando
 構造,3,6,kouzou
+cnn,3,3,cnn
 改革,3,7,kaikaku
 良い,3,3,yoi
 テーマ,3,5,teema
@@ -1134,6 +1140,7 @@ word,frequency,n_characters,romanized_form
 土曜,2,5,doyou
 助ける,2,8,tasukeru
 遂げ,2,4,toge
+and,2,3,and
 絵,2,1,e
 カルロス,2,8,karurosu
 変動,2,6,hendou
@@ -1265,6 +1272,7 @@ word,frequency,n_characters,romanized_form
 迎え,2,5,mukae
 ゲイヤー,2,6,geiyaa
 入り,2,3,iri
+really,2,6,really
 体制,2,6,taisei
 ポーランド,2,8,poorando
 スタジオ,2,7,sutazio
@@ -1339,6 +1347,7 @@ word,frequency,n_characters,romanized_form
 衰え,2,6,otoroe
 高地,2,5,kouti
 ディスプレイ,2,9,disupurei
+gca,2,3,gca
 果たし,2,6,hatasi
 博士,2,6,hakase
 アルバレス,2,9,arubaresu
@@ -1391,6 +1400,7 @@ word,frequency,n_characters,romanized_form
 アーティスト,2,8,aatisuto
 ベルギー,2,7,berugii
 中世,2,7,tyuusei
+mps,2,3,mps
 採択,2,7,saitaku
 ジョリオ,2,6,zyorio
 現金,2,6,genkin
@@ -1540,6 +1550,7 @@ word,frequency,n_characters,romanized_form
 トリックス,2,9,torikkusu
 サウスシー,2,8,saususii
 大きい,2,5,ookii
+new,2,3,new
 裏付ける,2,9,urazukeru
 証拠,2,6,syouko
 ヒスパニア,2,9,hisupania
@@ -1686,6 +1697,7 @@ word,frequency,n_characters,romanized_form
 打倒,2,5,datou
 ロケット,2,7,roketto
 ジャーナリスト,2,12,zyaanarisuto
+dna,2,3,dna
 ひとりぼっち,2,11,hitoribotti
 わかる,2,6,wakaru
 顔,2,3,kao
@@ -1694,6 +1706,7 @@ word,frequency,n_characters,romanized_form
 保存,2,5,hozon
 治療,2,6,tiryou
 果たす,2,6,hatasu
+spotify,2,7,spotify
 発行,2,6,hakkou
 ソーシャル,2,8,soosyaru
 被っ,2,4,kabu
@@ -1719,6 +1732,7 @@ word,frequency,n_characters,romanized_form
 温暖,2,5,ondan
 起訴,2,4,kiso
 規制,2,5,kisei
+reco,2,4,reco
 強化,2,6,kyouka
 熟練,2,8,zyukuren
 先月,2,7,sengetu
@@ -1738,6 +1752,7 @@ word,frequency,n_characters,romanized_form
 夜,2,4,yoru
 ブラジル,2,8,buraziru
 大麻,2,5,taima
+web,2,3,web
 入れ,2,3,ire
 南アフリカ,2,13,minamiahurika
 地図,2,4,tizu
@@ -1746,6 +1761,7 @@ word,frequency,n_characters,romanized_form
 バージョン,2,7,baazyon
 差別,2,6,sabetu
 状,2,4,zyou
+facebook,2,8,facebook
 住宅,2,8,zyuutaku
 酸化,2,5,sanka
 料金,2,7,ryoukin
@@ -1873,11 +1889,13 @@ word,frequency,n_characters,romanized_form
 大会,2,6,taikai
 アシスタント,2,10,asisutanto
 ジョンソン,1,7,zyonson
+humblebums,1,10,humblebums
 マペッツ,1,7,mapettu
 サイエンス,1,7,saiensu
 シンガー,1,6,singaa
 ソングライター,1,11,songuraitaa
 アーク,1,4,aaku
+over,1,4,over
 極悪,1,7,gokuaku
 デッカ,1,5,dekka
 マーベル,1,7,maaberu
@@ -1899,6 +1917,7 @@ word,frequency,n_characters,romanized_form
 スティーラーズ,1,10,sutiiraazu
 ホイール,1,6,hoiiru
 イーガン,1,5,iigan
+gchq,1,4,gchq
 結成,1,6,kessei
 メソアメリカ,1,11,mesoamerika
 次号,1,5,zigou
@@ -1933,14 +1952,17 @@ word,frequency,n_characters,romanized_form
 徳川,1,8,tokugawa
 ベリヤ,1,6,beriya
 家康,1,6,ieyasu
+mgb,1,3,mgb
 アバクーモフ,1,10,abakuumohu
 サンローラン,1,9,sanrooran
 取組,1,8,torikumi
 サーモン,1,6,saamon
 組ん,1,3,kun
 選集,1,7,sensyuu
+my,1,2,my
 スター,1,5,sutaa
 コメディ,1,6,komedi
+head,1,4,head
 録音,1,6,rokuon
 空港,1,6,kuukou
 スコット,1,7,sukotto
@@ -1966,6 +1988,7 @@ word,frequency,n_characters,romanized_form
 ブロッホ,1,7,burohho
 マルクス,1,8,marukusu
 原則,1,7,gensoku
+google,1,6,google
 願い,1,5,negai
 神秘,1,5,sinpi
 本来,1,6,honrai
@@ -1978,6 +2001,7 @@ word,frequency,n_characters,romanized_form
 ナッシュビル,1,10,nassyubiru
 移し,1,5,utusi
 挫折,1,6,zasetu
+stephen,1,7,stephen
 尊敬,1,6,sonkei
 サムスン,1,7,samusun
 ガムソン,1,7,gamuson
@@ -1999,6 +2023,8 @@ word,frequency,n_characters,romanized_form
 カーター,1,6,kaataa
 イラン,1,4,iran
 人質,1,8,hitoziti
+siri,1,4,siri
+apple,1,5,apple
 議席,1,6,giseki
 留まっ,1,4,toma
 退院,1,5,taiin
@@ -2080,6 +2106,7 @@ word,frequency,n_characters,romanized_form
 ヒトラー,1,7,hitoraa
 ゴードン,1,6,goodon
 レヴィット,1,7,revitto
+sf,1,2,sf
 ルーパー,1,6,ruupaa
 ヴァレンティノ,1,9,varentino
 ステレオタイプ,1,12,sutereotaipu
@@ -2111,6 +2138,7 @@ word,frequency,n_characters,romanized_form
 ジョーン,1,5,zyoon
 騎士,1,4,kisi
 前兆,1,7,zentyou
+lyvet,1,5,lyvet
 知能,1,5,tinou
 弟子,1,4,desi
 塔,1,3,tou
@@ -2127,7 +2155,9 @@ word,frequency,n_characters,romanized_form
 漠然,1,7,bakuzen
 ひび,1,4,hibi
 学ぶ,1,6,manabu
+iag,1,3,iag
 イレーヌ,1,6,ireenu
+ba,1,2,ba
 ハンス,1,5,hansu
 ペテルソン,1,9,peteruson
 原料,1,7,genryou
@@ -2139,7 +2169,10 @@ word,frequency,n_characters,romanized_form
 ラジウム,1,7,raziumu
 持ち帰っ,1,7,motikae
 オフ,1,3,ohu
+ctv,1,3,ctv
+prayer,1,6,prayer
 与党,1,5,yotou
+wing,1,4,wing
 公的,1,7,kouteki
 溺れ,1,5,obore
 下り坂,1,10,kudarizaka
@@ -2148,6 +2181,7 @@ word,frequency,n_characters,romanized_form
 キャランジ,1,8,kyaranzi
 描い,1,4,egai
 終盤,1,7,syuuban
+b,1,1,b
 イーグル,1,6,iiguru
 搭載,1,6,tousai
 まずまず,1,8,mazumazu
@@ -2172,8 +2206,10 @@ word,frequency,n_characters,romanized_form
 小学,1,8,syougaku
 関与,1,6,kan'yo
 そそら,1,6,sosora
+rhs,1,3,rhs
 ダルナン,1,7,darunan
 親衛,1,6,sin'ei
+ss,1,2,ss
 中尉,1,5,tyuui
 レジスタンス,1,11,rezisutansu
 掃討,1,6,soutou
@@ -2236,12 +2272,14 @@ word,frequency,n_characters,romanized_form
 付き添っ,1,6,tukiso
 マンドル,1,7,mandoru
 ギター,1,5,gitaa
+t,1,1,t
 カー,1,3,kaa
 センチュリー,1,9,sentyurii
 アメリカン,1,8,amerikan
 モータース,1,8,mootaasu
 ハイ,1,3,hai
 ランブラー,1,8,ranburaa
+gm,1,2,gm
 駆り立て,1,8,karitate
 今夜,1,6,kon'ya
 緩ん,1,5,yurun
@@ -2332,6 +2370,7 @@ word,frequency,n_characters,romanized_form
 断言,1,6,dangen
 ヘクラー,1,7,hekuraa
 プレーヤー,1,8,pureeyaa
+on,1,2,on
 失速,1,7,sissoku
 上り詰め,1,10,noboritume
 チャート,1,6,tyaato
@@ -2349,6 +2388,7 @@ word,frequency,n_characters,romanized_form
 再選,1,6,saisen
 除名,1,6,zyomei
 グラフトン,1,9,gurahuton
+h,1,1,h
 メトロポリタン,1,13,metoroporitan
 トーリー,1,6,toorii
 小麦,1,6,komugi
@@ -2360,12 +2400,17 @@ word,frequency,n_characters,romanized_form
 表す,1,7,arawasu
 名詞,1,5,meisi
 共産,1,7,kyousan
+twitter,1,7,twitter
+reddit,1,6,reddit
 終焉,1,6,syuuen
 戦時,1,5,senzi
 抵抗,1,6,teikou
 人道,1,6,zindou
 閉じ,1,4,tozi
+love,1,4,love
 シングル,1,7,singuru
+shaky,1,5,shaky
+ground,1,6,ground
 自宅,1,6,zitaku
 絶頂,1,7,zettyou
 ラブロッカ,1,9,raburokka
@@ -2387,6 +2432,7 @@ word,frequency,n_characters,romanized_form
 提起,1,5,teiki
 葬式,1,7,sousiki
 参列,1,7,sanretu
+nascar,1,6,nascar
 背後,1,5,haigo
 輝き,1,8,kagayaki
 ドライバー,1,8,doraibaa
@@ -2413,6 +2459,8 @@ word,frequency,n_characters,romanized_form
 アン,1,2,an
 ピアノ,1,5,piano
 ホートン,1,6,hooton
+wild,1,4,wild
+west,1,4,west
 金遣い,1,9,kanezukai
 荒,1,3,are
 シガー,1,5,sigaa
@@ -2428,6 +2476,7 @@ word,frequency,n_characters,romanized_form
 サイズ,1,5,saizu
 制服,1,7,seihuku
 手当,1,5,teate
+atm,1,3,atm
 修復,1,8,syuuhuku
 プラボウォ,1,7,puraboo
 スビアント,1,8,subianto
@@ -2464,6 +2513,7 @@ word,frequency,n_characters,romanized_form
 イレイン,1,5,irein
 ソルヘイム,1,9,soruheimu
 エリック,1,6,erikku
+hfc,1,3,hfc
 ユニバーサル,1,11,yunibaasaru
 改正,1,6,kaisei
 オスワルド,1,9,osuwarudo
@@ -2471,6 +2521,11 @@ word,frequency,n_characters,romanized_form
 オペラ,1,5,opera
 遠い,1,4,tooi
 抑える,1,6,osaeru
+now,1,3,now
+earth,1,5,earth
+in,1,2,in
+north,1,5,north
+america,1,7,america
 売上,1,6,uriage
 トール,1,5,tooru
 教え,1,4,osie
@@ -2487,6 +2542,9 @@ word,frequency,n_characters,romanized_form
 簡潔,1,7,kanketu
 アニメーション,1,10,animeesyon
 仕上がっ,1,5,siaga
+of,1,2,of
+power,1,5,power
+the,1,3,the
 批評,1,6,hihyou
 演出,1,7,ensyutu
 楽しん,1,7,tanosin
@@ -2553,6 +2611,8 @@ word,frequency,n_characters,romanized_form
 追わ,1,3,owa
 アイビンゲン,1,8,aibingen
 移っ,1,3,utu
+team,1,4,team
+telekom,1,7,telekom
 恋人,1,7,koibito
 シュドバーデン,1,11,syudobaaden
 メルディンゲン,1,10,merudingen
@@ -2585,6 +2645,7 @@ word,frequency,n_characters,romanized_form
 商業,1,8,syougyou
 前哨,1,7,zensyou
 離れる,1,8,hanareru
+maiorum,1,7,maiorum
 福祉,1,6,hukusi
 パーマー,1,6,paamaa
 移住,1,5,izyuu
@@ -2598,9 +2659,11 @@ word,frequency,n_characters,romanized_form
 ブランズフィールド,1,14,buranzuhiirudo
 陸地,1,6,rikuti
 残す,1,6,nokosu
+mos,1,3,mos
 アーネスト,1,8,aanesuto
 シャックルトン,1,10,syakuruton
 パバルカル,1,10,pabarukaru
+endurance,1,9,endurance
 号,1,3,gou
 乗せ,1,4,nose
 出航,1,7,syukkou
@@ -2619,6 +2682,7 @@ word,frequency,n_characters,romanized_form
 ゲート,1,5,geeto
 パーク,1,5,paaku
 全長,1,7,zentyou
+km,1,2,km
 プラネタリウム,1,13,puranetariumu
 水族,1,7,suizoku
 オーバーマルスベルク,1,17,oobaamarusuberuku
@@ -2658,6 +2722,7 @@ word,frequency,n_characters,romanized_form
 ライヘンバッハ,1,11,raihenbahha
 売却,1,8,baikyaku
 エア,1,2,ea
+jr,1,2,jr
 納める,1,7,osameru
 奪回,1,6,dakkai
 感激,1,7,kangeki
@@ -2711,6 +2776,7 @@ word,frequency,n_characters,romanized_form
 ベルサイユ,1,9,berusaiyu
 基地,1,4,kiti
 プリュヴィオーズ,1,11,puryuvioozu
+iii,1,3,iii
 犯,1,3,han
 造山,1,6,zouzan
 海洋,1,6,kaiyou
@@ -2748,6 +2814,7 @@ word,frequency,n_characters,romanized_form
 わたり,1,6,watari
 職業,1,9,syokugyou
 芽生え,1,5,mebae
+metti,1,5,metti
 再度,1,5,saido
 友情,1,7,yuuzyou
 協業,1,8,kyougyou
@@ -2840,6 +2907,7 @@ word,frequency,n_characters,romanized_form
 少女,1,7,syouzyo
 休暇,1,6,kyuuka
 ウォルター,1,6,orutaa
+remis,1,5,remis
 緩和,1,5,kanwa
 べく,1,4,beku
 バーナード,1,8,baanaado
@@ -2918,7 +2986,10 @@ word,frequency,n_characters,romanized_form
 資源,1,5,sigen
 好,1,3,kou
 再生,1,6,saisei
+irena,1,5,irena
 総裁,1,6,sousai
+z,1,1,z
+amin,1,4,amin
 洋上,1,7,youzyou
 風力,1,8,huuryoku
 うる,1,3,uru
@@ -2951,14 +3022,18 @@ word,frequency,n_characters,romanized_form
 ナイトレイ,1,8,naitorei
 為替,1,6,kawase
 今回,1,6,konkai
+rich,1,4,rich
 逮捕,1,5,taiho
 悪ふざけ,1,10,waruhuzake
 優れ,1,6,sugure
+aoun,1,4,aoun
+hariri,1,6,hariri
 取引,1,8,torihiki
 同士,1,5,dousi
 内紛,1,6,naihun
 夫,1,4,otto
 在任,1,6,zainin
+dpa,1,3,dpa
 確約,1,8,kakuyaku
 着,1,2,ki
 中止,1,6,tyuusi
@@ -2973,6 +3048,7 @@ word,frequency,n_characters,romanized_form
 市長,1,6,sityou
 履行,1,5,rikou
 ラチダ,1,6,ratida
+akp,1,3,akp
 ダティ,1,4,dati
 サルコジ,1,8,sarukozi
 予備,1,4,yobi
@@ -2985,8 +3061,10 @@ word,frequency,n_characters,romanized_form
 内務,1,5,naimu
 工業,1,7,kougyou
 成し遂げる,1,10,nasitogeru
+gema,1,4,gema
 最,1,3,sai
 会員,1,5,kaiin
+tube,1,4,tube
 有効,1,6,yuukou
 海軍,1,6,kaigun
 侵す,1,5,okasu
@@ -3012,6 +3090,7 @@ word,frequency,n_characters,romanized_form
 ミヒャエル,1,8,mihyaeru
 見地,1,5,kenti
 あらまし,1,7,aramasi
+nato,1,4,nato
 償還,1,7,syoukan
 たろう,1,5,tarou
 併せ,1,5,awase
@@ -3027,6 +3106,7 @@ word,frequency,n_characters,romanized_form
 不調,1,6,hutyou
 クーン,1,4,kuun
 振る,1,4,buru
+diezeit,1,7,diezeit
 アイデンティティ,1,9,aidentiti
 名付け,1,6,nazuke
 危機,1,4,kiki
@@ -3035,9 +3115,11 @@ word,frequency,n_characters,romanized_form
 部員,1,4,buin
 マッシュ,1,6,massyu
 キーボード,1,8,kiiboodo
+dfb,1,3,dfb
 達成,1,6,tassei
 打ち立て,1,7,utitate
 デビッド,1,7,debiddo
+essen,1,5,essen
 退職,1,8,taisyoku
 他者,1,5,tasya
 除外,1,6,zyogai
@@ -3072,6 +3154,8 @@ word,frequency,n_characters,romanized_form
 休息,1,8,kyuusoku
 オーストラリアン,1,12,oosutorarian
 作者,1,7,sakusya
+de,1,2,de
+bruyn,1,5,bruyn
 業者,1,7,gyousya
 極めて,1,8,kiwamete
 言葉少な,1,12,kotobazukuna
@@ -3079,6 +3163,7 @@ word,frequency,n_characters,romanized_form
 ラリーバンス,1,10,rariibansu
 沈む,1,6,sizumu
 大騒ぎ,1,8,oosawagi
+kerber,1,6,kerber
 演奏,1,5,ensou
 ゆく,1,4,yuku
 ボイスト,1,7,boisuto
@@ -3102,6 +3187,7 @@ word,frequency,n_characters,romanized_form
 何百,1,8,nanbyaku
 相応しい,1,9,husawasii
 アプリ,1,5,apuri
+vine,1,4,vine
 刺客,1,6,sikaku
 妨げる,1,10,samatageru
 難局,1,8,nankyoku
@@ -3132,6 +3218,8 @@ word,frequency,n_characters,romanized_form
 陣,1,3,zin
 笑顔,1,4,egao
 クリスティーナ,1,11,kurisutiina
+snap,1,4,snap
+chat,1,4,chat
 ヤジディ,1,6,yazidi
 マウンテン,1,7,maunten
 ビュー,1,4,byuu
@@ -3204,6 +3292,7 @@ word,frequency,n_characters,romanized_form
 涙,1,6,namida
 瞳,1,6,hitomi
 曇ら,1,6,kumora
+tesla,1,5,tesla
 総額,1,7,sougaku
 時価,1,4,zika
 繊維,1,5,sen'i
@@ -3224,12 +3313,14 @@ word,frequency,n_characters,romanized_form
 全的,1,7,zenteki
 絶対,1,6,zettai
 シェパード,1,7,sepaado
+geronimo,1,8,geronimo
 当該,1,6,tougai
 支給,1,6,sikyuu
 バウチャー,1,7,bautyaa
 渡さ,1,6,watasa
 投じ,1,5,touzi
 フィガロ,1,6,higaro
+exxonmobil,1,10,exxonmobil
 条項,1,7,zyoukou
 置く,1,3,oku
 許容,1,6,kyoyou
@@ -3250,10 +3341,12 @@ word,frequency,n_characters,romanized_form
 差し引い,1,7,sasihii
 考慮,1,6,kouryo
 入れよう,1,6,ireyou
+eta,1,3,eta
 社員,1,5,syain
 提言,1,6,teigen
 ガソリン,1,7,gasorin
 値上がり,1,7,neagari
+cgi,1,3,cgi
 事例,1,5,zirei
 オズボーン,1,7,ozuboon
 マルタ,1,6,maruta
@@ -3272,6 +3365,7 @@ word,frequency,n_characters,romanized_form
 ロボット,1,7,robotto
 理事,1,4,rizi
 ウォール,1,4,ooru
+bid,1,3,bid
 シリコンバレー,1,12,sirikonbaree
 続々,1,8,zokuzoku
 増える,1,5,hueru
@@ -3293,12 +3387,14 @@ word,frequency,n_characters,romanized_form
 オファー,1,4,ohaa
 取り下げる,1,10,torisageru
 上述,1,9,zyouzyutu
+ecb,1,3,ecb
 特権,1,6,tokken
 代案,1,5,daian
 ジョージタウン,1,10,zyoozitaun
 去る,1,4,saru
 記し,1,6,sirusi
 会合,1,6,kaigou
+luiss,1,5,luiss
 耕作,1,7,kousaku
 言い合い,1,4,iiai
 担う,1,5,ninau
@@ -3316,8 +3412,10 @@ word,frequency,n_characters,romanized_form
 マイクロ,1,7,maikuro
 水曜,1,6,suiyou
 最愛,1,5,saiai
+slack,1,5,slack
 勝負,1,6,syoubu
 郊外,1,6,kougai
+gif,1,3,gif
 カスタム,1,8,kasutamu
 ミーム,1,5,miimu
 ステッカー,1,8,sutekkaa
@@ -3453,7 +3551,9 @@ word,frequency,n_characters,romanized_form
 実用,1,7,zituyou
 食欲,1,9,syokuyoku
 乗組,1,8,norikumi
+kfc,1,3,kfc
 親,1,3,oya
+yum,1,3,yum
 好む,1,6,konomu
 人権,1,6,zinken
 どころ,1,6,dokoro
@@ -3514,15 +3614,20 @@ word,frequency,n_characters,romanized_form
 ペルシャ,1,7,perusya
 上級,1,8,zyoukyuu
 階層,1,6,kaisou
+slate,1,5,slate
 姻戚,1,6,inseki
 ドメニコ,1,8,domeniko
+athina,1,6,athina
 マイアミ,1,6,maiami
 負っ,1,1,o
 アスティ,1,5,asuti
 責務,1,6,sekimu
 スキタイ,1,7,sukitai
 違う,1,5,tigau
+buck,1,4,buck
+if,1,2,if
 補佐,1,4,hosa
+knuck,1,5,knuck
 パソコン,1,7,pasokon
 ノート,1,5,nooto
 メガラ,1,6,megara
@@ -3535,8 +3640,10 @@ word,frequency,n_characters,romanized_form
 ダリウス,1,7,dariusu
 司令,1,5,sirei
 メガバズス,1,10,megabazusu
+megabazus,1,9,megabazus
 ノリ,1,4,nori
 関わる,1,8,kakawaru
+film,1,4,film
 フィルム,1,6,hirumu
 ライバル,1,7,raibaru
 手続き,1,8,tetuzuki
@@ -3627,6 +3734,8 @@ word,frequency,n_characters,romanized_form
 リニア,1,5,rinia
 モーターカー,1,9,mootaakaa
 タイプ,1,5,taipu
+traum,1,5,traum
+f,1,1,f
 チケット,1,7,tiketto
 入れる,1,5,ireru
 ヤス,1,4,yasu
@@ -3738,6 +3847,7 @@ word,frequency,n_characters,romanized_form
 開設,1,7,kaisetu
 数百,1,8,suuhyaku
 下げ,1,4,sage
+ceo,1,3,ceo
 辞職,1,7,zisyoku
 賠償,1,7,baisyou
 請求,1,7,seikyuu
@@ -3864,6 +3974,8 @@ word,frequency,n_characters,romanized_form
 軽々しく,1,12,karugarusiku
 野獣,1,6,yazyuu
 フランク,1,7,huranku
+e,1,1,e
+micro,1,5,micro
 漏れる,1,6,moreru
 取り上げる,1,9,toriageru
 講じる,1,7,kouziru
@@ -4017,7 +4129,9 @@ word,frequency,n_characters,romanized_form
 固定,1,5,kotei
 害,1,3,gai
 アブロエナジー,1,11,aburoenazii
+simple,1,6,simple
 水準,1,7,suizyun
+select,1,6,select
 キャピトル,1,9,kyapitoru
 高価,1,5,kouka
 前払,1,8,maebarai
@@ -4067,6 +4181,7 @@ word,frequency,n_characters,romanized_form
 天才,1,6,tensai
 リハビリ,1,8,rihabiri
 ホスピタル,1,10,hosupitaru
+nhs,1,3,nhs
 目下,1,5,mokka
 コーポレーション,1,12,kooporeesyon
 民衆,1,7,minsyuu
@@ -4390,6 +4505,7 @@ word,frequency,n_characters,romanized_form
 偶然,1,6,guuzen
 弱い,1,5,yowai
 タバコ,1,6,tabako
+comers,1,6,comers
 吸っ,1,2,su
 段階,1,6,dankai
 分断,1,6,bundan
@@ -4457,6 +4573,7 @@ word,frequency,n_characters,romanized_form
 落ち,1,3,oti
 スティーブン,1,8,sutiibun
 ウィーラー,1,5,iiraa
+mla,1,3,mla
 欲求,1,7,yokkyuu
 ラホール,1,7,rahooru
 ガゼット,1,7,gazetto
@@ -4545,7 +4662,9 @@ word,frequency,n_characters,romanized_form
 ディートリッヒ,1,10,diitorihhi
 黄緑,1,8,kimidori
 見なさ,1,6,minasa
+canadian,1,8,canadian
 一報,1,5,ippou
+blood,1,5,blood
 攻略,1,8,kouryaku
 困難,1,6,konnan
 音波,1,5,otowa
@@ -4562,7 +4681,10 @@ word,frequency,n_characters,romanized_form
 ルーマニア,1,8,ruumania
 トゥルチャ,1,7,turutya
 県,1,3,ken
+chilia,1,6,chilia
+cbs,1,3,cbs
 左岸,1,5,sagan
+services,1,8,services
 オデッサ,1,6,odessa
 愛す,1,4,aisu
 地質,1,6,tisitu
@@ -4584,9 +4706,12 @@ word,frequency,n_characters,romanized_form
 コーサカス,1,9,koosakasu
 重力,1,9,zyuuryoku
 シスコーカサス,1,13,sisukookasasu
+ciscaucasus,1,11,ciscaucasus
 リング,1,5,ringu
 トランスコーカシア,1,15,toransukookasia
+transcaucasus,1,13,transcaucasus
 赤道,1,7,sekidou
+kven,1,4,kven
 仕掛け,1,6,sikake
 ボノ,1,4,bono
 西暦,1,7,seireki
@@ -4614,6 +4739,7 @@ word,frequency,n_characters,romanized_form
 起きる,1,5,okiru
 降っ,1,2,hu
 水滴,1,7,suiteki
+crtc,1,4,crtc
 有能,1,6,yuunou
 矮小,1,7,waisyou
 インフラ,1,6,inhura
@@ -4721,6 +4847,9 @@ word,frequency,n_characters,romanized_form
 注射,1,7,tyuusya
 パッド,1,5,paddo
 処方,1,6,syohou
+under,1,5,under
+sea,1,3,sea
+cbc,1,3,cbc
 エッセイ,1,5,essei
 海底,1,6,kaitei
 沿い,1,3,zoi
@@ -4739,9 +4868,11 @@ word,frequency,n_characters,romanized_form
 加工,1,5,kakou
 電気,1,5,denki
 設備,1,6,setubi
+caribbean,1,9,caribbean
 後半,1,6,kouhan
 足,1,3,asi
 踏み入れ,1,7,humiire
+caribs,1,6,caribs
 ゲリー,1,5,geri-
 由来,1,5,yurai
 アンティリャス,1,9,antiryasu
@@ -4763,6 +4894,8 @@ word,frequency,n_characters,romanized_form
 アプリケーション,1,12,apurikeesyon
 達し,1,5,tassi
 学問,1,7,gakumon
+volcanology,1,11,volcanology
+vulcanology,1,11,vulcanology
 表記,1,6,hyouki
 ロジャース,1,8,rozyaasu
 ケイ酸,1,6,keisan
@@ -4790,6 +4923,7 @@ word,frequency,n_characters,romanized_form
 腰痛,1,6,youtuu
 柳,1,6,yanagi
 飲料,1,6,inryou
+gta,1,3,gta
 灌漑,1,6,kangai
 合致,1,5,gatti
 コンドミニアム,1,12,kondominiamu
@@ -4841,6 +4975,7 @@ word,frequency,n_characters,romanized_form
 度合い,1,4,doai
 まん延,1,6,man'en
 水質,1,7,suisitu
+sasktel,1,7,sasktel
 脆弱,1,8,zeizyaku
 携帯,1,6,keitai
 慣行,1,6,kankou
