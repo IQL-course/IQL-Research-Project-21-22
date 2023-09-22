@@ -31,9 +31,8 @@ res <- lapply(COLLS,function(collection) {
     df <- read.csv(paste0('data/non_filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv')) %>% 
       mutate(Freq=log10(frequency)) %>% arrange(desc(Freq))
     df$group_opt <- Ckmeans.1d.dp(df$Freq, 2)$cluster
-    df <- filter(df,group_opt == 2)
+    df <- if (language %in% c('zho','jpn','kor')) df else filter(df,group_opt == 2)
     alphabet <- df[,c(1,2,3)]
-    print(paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'))
     write.csv(alphabet, paste0('data/filtered/alphabets/',collection,'/',iso_code,str_suffix,'-character.csv'),row.names = FALSE)
   })
 })
