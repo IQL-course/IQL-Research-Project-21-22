@@ -444,7 +444,6 @@ rise,5,4
 global,5,6
 macedonian,5,10
 say,5,3
-qing,5,4
 developed,5,9
 alone,5,5
 military,5,8
@@ -490,7 +489,6 @@ resulted,5,8
 five,5,4
 ocean,5,5
 past,5,4
-questions,5,9
 song,5,4
 need,5,4
 might,5,5
@@ -584,7 +582,6 @@ danish,4,6
 drama,4,5
 regions,4,7
 certain,4,7
-conquered,4,9
 troops,4,6
 achaemenid,4,10
 directed,4,8
@@ -1072,7 +1069,6 @@ attack,2,6
 compromise,2,10
 similar,2,7
 crop,2,4
-question,2,8
 duke,2,4
 alexander,2,9
 projects,2,8
@@ -1108,7 +1104,6 @@ conservationists,2,16
 pyongyang,2,9
 filming,2,7
 celtic,2,6
-equal,2,5
 anselmi,2,7
 process,2,7
 tina,2,4
@@ -1187,7 +1182,6 @@ dust,2,4
 offer,2,5
 context,2,7
 storms,2,6
-consequences,2,12
 landing,2,7
 athens,2,6
 watch,2,5
@@ -1208,7 +1202,6 @@ minutes,2,7
 debt,2,4
 ruin,2,4
 unfortunately,2,13
-quickly,2,7
 modifying,2,9
 increasingly,2,12
 islam,2,5
@@ -1363,7 +1356,6 @@ characters,2,10
 governments,2,11
 assembly,2,8
 frozen,2,6
-requested,2,9
 george,2,6
 breaking,2,8
 norway,2,6
@@ -1534,7 +1526,6 @@ awards,2,6
 governing,2,9
 apply,2,5
 entertainment,2,13
-equally,2,7
 toxic,2,5
 steadily,2,8
 chapels,2,7
@@ -1618,7 +1609,6 @@ proper,2,6
 animal,2,6
 app,2,3
 tools,2,5
-frequently,2,10
 changes,2,7
 venice,2,6
 usage,2,5
@@ -1653,7 +1643,6 @@ surveillance,2,12
 canaanite,2,9
 preferential,2,12
 accorded,2,8
-requests,2,8
 satisfied,2,9
 literary,2,8
 domestic,2,8
@@ -1664,7 +1653,6 @@ overall,2,7
 services,2,8
 defenses,2,8
 temperament,2,11
-technique,2,9
 silt,2,4
 mother,2,6
 attempt,2,7
@@ -1695,7 +1683,6 @@ below,2,5
 understanding,2,13
 kingdom,2,7
 night,2,5
-headquarters,2,12
 ambassadors,2,11
 meeting,2,7
 red,2,3
@@ -1749,7 +1736,6 @@ lamarr,2,6
 white,2,5
 metro,2,5
 publishing,2,10
-equipment,2,9
 discussed,2,9
 vigorously,2,10
 win,2,3
@@ -1844,7 +1830,6 @@ evidence,2,8
 radar,2,5
 reportedly,2,10
 dozens,2,6
-equipped,2,8
 peninsula,2,9
 marks,2,5
 structure,2,9
@@ -1886,12 +1871,10 @@ vision,1,6
 piggy,1,5
 attending,1,9
 anne,1,4
-saqib,1,5
 idealized,1,9
 horton,1,6
 actual,1,6
 combatants,1,10
-conquering,1,10
 string,1,6
 pearl,1,5
 blinded,1,7
@@ -1984,7 +1967,6 @@ theorized,1,9
 salzburg,1,8
 passages,1,8
 beria,1,5
-inquisition,1,11
 counter,1,7
 mgb,1,3
 cautioned,1,9
@@ -2173,7 +2155,6 @@ commands,1,8
 pilot,1,5
 untrained,1,9
 berlin,1,6
-quarters,1,8
 preferred,1,9
 designers,1,9
 professionals,1,13
@@ -2196,7 +2177,6 @@ player,1,6
 earliest,1,8
 lenny,1,5
 william,1,7
-piqued,1,6
 reverend,1,8
 executed,1,8
 posters,1,7
@@ -2565,7 +2545,6 @@ length,1,6
 offers,1,6
 botanical,1,9
 planetarium,1,11
-aquarium,1,8
 franciscans,1,11
 victorias,1,9
 yerba,1,5
@@ -2575,7 +2554,6 @@ moscone,1,7
 monument,1,8
 luther,1,6
 steep,1,5
-sequence,1,8
 bosphorus,1,9
 istanbul,1,8
 denied,1,6
@@ -2723,7 +2701,6 @@ throne,1,6
 aunt,1,4
 isabella,1,8
 ended,1,5
-enrique,1,7
 execute,1,7
 cecelia,1,7
 bruno,1,5
@@ -2909,7 +2886,6 @@ debit,1,5
 idiotic,1,7
 justified,1,9
 zeit,1,4
-inquired,1,8
 dubious,1,7
 cash,1,4
 flows,1,5
@@ -2962,7 +2938,6 @@ rescind,1,7
 reimburse,1,9
 incurred,1,8
 employee,1,8
-quits,1,5
 inherent,1,8
 humanism,1,8
 stresses,1,8
@@ -3023,7 +2998,6 @@ cabinet,1,7
 chamberlain,1,11
 lab,1,3
 specimens,1,9
-subsequent,1,10
 iran,1,4
 carefree,1,8
 playboy,1,7
@@ -3272,10 +3246,8 @@ desired,1,7
 akp,1,3
 conservatives,1,13
 refusal,1,7
-questionings,1,12
 increasing,1,10
 whereas,1,7
-required,1,8
 trigger,1,7
 gaudens,1,7
 haute,1,5
@@ -3334,7 +3306,6 @@ immersed,1,8
 limit,1,5
 litigation,1,10
 project,1,7
-quoted,1,6
 hardware,1,8
 reductions,1,10
 pencilled,1,9
@@ -3462,7 +3433,6 @@ noma,1,4
 websites,1,8
 match,1,5
 fate,1,4
-squad,1,5
 infill,1,6
 round,1,5
 though,1,6
@@ -3512,7 +3482,6 @@ borrow,1,6
 racist,1,6
 sexist,1,6
 incredibly,1,10
-unqualified,1,11
 credit,1,6
 manageable,1,10
 sudden,1,6
@@ -3616,7 +3585,6 @@ vernacular,1,10
 homeland,1,8
 apartment,1,9
 rachel,1,6
-quality,1,7
 designer,1,8
 appealing,1,9
 medics,1,6
@@ -3730,7 +3698,6 @@ retail,1,6
 wholesale,1,9
 expanded,1,8
 shoppers,1,8
-gchq,1,4
 upbeat,1,6
 spy,1,3
 spend,1,5
@@ -3834,13 +3801,11 @@ customer,1,8
 sasktel,1,7
 gomery,1,6
 amazing,1,7
-inquiry,1,7
 bodies,1,6
 iridium,1,7
 restore,1,7
 confidence,1,10
 revelations,1,11
-quebec,1,6
 journalists,1,11
 provincial,1,10
 operations,1,10
@@ -3895,7 +3860,6 @@ guitarist,1,9
 headlines,1,9
 vladivostok,1,11
 pall,1,4
-frequent,1,8
 kamchatka,1,9
 sakhalin,1,8
 notice,1,6
@@ -3974,7 +3938,6 @@ reading,1,7
 caplan,1,6
 dismisses,1,9
 retrospective,1,13
-quoting,1,7
 rational,1,8
 killing,1,7
 else,1,4
@@ -4103,13 +4066,11 @@ luxury,1,6
 debris,1,6
 baby,1,4
 develops,1,8
-equator,1,7
 teratoma,1,8
 altering,1,8
 folk,1,4
 remedy,1,6
 guessing,1,8
-requires,1,8
 protein,1,7
 transporting,1,12
 oxygen,1,6
@@ -4204,7 +4165,6 @@ panama,1,6
 unknown,1,7
 populations,1,11
 eurasia,1,7
-quest,1,5
 route,1,5
 hundreds,1,8
 rapid,1,5
@@ -4494,7 +4454,6 @@ markings,1,8
 locate,1,6
 sunrise,1,7
 solstices,1,9
-equinoxes,1,9
 minimum,1,7
 declinations,1,12
 lengths,1,7
@@ -4586,7 +4545,6 @@ stones,1,6
 massebot,1,8
 altar,1,5
 type,1,4
-square,1,6
 stone,1,5
 salerno,1,7
 conceded,1,8
@@ -4841,12 +4799,10 @@ tended,1,6
 intertwined,1,11
 notable,1,7
 classical,1,9
-antiquity,1,9
 phoenicians,1,11
 extensively,1,11
 colonised,1,9
 coastlines,1,10
-quite,1,5
 nostrum,1,7
 straits,1,7
 blindleia,1,9
@@ -4944,7 +4900,6 @@ shaped,1,6
 knightley,1,9
 schulman,1,8
 smaragdis,1,9
-monegasque,1,10
 providing,1,9
 limited,1,7
 potomac,1,7
@@ -4977,7 +4932,6 @@ byzantium,1,9
 darius,1,6
 regarded,1,8
 megabazus,1,9
-conquers,1,8
 mate,1,4
 setback,1,7
 samsung,1,7
@@ -5037,7 +4991,6 @@ migration,1,9
 slavs,1,5
 switched,1,8
 moravian,1,8
-conquest,1,8
 nitra,1,5
 battery,1,7
 invaded,1,7
