@@ -55,6 +55,8 @@ res <- lapply(COLLS,function(collection) {
 })
 
 
+
+
 # + collections summary 
 print('tables: collection summaries')
 res <- lapply(COLLS, function(collection) {
