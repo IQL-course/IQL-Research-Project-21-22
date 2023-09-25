@@ -14,7 +14,7 @@ filter <- if (length(args) == 1) as.logical(args[[1]]) else F
 
 # GLOBALS  --------------------------------------------------------
 langs_df_pud <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/pud.csv"))
-langs_df_cv <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/common_voice.csv")) %>% 
+langs_df_cv  <- read.csv(paste0(which_folder('data',filter),"/descriptive_tables/common_voice.csv")) %>% 
   shorten_names()
 
 
@@ -53,7 +53,7 @@ res <- lapply(COLLS,function(collection) {
     list("language"=language, 'A'=alphabet_size)
   })
   df = do.call(rbind.data.frame,parameters)
-  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'),row.names = F)
+  write.csv(df, paste0(which_folder('results',filter),'/alphabet_sisez_',collection,'.csv'), row.names = F)
 })
 
 
