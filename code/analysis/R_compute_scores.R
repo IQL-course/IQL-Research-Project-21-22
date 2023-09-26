@@ -4,25 +4,16 @@ source('code/analysis/R_functions.R')
 #Sys.setlocale("LC_ALL","English")     # might be needed for Windows
 args = commandArgs(trailingOnly=TRUE)
 
-# ARGUMENTS: corr_type  collections  what  filter
+# ARGUMENTS:  collections  filter
 
 ## description:
-  # - corr_type:   correlation to be used
   # - collections: collections to be used
-  # - what :       what should be computed
   # - filter:      whether to apply the optional filtering
 
 ## values:
-  # - corr_type:   one of ('kendall','spearman','pearson')
   # - collections: one of ('pud','cv','both') [default is 'both']
-  # - what :       one of ('corr','scores','both') [default is 'both']
   # - filter:      one of (T,F) [default is T]
 
-# NOTE:
-# The minimum outputs to run the script "R_analysis.R" are obtained by the following commands:
-  # - Rscript R_compute_scores.R kendall both both [filter]
-  # - Rscript R_compute_scores.R spearman pud both [filter]
-  # - Rscript R_compute_scores.R pearson both corr [filter]
 
 
 collections <- if (length(args)>=1) args[[1]] else 'both'
